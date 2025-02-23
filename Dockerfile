@@ -18,10 +18,10 @@ WORKDIR /app
 COPY pyproject.toml poetry.lock ./
 
 # Установка зависимостей
-RUN poetry lock && poetry env use python && poetry install --no-root
+RUN poetry lock && poetry env use python && poetry install
 
 # Копируем исходный код
 COPY . .
 
 # Команда запуска
-CMD ["poetry", "run", "streamlit", "run", "streamlit_app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["poetry", "run", "streamlit", "run", "streamlit_app.py", "--server.port=8501"]

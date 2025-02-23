@@ -1,7 +1,7 @@
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
-from digital_assistant_first.src.telegram_system.telegram_collector import TelegramCollector
-from digital_assistant_first.src.utils.load_utils import load_config_yaml
+from digital_assistant_first.telegram_system.telegram_collector import TelegramCollector
+from digital_assistant_first.utils.load_utils import load_config_yaml
 from dotenv import load_dotenv
 import os
 import asyncio

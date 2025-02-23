@@ -1,6 +1,6 @@
-from digital_assistant_first.src.telegram_system.telegram_rag import EnhancedRAGSystem
-from digital_assistant_first.src.telegram_system.telegram_data_initializer import update_telegram_messages
-from digital_assistant_first.src.telegram_system.telegram_data_initializer import TelegramManager
+from digital_assistant_first.telegram_system.telegram_rag import EnhancedRAGSystem
+from digital_assistant_first.telegram_system.telegram_data_initializer import update_telegram_messages
+from digital_assistant_first.telegram_system.telegram_data_initializer import TelegramManager
 
     
 def fetch_telegram_data(user_input, rag_system, k):  

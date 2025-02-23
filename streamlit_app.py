@@ -8,10 +8,10 @@ from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 
 # Локальные импорты
-from digital_assistant_first.src.interface import *
+from digital_assistant_first.interface import *
 from langchain_core.documents import Document
 
-from digital_assistant_first.src.telegram_system.telegram_data_initializer import update_telegram_messages
+from digital_assistant_first.telegram_system.telegram_data_initializer import update_telegram_messages
 
 def setup_logging():
     """Настройка конфигурации логирования."""

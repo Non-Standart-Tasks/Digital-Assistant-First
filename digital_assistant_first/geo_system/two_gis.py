@@ -1,4 +1,4 @@
-from digital_assistant_first.src.internet_search import *
+from digital_assistant_first.internet_search import *
 import requests
 
 

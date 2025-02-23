@@ -9,7 +9,6 @@ from langchain_openai import ChatOpenAI
 
 # Локальные импорты
 from src.interface import *
-from langchain_core.documents import Document
 
 from src.telegram_system.telegram_data_initializer import update_telegram_messages
 
@@ -95,13 +94,6 @@ def chat_interface(config):
     logger.info(f"Конфигурация загружена: {config}")
 
     template_prompt = "Я ваш Цифровой Ассистент - пожалуйста, задайте свой вопрос."
-
-    if config['System_type'] != 'default':    
-        vector_store = initialize_vector_store(config)
-    
-        if vector_store is None and config['System_type'] != 'default':
-            st.error("Не удалось инициализировать векторное хранилище.")
-            return
 
     model = initialize_model(config)
     

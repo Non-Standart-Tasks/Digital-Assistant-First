@@ -36,9 +36,10 @@ from src.telegram_system.telegram_data_initializer import TelegramManager
 from src.telegram_system.telegram_initialization import fetch_telegram_data
 from src.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
 from src.geo_system.two_gis import fetch_2gis_data
-from src.utils.yndx_restaurants import (
+from src.websites_rag.yndx_restaurants import (
     analyze_restaurant_request,
     get_restaurants_by_category,
+    fetch_yndx_context
 )
 
 logger = setup_logging(logging_path='logs/digital_assistant.log')
@@ -74,44 +75,18 @@ def aviasales_request(model, config, user_input):
     tickets_need = json.loads(analysis)
     return tickets_need
 
-def fetch_yndx_context(user_input, model):
-    restaurant_analysis = analyze_restaurant_request(user_input, model)
-    restaurant_context_text = ""
-    restaurants_data = []
-    if restaurant_analysis.get("restaurant_recommendation", "false").lower() == "true":
-        requested_category = restaurant_analysis.get("category", "")
-        if requested_category:
-            restaurants_data = get_restaurants_by_category(requested_category)
-            if restaurants_data:
-                # Формируем текстовый блок с информацией о найденных ресторанах
-                restaurant_context_parts = []
-                
-                for r in restaurants_data:
-                    restaurant_context_parts.append(
-                        f"Название: {r.get('name')}\n"
-                        f"Режим работы: {r.get('working_hours')}\n"
-                        f"Адрес: {r.get('address', {}).get('street')}\n"
-                        f"Метро: {', '.join(r.get('address', {}).get('metro', []))}\n"
-                        f"Описание: {r.get('description')}\n"
-                        f"Категории: {', '.join(r.get('categories', []))}"
-                    )
-                restaurant_context_text = "\n\n".join(restaurant_context_parts)
-
-    return restaurant_context_text
-
 
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
-    
+    # Получение последнего пользовательского ввода
     user_input = st.session_state["messages"][-1]["content"]
-    
-    tickets_need = aviasales_request(model, config, user_input)
 
+    # Получение информации о билетах и контекста ресторанов
+    tickets_need = aviasales_request(model, config, user_input)
     restaurant_context_text = fetch_yndx_context(user_input, model)
 
-
     try:
-        # Формирование истории сообщений (исключая системное сообщение)
+        # Формирование истории сообщений (без системных сообщений)
         message_history = ""
         if "messages" in st.session_state and len(st.session_state["messages"]) > 1:
             history_messages = [
@@ -123,24 +98,23 @@ def model_response_generator(model, config):
             if history_size:
                 history_messages = history_messages[-history_size:]
             message_history = "\n".join(history_messages)
-        
-        # Если интернет-поиск включён, вызываем функции поиска, иначе возвращаем пустую строку
+
+        # Если включён интернет-поиск, выполнить его; иначе, оставить пустые значения
         if config.get("internet_search", False):
             _, serpapi_key = serpapi_key_manager.get_best_api_key()
-
             shopping_res = search_shopping(user_input, serpapi_key)
             internet_res, links, coordinates = search_places(user_input, serpapi_key)
             maps_res = search_map(user_input, coordinates, serpapi_key)
-            #yandex_res = yandex_search(user_input, serpapi_key)
+            # yandex_res = yandex_search(user_input, serpapi_key)
         else:
             shopping_res = ""
             internet_res = ""
             links = ""
             maps_res = ""
-            #yandex_res = ""
+            # yandex_res = ""
 
-        if tickets_need.get('response', '').lower() == 'true':
-            # Get flight options
+        # Если требуется, сформировать URL для Aviasales
+        if tickets_need.get("response", "").lower() == "true":
             aviasales_url = construct_aviasales_url(
                 tickets_need["departure_city"],
                 tickets_need["destination"],
@@ -150,70 +124,67 @@ def model_response_generator(model, config):
                 tickets_need.get("travel_class", ""),
             )
         else:
-            aviasales_url = ''
-        
+            aviasales_url = ""
+
+        # Если включена поддержка Telegram, получить контекст из Telegram
         if config.get("telegram_enabled", False):
             telegram_manager = TelegramManager()
             rag_system = EnhancedRAGSystem(
                 data_file="data/telegram_messages.json",
                 index_directory="data/"
             )
-
             telegram_context = fetch_telegram_data(user_input, rag_system, k=50)
         else:
-            telegram_context = ''
+            telegram_context = ""
 
-        if restaurant_context_text:
-            restaurants_prompt = f"{restaurant_context_text}"
-        else:
-            restaurants_prompt = ""
+        # Формирование запроса для ресторанного контекста, если он есть
+        restaurants_prompt = restaurant_context_text if restaurant_context_text else ""
 
-        # Загрузка системного промпта из YAML-конфига
+        # Загрузка шаблона системного промпта из конфигурации
         system_prompt_template = config["system_prompt"]
-        
-        # Форматирование промпта с подстановкой переменных
+
+        # Форматирование системного промпта с подстановкой переменных
         formatted_prompt = system_prompt_template.format(
             context=message_history,
             internet_res=internet_res,
             links=links,
             shopping_res=shopping_res,
             maps_res=maps_res,
-            #yandex_res=yandex_res,
+            # yandex_res=yandex_res,
             telegram_context=telegram_context,
             yndx_restaurants=restaurants_prompt
         )
-        # Создание цепочки для модели, если имя модели начинается с 'gpt'
 
+        # Если режим '2Gis', получить дополнительные данные для таблицы и карты
         table_data = []
         pydeck_data = []
-        if config.get('mode') == '2Gis':
+        if config.get("mode") == "2Gis":
             table_data, pydeck_data = fetch_2gis_data(user_input, config)
 
-
-        
-        # Формируем шаблон сообщений для запроса
+        # Формирование шаблона сообщений для запроса с помощью ChatPromptTemplate
         prompt = ChatPromptTemplate.from_messages([
             ("system", formatted_prompt),
             ("human", "User query: {input}\nAdditional context: {context}")
         ])
-        
-        # Форматируем сообщения, подставляя входные данные пользователя
-        messages = prompt.format(input=user_input, context="")  # Если дополнительного контекста нет, можно оставить пустую строку
-        
-        # Вызываем модель напрямую без retrieval chain
+        # Форматирование сообщений, подставляя входные данные пользователя (дополнительного контекста нет)
+        messages = prompt.format(input=user_input, context="")
+
+        # Вызов модели с потоковой передачей ответа
         response = model.invoke(messages, stream=True)
-        
-        # Извлекаем ответ из модели (поддержка разных вариантов формата ответа)
-        if hasattr(response, 'content'):
+
+        # Извлечение ответа из модели (поддержка разных вариантов формата ответа)
+        if hasattr(response, "content"):
             answer = response.content
-        elif hasattr(response, 'message'):
+        elif hasattr(response, "message"):
             answer = response.message.content
         else:
             answer = str(response)
-        
+
+        # Если данных для таблицы и pydeck нет, оставить пустыми списками
         table_data = table_data if table_data else []
         pydeck_data = pydeck_data if pydeck_data else []
-        # Выводим ответ вместе с дополнительными данными (например, maps_res)
+
+        # Возврат результата вместе с дополнительными данными
         yield {
             "answer": answer,
             "maps_res": maps_res,
@@ -222,15 +193,16 @@ def model_response_generator(model, config):
             "pydeck_data": pydeck_data
         }
 
-        
+        # Логирование вызова API
         log_api_call(
-                logger=logger,
-                source=f"LLM ({config['Model']})",
-                request=user_input,
-                response=answer,
-            )
+            logger=logger,
+            source=f"LLM ({config['Model']})",
+            request=user_input,
+            response=answer,
+        )
 
     except Exception as e:
+        # Логирование ошибки при вызове API
         log_api_call(
             logger=logger,
             source=f"LLM ({config['Model']})",
@@ -239,7 +211,6 @@ def model_response_generator(model, config):
             error=str(e)
         )
         raise
-
 def handle_user_input(model, config):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
     prompt = st.chat_input("Введите запрос здесь...")
@@ -341,103 +312,6 @@ def display_chat_history():
             if 'question' in message:
                 st.markdown(message["question"])
             st.markdown(message['content'])
-
-
-def creating_documents(config):
-    """Создать векторное пространство на основе конфигурации."""
-    if config["System_type"] == 'File' and 'Uploaded_file' in config and config['Uploaded_file'] is not None:
-        uploaded_file = config['Uploaded_file']
-        # Обработка загруженного файла
-        if uploaded_file.type == "text/plain":
-            # Чтение текстового файла
-            file_content = uploaded_file.getvalue().decode("utf-8")
-            documents = [Document(page_content=file_content)]
-            return documents
-        
-        elif uploaded_file.type == "application/pdf":
-       # Чтение PDF файла с использованием PyMuPDF
-            # Сохранение загруженного файла во временный файл
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
-                tmp_file.write(uploaded_file.getvalue())
-                tmp_file_path = tmp_file.name
-
-            # Используем PyMuPDF для извлечения текста из PDF
-            with pymupdf.open(os.path.normpath(tmp_file_path)) as doc:
-                text = chr(12).join([page.get_text() for page in doc])
-                paragraphs = text.split('\x0c')
-                formatted_paragraphs = [
-                    ' '.join(paragraph.replace('\n', ' ').replace('\xa0', ' ').split())
-                    for paragraph in paragraphs
-                ]
-                file_content = '\n\n'.join(formatted_paragraphs)
-                documents = [Document(page_content=file_content)]
-
-            # Удаление временного файла
-            os.unlink(tmp_file_path)
-            return documents
-
-        elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp_file:
-                tmp_file.write(uploaded_file.getvalue())
-                tmp_file_path = tmp_file.name
-            
-            # Чтение DOCX файла
-            from langchain_community.document_loaders import Docx2txtLoader
-            loader = Docx2txtLoader(tmp_file_path)
-            documents = loader.load()
-            return documents
-        else:
-            st.error("Неподдерживаемый тип файла.")
-            return None
-    else:
-        path = ROOT_DIR / 'content' / 'json' / 'pp_data.json'
-        loader = TextLoader(path)
-        documents = loader.load()
-        
-        return documents
-    
-def create_retriever(splitter_type, embeddings_model, documents, chunk_size):
-    """Создать ретривер для извлечения данных."""
-    if splitter_type == 'character':
-        embeddings = (
-            HuggingFaceEmbeddings(model_name=embeddings_model)
-            if embeddings_model != 'OpenAIEmbeddings'
-            else OpenAIEmbeddings(model='text-embedding-ada-002')
-        )
-        splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=0)
-        docs = splitter.split_documents(documents)
-        vector_store = FAISS.from_documents(docs, embeddings)
-    
-        return vector_store
-    
-    elif splitter_type == 'json':
-        embeddings = (
-            HuggingFaceEmbeddings(model_name=embeddings_model)
-            if embeddings_model != 'OpenAIEmbeddings'
-            else OpenAIEmbeddings(model='text-embedding-ada-002')
-        )
-        logical_chunks = json.loads(documents[0].page_content)
-        kv_dict = {k: f'{k}:\n{v}' for k, v in logical_chunks.items()}
-        docs = [Document(k) for k in logical_chunks.keys()]
-        vector_store = KeyValueFAISS.from_documents(docs, embeddings).add_value_documents(kv_dict)
-        return vector_store
-
-    else:
-        raise ValueError(f"Неподдерживаемый тип разбиения: {splitter_type}")
-
-def create_vector_space(config):
-    """Создать векторное пространство для извлечения документов на основе конфигурации."""
-
-    embeddings_model = config['Embedding']
-    splitter_type = config['Splitter']['Type']
-    chunk_size = int(config['Splitter']['Chunk_size'])
-
-    
-    documents = creating_documents(config)
-
-    vector_store = create_retriever(splitter_type, embeddings_model, documents, chunk_size)
-    
-    return vector_store
 
 
  

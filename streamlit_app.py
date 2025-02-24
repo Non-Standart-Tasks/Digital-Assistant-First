@@ -1,4 +1,7 @@
 # Импорты стандартной библиотеки
+__import__('pysqlite3')
+import sys
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 import logging
 import time
 
@@ -6,7 +9,6 @@ import time
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-
 # Локальные импорты
 from src.interface import *
 
@@ -104,7 +106,6 @@ def chat_interface(config):
 
 
 def main():
-    
     """Основная функция для запуска приложения Streamlit."""
     load_dotenv()
     logger = setup_logging()
@@ -130,12 +131,18 @@ def main():
         'system_prompt_tickets': config_yaml['system_prompt_tickets']
 
     }
-    
+    #logger.info("initialize_session_state")
+
     initialize_session_state(defaults)
+
+   #logger.info("importing offergen")
+
     # Инициализация векторного хранилища для генерации предложений
     # проиводится в модуле offergen в момент импорта, поэтому
     # импортируем модуль offergen в момент запуска приложения
     from src import offergen
+    #logger.info("imported offergen")
+
     mode = st.sidebar.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС"))
 
     if st.session_state.get("telegram_enabled", False):

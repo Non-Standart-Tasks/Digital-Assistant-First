@@ -23,6 +23,9 @@ chromadb = "^0.6.3"
 langchain-chroma = "^0.2.1"
 pysqlite3-binary = "^0.5.4"
 telethon = ">=1.38.1,<2.0.0"
+beautifulsoup4 = "^4.13.3"
+selenium = "^4.29.0"
+twocaptcha = "^0.0.1"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"

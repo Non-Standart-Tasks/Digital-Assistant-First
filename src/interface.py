@@ -152,6 +152,7 @@ def model_response_generator(model, config):
             avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
         else:
             aviasales_url = ''
+            avia_result = False
         
         if config.get("telegram_enabled", False):
             telegram_manager = TelegramManager()

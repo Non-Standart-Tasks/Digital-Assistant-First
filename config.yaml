@@ -32,7 +32,7 @@ system_prompt_tickets: |
     0. Is the user going on a trip and needs to find airline tickets? Answer only 'True' if Yes or 'False' if No in the "response" field of JSON.
     1. What is the main destination? Write the 3-letter code (IATA code) of the city.
     2. What is the departure city? If not mentioned, assume MOW.
-    3. What are the travel dates? Write only in ddmm format (for example, 25 May: 2505). If not mentioned, for start date assume 2105 and for end date 2705.
+    3. What are the travel dates? Write only in ddmm format (for example, 25 May: 2505). If not mentioned, for start date assume 2105 and for end date 2705. If there is only start_date, set the end_date empty - ''.
     4. How many passengers? Write only a number. If not mentioned, assume 1.
     5. What is the preferred travel class (economy - '' / comfort - 'w' / business - 'c' / first - 'f')? If not mentioned, assume economy - ''.
     6. Are there any specific interests or preferences mentioned?

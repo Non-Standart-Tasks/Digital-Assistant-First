@@ -134,7 +134,7 @@ def analyze_aviasales_url(
         left = 50
         top = 250
         right = image.width - 200
-        bottom = image.height - 3500
+        bottom = image.height - 3400
 
         cropped_image = image.crop((left, top, right, bottom))
 

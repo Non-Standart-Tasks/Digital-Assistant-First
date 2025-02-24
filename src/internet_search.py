@@ -14,9 +14,6 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-serpapi_key_manager = APIKeyManager(path_to_file=ROOT_DIR / "api_keys_status.csv")
-
-
 def search_map(q, coordinates, serpapi_key):
     try:
         # Проверяем, есть ли координаты и их значения

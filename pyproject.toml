@@ -22,6 +22,7 @@ pydantic-ai = {extras = ["logfire"], version = ">=0.0.21,<0.0.22"}
 chromadb = "^0.6.3"
 langchain-chroma = "^0.2.1"
 pysqlite3-binary = "^0.5.4"
+telethon = ">=1.38.1,<2.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"

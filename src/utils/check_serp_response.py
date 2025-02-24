@@ -7,14 +7,13 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 from typing import Optional
 
-
 def check_api_keys(path_to_file):
     # Read the existing data
-    df = pd.read_csv(path_to_file)
+    df = pd.read_csv(path_to_file, sep=';', encoding='cp1252', engine='python')
 
     for index, row in df.iterrows():
-        api_key = row["API Key"]
-
+        api_key = row['API Key']
+        
         if api_key:
             try:
                 response = requests.get(
@@ -23,9 +22,11 @@ def check_api_keys(path_to_file):
 
                 if response.status_code == 200:
                     data = response.json()
-                    df.at[index, "Status"] = data["total_searches_left"]
+                    df.at[index, 'Status'] = data["total_searches_left"]
                 else:
-                    print(f"Error checking {api_key}: status {response.status_code}")
+                    print(
+                        f"Error checking {api_key}: status {response.status_code}"
+                    )
 
                 # if some problems with api
                 # sleep(0.1)
@@ -34,26 +35,26 @@ def check_api_keys(path_to_file):
                 print(f"Error checking {api_key}: {str(e)}")
 
     # Save the updated data back to the file
-    df.to_csv(path_to_file, index=False)
+    df.to_csv(path_to_file, sep=';', index=False, encoding='latin1')    
     print(df)
     return df
-
 
 class APIKeyManager:
     def __init__(self, path_to_file):
         self.scheduler = BackgroundScheduler()
         self.start_scheduler(path_to_file)
         self.path_to_file = path_to_file
+        
 
     def start_scheduler(self, path_to_file):
         """Starts the scheduler with an update every hour"""
         self.scheduler.add_job(
             check_api_keys,
-            "interval",
+            'interval',
             minutes=1,
-            id="update_api_keys_status",
+            id='update_api_keys_status',
             next_run_time=datetime.now(),
-            args=[path_to_file],  # Run the first time immediately
+            args=[path_to_file]  # Run the first time immediately
         )
         self.scheduler.start()
 
@@ -69,13 +70,13 @@ class APIKeyManager:
                 print(f"File {self.path_to_file} does not exist")
 
             # Read the dataframe
-            df = pd.read_csv(self.path_to_file)
+            df = pd.read_csv(self.path_to_file, sep=';', encoding='cp1252', engine='python')
 
             if df.empty:
                 return None
 
-            best_key_name = df.loc[df["Status"].idxmax(), "Name"]
-            best_key = df.loc[df["Status"].idxmax(), "API Key"]
+            best_key_name = df.loc[df['Status'].idxmax(), 'Name']
+            best_key = df.loc[df['Status'].idxmax(), 'API Key']
             print(f"The best available API key: {best_key_name}: {best_key}")
             return best_key_name, best_key
 
@@ -86,7 +87,6 @@ class APIKeyManager:
     def stop_scheduler(self):
         """Stops the scheduler"""
         self.scheduler.shutdown()
-
 
 ########## Example usage ##########
 

@@ -1,5 +1,7 @@
-.DS_Store
-.venv
+**/.DS_Store
+**/.venv
+**/session.session
+**/data
 content/gloabal_text.txt
 .env
 checkpoints
@@ -14,5 +16,4 @@ api_keys_status.pkl
 **/__pycache__/
 **/digital_assistant.log
 .python-version
-poetry.lock
 content/json/offers/offers_persist_db/*

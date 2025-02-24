@@ -34,7 +34,7 @@ from src.telegram_system.telegram_rag import EnhancedRAGSystem
 from src.telegram_system.telegram_data_initializer import update_telegram_messages
 from src.telegram_system.telegram_data_initializer import TelegramManager
 from src.telegram_system.telegram_initialization import fetch_telegram_data
-from src.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
+from src.utils.aviasales_parser import analyze_aviasales_url, construct_aviasales_url
 from src.geo_system.two_gis import fetch_2gis_data
 from src.utils.yndx_restaurants import (
     analyze_restaurant_request,
@@ -149,6 +149,7 @@ def model_response_generator(model, config):
                 tickets_need["passengers"],
                 tickets_need.get("travel_class", ""),
             )
+            avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
         else:
             aviasales_url = ''
         
@@ -218,6 +219,7 @@ def model_response_generator(model, config):
             "answer": answer,
             "maps_res": maps_res,
             "aviasales_link": aviasales_url,
+            "aviasales_screen": avia_result,
             "table_data": table_data,
             "pydeck_data": pydeck_data
         }
@@ -263,6 +265,10 @@ def handle_user_input(model, config):
                         response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}"
                     else:
                         response_text += f"\n\n{aviasales_link}"
+
+                if "aviasales_screen" in chunk:
+                    if chunk['aviasales_screen']:
+                        st.image('screenshot.png')
                 
                 if config['mode'] == '2Gis':
                     

@@ -4,6 +4,8 @@ from typing import Dict, List, Any, Optional
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent
 import logfire
+import requests
+
 
 from src.offergen import Offer, offersgen_config
 
@@ -22,7 +24,15 @@ class PromptValidation(BaseModel):
     )
     reason: str = Field(description="Explanation why the prompt is invalid or valid")
     modified_prompt_for_rag_search: str = Field(
-        description="Modified prompt for RAG search"
+        description="Modified prompt for RAG search",
+    )
+    is_city: bool = Field(
+    description="Boolean flag indicating if a specific location is mentioned in the request",
+    default=False,
+    )
+    city: Optional[str] = Field(
+        default=None,
+        description="City name (if it exists)"
     )
 
 
@@ -56,8 +66,10 @@ validation_agent = Agent(
     Your tasks:
     1. Determine if the request is related to finding VTB Family offers/services
     2. Extract or determine the number of offers to generate
-    3. Provide a clear explanation for your decision
-    4. Create a clean search prompt by removing non-essential words
+    3. Identify if the request specifies a particular city for the search and extract the city name.
+    4. Set a boolean flag 'is_city' to true if a specific location is mentioned in the request, otherwise false.
+    5. Provide a clear explanation for your decision
+    6. Create a clean search prompt by removing non-essential words
     
     Rules for determining number of offers:
     - If request explicitly mentions a number (e.g., "найди 7 офферов", "покажи 3 предложения"): use that number
@@ -66,9 +78,9 @@ validation_agent = Agent(
     - If request is not about finding offers: set to 0
     
     Examples:
-    - "Найди мне 7 офферов связанных с ресторанами" -> 7 offers
-    - "Покажи предложение по фитнесу" -> 1 offer
-    - "Какие есть офферы по развлечениям?" -> 5 offers
+    - "Найди мне 7 офферов связанных с ресторанами" -> 7 offers, city: "Moscow", is_city: True
+    - "Покажи предложение по фитнесу" -> 1 offer, city: "Saint Petersburg", is_city: True
+    - "Какие есть офферы по развлечениям?" -> 5 offers, city: null, is_city: False
     - "Как погода сегодня?" -> 0 offers (invalid request)
     
     For the modified search prompt:
@@ -80,7 +92,7 @@ validation_agent = Agent(
     Input: "Найди мне пожалуйста 7 офферов из vtbfamily.ru, которые связаны с пивными барами в москве"
     Modified: "пивные бары в москве"
     
-    Remember: Your main goal is to accurately validate requests and determine the correct number of offers to generate.
+    Remember: Your main goal is to accurately validate requests, extract the number of offers to generate, identify the city if specified, and indicate via a boolean flag if a specific location is present.
     Do not generate offers yourself - focus only on request validation and processing.
     """,
 )

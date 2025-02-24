@@ -1,7 +1,7 @@
 # Импорты стандартной библиотеки
 import logging
 
-from serpapi import GoogleSearch
+from serpapi.google_search import GoogleSearch
 from src.utils.check_serp_response import APIKeyManager
 
 # Локальные импорты

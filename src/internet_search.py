@@ -1,7 +1,7 @@
 # Импорты стандартной библиотеки
 import logging
 
-from serpapi.google_search import GoogleSearch
+from serpapi import GoogleSearch
 from src.utils.check_serp_response import APIKeyManager
 
 # Локальные импорты
@@ -14,7 +14,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-serpapi_key_manager = APIKeyManager(path_to_file=ROOT_DIR / "api_keys_status.xlsx")
+serpapi_key_manager = APIKeyManager(path_to_file=ROOT_DIR / "api_keys_status.csv")
 
 
 def search_map(q, coordinates, serpapi_key):

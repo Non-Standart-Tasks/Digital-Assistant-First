@@ -1,26 +1,23 @@
-FROM python:3.10.14-slim
+# Stage 1: Build
+FROM python:3.10.14-slim AS builder
 
-# Установка системных зависимостей
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
-    curl \
-    unzip \
     && rm -rf /var/lib/apt/lists/*
 
-# Установка Poetry
-ENV POETRY_VERSION=2.1.1
-RUN pip install "poetry==$POETRY_VERSION"
+RUN pip install "poetry==2.1.1"
 
-# Рабочая директория
 WORKDIR /app
-
-# Копируем зависимости
 COPY pyproject.toml poetry.lock ./
+RUN poetry config virtualenvs.create false \
+    && poetry install --no-interaction --no-root
 
+# Stage 2: Runtime
+FROM python:3.10.14-slim
+
+WORKDIR /app
+COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.10/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin  
 COPY . .
 
-# Установка зависимостей
-RUN poetry lock && poetry env use python && poetry install --no-interaction
-
-# Команда запуска
-CMD ["poetry", "run", "streamlit", "run", "streamlit_app.py", "--server.port=8501"]
+CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501"]

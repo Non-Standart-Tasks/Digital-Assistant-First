@@ -212,7 +212,7 @@ def model_response_generator(model, config):
         )
         raise
 def handle_user_input(model, config):
-    """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
+    """Обработать пользовательский ввод и сгенерировать ответ ассистента с возможностью оценки."""
     prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
         st.session_state["messages"].append({"role": "user", "content": prompt})
@@ -223,6 +223,7 @@ def handle_user_input(model, config):
             response_placeholder = st.empty()
             response_text = ""
             maps_res = []  # Инициализируем maps_res
+
             for chunk in model_response_generator(model, config):
                 response_text += chunk["answer"]
 
@@ -234,9 +235,8 @@ def handle_user_input(model, config):
                         response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}"
                     else:
                         response_text += f"\n\n{aviasales_link}"
-                
+
                 if config['mode'] == '2Gis':
-                    
                     response_text += f"\n\n### Данные из 2Гис"
                     if 'table_data' in chunk:
                         df = pd.DataFrame(chunk['table_data'])
@@ -276,12 +276,11 @@ def handle_user_input(model, config):
                         )
                     else:
                         st.warning("Не найдено точек для отображения на PyDeck-карте.")
-                            
+                    
                     response_placeholder.markdown(response_text)
-                
+                    
                     if isinstance(chunk.get("maps_res"), list):
                         maps_res = chunk["maps_res"]
-
 
                 response_placeholder.markdown(response_text)
                 
@@ -292,9 +291,13 @@ def handle_user_input(model, config):
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
 
-               # Проверка и обработка maps_res
-
-     
+            # Добавляем интерфейс для оценки ответа
+            st.markdown("### Оцените ответ:")
+            col1, col2 = st.columns(2)
+            if col1.button("👍", key=f"thumbs_up_{len(st.session_state['messages'])}"):
+                st.success("Вы поставили 👍")
+            if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
+                st.error("Вы поставили 👎")   
         
 def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""

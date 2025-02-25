@@ -8,6 +8,7 @@ import http.client
 from openai import OpenAI
 import base64
 from PIL import Image
+from datetime import date
 
 from dotenv import load_dotenv
 
@@ -39,6 +40,36 @@ def construct_aviasales_url(
         return None
 
 
+def aviasales_request(model, config, user_input):
+    # Вызываем модель с параметром stream=False
+    formatted_prompt_tickets = config["system_prompt_tickets"].format(
+        user_input=user_input, now_date=date.today()
+    )
+    messages = [
+        {"role": "system", "content": formatted_prompt_tickets},
+        {"role": "user", "content": user_input},
+    ]
+
+    response = model.invoke(messages, stream=False)
+
+    # Получаем контент из ответа
+    if hasattr(response, "content"):
+        content = response.content
+    elif hasattr(response, "message"):
+        content = response.message.content
+    else:
+        content = str(response)
+
+    analysis = content.strip()
+    if analysis.startswith("```json"):
+        analysis = analysis[7:]  # Remove ```json
+    if analysis.endswith("```"):
+        analysis = analysis[:-3]  # Remove trailing ```
+    analysis = analysis.strip()
+    tickets_need = json.loads(analysis)
+    return tickets_need
+
+
 def analyze_aviasales_url(
     webpage_url,
     robot_id="09a7d6f0-2dd1-4547-b1df-b0c5963d1b86",
@@ -56,8 +87,8 @@ def analyze_aviasales_url(
         str: Текстовый анализ изображения от GPT-4V
     """
 
-    openai_key = os.getenv('OPENAI_API_KEY')
-    browse_ai_key = os.getenv('BROWSE_AI_KEY')
+    openai_key = os.getenv("OPENAI_API_KEY")
+    browse_ai_key = os.getenv("BROWSE_AI_KEY")
     client = OpenAI(api_key=openai_key)
 
     browse_api_url = f"https://api.browse.ai/v2/robots/{robot_id}/tasks"

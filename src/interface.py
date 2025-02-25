@@ -34,7 +34,7 @@ from src.telegram_system.telegram_rag import EnhancedRAGSystem
 from src.telegram_system.telegram_data_initializer import update_telegram_messages
 from src.telegram_system.telegram_data_initializer import TelegramManager
 from src.telegram_system.telegram_initialization import fetch_telegram_data
-from src.utils.aviasales_parser import analyze_aviasales_url, construct_aviasales_url
+from src.utils.aviasales_parser import analyze_aviasales_url, construct_aviasales_url, aviasales_request
 from src.geo_system.two_gis import fetch_2gis_data
 from src.utils.yndx_restaurants import (
     analyze_restaurant_request,
@@ -44,35 +44,6 @@ from src.utils.yndx_restaurants import (
 logger = setup_logging(logging_path='logs/digital_assistant.log')
 
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
-
-def aviasales_request(model, config, user_input):
-    # Вызываем модель с параметром stream=False
-    messages = [
-                {"role": "system", "content": config['system_prompt_tickets']},
-                {"role": "user", "content": user_input}
-                ]
-    
-    response = model.invoke(
-        messages,
-        stream=False
-    )
-
-    # Получаем контент из ответа
-    if hasattr(response, 'content'):
-        content = response.content
-    elif hasattr(response, 'message'):
-        content = response.message.content
-    else:
-        content = str(response)
-
-    analysis = content.strip()
-    if analysis.startswith("```json"):
-        analysis = analysis[7:]  # Remove ```json
-    if analysis.endswith("```"):
-        analysis = analysis[:-3]  # Remove trailing ```
-    analysis = analysis.strip()
-    tickets_need = json.loads(analysis)
-    return tickets_need
 
 def fetch_yndx_context(user_input, model):
     restaurant_analysis = analyze_restaurant_request(user_input, model)

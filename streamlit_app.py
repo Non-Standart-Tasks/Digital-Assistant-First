@@ -143,7 +143,7 @@ def main():
     from src import offergen
     #logger.info("imported offergen")
 
-    mode = st.sidebar.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС"))
+    mode = st.sidebar.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов"))
 
     if st.session_state.get("telegram_enabled", False):
         async def initialize_data():
@@ -158,6 +158,11 @@ def main():
         if mode == "Поиск по картам 2ГИС":
             st.session_state['config']['mode'] = '2Gis'
             chat_interface(st.session_state['config'])
+        elif mode == "Генерация офферов":
+            from src.interface import offers_mode_interface
+            st.session_state['config']['mode'] = 'Offers'
+            # Запускаем новую функцию, отвечающую за режим генерации офферов:
+            offers_mode_interface(st.session_state['config'])
         else:
             st.session_state['config']['mode'] = 'Chat'
             chat_interface(st.session_state['config'])

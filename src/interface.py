@@ -41,6 +41,7 @@ from src.websites_rag.yndx_restaurants import (
     get_restaurants_by_category,
     fetch_yndx_context
 )
+from streamlit_app import initialize_model
 
 logger = setup_logging(logging_path='logs/digital_assistant.log')
 
@@ -211,6 +212,87 @@ def model_response_generator(model, config):
             error=str(e)
         )
         raise
+
+
+import asyncio
+import streamlit as st
+
+# Импорты, связанные с офферами:
+from src.offergen.agent import validation_agent
+from src.offergen.utils import get_system_prompt_for_offers
+
+
+def offers_mode_interface(config):
+    """
+    Режим генерации офферов. Не используем nest_asyncio, 
+    вручную создаём event loop для вызова асинхронного validation_agent.
+    """
+    st.subheader("Режим генерации офферов VTB Family")
+
+    # Инициализируем локальную "историю" сообщений (чтобы не смешивать с общим чатом)
+    if "messages_offers" not in st.session_state:
+        st.session_state["messages_offers"] = []
+
+    # Показываем поле ввода (аналог st.chat_input для офферного режима)
+    user_input = st.chat_input("Введите запрос для генерации офферов...")
+
+    if user_input:
+        # Сохраняем сообщение пользователя
+        st.session_state["messages_offers"].append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # 1. Валидируем запрос:
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+
+        # вы можете вызвать run_sync или run, в зависимости от версии pydantic_ai
+        validation_result = loop.run_until_complete(validation_agent.run(user_input)).data
+
+        if not validation_result.is_valid:
+            # Запрос не подходит под формат "офферов"
+            with st.chat_message("assistant"):
+                st.warning("Этот запрос не подходит для режима офферов. Выберите другой режим.")
+            return
+
+        # 2. Формируем system_prompt с помощью get_system_prompt_for_offers
+        system_prompt = get_system_prompt_for_offers(validation_result, user_input)
+
+        if system_prompt == "No relevant offers were found for the search request.":
+            with st.chat_message("assistant"):
+                st.warning("Офферы не найдены, попробуйте уточнить запрос.")
+            return
+
+        # 3. Инициализируем вашу LLM-модель (например, GPT) 
+        #    - в зависимости от того, как вы делаете это в chat_interface
+        model = initialize_model(config)  # или ваша функция, наподобие ChatOpenAI(...)
+
+        # Собираем сообщения: system + user
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user",   "content": user_input}
+        ]
+
+        # 4. Подаём эти сообщения в модель 
+        response = model.invoke(messages, stream=True)
+
+        response_text = ""
+        with st.chat_message("assistant"):
+            response_placeholder = st.empty()
+
+            for chunk in response:  
+                if isinstance(chunk, tuple) and len(chunk) == 2:
+                    key, value = chunk
+                    if key == 'content':
+                        response_text += value
+                        response_placeholder.markdown(response_text)
+
+
+
+
 def handle_user_input(model, config):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
     prompt = st.chat_input("Введите запрос здесь...")
@@ -292,7 +374,6 @@ def handle_user_input(model, config):
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
 
-               # Проверка и обработка maps_res
 
      
         

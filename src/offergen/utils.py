@@ -12,34 +12,44 @@ import os
 
 logger = setup_logging(logging_path=str(root_dir / "logs" / "digital_assistant.log"))
 dotenv.load_dotenv()
-def check_offer_in_city(offer: Offer, city: str) -> bool:
-    """
-    Checks if the offer is located in the specified city using the 2GIS API.
-    """
-    radius = 3000
+def check_offer_in_city(offer, city: str) -> bool:
     API_KEY = os.getenv('MAPSAPI')
-    # Map city names to their coordinates (add more as needed)
-    city_coordinates = json.load('city.json')
-    # Use provided city's coordinates or default to Moscow
-    location = city_coordinates.get(city, "37.630866,55.752256")
-    
+    radius = 3000
+
     url = (
         "https://catalog.api.2gis.com/3.0/items"
         f"?q={offer.name}"
-        f"&location={location}"
+        f"&location=37.630866,55.752256"  # заглушка, если у вас нет точных координат
         f"&radius={radius}"
-        "&fields=items.point,items.address,items.name,items.contact_groups,items.reviews,items.rating"
+        "&fields=items.point,items.address,items.address_name,items.full_name,"
+        "items.name,items.contact_groups,items.reviews,items.rating"
         f"&key={API_KEY}"
     )
     
     response = requests.get(url)
     data = response.json()
     items = data.get("result", {}).get("items", [])
-    # Check if any returned item has an address that includes the city name
+
     for item in items:
-        address = item.get("address", "")
-        if city.lower() in address.lower():
+        # full_name: "Москва, улица Солянка, 12 ст1"
+        full_name = item.get("full_name", "")
+        # address_name: "улица Солянка, 12 ст1"
+        address_name = item.get("address_name", "")
+
+        # Проверяем, встречается ли city во full_name или address_name
+        # Приводим их в нижний регистр и сравниваем
+        if city.lower() in full_name.lower():
             return True
+        if city.lower() in address_name.lower():
+            return True
+
+        # Если нужно, смотрим на другие поля, например address_comment и т.п.
+        # address_comment = item.get("address_comment", "")
+        # if city.lower() in address_comment.lower():
+        #     return True
+
+        # Или же вы хотите проверить что-то из components массива
+
     return False
 
 def load_rag_examples(

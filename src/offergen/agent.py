@@ -79,8 +79,12 @@ validation_agent = Agent(
     
     Examples:
     - "Найди мне 7 офферов связанных с ресторанами" -> 7 offers, city: "Moscow", is_city: True
-    - "Покажи предложение по фитнесу" -> 1 offer, city: "Saint Petersburg", is_city: True
-    - "Какие есть офферы по развлечениям?" -> 5 offers, city: null, is_city: False
+    - "Покажи предложение по фитнесу" -> 10 offers, city: null, is_city: False
+    - "Какие есть офферы по развлечениям?" -> 10 offers, city: null, is_city: False
+    - "рестораны" -> 10 offers, city: null, is_city: False
+    - "рестораны москва" -> 10 offers, city: "Moscow", is_city: True
+    - "стоматологические клиники" -> 10 offers, city: null, is_city: False
+    - "стоматологические клиники в москве" -> 10 offers, city: "Moscow", is_city: True
     - "Как погода сегодня?" -> 0 offers (invalid request)
     
     For the modified search prompt:

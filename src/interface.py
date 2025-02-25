@@ -251,12 +251,8 @@ def offers_mode_interface(config):
 
         # вы можете вызвать run_sync или run, в зависимости от версии pydantic_ai
         validation_result = loop.run_until_complete(validation_agent.run(user_input)).data
-
-        if not validation_result.is_valid:
-            # Запрос не подходит под формат "офферов"
-            with st.chat_message("assistant"):
-                st.warning("Этот запрос не подходит для режима офферов. Выберите другой режим.")
-            return
+        if validation_result.number_of_offers_to_generate < 1:
+            validation_result.number_of_offers_to_generate = 10
 
         # 2. Формируем system_prompt с помощью get_system_prompt_for_offers
         system_prompt = get_system_prompt_for_offers(validation_result, user_input)

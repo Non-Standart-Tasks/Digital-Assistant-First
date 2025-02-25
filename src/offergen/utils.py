@@ -1,7 +1,7 @@
-from typing import Dict, List, Optional
+from typing import Dict, List, Optional, Union, Tuple
 import requests
 import json
-from src.offergen import Offer, offers_db, db_service
+from src.offergen import Offer, offers_db, db_service, rag_n_examples
 from src.offergen.agent import offer_matching_agent, PromptValidation, RagDeps
 from src.offergen.vector_db import VectorDBService, Context, SearchResponse
 from src.utils.logging import setup_logging
@@ -9,54 +9,78 @@ from src.utils.paths import ROOT_DIR as root_dir
 import dotenv
 from typing import Optional
 import os
+from src.offergen.city import city, CITY_MAP
+
 
 logger = setup_logging(logging_path=str(root_dir / "logs" / "digital_assistant.log"))
 dotenv.load_dotenv()
-def check_offer_in_city(offer, city: str) -> bool:
-    API_KEY = os.getenv('MAPSAPI')
-    radius = 3000
+
+
+
+
+def unify_city_to_russian(raw_city: str) -> str:
+    city_lower = raw_city.lower().strip()
+    return CITY_MAP.get(city_lower, city_lower)
+
+def get_coords_for_city(city_en: str) -> str:
+    default_coords = "37.630866,55.752256"
+    return city.get(city_en, default_coords)
+
+def check_offer_in_city(offer_or_tuple: Union[Offer, Tuple[Offer, float]], user_city_input: str) -> bool:
+    # 1) Извлекаем объект Offer, если это кортеж
+    if isinstance(offer_or_tuple, tuple):
+        offer = offer_or_tuple[0]
+    else:
+        offer = offer_or_tuple
+
+    # 2) Приводим пользовательский ввод к русскому для поиска в описании
+    city_ru = unify_city_to_russian(user_city_input)  # напр. "moscow" -> "москва"
+    full_desc = (offer.full_description or "").lower()
+    if city_ru in full_desc:
+        return True  # Упоминается в описании
+
+    # 3) Если не упоминается в описании, формируем координаты для 2ГИС
+    #    Нужно передать англ. вариант, допустим title()
+    city_en = user_city_input.title()  # "Moscow" / "Saint Petersburg"
+    coords = get_coords_for_city(city_en)
+
+    API_KEY = os.getenv("MAPSAPI")
+    radius = 8000
+
+    offer_name = (offer.name or "").strip()
+    if not offer_name:
+        return False
 
     url = (
         "https://catalog.api.2gis.com/3.0/items"
-        f"?q={offer.name}"
-        f"&location=37.630866,55.752256"  # заглушка, если у вас нет точных координат
+        f"?q={offer_name}"
+        f"&location={coords}"  # используем координаты
         f"&radius={radius}"
-        "&fields=items.point,items.address,items.address_name,items.full_name,"
-        "items.name,items.contact_groups,items.reviews,items.rating"
+        "&fields=items.full_name,items.address_name"
         f"&key={API_KEY}"
     )
-    
-    response = requests.get(url)
-    data = response.json()
+    resp = requests.get(url)
+    if not resp.ok:
+        return False
+
+    data = resp.json()
     items = data.get("result", {}).get("items", [])
 
+    # Ищем русское название (city_ru) в full_name/address_name
     for item in items:
-        # full_name: "Москва, улица Солянка, 12 ст1"
-        full_name = item.get("full_name", "")
-        # address_name: "улица Солянка, 12 ст1"
-        address_name = item.get("address_name", "")
-
-        # Проверяем, встречается ли city во full_name или address_name
-        # Приводим их в нижний регистр и сравниваем
-        if city.lower() in full_name.lower():
+        full_name = item.get("full_name", "").lower()
+        address_name = item.get("address_name", "").lower()
+        if city_ru in full_name or city_ru in address_name:
             return True
-        if city.lower() in address_name.lower():
-            return True
-
-        # Если нужно, смотрим на другие поля, например address_comment и т.п.
-        # address_comment = item.get("address_comment", "")
-        # if city.lower() in address_comment.lower():
-        #     return True
-
-        # Или же вы хотите проверить что-то из components массива
 
     return False
 
 def load_rag_examples(
-    offers_db: Dict[int, Offer], query: str, db_service: VectorDBService, city: Optional[str] = None
+    offers_db: Dict[int, Offer], query: str, db_service: VectorDBService, n_examples: int=20, city: Optional[str] = None
 ) -> tuple[list[Offer], list[float], list[int]]:
     """Load and filter RAG examples relevant to the query with optional city filtering"""
-    docs_and_scores = db_service.search(query, k=25)
+
+    docs_and_scores = db_service.search(query, k= n_examples)
     rag_data = SearchResponse(
         documents=[
             Context(content=doc.page_content, metadata=doc.metadata)
@@ -82,15 +106,14 @@ def load_rag_examples(
 def get_system_prompt_for_offers(
     validation_result: PromptValidation, prompt: str
 ) -> str:
+    '''
     if not validation_result.is_valid:
         raise ValueError(
             f"Unable to generate system prompt for prompt: {prompt}. "
             f"Reason: {validation_result.reason}. "
             "Please ensure the request meets validation requirements."
         )
-
-    if validation_result.number_of_offers_to_generate == 0:
-        return "Вы находитесь в режиме генерации офферов, пожалуйста перейдите в стандартный режим для получения ответа на этот запрос"
+    '''
 
     # Use the city parameter if is_city is true
     city = validation_result.city if validation_result.is_city else None
@@ -99,7 +122,7 @@ def get_system_prompt_for_offers(
         f"Loading RAG examples for prompt: {validation_result.modified_prompt_for_rag_search}"
     )
     offers, scores, offer_ids = load_rag_examples(
-        offers_db, validation_result.modified_prompt_for_rag_search, db_service, city=city
+        offers_db, validation_result.modified_prompt_for_rag_search, db_service, city=city, n_examples=rag_n_examples
     )
     logger.info(
         f"RAG examples loaded for prompt: {validation_result.modified_prompt_for_rag_search}"

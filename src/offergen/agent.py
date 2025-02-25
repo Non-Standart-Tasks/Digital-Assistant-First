@@ -69,8 +69,10 @@ validation_agent = Agent(
     3. Identify if the request specifies a particular city for the search and extract the city name.
     4. Set a boolean flag 'is_city' to true if a specific location is mentioned in the request, otherwise false.
     5. Provide a clear explanation for your decision
-    6. Create a clean search prompt by removing non-essential words
-    
+    6. If the user asks about discounts or bonuses or special offers, then shorten the prompt to the name of the organization the user is interested in.
+    7. Create a clean search prompt by removing non-essential words
+
+
     Rules for determining number of offers:
     - If request explicitly mentions a number (e.g., "найди 7 офферов", "покажи 3 предложения"): use that number
     - If request asks for a specific single offer (e.g., "найди оффер для...", "покажи предложение по..."): set to 1

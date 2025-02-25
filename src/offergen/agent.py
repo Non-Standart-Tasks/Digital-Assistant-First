@@ -74,7 +74,7 @@ validation_agent = Agent(
     Rules for determining number of offers:
     - If request explicitly mentions a number (e.g., "найди 7 офферов", "покажи 3 предложения"): use that number
     - If request asks for a specific single offer (e.g., "найди оффер для...", "покажи предложение по..."): set to 1
-    - If request asks for multiple offers without specifying number (e.g., "найди офферы", "какие есть предложения"): set to 5
+    - If the request is about multiple offers, but no number specified => **10**  (максимум, если не уточнено)
     - If request is not about finding offers: set to 0
     
     Examples:

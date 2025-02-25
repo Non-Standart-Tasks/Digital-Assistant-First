@@ -56,7 +56,7 @@ def load_rag_examples(
     offers_db: Dict[int, Offer], query: str, db_service: VectorDBService, city: Optional[str] = None
 ) -> tuple[list[Offer], list[float], list[int]]:
     """Load and filter RAG examples relevant to the query with optional city filtering"""
-    docs_and_scores = db_service.search(query, k=20)
+    docs_and_scores = db_service.search(query, k=25)
     rag_data = SearchResponse(
         documents=[
             Context(content=doc.page_content, metadata=doc.metadata)

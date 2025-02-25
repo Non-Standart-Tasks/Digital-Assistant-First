@@ -20,4 +20,4 @@ COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin  
 COPY . .
 
-CMD ["streamlit", "run", "streamlit_app.py", "--server.port=8501"]
+CMD streamlit run streamlit_app.py --server.port $STREAMLIT_SERVER_PORT

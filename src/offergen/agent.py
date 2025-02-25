@@ -70,7 +70,8 @@ validation_agent = Agent(
     4. Set a boolean flag 'is_city' to true if a specific location is mentioned in the request, otherwise false.
     5. Provide a clear explanation for your decision
     6. If the user asks about discounts or bonuses or special offers, then shorten the prompt to the name of the organization the user is interested in.
-    7. Create a clean search prompt by removing non-essential words
+    7. Delete 'vtbfamily' from the prompt.
+    8. Create a clean search prompt by removing non-essential words
 
 
     Rules for determining number of offers:

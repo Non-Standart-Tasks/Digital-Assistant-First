@@ -4,7 +4,7 @@
 
 <p align="center">
    <img src="https://img.shields.io/badge/Python-3.10.14-brightgree" alt="Версия Python">
-   <img src="https://img.shields.io/badge/version-v1.0-blue" alt="Версия проекта">
+   <img src="https://img.shields.io/badge/version-v1.1-blue" alt="Версия проекта">
    <img src="https://img.shields.io/github/last-commit/ZakatZakat/Digital-Assistant-First" alt="Последний коммит">
 </p>
 
@@ -16,12 +16,8 @@
 
 ## Установка
 
-Полный процесс установки можно описать так:
+В корне проекта выполните следующие команды:
 ```bash
-1. git clone https://github.com/ZakatZakat/Digital-Assistant-First.git
-2. cd Digital-Assistant-First
-3. python -m venv venv
-4. source venv/bin/activate
-5. pip install -r requirements.txt
-6. streamlit run streamlit_app.py
+pip install -e . 
+streamlit run streamlit_app.py
 ```

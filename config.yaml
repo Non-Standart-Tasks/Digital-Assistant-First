@@ -1,9 +1,22 @@
 internet_search: False
 model: 'gpt-4o-mini'
-2gis-key: '5a45f277-3257-465c-b822-e97573c6bc0d'
+2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'
 telegram_enabled: True
 collect_messages: 100
 
+offersgen:
+  model: gpt-4o-mini
+  offers_db: content/json/offers/raw/offers.json
+  rag_n_examples: 40
+  city_filter: False
+  db_service:
+    json_path: content/json/offers/offers_by_category.json
+    chunk_overlap: 300
+    chunk_size: 700
+    dump_path: content/json/offers/offers_docs.json
+    persist_directory: content/json/offers/offers_persist_db
+    collection_name: vtb_family_offers
+    emb_model: text-embedding-ada-002
 
 system_prompt: |
     Вы — цифровой помощник сервиса ВТБ Консьерж, нацеленный на предоставление точной, творчески оформленной информации. Если ответа на вопрос нет в контексте, честно сообщите об этом, но предложите альтернативные пути решения или дополнительные варианты, если это возможно.

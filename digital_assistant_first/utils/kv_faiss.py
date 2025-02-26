@@ -23,10 +23,16 @@ class KeyValueFAISS(FAISS):
     4.1523235e-12)]
     because 'VTB' in query is equal to 'VTB' in second document's key, so cosine distance between query and key is zero.
     """
+
     def add_value_documents(self, key_value_dict: dict):
         self.dict = key_value_dict
         return self
-    
+
     def similarity_search_with_score_by_vector(self, *args, **kwargs):
-        unprocessed_docs = super().similarity_search_with_score_by_vector(*args, **kwargs)
-        return [(Document(self.dict[doc.page_content]), score) for doc, score in unprocessed_docs]
+        unprocessed_docs = super().similarity_search_with_score_by_vector(
+            *args, **kwargs
+        )
+        return [
+            (Document(self.dict[doc.page_content]), score)
+            for doc, score in unprocessed_docs
+        ]

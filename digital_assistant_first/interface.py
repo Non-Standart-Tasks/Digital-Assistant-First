@@ -352,6 +352,7 @@ def handle_user_input(model, config):
                     # Отрисовка PyDeck карты
                     if 'pydeck_data' in chunk:
                         df_pydeck = pd.DataFrame(chunk['pydeck_data'])
+                        print(df_pydeck)
                         st.subheader("Карта")
                         st.pydeck_chart(
                             pdk.Deck(
@@ -397,6 +398,7 @@ def handle_user_input(model, config):
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
 
+               # Проверка и обработка maps_res
 
      
         

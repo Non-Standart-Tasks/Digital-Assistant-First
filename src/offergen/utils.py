@@ -4,8 +4,8 @@ import json
 from src.offergen import Offer, offers_db, db_service, rag_n_examples
 from src.offergen.agent import offer_matching_agent, PromptValidation, RagDeps
 from src.offergen.vector_db import VectorDBService, Context, SearchResponse
-from src.utils.logging import setup_logging
-from src.utils.paths import ROOT_DIR as root_dir
+from digital_assistant_first.utils.logging import setup_logging
+from digital_assistant_first.utils.paths import ROOT_DIR as root_dir
 import dotenv
 from typing import Optional
 import os

@@ -16,6 +16,3 @@ api_keys_status.pkl
 **/__pycache__/
 **/digital_assistant.log
 .python-version
-content/json/offers/offers_persist_db/*
-poetry.lock
-logs/*

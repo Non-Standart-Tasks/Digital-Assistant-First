@@ -10,9 +10,10 @@ import streamlit as st
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 # Локальные импорты
-from src.interface import *
+from digital_assistant_first.interface import *
+from langchain_core.documents import Document
 
-from src.telegram_system.telegram_data_initializer import update_telegram_messages
+from digital_assistant_first.telegram_system.telegram_data_initializer import update_telegram_messages
 
 def setup_logging():
     """Настройка конфигурации логирования."""
@@ -159,7 +160,6 @@ def main():
             st.session_state['config']['mode'] = '2Gis'
             chat_interface(st.session_state['config'])
         elif mode == "Генерация офферов":
-            from src.interface import offers_mode_interface
             st.session_state['config']['mode'] = 'Offers'
             # Запускаем новую функцию, отвечающую за режим генерации офферов:
             offers_mode_interface(st.session_state['config'])

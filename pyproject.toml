@@ -8,6 +8,7 @@ packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
+"2captcha-python" = ">=1.5.1,<2.0.0"
 streamlit = ">=1.41.1,<2.0.0"
 python-dotenv = ">=1.0.1,<2.0.0"
 langchain-openai = ">=0.3.3,<0.4.0"
@@ -31,7 +32,6 @@ twocaptcha = "^0.0.1"
 ipykernel = "^6.29.5"
 
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
+requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
-
 

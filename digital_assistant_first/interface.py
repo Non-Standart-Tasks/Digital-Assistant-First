@@ -19,27 +19,26 @@ from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
 from langchain.chains import create_retrieval_chain
 from langchain.chains.combine_documents import create_stuff_documents_chain
-from src.utils.check_serp_response import APIKeyManager
+from digital_assistant_first.utils.check_serp_response import APIKeyManager
 
-from src.utils.logging import setup_logging, log_api_call
-from src.internet_search import *
+from digital_assistant_first.utils.logging import setup_logging, log_api_call
+from digital_assistant_first.internet_search import *
 
 import requests
 import pydeck as pdk
 
 # Локальные импорты
-from src.utils.kv_faiss import KeyValueFAISS
-from src.utils.paths import ROOT_DIR
-from src.telegram_system.telegram_rag import EnhancedRAGSystem
-from src.telegram_system.telegram_data_initializer import update_telegram_messages
-from src.telegram_system.telegram_data_initializer import TelegramManager
-from src.telegram_system.telegram_initialization import fetch_telegram_data
-from src.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
-from src.geo_system.two_gis import fetch_2gis_data
-from src.websites_rag.yndx_restaurants import (
+from digital_assistant_first.utils.kv_faiss import KeyValueFAISS
+from digital_assistant_first.utils.paths import ROOT_DIR
+from digital_assistant_first.telegram_system.telegram_rag import EnhancedRAGSystem
+from digital_assistant_first.telegram_system.telegram_data_initializer import update_telegram_messages
+from digital_assistant_first.telegram_system.telegram_data_initializer import TelegramManager
+from digital_assistant_first.telegram_system.telegram_initialization import fetch_telegram_data
+from digital_assistant_first.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
+from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
+from digital_assistant_first.utils.yndx_restaurants import (
     analyze_restaurant_request,
     get_restaurants_by_category,
-    fetch_yndx_context
 )
 from streamlit_app import initialize_model
 

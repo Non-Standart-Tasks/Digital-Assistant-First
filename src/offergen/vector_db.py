@@ -4,6 +4,7 @@ import re
 import uuid
 from pathlib import Path
 from typing import Any, Dict, List, Optional
+from src.offergen import Offer, emb_model
 
 from dotenv import load_dotenv
 from langchain.schema import Document
@@ -66,6 +67,7 @@ class VectorDBService:
         chunk_size: int = 300,
         chunk_overlap: int = 50,
         collection_name: str = "vtb_docs",
+        emb_model: str = 'text-embedding-ada-002',
     ) -> None:
         """Initialize the VectorDBService.
 
@@ -83,7 +85,7 @@ class VectorDBService:
 
         # Initialize embeddings
         self.embeddings = OpenAIEmbeddings(
-            model="text-embedding-ada-002",
+            model=emb_model,
             openai_api_key=self.openai_api_key,
         )
         self.json_data = self._load_json(json_path)

@@ -16,6 +16,7 @@ offersgen:
     dump_path: content/json/offers/offers_docs.json
     persist_directory: content/json/offers/offers_persist_db
     collection_name: vtb_family_offers
+    emb_model: text-embedding-ada-002
 
 system_prompt: |
     Вы — цифровой помощник сервиса ВТБ Консьерж, нацеленный на предоставление точной, творчески оформленной информации. Если ответа на вопрос нет в контексте, честно сообщите об этом, но предложите альтернативные пути решения или дополнительные варианты, если это возможно.

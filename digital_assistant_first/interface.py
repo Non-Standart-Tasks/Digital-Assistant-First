@@ -75,18 +75,43 @@ def aviasales_request(model, config, user_input):
     tickets_need = json.loads(analysis)
     return tickets_need
 
+def fetch_yndx_context(user_input, model):
+    restaurant_analysis = analyze_restaurant_request(user_input, model)
+    restaurant_context_text = ""
+    restaurants_data = []
+    if restaurant_analysis.get("restaurant_recommendation", "false").lower() == "true":
+        requested_category = restaurant_analysis.get("category", "")
+        if requested_category:
+            restaurants_data = get_restaurants_by_category(requested_category)
+            if restaurants_data:
+                # Формируем текстовый блок с информацией о найденных ресторанах
+                restaurant_context_parts = []
+                
+                for r in restaurants_data:
+                    restaurant_context_parts.append(
+                        f"Название: {r.get('name')}\n"
+                        f"Режим работы: {r.get('working_hours')}\n"
+                        f"Адрес: {r.get('address', {}).get('street')}\n"
+                        f"Метро: {', '.join(r.get('address', {}).get('metro', []))}\n"
+                        f"Описание: {r.get('description')}\n"
+                        f"Категории: {', '.join(r.get('categories', []))}"
+                    )
+                restaurant_context_text = "\n\n".join(restaurant_context_parts)
+
+    return restaurant_context_text
 
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
-    # Получение последнего пользовательского ввода
+    
     user_input = st.session_state["messages"][-1]["content"]
-
-    # Получение информации о билетах и контекста ресторанов
+    
     tickets_need = aviasales_request(model, config, user_input)
+
     restaurant_context_text = fetch_yndx_context(user_input, model)
 
+
     try:
-        # Формирование истории сообщений (без системных сообщений)
+        # Формирование истории сообщений (исключая системное сообщение)
         message_history = ""
         if "messages" in st.session_state and len(st.session_state["messages"]) > 1:
             history_messages = [
@@ -98,23 +123,24 @@ def model_response_generator(model, config):
             if history_size:
                 history_messages = history_messages[-history_size:]
             message_history = "\n".join(history_messages)
-
-        # Если включён интернет-поиск, выполнить его; иначе, оставить пустые значения
+        
+        # Если интернет-поиск включён, вызываем функции поиска, иначе возвращаем пустую строку
         if config.get("internet_search", False):
             _, serpapi_key = serpapi_key_manager.get_best_api_key()
+
             shopping_res = search_shopping(user_input, serpapi_key)
             internet_res, links, coordinates = search_places(user_input, serpapi_key)
             maps_res = search_map(user_input, coordinates, serpapi_key)
-            # yandex_res = yandex_search(user_input, serpapi_key)
+            #yandex_res = yandex_search(user_input, serpapi_key)
         else:
             shopping_res = ""
             internet_res = ""
             links = ""
             maps_res = ""
-            # yandex_res = ""
+            #yandex_res = ""
 
-        # Если требуется, сформировать URL для Aviasales
-        if tickets_need.get("response", "").lower() == "true":
+        if tickets_need.get('response', '').lower() == 'true':
+            # Get flight options
             aviasales_url = construct_aviasales_url(
                 tickets_need["departure_city"],
                 tickets_need["destination"],
@@ -124,67 +150,70 @@ def model_response_generator(model, config):
                 tickets_need.get("travel_class", ""),
             )
         else:
-            aviasales_url = ""
-
-        # Если включена поддержка Telegram, получить контекст из Telegram
+            aviasales_url = ''
+        
         if config.get("telegram_enabled", False):
             telegram_manager = TelegramManager()
             rag_system = EnhancedRAGSystem(
                 data_file="data/telegram_messages.json",
                 index_directory="data/"
             )
+
             telegram_context = fetch_telegram_data(user_input, rag_system, k=50)
         else:
-            telegram_context = ""
+            telegram_context = ''
 
-        # Формирование запроса для ресторанного контекста, если он есть
-        restaurants_prompt = restaurant_context_text if restaurant_context_text else ""
+        if restaurant_context_text:
+            restaurants_prompt = f"{restaurant_context_text}"
+        else:
+            restaurants_prompt = ""
 
-        # Загрузка шаблона системного промпта из конфигурации
+        # Загрузка системного промпта из YAML-конфига
         system_prompt_template = config["system_prompt"]
-
-        # Форматирование системного промпта с подстановкой переменных
+        
+        # Форматирование промпта с подстановкой переменных
         formatted_prompt = system_prompt_template.format(
             context=message_history,
             internet_res=internet_res,
             links=links,
             shopping_res=shopping_res,
             maps_res=maps_res,
-            # yandex_res=yandex_res,
+            #yandex_res=yandex_res,
             telegram_context=telegram_context,
             yndx_restaurants=restaurants_prompt
         )
+        # Создание цепочки для модели, если имя модели начинается с 'gpt'
 
-        # Если режим '2Gis', получить дополнительные данные для таблицы и карты
         table_data = []
         pydeck_data = []
-        if config.get("mode") == "2Gis":
+        if config.get('mode') == '2Gis':
             table_data, pydeck_data = fetch_2gis_data(user_input, config)
 
-        # Формирование шаблона сообщений для запроса с помощью ChatPromptTemplate
+
+        
+        # Формируем шаблон сообщений для запроса
         prompt = ChatPromptTemplate.from_messages([
             ("system", formatted_prompt),
             ("human", "User query: {input}\nAdditional context: {context}")
         ])
-        # Форматирование сообщений, подставляя входные данные пользователя (дополнительного контекста нет)
-        messages = prompt.format(input=user_input, context="")
-
-        # Вызов модели с потоковой передачей ответа
+        
+        # Форматируем сообщения, подставляя входные данные пользователя
+        messages = prompt.format(input=user_input, context="")  # Если дополнительного контекста нет, можно оставить пустую строку
+        
+        # Вызываем модель напрямую без retrieval chain
         response = model.invoke(messages, stream=True)
-
-        # Извлечение ответа из модели (поддержка разных вариантов формата ответа)
-        if hasattr(response, "content"):
+        
+        # Извлекаем ответ из модели (поддержка разных вариантов формата ответа)
+        if hasattr(response, 'content'):
             answer = response.content
-        elif hasattr(response, "message"):
+        elif hasattr(response, 'message'):
             answer = response.message.content
         else:
             answer = str(response)
-
-        # Если данных для таблицы и pydeck нет, оставить пустыми списками
+        
         table_data = table_data if table_data else []
         pydeck_data = pydeck_data if pydeck_data else []
-
-        # Возврат результата вместе с дополнительными данными
+        # Выводим ответ вместе с дополнительными данными (например, maps_res)
         yield {
             "answer": answer,
             "maps_res": maps_res,
@@ -193,16 +222,15 @@ def model_response_generator(model, config):
             "pydeck_data": pydeck_data
         }
 
-        # Логирование вызова API
+        
         log_api_call(
-            logger=logger,
-            source=f"LLM ({config['Model']})",
-            request=user_input,
-            response=answer,
-        )
+                logger=logger,
+                source=f"LLM ({config['Model']})",
+                request=user_input,
+                response=answer,
+            )
 
     except Exception as e:
-        # Логирование ошибки при вызове API
         log_api_call(
             logger=logger,
             source=f"LLM ({config['Model']})",

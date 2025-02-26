@@ -10,11 +10,14 @@ from pathlib import Path
 from utils.paths import CONTENT_DIR
 
 # Настройка логирования
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(
+    level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
+)
 
 # Константы для путей и конфигураций
-PDF_DIR = CONTENT_DIR / 'pdf'
-OUTPUT_JSON = CONTENT_DIR / 'global_function.json'
+PDF_DIR = CONTENT_DIR / "pdf"
+OUTPUT_JSON = CONTENT_DIR / "global_function.json"
+
 
 # Функция для обработки одного PDF файла
 def process_single_pdf(pdf_file: Path) -> str:
@@ -22,15 +25,16 @@ def process_single_pdf(pdf_file: Path) -> str:
     try:
         with pymupdf.open(os.path.normpath(pdf_file)) as doc:
             text = chr(12).join([page.get_text() for page in doc])
-            paragraphs = text.split('\x0c')
+            paragraphs = text.split("\x0c")
             formatted_paragraphs = [
-                ' '.join(paragraph.replace('\n', ' ').replace('\xa0', ' ').split())
+                " ".join(paragraph.replace("\n", " ").replace("\xa0", " ").split())
                 for paragraph in paragraphs
             ]
-            return '\n\n'.join(formatted_paragraphs)
+            return "\n\n".join(formatted_paragraphs)
     except Exception as e:
         logging.error(f"Ошибка обработки {pdf_file}: {e}")
         return ""
+
 
 # Функция для генерации JSON объекта с использованием LLM
 def generate_json_from_text(llm, text: str) -> dict:
@@ -49,8 +53,10 @@ def generate_json_from_text(llm, text: str) -> dict:
     {formatted_text}
 
     dictionary:
-    """   
-    prompt = PromptTemplate(input_variables=["formatted_text"], template=prompt_template)
+    """
+    prompt = PromptTemplate(
+        input_variables=["formatted_text"], template=prompt_template
+    )
     chain = prompt | llm
 
     try:
@@ -62,6 +68,7 @@ def generate_json_from_text(llm, text: str) -> dict:
     except Exception as e:
         logging.error(f"Error generating JSON from text: {e}")
         return {}
+
 
 # Функция для сохранения данных в JSON
 def save_json_data(output_file: Path, data: dict) -> None:
@@ -88,18 +95,18 @@ def save_json_data(output_file: Path, data: dict) -> None:
     except Exception as e:
         logging.error(f"Ошибка сохранения JSON данных: {e}")
 
+
 # Функция для постобработки данных
 def postprocess(input_path: Path = OUTPUT_JSON):
     if not input_path.exists():
         print(f"Файл не найден: {input_path}")
         return
     else:
-        with open(input_path, 'r', encoding='utf-8') as file:
+        with open(input_path, "r", encoding="utf-8") as file:
             data = json.load(file)
 
-
     def clean_text(text):
-        return text.replace('\\"', '"').replace('\n', ' ').strip()
+        return text.replace('\\"', '"').replace("\n", " ").strip()
 
     # Обработка каждого элемента в списке
     cleaned_entry = {}
@@ -109,20 +116,21 @@ def postprocess(input_path: Path = OUTPUT_JSON):
             # Очистка ключей и значений
             cleaned_key = clean_text(key)
             cleaned_value = clean_text(value)
-                
+
             # Сохранение очищенных данных
             cleaned_entry[cleaned_key] = cleaned_value
 
     # Сохранение очищенных записей в JSON файл
-    with open(input_path, 'w', encoding='utf-8') as json_file:
+    with open(input_path, "w", encoding="utf-8") as json_file:
         json.dump(cleaned_entry, json_file, ensure_ascii=False, indent=4)
+
 
 # Основная функция обработки
 def process_pdf_files(path: Path, output_file: Path) -> None:
     """Обработать все PDF файлы в указанной директории."""
     llm = Ollama(model="llama3.1:8b-instruct-q8_0")
 
-    for pdf_file in path.glob('*.pdf'):
+    for pdf_file in path.glob("*.pdf"):
         logging.info(f"Обработка {pdf_file}")
         formatted_text = process_single_pdf(pdf_file)
 
@@ -132,6 +140,7 @@ def process_pdf_files(path: Path, output_file: Path) -> None:
                 save_json_data(output_file, json_data)
 
     postprocess()
+
 
 if __name__ == "__main__":
     process_pdf_files(PDF_DIR, OUTPUT_JSON)

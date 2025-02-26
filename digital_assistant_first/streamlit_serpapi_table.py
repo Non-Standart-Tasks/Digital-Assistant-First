@@ -8,22 +8,26 @@ st.title("Проверка статуса API-ключей")
 st.write("Это приложение позволяет просматривать и обновлять статус ваших API-ключей.")
 
 # Загрузка начального DataFrame
+<<<<<<< HEAD
+df = check_api_keys("api_keys_status.xlsx")
+=======
 df = check_api_keys('api_keys_status.csv')
+>>>>>>> origin/master
 
 # Отображение текущей таблицы
 gb = GridOptionsBuilder.from_dataframe(df)
 gb.configure_default_column(min_column_width=100)
-gb.configure_grid_options(domLayout='normal')
+gb.configure_grid_options(domLayout="normal")
 grid_options = gb.build()
 
 AgGrid(
     df,
     gridOptions=grid_options,
     fit_columns_on_grid_load=True,
-    columns_auto_size_mode='FIT_ALL_COLUMNS_TO_VIEW',
+    columns_auto_size_mode="FIT_ALL_COLUMNS_TO_VIEW",
     height=450,
-    width='100%',
-    key="initial_grid"
+    width="100%",
+    key="initial_grid",
 )
 
 # Раздел для добавления новых записей

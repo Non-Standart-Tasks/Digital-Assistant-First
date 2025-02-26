@@ -40,6 +40,7 @@ from digital_assistant_first.utils.yndx_restaurants import (
     analyze_restaurant_request,
     get_restaurants_by_category,
 )
+from streamlit_app import initialize_model
 
 logger = setup_logging(logging_path='logs/digital_assistant.log')
 
@@ -98,7 +99,6 @@ def fetch_yndx_context(user_input, model):
                 restaurant_context_text = "\n\n".join(restaurant_context_parts)
 
     return restaurant_context_text
-
 
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
@@ -240,6 +240,82 @@ def model_response_generator(model, config):
         )
         raise
 
+
+import asyncio
+import streamlit as st
+
+# Импорты, связанные с офферами:
+from src.offergen.agent import validation_agent
+from src.offergen.utils import get_system_prompt_for_offers
+
+
+def offers_mode_interface(config):
+    """
+    Режим генерации офферов. Не используем nest_asyncio, 
+    вручную создаём event loop для вызова асинхронного validation_agent.
+    """
+    st.subheader("Режим генерации офферов VTB Family")
+
+    # Инициализируем локальную "историю" сообщений (чтобы не смешивать с общим чатом)
+    if "messages_offers" not in st.session_state:
+        st.session_state["messages_offers"] = []
+
+    # Показываем поле ввода (аналог st.chat_input для офферного режима)
+    user_input = st.chat_input("Введите запрос для генерации офферов...")
+
+    if user_input:
+        # Сохраняем сообщение пользователя
+        st.session_state["messages_offers"].append({"role": "user", "content": user_input})
+        with st.chat_message("user"):
+            st.markdown(user_input)
+
+        # 1. Валидируем запрос:
+        try:
+            loop = asyncio.get_event_loop()
+        except RuntimeError:
+            loop = asyncio.new_event_loop()
+            asyncio.set_event_loop(loop)
+
+        # вы можете вызвать run_sync или run, в зависимости от версии pydantic_ai
+        validation_result = loop.run_until_complete(validation_agent.run(user_input)).data
+        if validation_result.number_of_offers_to_generate < 1:
+            validation_result.number_of_offers_to_generate = 10
+
+        # 2. Формируем system_prompt с помощью get_system_prompt_for_offers
+        system_prompt = get_system_prompt_for_offers(validation_result, user_input)
+
+        if system_prompt == "No relevant offers were found for the search request.":
+            with st.chat_message("assistant"):
+                st.warning("Офферы не найдены, попробуйте уточнить запрос.")
+            return
+
+        # 3. Инициализируем вашу LLM-модель (например, GPT) 
+        #    - в зависимости от того, как вы делаете это в chat_interface
+        model = initialize_model(config)  # или ваша функция, наподобие ChatOpenAI(...)
+
+        # Собираем сообщения: system + user
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user",   "content": user_input}
+        ]
+
+        # 4. Подаём эти сообщения в модель 
+        response = model.invoke(messages, stream=True)
+
+        response_text = ""
+        with st.chat_message("assistant"):
+            response_placeholder = st.empty()
+
+            for chunk in response:  
+                if isinstance(chunk, tuple) and len(chunk) == 2:
+                    key, value = chunk
+                    if key == 'content':
+                        response_text += value
+                        response_placeholder.markdown(response_text)
+
+
+
+
 def handle_user_input(model, config):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
     prompt = st.chat_input("Введите запрос здесь...")
@@ -276,6 +352,7 @@ def handle_user_input(model, config):
                     # Отрисовка PyDeck карты
                     if 'pydeck_data' in chunk:
                         df_pydeck = pd.DataFrame(chunk['pydeck_data'])
+                        print(df_pydeck)
                         st.subheader("Карта")
                         st.pydeck_chart(
                             pdk.Deck(
@@ -341,103 +418,6 @@ def display_chat_history():
             if 'question' in message:
                 st.markdown(message["question"])
             st.markdown(message['content'])
-
-
-def creating_documents(config):
-    """Создать векторное пространство на основе конфигурации."""
-    if config["System_type"] == 'File' and 'Uploaded_file' in config and config['Uploaded_file'] is not None:
-        uploaded_file = config['Uploaded_file']
-        # Обработка загруженного файла
-        if uploaded_file.type == "text/plain":
-            # Чтение текстового файла
-            file_content = uploaded_file.getvalue().decode("utf-8")
-            documents = [Document(page_content=file_content)]
-            return documents
-        
-        elif uploaded_file.type == "application/pdf":
-       # Чтение PDF файла с использованием PyMuPDF
-            # Сохранение загруженного файла во временный файл
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as tmp_file:
-                tmp_file.write(uploaded_file.getvalue())
-                tmp_file_path = tmp_file.name
-
-            # Используем PyMuPDF для извлечения текста из PDF
-            with pymupdf.open(os.path.normpath(tmp_file_path)) as doc:
-                text = chr(12).join([page.get_text() for page in doc])
-                paragraphs = text.split('\x0c')
-                formatted_paragraphs = [
-                    ' '.join(paragraph.replace('\n', ' ').replace('\xa0', ' ').split())
-                    for paragraph in paragraphs
-                ]
-                file_content = '\n\n'.join(formatted_paragraphs)
-                documents = [Document(page_content=file_content)]
-
-            # Удаление временного файла
-            os.unlink(tmp_file_path)
-            return documents
-
-        elif uploaded_file.type == "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
-            with tempfile.NamedTemporaryFile(delete=False, suffix=".docx") as tmp_file:
-                tmp_file.write(uploaded_file.getvalue())
-                tmp_file_path = tmp_file.name
-            
-            # Чтение DOCX файла
-            from langchain_community.document_loaders import Docx2txtLoader
-            loader = Docx2txtLoader(tmp_file_path)
-            documents = loader.load()
-            return documents
-        else:
-            st.error("Неподдерживаемый тип файла.")
-            return None
-    else:
-        path = ROOT_DIR / 'content' / 'json' / 'pp_data.json'
-        loader = TextLoader(path)
-        documents = loader.load()
-        
-        return documents
-    
-def create_retriever(splitter_type, embeddings_model, documents, chunk_size):
-    """Создать ретривер для извлечения данных."""
-    if splitter_type == 'character':
-        embeddings = (
-            HuggingFaceEmbeddings(model_name=embeddings_model)
-            if embeddings_model != 'OpenAIEmbeddings'
-            else OpenAIEmbeddings(model='text-embedding-ada-002')
-        )
-        splitter = CharacterTextSplitter(chunk_size=chunk_size, chunk_overlap=0)
-        docs = splitter.split_documents(documents)
-        vector_store = FAISS.from_documents(docs, embeddings)
-    
-        return vector_store
-    
-    elif splitter_type == 'json':
-        embeddings = (
-            HuggingFaceEmbeddings(model_name=embeddings_model)
-            if embeddings_model != 'OpenAIEmbeddings'
-            else OpenAIEmbeddings(model='text-embedding-ada-002')
-        )
-        logical_chunks = json.loads(documents[0].page_content)
-        kv_dict = {k: f'{k}:\n{v}' for k, v in logical_chunks.items()}
-        docs = [Document(k) for k in logical_chunks.keys()]
-        vector_store = KeyValueFAISS.from_documents(docs, embeddings).add_value_documents(kv_dict)
-        return vector_store
-
-    else:
-        raise ValueError(f"Неподдерживаемый тип разбиения: {splitter_type}")
-
-def create_vector_space(config):
-    """Создать векторное пространство для извлечения документов на основе конфигурации."""
-
-    embeddings_model = config['Embedding']
-    splitter_type = config['Splitter']['Type']
-    chunk_size = int(config['Splitter']['Chunk_size'])
-
-    
-    documents = creating_documents(config)
-
-    vector_store = create_retriever(splitter_type, embeddings_model, documents, chunk_size)
-    
-    return vector_store
 
 
  

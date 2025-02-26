@@ -19,6 +19,7 @@ def load_config_yaml(config_file=root_dir / "config.yaml"):
 
 offersgen_config = load_config_yaml()["offersgen"]
 rag_n_examples = offersgen_config['rag_n_examples']
+city_filter = offersgen_config['city_filter']
 logger = setup_logging(logging_path=str(root_dir / "logs" / "digital_assistant.log"))
 
 

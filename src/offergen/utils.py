@@ -1,7 +1,8 @@
 from typing import Dict, List, Optional, Union, Tuple
 import requests
 import json
-from src.offergen import Offer, offers_db, db_service, rag_n_examples
+import yaml
+from src.offergen import Offer, offers_db, db_service, rag_n_examples, city_filter
 from src.offergen.agent import offer_matching_agent, PromptValidation, RagDeps
 from src.offergen.vector_db import VectorDBService, Context, SearchResponse
 from digital_assistant_first.utils.logging import setup_logging
@@ -14,9 +15,6 @@ from src.offergen.city import city, CITY_MAP
 
 logger = setup_logging(logging_path=str(root_dir / "logs" / "digital_assistant.log"))
 dotenv.load_dotenv()
-
-
-
 
 def unify_city_to_russian(raw_city: str) -> str:
     city_lower = raw_city.lower().strip()
@@ -76,7 +74,7 @@ def check_offer_in_city(offer_or_tuple: Union[Offer, Tuple[Offer, float]], user_
     return False
 
 def load_rag_examples(
-    offers_db: Dict[int, Offer], query: str, db_service: VectorDBService, n_examples: int=20, city: Optional[str] = None
+    offers_db: Dict[int, Offer], query: str, db_service: VectorDBService, n_examples: int=20, city: Optional[str] = None, city_fil: bool = False
 ) -> tuple[list[Offer], list[float], list[int]]:
     """Load and filter RAG examples relevant to the query with optional city filtering"""
 
@@ -93,10 +91,10 @@ def load_rag_examples(
         offer_id = int(doc.metadata["offer_url"].split("/")[-1])
         if offer_id in offers_db.keys() and offer_id not in offer_ids:
             offer = offers_db[offer_id]
-        
-            if city:
-                if not check_offer_in_city(offer, city):
-                    continue
+            if city_fil:
+                if city:
+                    if not check_offer_in_city(offer, city):
+                        continue
             offers.append(offer)
             scores.append(rag_data.scores[i])
             offer_ids.append(offer_id)
@@ -122,7 +120,7 @@ def get_system_prompt_for_offers(
         f"Loading RAG examples for prompt: {validation_result.modified_prompt_for_rag_search}"
     )
     offers, scores, offer_ids = load_rag_examples(
-        offers_db, validation_result.modified_prompt_for_rag_search, db_service, city=city, n_examples=rag_n_examples
+        offers_db, validation_result.modified_prompt_for_rag_search, db_service, city=city, n_examples=rag_n_examples, city_fil = city_filter
     )
     logger.info(
         f"RAG examples loaded for prompt: {validation_result.modified_prompt_for_rag_search}"

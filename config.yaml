@@ -8,6 +8,7 @@ offersgen:
   model: gpt-4o-mini
   offers_db: content/json/offers/raw/offers.json
   rag_n_examples: 40
+  city_filter: False
   db_service:
     json_path: content/json/offers/offers_by_category.json
     chunk_overlap: 300

@@ -113,14 +113,23 @@ def model_response_generator(model, config):
         if tickets_need.get('response', '').lower() == 'true':
             # Get flight options
             aviasales_url = construct_aviasales_url(
-                tickets_need["departure_city"],
-                tickets_need["destination"],
-                tickets_need["start_date"],
-                tickets_need["end_date"],
-                tickets_need["passengers"],
-                tickets_need.get("travel_class", ""),
+                from_city=tickets_need["departure_city"],
+                to_city=tickets_need["destination"],
+                depart_date=tickets_need["start_date"],
+                return_date=tickets_need["end_date"],
+                adult_passengers=tickets_need["adult_passengers"],
+                child_passengers=tickets_need["child_passengers"],
+                travel_class=tickets_need.get("travel_class", ""),
             )
-            avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
+            try:
+                avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
+            except ConnectionResetError:
+                try:
+                    avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
+                except ConnectionResetError:
+                    avia_result = False
+            except Exception as e:
+                avia_result = False
         else:
             aviasales_url = ''
             avia_result = False

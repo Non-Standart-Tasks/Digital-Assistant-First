@@ -20,15 +20,18 @@ def construct_aviasales_url(
     to_city: str,
     depart_date: str,
     return_date: str,
-    passengers: int = 1,
+    adult_passengers: int = 1,
+    child_passengers: int = 0,
     travel_class: str = "",
 ) -> Optional[str]:
     """Construct Aviasales URL based on parameters"""
 
     try:
         # Add class suffix if specified
+        if child_passengers == 0:
+            child_passengers = ''
         class_suffix = (
-            travel_class + str(passengers) if travel_class else str(passengers)
+            travel_class + str(adult_passengers) + str(child_passengers) if travel_class else str(adult_passengers) + str(child_passengers)
         )
 
         aviasales_url = f"https://www.aviasales.ru/search/{from_city}{depart_date}{to_city}{return_date}{class_suffix}"
@@ -111,7 +114,7 @@ def analyze_aviasales_url(
         elif data["result"]["status"] == "failed":
             raise Exception("Failed to capture screenshot")
 
-        time.sleep(3)
+        time.sleep(5)
 
     screenshot_url = data["result"]["capturedScreenshots"]["Screenshot"]["src"]
 

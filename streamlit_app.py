@@ -1,6 +1,7 @@
 # Импорты стандартной библиотеки
 import logging
 import time
+import asyncio
 
 # Импорты сторонних библиотек
 import streamlit as st
@@ -96,12 +97,13 @@ def chat_interface(config):
     template_prompt = "Я ваш Цифровой Ассистент - пожалуйста, задайте свой вопрос."
 
     model = initialize_model(config)
-    
 
     init_message_history(template_prompt)
     display_chat_history()
     handle_user_input(model, config)
 
+async def initialize_data():
+    update_telegram_messages()
 
 def main():
     """Основная функция для запуска приложения Streamlit."""
@@ -127,7 +129,6 @@ def main():
         'internet_search': config_yaml['internet_search'],
         'system_prompt': config_yaml['system_prompt'],
         'system_prompt_tickets': config_yaml['system_prompt_tickets']
-
     }
     
     initialize_session_state(defaults)
@@ -135,8 +136,6 @@ def main():
     mode = st.sidebar.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС"))
 
     if st.session_state.get("telegram_enabled", False):
-        async def initialize_data():
-            await update_telegram_messages()
         asyncio.run(initialize_data())
     
     # Применяем конфигурацию сразу без выбора

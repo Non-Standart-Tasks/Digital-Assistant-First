@@ -28,15 +28,11 @@ def check_api_keys(path_to_file):
                         f"Error checking {api_key}: status {response.status_code}"
                     )
 
-                # if some problems with api
-                # sleep(0.1)
-
             except Exception as e:
                 print(f"Error checking {api_key}: {str(e)}")
 
     # Save the updated data back to the file
     df.to_csv(path_to_file, sep=';', index=False, encoding='latin1')    
-    print(df)
     return df
 
 class APIKeyManager:

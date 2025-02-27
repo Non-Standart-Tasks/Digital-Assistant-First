@@ -1,10 +1,6 @@
 #Импорты стандартной библиотеки
-import logging
-import json
-import tempfile
-import pymupdf
-import os
 import asyncio
+import threading
 import yaml
 import pandas as pd
 import streamlit as st
@@ -34,7 +30,7 @@ from src.telegram_system.telegram_rag import EnhancedRAGSystem
 from src.telegram_system.telegram_data_initializer import update_telegram_messages
 from src.telegram_system.telegram_data_initializer import TelegramManager
 from src.telegram_system.telegram_initialization import fetch_telegram_data
-from src.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
+from src.utils.aviasales_parser import AviasalesHandler
 from src.geo_system.two_gis import fetch_2gis_data
 from src.websites_rag.yndx_restaurants import (
     analyze_restaurant_request,
@@ -46,35 +42,6 @@ logger = setup_logging(logging_path='logs/digital_assistant.log')
 
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 
-def aviasales_request(model, config, user_input):
-    # Вызываем модель с параметром stream=False
-    messages = [
-                {"role": "system", "content": config['system_prompt_tickets']},
-                {"role": "user", "content": user_input}
-                ]
-    
-    response = model.invoke(
-        messages,
-        stream=False
-    )
-
-    # Получаем контент из ответа
-    if hasattr(response, 'content'):
-        content = response.content
-    elif hasattr(response, 'message'):
-        content = response.message.content
-    else:
-        content = str(response)
-
-    analysis = content.strip()
-    if analysis.startswith("```json"):
-        analysis = analysis[7:]  # Remove ```json
-    if analysis.endswith("```"):
-        analysis = analysis[:-3]  # Remove trailing ```
-    analysis = analysis.strip()
-    tickets_need = json.loads(analysis)
-    return tickets_need
-
 
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
@@ -82,7 +49,6 @@ def model_response_generator(model, config):
     user_input = st.session_state["messages"][-1]["content"]
 
     # Получение информации о билетах и контекста ресторанов
-    tickets_need = aviasales_request(model, config, user_input)
     restaurant_context_text = fetch_yndx_context(user_input, model)
 
     try:
@@ -113,18 +79,30 @@ def model_response_generator(model, config):
             maps_res = ""
             # yandex_res = ""
 
-        # Если требуется, сформировать URL для Aviasales
-        if tickets_need.get("response", "").lower() == "true":
-            aviasales_url = construct_aviasales_url(
-                tickets_need["departure_city"],
-                tickets_need["destination"],
-                tickets_need["start_date"],
-                tickets_need["end_date"],
-                tickets_need["passengers"],
-                tickets_need.get("travel_class", ""),
-            )
+        # Если нужно искать билеты в авиасейлс
+        if config.get("aviasales_search", True):
+            aviasales_tool = AviasalesHandler()
+            # Проверям нужно ли по запросу пользователя искать билеты
+            tickets_need = aviasales_tool.aviasales_request(model, config, user_input)
+            # Если требуется, сформировать URL для Aviasales
+            if tickets_need.get('response', '').lower() == 'true':
+                # Get flight options
+                aviasales_url = aviasales_tool.construct_aviasales_url(
+                    from_city=tickets_need["departure_city"],
+                    to_city=tickets_need["destination"],
+                    depart_date=tickets_need["start_date"],
+                    return_date=tickets_need["end_date"],
+                    adult_passengers=tickets_need["adult_passengers"],
+                    child_passengers=tickets_need["child_passengers"],
+                    travel_class=tickets_need.get("travel_class", ""),
+                )
+                aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url)
+            else:
+                aviasales_url = ""
+                aviasales_flight_info = ""
         else:
             aviasales_url = ""
+            aviasales_flight_info = ""
 
         # Если включена поддержка Telegram, получить контекст из Telegram
         if config.get("telegram_enabled", False):
@@ -152,7 +130,8 @@ def model_response_generator(model, config):
             maps_res=maps_res,
             # yandex_res=yandex_res,
             telegram_context=telegram_context,
-            yndx_restaurants=restaurants_prompt
+            yndx_restaurants=restaurants_prompt,
+            aviasales_flight_info=aviasales_flight_info,
         )
 
         # Если режим '2Gis', получить дополнительные данные для таблицы и карты
@@ -211,6 +190,7 @@ def model_response_generator(model, config):
             error=str(e)
         )
         raise
+
 def handle_user_input(model, config):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
     prompt = st.chat_input("Введите запрос здесь...")
@@ -231,7 +211,7 @@ def handle_user_input(model, config):
                     aviasales_link = chunk["aviasales_link"]
                     # Если значение непустое, добавляем с префиксом, иначе просто добавляем его (обычно пустое)
                     if aviasales_link and aviasales_link.strip():
-                        response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}"
+                        response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}\n"
                     else:
                         response_text += f"\n\n{aviasales_link}"
                 
@@ -294,7 +274,6 @@ def handle_user_input(model, config):
 
                # Проверка и обработка maps_res
 
-     
         
 def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""

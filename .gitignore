@@ -1,5 +1,6 @@
 **/.DS_Store
 **/.venv
+**/venv
 **/session.session
 **/data
 content/gloabal_text.txt
@@ -16,3 +17,5 @@ api_keys_status.pkl
 **/__pycache__/
 **/digital_assistant.log
 .python-version
+**/logs/
+test.ipynb

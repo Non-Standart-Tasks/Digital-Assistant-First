@@ -40,7 +40,11 @@ from digital_assistant_first.utils.yndx_restaurants import (
     analyze_restaurant_request,
     get_restaurants_by_category,
 )
+from digital_assistant_first.offergen.agent import validation_agent
+from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
+
 from streamlit_app import initialize_model
+from digital_assistant_first.restaurant_system.restaurant_context import fetch_restaurant_context
 
 logger = setup_logging(logging_path='logs/digital_assistant.log')
 
@@ -107,8 +111,7 @@ def model_response_generator(model, config):
     
     tickets_need = aviasales_request(model, config, user_input)
 
-    restaurant_context_text = fetch_yndx_context(user_input, model)
-
+    restaurant_context_text = fetch_restaurant_context(user_input, model)
 
     try:
         # Формирование истории сообщений (исключая системное сообщение)
@@ -241,12 +244,9 @@ def model_response_generator(model, config):
         raise
 
 
-import asyncio
-import streamlit as st
-
 # Импорты, связанные с офферами:
-from src.offergen.agent import validation_agent
-from src.offergen.utils import get_system_prompt_for_offers
+from digital_assistant_first.offergen.agent import validation_agent
+from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
 
 
 def offers_mode_interface(config):

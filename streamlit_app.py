@@ -130,17 +130,14 @@ def main():
         'system_prompt_tickets': config_yaml['system_prompt_tickets']
 
     }
-    #logger.info("initialize_session_state")
 
     initialize_session_state(defaults)
 
-   #logger.info("importing offergen")
 
     # Инициализация векторного хранилища для генерации предложений
     # проиводится в модуле offergen в момент импорта, поэтому
     # импортируем модуль offergen в момент запуска приложения
-    from src import offergen
-    #logger.info("imported offergen")
+    from digital_assistant_first import offergen
 
     mode = st.sidebar.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов"))
 

@@ -16,7 +16,7 @@ import pydeck as pdk
 from digital_assistant_first.telegram_system.telegram_rag import EnhancedRAGSystem
 from digital_assistant_first.telegram_system.telegram_data_initializer import TelegramManager
 from digital_assistant_first.telegram_system.telegram_initialization import fetch_telegram_data
-from digital_assistant_first.utils.aviasales_parser import construct_aviasales_url
+from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
 from digital_assistant_first.utils.yndx_restaurants import (
     analyze_restaurant_request,
@@ -79,17 +79,30 @@ def model_response_generator(model, config):
             internet_res = ""
             links = ""
         
-        if tickets_need.get('response', '').lower() == 'true':
-            aviasales_url = construct_aviasales_url(
-                tickets_need["departure_city"],
-                tickets_need["destination"],
-                tickets_need["start_date"],
-                tickets_need["end_date"],
-                tickets_need["passengers"],
-                tickets_need.get("travel_class", ""),
-            )
+        # Если нужно искать билеты в авиасейлс
+        if config.get("aviasales_search", True):
+            aviasales_tool = AviasalesHandler()
+            # Проверям нужно ли по запросу пользователя искать билеты
+            tickets_need = aviasales_tool.aviasales_request(model, config, user_input)
+            # Если требуется, сформировать URL для Aviasales
+            if tickets_need.get('response', '').lower() == 'true':
+                # Get flight options
+                aviasales_url = aviasales_tool.construct_aviasales_url(
+                    from_city=tickets_need["departure_city"],
+                    to_city=tickets_need["destination"],
+                    depart_date=tickets_need["start_date"],
+                    return_date=tickets_need["end_date"],
+                    adult_passengers=tickets_need["adult_passengers"],
+                    child_passengers=tickets_need["child_passengers"],
+                    travel_class=tickets_need.get("travel_class", ""),
+                )
+                aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url)
+            else:
+                aviasales_url = ""
+                aviasales_flight_info = ""
         else:
-            aviasales_url = ''
+            aviasales_url = ""
+            aviasales_flight_info = ""
         
         if config.get("telegram_enabled", False):
             telegram_manager = TelegramManager()
@@ -113,7 +126,8 @@ def model_response_generator(model, config):
             links=links,
             shopping_res=shopping_res,
             telegram_context=telegram_context,
-            yndx_restaurants=restaurants_prompt
+            yndx_restaurants=restaurants_prompt,
+            aviasales_flight_info=aviasales_flight_info,
         )
         # Если требуется получение данных по 2Гис, оставляем только table_data и pydeck_data
         table_data = []

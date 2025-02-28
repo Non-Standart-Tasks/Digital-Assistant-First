@@ -7,7 +7,6 @@ import time
 import streamlit as st
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
-# Локальные импорты
 from digital_assistant_first.interface import *
 from langchain_core.documents import Document
 

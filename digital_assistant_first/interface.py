@@ -244,11 +244,6 @@ def model_response_generator(model, config):
         raise
 
 
-# Импорты, связанные с офферами:
-from digital_assistant_first.offergen.agent import validation_agent
-from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
-
-
 def offers_mode_interface(config):
     """
     Режим генерации офферов. Не используем nest_asyncio, 

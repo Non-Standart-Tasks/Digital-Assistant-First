@@ -1,40 +1,22 @@
-#Импорты стандартной библиотеки
+# Импорты стандартной библиотеки
 import logging
 import json
-import tempfile
-import pymupdf
-import os
 import asyncio
-import yaml
 import pandas as pd
 import streamlit as st
-from html import escape
 
 # Импорты сторонних библиотек
-from langchain_community.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
-from langchain_community.document_loaders import TextLoader
-from langchain.text_splitter import CharacterTextSplitter
-from langchain_community.vectorstores import FAISS
-from langchain_core.documents import Document
 from langchain_core.prompts import ChatPromptTemplate
-from langchain.chains import create_retrieval_chain
-from langchain.chains.combine_documents import create_stuff_documents_chain
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
-
 from digital_assistant_first.utils.logging import setup_logging, log_api_call
 from digital_assistant_first.internet_search import *
-
-import requests
 import pydeck as pdk
 
 # Локальные импорты
-from digital_assistant_first.utils.kv_faiss import KeyValueFAISS
-from digital_assistant_first.utils.paths import ROOT_DIR
 from digital_assistant_first.telegram_system.telegram_rag import EnhancedRAGSystem
-from digital_assistant_first.telegram_system.telegram_data_initializer import update_telegram_messages
 from digital_assistant_first.telegram_system.telegram_data_initializer import TelegramManager
 from digital_assistant_first.telegram_system.telegram_initialization import fetch_telegram_data
-from digital_assistant_first.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
+from digital_assistant_first.utils.aviasales_parser import construct_aviasales_url
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
 from digital_assistant_first.utils.yndx_restaurants import (
     analyze_restaurant_request,
@@ -42,7 +24,6 @@ from digital_assistant_first.utils.yndx_restaurants import (
 )
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
-
 from streamlit_app import initialize_model
 from digital_assistant_first.restaurant_system.restaurant_context import fetch_restaurant_context
 
@@ -53,14 +34,11 @@ serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 def aviasales_request(model, config, user_input):
     # Вызываем модель с параметром stream=False
     messages = [
-                {"role": "system", "content": config['system_prompt_tickets']},
-                {"role": "user", "content": user_input}
-                ]
+        {"role": "system", "content": config['system_prompt_tickets']},
+        {"role": "user", "content": user_input}
+    ]
     
-    response = model.invoke(
-        messages,
-        stream=False
-    )
+    response = model.invoke(messages, stream=False)
 
     # Получаем контент из ответа
     if hasattr(response, 'content'):
@@ -90,7 +68,6 @@ def fetch_yndx_context(user_input, model):
             if restaurants_data:
                 # Формируем текстовый блок с информацией о найденных ресторанах
                 restaurant_context_parts = []
-                
                 for r in restaurants_data:
                     restaurant_context_parts.append(
                         f"Название: {r.get('name')}\n"
@@ -101,18 +78,13 @@ def fetch_yndx_context(user_input, model):
                         f"Категории: {', '.join(r.get('categories', []))}"
                     )
                 restaurant_context_text = "\n\n".join(restaurant_context_parts)
-
     return restaurant_context_text
 
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
-    
     user_input = st.session_state["messages"][-1]["content"]
-    
     tickets_need = aviasales_request(model, config, user_input)
-
     restaurant_context_text = fetch_restaurant_context(user_input, model)
-
     try:
         # Формирование истории сообщений (исключая системное сообщение)
         message_history = ""
@@ -130,20 +102,16 @@ def model_response_generator(model, config):
         # Если интернет-поиск включён, вызываем функции поиска, иначе возвращаем пустую строку
         if config.get("internet_search", False):
             _, serpapi_key = serpapi_key_manager.get_best_api_key()
-
             shopping_res = search_shopping(user_input, serpapi_key)
             internet_res, links, coordinates = search_places(user_input, serpapi_key)
             maps_res = search_map(user_input, coordinates, serpapi_key)
-            #yandex_res = yandex_search(user_input, serpapi_key)
         else:
             shopping_res = ""
             internet_res = ""
             links = ""
             maps_res = ""
-            #yandex_res = ""
-
+        
         if tickets_need.get('response', '').lower() == 'true':
-            # Get flight options
             aviasales_url = construct_aviasales_url(
                 tickets_need["departure_city"],
                 tickets_need["destination"],
@@ -161,52 +129,39 @@ def model_response_generator(model, config):
                 data_file="data/telegram_messages.json",
                 index_directory="data/"
             )
-
             telegram_context = fetch_telegram_data(user_input, rag_system, k=50)
         else:
             telegram_context = ''
-
+        
         if restaurant_context_text:
             restaurants_prompt = f"{restaurant_context_text}"
         else:
             restaurants_prompt = ""
-
+        
         # Загрузка системного промпта из YAML-конфига
         system_prompt_template = config["system_prompt"]
-        
-        # Форматирование промпта с подстановкой переменных
         formatted_prompt = system_prompt_template.format(
             context=message_history,
             internet_res=internet_res,
             links=links,
             shopping_res=shopping_res,
             maps_res=maps_res,
-            #yandex_res=yandex_res,
             telegram_context=telegram_context,
             yndx_restaurants=restaurants_prompt
         )
-        # Создание цепочки для модели, если имя модели начинается с 'gpt'
-
         table_data = []
         pydeck_data = []
         if config.get('mode') == '2Gis':
             table_data, pydeck_data = fetch_2gis_data(user_input, config)
-
-
         
         # Формируем шаблон сообщений для запроса
         prompt = ChatPromptTemplate.from_messages([
             ("system", formatted_prompt),
             ("human", "User query: {input}\nAdditional context: {context}")
         ])
-        
-        # Форматируем сообщения, подставляя входные данные пользователя
-        messages = prompt.format(input=user_input, context="")  # Если дополнительного контекста нет, можно оставить пустую строку
-        
-        # Вызываем модель напрямую без retrieval chain
+        messages = prompt.format(input=user_input, context="")
         response = model.invoke(messages, stream=True)
         
-        # Извлекаем ответ из модели (поддержка разных вариантов формата ответа)
         if hasattr(response, 'content'):
             answer = response.content
         elif hasattr(response, 'message'):
@@ -216,7 +171,6 @@ def model_response_generator(model, config):
         
         table_data = table_data if table_data else []
         pydeck_data = pydeck_data if pydeck_data else []
-        # Выводим ответ вместе с дополнительными данными (например, maps_res)
         yield {
             "answer": answer,
             "maps_res": maps_res,
@@ -224,15 +178,13 @@ def model_response_generator(model, config):
             "table_data": table_data,
             "pydeck_data": pydeck_data
         }
-
         
         log_api_call(
-                logger=logger,
-                source=f"LLM ({config['Model']})",
-                request=user_input,
-                response=answer,
-            )
-
+            logger=logger,
+            source=f"LLM ({config['Model']})",
+            request=user_input,
+            response=answer,
+        )
     except Exception as e:
         log_api_call(
             logger=logger,
@@ -243,73 +195,50 @@ def model_response_generator(model, config):
         )
         raise
 
-
 def offers_mode_interface(config):
     """
     Режим генерации офферов. Не используем nest_asyncio, 
     вручную создаём event loop для вызова асинхронного validation_agent.
     """
     st.subheader("Режим генерации офферов VTB Family")
-
-    # Инициализируем локальную "историю" сообщений (чтобы не смешивать с общим чатом)
     if "messages_offers" not in st.session_state:
         st.session_state["messages_offers"] = []
-
-    # Показываем поле ввода (аналог st.chat_input для офферного режима)
     user_input = st.chat_input("Введите запрос для генерации офферов...")
-
     if user_input:
-        # Сохраняем сообщение пользователя
         st.session_state["messages_offers"].append({"role": "user", "content": user_input})
         with st.chat_message("user"):
             st.markdown(user_input)
-
-        # 1. Валидируем запрос:
         try:
-            loop = asyncio.get_event_loop()
-        except RuntimeError:
-            loop = asyncio.new_event_loop()
-            asyncio.set_event_loop(loop)
-
-        # вы можете вызвать run_sync или run, в зависимости от версии pydantic_ai
-        validation_result = loop.run_until_complete(validation_agent.run(user_input)).data
-        if validation_result.number_of_offers_to_generate < 1:
-            validation_result.number_of_offers_to_generate = 10
-
-        # 2. Формируем system_prompt с помощью get_system_prompt_for_offers
-        system_prompt = get_system_prompt_for_offers(validation_result, user_input)
-
-        if system_prompt == "No relevant offers were found for the search request.":
+            try:
+                loop = asyncio.get_event_loop()
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+            validation_result = loop.run_until_complete(validation_agent.run(user_input)).data
+            if validation_result.number_of_offers_to_generate < 1:
+                validation_result.number_of_offers_to_generate = 10
+            system_prompt = get_system_prompt_for_offers(validation_result, user_input)
+            if system_prompt == "No relevant offers were found for the search request.":
+                with st.chat_message("assistant"):
+                    st.warning("Офферы не найдены, попробуйте уточнить запрос.")
+                return
+            model = initialize_model(config)
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_input}
+            ]
+            response = model.invoke(messages, stream=True)
+            response_text = ""
             with st.chat_message("assistant"):
-                st.warning("Офферы не найдены, попробуйте уточнить запрос.")
-            return
-
-        # 3. Инициализируем вашу LLM-модель (например, GPT) 
-        #    - в зависимости от того, как вы делаете это в chat_interface
-        model = initialize_model(config)  # или ваша функция, наподобие ChatOpenAI(...)
-
-        # Собираем сообщения: system + user
-        messages = [
-            {"role": "system", "content": system_prompt},
-            {"role": "user",   "content": user_input}
-        ]
-
-        # 4. Подаём эти сообщения в модель 
-        response = model.invoke(messages, stream=True)
-
-        response_text = ""
-        with st.chat_message("assistant"):
-            response_placeholder = st.empty()
-
-            for chunk in response:  
-                if isinstance(chunk, tuple) and len(chunk) == 2:
-                    key, value = chunk
-                    if key == 'content':
-                        response_text += value
-                        response_placeholder.markdown(response_text)
-
-
-
+                response_placeholder = st.empty()
+                for chunk in response:
+                    if isinstance(chunk, tuple) and len(chunk) == 2:
+                        key, value = chunk
+                        if key == 'content':
+                            response_text += value
+                            response_placeholder.markdown(response_text)
+        except Exception as e:
+            st.error(f"Error in offers generation: {str(e)}")
 
 def handle_user_input(model, config):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
@@ -318,33 +247,25 @@ def handle_user_input(model, config):
         st.session_state["messages"].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
-
         with st.chat_message("assistant"):
             response_placeholder = st.empty()
             response_text = ""
-            maps_res = []  # Инициализируем maps_res
+            maps_res = []
             for chunk in model_response_generator(model, config):
                 response_text += chunk["answer"]
-
-                # Проверяем наличие ключа aviasales_link
                 if "aviasales_link" in chunk:
                     aviasales_link = chunk["aviasales_link"]
-                    # Если значение непустое, добавляем с префиксом, иначе просто добавляем его (обычно пустое)
                     if aviasales_link and aviasales_link.strip():
                         response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}"
                     else:
                         response_text += f"\n\n{aviasales_link}"
-                
                 if config['mode'] == '2Gis':
-                    
                     response_text += f"\n\n### Данные из 2Гис"
                     if 'table_data' in chunk:
                         df = pd.DataFrame(chunk['table_data'])
-                        st.dataframe(df)  # Красивое представление таблицы
+                        st.dataframe(df)
                     else:
                         st.warning("Ничего не найдено.")
-
-                    # Отрисовка PyDeck карты
                     if 'pydeck_data' in chunk:
                         df_pydeck = pd.DataFrame(chunk['pydeck_data'])
                         print(df_pydeck)
@@ -369,42 +290,24 @@ def handle_user_input(model, config):
                                 ],
                                 tooltip={
                                     "html": "<b>{name}</b>",
-                                    "style": {
-                                        "color": "white"
-                                    }
+                                    "style": {"color": "white"}
                                 }
                             )
                         )
                     else:
                         st.warning("Не найдено точек для отображения на PyDeck-карте.")
-                            
                     response_placeholder.markdown(response_text)
-                
-                    if isinstance(chunk.get("maps_res"), list):
-                        maps_res = chunk["maps_res"]
-
-
                 response_placeholder.markdown(response_text)
-                
-                if isinstance(chunk.get("maps_res"), list):
-                    maps_res = chunk["maps_res"]
-
             st.session_state["messages"].append(
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
 
-               # Проверка и обработка maps_res
-
-     
-        
 def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
         with st.chat_message('System'):
             st.markdown(template_prompt)
-        
-
 
 def display_chat_history():
     """Отобразить историю чата из состояния сессии."""
@@ -413,6 +316,3 @@ def display_chat_history():
             if 'question' in message:
                 st.markdown(message["question"])
             st.markdown(message['content'])
-
-
- 

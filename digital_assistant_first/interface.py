@@ -25,7 +25,7 @@ from digital_assistant_first.utils.yndx_restaurants import (
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
 from streamlit_app import initialize_model
-from digital_assistant_first.restaurant_system.restaurant_context import fetch_restaurant_context
+from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
 
 logger = setup_logging(logging_path='logs/digital_assistant.log')
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
@@ -51,33 +51,11 @@ def aviasales_request(model, config, user_input):
     tickets_need = json.loads(analysis)
     return tickets_need
 
-def fetch_yndx_context(user_input, model):
-    restaurant_analysis = analyze_restaurant_request(user_input, model)
-    restaurant_context_text = ""
-    restaurants_data = []
-    if restaurant_analysis.get("restaurant_recommendation", "false").lower() == "true":
-        requested_category = restaurant_analysis.get("category", "")
-        if requested_category:
-            restaurants_data = get_restaurants_by_category(requested_category)
-            if restaurants_data:
-                restaurant_context_parts = []
-                for r in restaurants_data:
-                    restaurant_context_parts.append(
-                        f"Название: {r.get('name')}\n"
-                        f"Режим работы: {r.get('working_hours')}\n"
-                        f"Адрес: {r.get('address', {}).get('street')}\n"
-                        f"Метро: {', '.join(r.get('address', {}).get('metro', []))}\n"
-                        f"Описание: {r.get('description')}\n"
-                        f"Категории: {', '.join(r.get('categories', []))}"
-                    )
-                restaurant_context_text = "\n\n".join(restaurant_context_parts)
-    return restaurant_context_text
-
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
     user_input = st.session_state["messages"][-1]["content"]
     tickets_need = aviasales_request(model, config, user_input)
-    restaurant_context_text = fetch_restaurant_context(user_input, model)
+    restaurant_context_text = fetch_yndx_context(user_input, model)
     try:
         message_history = ""
         if "messages" in st.session_state and len(st.session_state["messages"]) > 1:
@@ -228,6 +206,7 @@ def offers_mode_interface(config):
         except Exception as e:
             st.error(f"Error in offers generation: {str(e)}")
 
+
 def handle_user_input(model, config):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
     prompt = st.chat_input("Введите запрос здесь...")
@@ -292,14 +271,13 @@ def handle_user_input(model, config):
                         )
                     else:
                         st.warning("Не найдено точек для отображения на PyDeck-карте.")
-                            
-                    response_placeholder.markdown(response_text)
+                
+                # Update the response placeholder for each chunk, regardless of mode            
+                response_placeholder.markdown(response_text)
 
             st.session_state["messages"].append(
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
-
-               # Проверка и обработка maps_res
 
 def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""

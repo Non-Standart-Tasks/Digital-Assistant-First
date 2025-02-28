@@ -1,0 +1,12 @@
+# Добавьте в корень проекта
+__pycache__/
+*.pyc
+.venv
+.env
+.git
+.DS_Store
+logs/
+notebooks/
+tests/
+*.log
+*.sqlite3

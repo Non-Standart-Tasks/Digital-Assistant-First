@@ -16,3 +16,4 @@ api_keys_status.pkl
 **/__pycache__/
 **/digital_assistant.log
 .python-version
+.cursorignore

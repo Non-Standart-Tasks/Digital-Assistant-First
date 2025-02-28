@@ -73,12 +73,6 @@ def initialize_model(config):
     return ChatOpenAI(model=config["Model"], stream=True)
 
 
-
-def initialize_vector_store(config):
-    """Создание векторного пространства на основе конфигурации."""
-    return create_vector_space(config)
-
-
 def display_banner_and_title():
     """Отображение баннера и заголовка."""
     st.image(

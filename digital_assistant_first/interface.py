@@ -1,14 +1,7 @@
 #Импорты стандартной библиотеки
-import logging
-import json
-import tempfile
-import pymupdf
-import os
 import asyncio
-import yaml
 import pandas as pd
 import streamlit as st
-from html import escape
 
 # Импорты сторонних библиотек
 from langchain_community.embeddings import HuggingFaceEmbeddings, OpenAIEmbeddings
@@ -24,17 +17,16 @@ from digital_assistant_first.utils.check_serp_response import APIKeyManager
 from digital_assistant_first.utils.logging import setup_logging, log_api_call
 from digital_assistant_first.internet_search import *
 
-import requests
 import pydeck as pdk
 
 # Локальные импорты
+from digital_assistant_first.utils.aviasales_parser import analyze_aviasales_url, construct_aviasales_url, aviasales_request
 from digital_assistant_first.utils.kv_faiss import KeyValueFAISS
 from digital_assistant_first.utils.paths import ROOT_DIR
 from digital_assistant_first.telegram_system.telegram_rag import EnhancedRAGSystem
 from digital_assistant_first.telegram_system.telegram_data_initializer import update_telegram_messages
 from digital_assistant_first.telegram_system.telegram_data_initializer import TelegramManager
 from digital_assistant_first.telegram_system.telegram_initialization import fetch_telegram_data
-from digital_assistant_first.utils.aviasales_parser import fetch_page_text, construct_aviasales_url
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
 from digital_assistant_first.utils.yndx_restaurants import (
     analyze_restaurant_request,
@@ -49,35 +41,6 @@ from digital_assistant_first.restaurant_system.restaurant_context import fetch_r
 logger = setup_logging(logging_path='logs/digital_assistant.log')
 
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
-
-def aviasales_request(model, config, user_input):
-    # Вызываем модель с параметром stream=False
-    messages = [
-                {"role": "system", "content": config['system_prompt_tickets']},
-                {"role": "user", "content": user_input}
-                ]
-    
-    response = model.invoke(
-        messages,
-        stream=False
-    )
-
-    # Получаем контент из ответа
-    if hasattr(response, 'content'):
-        content = response.content
-    elif hasattr(response, 'message'):
-        content = response.message.content
-    else:
-        content = str(response)
-
-    analysis = content.strip()
-    if analysis.startswith("```json"):
-        analysis = analysis[7:]  # Remove ```json
-    if analysis.endswith("```"):
-        analysis = analysis[:-3]  # Remove trailing ```
-    analysis = analysis.strip()
-    tickets_need = json.loads(analysis)
-    return tickets_need
 
 def fetch_yndx_context(user_input, model):
     restaurant_analysis = analyze_restaurant_request(user_input, model)
@@ -145,15 +108,26 @@ def model_response_generator(model, config):
         if tickets_need.get('response', '').lower() == 'true':
             # Get flight options
             aviasales_url = construct_aviasales_url(
-                tickets_need["departure_city"],
-                tickets_need["destination"],
-                tickets_need["start_date"],
-                tickets_need["end_date"],
-                tickets_need["passengers"],
-                tickets_need.get("travel_class", ""),
+                from_city=tickets_need["departure_city"],
+                to_city=tickets_need["destination"],
+                depart_date=tickets_need["start_date"],
+                return_date=tickets_need["end_date"],
+                adult_passengers=tickets_need["adult_passengers"],
+                child_passengers=tickets_need["child_passengers"],
+                travel_class=tickets_need.get("travel_class", ""),
             )
+            try:
+                avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
+            except ConnectionResetError:
+                try:
+                    avia_result = analyze_aviasales_url(webpage_url=aviasales_url)
+                except ConnectionResetError:
+                    avia_result = False
+            except Exception as e:
+                avia_result = False
         else:
             aviasales_url = ''
+            avia_result = False
         
         if config.get("telegram_enabled", False):
             telegram_manager = TelegramManager()
@@ -221,6 +195,7 @@ def model_response_generator(model, config):
             "answer": answer,
             "maps_res": maps_res,
             "aviasales_link": aviasales_url,
+            "aviasales_screen": avia_result,
             "table_data": table_data,
             "pydeck_data": pydeck_data
         }
@@ -339,6 +314,10 @@ def handle_user_input(model, config):
                         response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}"
                     else:
                         response_text += f"\n\n{aviasales_link}"
+
+                if "aviasales_screen" in chunk:
+                    if chunk['aviasales_screen']:
+                        st.image('screenshot.png')
                 
                 if config['mode'] == '2Gis':
                     

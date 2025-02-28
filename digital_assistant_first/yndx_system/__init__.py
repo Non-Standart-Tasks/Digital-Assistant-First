@@ -1,0 +1,1 @@
+"""Yandex services integration module.""" 

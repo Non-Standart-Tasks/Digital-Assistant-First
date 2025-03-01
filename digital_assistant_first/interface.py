@@ -148,15 +148,39 @@ def model_response_generator(model, config):
         pydeck_data = pydeck_data if pydeck_data else []
 
         # Проверка ссылок в ответе
-        link_statuses = link_checker.run_sync(answer).data
-        if link_statuses.links:
-            some_link_is_invalid = any(not link.status for link in link_statuses.links)
-            if some_link_is_invalid:
-                # Коррекция текста ответа
-                corrected_answer = corrector.run_sync(
-                    answer, deps=link_statuses.links
-                ).data
-                answer = corrected_answer
+        try:
+            # Создаем event loop чтобы использовать асинхронные функции
+            # TODO: переписать ВСЁ на asyncio
+            try:
+                loop = asyncio.get_event_loop()
+            except RuntimeError:
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+
+            link_statuses = loop.run_until_complete(link_checker.run(answer))
+            logger.info(f"Link statuses: {link_statuses}")
+
+            if link_statuses.data.links:
+                logger.info(
+                    f"Original answer: {answer[:200]}..."
+                )  # Log first 200 chars
+
+                some_link_is_invalid = any(
+                    not link.status for link in link_statuses.data.links
+                )
+                if some_link_is_invalid:
+                    # Коррекция текста ответа
+                    corrected_answer = loop.run_until_complete(
+                        corrector.run(answer, deps=link_statuses.data.links)
+                    )
+                    answer = corrected_answer.data
+                    logger.info(
+                        f"Corrected answer: {answer[:200]}..."
+                    )  # Log first 200 chars
+        except Exception as e:
+            logger.error(
+                f"Error checking links: {str(e)}", exc_info=True
+            )  # Include full traceback
 
         yield {
             "answer": answer,

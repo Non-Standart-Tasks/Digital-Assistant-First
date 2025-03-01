@@ -5,7 +5,7 @@ import httpx
 from dotenv import load_dotenv
 import logfire
 
-logfire.configure()
+# logfire.configure()
 
 load_dotenv()
 

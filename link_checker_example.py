@@ -43,6 +43,8 @@ corrector = Agent(
         "3. Make the minimal changes necessary to maintain text coherence after removing invalid links. "
         "4. Do not modify, improve, or change any other parts of the text. "
         "5. Keep all valid links exactly as they appear in the original text."
+        "Use the get_invalid_links tool to get the invalid links."
+        "Respond only with the corrected text, nothing else."
     ),
     deps_type=LinkStatusList,
     result_type=str,
@@ -66,8 +68,13 @@ async def check_link_list(list_of_links: List[str]) -> LinkStatusList:
     return LinkStatusList(links=status)
 
 
+@corrector.tool
+async def get_invalid_links(ctx: RunContext[LinkStatusList]) -> List[str]:
+    return [link.link for link in ctx.deps.links if not link.status]
+
+
 async def main():
-    text = "Here are some links: https://www.google.com, https://www.youtube.com, https://www.whatever.xyzd/"
+    text = "Here are some useful resourses: https://www.google.com, https://www.youtube.com, https://yandex.ru/maps/org/yozh_ustritsa/52393193425/"
     result = await link_checker.run(text)
     print(result.data)
     corrected_text = await corrector.run(text, deps=result.data)

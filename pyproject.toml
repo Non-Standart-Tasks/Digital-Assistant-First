@@ -26,6 +26,7 @@ telethon = ">=1.38.1,<2.0.0"
 beautifulsoup4 = "^4.13.3"
 selenium = "^4.29.0"
 twocaptcha = "^0.0.1"
+pydantic = ">=2.10.6,<3.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
@@ -34,6 +35,6 @@ ipykernel = "^6.29.5"
 requires = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
-[virtualenvs]
+[tool.poetry.virtualenvs]
 create = true
 in-project = true

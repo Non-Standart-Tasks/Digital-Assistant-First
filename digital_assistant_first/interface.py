@@ -22,15 +22,11 @@ from digital_assistant_first.telegram_system.telegram_initialization import (
 )
 from digital_assistant_first.utils.aviasales_parser import construct_aviasales_url
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
-from digital_assistant_first.utils.yndx_restaurants import (
-    analyze_restaurant_request,
-    get_restaurants_by_category,
-)
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
 from streamlit_app import initialize_model
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
-from digital_assistant_first.utils.link_ckecker import link_checker, corrector
+from digital_assistant_first.utils.link_checker import link_checker, corrector
 
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")

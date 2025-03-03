@@ -20,7 +20,7 @@ from digital_assistant_first.telegram_system.telegram_data_initializer import (
 from digital_assistant_first.telegram_system.telegram_initialization import (
     fetch_telegram_data,
 )
-from digital_assistant_first.utils.aviasales_parser import construct_aviasales_url
+from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
@@ -32,32 +32,9 @@ logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 
 
-def aviasales_request(model, config, user_input):
-    messages = [
-        {"role": "system", "content": config["system_prompt_tickets"]},
-        {"role": "user", "content": user_input},
-    ]
-    response = model.invoke(messages, stream=False)
-    if hasattr(response, "content"):
-        content = response.content
-    elif hasattr(response, "message"):
-        content = response.message.content
-    else:
-        content = str(response)
-    analysis = content.strip()
-    if analysis.startswith("```json"):
-        analysis = analysis[7:]
-    if analysis.endswith("```"):
-        analysis = analysis[:-3]
-    analysis = analysis.strip()
-    tickets_need = json.loads(analysis)
-    return tickets_need
-
-
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
     user_input = st.session_state["messages"][-1]["content"]
-    tickets_need = aviasales_request(model, config, user_input)
     restaurant_context_text = fetch_yndx_context(user_input, model)
     try:
         message_history = ""
@@ -82,17 +59,30 @@ def model_response_generator(model, config):
             internet_res = ""
             links = ""
 
-        if tickets_need.get("response", "").lower() == "true":
-            aviasales_url = construct_aviasales_url(
-                tickets_need["departure_city"],
-                tickets_need["destination"],
-                tickets_need["start_date"],
-                tickets_need["end_date"],
-                tickets_need["passengers"],
-                tickets_need.get("travel_class", ""),
-            )
+        # Если нужно искать билеты в авиасейлс
+        if config.get("aviasales_search", True):
+            aviasales_tool = AviasalesHandler()
+            # Проверям нужно ли по запросу пользователя искать билеты
+            tickets_need = aviasales_tool.aviasales_request(model, config, user_input)
+            # Если требуется, сформировать URL для Aviasales
+            if tickets_need.get('response', '').lower() == 'true':
+                # Get flight options
+                aviasales_url = aviasales_tool.construct_aviasales_url(
+                    from_city=tickets_need["departure_city"],
+                    to_city=tickets_need["destination"],
+                    depart_date=tickets_need["start_date"],
+                    return_date=tickets_need["end_date"],
+                    adult_passengers=tickets_need["adult_passengers"],
+                    child_passengers=tickets_need["child_passengers"],
+                    travel_class=tickets_need.get("travel_class", ""),
+                )
+                aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url)
+            else:
+                aviasales_url = ""
+                aviasales_flight_info = ""
         else:
             aviasales_url = ""
+            aviasales_flight_info = ""
 
         if config.get("telegram_enabled", False):
             telegram_manager = TelegramManager()
@@ -116,6 +106,7 @@ def model_response_generator(model, config):
             shopping_res=shopping_res,
             telegram_context=telegram_context,
             yndx_restaurants=restaurants_prompt,
+            aviasales_flight_info=aviasales_flight_info,
         )
         # Если требуется получение данных по 2Гис, оставляем только table_data и pydeck_data
         table_data = []

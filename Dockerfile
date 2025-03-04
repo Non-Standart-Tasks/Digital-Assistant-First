@@ -16,8 +16,8 @@ RUN poetry config virtualenvs.create false \
 FROM python:3.11.11-slim
 
 WORKDIR /app
-COPY --from=builder /usr/local/lib/python3.10/site-packages /usr/local/lib/python3.11/site-packages
-COPY --from=builder /usr/local/bin /usr/local/bin  
+COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
+COPY --from=builder /usr/local/bin /usr/local/bin
 COPY . .
 
 CMD streamlit run streamlit_app.py --server.port $STREAMLIT_SERVER_PORT

@@ -28,6 +28,10 @@ from streamlit_app import initialize_model
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
 from digital_assistant_first.utils.link_checker import link_checker, corrector
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 

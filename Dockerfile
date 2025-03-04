@@ -1,5 +1,5 @@
 # Stage 1: Build
-FROM python:3.11.11-slim AS builder
+FROM python:3.11.9-slim AS builder
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
@@ -13,7 +13,7 @@ RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-root
 
 # Stage 2: Runtime
-FROM python:3.11.11-slim
+FROM python:3.11.9-slim
 
 WORKDIR /app
 COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages

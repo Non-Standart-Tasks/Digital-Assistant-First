@@ -6,11 +6,12 @@ import yaml
 
 # Импорты сторонних библиотек
 import streamlit as st
+from digital_assistant_first.utils.database import init_db 
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from digital_assistant_first.interface import *
 from langchain_core.documents import Document
-
+from digital_assistant_first.utils.database import generate_csv_from_db
 from digital_assistant_first.telegram_system.telegram_data_initializer import (
     update_telegram_messages,
 )
@@ -99,11 +100,16 @@ def chat_interface(config):
 
     init_message_history(template_prompt)
     display_chat_history()
-    handle_user_input(model, config)
+    prompt = st.chat_input("Введите запрос здесь...")
+    if prompt:
+        handle_user_input(model, config, prompt)
+        st.rerun()
+
 
 
 def main():
     """Основная функция для запуска приложения Streamlit."""
+    init_db()
     load_dotenv()
     logger = setup_logging()
     config_yaml = load_config_yaml()
@@ -134,17 +140,19 @@ def main():
     # проиводится в модуле offergen в момент импорта, поэтому
     # импортируем модуль offergen в момент запуска приложения
     from digital_assistant_first import offergen
-
-    mode = st.sidebar.radio(
-        "Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов")
-    )
-
-    if st.session_state.get("telegram_enabled", False):
-
-        async def initialize_data():
-            await update_telegram_messages()
-
-        asyncio.run(initialize_data())
+    with st.sidebar:
+        mode = st.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов"))
+        if st.session_state.get("telegram_enabled", False):
+            async def initialize_data():
+                await update_telegram_messages()
+            asyncio.run(initialize_data())
+        csv_data = generate_csv_from_db()
+        st.download_button(
+            label="Скачать БД",
+            data=csv_data,
+            file_name="chat_history_export.csv",
+            mime="text/csv",
+        )
 
     # Применяем конфигурацию сразу без выбора
     if not st.session_state["config_applied"]:
@@ -157,11 +165,11 @@ def main():
         elif mode == "Генерация офферов":
             st.session_state["config"]["mode"] = "Offers"
             # Запускаем новую функцию, отвечающую за режим генерации офферов:
-            offers_mode_interface(st.session_state["config"])
+            chat_interface(st.session_state["config"])
         else:
             st.session_state["config"]["mode"] = "Chat"
             chat_interface(st.session_state["config"])
 
-
+    
 if __name__ == "__main__":
     main()

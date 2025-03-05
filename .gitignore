@@ -45,6 +45,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+chat_history.db
 
 # IDE specific files
 .idea/

@@ -1,4 +1,5 @@
-internet_search: True
+internet_search: False
+aviasales_search: True
 model: 'gpt-4o-mini'
 2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'
 telegram_enabled: True
@@ -33,19 +34,23 @@ system_prompt: |
 
     Информацию о премиальных ресторанах приводи отдельно с их описанием: [Результаты премиальных ресторанов: {yndx_restaurants}].
 
+    Информация по авиа билетам из Aviasales. Оформи ее в виде понятного списка с комментариями: [Aviasales рейсы и билеты: {aviasales_flight_info}].
+
     Старайся выводить как можно больше ссылок и вариантов. На каждый пункт старайся вывести ссылку, если она есть. Ты информативная платформа, не нужно писать лишнюю информацию.
     
 system_prompt_tickets: |
     
     You analyze the user's requests and return a response in the form of a JSON file with the fields and values.
+    PAY ATTENTION - adults passengers are people, whose age is MORE OR EQUAL 12 YEARS!
+    PAY ATTENTION - child passengers are people, whose age is strong LESS THAN 12 YEARS!
     Analyze this travel query: "{user_input}"
     0. Is the user going on a trip and needs to find airline tickets? Answer only 'True' if Yes or 'False' if No in the "response" field of JSON.
     1. What is the main destination? Write the 3-letter code (IATA code) of the city.
     2. What is the departure city? If not mentioned, assume MOW.
-    3. What are the travel dates? Write only in ddmm format (for example, 25 May: 2505). If not mentioned, for start date assume 2105 and for end date 2705.
-    4. How many passengers? Write only a number. If not mentioned, assume 1.
-    5. What is the preferred travel class (economy - '' / comfort - 'w' / business - 'c' / first - 'f')? If not mentioned, assume economy - ''.
-    6. Are there any specific interests or preferences mentioned?
-    7. What is the budget level (budget/business/vip)?
-    Provide your analysis in JSON format only in ENGLISH with keys: "destination", "departure_city", "start_date", "end_date", "passengers", "travel_class", "interests", "budget_level".
-      
+    3. What are the travel dates? Write only in ddmm format (for example, 25 May: 2505). If there is only start_date, set the end_date empty - ''. If start_date and end_date not mentioned, for start_date assume today date [{now_date}] and set the end_date empty - ''.
+    4. How many adult passengers? Write only a number. If not mentioned, assume 1.
+    5. How many child passengers? Write only a number. If not mentioned, assume 0.
+    6. What is the preferred travel class (economy - '' / comfort - 'w' / business - 'c' / first - 'f')? If not mentioned, assume economy - ''.
+    7. Are there any specific interests or preferences mentioned?
+    8. What is the budget level (budget/business/vip)?
+    Provide your analysis in JSON format only in ENGLISH with keys: "destination", "departure_city", "start_date", "end_date", "adult_passengers", "child_passengers", "travel_class", "interests", "budget_level".

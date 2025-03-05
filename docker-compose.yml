@@ -3,8 +3,8 @@ services:
   web:
     build: .
     ports:
-      - "9002:9002"
+      - "9004:9004"
     environment:
-      - STREAMLIT_SERVER_PORT=9002
+      - STREAMLIT_SERVER_PORT=9004
     volumes:
       - .:/app  # Для разработки

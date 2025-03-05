@@ -16,14 +16,10 @@
 
 ## Установка
 
-Полный процесс установки можно описать так:
+В корне проекта выполните следующие команды:
 ```bash
-1. git clone https://github.com/ZakatZakat/Digital-Assistant-First.git
-2. cd Digital-Assistant-First
-3. python -m venv venv
-4. source venv/bin/activate
-5. pip install -r requirements.txt
-6. streamlit run streamlit_app.py
+pip install -e . 
+streamlit run streamlit_app.py
 ```
 
 ## Правила

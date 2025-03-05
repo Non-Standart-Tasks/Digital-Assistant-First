@@ -1,4 +1,4 @@
-internet_search: True
+internet_search: False
 aviasales_search: True
 model: 'gpt-4o-mini'
 2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'

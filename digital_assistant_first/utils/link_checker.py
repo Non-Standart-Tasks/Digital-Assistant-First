@@ -1,9 +1,11 @@
 from pydantic_ai import Agent
 from pydantic import BaseModel, Field
 from typing import List
+# import logfire
 import httpx
+from browser_use import Browser, BrowserConfig, Agent as BrowserAgent, Controller
+from langchain_openai import ChatOpenAI
 from dotenv import load_dotenv
-import logfire
 
 # logfire.configure()
 
@@ -48,18 +50,45 @@ corrector = Agent(
     retries=6,
 )
 
+class AvailabilityController(BaseModel):
+    site_availability_status: bool
+    text_from_site: str
 
 @link_checker.tool_plain
 async def check_link_list(list_of_links: List[str]) -> LinkStatusList:
     """
-    Check the validity of links extracted from text
+    Проверяет доступность ссылок с помощью сервиса browser-use.
+    Для каждой ссылки агент открывает вкладку в браузере и, если страница загрузилась (возвращается непустой ответ),
+    считается, что сайт доступен.
     """
-    status = []
-    async with httpx.AsyncClient() as client:
-        for link in list_of_links:
-            try:
-                response = await client.get(link)
-                status.append(LinkStatus(link=link, status=response.status_code == 200))
-            except httpx.RequestError:
-                status.append(LinkStatus(link=link, status=False))
-    return LinkStatusList(links=status)
+    statuses = []
+    browser_config = BrowserConfig(headless=True, disable_security=True)
+    browser = Browser(config=browser_config)
+    controller = Controller(output_model=AvailabilityController)
+
+    llm = ChatOpenAI(model="gpt-4o")
+
+    for link in list_of_links:
+        try:
+            initial_actions = [{'open_tab': {'url': link}}]
+            task = f"Check this website {link} and verify that it is availability. Return any tiny part of text from the page. If you see CAPTCHA - then return site_availability_status 'false' and stop the work."
+            agent = BrowserAgent(
+                task=task,
+                llm=llm,
+                initial_actions=initial_actions,
+                controller=controller,
+                browser=browser
+            )
+            history = await agent.run()
+            result = history.final_result()
+            if result:
+                parsed_result: AvailabilityController = AvailabilityController.model_validate_json(result)
+                is_available = parsed_result.site_availability_status
+            else:
+                is_available = False
+            statuses.append(LinkStatus(link=link, status=is_available))
+        except Exception as e:
+            print(f'Exception {e} ', link)
+            statuses.append(LinkStatus(link=link, status=False))
+    await browser.close()
+    return LinkStatusList(links=statuses)

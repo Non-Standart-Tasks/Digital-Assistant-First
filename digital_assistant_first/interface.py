@@ -316,7 +316,12 @@ def handle_user_input(model, config):
             st.session_state["messages"].append(
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
-
+            st.markdown("### Оцените ответ:")
+            col1, col2 = st.columns(2)
+            if col1.button("👍", key=f"thumbs_up_{len(st.session_state['messages'])}"):
+                st.success("Вы поставили 👍")
+            if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
+                st.error("Вы поставили 👎")  
 
 def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""

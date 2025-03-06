@@ -21,7 +21,8 @@ def init_db():
                 user_query TEXT,
                 model_response TEXT,
                 rating TEXT,
-                mode TEXT
+                mode TEXT,
+                comment TEXT
             )
             """
         )
@@ -104,13 +105,13 @@ def generate_csv_from_db() -> str:
     with sqlite3.connect(DB_PATH) as conn:
         cursor = conn.cursor()
         cursor.execute("""
-            SELECT id, user_query, model_response, rating, mode
+            SELECT id, user_query, model_response, rating, mode, comment
             FROM chat_history
         """)
         rows = cursor.fetchall()
 
     # Пишем заголовки
-    writer.writerow(["id", "user_query", "model_response", "rating", "mode"])
+    writer.writerow(["id", "user_query", "model_response", "rating", "mode", 'comment'])
 
     # Пишем строки таблицы
     for row in rows:

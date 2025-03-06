@@ -1,0 +1,10 @@
+version: '3.3'
+services:
+  web:
+    build: .
+    ports:
+      - "9002:9002"
+    environment:
+      - STREAMLIT_SERVER_PORT=9002
+    volumes:
+      - .:/app  # Для разработки

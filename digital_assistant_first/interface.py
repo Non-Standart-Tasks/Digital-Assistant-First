@@ -45,7 +45,7 @@ def model_response_generator(model, config):
     user_input = st.session_state["messages"][-1]["content"]
 
     # Собираем контекст из Яндекс (рестораны)
-    restaurant_context_text = fetch_yndx_context(user_input, model)
+    #restaurant_context_text = fetch_yndx_context(user_input, model)
     try:
         # Формируем историю сообщений (без системных)
         message_history = ""
@@ -105,7 +105,7 @@ def model_response_generator(model, config):
             telegram_context = ""
 
         # Если есть контекст с ресторанами
-        restaurants_prompt = restaurant_context_text if restaurant_context_text else ""
+        #restaurants_prompt = restaurant_context_text if restaurant_context_text else ""
 
         # Системный промпт
         system_prompt_template = config["system_prompt"]
@@ -115,7 +115,7 @@ def model_response_generator(model, config):
             links=links,
             shopping_res=shopping_res,
             telegram_context=telegram_context,
-            yndx_restaurants=restaurants_prompt,
+            #yndx_restaurants=restaurants_prompt,
             aviasales_flight_info=aviasales_flight_info,
         )
 

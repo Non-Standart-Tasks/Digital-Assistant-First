@@ -32,9 +32,16 @@ from streamlit_app import initialize_model
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
 from digital_assistant_first.utils.link_ckecker import link_checker, corrector
 
+from digital_assistant_first.utils.database import (
+    init_db, 
+    insert_chat_history_return_id, 
+    update_chat_history_rating_by_id, 
+    get_chat_record_by_id
+)
+
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
-
+init_db()
 
 def aviasales_request(model, config, user_input):
     messages = [
@@ -62,7 +69,7 @@ def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
     user_input = st.session_state["messages"][-1]["content"]
     tickets_need = aviasales_request(model, config, user_input)
-    restaurant_context_text = fetch_yndx_context(user_input, model)
+    #restaurant_context_text = fetch_yndx_context(user_input, model)
     try:
         message_history = ""
         if "messages" in st.session_state and len(st.session_state["messages"]) > 1:
@@ -107,10 +114,10 @@ def model_response_generator(model, config):
         else:
             telegram_context = ""
 
-        if restaurant_context_text:
-            restaurants_prompt = restaurant_context_text
-        else:
-            restaurants_prompt = ""
+        #if restaurant_context_text:
+        #    restaurants_prompt = restaurant_context_text
+        #else:
+        #    restaurants_prompt = ""
 
         system_prompt_template = config["system_prompt"]
         formatted_prompt = system_prompt_template.format(
@@ -118,8 +125,7 @@ def model_response_generator(model, config):
             internet_res=internet_res,
             links=links,
             shopping_res=shopping_res,
-            telegram_context=telegram_context,
-            yndx_restaurants=restaurants_prompt,
+            telegram_context=telegram_context
         )
         # Если требуется получение данных по 2Гис, оставляем только table_data и pydeck_data
         table_data = []
@@ -256,9 +262,8 @@ def offers_mode_interface(config):
             st.error(f"Error in offers generation: {str(e)}")
 
 
-def handle_user_input(model, config):
+def handle_user_input(model, config, prompt):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
-    prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
         st.session_state["messages"].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
@@ -326,6 +331,16 @@ def handle_user_input(model, config):
                 {"role": "assistant", "content": response_text, "question": prompt}
             )
 
+            record_id = insert_chat_history_return_id(
+            user_query=prompt,
+            model_response=response_text,
+            mode=config["mode"],
+            rating=None
+            )
+
+            # В самом сообщении ассистента также сохраним record_id для возможности лайка/дизлайка
+            st.session_state["messages"][-1]["record_id"] = record_id
+
 
 def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""
@@ -336,9 +351,32 @@ def init_message_history(template_prompt):
 
 
 def display_chat_history():
-    """Отобразить историю чата из состояния сессии."""
-    for message in st.session_state["messages"][1:]:
+    """Отобразить историю чата из состояния сессии (включая кнопки рейтинга для ассистента)."""
+    for i, message in enumerate(st.session_state["messages"]):
         with st.chat_message(message["role"]):
+            # Если было сохранено "question", покажем его как заголовок (опционально)
             if "question" in message:
-                st.markdown(message["question"])
+                st.markdown(f"**Вопрос**: {message['question']}")
+
+            # Основной контент сообщения
             st.markdown(message["content"])
+
+            # Если это ассистент и есть record_id, рисуем кнопки рейтинга
+            if message["role"] == "assistant":
+                record_id = message.get("record_id")
+                if record_id:
+                    col1, col2 = st.columns(2)
+
+                    if col1.button("👍", key=f"thumbs_up_{i}"):
+                        update_chat_history_rating_by_id(record_id, "+")
+                        st.session_state["last_rating_action"] = f"Поставили лайк для записи ID={record_id}"
+                        st.rerun()
+
+                    if col2.button("👎", key=f"thumbs_down_{i}"):
+                        update_chat_history_rating_by_id(record_id, "-")
+                        st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
+                        st.rerun()
+
+    # После ререндера покажем результат последнего действия
+    if "last_rating_action" in st.session_state:
+        st.info(st.session_state["last_rating_action"])

@@ -24,7 +24,7 @@ dependencies = [
     "pydantic-ai (>=0.0.31,<0.0.32)",
     "logfire (>=3.6.4,<4.0.0)",
     "chromadb (>=0.6.3,<0.7.0)",
-    "pydantic (>=2.10.6,<3.0.0)"
+    "pydantic (>=2.10.6,<3.0.0)",
 ]
 
 

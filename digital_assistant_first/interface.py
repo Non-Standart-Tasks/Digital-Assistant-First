@@ -80,7 +80,7 @@ def model_response_generator(model, config):
                     child_passengers=tickets_need["child_passengers"],
                     travel_class=tickets_need.get("travel_class", ""),
                 )
-                aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url)
+                aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
             else:
                 aviasales_url = ""
                 aviasales_flight_info = ""
@@ -102,14 +102,24 @@ def model_response_generator(model, config):
         else:
             restaurants_prompt = ""
 
-        system_prompt_template = config["system_prompt"]
+        # system_prompt_template = config["system_prompt"]
+        # formatted_prompt = system_prompt_template.format(
+        #     context=message_history,
+        #     internet_res=internet_res,
+        #     links=links,
+        #     shopping_res=shopping_res,
+        #     telegram_context=telegram_context,
+        #     yndx_restaurants=restaurants_prompt,
+        #     aviasales_flight_info=aviasales_flight_info,
+        # )
+        system_prompt_template = config["system_prompt_aviasales"]
         formatted_prompt = system_prompt_template.format(
             context=message_history,
-            internet_res=internet_res,
-            links=links,
-            shopping_res=shopping_res,
-            telegram_context=telegram_context,
-            yndx_restaurants=restaurants_prompt,
+            # internet_res=internet_res,
+            # links=links,
+            # shopping_res=shopping_res,
+            # telegram_context=telegram_context,
+            # yndx_restaurants=restaurants_prompt,
             aviasales_flight_info=aviasales_flight_info,
         )
         # Если требуется получение данных по 2Гис, оставляем только table_data и pydeck_data

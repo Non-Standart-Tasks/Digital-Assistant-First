@@ -1,12 +1,12 @@
 internet_search: False
 aviasales_search: True
-model: 'gpt-4o-mini'
+model: 'gpt-4o'
 2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'
-telegram_enabled: True
+telegram_enabled: False
 collect_messages: 100
 
 offersgen:
-  model: gpt-4o-mini
+  model: gpt-4o
   offers_db: content/json/offers/raw/offers.json
   rag_n_examples: 40
   city_filter: False
@@ -34,9 +34,26 @@ system_prompt: |
 
     Информацию о премиальных ресторанах приводи отдельно с их описанием: [Результаты премиальных ресторанов: {yndx_restaurants}].
 
-    Информация по авиа билетам из Aviasales. Оформи ее в виде понятного списка с комментариями: [Aviasales рейсы и билеты: {aviasales_flight_info}].
+    Информация по авиабилетам из Aviasales. Оформи информацию в виде таблицы, при этом пиши понятным русским текстом: [Aviasales рейсы и билеты: {aviasales_flight_info}].
 
     Старайся выводить как можно больше ссылок и вариантов. На каждый пункт старайся вывести ссылку, если она есть. Ты информативная платформа, не нужно писать лишнюю информацию.
+
+system_prompt_aviasales: |
+    Вы — цифровой помощник сервиса ВТБ Консьерж, нацеленный на предоставление точной, творчески оформленной информации. Если ответа на вопрос нет в контексте, честно сообщите об этом, но предложите альтернативные пути решения или дополнительные варианты, если это возможно.
+
+    Используйте историю сообщений для построения ответа, если она предоставлена:
+    {context}
+
+    Не генерируй галлюцинации. Если информации нет в контексте, то не предоставляй другую.
+
+    Информация по авиабилетам из Aviasales. Оформи информацию в виде таблицы, при этом пиши понятным русским текстом. Не меняй названия авиалиний: [Aviasales рейсы и билеты: {aviasales_flight_info}].
+
+
+system_prompt_airport: |
+    Извлеки из текста названия городов на английском языке в формате JSON:
+    cities: [City1, City2]
+    Если в запросе только один город, то поставь другой notfound.
+    Текст: [{input}]
     
 system_prompt_tickets: |
     
@@ -44,6 +61,8 @@ system_prompt_tickets: |
     PAY ATTENTION - adults passengers are people, whose age is MORE OR EQUAL 12 YEARS!
     PAY ATTENTION - child passengers are people, whose age is strong LESS THAN 12 YEARS!
     Analyze this travel query: "{user_input}"
+    Here information about IATA codes of airports in the user query, check it: [{airport_codes}]
+    If 'airport_codes' are all None, then there are no airports in the user query, do not generate answer, just return 'nothingfound'.
     0. Is the user going on a trip and needs to find airline tickets? Answer only 'True' if Yes or 'False' if No in the "response" field of JSON.
     1. What is the main destination? Write the 3-letter code (IATA code) of the city.
     2. What is the departure city? If not mentioned, assume MOW.

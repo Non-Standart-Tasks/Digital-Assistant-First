@@ -36,7 +36,6 @@ def check_api_keys(path_to_file):
 
     # Save the updated data back to the file
     df.to_csv(path_to_file, sep=';', index=False, encoding='latin1')    
-    print(df)
     return df
 
 class APIKeyManager:

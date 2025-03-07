@@ -8,7 +8,7 @@ import streamlit as st
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
-from digital_assistant_first.utils.logging import setup_logging, log_api_call
+from digital_assistant_first.utils.custom_logging import setup_logging, log_api_call
 from digital_assistant_first.internet_search import search_shopping, search_places
 import pydeck as pdk
 

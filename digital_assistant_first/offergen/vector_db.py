@@ -12,7 +12,7 @@ from langchain_chroma import Chroma
 from langchain_openai.embeddings import OpenAIEmbeddings
 from pydantic import BaseModel, Field
 
-from digital_assistant_first.utils.logging import setup_logging
+from digital_assistant_first.utils.custom_logging import setup_logging
 from digital_assistant_first.utils.paths import ROOT_DIR as root_dir
 
 logger = setup_logging(logging_path=str(root_dir / "logs" / "digital_assistant.log"))

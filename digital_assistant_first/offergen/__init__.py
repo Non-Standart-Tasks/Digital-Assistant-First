@@ -6,7 +6,7 @@ import yaml
 from pydantic import BaseModel, Field
 
 from digital_assistant_first.utils.paths import ROOT_DIR as root_dir
-from digital_assistant_first.utils.logging import setup_logging
+from digital_assistant_first.utils.custom_logging import setup_logging
 from digital_assistant_first.offergen.vector_db import VectorDBService, instantiate_db_service
 
 

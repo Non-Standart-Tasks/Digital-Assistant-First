@@ -6,7 +6,7 @@ from digital_assistant_first.utils.check_serp_response import APIKeyManager
 
 # Локальные импорты
 from digital_assistant_first.utils.paths import ROOT_DIR
-from digital_assistant_first.utils.logging import setup_logging, log_api_call
+from digital_assistant_first.utils.custom_logging import setup_logging, log_api_call
 
 # Настройка логирования
 logging.basicConfig(

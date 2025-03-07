@@ -5,7 +5,7 @@ import yaml
 from digital_assistant_first.offergen import Offer, offers_db, db_service, rag_n_examples, city_filter
 from digital_assistant_first.offergen.agent import offer_matching_agent, PromptValidation, RagDeps
 from digital_assistant_first.offergen.vector_db import VectorDBService, Context, SearchResponse
-from digital_assistant_first.utils.logging import setup_logging
+from digital_assistant_first.utils.custom_logging import setup_logging
 from digital_assistant_first.utils.paths import ROOT_DIR as root_dir
 import dotenv
 from typing import Optional

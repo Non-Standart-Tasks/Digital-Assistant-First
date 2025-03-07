@@ -17,7 +17,7 @@ from utils.kv_faiss import KeyValueFAISS
 from utils.paths import LOG_DIR
 from ollama import Client  # Импортируем Client
 
-from digital_assistant_first.utils.logging import setup_logging, log_api_call
+from digital_assistant_first.utils.custom_logging import setup_logging, log_api_call
 
 logger = setup_logging(logging_path="../logs/digital_assistant.log")
 

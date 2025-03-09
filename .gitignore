@@ -76,3 +76,5 @@ local_settings.py
 session.session
 api_keys_status.csv
 data/
+chat_history.db
+api_keys_status.csv

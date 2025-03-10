@@ -29,10 +29,10 @@ twocaptcha = "^0.0.1"
 pydantic = ">=2.10.6,<3.0.0"
 playwright = "^1.50.0"
 browser-use = "^0.1.40"
-docker = "^7.1.0"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
+pytest = "^8.3.5"
 
 [build-system]
 requires = ["poetry-core>=2.0.0"]

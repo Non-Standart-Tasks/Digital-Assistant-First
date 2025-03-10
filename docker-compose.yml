@@ -3,7 +3,7 @@ services:
   web:
     build: .
     ports:
-      - "9002:9002"
+      - "9006:9006"
     environment:
       - STREAMLIT_SERVER_PORT=9002
       - STREAMLIT_SERVER_ADDRESS=0.0.0.0
@@ -11,6 +11,6 @@ services:
       - STREAMLIT_SERVER_ENABLE_CORS=true
       - STREAMLIT_SERVER_RUN_ON_SAVE=true
     volumes:
-      - .:/app  # Для разработки
+      - .:/app # Для разработки
     restart: always
-    network_mode: "host"  # Использование сети хоста для лучшей совместимости
+    network_mode: "host" # Использование сети хоста для лучшей совместимости

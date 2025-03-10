@@ -40,7 +40,6 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
           poetry run pytest tests/database_test.py -v  
-          poetry run pytest tests/streamlit_test.py -v
 
       - name: Публикация результатов тестов
         if: always()

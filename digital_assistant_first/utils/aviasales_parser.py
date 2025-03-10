@@ -77,7 +77,7 @@ class AviasalesHandler:
         
         response = model.invoke(messages, stream=False)
         cities_data = self.format_model_output(response)
-        cities = cities_data['cities']
+        cities = [cities_data['city1'], cities_data['city2']]
         
         airports = self.load_airports()
         

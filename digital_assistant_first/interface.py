@@ -46,7 +46,7 @@ init_db()
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
     user_input = st.session_state["messages"][-1]["content"]
-    #restaurant_context_text = fetch_yndx_context(user_input, model)
+    restaurant_context_text = fetch_yndx_context(user_input, model)
     try:
         message_history = ""
         if "messages" in st.session_state and len(st.session_state["messages"]) > 1:
@@ -76,7 +76,8 @@ def model_response_generator(model, config):
             # Проверям нужно ли по запросу пользователя искать билеты
             tickets_need = aviasales_tool.aviasales_request(model, config, user_input)
             # Если требуется, сформировать URL для Aviasales
-            if tickets_need.get('response', '').lower() == 'true':
+            print(f'{tickets_need}')
+            if tickets_need.get('response', '') == True:
                 # Get flight options
                 aviasales_url = aviasales_tool.construct_aviasales_url(
                     from_city=tickets_need["departure_city"],
@@ -104,10 +105,10 @@ def model_response_generator(model, config):
         else:
             telegram_context = ""
 
-        #if restaurant_context_text:
-        #    restaurants_prompt = restaurant_context_text
-        #else:
-        #    restaurants_prompt = ""
+        if restaurant_context_text:
+            restaurants_prompt = restaurant_context_text
+        else:
+            restaurants_prompt = ""
 
         system_prompt_template = config["system_prompt"]
         formatted_prompt = system_prompt_template.format(
@@ -116,7 +117,7 @@ def model_response_generator(model, config):
             links=links,
             shopping_res=shopping_res,
             telegram_context=telegram_context,
-            # yndx_restaurants=restaurants_prompt,
+            yndx_restaurants=restaurants_prompt,
             aviasales_flight_info=aviasales_flight_info,
         )
         # Если требуется получение данных по 2Гис, оставляем только table_data и pydeck_data

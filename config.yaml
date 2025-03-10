@@ -51,8 +51,9 @@ system_prompt_aviasales: |
 
 system_prompt_airport: |
     Извлеки из текста названия городов на английском языке в формате JSON:
-    cities: [City1, City2]
-    Если в запросе только один город, то поставь другой notfound.
+    city1: City1_name
+    city2: City2_name
+    Если в запросе только один город, то поставь другой notfound. Если в запросе совсем нет городов, то проставь каждый notfound
     Текст: [{input}]
     
 system_prompt_tickets: |
@@ -62,7 +63,7 @@ system_prompt_tickets: |
     PAY ATTENTION - child passengers are people, whose age is strong LESS THAN 12 YEARS!
     Analyze this travel query: "{user_input}"
     Here information about IATA codes of airports in the user query, check it: [{airport_codes}]
-    If 'airport_codes' are all None, then there are no airports in the user query, do not generate answer, just return 'nothingfound'.
+
     0. Is the user going on a trip and needs to find airline tickets? Answer only 'True' if Yes or 'False' if No in the "response" field of JSON.
     1. What is the main destination? Write the 3-letter code (IATA code) of the city.
     2. What is the departure city? If not mentioned, assume MOW.

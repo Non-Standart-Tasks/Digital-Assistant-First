@@ -2,9 +2,9 @@ services:
   web:
     build: .
     ports:
-      - "9002:9002"
+      - "9007:9007"
     environment:
-      - STREAMLIT_SERVER_PORT=9002
+      - STREAMLIT_SERVER_PORT=9007
       - STREAMLIT_SERVER_ADDRESS=0.0.0.0
       - STREAMLIT_SERVER_HEADLESS=true
       - STREAMLIT_SERVER_ENABLE_CORS=true

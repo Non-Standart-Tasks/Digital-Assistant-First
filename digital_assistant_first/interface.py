@@ -136,10 +136,11 @@ async def model_response_generator(model, config):
                 tickets_need["destination"],
                 tickets_need["start_date"],
                 tickets_need["end_date"],
-                tickets_need["passengers"],
+                tickets_need.get("adult_passengers", 1),
+                tickets_need.get("child_passengers", 0),
                 tickets_need.get("travel_class", ""),
             )
-            aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
+            aviasales_flight_info = await aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
         else:
             aviasales_flight_info = ""
             

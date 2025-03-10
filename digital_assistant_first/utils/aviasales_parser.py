@@ -121,7 +121,7 @@ class AviasalesHandler:
             print(f"Error constructing URL: {e}")
             return None
 
-    def aviasales_request(self, model, config, user_input):
+    async def aviasales_request(self, model, config, user_input):
         _, airport_codes = self.get_airport_codes(text=user_input, model=model, config=config)
         formatted_prompt_tickets = config["system_prompt_tickets"].format(
             user_input=user_input,
@@ -162,6 +162,5 @@ class AviasalesHandler:
         else:
             return 'No result'
 
-    def get_info_aviasales_url(self, aviasales_url: str, user_input: str):
-        import asyncio
-        return asyncio.run(self.get_info_aviasales_url_async(aviasales_url=aviasales_url, user_input=user_input))
+    async def get_info_aviasales_url(self, aviasales_url: str, user_input: str):
+        return await self.get_info_aviasales_url_async(aviasales_url=aviasales_url, user_input=user_input)

@@ -53,4 +53,4 @@ COPY . .
 
 RUN python -m playwright install
 
-CMD streamlit run streamlit_app.py --server.port $STREAMLIT_SERVER_PORT
+CMD poetry run streamlit run streamlit_app.py --server.port $STREAMLIT_SERVER_PORT --server.address 0.0.0.0

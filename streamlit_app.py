@@ -3,6 +3,7 @@
 import logging
 import time
 import yaml
+import asyncio
 
 # Импорты сторонних библиотек
 import streamlit as st
@@ -105,7 +106,7 @@ def chat_interface(config):
     display_chat_history()
     prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
-        handle_user_input(model, config, prompt)
+        asyncio.run(handle_user_input(model, config, prompt))
         st.rerun()
 
 

@@ -1,5 +1,7 @@
 # Импорты стандартной библиотеки
 import logging
+import aiohttp
+import json
 
 from serpapi import GoogleSearch
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
@@ -13,6 +15,24 @@ logging.basicConfig(
     level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s"
 )
 logger = logging.getLogger(__name__)
+
+class SerpApiClient:
+    """Асинхронный клиент для работы с SerpAPI."""
+    
+    def __init__(self, api_key):
+        self.api_key = api_key
+        self.base_url = "https://serpapi.com/search"
+        
+    async def search(self, params):
+        """Выполняет асинхронный запрос к SerpAPI."""
+        async with aiohttp.ClientSession() as session:
+            async with session.get(self.base_url, params=params) as response:
+                if response.status == 200:
+                    return await response.json()
+                else:
+                    error_text = await response.text()
+                    logger.error(f"SerpAPI error: {response.status} - {error_text}")
+                    raise Exception(f"SerpAPI request failed: {response.status}")
 
 def search_map(q, coordinates, serpapi_key):
     try:
@@ -62,82 +82,86 @@ def search_map(q, coordinates, serpapi_key):
         raise
 
 
-def search_shopping(q, serpapi_key):
-    try:
-        params = {"engine": "google_shopping", "q": q, "api_key": serpapi_key}
-
-        search = GoogleSearch(params)
-        results = search.get_dict()
-
-        results_with_titles_and_links = [
-            (item["title"], item["link"])
-            for item in results.get("organic_results", [])
-            if "title" in item and "link" in item
-        ]
-
-        log_api_call(
-            logger=logger,
-            source="SerpAPI Shopping",
-            request=q,
-            response=results_with_titles_and_links,
-        )
-
-        return results_with_titles_and_links
-
-    except Exception as e:
-        log_api_call(
-            logger=logger,
-            source="SerpAPI Shopping",
-            request=q,
-            response="",
-            error=str(e),
-        )
-        raise
-
-
-def search_places(q, serpapi_key):
-    """Search for places using Google Search API, возвращает только первые 5 результатов."""
+async def search_shopping(q, serpapi_key):
+    """Поиск товаров через serpapi."""
     try:
         params = {
+            "engine": "google_shopping",
             "q": q,
-            #'location': 'Russia',
+            "api_key": serpapi_key,
             "hl": "ru",
             "gl": "ru",
-            "google_domain": "google.com",
-            "api_key": serpapi_key,
+            "tbs": "mr:1,price:1,ppr_max:15000",
         }
+        client = SerpApiClient(api_key=serpapi_key)
+        response = await client.search(params)
 
-        search = GoogleSearch(params)
-        results = search.get_dict()
+        # Извлекаем результаты поиска
+        shopping_results = response.get("shopping_results", [])
+        if not shopping_results:
+            return ""
 
-        good_results = [
-            item["snippet"]
-            for item in results.get("organic_results", [])
-            if "snippet" in item
-        ]
+        # Форматируем результаты
+        formatted_results = []
+        for result in shopping_results[:5]:  # Берем только первые 5 результатов
+            title = result.get("title", "No title")
+            price = result.get("price", "No price")
+            source = result.get("source", "No source")
+            link = result.get("link", "")
 
-        results_with_titles_and_links = [
-            (item["title"], item["link"])
-            for item in results.get("organic_results", [])
-            if "title" in item and "link" in item
-        ]
+            formatted_result = f"Название: {title}\nЦена: {price}\nМагазин: {source}\nСсылка: {link}\n"
+            formatted_results.append(formatted_result)
 
-        coordinates = results.get("local_map", {}).get("gps_coordinates", None)
-
-        log_api_call(
-            logger=logger,
-            source="SerpAPI Places",
-            request=q,
-            response=good_results + results_with_titles_and_links,
-        )
-
-        return good_results, results_with_titles_and_links, coordinates
-
+        return "\n".join(formatted_results)
     except Exception as e:
-        log_api_call(
-            logger=logger, source="SerpAPI Places", request=q, response="", error=str(e)
-        )
-        raise
+        logger.error(f"Error in search_shopping: {str(e)}")
+        return ""
+
+
+async def search_places(q, serpapi_key):
+    """Поиск мест через serpapi."""
+    try:
+        params = {
+            "engine": "google",
+            "q": q,
+            "api_key": serpapi_key,
+            "hl": "ru",
+            "gl": "ru",
+            "num": 8,
+        }
+        client = SerpApiClient(api_key=serpapi_key)
+        response = await client.search(params)
+
+        # Извлекаем результаты поиска
+        organic_results = response.get("organic_results", [])
+        if not organic_results:
+            return "", "", {}
+
+        # Форматируем результаты
+        formatted_results = []
+        links = []
+        search_metadata = {}
+
+        for i, result in enumerate(organic_results):
+            title = result.get("title", f"Result {i+1}")
+            link = result.get("link", "")
+            snippet = result.get("snippet", "")
+
+            if link:
+                links.append(link)
+
+            # Добавляем результат в форматированный список
+            formatted_result = f"### {title}\n{snippet}\nСсылка: {link}\n"
+            formatted_results.append(formatted_result)
+
+        # Добавляем метаданные поиска
+        if "search_metadata" in response:
+            search_metadata = response["search_metadata"]
+
+        return "\n".join(formatted_results), links, search_metadata
+    except Exception as e:
+        logger.error(f"Error in search_places: {str(e)}")
+        return "", "", {}
 
 
 def yandex_search(q, serpapi_key):

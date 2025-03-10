@@ -3,7 +3,10 @@ from digital_assistant_first.telegram_system.telegram_data_initializer import up
 from digital_assistant_first.telegram_system.telegram_data_initializer import TelegramManager
 
     
-def fetch_telegram_data(user_input, rag_system, k):  
+async def fetch_telegram_data(user_input, rag_system, k):  
+    """Асинхронная функция для получения данных из Telegram."""
+    # Предполагаем, что метод query может быть тяжелым, но он не использует I/O,
+    # поэтому мы его не переделываем в асинхронный, а просто вызываем
     telegram_results, context = rag_system.query(user_input, k=k)
 
     telegram_context = "\n\n".join([

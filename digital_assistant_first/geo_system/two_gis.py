@@ -1,10 +1,11 @@
 from digital_assistant_first.internet_search import *
 import requests
+import aiohttp
 
 
-def fetch_2gis_data(user_input, config):
+async def fetch_2gis_data(user_input, config):
     """
-    Получить данные из 2Гис Catalog API по заданному запросу.
+    Получить данные из 2Гис Catalog API по заданному запросу асинхронно.
     Возвращает два списка: для таблицы и для PyDeck-карты.
     """
     radius = 3000
@@ -18,29 +19,30 @@ def fetch_2gis_data(user_input, config):
         f"&key={API_KEY}"
     )
 
-    response = requests.get(url)
-    data = response.json()
-    items = data.get("result", {}).get("items", [])
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            data = await response.json()
+            items = data.get("result", {}).get("items", [])
 
-    table_data = []
-    pydeck_data = []
-    for item in items:
-        point = item.get("point")
-        if point:
-            lat = point.get("lat")
-            lon = point.get("lon")
-            # Для таблицы
-            table_data.append({
-                "Название": item.get("name", "Нет названия"),
-                "Адрес": item.get("address_name", ""),
-                "Рейтинг": item.get("reviews", {}).get("general_rating"),
-                "Кол-во Отзывов": item.get("reviews", {}).get("org_review_count", 0),
-            })
-            # Для PyDeck
-            pydeck_data.append({
-                "name": item.get("name", "Нет названия"),
-                "lat": lat,
-                "lon": lon,
-            })
-    return table_data, pydeck_data
+            table_data = []
+            pydeck_data = []
+            for item in items:
+                point = item.get("point")
+                if point:
+                    lat = point.get("lat")
+                    lon = point.get("lon")
+                    # Для таблицы
+                    table_data.append({
+                        "Название": item.get("name", "Нет названия"),
+                        "Адрес": item.get("address_name", ""),
+                        "Рейтинг": item.get("reviews", {}).get("general_rating"),
+                        "Кол-во Отзывов": item.get("reviews", {}).get("org_review_count", 0),
+                    })
+                    # Для PyDeck
+                    pydeck_data.append({
+                        "name": item.get("name", "Нет названия"),
+                        "lat": lat,
+                        "lon": lon,
+                    })
+            return table_data, pydeck_data
 

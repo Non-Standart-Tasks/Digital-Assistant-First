@@ -103,8 +103,10 @@ def chat_interface(config):
     prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
         handle_user_input(model, config, prompt)
-        st.rerun()
-
+        ########to fix 
+        if config['mode'] != '2Gis':
+            st.rerun()
+        
 
 
 def main():

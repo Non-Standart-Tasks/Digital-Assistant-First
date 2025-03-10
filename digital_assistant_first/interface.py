@@ -341,17 +341,12 @@ def display_chat_history():
             if message["role"] == "assistant":
                 record_id = message.get("record_id")
                 if record_id:
+                    st.markdown("### Оцените ответ:")
                     col1, col2 = st.columns(2)
-
-                    if col1.button("👍", key=f"thumbs_up_{i}"):
-                        update_chat_history_rating_by_id(record_id, "+")
-                        st.session_state["last_rating_action"] = f"Поставили лайк для записи ID={record_id}"
-                        st.rerun()
-
-                    if col2.button("👎", key=f"thumbs_down_{i}"):
-                        update_chat_history_rating_by_id(record_id, "-")
-                        st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
-                        st.rerun()
+                    if col1.button("👍", key=f"thumbs_up_{len(st.session_state['messages'])}"):
+                        st.success("Вы поставили 👍")
+                    if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
+                        st.error("Вы поставили 👎")  
 
     # После ререндера покажем результат последнего действия
     if "last_rating_action" in st.session_state:

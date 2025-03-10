@@ -7,11 +7,11 @@ readme = "README.md"
 packages = [{include = "src"}]
 
 [tool.poetry.dependencies]
-python = ">=3.10,<4.0"
+python = ">=3.11,<4.0"
 "2captcha-python" = ">=1.5.1,<2.0.0"
 streamlit = ">=1.41.1,<2.0.0"
 python-dotenv = ">=1.0.1,<2.0.0"
-langchain-openai = ">=0.3.3,<0.4.0"
+langchain-openai = "0.3.1"
 pymupdf = ">=1.25.2,<2.0.0"
 streamlit-aggrid = ">=1.1.0,<2.0.0"
 langchain-community = ">=0.3.16,<0.4.0"
@@ -28,6 +28,7 @@ selenium = "^4.29.0"
 twocaptcha = "^0.0.1"
 pydantic = ">=2.10.6,<3.0.0"
 playwright = "^1.50.0"
+browser-use = "^0.1.40"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"

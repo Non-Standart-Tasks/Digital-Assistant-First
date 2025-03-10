@@ -1,0 +1,53 @@
+name: Run Tests
+
+on:
+  push:
+  pull_request:
+    branches: [master, develop]
+  workflow_dispatch: 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Проверка кода
+        uses: actions/checkout@v3
+        
+      - name: Настройка Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Установка Poetry
+        uses: snok/install-poetry@v1
+        with:
+          version: 2.1.1
+          virtualenvs-create: true
+          virtualenvs-in-project: true
+          
+      - name: Установка зависимостей
+        run: |
+          poetry install --no-root
+          
+      - name: Создание .env файла
+        run: |
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_KEY }}" > .env
+          echo "Файл .env создан"
+          
+      - name: Запуск тестов
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        run: |
+          poetry run pytest tests/database_test.py -v  
+          poetry run pytest tests/streamlit_test.py -v
+
+      - name: Публикация результатов тестов
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-results
+          path: |
+            .pytest_cache
+            pytest-report.xml
+          retention-days: 7 

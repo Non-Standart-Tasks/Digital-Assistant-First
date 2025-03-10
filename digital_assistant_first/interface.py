@@ -42,14 +42,10 @@ logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 init_db()
 
-logger = setup_logging(logging_path="logs/digital_assistant.log")
-serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
-
 
 def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера."""
     user_input = st.session_state["messages"][-1]["content"]
-    tickets_need = aviasales_request(model, config, user_input)
     #restaurant_context_text = fetch_yndx_context(user_input, model)
     try:
         message_history = ""
@@ -113,16 +109,6 @@ def model_response_generator(model, config):
         #else:
         #    restaurants_prompt = ""
 
-        # system_prompt_template = config["system_prompt"]
-        # formatted_prompt = system_prompt_template.format(
-        #     context=message_history,
-        #     internet_res=internet_res,
-        #     links=links,
-        #     shopping_res=shopping_res,
-        #     telegram_context=telegram_context,
-        #     yndx_restaurants=restaurants_prompt,
-        #     aviasales_flight_info=aviasales_flight_info,
-        # )
         system_prompt_template = config["system_prompt"]
         formatted_prompt = system_prompt_template.format(
             context=message_history,

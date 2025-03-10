@@ -140,11 +140,7 @@ async def model_response_generator(model, config):
                 tickets_need.get("travel_class", ""),
             )
             aviasales_flight_info = aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
-            else:
-                aviasales_url = ""
-                aviasales_flight_info = ""
         else:
-            aviasales_url = ""
             aviasales_flight_info = ""
             
         # Формируем системный промпт

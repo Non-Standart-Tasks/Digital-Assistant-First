@@ -50,7 +50,8 @@ class AviasalesHandler:
             json_result = json.loads(result)
         except Exception as e:
             print(f'Exception: \'{result}\'')
-            json_result = result
+            # Return a default dictionary with response set to "false" instead of the raw string
+            json_result = {"response": "false"}
 
         print("Result: ", json_result)
         return json_result

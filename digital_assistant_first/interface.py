@@ -9,7 +9,7 @@ import streamlit as st
 from langchain_core.prompts import ChatPromptTemplate
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
 from digital_assistant_first.utils.logging import setup_logging, log_api_call
-from digital_assistant_first.internet_search import search_shopping, search_places
+from digital_assistant_first.internet_search import search_shopping, search_places, yandex_search
 import pydeck as pdk
 
 # Локальные импорты
@@ -70,6 +70,7 @@ async def model_response_generator(model, config):
     shopping_res = ""
     internet_res = ""
     links = ""
+    yandex_res = ""
     telegram_context = ""
     table_data = []
     pydeck_data = []
@@ -80,7 +81,8 @@ async def model_response_generator(model, config):
             _, serpapi_key = serpapi_key_manager.get_best_api_key()
             shopping = await search_shopping(user_input, serpapi_key)
             internet, links_data, _ = await search_places(user_input, serpapi_key)
-            return shopping, internet, links_data
+            yandex_res = await yandex_search(user_input, serpapi_key)
+            return shopping, internet, links_data, yandex_res
         
         tasks.append(fetch_internet_data())
     
@@ -113,7 +115,7 @@ async def model_response_generator(model, config):
         # Результаты интернет-поиска
         if config.get("internet_search", False):
             if not isinstance(results[result_index], Exception):
-                shopping_res, internet_res, links = results[result_index]
+                shopping_res, internet_res, links, yandex_res = results[result_index]
             result_index += 1
         
         # Результаты Telegram
@@ -140,7 +142,10 @@ async def model_response_generator(model, config):
                 tickets_need.get("child_passengers", 0),
                 tickets_need.get("travel_class", ""),
             )
-            aviasales_flight_info = await aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
+            if config.get("aviasales_search") == "True":
+                aviasales_flight_info = await aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
+            else:
+                aviasales_flight_info = ""
         else:
             aviasales_flight_info = ""
             
@@ -149,6 +154,7 @@ async def model_response_generator(model, config):
         formatted_prompt = system_prompt_template.format(
             context=message_history,
             internet_res=internet_res,
+            yandex_res=yandex_res,
             links=links,
             shopping_res=shopping_res,
             telegram_context=telegram_context,

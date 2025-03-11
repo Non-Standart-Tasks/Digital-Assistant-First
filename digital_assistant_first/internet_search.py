@@ -164,7 +164,7 @@ async def search_places(q, serpapi_key):
         return "", "", {}
 
 
-def yandex_search(q, serpapi_key):
+async def yandex_search(q, serpapi_key):
     try:
         params = {
             "lr": "225",

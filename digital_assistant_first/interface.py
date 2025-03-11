@@ -289,7 +289,6 @@ async def handle_user_input(model, config, prompt):
                     response_text += f"\n\n{aviasales_link}"
 
             if config["mode"] == "2Gis":
-
                 response_text += f"\n\n### Данные из 2Гис"
                 if "table_data" in response:
                     df = pd.DataFrame(response["table_data"])
@@ -297,37 +296,12 @@ async def handle_user_input(model, config, prompt):
                 else:
                     st.warning("Ничего не найдено.")
 
-                # Отрисовка PyDeck карты
                 if "pydeck_data" in response:
-                    df_pydeck = pd.DataFrame(response["pydeck_data"])
-                    st.subheader("Карта")
-                    st.pydeck_chart(
-                        pdk.Deck(
-                            map_style=None,
-                            initial_view_state=pdk.ViewState(
-                                latitude=df_pydeck["lat"].mean(),
-                                longitude=df_pydeck["lon"].mean(),
-                                zoom=13,
-                            ),
-                            layers=[
-                                pdk.Layer(
-                                    "ScatterplotLayer",
-                                    data=df_pydeck,
-                                    get_position="[lon, lat]",
-                                    get_radius=30,
-                                    get_fill_color=[255, 0, 0],
-                                    pickable=True,
-                                )
-                            ],
-                            tooltip={
-                                "html": "<b>{name}</b>",
-                                "style": {"color": "white"},
-                            },
-                        )
-                    )
+                    st.session_state["last_pydeck_data"] = response["pydeck_data"]
                 else:
+                    st.session_state["last_pydeck_data"] = []
                     st.warning("Не найдено точек для отображения на PyDeck-карте.")
-
+        
             # Update the response placeholder for each chunk, regardless of mode
             response_placeholder.markdown(response_text)
 
@@ -362,6 +336,10 @@ def init_message_history(template_prompt):
 
 def display_chat_history():
     """Отобразить историю чата из состояния сессии (включая кнопки рейтинга для ассистента)."""
+    last_assistant_index = -1
+    for i, message in enumerate(st.session_state["messages"]):
+        if message["role"] == "assistant":
+            last_assistant_index = i
     for i, message in enumerate(st.session_state["messages"]):
         with st.chat_message(message["role"]):
             # Если было сохранено "question", покажем его как заголовок (опционально)
@@ -370,23 +348,55 @@ def display_chat_history():
 
             # Основной контент сообщения
             st.markdown(message["content"])
-
             # Если это ассистент и есть record_id, рисуем кнопки рейтинга
-            if message["role"] == "assistant":
-                record_id = message.get("record_id")
-                if record_id:
-                    col1, col2 = st.columns(2)
+            if st.session_state.get("config", {}).get("mode") != "2Gis":
+                if message["role"] == "assistant":
+                    record_id = message.get("record_id")
+                    if record_id:
+                        col1, col2 = st.columns(2)
 
-                    if col1.button("👍", key=f"thumbs_up_{i}"):
-                        update_chat_history_rating_by_id(record_id, "+")
-                        st.session_state["last_rating_action"] = f"Поставили лайк для записи ID={record_id}"
-                        st.rerun()
+                        if col1.button("👍", key=f"thumbs_up_{i}"):
+                            update_chat_history_rating_by_id(record_id, "+")
+                            st.session_state["last_rating_action"] = f"Поставили лайк для записи ID={record_id}"
+                            st.rerun()
 
-                    if col2.button("👎", key=f"thumbs_down_{i}"):
-                        update_chat_history_rating_by_id(record_id, "-")
-                        st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
-                        st.rerun()
+                        if col2.button("👎", key=f"thumbs_down_{i}"):
+                            update_chat_history_rating_by_id(record_id, "-")
+                            st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
+                            st.rerun()
+            elif message["role"] == "assistant" and i == last_assistant_index:
+                #st.write(message)
+                if "last_pydeck_data" in st.session_state:
+                    pydeck_data = st.session_state["last_pydeck_data"]
+                    if pydeck_data and len(pydeck_data) > 0:
+                        df_pydeck = pd.DataFrame(pydeck_data)
+                        st.subheader("Карта")
 
+                        st.pydeck_chart(
+                            pdk.Deck(
+                                map_style=None,
+                                initial_view_state=pdk.ViewState(
+                                    latitude=df_pydeck["lat"].mean(),
+                                    longitude=df_pydeck["lon"].mean(),
+                                    zoom=13,
+                                ),
+                                layers=[
+                                    pdk.Layer(
+                                        "ScatterplotLayer",
+                                        data=df_pydeck,
+                                        get_position="[lon, lat]",
+                                        get_radius=30,
+                                        get_fill_color=[255, 0, 0],
+                                        pickable=True,
+                                    )
+                                ],
+                                tooltip={
+                                    "html": "<b>{name}</b>",
+                                    "style": {"color": "white"},
+                                },
+                            )
+                        )
+                        
     # После ререндера покажем результат последнего действия
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])

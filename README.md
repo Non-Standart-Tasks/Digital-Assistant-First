@@ -4,7 +4,7 @@
 
 <p align="center">
    <img src="https://img.shields.io/badge/Python-3.10.14-brightgree" alt="Версия Python">
-   <img src="https://img.shields.io/badge/version-v1.1-blue" alt="Версия проекта">
+   <img src="https://img.shields.io/badge/version-v1.2.1-blue" alt="Версия проекта">
    <img src="https://img.shields.io/github/last-commit/ZakatZakat/Digital-Assistant-First" alt="Последний коммит">
 </p>
 

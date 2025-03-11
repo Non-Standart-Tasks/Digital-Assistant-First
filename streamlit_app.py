@@ -147,7 +147,7 @@ def main():
     # импортируем модуль offergen в момент запуска приложения
     from digital_assistant_first import offergen
     with st.sidebar:
-        mode = st.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов"))
+        mode = st.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов", "Поиск авиабилетов"))
         if st.session_state.get("telegram_enabled", False):
             async def initialize_data():
                 await update_telegram_messages()
@@ -172,6 +172,14 @@ def main():
             st.session_state["config"]["mode"] = "Offers"
             # Запускаем новую функцию, отвечающую за режим генерации офферов:
             chat_interface(st.session_state["config"])
+        elif mode == "Поиск авиабилетов":
+            st.session_state["config"]["mode"] = "Aviasales"
+            # Отображаем предупреждение и GIF
+            st.warning("⚠️ Внимание! Функционал поиска авиабилетов находится в разработке. Некоторые функции могут работать некорректно.")
+            
+            # Отображаем GIF (заглушка, будет заменена на реальный GIF)
+            st.video("video_vGctBnsn.mp4")
+          
         else:
             st.session_state["config"]["mode"] = "Chat"
             chat_interface(st.session_state["config"])

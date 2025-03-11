@@ -32,6 +32,7 @@ browser-use = "^0.1.40"
 
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.29.5"
+pytest = "^8.3.5"
 
 [build-system]
 requires = ["poetry-core>=2.0.0"]

@@ -425,7 +425,9 @@ async def handle_user_input(model, config, prompt):
                     "content": response_text, 
                     "question": prompt,
                     "show_map": st.session_state.get("show_map", False),
-                    "request_category": response.get("request_category", "")
+                    "request_category": response.get("request_category", ""),
+                    "pydeck_data": response.get("pydeck_data", []),  # Store pydeck data with the message
+                    "record_id": None  # Will be set after DB insert
                 }
             )
             
@@ -471,40 +473,50 @@ def display_chat_history():
             
             # Если это ассистент, обрабатываем рейтинги и карты
             if message["role"] == "assistant":
-                # Показываем карту для последнего сообщения ассистента, если категория "рестораны" или "ивенты"
-                is_map_needed = (message.get("request_category") in ["рестораны", "ивенты"] or 
-                                message.get("show_map", False)) and i == last_assistant_index
+                # Показываем карту для всех сообщений о ресторанах и ивентах
+                is_map_needed = message.get("request_category") in ["рестораны", "ивенты"] or message.get("show_map", False)
                 
                 if is_map_needed:
-                    if "last_pydeck_data" in st.session_state:
+                    # Сохраняем данные для карты в ключе сообщения, чтобы не потерять
+                    if i == last_assistant_index and "last_pydeck_data" in st.session_state:
+                        # Для последнего сообщения берем текущие данные
                         pydeck_data = st.session_state["last_pydeck_data"]
-                        if pydeck_data and len(pydeck_data) > 0:
-                            df_pydeck = pd.DataFrame(pydeck_data)
-                            st.subheader("Карта")
-                            st.pydeck_chart(
-                                pdk.Deck(
-                                    map_style=None,
-                                    initial_view_state=pdk.ViewState(
-                                        latitude=df_pydeck["lat"].mean(),
-                                        longitude=df_pydeck["lon"].mean(),
-                                        zoom=13,
-                                    ),
-                                    layers=[
-                                        pdk.Layer(
-                                            "ScatterplotLayer",
-                                            data=df_pydeck,
-                                            get_position="[lon, lat]",
-                                            get_radius=30,
-                                            get_fill_color=[255, 0, 0],
-                                            pickable=True,
-                                        )
-                                    ],
-                                    tooltip={
-                                        "html": "<b>{name}</b>",
-                                        "style": {"color": "white"},
-                                    },
-                                )
+                        if "pydeck_data" not in message:
+                            message["pydeck_data"] = pydeck_data
+                    elif "pydeck_data" in message:
+                        # Для старых сообщений используем сохраненные данные
+                        pydeck_data = message["pydeck_data"]
+                    else:
+                        # Если нет данных, пробуем использовать данные из last_pydeck_data
+                        pydeck_data = st.session_state.get("last_pydeck_data", [])
+                        
+                    if pydeck_data and len(pydeck_data) > 0:
+                        df_pydeck = pd.DataFrame(pydeck_data)
+                        st.subheader("Карта")
+                        st.pydeck_chart(
+                            pdk.Deck(
+                                map_style=None,
+                                initial_view_state=pdk.ViewState(
+                                    latitude=df_pydeck["lat"].mean(),
+                                    longitude=df_pydeck["lon"].mean(),
+                                    zoom=13,
+                                ),
+                                layers=[
+                                    pdk.Layer(
+                                        "ScatterplotLayer",
+                                        data=df_pydeck,
+                                        get_position="[lon, lat]",
+                                        get_radius=30,
+                                        get_fill_color=[255, 0, 0],
+                                        pickable=True,
+                                    )
+                                ],
+                                tooltip={
+                                    "html": "<b>{name}</b>",
+                                    "style": {"color": "white"},
+                                },
                             )
+                        )
                 
                 # Показываем кнопки оценки
                 record_id = message.get("record_id")

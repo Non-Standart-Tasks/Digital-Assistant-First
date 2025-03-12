@@ -353,11 +353,59 @@ async def handle_user_input(model, config, prompt):
             if response.get("request_category") in ["рестораны", "ивенты"]:
                 # Добавляем данные 2GIS для категорий "рестораны" и "ивенты"
                 response_text += f"\n\n### Данные из 2Гис"
+                
+                # Store the table data information in the response text instead of displaying it separately
                 if "table_data" in response and response["table_data"]:
+                    # Display the dataframe directly for the current response
                     df = pd.DataFrame(response["table_data"])
-                    st.dataframe(df)  # Красивое представление таблицы
+                    st.dataframe(df)
+                    
+                    # Log the first place data to help debug what keys are available
+                    if response["table_data"]:
+                        logger.info(f"First place data structure: {response['table_data'][0]}")
+                    
+                    # Also add a text representation to the response_text to preserve it
+                    response_text += "\n\n**Найденные места:**"
+                    for i, place in enumerate(response["table_data"]):
+                        # Check for name with priority to Russian keys first
+                        name = None
+                        for name_key in ['Название', 'название', 'name', 'title', 'name_ru', 'Name']:
+                            if name_key in place and place[name_key]:
+                                name = place[name_key]
+                                break
+                        
+                        # Check for address with priority to Russian keys first
+                        address = None
+                        for addr_key in ['Адрес', 'адрес', 'address', 'address_name', 'full_address', 'Address']:
+                            if addr_key in place and place[addr_key]:
+                                address = place[addr_key]
+                                break
+                        
+                        place_info = f"\n{i+1}. **{name or 'Без названия'}**"
+                        if address:
+                            place_info += f" - {address}"
+                            
+                        # Add rating and reviews (using Russian keys first)
+                        if 'Рейтинг' in place and place['Рейтинг']:
+                            place_info += f" (Рейтинг: {place['Рейтинг']})"
+                        elif 'rating' in place and place['rating']:
+                            place_info += f" (Рейтинг: {place['rating']})"
+                            
+                        if 'Кол-во Отзывов' in place and place['Кол-во Отзывов']:
+                            place_info += f", {place['Кол-во Отзывов']} отзывов"
+                        elif 'reviews' in place and place['reviews']:
+                            place_info += f", {place['reviews']} отзывов"
+                            
+                        # Add phone if available
+                        if 'phone' in place and place['phone']:
+                            place_info += f", Тел: {place['phone']}"
+                        elif 'Телефон' in place and place['Телефон']:
+                            place_info += f", Тел: {place['Телефон']}"
+                        
+                        response_text += place_info
                 else:
                     st.warning("Ничего не найдено.")
+                    response_text += "\n\n*Ничего не найдено в 2ГИС.*"
 
                 if "pydeck_data" in response and response["pydeck_data"]:
                     st.session_state["last_pydeck_data"] = response["pydeck_data"]
@@ -366,6 +414,7 @@ async def handle_user_input(model, config, prompt):
                     st.session_state["last_pydeck_data"] = []
                     st.session_state["show_map"] = False
                     st.warning("Не найдено точек для отображения на PyDeck-карте.")
+                    response_text += "\n\n*Не найдено точек для отображения на карте.*"
         
             # Update the response placeholder for each chunk, regardless of mode
             response_placeholder.markdown(response_text)

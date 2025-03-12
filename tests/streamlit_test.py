@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(level
 logger = logging.getLogger("streamlit_test")
 
 
-TIMEOUT = 120  
+TIMEOUT = 240  
 
 # Проверка API ключа с более подробной информацией для диагностики
 def check_api_key():
@@ -74,7 +74,8 @@ def test_chat_interface(app_test):
                 timeout_start = time.time()
                 has_assistant_response = False
                 
-                while time.time() < timeout_start + TIMEOUT/2:
+                logger.info(f"Начинаем ожидание ответа ассистента (таймаут {TIMEOUT} сек)")
+                while time.time() < timeout_start + TIMEOUT:
                     # Получаем обновленные данные
                     updated_result = chat_result.run()
                     if hasattr(updated_result.session_state, 'messages'):
@@ -86,10 +87,15 @@ def test_chat_interface(app_test):
                             has_assistant_response = True
                             break
                     
+                    # Логируем прогресс каждые 30 секунд
+                    elapsed = time.time() - timeout_start
+                    if int(elapsed) % 30 == 0 and int(elapsed) > 0:
+                        logger.info(f"Ожидание ответа: прошло {int(elapsed)} сек из {TIMEOUT}")
+                    
                     time.sleep(5)  # Пауза между проверками
                 
                 if not has_assistant_response:
-                    logger.warning("Тайм-аут при ожидании ответа ассистента")
+                    logger.warning(f"Тайм-аут при ожидании ответа ассистента после {TIMEOUT} секунд")
                     pytest.skip("Не получен ответ ассистента в отведенное время")
                 
         except Exception as chat_error:

@@ -142,7 +142,7 @@ def main():
     # импортируем модуль offergen в момент запуска приложения
     from digital_assistant_first import offergen
     with st.sidebar:
-        mode = st.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов", "Поиск авиабилетов"))
+        mode = st.radio("Выберите режим:", ("Чат", "Генерация офферов", "Поиск авиабилетов"))
         if st.session_state.get("telegram_enabled", False):
             async def initialize_data():
                 await update_telegram_messages()
@@ -160,10 +160,7 @@ def main():
         apply_configuration()
     else:
         display_banner_and_title()
-        if mode == "Поиск по картам 2ГИС":
-            st.session_state["config"]["mode"] = "2Gis"
-            chat_interface(st.session_state["config"])
-        elif mode == "Генерация офферов":
+        if mode == "Генерация офферов":
             st.session_state["config"]["mode"] = "Offers"
             # Запускаем новую функцию, отвечающую за режим генерации офферов:
             chat_interface(st.session_state["config"])
@@ -173,8 +170,10 @@ def main():
             st.warning("⚠️ Внимание! Функционал поиска авиабилетов находится в разработке. Некоторые функции могут работать некорректно.")
             
             # Отображаем GIF (заглушка, будет заменена на реальный GIF)
-            st.video("video_vGctBnsn.mp4")
-          
+            st.image("video_vGctBnsn.gif", caption="Демонстрация работы поиска авиабилетов")
+            
+            # Запускаем интерфейс чата
+            chat_interface(st.session_state["config"])
         else:
             st.session_state["config"]["mode"] = "Chat"
             chat_interface(st.session_state["config"])

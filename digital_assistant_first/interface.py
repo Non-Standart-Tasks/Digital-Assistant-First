@@ -64,12 +64,46 @@ async def model_response_generator(model, config):
             history_messages = history_messages[-history_size:]
         message_history = "\n".join(history_messages)
 
+    # Определение категории запроса с помощью агента
+    async def categorize_request():
+        category_prompt = """
+        Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
+        - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
+        - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
+        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
+        - другое (если запрос не подходит ни под одну из перечисленных категорий)
+        
+        Запрос пользователя: {user_input}
+        """
+        
+        messages = [
+            {"role": "system", "content": category_prompt.format(user_input=user_input)}
+        ]
+        
+        response = model.invoke(messages, stream=False)
+        
+        if hasattr(response, "content"):
+            category = response.content.strip().lower()
+        elif hasattr(response, "message"):
+            category = response.message.content.strip().lower()
+        else:
+            category = str(response).strip().lower()
+        
+        # Логирование определенной категории
+        logger.info(f"Определена категория запроса: {category}")
+        
+        return category
+    
+    # Получаем категорию запроса
+    request_category = await categorize_request()
+    
     # Создаем список задач для параллельного выполнения
     tasks = []
     
-    # Задача для Aviasales
-    aviasales_tool = AviasalesHandler()
-    tasks.append(aviasales_tool.aviasales_request(model, config, user_input))
+    # Задача для Aviasales (только для категории "поездки" или если это не специфический запрос)
+    if request_category == "поездки" or request_category == "другое":
+        aviasales_tool = AviasalesHandler()
+        tasks.append(aviasales_tool.aviasales_request(model, config, user_input))
     
     # Инициализируем переменные по умолчанию
     shopping_res = ""
@@ -80,18 +114,24 @@ async def model_response_generator(model, config):
     table_data = []
     pydeck_data = []
     
-    # Задачи для интернет-поиска
+    # Задачи для интернет-поиска (всегда выполняем, но используем информацию о категории)
     if config.get("internet_search", False):
         async def fetch_internet_data():
             _, serpapi_key = serpapi_key_manager.get_best_api_key()
-            shopping = await search_shopping(user_input, serpapi_key)
-            internet, links_data, _ = await search_places(user_input, serpapi_key)
-            yandex_res = await yandex_search(user_input, serpapi_key)
+            
+            # Добавляем информацию о категории к запросу для более точного поиска
+            enhanced_query = user_input
+            if request_category != "другое":
+                enhanced_query = f"{user_input} {request_category}"
+                
+            shopping = await search_shopping(enhanced_query, serpapi_key)
+            internet, links_data, _ = await search_places(enhanced_query, serpapi_key)
+            yandex_res = await yandex_search(enhanced_query, serpapi_key)
             return shopping, internet, links_data, yandex_res
         
         tasks.append(fetch_internet_data())
     
-    # Задача для Telegram
+    # Задача для Telegram (всегда выполняем)
     if config.get("telegram_enabled", False):
         async def fetch_telegram_data_async():
             telegram_manager = TelegramManager()
@@ -102,8 +142,8 @@ async def model_response_generator(model, config):
         
         tasks.append(fetch_telegram_data_async())
     
-    # Задача для 2Gis
-    if config.get("mode") == "2Gis":
+    # Задача для 2Gis (только для категорий "рестораны" и "ивенты")
+    if request_category in ["рестораны", "ивенты"]:
         tasks.append(fetch_2gis_data(user_input, config))
     
     try:
@@ -114,8 +154,11 @@ async def model_response_generator(model, config):
         result_index = 0
         
         # Результат Aviasales
-        tickets_need = results[result_index] if not isinstance(results[result_index], Exception) else {"response": "false"}
-        result_index += 1
+        tickets_need = {"response": "false"}
+        if request_category == "поездки" or request_category == "другое":
+            if result_index < len(results):
+                tickets_need = results[result_index] if not isinstance(results[result_index], Exception) else {"response": "false"}
+                result_index += 1
         
         # Результаты интернет-поиска
         if config.get("internet_search", False):
@@ -130,14 +173,20 @@ async def model_response_generator(model, config):
             result_index += 1
         
         # Результаты 2Gis
-        if config.get("mode") == "2Gis":
-            if not isinstance(results[result_index], Exception):
+        if request_category in ["рестораны", "ивенты"]:
+            if result_index < len(results) and not isinstance(results[result_index], Exception):
                 table_data, pydeck_data = results[result_index]
             result_index += 1
         
         # Формируем URL для Aviasales
         aviasales_url = ""
+        aviasales_flight_info = ""
+        
         if tickets_need.get("response", "").lower() == "true":
+            # Создаем инструмент Aviasales, если он еще не создан
+            if 'aviasales_tool' not in locals():
+                aviasales_tool = AviasalesHandler()
+                
             aviasales_url = aviasales_tool.construct_aviasales_url(
                 tickets_need["departure_city"],
                 tickets_need["destination"],
@@ -149,13 +198,15 @@ async def model_response_generator(model, config):
             )
             if config.get("aviasales_search") == "True":
                 aviasales_flight_info = await aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
-            else:
-                aviasales_flight_info = ""
         else:
             aviasales_flight_info = ""
             
         # Формируем системный промпт
         system_prompt_template = config["system_prompt"]
+        
+        # Создаем информацию о категории запроса
+        category_info = f"Категория запроса пользователя: {request_category}"
+        
         formatted_prompt = system_prompt_template.format(
             context=message_history,
             internet_res=internet_res,
@@ -166,6 +217,9 @@ async def model_response_generator(model, config):
             # yndx_restaurants=restaurants_prompt,
             aviasales_flight_info=aviasales_flight_info,
         )
+        
+        # Добавляем информацию о категории в начало промпта
+        formatted_prompt = f"{category_info}\n\n{formatted_prompt}"
         
         # Получаем ответ от модели
         prompt_template = ChatPromptTemplate.from_messages(
@@ -209,6 +263,7 @@ async def model_response_generator(model, config):
             "aviasales_link": aviasales_url,
             "table_data": table_data or [],
             "pydeck_data": pydeck_data or [],
+            "request_category": request_category,
         }
         
     except Exception as e:
@@ -292,26 +347,36 @@ async def handle_user_input(model, config, prompt):
                     response_text += f"\n\n### Данные из Авиасейлс \n **Ссылка** - {aviasales_link}"
                 else:
                     response_text += f"\n\n{aviasales_link}"
-
-            if config["mode"] == "2Gis":
+            
+            # Получаем категорию запроса из ответа, если она есть
+            if response.get("request_category") in ["рестораны", "ивенты"]:
+                # Добавляем данные 2GIS для категорий "рестораны" и "ивенты"
                 response_text += f"\n\n### Данные из 2Гис"
-                if "table_data" in response:
+                if "table_data" in response and response["table_data"]:
                     df = pd.DataFrame(response["table_data"])
                     st.dataframe(df)  # Красивое представление таблицы
                 else:
                     st.warning("Ничего не найдено.")
 
-                if "pydeck_data" in response:
+                if "pydeck_data" in response and response["pydeck_data"]:
                     st.session_state["last_pydeck_data"] = response["pydeck_data"]
+                    st.session_state["show_map"] = True
                 else:
                     st.session_state["last_pydeck_data"] = []
+                    st.session_state["show_map"] = False
                     st.warning("Не найдено точек для отображения на PyDeck-карте.")
         
             # Update the response placeholder for each chunk, regardless of mode
             response_placeholder.markdown(response_text)
 
             st.session_state["messages"].append(
-                {"role": "assistant", "content": response_text, "question": prompt}
+                {
+                    "role": "assistant", 
+                    "content": response_text, 
+                    "question": prompt,
+                    "show_map": st.session_state.get("show_map", False),
+                    "request_category": response.get("request_category", "")
+                }
             )
             
             st.markdown("### Оцените ответ:")
@@ -353,55 +418,59 @@ def display_chat_history():
 
             # Основной контент сообщения
             st.markdown(message["content"])
-            # Если это ассистент и есть record_id, рисуем кнопки рейтинга
-            if st.session_state.get("config", {}).get("mode") != "2Gis":
-                if message["role"] == "assistant":
-                    record_id = message.get("record_id")
-                    if record_id:
-                        col1, col2 = st.columns(2)
-
-                        if col1.button("👍", key=f"thumbs_up_{i}"):
-                            update_chat_history_rating_by_id(record_id, "+")
-                            st.session_state["last_rating_action"] = f"Поставили лайк для записи ID={record_id}"
-                            st.rerun()
-
-                        if col2.button("👎", key=f"thumbs_down_{i}"):
-                            update_chat_history_rating_by_id(record_id, "-")
-                            st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
-                            st.rerun()
-            elif message["role"] == "assistant" and i == last_assistant_index:
-                #st.write(message)
-                if "last_pydeck_data" in st.session_state:
-                    pydeck_data = st.session_state["last_pydeck_data"]
-                    if pydeck_data and len(pydeck_data) > 0:
-                        df_pydeck = pd.DataFrame(pydeck_data)
-                        st.subheader("Карта")
-
-                        st.pydeck_chart(
-                            pdk.Deck(
-                                map_style=None,
-                                initial_view_state=pdk.ViewState(
-                                    latitude=df_pydeck["lat"].mean(),
-                                    longitude=df_pydeck["lon"].mean(),
-                                    zoom=13,
-                                ),
-                                layers=[
-                                    pdk.Layer(
-                                        "ScatterplotLayer",
-                                        data=df_pydeck,
-                                        get_position="[lon, lat]",
-                                        get_radius=30,
-                                        get_fill_color=[255, 0, 0],
-                                        pickable=True,
-                                    )
-                                ],
-                                tooltip={
-                                    "html": "<b>{name}</b>",
-                                    "style": {"color": "white"},
-                                },
+            
+            # Если это ассистент, обрабатываем рейтинги и карты
+            if message["role"] == "assistant":
+                # Показываем карту для последнего сообщения ассистента, если категория "рестораны" или "ивенты"
+                is_map_needed = (message.get("request_category") in ["рестораны", "ивенты"] or 
+                                message.get("show_map", False)) and i == last_assistant_index
+                
+                if is_map_needed:
+                    if "last_pydeck_data" in st.session_state:
+                        pydeck_data = st.session_state["last_pydeck_data"]
+                        if pydeck_data and len(pydeck_data) > 0:
+                            df_pydeck = pd.DataFrame(pydeck_data)
+                            st.subheader("Карта")
+                            st.pydeck_chart(
+                                pdk.Deck(
+                                    map_style=None,
+                                    initial_view_state=pdk.ViewState(
+                                        latitude=df_pydeck["lat"].mean(),
+                                        longitude=df_pydeck["lon"].mean(),
+                                        zoom=13,
+                                    ),
+                                    layers=[
+                                        pdk.Layer(
+                                            "ScatterplotLayer",
+                                            data=df_pydeck,
+                                            get_position="[lon, lat]",
+                                            get_radius=30,
+                                            get_fill_color=[255, 0, 0],
+                                            pickable=True,
+                                        )
+                                    ],
+                                    tooltip={
+                                        "html": "<b>{name}</b>",
+                                        "style": {"color": "white"},
+                                    },
+                                )
                             )
-                        )
-                        
+                
+                # Показываем кнопки оценки
+                record_id = message.get("record_id")
+                if record_id:
+                    col1, col2 = st.columns(2)
+
+                    if col1.button("👍", key=f"thumbs_up_{i}"):
+                        update_chat_history_rating_by_id(record_id, "+")
+                        st.session_state["last_rating_action"] = f"Поставили лайк для записи ID={record_id}"
+                        st.rerun()
+
+                    if col2.button("👎", key=f"thumbs_down_{i}"):
+                        update_chat_history_rating_by_id(record_id, "-")
+                        st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
+                        st.rerun()
+        
     # После ререндера покажем результат последнего действия
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])

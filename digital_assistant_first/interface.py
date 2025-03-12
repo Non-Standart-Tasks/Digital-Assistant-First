@@ -241,16 +241,17 @@ async def model_response_generator(model, config):
             answer = str(response)
         
         # Проверка и коррекция ссылок
-        link_statuses = await link_checker.run(answer)
+        if config.get("link_checker", False):
+            link_statuses = await link_checker.run(answer)
         
-        if link_statuses.data.links:
-            some_link_is_invalid = any(
-                not link.status for link in link_statuses.data.links
-            )
-            if some_link_is_invalid:
-                corrected_answer = await corrector.run(answer, deps=link_statuses.data.links)
-                answer = corrected_answer.data
-        
+            if link_statuses.data.links:
+                some_link_is_invalid = any(
+                    not link.status for link in link_statuses.data.links
+                )
+                if some_link_is_invalid:
+                    corrected_answer = await corrector.run(answer, deps=link_statuses.data.links)
+                    answer = corrected_answer.data
+            
         log_api_call(
             logger=logger,
             source=f"LLM ({config['Model']})",

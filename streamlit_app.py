@@ -11,7 +11,6 @@ from digital_assistant_first.utils.database import init_db
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from digital_assistant_first.interface import *
-from digital_assistant_first.interface import init_message_history
 from langchain_core.documents import Document
 from digital_assistant_first.utils.database import generate_csv_from_db
 from digital_assistant_first.telegram_system.telegram_data_initializer import (
@@ -81,11 +80,6 @@ def apply_configuration():
     st.session_state["config_applied"] = True
     time.sleep(2)
     st.rerun()
-
-
-def initialize_model(config):
-    """Инициализация языковой модели на основе конфигурации."""
-    return ChatOpenAI(model=config["Model"], stream=True)
 
 
 def display_banner_and_title():

@@ -1,12 +1,12 @@
 internet_search: True
 aviasales_search: False
-model: 'gpt-4o'
+model: 'gpt-4o-mini'
 2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'
 telegram_enabled: False
 collect_messages: 100
 
 offersgen:
-  model: gpt-4o
+  model: gpt-4o-mini
   offers_db: content/json/offers/raw/offers.json
   rag_n_examples: 40
   city_filter: False

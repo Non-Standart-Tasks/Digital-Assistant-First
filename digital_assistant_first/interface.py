@@ -11,6 +11,7 @@ from digital_assistant_first.utils.check_serp_response import APIKeyManager
 from digital_assistant_first.utils.logging import setup_logging, log_api_call
 from digital_assistant_first.internet_search import search_shopping, search_places, yandex_search
 import pydeck as pdk
+from langchain_openai import ChatOpenAI
 
 # Локальные импорты
 from digital_assistant_first.telegram_system.telegram_rag import EnhancedRAGSystem
@@ -24,7 +25,6 @@ from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
-from streamlit_app import initialize_model
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
 from digital_assistant_first.utils.link_checker import link_checker, corrector
 from digital_assistant_first.utils.database import (
@@ -41,6 +41,11 @@ load_dotenv()
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 init_db()
+
+# Add the initialize_model function here to avoid circular import
+def initialize_model(config):
+    """Инициализация языковой модели на основе конфигурации."""
+    return ChatOpenAI(model=config["Model"], stream=True)
 
 async def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера асинхронно."""

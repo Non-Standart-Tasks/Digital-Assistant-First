@@ -64,6 +64,8 @@ def apply_configuration():
         "2gis-key": st.session_state["2gis-key"],
         "internet_search": st.session_state["internet_search"],
         "system_prompt": st.session_state["system_prompt"],
+        "system_prompt_aviasales": st.session_state["system_prompt_aviasales"],
+        "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
     }
 
@@ -104,7 +106,9 @@ def chat_interface(config):
     prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
         handle_user_input(model, config, prompt)
-        st.rerun()
+        ########to fix 
+        if config['mode'] != '2Gis':
+            st.rerun()
 
 
 
@@ -132,6 +136,8 @@ def main():
         "2gis-key": config_yaml["2gis-key"],
         "internet_search": config_yaml["internet_search"],
         "system_prompt": config_yaml["system_prompt"],
+        "system_prompt_aviasales": config_yaml["system_prompt_aviasales"],
+        "system_prompt_airport": config_yaml["system_prompt_airport"],
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
     }
 

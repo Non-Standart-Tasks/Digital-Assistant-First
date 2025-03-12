@@ -77,7 +77,7 @@ def model_response_generator(model, config):
             tickets_need = aviasales_tool.aviasales_request(model, config, user_input)
             # Если требуется, сформировать URL для Aviasales
             print(f'{tickets_need}')
-            if tickets_need.get('response', '') == True:
+            if str(tickets_need.get('response', '')).lower() == 'true':
                 # Get flight options
                 aviasales_url = aviasales_tool.construct_aviasales_url(
                     from_city=tickets_need["departure_city"],

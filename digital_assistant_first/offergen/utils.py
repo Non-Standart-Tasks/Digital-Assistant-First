@@ -202,3 +202,106 @@ Key requirements:
     else:
         logger.warning("No relevant offers found for the search request")
         return "No relevant offers were found for the search request."
+
+async def get_system_prompt_for_offers_async(
+    validation_result: PromptValidation, prompt: str
+) -> str:
+    '''
+    if not validation_result.is_valid:
+        raise ValueError(
+            f"Unable to generate system prompt for prompt: {prompt}. "
+            f"Reason: {validation_result.reason}. "
+            "Please ensure the request meets validation requirements."
+        )
+    '''
+
+    # Use the city parameter if is_city is true
+    city = validation_result.city if validation_result.is_city else None
+
+    logger.info(
+        f"Loading RAG examples for prompt: {validation_result.modified_prompt_for_rag_search}"
+    )
+    offers, scores, offer_ids = load_rag_examples(
+        offers_db, validation_result.modified_prompt_for_rag_search, db_service, city=city, n_examples=rag_n_examples, city_fil = city_filter
+    )
+    logger.info(
+        f"RAG examples loaded for prompt: {validation_result.modified_prompt_for_rag_search}"
+    )
+
+    rag_context = "\nRelevant offer examples:\n"
+    for offer, score, offer_id in zip(offers, scores, offer_ids):
+        rag_context += f"- Category: {offer.category}\n"
+        rag_context += f"- Title: {offer.name}\n"
+        rag_context += f"- Short description: {offer.short_description}\n"
+        rag_context += f"- Full description: {offer.full_description}\n"
+        rag_context += f"- Offer RAG score: {score}\n"
+        rag_context += f"- Offer ID: {offer_id}\n"
+        rag_context += "---\n"
+
+    enhanced_prompt = f"{rag_context}\nUser request: {prompt}"
+
+    deps = RagDeps(k=validation_result.number_of_offers_to_generate, offers=offers_db)
+    # Use the async run method instead of run_sync
+    result = await offer_matching_agent.run(enhanced_prompt, deps=deps)
+    logger.info(f"Offer matching agent result: {result.data}")
+
+    if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
+        information_about_relevant_offers = ""
+        for match in result.data.matches:
+            if match.offer_id not in offers_db.keys():
+                logger.warning(f"Offer ID {match.offer_id} not found in offers database")
+                continue
+            offer = offers_db[match.offer_id]
+            information_about_relevant_offers += f"Offer ID: {match.offer_id}\n"
+            information_about_relevant_offers += f"Offer name: {offer.name}\n"
+            information_about_relevant_offers += f"Offer category: {offer.category}\n"
+            information_about_relevant_offers += f"Offer short description: {offer.short_description}\n"
+            information_about_relevant_offers += f"Offer full description: {offer.full_description}\n"
+            information_about_relevant_offers += f"Offer URL: {offer.offer_url}\n"
+            information_about_relevant_offers += f"Offer match reason: {match.match_reason}\n"
+            information_about_relevant_offers += "---\n"
+        logger.info("System prompt for offers generated.")
+        return f"""
+You are a VTB Family offers formatter. Format and evaluate these offers:
+
+{information_about_relevant_offers}
+
+The input you receive is the user's initial search request. Use it to evaluate offer relevance.
+
+Main tasks:
+1. Format search results in markdown
+2. Structure each offer clearly
+3. Match offers against the initial request
+4. Write everything in Russian
+
+Write a summary that:
+- Mentions the initial search request
+- States how well the offers match the request
+- Explains any mismatches and their potential value
+- Speaks directly to the user who made the request
+
+Use this format for each offer:
+### [OFFER TITLE]
+**Категория:** [CATEGORY]
+
+**Описание предложения:**
+[SHORT, CONCISE DESCRIPTION OF THE MAIN OFFER/DISCOUNT]
+
+**Информация о компании:**
+- Адрес: [ADDRESS IF AVAILABLE]
+- Телефон: [PHONE IF AVAILABLE]
+- Часы работы: [HOURS IF AVAILABLE]
+- Сайт: [WEBSITE IF AVAILABLE]
+
+**Ссылка на предложение:** [Подробнее на VTB Family]([OFFER URL])
+
+---
+
+Key requirements:
+- Pull company details from the full description
+- Keep descriptions brief and value-focused
+- Connect your response to the user's search request
+"""
+    else:
+        logger.warning("No relevant offers found for the search request")
+        return "No relevant offers were found for the search request."

@@ -24,7 +24,7 @@ from digital_assistant_first.telegram_system.telegram_initialization import (
 from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
 from digital_assistant_first.offergen.agent import validation_agent
-from digital_assistant_first.offergen.utils import get_system_prompt_for_offers
+from digital_assistant_first.offergen.utils import get_system_prompt_for_offers, get_system_prompt_for_offers_async
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
 from digital_assistant_first.utils.link_checker import link_checker, corrector
 from digital_assistant_first.utils.database import (
@@ -71,6 +71,7 @@ async def model_response_generator(model, config):
         - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
+        - офферы (если запрос о скидках, промокодах, специальных предложениях, акциях, бонусах, кэшбэке и т.п.)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
         Запрос пользователя: {user_input}
@@ -113,6 +114,7 @@ async def model_response_generator(model, config):
     telegram_context = ""
     table_data = []
     pydeck_data = []
+    offers_data = []
     
     # Задачи для интернет-поиска (всегда выполняем, но используем информацию о категории)
     if config.get("internet_search", False):
@@ -177,6 +179,30 @@ async def model_response_generator(model, config):
             if result_index < len(results) and not isinstance(results[result_index], Exception):
                 table_data, pydeck_data = results[result_index]
             result_index += 1
+        
+        # Если категория "офферы", запускаем обработку предложений
+        if request_category == "офферы":
+            try:
+                # Прямой асинхронный вызов вместо run_until_complete
+                validation_result = await validation_agent.run(user_input)
+                validation_result = validation_result.data
+                
+                if validation_result.number_of_offers_to_generate < 1:
+                    validation_result.number_of_offers_to_generate = 10
+                
+                # Используем асинхронную версию функции
+                offers_system_prompt = await get_system_prompt_for_offers_async(validation_result, user_input)
+                
+                # Если были найдены офферы
+                if offers_system_prompt != "No relevant offers were found for the search request.":
+                    # Сохраняем информацию об офферах
+                    offers_data = {
+                        "system_prompt": offers_system_prompt,
+                        "validation_result": validation_result
+                    }
+            except Exception as e:
+                logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
+                offers_data = []
         
         # Формируем URL для Aviasales
         aviasales_url = ""
@@ -265,6 +291,7 @@ async def model_response_generator(model, config):
             "table_data": table_data or [],
             "pydeck_data": pydeck_data or [],
             "request_category": request_category,
+            "offers_data": offers_data
         }
         
     except Exception as e:
@@ -277,55 +304,6 @@ async def model_response_generator(model, config):
             error=str(e),
         )
         raise
-
-def offers_mode_interface(config):
-    """
-    Режим генерации офферов. Не используем nest_asyncio,
-    вручную создаём event loop для вызова асинхронного validation_agent.
-    """
-    st.subheader("Режим генерации офферов VTB Family")
-    if "messages_offers" not in st.session_state:
-        st.session_state["messages_offers"] = []
-    user_input = st.chat_input("Введите запрос для генерации офферов...")
-    if user_input:
-        st.session_state["messages_offers"].append(
-            {"role": "user", "content": user_input}
-        )
-        with st.chat_message("user"):
-            st.markdown(user_input)
-        try:
-            try:
-                loop = asyncio.get_event_loop()
-            except RuntimeError:
-                loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(loop)
-            validation_result = loop.run_until_complete(
-                validation_agent.run(user_input)
-            ).data
-            if validation_result.number_of_offers_to_generate < 1:
-                validation_result.number_of_offers_to_generate = 10
-            system_prompt = get_system_prompt_for_offers(validation_result, user_input)
-            if system_prompt == "No relevant offers were found for the search request.":
-                with st.chat_message("assistant"):
-                    st.warning("Офферы не найдены, попробуйте уточнить запрос.")
-                return
-            model = initialize_model(config)
-            messages = [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_input},
-            ]
-            response = model.invoke(messages, stream=True)
-            response_text = ""
-            with st.chat_message("assistant"):
-                response_placeholder = st.empty()
-                for chunk in response:
-                    if isinstance(chunk, tuple) and len(chunk) == 2:
-                        key, value = chunk
-                        if key == "content":
-                            response_text += value
-                            response_placeholder.markdown(response_text)
-        except Exception as e:
-            st.error(f"Error in offers generation: {str(e)}")
 
 async def handle_user_input(model, config, prompt):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента."""
@@ -415,6 +393,37 @@ async def handle_user_input(model, config, prompt):
                     st.session_state["show_map"] = False
                     st.warning("Не найдено точек для отображения на PyDeck-карте.")
                     response_text += "\n\n*Не найдено точек для отображения на карте.*"
+        
+            # Обрабатываем данные офферов, если они есть
+            if "offers_data" in response and response["offers_data"]:
+                offers_data = response["offers_data"]
+                # Добавляем заголовок для офферов
+                response_text += f"\n\n### Секция офферов"
+                
+                # Генерируем офферы используя модель и system_prompt из offers_data
+                try:
+                    offers_system_prompt = offers_data.get("system_prompt", "")
+                    if offers_system_prompt:
+                        offers_messages = [
+                            {"role": "system", "content": offers_system_prompt},
+                            {"role": "user", "content": prompt}
+                        ]
+                        offers_response = model.invoke(offers_messages, stream=False)
+                        
+                        if hasattr(offers_response, "content"):
+                            offers_text = offers_response.content
+                        elif hasattr(offers_response, "message"):
+                            offers_text = offers_response.message.content
+                        else:
+                            offers_text = str(offers_response)
+                        
+                        # Добавляем офферы к основному ответу
+                        response_text += f"\n\n{offers_text}"
+                    else:
+                        response_text += "\n\n*Не удалось сгенерировать офферы для вашего запроса.*"
+                except Exception as e:
+                    logger.error(f"Error generating offers: {str(e)}", exc_info=True)
+                    response_text += "\n\n*Произошла ошибка при генерации офферов.*"
         
             # Update the response placeholder for each chunk, regardless of mode
             response_placeholder.markdown(response_text)

@@ -4,6 +4,7 @@ model: 'gpt-4o-mini'
 2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'
 telegram_enabled: False
 collect_messages: 100
+link_checker: False
 
 offersgen:
   model: gpt-4o-mini

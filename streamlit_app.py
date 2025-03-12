@@ -11,7 +11,6 @@ from digital_assistant_first.utils.database import init_db
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
 from digital_assistant_first.interface import *
-from digital_assistant_first.interface import init_message_history
 from langchain_core.documents import Document
 from digital_assistant_first.utils.database import generate_csv_from_db
 from digital_assistant_first.telegram_system.telegram_data_initializer import (

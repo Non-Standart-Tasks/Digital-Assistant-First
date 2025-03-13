@@ -278,7 +278,7 @@ async def handle_user_input(model, config, prompt):
             response_text = ""
             response = await model_response_generator(model, config)
             response_text += response["answer"]
-
+            logger.info("handle_user_input: after model_response_generator, response=%s", response["answer"])
             # Проверяем наличие ключа aviasales_link
             if "aviasales_link" in response:
                 aviasales_link = response["aviasales_link"]

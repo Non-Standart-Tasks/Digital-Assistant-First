@@ -101,7 +101,8 @@ def chat_interface(config):
     display_chat_history()
     prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
-        asyncio.run(handle_user_input(model, config, prompt))
+        # Используем полностью синхронную версию функции для обработки ввода
+        handle_user_input_sync(model, config, prompt)
         st.rerun()
 
 

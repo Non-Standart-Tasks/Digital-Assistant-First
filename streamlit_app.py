@@ -91,7 +91,7 @@ def display_banner_and_title():
 def chat_interface(config):
     """Отображение интерфейса чата на основе примененной конфигурации."""
     logger = logging.getLogger(__name__)
-    logger.info(f"Конфигурация загружена: {config}")
+    logger.info(f"Конфигурация загружена")
 
     template_prompt = "Я ваш Цифровой Ассистент - пожалуйста, задайте свой вопрос."
 

@@ -45,7 +45,8 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
-          echo "OPENAI_API_KEY=${{ secrets.OPENAI_KEY }}" >> $GITHUB_ENV
+          echo "OPENAI_API_KEY=${{ secrets.OPENAI_KEY }}" > .env
+          cat .env
           poetry run pytest tests/streamlit_test.py -v
 
       - name: Публикация результатов тестов

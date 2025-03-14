@@ -45,6 +45,7 @@ jobs:
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
+          export  ${{ secrets.OPENAI_KEY }}
           poetry run pytest tests/streamlit_test.py -v
 
       - name: Публикация результатов тестов

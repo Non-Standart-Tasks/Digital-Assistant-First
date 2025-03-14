@@ -234,6 +234,24 @@ async def model_response_generator(model, config):
         # Создаем информацию о категории запроса
         category_info = f"Категория запроса пользователя: {request_category}"
         
+        # Добавляем специальные инструкции для категории "рестораны"
+        restaurant_format_instructions = ""
+        if request_category == "рестораны":
+            restaurant_format_instructions = """
+            ВАЖНО: При ответе на запрос о ресторанах используй следующий формат для представления информации о каждом ресторане:
+
+            Название: [название ресторана]
+            Адрес: [полный адрес]
+            Режим работы: [часы работы, если есть данные]
+            Тип кухни: [какая кухня представлена]
+            Средний чек: [стоимость среднего чека, если есть данные]
+            Сайт: [официальный сайт, если есть]
+            Сайт на рейтинг: [ссылка на страницу с рейтингом]
+            Ссылка на отзывы: [ссылка на отзывы]
+
+            Представляй информацию о каждом ресторане в этом формате, с разделением и ясной структурой.
+            """
+        
         formatted_prompt = system_prompt_template.format(
             context=message_history,
             internet_res=internet_res,
@@ -241,12 +259,11 @@ async def model_response_generator(model, config):
             links=links,
             shopping_res=shopping_res,
             telegram_context=telegram_context,
-            # yndx_restaurants=restaurants_prompt,
             aviasales_flight_info=aviasales_flight_info,
         )
         
-        # Добавляем информацию о категории в начало промпта
-        formatted_prompt = f"{category_info}\n\n{formatted_prompt}"
+        # Добавляем информацию о категории и инструкции по форматированию в начало промпта
+        formatted_prompt = f"{category_info}\n\n{restaurant_format_instructions}\n\n{formatted_prompt}"
         
         # Получаем ответ от модели
         prompt_template = ChatPromptTemplate.from_messages(
@@ -732,6 +749,24 @@ def model_response_generator_sync(model, config):
     # Создаем информацию о категории запроса
     category_info = f"Категория запроса пользователя: {request_category}"
     
+    # Добавляем специальные инструкции для категории "рестораны"
+    restaurant_format_instructions = ""
+    if request_category == "рестораны":
+        restaurant_format_instructions = """
+        ВАЖНО: При ответе на запрос о ресторанах используй следующий формат для представления информации о каждом ресторане:
+
+        Название: [название ресторана]
+        Адрес: [полный адрес]
+        Режим работы: [часы работы, если есть данные]
+        Тип кухни: [какая кухня представлена]
+        Средний чек: [стоимость среднего чека, если есть данные]
+        Сайт: [официальный сайт, если есть]
+        Сайт на рейтинг: [ссылка на страницу с рейтингом]
+        Ссылка на отзывы: [ссылка на отзывы]
+
+        Представляй информацию о каждом ресторане в этом формате, с разделением и ясной структурой.
+        """
+    
     formatted_prompt = system_prompt_template.format(
         context=message_history,
         internet_res=internet_res,
@@ -742,8 +777,8 @@ def model_response_generator_sync(model, config):
         aviasales_flight_info=aviasales_flight_info,
     )
     
-    # Добавляем информацию о категории в начало промпта
-    formatted_prompt = f"{category_info}\n\n{formatted_prompt}"
+    # Добавляем информацию о категории и инструкции по форматированию в начало промпта
+    formatted_prompt = f"{category_info}\n\n{restaurant_format_instructions}\n\n{formatted_prompt}"
     
     # Получаем ответ от модели
     prompt_template = ChatPromptTemplate.from_messages(

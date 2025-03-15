@@ -491,6 +491,9 @@ async def handle_user_input(model, config, prompt):
                                             data=df_pydeck,
                                             get_position="[lon, lat]",
                                             get_radius=30,
+                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                            radiusMaxPixels=100,  # Максимальный размер при приближении
+                                            radiusScale=0.8,  # Масштабный коэффициент
                                             get_fill_color=[255, 0, 0],
                                             pickable=True,
                                         )
@@ -600,6 +603,9 @@ def display_chat_history():
                                             data=df_pydeck,
                                             get_position="[lon, lat]",
                                             get_radius=30,
+                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                            radiusMaxPixels=100,  # Максимальный размер при приближении
+                                            radiusScale=0.8,  # Масштабный коэффициент
                                             get_fill_color=[255, 0, 0],
                                             pickable=True,
                                         )
@@ -1035,6 +1041,9 @@ def handle_user_input_sync(model, config, prompt):
                                             data=df_pydeck,
                                             get_position="[lon, lat]",
                                             get_radius=30,
+                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                            radiusMaxPixels=100,  # Максимальный размер при приближении
+                                            radiusScale=0.8,  # Масштабный коэффициент
                                             get_fill_color=[255, 0, 0],
                                             pickable=True,
                                         )

@@ -1078,7 +1078,6 @@ def handle_user_input_sync(model, config, prompt):
             )
             
             # Добавляем оценку ответа
-            st.markdown("### Оцените ответ:")
             col1, col2 = st.columns(2)
             if col1.button("👍", key=f"thumbs_up_{len(st.session_state['messages'])}"):
                 st.success("Вы поставили 👍")

@@ -4,6 +4,8 @@ import json
 import asyncio
 import pandas as pd
 import streamlit as st
+import time
+import random
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -818,6 +820,11 @@ def model_response_generator_sync(model, config):
 def handle_user_input_sync(model, config, prompt):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента (синхронная версия)."""
     if prompt:
+        # Всегда сбрасываем данные карты и таблицы перед новым запросом
+        st.session_state["last_pydeck_data"] = []
+        st.session_state["show_map"] = False
+        st.session_state["last_2gis_query"] = prompt  # Сохраняем текущий запрос
+        
         # Получаем предварительную категорию запроса
         categorize_prompt = """
         Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
@@ -866,12 +873,18 @@ def handle_user_input_sync(model, config, prompt):
                 asyncio.set_event_loop(loop)
                 
                 try:
-                    # Запускаем 2GIS запрос синхронно
+                    # Добавляем аннотацию @st.cache_data(ttl=60) выше функции fetch_2gis_data в другом файле
+                    # или форсируем новый запрос здесь:
+                    st.session_state["2gis_cache_key"] = f"{prompt}_{time.time()}"  # Уникальный ключ
                     table_data, pydeck_data = loop.run_until_complete(fetch_2gis_data(prompt, config))
                     
-                    # Сохраняем данные для карты сразу для использования позже
+                    # Проверяем и сохраняем новые данные
                     if pydeck_data and len(pydeck_data) > 0:
-                        st.session_state["last_pydeck_data"] = pydeck_data
+                        # Печатаем отладочную информацию
+                        print(f"Новые данные карты: {len(pydeck_data)} точек")
+                        print(f"Координаты первой точки: lat={pydeck_data[0]['lat']}, lon={pydeck_data[0]['lon']}")
+                        
+                        st.session_state["last_pydeck_data"] = pydeck_data.copy()  # Создаем копию
                         st.session_state["show_map"] = True
                     else:
                         st.session_state["last_pydeck_data"] = []
@@ -972,8 +985,6 @@ def handle_user_input_sync(model, config, prompt):
             text_placeholder = st.empty()
             
             # Имитируем печатную машинку с помощью плейсхолдера
-            import time
-            import random
             
             # Разбиваем текст на части для имитации печати
             display_text = ""

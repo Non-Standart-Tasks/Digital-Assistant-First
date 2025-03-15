@@ -818,6 +818,28 @@ def model_response_generator_sync(model, config):
 def handle_user_input_sync(model, config, prompt):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента (синхронная версия)."""
     if prompt:
+        # Получаем предварительную категорию запроса
+        categorize_prompt = """
+        Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
+        - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
+        - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
+        - другое (если запрос не подходит ни под одну из перечисленных категорий)
+        
+        Запрос пользователя: {prompt}
+        """
+        
+        messages = [
+            {"role": "system", "content": categorize_prompt.format(prompt=prompt)}
+        ]
+        
+        # Получаем предварительную категорию
+        pre_category = model.invoke(messages, stream=False).content.strip().lower()
+        
+        # Сбрасываем флаг show_map и данные карты если запрос НЕ о ресторанах/ивентах
+        if pre_category != "рестораны" and pre_category != "ивенты":
+            st.session_state["show_map"] = False
+            st.session_state["last_pydeck_data"] = []
+            
         st.session_state["messages"].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
@@ -977,23 +999,9 @@ def handle_user_input_sync(model, config, prompt):
             # Устанавливаем финальный текст для сохранения
             response_text = full_response_text
             
-            # Отображаем офферы в интерфейсе - оставляем офферы с отдельным выводом
-            if "offers_data" in response and response["offers_data"] and offers_text:
-                st.subheader("Генерация офферов")
-                offers_data = response["offers_data"]
-                try:
-                    offers_system_prompt = offers_data.get("system_prompt", "")
-                    if offers_system_prompt:
-                        # Офферы уже включены в основной ответ, не показываем дублированно
-                        pass
-                    else:
-                        st.warning("Не удалось сгенерировать офферы для вашего запроса.")
-                except Exception as e:
-                    st.error("Произошла ошибка при генерации офферов.")
-            
             # КАРТА - выводим В САМОМ КОНЦЕ функции, после всего остального
-            if response.get("request_category") in ["рестораны", "ивенты"] and st.session_state.get("show_map", False):
-                if st.session_state.get("last_pydeck_data", []):
+            if response.get("request_category") in ["рестораны", "ивенты"]:
+                if st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
                     pydeck_data = st.session_state["last_pydeck_data"]
                     if len(pydeck_data) > 0:
                         with st.container():
@@ -1026,6 +1034,20 @@ def handle_user_input_sync(model, config, prompt):
                                     },
                                 )
                             )
+
+            # Отображаем офферы в интерфейсе - оставляем офферы с отдельным выводом
+            if "offers_data" in response and response["offers_data"] and offers_text:
+                st.subheader("Генерация офферов")
+                offers_data = response["offers_data"]
+                try:
+                    offers_system_prompt = offers_data.get("system_prompt", "")
+                    if offers_system_prompt:
+                        # Офферы уже включены в основной ответ, не показываем дублированно
+                        pass
+                    else:
+                        st.warning("Не удалось сгенерировать офферы для вашего запроса.")
+                except Exception as e:
+                    st.error("Произошла ошибка при генерации офферов.")
             
             # Сохраняем дополнительную информацию для истории сообщений
             st.session_state["messages"].append(

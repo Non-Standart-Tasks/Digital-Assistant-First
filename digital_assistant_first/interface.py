@@ -6,6 +6,8 @@ import pandas as pd
 import streamlit as st
 import time
 import random
+from openai import OpenAI  # Добавляем прямой импорт OpenAI
+
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -24,7 +26,7 @@ from digital_assistant_first.telegram_system.telegram_initialization import (
     fetch_telegram_data,
 )
 from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
-from digital_assistant_first.geo_system.two_gis import fetch_2gis_data
+from digital_assistant_first.geo_system.two_gis import fetch_2gis_data, build_route_from_query
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_system_prompt_for_offers, get_system_prompt_for_offers_async
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
@@ -47,7 +49,16 @@ init_db()
 # Add the initialize_model function here to avoid circular import
 def initialize_model(config):
     """Инициализация языковой модели на основе конфигурации."""
-    return ChatOpenAI(model=config["Model"], stream=False)
+    # Инициализируем LangChain модель для совместимости с существующим кодом
+    langchain_model = ChatOpenAI(model=config["Model"], stream=False)
+    
+    # Инициализируем прямой клиент OpenAI для возможности использования web_search_preview
+    openai_client = OpenAI()
+    
+    # Сохраняем клиент в конфигурации
+    config["openai_client"] = openai_client
+    
+    return langchain_model
 
 async def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера асинхронно."""
@@ -74,6 +85,7 @@ async def model_response_generator(model, config):
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
         - офферы (если запрос о скидках, промокодах, специальных предложениях, акциях, бонусах, кэшбэке и т.п.)
+        - маршруты (если запрос о том, как построить маршрут, проложить путь, найти дорогу между местами и т.п.)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
         Запрос пользователя: {user_input}
@@ -151,6 +163,14 @@ async def model_response_generator(model, config):
     if request_category in ["рестораны", "ивенты"]:
         tasks.append(fetch_2gis_data(user_input, config))
     
+    # Задача для построения маршрута (только для категории "маршруты")
+    route_info = None
+    path_points = []
+    points_data = []
+    if request_category == "маршруты":
+        print(f"DEBUG async: Добавляю задачу построения маршрута для запроса: {user_input}")
+        tasks.append(build_route_from_query(user_input, config))
+    
     try:
         # Выполняем все задачи параллельно
         results = await asyncio.gather(*tasks, return_exceptions=True)
@@ -181,6 +201,35 @@ async def model_response_generator(model, config):
         if request_category in ["рестораны", "ивенты"]:
             if result_index < len(results) and not isinstance(results[result_index], Exception):
                 table_data, pydeck_data = results[result_index]
+            result_index += 1
+        
+        # Результаты построения маршрута
+        if request_category == "маршруты":
+            if result_index < len(results) and not isinstance(results[result_index], Exception):
+                route_info, path_points, points_data, route_details = results[result_index]
+                print(f"DEBUG async: Получены результаты маршрута: {route_info}, {len(path_points) if path_points else 0} точек")
+                # Сохраняем данные о маршруте для отображения
+                if route_info and path_points and len(path_points) > 0:
+                    pydeck_data = points_data
+                    # Устанавливаем флаги для отображения маршрута
+                    st.session_state["route_info"] = route_info
+                    st.session_state["path_points"] = path_points
+                    st.session_state["route_points"] = points_data
+                    st.session_state["route_details"] = route_details
+                    st.session_state["map_type"] = "route"
+                    st.session_state["show_map"] = True
+                    print(f"DEBUG async: Сохранены данные маршрута в session_state")
+                    
+                    # Добавляем навигационные инструкции к ответу
+                    if route_details and "instructions_text" in route_details and route_details["instructions_text"]:
+                        instructions_text = "\n\n**Навигационные инструкции:**\n" + "\n".join(route_details["instructions_text"])
+                        response_text += instructions_text
+                else:
+                    print(f"DEBUG async: Не удалось построить маршрут")
+            elif result_index < len(results):
+                print(f"DEBUG async: Ошибка построения маршрута: {results[result_index]}")
+            else:
+                print(f"DEBUG async: Задача построения маршрута не вернула результатов")
             result_index += 1
         
         # Если категория "офферы", запускаем обработку предложений
@@ -276,10 +325,83 @@ async def model_response_generator(model, config):
         )
         messages = prompt_template.format(input=user_input, context="")
         
-        # Получаем неасинхронную версию с явно отключенным streaming
-        # чтобы обеспечить полноценный ответ для дальнейшей обработки
-        response = model.invoke(messages, stream=False)
+        # Проверяем, нужно ли использовать нативный веб-поиск OpenAI
+        use_openai_web_search = config.get("use_openai_web_search", False)
         
+        # Отладочный вывод
+        print(f"DEBUG ASYNC - use_openai_web_search value: {use_openai_web_search}, type: {type(use_openai_web_search)}")
+        print(f"DEBUG ASYNC - Full config keys: {list(config.keys())}")
+        
+        # Если это строка, конвертируем в булево значение
+        if isinstance(use_openai_web_search, str):
+            use_openai_web_search = use_openai_web_search.lower() == 'true'
+            print(f"DEBUG ASYNC - After conversion: {use_openai_web_search}")
+            
+        web_search_context_size = config.get("web_search_context_size", "medium")
+        
+        # Получаем ответ от модели
+        if use_openai_web_search:
+            # Используем нативный веб-поиск OpenAI
+            logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+            
+            # Преобразуем сообщения в формат OpenAI API
+            openai_messages = []
+            
+            # Проверяем тип переменной messages
+            print(f"DEBUG ASYNC - messages type: {type(messages)}")
+            
+            # Если messages это строка или другой простой тип, создаем сообщения напрямую
+            if isinstance(messages, str) or not hasattr(messages, "__iter__"):
+                openai_messages = [
+                    {"role": "system", "content": formatted_prompt},
+                    {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+                ]
+            else:
+                # Если это итерируемый объект, проверяем каждый элемент
+                for msg in messages:
+                    if hasattr(msg, "role") and hasattr(msg, "content"):
+                        # Объект LangChain с атрибутами role и content
+                        openai_messages.append({"role": msg.role, "content": msg.content})
+                    elif isinstance(msg, tuple) and len(msg) == 2:
+                        # Кортеж (role, content)
+                        openai_messages.append({"role": msg[0], "content": msg[1]})
+                    elif isinstance(msg, dict) and "role" in msg and "content" in msg:
+                        # Уже в правильном формате
+                        openai_messages.append(msg)
+                    else:
+                        # Если не удалось определить формат, создаем сообщения по умолчанию
+                        openai_messages = [
+                            {"role": "system", "content": formatted_prompt},
+                            {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+                        ]
+                        break
+            
+            # Отладочная информация о созданных сообщениях
+            print(f"DEBUG ASYNC - Created openai_messages: {openai_messages}")
+            
+            # Получаем клиент OpenAI из конфигурации
+            openai_client = config.get("openai_client", OpenAI())
+            
+            # Вызываем OpenAI API напрямую
+            openai_response = openai_client.responses.create(
+                model=config["Model"],
+                tools=[{
+                    "type": "web_search_preview",
+                    "search_context_size": web_search_context_size
+                }],
+                input=user_input
+            )
+            
+            # Эмулируем ответ LangChain для совместимости с остальным кодом
+            class OpenAIResponseWrapper:
+                def __init__(self, openai_response):
+                    self.content = openai_response.output_text
+                    
+            response = OpenAIResponseWrapper(openai_response)
+        else:
+            # Используем стандартный подход без веб-поиска
+            response = model.invoke(messages, stream=False)
+                    
         if hasattr(response, "content"):
             answer = response.content
         elif hasattr(response, "message"):
@@ -465,45 +587,238 @@ async def handle_user_input(model, config, prompt):
                     st.error("Произошла ошибка при генерации офферов.")
             
             # КАРТА - выводим В САМОМ КОНЦЕ функции, после всего остального
-            if response.get("request_category") in ["рестораны", "ивенты"] and st.session_state.get("show_map", False):
-                if st.session_state.get("last_pydeck_data", []):
-                    pydeck_data = st.session_state["last_pydeck_data"]
-                    if len(pydeck_data) > 0:
-                        # Создаем отдельный контейнер для карты
+            if response.get("request_category") in ["рестораны", "ивенты", "маршруты"]:
+                print(f"DEBUG: Отрисовка карты: show_map={st.session_state.get('show_map')}, map_type={st.session_state.get('map_type')}")
+                if st.session_state.get("show_map", False):
+                    map_type = st.session_state.get("map_type", "points")
+                    print(f"DEBUG: Тип карты: {map_type}")
+                    
+                    if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
+                        # Отображение точек на карте (рестораны, ивенты)
+                        pydeck_data = st.session_state["last_pydeck_data"]
+                        if len(pydeck_data) > 0:
+                            with st.container():
+                                st.markdown("## ")
+                                st.subheader("🗺️ Интерактивная карта 2GIS")
+                                st.markdown("---")
+                                
+                                df_pydeck = pd.DataFrame(pydeck_data)
+                                st.pydeck_chart(
+                                    pdk.Deck(
+                                        map_style=None,
+                                        initial_view_state=pdk.ViewState(
+                                            latitude=df_pydeck["lat"].mean(),
+                                            longitude=df_pydeck["lon"].mean(),
+                                            zoom=13,
+                                        ),
+                                        layers=[
+                                            pdk.Layer(
+                                                "ScatterplotLayer",
+                                                data=df_pydeck,
+                                                get_position="[lon, lat]",
+                                                get_radius=30,
+                                                radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                                radiusMaxPixels=100,  # Максимальный размер при приближении
+                                                radiusScale=0.8,  # Масштабный коэффициент
+                                                get_fill_color=[255, 0, 0],
+                                                pickable=True,
+                                            )
+                                        ],
+                                        tooltip={
+                                            "html": "<b>{name}</b>",
+                                            "style": {"color": "white"},
+                                        },
+                                    )
+                                )
+                    
+                    elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
+                        # Отображение маршрута на карте
                         with st.container():
                             st.markdown("## ")
-                            st.subheader("🗺️ Интерактивная карта")
-                            # Добавляем разделитель перед картой
+                            st.subheader("🗺️ Построенный маршрут")
                             st.markdown("---")
                             
-                            df_pydeck = pd.DataFrame(pydeck_data)
+                            # Подготовка данных для PathLayer
+                            path_points = st.session_state["path_points"]
+                            route_points = st.session_state["route_points"]
+                            
+                            # Создаем DataFrame для точек маршрута
+                            df_route_points = pd.DataFrame(route_points)
+                            
+                            print(f"DEBUG: Данные маршрута: начало={route_points[0]['name']}, конец={route_points[1]['name']}")
+                            
+                            # Рассчитываем центр маршрута
+                            center_lat = df_route_points["lat"].mean()
+                            center_lon = df_route_points["lon"].mean()
+                            
+                            # Для зума посчитаем максимальное расстояние между точками
+                            max_lat = df_route_points["lat"].max()
+                            min_lat = df_route_points["lat"].min()
+                            max_lon = df_route_points["lon"].max()
+                            min_lon = df_route_points["lon"].min()
+                            
+                            # Определим зум на основе расстояния
+                            lat_diff = max_lat - min_lat
+                            lon_diff = max_lon - min_lon
+                            zoom_level = 10
+                            if lat_diff > 0.1 or lon_diff > 0.1:
+                                zoom_level = 9
+                            if lat_diff > 0.2 or lon_diff > 0.2:
+                                zoom_level = 8
+                            if lat_diff > 0.5 or lon_diff > 0.5:
+                                zoom_level = 7
+                            
+                            print(f"DEBUG: Координаты центра: {center_lat}, {center_lon}, zoom={zoom_level}")
+                            
+                            # Создаем слои для карты
+                            layers = []
+                            
+                            # Группируем точки по цвету и стилю для отображения разных сегментов
+                            segments = {}
+                            
+                            # Группируем последовательные точки с одинаковыми атрибутами в единые сегменты
+                            current_segment_key = None
+                            current_segment_points = []
+                            current_segment_info = {}
+                            
+                            # Обходим все точки и группируем их в сегменты по цвету и стилю
+                            for point in path_points:
+                                # Извлекаем цвет и стиль для сегмента
+                                color = point.get("color", "normal")
+                                style = point.get("style", "normal")
+                                segment_key = f"{color}_{style}"
+                                
+                                # Собираем информацию для подсказки (tooltip)
+                                street_name = point.get("street_name", "")
+                                speed_type = {
+                                    "fast": "Быстрый участок", 
+                                    "normal": "Обычный участок", 
+                                    "slow": "Медленный участок"
+                                }.get(color, "Участок маршрута")
+                                
+                                # Если это начало нового сегмента или первая точка
+                                if segment_key != current_segment_key:
+                                    # Если уже есть накопленные точки, сохраняем предыдущий сегмент
+                                    if current_segment_points:
+                                        if current_segment_key not in segments:
+                                            segments[current_segment_key] = []
+                                        segments[current_segment_key].append({
+                                            "path": current_segment_points,
+                                            "name": current_segment_info.get("street_name", ""),
+                                            "speed_type": current_segment_info.get("speed_type", ""),
+                                            "style_type": current_segment_info.get("style_type", ""),
+                                            "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                        })
+                                    
+                                    # Начинаем новый сегмент
+                                    current_segment_key = segment_key
+                                    current_segment_points = []
+                                    current_segment_info = {
+                                        "street_name": street_name,
+                                        "speed_type": speed_type,
+                                        "style_type": style
+                                    }
+                                elif street_name and not current_segment_info.get("street_name"):
+                                    # Обновляем название улицы, если оно появилось
+                                    current_segment_info["street_name"] = street_name
+                                
+                                # Добавляем точку в текущий сегмент
+                                current_segment_points.append([point["lon"], point["lat"]])
+                            
+                            # Добавляем последний сегмент, если есть накопленные точки
+                            if current_segment_points and current_segment_key:
+                                if current_segment_key not in segments:
+                                    segments[current_segment_key] = []
+                                segments[current_segment_key].append({
+                                    "path": current_segment_points,
+                                    "name": current_segment_info.get("street_name", ""),
+                                    "speed_type": current_segment_info.get("speed_type", ""),
+                                    "style_type": current_segment_info.get("style_type", ""),
+                                    "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                })
+                            
+                            # Если нет сегментов (маловероятно), создаем один общий
+                            if not segments:
+                                segment_key = "normal_normal"
+                                segments[segment_key] = [{
+                                    "path": [[p["lon"], p["lat"]] for p in path_points],
+                                    "name": "Маршрут",
+                                    "speed_type": "Обычный участок",
+                                    "style_type": "normal",
+                                    "style_string": " (дорога)"
+                                }]
+                            
+                            # Создаем слой для каждого типа сегмента
+                            for segment_key, paths in segments.items():
+                                # Безопасное разделение ключа, обрабатываем случай с несколькими подчеркиваниями
+                                parts = segment_key.split("_")
+                                if len(parts) >= 2:
+                                    color_type = parts[0]
+                                    style_type = parts[-1]  # Берем последний элемент как стиль
+                                else:
+                                    # Если нет подчеркивания или только одна часть
+                                    color_type = segment_key
+                                    style_type = "normal"
+                                
+                                # Устанавливаем цвет в зависимости от типа сегмента
+                                if color_type == "fast":
+                                    segment_color = [0, 180, 0, 200]  # Зеленый для быстрых участков
+                                elif color_type == "normal":
+                                    segment_color = [255, 165, 0, 200]  # Оранжевый для обычных участков
+                                elif color_type == "slow":
+                                    segment_color = [255, 0, 0, 200]  # Красный для медленных участков
+                                else:
+                                    segment_color = [0, 0, 255, 200]  # Синий по умолчанию
+                                
+                                # Устанавливаем ширину и параметры линии в зависимости от стиля
+                                width = 5
+                                dash_array = None
+                                
+                                if style_type == "tunnel":
+                                    width = 6
+                                    dash_array = [2, 1]  # Пунктирная линия для тоннелей
+                                elif style_type == "bridge":
+                                    width = 6
+                                
+                                # Добавляем слой для сегмента
+                                path_layer = pdk.Layer(
+                                    "PathLayer",
+                                    data=paths,
+                                    get_path="path",
+                                    get_width=width,
+                                    get_color=segment_color,
+                                    width_min_pixels=3,
+                                    pickable=True,
+                                    dash_array=dash_array
+                                )
+                                layers.append(path_layer)
+                            
+                            # Отображаем карту
                             st.pydeck_chart(
                                 pdk.Deck(
                                     map_style=None,
                                     initial_view_state=pdk.ViewState(
-                                        latitude=df_pydeck["lat"].mean(),
-                                        longitude=df_pydeck["lon"].mean(),
-                                        zoom=13,
+                                        latitude=center_lat,
+                                        longitude=center_lon,
+                                        zoom=zoom_level,
                                     ),
-                                    layers=[
-                                        pdk.Layer(
-                                            "ScatterplotLayer",
-                                            data=df_pydeck,
-                                            get_position="[lon, lat]",
-                                            get_radius=30,
-                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
-                                            radiusMaxPixels=100,  # Максимальный размер при приближении
-                                            radiusScale=0.8,  # Масштабный коэффициент
-                                            get_fill_color=[255, 0, 0],
-                                            pickable=True,
-                                        )
-                                    ],
+                                    layers=layers,
                                     tooltip={
-                                        "html": "<b>{name}</b>",
-                                        "style": {"color": "white"},
+                                        "html": "<b>{name}</b><br/>{speed_type}{style_string}",
+                                        "style": {
+                                            "backgroundColor": "white", 
+                                            "color": "black",
+                                            "fontSize": "12px",
+                                            "borderRadius": "4px",
+                                            "padding": "5px"
+                                        }
                                     },
                                 )
                             )
+                    else:
+                        print(f"DEBUG: Условия для отображения карты не выполнены")
+                else:
+                    print(f"DEBUG: Флаг show_map не установлен")
 
             st.session_state["messages"].append(
                 {
@@ -569,53 +884,269 @@ def display_chat_history():
             # Если это ассистент, обрабатываем рейтинги и карты
             if message["role"] == "assistant":
                 # Показываем карту для всех сообщений о ресторанах и ивентах
-                is_map_needed = message.get("request_category") in ["рестораны", "ивенты"] or message.get("show_map", False)
+                is_map_needed = message.get("request_category") in ["рестораны", "ивенты", "маршруты"] or message.get("show_map", False)
                 
                 if is_map_needed:
                     # Получаем данные карты из сообщения или из session_state
-                    if i == last_assistant_index and "last_pydeck_data" in st.session_state:
-                        pydeck_data = st.session_state["last_pydeck_data"]
-                        if "pydeck_data" not in message:
-                            message["pydeck_data"] = pydeck_data
-                    elif "pydeck_data" in message:
-                        pydeck_data = message["pydeck_data"]
-                    else:
-                        pydeck_data = st.session_state.get("last_pydeck_data", [])
-                        
-                    if pydeck_data and len(pydeck_data) > 0:
-                        with st.container():
-                            st.markdown("## ")
-                            st.subheader("🗺️ Интерактивная карта")
-                            st.markdown("---")
+                    map_type = message.get("map_type", "points")
+                    if map_type is None:
+                        map_type = "points"  # По умолчанию показываем точки
+                    
+                    # Для точек на карте (рестораны, ивенты)
+                    if map_type == "points":
+                        # Получаем данные карты из сообщения или из session_state
+                        if i == last_assistant_index and "last_pydeck_data" in st.session_state:
+                            pydeck_data = st.session_state["last_pydeck_data"]
+                            if "pydeck_data" not in message:
+                                message["pydeck_data"] = pydeck_data
+                        elif "pydeck_data" in message:
+                            pydeck_data = message["pydeck_data"]
+                        else:
+                            pydeck_data = st.session_state.get("last_pydeck_data", [])
                             
-                            df_pydeck = pd.DataFrame(pydeck_data)
+                        if pydeck_data and len(pydeck_data) > 0:
+                            with st.container():
+                                st.markdown("## ")
+                                st.subheader("🗺️ Интерактивная карта")
+                                st.markdown("---")
+                                
+                                df_pydeck = pd.DataFrame(pydeck_data)
+                                st.pydeck_chart(
+                                    pdk.Deck(
+                                        map_style=None,
+                                        initial_view_state=pdk.ViewState(
+                                            latitude=df_pydeck["lat"].mean(),
+                                            longitude=df_pydeck["lon"].mean(),
+                                            zoom=13,
+                                        ),
+                                        layers=[
+                                            pdk.Layer(
+                                                "ScatterplotLayer",
+                                                data=df_pydeck,
+                                                get_position="[lon, lat]",
+                                                get_radius=30,
+                                                radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                                radiusMaxPixels=100,  # Максимальный размер при приближении
+                                                radiusScale=0.8,  # Масштабный коэффициент
+                                                get_fill_color=[255, 0, 0],
+                                                pickable=True,
+                                            )
+                                        ],
+                                        tooltip={
+                                            "html": "<b>{name}</b>",
+                                            "style": {"color": "white"},
+                                        },
+                                    )
+                                )
+                    
+                    # Для маршрутов
+                    elif map_type == "route":
+                        # Получаем данные маршрута
+                        path_points = message.get("path_points", [])
+                        route_points = message.get("route_points", [])
+                        
+                        print(f"DEBUG history: Проверка данных маршрута: path_points={len(path_points) if path_points else 0}, route_points={len(route_points) if route_points else 0}")
+                        
+                        # Если данных в сообщении нет, но это последнее сообщение, берем из session_state
+                        if i == last_assistant_index:
+                            if not path_points and "path_points" in st.session_state:
+                                path_points = st.session_state["path_points"]
+                                message["path_points"] = path_points
+                                print(f"DEBUG history: Взяты path_points из session_state: {len(path_points)} точек")
+                            
+                            if not route_points and "route_points" in st.session_state:
+                                route_points = st.session_state["route_points"]
+                                message["route_points"] = route_points
+                                print(f"DEBUG history: Взяты route_points из session_state")
+                        
+                        if path_points and route_points and len(path_points) > 0 and len(route_points) > 0:
+                            print(f"DEBUG history: Отображаем маршрут в истории")
+                            with st.container():
+                                st.markdown("## ")
+                                st.subheader("🗺️ Построенный маршрут")
+                                st.markdown("---")
+                                
+                                # Создаем DataFrame для точек маршрута
+                                df_route_points = pd.DataFrame(route_points)
+                                
+                                # Подготавливаем данные для линии маршрута
+                                path_data = [{
+                                    "path": [[p["lon"], p["lat"]] for p in path_points],
+                                    "name": "Маршрут"
+                                }]
+                                
+                                print(f"DEBUG history: Данные маршрута: {len(path_points)} точек пути")
+                                
+                                # Рассчитываем центр маршрута
+                                center_lat = df_route_points["lat"].mean()
+                                center_lon = df_route_points["lon"].mean()
+                                
+                                # Для зума посчитаем максимальное расстояние между точками
+                                max_lat = df_route_points["lat"].max()
+                                min_lat = df_route_points["lat"].min()
+                                max_lon = df_route_points["lon"].max()
+                                min_lon = df_route_points["lon"].min()
+                                
+                                # Определим зум на основе расстояния
+                                lat_diff = max_lat - min_lat
+                                lon_diff = max_lon - min_lon
+                                zoom_level = 10
+                                if lat_diff > 0.1 or lon_diff > 0.1:
+                                    zoom_level = 9
+                                if lat_diff > 0.2 or lon_diff > 0.2:
+                                    zoom_level = 8
+                                if lat_diff > 0.5 or lon_diff > 0.5:
+                                    zoom_level = 7
+                                
+                                print(f"DEBUG history: Координаты центра: {center_lat}, {center_lon}, zoom={zoom_level}")
+                                
+                                # Создаем слои для карты
+                                layers = []
+                                
+                                # Группируем точки по цвету и стилю для отображения разных сегментов
+                                segments = {}
+                                
+                                # Группируем последовательные точки с одинаковыми атрибутами в единые сегменты
+                                current_segment_key = None
+                                current_segment_points = []
+                                current_segment_info = {}
+                                
+                                # Обходим все точки и группируем их в сегменты по цвету и стилю
+                                for point in path_points:
+                                    # Извлекаем цвет и стиль для сегмента
+                                    color = point.get("color", "normal")
+                                    style = point.get("style", "normal")
+                                    segment_key = f"{color}_{style}"
+                                    
+                                    # Собираем информацию для подсказки (tooltip)
+                                    street_name = point.get("street_name", "")
+                                    speed_type = {
+                                        "fast": "Быстрый участок", 
+                                        "normal": "Обычный участок", 
+                                        "slow": "Медленный участок"
+                                    }.get(color, "Участок маршрута")
+                                    
+                                    # Если это начало нового сегмента или первая точка
+                                    if segment_key != current_segment_key:
+                                        # Если уже есть накопленные точки, сохраняем предыдущий сегмент
+                                        if current_segment_points:
+                                            if current_segment_key not in segments:
+                                                segments[current_segment_key] = []
+                                            segments[current_segment_key].append({
+                                                "path": current_segment_points,
+                                                "name": current_segment_info.get("street_name", ""),
+                                                "speed_type": current_segment_info.get("speed_type", ""),
+                                                "style_type": current_segment_info.get("style_type", ""),
+                                                "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                            })
+                                        
+                                        # Начинаем новый сегмент
+                                        current_segment_key = segment_key
+                                        current_segment_points = []
+                                        current_segment_info = {
+                                            "street_name": street_name,
+                                            "speed_type": speed_type,
+                                            "style_type": style
+                                        }
+                                    elif street_name and not current_segment_info.get("street_name"):
+                                        # Обновляем название улицы, если оно появилось
+                                        current_segment_info["street_name"] = street_name
+                                    
+                                    # Добавляем точку в текущий сегмент
+                                    current_segment_points.append([point["lon"], point["lat"]])
+                                
+                                # Добавляем последний сегмент, если есть накопленные точки
+                                if current_segment_points and current_segment_key:
+                                    if current_segment_key not in segments:
+                                        segments[current_segment_key] = []
+                                    segments[current_segment_key].append({
+                                        "path": current_segment_points,
+                                        "name": current_segment_info.get("street_name", ""),
+                                        "speed_type": current_segment_info.get("speed_type", ""),
+                                        "style_type": current_segment_info.get("style_type", ""),
+                                        "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                    })
+                                
+                                # Если нет сегментов (маловероятно), создаем один общий
+                                if not segments:
+                                    segment_key = "normal_normal"
+                                    segments[segment_key] = [{
+                                        "path": [[p["lon"], p["lat"]] for p in path_points],
+                                        "name": "Маршрут",
+                                        "speed_type": "Обычный участок",
+                                        "style_type": "normal",
+                                        "style_string": " (дорога)"
+                                    }]
+                                
+                                # Создаем слой для каждого типа сегмента
+                                for segment_key, paths in segments.items():
+                                    # Безопасное разделение ключа, обрабатываем случай с несколькими подчеркиваниями
+                                    parts = segment_key.split("_")
+                                    if len(parts) >= 2:
+                                        color_type = parts[0]
+                                        style_type = parts[-1]  # Берем последний элемент как стиль
+                                    else:
+                                        # Если нет подчеркивания или только одна часть
+                                        color_type = segment_key
+                                        style_type = "normal"
+                                    
+                                    # Устанавливаем цвет в зависимости от типа сегмента
+                                    if color_type == "fast":
+                                        segment_color = [0, 180, 0, 200]  # Зеленый для быстрых участков
+                                    elif color_type == "normal":
+                                        segment_color = [255, 165, 0, 200]  # Оранжевый для обычных участков
+                                    elif color_type == "slow":
+                                        segment_color = [255, 0, 0, 200]  # Красный для медленных участков
+                                    else:
+                                        segment_color = [0, 0, 255, 200]  # Синий по умолчанию
+                                    
+                                    # Устанавливаем ширину и параметры линии в зависимости от стиля
+                                    width = 5
+                                    dash_array = None
+                                    
+                                    if style_type == "tunnel":
+                                        width = 6
+                                        dash_array = [2, 1]  # Пунктирная линия для тоннелей
+                                    elif style_type == "bridge":
+                                        width = 6
+                                    
+                                    # Добавляем слой для сегмента
+                                    path_layer = pdk.Layer(
+                                        "PathLayer",
+                                        data=paths,
+                                        get_path="path",
+                                        get_width=width,
+                                        get_color=segment_color,
+                                        width_min_pixels=3,
+                                        pickable=True,
+                                        dash_array=dash_array
+                                    )
+                                    layers.append(path_layer)
+                            
+                            # Отображаем карту
                             st.pydeck_chart(
                                 pdk.Deck(
                                     map_style=None,
                                     initial_view_state=pdk.ViewState(
-                                        latitude=df_pydeck["lat"].mean(),
-                                        longitude=df_pydeck["lon"].mean(),
-                                        zoom=13,
+                                        latitude=center_lat,
+                                        longitude=center_lon,
+                                        zoom=zoom_level,
                                     ),
-                                    layers=[
-                                        pdk.Layer(
-                                            "ScatterplotLayer",
-                                            data=df_pydeck,
-                                            get_position="[lon, lat]",
-                                            get_radius=30,
-                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
-                                            radiusMaxPixels=100,  # Максимальный размер при приближении
-                                            radiusScale=0.8,  # Масштабный коэффициент
-                                            get_fill_color=[255, 0, 0],
-                                            pickable=True,
-                                        )
-                                    ],
+                                    layers=layers,
                                     tooltip={
-                                        "html": "<b>{name}</b>",
-                                        "style": {"color": "white"},
+                                        "html": "<b>{name}</b><br/>{speed_type}{style_string}",
+                                        "style": {
+                                            "backgroundColor": "white", 
+                                            "color": "black",
+                                            "fontSize": "12px",
+                                            "borderRadius": "4px",
+                                            "padding": "5px"
+                                        }
                                     },
                                 )
                             )
+                        else:
+                            print(f"DEBUG history: Недостаточно данных для отображения маршрута в истории")
                 
                 # Показываем кнопки оценки
                 record_id = message.get("record_id")
@@ -661,6 +1192,7 @@ def model_response_generator_sync(model, config):
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
         - офферы (если запрос о скидках, промокодах, специальных предложениях, акциях, бонусах, кэшбэке и т.п.)
+        - маршруты (если запрос о том, как построить маршрут, проложить путь, найти дорогу между местами и т.п.)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
         Запрос пользователя: {user_input}
@@ -797,8 +1329,71 @@ def model_response_generator_sync(model, config):
     )
     messages = prompt_template.format(input=user_input, context="")
     
-    # Получаем неасинхронную версию с явно отключенным streaming
-    response = model.invoke(messages, stream=False)
+    # Проверяем, нужно ли использовать нативный веб-поиск OpenAI
+    use_openai_web_search = config.get("use_openai_web_search", False)
+    web_search_context_size = config.get("web_search_context_size", "medium")
+    
+    # Получаем ответ от модели
+    if use_openai_web_search:
+        # Используем нативный веб-поиск OpenAI
+        logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+        
+        # Преобразуем сообщения в формат OpenAI API
+        openai_messages = []
+        
+        # Проверяем тип переменной messages
+        print(f"DEBUG SYNC - messages type: {type(messages)}")
+        
+        # Если messages это строка или другой простой тип, создаем сообщения напрямую
+        if isinstance(messages, str) or not hasattr(messages, "__iter__"):
+            openai_messages = [
+                {"role": "system", "content": formatted_prompt},
+                {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+            ]
+        else:
+            # Если это итерируемый объект, проверяем каждый элемент
+            for msg in messages:
+                if hasattr(msg, "role") and hasattr(msg, "content"):
+                    # Объект LangChain с атрибутами role и content
+                    openai_messages.append({"role": msg.role, "content": msg.content})
+                elif isinstance(msg, tuple) and len(msg) == 2:
+                    # Кортеж (role, content)
+                    openai_messages.append({"role": msg[0], "content": msg[1]})
+                elif isinstance(msg, dict) and "role" in msg and "content" in msg:
+                    # Уже в правильном формате
+                    openai_messages.append(msg)
+                else:
+                    # Если не удалось определить формат, создаем сообщения по умолчанию
+                    openai_messages = [
+                        {"role": "system", "content": 'You are a helpful assistant.'},
+                        {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+                    ]
+                    break
+        
+        
+        # Получаем клиент OpenAI из конфигурации
+        openai_client = config.get("openai_client", OpenAI())
+        
+        # Вызываем OpenAI API напрямую
+        openai_response = openai_client.responses.create(
+            model=config["Model"],
+            tools=[{
+                "type": "web_search_preview",
+                "search_context_size": web_search_context_size
+            }],
+            input=user_input
+        )
+
+        # Эмулируем ответ LangChain для совместимости с остальным кодом
+        class OpenAIResponseWrapper:
+            def __init__(self, openai_response):
+                self.content = openai_response.output_text
+                
+        response = OpenAIResponseWrapper(openai_response)
+    else:
+        # Используем стандартный подход без веб-поиска
+        response = model.invoke(messages, stream=False)
+
     
     if hasattr(response, "content"):
         answer = response.content
@@ -836,6 +1431,7 @@ def handle_user_input_sync(model, config, prompt):
         Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
         - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
+        - маршруты (если запрос о том, как построить маршрут, проложить путь, найти дорогу между местами и т.п.)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
         Запрос пользователя: {prompt}
@@ -847,12 +1443,28 @@ def handle_user_input_sync(model, config, prompt):
         
         # Получаем предварительную категорию
         pre_category = model.invoke(messages, stream=False).content.strip().lower()
+        print(f"DEBUG start: Предварительная категория запроса: {pre_category}")
         
-        # Сбрасываем флаг show_map и данные карты если запрос НЕ о ресторанах/ивентах
-        if pre_category != "рестораны" and pre_category != "ивенты":
+        # Сбрасываем флаг show_map и данные карты если запрос НЕ о ресторанах/ивентах/маршрутах
+        if pre_category not in ["рестораны", "ивенты", "маршруты"]:
+            print(f"DEBUG start: Сбрасываем данные карты - запрос не о ресторанах/ивентах/маршрутах")
             st.session_state["show_map"] = False
             st.session_state["last_pydeck_data"] = []
-            
+        
+        # Для маршрутов очищаем предыдущие данные, но сохраняем флаг типа
+        if pre_category == "маршруты":
+            print(f"DEBUG start: Предварительно определен запрос о маршрутах")
+            # Очищаем старые данные
+            if "path_points" in st.session_state:
+                st.session_state.pop("path_points")
+            if "route_points" in st.session_state:
+                st.session_state.pop("route_points")
+            if "route_info" in st.session_state:
+                st.session_state.pop("route_info")
+            # Устанавливаем тип карты, но не показываем до получения данных
+            st.session_state["map_type"] = "route"
+            st.session_state["show_map"] = False
+        
         st.session_state["messages"].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
@@ -873,6 +1485,8 @@ def handle_user_input_sync(model, config, prompt):
             
             # Если категория запроса - рестораны или ивенты, получаем данные для 2GIS
             table_data = []
+            path_points = []
+            route_info = None
             if response.get("request_category") in ["рестораны", "ивенты"]:
                 # Создаем новый синхронный event loop для 2GIS запроса
                 loop = asyncio.new_event_loop()
@@ -892,9 +1506,11 @@ def handle_user_input_sync(model, config, prompt):
                         
                         st.session_state["last_pydeck_data"] = pydeck_data.copy()  # Создаем копию
                         st.session_state["show_map"] = True
+                        st.session_state["map_type"] = "points"  # Тип карты - точки
                     else:
                         st.session_state["last_pydeck_data"] = []
                         st.session_state["show_map"] = False
+                        st.session_state["map_type"] = None
                         places_text += "\n\n*Не найдено точек для отображения на карте.*"
                     
                     # ПОДГОТОВКА ТЕКСТОВОЙ ИНФОРМАЦИИ О МЕСТАХ
@@ -905,54 +1521,77 @@ def handle_user_input_sync(model, config, prompt):
                         # Формируем текстовое описание каждого места
                         for i, place in enumerate(table_data):
                             # Определяем основные данные
-                            name = None
-                            for name_key in ['Название', 'название', 'name', 'title', 'name_ru', 'Name']:
-                                if name_key in place and place[name_key]:
-                                    name = place[name_key]
-                                    break
+                            name = place.get("name", "Без названия")
+                            address = place.get("address", "Адрес не указан")
+                            rating = place.get("rating", "Нет данных")
+                            reviews = place.get("reviews", "Нет данных")
+                            phone = place.get("phone", "")
+                            cuisine = place.get("cuisine", "Не указано")
+                            schedule = place.get("schedule", "Не указано")
                             
-                            address = None
-                            for addr_key in ['Адрес', 'адрес', 'address', 'address_name', 'full_address', 'Address']:
-                                if addr_key in place and place[addr_key]:
-                                    address = place[addr_key]
-                                    break
+                            # Строим форматированное описание с базовой информацией на одной строке
+                            place_text = f"{i+1}. {name} Адрес: {address}"
                             
-                            # Определяем дополнительные данные
-                            rating = None
-                            if 'Рейтинг' in place and place['Рейтинг']:
-                                rating = place['Рейтинг']
-                            elif 'rating' in place and place['rating']:
-                                rating = place['rating']
-                            
-                            reviews = None
-                            if 'Кол-во Отзывов' in place and place['Кол-во Отзывов']:
-                                reviews = place['Кол-во Отзывов']
-                            elif 'reviews' in place and place['reviews']:
-                                reviews = place['reviews']
-                            
-                            phone = None
-                            if 'phone' in place and place['phone']:
-                                phone = place['phone']
-                            elif 'Телефон' in place and place['Телефон']:
-                                phone = place['Телефон']
-                            
-                            # Строим форматированное описание с жирным названием
-                            place_text = f"{i+1}. **{name or 'Без названия'}** Адрес: {address or 'Не указан'}"
-                            
-                            if rating:
+                            if rating and rating != 0:
                                 place_text += f" Рейтинг: {rating}"
                             
-                            if reviews:
+                            if reviews and reviews != 0:
                                 place_text += f" | Отзывов: {reviews}"
                                 
+                            # Добавляем дополнительные данные на новых строках
                             if phone:
-                                place_text += f" | Телефон: {phone}"
+                                place_text += f"\n   📞 Телефон: {phone}"
+                                
+                            if cuisine and cuisine != "Не указано":
+                                place_text += f"\n   🍽️ Кухня: {cuisine}"
+                                
+                            if schedule and schedule != "Не указано":
+                                place_text += f"\n   🕒 Режим работы: {schedule}"
                             
-                            place_text += "\n"
+                            place_text += "\n\n"
                             places_text += place_text
                     else:
                         places_text += "\n\n*Ничего не найдено в 2GIS.*\n"
                 
+                finally:
+                    loop.close()
+            
+            # Если категория запроса - маршруты, получаем данные для построения маршрута
+            elif response.get("request_category") == "маршруты":
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                
+                try:
+                    # Запускаем построение маршрута
+                    from digital_assistant_first.geo_system.two_gis import build_route_from_query
+                    print(f"DEBUG: Запрос маршрута для: {prompt}")
+                    route_info, path_points, points_data, route_details = loop.run_until_complete(build_route_from_query(prompt, config))
+                    
+                    # Добавляем отладочную информацию
+                    print(f"DEBUG: Результаты запроса маршрута:")
+                    print(f"DEBUG: route_info: {route_info}")
+                    print(f"DEBUG: points count: {len(path_points) if path_points else 0}")
+                    
+                    # Если маршрут построен успешно
+                    if route_info and path_points and len(path_points) > 0:
+                        # Сохраняем данные о маршруте для отображения
+                        st.session_state["route_info"] = route_info
+                        st.session_state["path_points"] = path_points
+                        st.session_state["route_points"] = points_data
+                        st.session_state["route_details"] = route_details
+                        st.session_state["map_type"] = "route"
+                        st.session_state["show_map"] = True
+                        
+                        # Добавляем информацию о маршруте в текст ответа
+                        route_text = f"\n\n🚗 **Маршрут построен!**\n" \
+                                    f"Расстояние: {route_info['distance']/1000:.1f} км\n" \
+                                    f"Примерное время в пути: {route_info['duration']//60} мин\n"
+                        
+                        # Добавляем навигационные инструкции, если они есть
+                        if route_details and "instructions_text" in route_details and route_details["instructions_text"]:
+                            route_text += "\n**Навигационные инструкции:**\n" + "\n".join(route_details["instructions_text"])
+                        
+                        answer_text += route_text
                 finally:
                     loop.close()
             
@@ -1017,37 +1656,125 @@ def handle_user_input_sync(model, config, prompt):
             response_text = full_response_text
             
             # КАРТА - выводим В САМОМ КОНЦЕ функции, после всего остального
-            if response.get("request_category") in ["рестораны", "ивенты"]:
-                if st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
-                    pydeck_data = st.session_state["last_pydeck_data"]
-                    if len(pydeck_data) > 0:
+            if response.get("request_category") in ["рестораны", "ивенты", "маршруты"]:
+                if st.session_state.get("show_map", False):
+                    map_type = st.session_state.get("map_type", "points")
+                    
+                    if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
+                        # Отображение точек на карте (рестораны, ивенты)
+                        pydeck_data = st.session_state["last_pydeck_data"]
+                        if len(pydeck_data) > 0:
+                            with st.container():
+                                st.markdown("## ")
+                                st.subheader("🗺️ Интерактивная карта 2GIS")
+                                st.markdown("---")
+                                
+                                df_pydeck = pd.DataFrame(pydeck_data)
+                                st.pydeck_chart(
+                                    pdk.Deck(
+                                        map_style=None,
+                                        initial_view_state=pdk.ViewState(
+                                            latitude=df_pydeck["lat"].mean(),
+                                            longitude=df_pydeck["lon"].mean(),
+                                            zoom=13,
+                                        ),
+                                        layers=[
+                                            pdk.Layer(
+                                                "ScatterplotLayer",
+                                                data=df_pydeck,
+                                                get_position="[lon, lat]",
+                                                get_radius=30,
+                                                radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                                radiusMaxPixels=100,  # Максимальный размер при приближении
+                                                radiusScale=0.8,  # Масштабный коэффициент
+                                                get_fill_color=[255, 0, 0],
+                                                pickable=True,
+                                            )
+                                        ],
+                                        tooltip={
+                                            "html": "<b>{name}</b>",
+                                            "style": {"color": "white"},
+                                        },
+                                    )
+                                )
+                    
+                    elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
+                        # Отображение маршрута на карте
                         with st.container():
                             st.markdown("## ")
-                            st.subheader("🗺️ Интерактивная карта 2GIS")
+                            st.subheader("🗺️ Построенный маршрут")
                             st.markdown("---")
                             
-                            df_pydeck = pd.DataFrame(pydeck_data)
+                            # Подготовка данных для PathLayer
+                            path_points = st.session_state["path_points"]
+                            route_points = st.session_state["route_points"]
+                            
+                            # Создаем DataFrame для точек маршрута
+                            df_route_points = pd.DataFrame(route_points)
+                            
+                            # Подготавливаем данные для линии маршрута
+                            path_data = [{
+                                "path": [[p["lon"], p["lat"]] for p in path_points],
+                                "name": "Маршрут"
+                            }]
+                            
+                            # Рассчитываем центр маршрута
+                            center_lat = df_route_points["lat"].mean()
+                            center_lon = df_route_points["lon"].mean()
+                            
+                            # Для зума посчитаем максимальное расстояние между точками
+                            max_lat = df_route_points["lat"].max()
+                            min_lat = df_route_points["lat"].min()
+                            max_lon = df_route_points["lon"].max()
+                            min_lon = df_route_points["lon"].min()
+                            
+                            # Определим зум на основе расстояния
+                            lat_diff = max_lat - min_lat
+                            lon_diff = max_lon - min_lon
+                            zoom_level = 10
+                            if lat_diff > 0.1 or lon_diff > 0.1:
+                                zoom_level = 9
+                            if lat_diff > 0.2 or lon_diff > 0.2:
+                                zoom_level = 8
+                            if lat_diff > 0.5 or lon_diff > 0.5:
+                                zoom_level = 7
+                            
+                            # Создаем слои для карты
+                            layers = [
+                                # Линия маршрута
+                                pdk.Layer(
+                                    "PathLayer",
+                                    data=path_data,
+                                    get_path="path",
+                                    get_width=5,
+                                    get_color=[0, 0, 255],
+                                    width_min_pixels=3,
+                                    pickable=True,
+                                ),
+                                # Точки маршрута
+                                pdk.Layer(
+                                    "ScatterplotLayer",
+                                    data=df_route_points,
+                                    get_position="[lon, lat]",
+                                    get_radius=50,
+                                    radiusMinPixels=8,
+                                    radiusMaxPixels=100,
+                                    radiusScale=1,
+                                    get_fill_color=["is_start ? 0 : 255", "is_start ? 200 : 0", "is_start ? 0 : 0", 200],
+                                    pickable=True,
+                                )
+                            ]
+                            
+                            # Отображаем карту
                             st.pydeck_chart(
                                 pdk.Deck(
                                     map_style=None,
                                     initial_view_state=pdk.ViewState(
-                                        latitude=df_pydeck["lat"].mean(),
-                                        longitude=df_pydeck["lon"].mean(),
-                                        zoom=13,
+                                        latitude=center_lat,
+                                        longitude=center_lon,
+                                        zoom=zoom_level,
                                     ),
-                                    layers=[
-                                        pdk.Layer(
-                                            "ScatterplotLayer",
-                                            data=df_pydeck,
-                                            get_position="[lon, lat]",
-                                            get_radius=30,
-                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
-                                            radiusMaxPixels=100,  # Максимальный размер при приближении
-                                            radiusScale=0.8,  # Масштабный коэффициент
-                                            get_fill_color=[255, 0, 0],
-                                            pickable=True,
-                                        )
-                                    ],
+                                    layers=layers,
                                     tooltip={
                                         "html": "<b>{name}</b>",
                                         "style": {"color": "white"},
@@ -1077,11 +1804,15 @@ def handle_user_input_sync(model, config, prompt):
                     "question": prompt,
                     "request_category": response.get("request_category", ""),
                     "show_map": st.session_state.get("show_map", False),
+                    "map_type": st.session_state.get("map_type", "points"),
                     "pydeck_data": st.session_state.get("last_pydeck_data", []),
                     "places_text": places_text,  # Сохраняем текстовую информацию о местах отдельно
                     "aviasales_text": aviasales_text,
                     "offers_text": offers_text,
                     "table_data": table_data if 'table_data' in locals() else [],  # Сохраняем данные таблицы
+                    "path_points": st.session_state.get("path_points", []),  # Сохраняем точки маршрута
+                    "route_points": st.session_state.get("route_points", []),  # Сохраняем точки начала и конца маршрута
+                    "route_info": st.session_state.get("route_info", None),  # Сохраняем информацию о маршруте
                     "record_id": None  # Will be set after DB insert
                 }
             )

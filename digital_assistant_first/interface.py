@@ -6,6 +6,8 @@ import pandas as pd
 import streamlit as st
 import time
 import random
+from openai import OpenAI  # Добавляем прямой импорт OpenAI
+
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -47,7 +49,16 @@ init_db()
 # Add the initialize_model function here to avoid circular import
 def initialize_model(config):
     """Инициализация языковой модели на основе конфигурации."""
-    return ChatOpenAI(model=config["Model"], stream=False)
+    # Инициализируем LangChain модель для совместимости с существующим кодом
+    langchain_model = ChatOpenAI(model=config["Model"], stream=False)
+    
+    # Инициализируем прямой клиент OpenAI для возможности использования web_search_preview
+    openai_client = OpenAI()
+    
+    # Сохраняем клиент в конфигурации
+    config["openai_client"] = openai_client
+    
+    return langchain_model
 
 async def model_response_generator(model, config):
     """Сгенерировать ответ с использованием модели и ретривера асинхронно."""
@@ -314,10 +325,83 @@ async def model_response_generator(model, config):
         )
         messages = prompt_template.format(input=user_input, context="")
         
-        # Получаем неасинхронную версию с явно отключенным streaming
-        # чтобы обеспечить полноценный ответ для дальнейшей обработки
-        response = model.invoke(messages, stream=False)
+        # Проверяем, нужно ли использовать нативный веб-поиск OpenAI
+        use_openai_web_search = config.get("use_openai_web_search", False)
         
+        # Отладочный вывод
+        print(f"DEBUG ASYNC - use_openai_web_search value: {use_openai_web_search}, type: {type(use_openai_web_search)}")
+        print(f"DEBUG ASYNC - Full config keys: {list(config.keys())}")
+        
+        # Если это строка, конвертируем в булево значение
+        if isinstance(use_openai_web_search, str):
+            use_openai_web_search = use_openai_web_search.lower() == 'true'
+            print(f"DEBUG ASYNC - After conversion: {use_openai_web_search}")
+            
+        web_search_context_size = config.get("web_search_context_size", "medium")
+        
+        # Получаем ответ от модели
+        if use_openai_web_search:
+            # Используем нативный веб-поиск OpenAI
+            logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+            
+            # Преобразуем сообщения в формат OpenAI API
+            openai_messages = []
+            
+            # Проверяем тип переменной messages
+            print(f"DEBUG ASYNC - messages type: {type(messages)}")
+            
+            # Если messages это строка или другой простой тип, создаем сообщения напрямую
+            if isinstance(messages, str) or not hasattr(messages, "__iter__"):
+                openai_messages = [
+                    {"role": "system", "content": formatted_prompt},
+                    {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+                ]
+            else:
+                # Если это итерируемый объект, проверяем каждый элемент
+                for msg in messages:
+                    if hasattr(msg, "role") and hasattr(msg, "content"):
+                        # Объект LangChain с атрибутами role и content
+                        openai_messages.append({"role": msg.role, "content": msg.content})
+                    elif isinstance(msg, tuple) and len(msg) == 2:
+                        # Кортеж (role, content)
+                        openai_messages.append({"role": msg[0], "content": msg[1]})
+                    elif isinstance(msg, dict) and "role" in msg and "content" in msg:
+                        # Уже в правильном формате
+                        openai_messages.append(msg)
+                    else:
+                        # Если не удалось определить формат, создаем сообщения по умолчанию
+                        openai_messages = [
+                            {"role": "system", "content": formatted_prompt},
+                            {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+                        ]
+                        break
+            
+            # Отладочная информация о созданных сообщениях
+            print(f"DEBUG ASYNC - Created openai_messages: {openai_messages}")
+            
+            # Получаем клиент OpenAI из конфигурации
+            openai_client = config.get("openai_client", OpenAI())
+            
+            # Вызываем OpenAI API напрямую
+            openai_response = openai_client.responses.create(
+                model=config["Model"],
+                tools=[{
+                    "type": "web_search_preview",
+                    "search_context_size": web_search_context_size
+                }],
+                input=user_input
+            )
+            
+            # Эмулируем ответ LangChain для совместимости с остальным кодом
+            class OpenAIResponseWrapper:
+                def __init__(self, openai_response):
+                    self.content = openai_response.output_text
+                    
+            response = OpenAIResponseWrapper(openai_response)
+        else:
+            # Используем стандартный подход без веб-поиска
+            response = model.invoke(messages, stream=False)
+                    
         if hasattr(response, "content"):
             answer = response.content
         elif hasattr(response, "message"):
@@ -549,7 +633,6 @@ async def handle_user_input(model, config, prompt):
                     
                     elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
                         # Отображение маршрута на карте
-                        print(f"DEBUG: Отрисовка маршрута: {len(st.session_state['path_points'])} точек пути")
                         with st.container():
                             st.markdown("## ")
                             st.subheader("🗺️ Построенный маршрут")
@@ -1246,8 +1329,71 @@ def model_response_generator_sync(model, config):
     )
     messages = prompt_template.format(input=user_input, context="")
     
-    # Получаем неасинхронную версию с явно отключенным streaming
-    response = model.invoke(messages, stream=False)
+    # Проверяем, нужно ли использовать нативный веб-поиск OpenAI
+    use_openai_web_search = config.get("use_openai_web_search", False)
+    web_search_context_size = config.get("web_search_context_size", "medium")
+    
+    # Получаем ответ от модели
+    if use_openai_web_search:
+        # Используем нативный веб-поиск OpenAI
+        logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+        
+        # Преобразуем сообщения в формат OpenAI API
+        openai_messages = []
+        
+        # Проверяем тип переменной messages
+        print(f"DEBUG SYNC - messages type: {type(messages)}")
+        
+        # Если messages это строка или другой простой тип, создаем сообщения напрямую
+        if isinstance(messages, str) or not hasattr(messages, "__iter__"):
+            openai_messages = [
+                {"role": "system", "content": formatted_prompt},
+                {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+            ]
+        else:
+            # Если это итерируемый объект, проверяем каждый элемент
+            for msg in messages:
+                if hasattr(msg, "role") and hasattr(msg, "content"):
+                    # Объект LangChain с атрибутами role и content
+                    openai_messages.append({"role": msg.role, "content": msg.content})
+                elif isinstance(msg, tuple) and len(msg) == 2:
+                    # Кортеж (role, content)
+                    openai_messages.append({"role": msg[0], "content": msg[1]})
+                elif isinstance(msg, dict) and "role" in msg and "content" in msg:
+                    # Уже в правильном формате
+                    openai_messages.append(msg)
+                else:
+                    # Если не удалось определить формат, создаем сообщения по умолчанию
+                    openai_messages = [
+                        {"role": "system", "content": 'You are a helpful assistant.'},
+                        {"role": "user", "content": f"User query: {user_input}\nAdditional context: "}
+                    ]
+                    break
+        
+        
+        # Получаем клиент OpenAI из конфигурации
+        openai_client = config.get("openai_client", OpenAI())
+        
+        # Вызываем OpenAI API напрямую
+        openai_response = openai_client.responses.create(
+            model=config["Model"],
+            tools=[{
+                "type": "web_search_preview",
+                "search_context_size": web_search_context_size
+            }],
+            input=user_input
+        )
+
+        # Эмулируем ответ LangChain для совместимости с остальным кодом
+        class OpenAIResponseWrapper:
+            def __init__(self, openai_response):
+                self.content = openai_response.output_text
+                
+        response = OpenAIResponseWrapper(openai_response)
+    else:
+        # Используем стандартный подход без веб-поиска
+        response = model.invoke(messages, stream=False)
+
     
     if hasattr(response, "content"):
         answer = response.content

@@ -5,6 +5,8 @@ model: 'gpt-4o-mini'
 telegram_enabled: False
 collect_messages: 100
 link_checker: False
+use_openai_web_search: True
+web_search_context_size: "medium"
 
 offersgen:
   model: gpt-4o-mini

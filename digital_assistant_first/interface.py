@@ -596,6 +596,7 @@ async def handle_user_input(model, config, prompt):
                             # Группируем последовательные точки с одинаковыми атрибутами в единые сегменты
                             current_segment_key = None
                             current_segment_points = []
+                            current_segment_info = {}
                             
                             # Обходим все точки и группируем их в сегменты по цвету и стилю
                             for point in path_points:
@@ -604,17 +605,39 @@ async def handle_user_input(model, config, prompt):
                                 style = point.get("style", "normal")
                                 segment_key = f"{color}_{style}"
                                 
+                                # Собираем информацию для подсказки (tooltip)
+                                street_name = point.get("street_name", "")
+                                speed_type = {
+                                    "fast": "Быстрый участок", 
+                                    "normal": "Обычный участок", 
+                                    "slow": "Медленный участок"
+                                }.get(color, "Участок маршрута")
+                                
                                 # Если это начало нового сегмента или первая точка
                                 if segment_key != current_segment_key:
                                     # Если уже есть накопленные точки, сохраняем предыдущий сегмент
                                     if current_segment_points:
                                         if current_segment_key not in segments:
                                             segments[current_segment_key] = []
-                                        segments[current_segment_key].append(current_segment_points)
+                                        segments[current_segment_key].append({
+                                            "path": current_segment_points,
+                                            "name": current_segment_info.get("street_name", ""),
+                                            "speed_type": current_segment_info.get("speed_type", ""),
+                                            "style_type": current_segment_info.get("style_type", ""),
+                                            "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                        })
                                     
                                     # Начинаем новый сегмент
                                     current_segment_key = segment_key
                                     current_segment_points = []
+                                    current_segment_info = {
+                                        "street_name": street_name,
+                                        "speed_type": speed_type,
+                                        "style_type": style
+                                    }
+                                elif street_name and not current_segment_info.get("street_name"):
+                                    # Обновляем название улицы, если оно появилось
+                                    current_segment_info["street_name"] = street_name
                                 
                                 # Добавляем точку в текущий сегмент
                                 current_segment_points.append([point["lon"], point["lat"]])
@@ -623,14 +646,24 @@ async def handle_user_input(model, config, prompt):
                             if current_segment_points and current_segment_key:
                                 if current_segment_key not in segments:
                                     segments[current_segment_key] = []
-                                segments[current_segment_key].append(current_segment_points)
+                                segments[current_segment_key].append({
+                                    "path": current_segment_points,
+                                    "name": current_segment_info.get("street_name", ""),
+                                    "speed_type": current_segment_info.get("speed_type", ""),
+                                    "style_type": current_segment_info.get("style_type", ""),
+                                    "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                })
                             
                             # Если нет сегментов (маловероятно), создаем один общий
                             if not segments:
                                 segment_key = "normal_normal"
-                                segments[segment_key] = [[
-                                    [p["lon"], p["lat"]] for p in path_points
-                                ]]
+                                segments[segment_key] = [{
+                                    "path": [[p["lon"], p["lat"]] for p in path_points],
+                                    "name": "Маршрут",
+                                    "speed_type": "Обычный участок",
+                                    "style_type": "normal",
+                                    "style_string": " (дорога)"
+                                }]
                             
                             # Создаем слой для каждого типа сегмента
                             for segment_key, paths in segments.items():
@@ -664,13 +697,10 @@ async def handle_user_input(model, config, prompt):
                                 elif style_type == "bridge":
                                     width = 6
                                 
-                                # Создаем данные для слоя - каждый элемент в paths это полный набор точек для одного непрерывного сегмента
-                                segment_data = [{"path": path} for path in paths]
-                                
                                 # Добавляем слой для сегмента
                                 path_layer = pdk.Layer(
                                     "PathLayer",
-                                    data=segment_data,
+                                    data=paths,
                                     get_path="path",
                                     get_width=width,
                                     get_color=segment_color,
@@ -679,41 +709,6 @@ async def handle_user_input(model, config, prompt):
                                     dash_array=dash_array
                                 )
                                 layers.append(path_layer)
-                            
-                            # Если нет разделения на сегменты, создаем один общий маршрут
-                            if not segments:
-                                # Подготавливаем данные для линии маршрута
-                                path_data = [{
-                                    "path": [[p["lon"], p["lat"]] for p in path_points],
-                                    "name": "Маршрут"
-                                }]
-                                
-                                # Добавляем линию для маршрута
-                                path_layer = pdk.Layer(
-                                    "PathLayer",
-                                    data=path_data,
-                                    get_path="path",
-                                    get_width=5,
-                                    get_color=[0, 0, 255, 200],
-                                    width_min_pixels=3,
-                                    pickable=True,
-                                )
-                                layers.append(path_layer)
-                            
-                            # Точки маршрута
-                            layers.append(
-                                pdk.Layer(
-                                    "ScatterplotLayer",
-                                    data=df_route_points,
-                                    get_position="[lon, lat]",
-                                    get_radius=50,
-                                    radiusMinPixels=8,
-                                    radiusMaxPixels=100,
-                                    radiusScale=1,
-                                    get_fill_color=["is_start ? 0 : 255", "is_start ? 200 : 0", "is_start ? 0 : 0", 200],
-                                    pickable=True,
-                                )
-                            )
                             
                             # Отображаем карту
                             st.pydeck_chart(
@@ -726,8 +721,14 @@ async def handle_user_input(model, config, prompt):
                                     ),
                                     layers=layers,
                                     tooltip={
-                                        "html": "<b>{name}</b>",
-                                        "style": {"color": "white"},
+                                        "html": "<b>{name}</b><br/>{speed_type}{style_string}",
+                                        "style": {
+                                            "backgroundColor": "white", 
+                                            "color": "black",
+                                            "fontSize": "12px",
+                                            "borderRadius": "4px",
+                                            "padding": "5px"
+                                        }
                                     },
                                 )
                             )
@@ -925,6 +926,7 @@ def display_chat_history():
                                 # Группируем последовательные точки с одинаковыми атрибутами в единые сегменты
                                 current_segment_key = None
                                 current_segment_points = []
+                                current_segment_info = {}
                                 
                                 # Обходим все точки и группируем их в сегменты по цвету и стилю
                                 for point in path_points:
@@ -933,17 +935,39 @@ def display_chat_history():
                                     style = point.get("style", "normal")
                                     segment_key = f"{color}_{style}"
                                     
+                                    # Собираем информацию для подсказки (tooltip)
+                                    street_name = point.get("street_name", "")
+                                    speed_type = {
+                                        "fast": "Быстрый участок", 
+                                        "normal": "Обычный участок", 
+                                        "slow": "Медленный участок"
+                                    }.get(color, "Участок маршрута")
+                                    
                                     # Если это начало нового сегмента или первая точка
                                     if segment_key != current_segment_key:
                                         # Если уже есть накопленные точки, сохраняем предыдущий сегмент
                                         if current_segment_points:
                                             if current_segment_key not in segments:
                                                 segments[current_segment_key] = []
-                                            segments[current_segment_key].append(current_segment_points)
+                                            segments[current_segment_key].append({
+                                                "path": current_segment_points,
+                                                "name": current_segment_info.get("street_name", ""),
+                                                "speed_type": current_segment_info.get("speed_type", ""),
+                                                "style_type": current_segment_info.get("style_type", ""),
+                                                "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                            })
                                         
                                         # Начинаем новый сегмент
                                         current_segment_key = segment_key
                                         current_segment_points = []
+                                        current_segment_info = {
+                                            "street_name": street_name,
+                                            "speed_type": speed_type,
+                                            "style_type": style
+                                        }
+                                    elif street_name and not current_segment_info.get("street_name"):
+                                        # Обновляем название улицы, если оно появилось
+                                        current_segment_info["street_name"] = street_name
                                     
                                     # Добавляем точку в текущий сегмент
                                     current_segment_points.append([point["lon"], point["lat"]])
@@ -952,14 +976,24 @@ def display_chat_history():
                                 if current_segment_points and current_segment_key:
                                     if current_segment_key not in segments:
                                         segments[current_segment_key] = []
-                                    segments[current_segment_key].append(current_segment_points)
+                                    segments[current_segment_key].append({
+                                        "path": current_segment_points,
+                                        "name": current_segment_info.get("street_name", ""),
+                                        "speed_type": current_segment_info.get("speed_type", ""),
+                                        "style_type": current_segment_info.get("style_type", ""),
+                                        "style_string": " (" + {"normal": "дорога", "tunnel": "туннель", "bridge": "мост"}.get(current_segment_info.get("style_type", "normal"), "дорога") + ")"
+                                    })
                                 
                                 # Если нет сегментов (маловероятно), создаем один общий
                                 if not segments:
                                     segment_key = "normal_normal"
-                                    segments[segment_key] = [[
-                                        [p["lon"], p["lat"]] for p in path_points
-                                    ]]
+                                    segments[segment_key] = [{
+                                        "path": [[p["lon"], p["lat"]] for p in path_points],
+                                        "name": "Маршрут",
+                                        "speed_type": "Обычный участок",
+                                        "style_type": "normal",
+                                        "style_string": " (дорога)"
+                                    }]
                                 
                                 # Создаем слой для каждого типа сегмента
                                 for segment_key, paths in segments.items():
@@ -993,13 +1027,10 @@ def display_chat_history():
                                     elif style_type == "bridge":
                                         width = 6
                                     
-                                    # Создаем данные для слоя - каждый элемент в paths это полный набор точек для одного непрерывного сегмента
-                                    segment_data = [{"path": path} for path in paths]
-                                    
                                     # Добавляем слой для сегмента
                                     path_layer = pdk.Layer(
                                         "PathLayer",
-                                        data=segment_data,
+                                        data=paths,
                                         get_path="path",
                                         get_width=width,
                                         get_color=segment_color,
@@ -1008,58 +1039,29 @@ def display_chat_history():
                                         dash_array=dash_array
                                     )
                                     layers.append(path_layer)
-                                
-                                # Если нет разделения на сегменты, создаем один общий маршрут
-                                if not segments:
-                                    # Подготавливаем данные для линии маршрута
-                                    path_data = [{
-                                        "path": [[p["lon"], p["lat"]] for p in path_points],
-                                        "name": "Маршрут"
-                                    }]
-                                    
-                                    # Добавляем линию для маршрута
-                                    path_layer = pdk.Layer(
-                                        "PathLayer",
-                                        data=path_data,
-                                        get_path="path",
-                                        get_width=5,
-                                        get_color=[0, 0, 255, 200],
-                                        width_min_pixels=3,
-                                        pickable=True,
-                                    )
-                                    layers.append(path_layer)
-                                
-                                # Точки маршрута
-                                layers.append(
-                                    pdk.Layer(
-                                        "ScatterplotLayer",
-                                        data=df_route_points,
-                                        get_position="[lon, lat]",
-                                        get_radius=50,
-                                        radiusMinPixels=8,
-                                        radiusMaxPixels=100,
-                                        radiusScale=1,
-                                        get_fill_color=["is_start ? 0 : 255", "is_start ? 200 : 0", "is_start ? 0 : 0", 200],
-                                        pickable=True,
-                                    )
+                            
+                            # Отображаем карту
+                            st.pydeck_chart(
+                                pdk.Deck(
+                                    map_style=None,
+                                    initial_view_state=pdk.ViewState(
+                                        latitude=center_lat,
+                                        longitude=center_lon,
+                                        zoom=zoom_level,
+                                    ),
+                                    layers=layers,
+                                    tooltip={
+                                        "html": "<b>{name}</b><br/>{speed_type}{style_string}",
+                                        "style": {
+                                            "backgroundColor": "white", 
+                                            "color": "black",
+                                            "fontSize": "12px",
+                                            "borderRadius": "4px",
+                                            "padding": "5px"
+                                        }
+                                    },
                                 )
-                                
-                                # Отображаем карту
-                                st.pydeck_chart(
-                                    pdk.Deck(
-                                        map_style=None,
-                                        initial_view_state=pdk.ViewState(
-                                            latitude=center_lat,
-                                            longitude=center_lon,
-                                            zoom=zoom_level,
-                                        ),
-                                        layers=layers,
-                                        tooltip={
-                                            "html": "<b>{name}</b>",
-                                            "style": {"color": "white"},
-                                        },
-                                    )
-                                )
+                            )
                         else:
                             print(f"DEBUG history: Недостаточно данных для отображения маршрута в истории")
                 

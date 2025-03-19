@@ -1,26 +1,29 @@
-internet_search: False
-aviasales_search: False
-model: 'gpt-4o-mini'
-2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'
-telegram_enabled: False
-collect_messages: 100
-link_checker: False
-use_openai_web_search: True
-web_search_context_size: "medium"
+# Основные настройки сервиса
+internet_search: False  # Флаг для включения/отключения поиска через SERP API
+aviasales_search: False  # Флаг для включения/отключения поиска через API Aviasales 
+model: 'gpt-4o-mini'  # Модель LLM для основных запросов
+2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'  # API ключ для сервиса 2ГИС
+telegram_enabled: False  # Флаг для включения/отключения интеграции с Telegram
+collect_messages: 100  # Количество сообщений, сохраняемых в истории для контекста
+link_checker: False  # Флаг для включения/отключения проверки ссылок
+use_openai_web_search: True  # Использование веб-поиска от OpenAI
+web_search_context_size: "low"  # Размер контекста для веб-поиска (low/medium/high)
 
+# Настройки генератора предложений
 offersgen:
-  model: gpt-4o-mini
-  offers_db: content/json/offers/raw/offers.json
-  rag_n_examples: 40
-  city_filter: False
+  model: gpt-4o-mini  # Модель LLM для генерации предложений
+  offers_db: content/json/offers/raw/offers.json  # Путь к базе данных с предложениями
+  rag_n_examples: 40  # Количество примеров для RAG (Retrieval-Augmented Generation)
+  city_filter: False  # Флаг для фильтрации предложений по городам
   db_service:
-    json_path: content/json/offers/offers_by_category.json
-    chunk_overlap: 300
-    chunk_size: 700
-    dump_path: content/json/offers/offers_docs.json
-    persist_directory: content/json/offers/offers_persist_db
-    collection_name: vtb_family_offers
+    json_path: content/json/offers/offers_by_category.json  # Путь к JSON с предложениями по категориям
+    chunk_overlap: 300  # Размер перекрытия чанков при обработке текста
+    chunk_size: 700  # Размер чанка для обработки текста
+    dump_path: content/json/offers/offers_docs.json  # Путь для сохранения промежуточных документов
+    persist_directory: content/json/offers/offers_persist_db  # Директория для постоянного хранения векторной БД
+    collection_name: vtb_family_offers  # Название коллекции в векторной БД
 
+# Основной системный промпт для ВТБ Консьержа
 system_prompt: |
     Вы — цифровой помощник сервиса ВТБ Консьерж, нацеленный на предоставление точной, творчески оформленной информации. Если ответа на вопрос нет в контексте, честно сообщите об этом, но предложите альтернативные пути решения или дополнительные варианты, если это возможно.
 
@@ -41,6 +44,7 @@ system_prompt: |
 
     Старайся выводить как можно больше ссылок и вариантов. На каждый пункт старайся вывести ссылку, если она есть. Ты информативная платформа, не нужно писать лишнюю информацию.
 
+# Системный промпт для работы с Aviasales
 system_prompt_aviasales: |
     Вы — цифровой помощник сервиса ВТБ Консьерж, нацеленный на предоставление точной, творчески оформленной информации. Если ответа на вопрос нет в контексте, честно сообщите об этом, но предложите альтернативные пути решения или дополнительные варианты, если это возможно.
 
@@ -51,13 +55,14 @@ system_prompt_aviasales: |
 
     Информация по авиабилетам из Aviasales. Оформи информацию в виде таблицы, при этом пиши понятным русским текстом. Не меняй названия авиалиний: [Aviasales рейсы и билеты: {aviasales_flight_info}].
 
-
+# Системный промпт для извлечения названий аэропортов
 system_prompt_airport: |
     Извлеки из текста названия городов на английском языке в формате JSON:
     cities: [City1, City2]
     Если в запросе только один город, то поставь другой notfound.
     Текст: [{input}]
     
+# Системный промпт для анализа запросов о билетах
 system_prompt_tickets: |
     
     You analyze the user's requests and return a response in the form of a JSON file with the fields and values.

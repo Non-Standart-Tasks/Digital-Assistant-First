@@ -84,8 +84,8 @@ async def model_response_generator(model, config):
         - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
-        - офферы (если запрос о скидках, промокодах, специальных предложениях, акциях, бонусах, кэшбэке и т.п.)
         - маршруты (если запрос о том, как построить маршрут, проложить путь, найти дорогу между местами и т.п.)
+        - магазины (если запрос о торговых центрах, магазинах, супермаркетах, скидках в них и т.п.)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
         Запрос пользователя: {user_input}
@@ -129,7 +129,7 @@ async def model_response_generator(model, config):
     telegram_context = ""
     table_data = []
     pydeck_data = []
-    offers_data = []
+    offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
     
     # Задачи для интернет-поиска (всегда выполняем, но используем информацию о категории)
     if config.get("internet_search", False):
@@ -232,8 +232,8 @@ async def model_response_generator(model, config):
                 print(f"DEBUG async: Задача построения маршрута не вернула результатов")
             result_index += 1
         
-        # Если категория "офферы", запускаем обработку предложений
-        if request_category == "офферы":
+        # Если офферы включены в конфигурации, запускаем обработку предложений независимо от категории запроса
+        if config.get("offers_enabled", False):
             try:
                 # Прямой асинхронный вызов вместо run_until_complete
                 validation_result = await validation_agent.run(user_input)
@@ -254,7 +254,7 @@ async def model_response_generator(model, config):
                     }
             except Exception as e:
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
-                offers_data = []
+                offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
         
         # Формируем URL для Aviasales
         aviasales_url = ""
@@ -556,7 +556,7 @@ async def handle_user_input(model, config, prompt):
                     loop.close()
             
             # Обрабатываем офферы, если они есть
-            if "offers_data" in response and response["offers_data"]:
+            if config.get("offers_enabled", False):
                 offers_data = response["offers_data"]
                 st.subheader("Генерация офферов")
                 
@@ -1191,7 +1191,6 @@ def model_response_generator_sync(model, config):
         - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
-        - офферы (если запрос о скидках, промокодах, специальных предложениях, акциях, бонусах, кэшбэке и т.п.)
         - маршруты (если запрос о том, как построить маршрут, проложить путь, найти дорогу между местами и т.п.)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
@@ -1228,7 +1227,7 @@ def model_response_generator_sync(model, config):
     telegram_context = ""
     table_data = []
     pydeck_data = []
-    offers_data = []
+    offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
     aviasales_url = ""
     aviasales_flight_info = ""
     
@@ -1258,8 +1257,8 @@ def model_response_generator_sync(model, config):
                         aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
                     )
         
-        # Для офферов
-        if request_category == "офферы":
+        # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
+        if config.get("offers_enabled", False):
             try:
                 validation_result = loop.run_until_complete(validation_agent.run(user_input))
                 validation_result = validation_result.data
@@ -1278,7 +1277,7 @@ def model_response_generator_sync(model, config):
                     }
             except Exception as e:
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
-                offers_data = []
+                offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
     
     finally:
         loop.close()
@@ -1596,11 +1595,12 @@ def handle_user_input_sync(model, config, prompt):
                     loop.close()
             
             # Обрабатываем офферы, если они есть
-            if "offers_data" in response and response["offers_data"]:
+            if config.get("offers_enabled", False):
                 offers_data = response["offers_data"]
-                offers_text += "\n\n## Генерация офферов\n"
+                st.subheader("Генерация офферов")
                 
                 try:
+                    # Используем сохраненный system_prompt для генерации офферов
                     offers_system_prompt = offers_data.get("system_prompt", "")
                     if offers_system_prompt:
                         offers_messages = [
@@ -1608,20 +1608,22 @@ def handle_user_input_sync(model, config, prompt):
                             {"role": "user", "content": prompt}
                         ]
                         
+                        # Получаем ответ
                         offers_response = model.invoke(offers_messages, stream=False)
                         if hasattr(offers_response, "content") and offers_response.content:
-                            generated_offers = offers_response.content
+                            offers_text = offers_response.content
                         elif hasattr(offers_response, "message") and offers_response.message.content:
-                            generated_offers = offers_response.message.content
+                            offers_text = offers_response.message.content
                         else:
-                            generated_offers = str(offers_response)
+                            offers_text = str(offers_response)
                         
-                        offers_text += generated_offers
+                        # Отображаем офферы
+                        st.markdown(offers_text)
                     else:
-                        offers_text += "\n\n*Не удалось сгенерировать офферы для вашего запроса.*"
+                        st.warning("Не удалось сгенерировать офферы для вашего запроса.")
                 except Exception as e:
                     logger.error(f"Error generating offers: {str(e)}", exc_info=True)
-                    offers_text += "\n\n*Произошла ошибка при генерации офферов.*"
+                    st.error("Произошла ошибка при генерации офферов.")
             
             # Собираем полный ответ для стриминга - основной ответ + места + авиасейлс
             full_response_text = answer_text + places_text + aviasales_text + offers_text
@@ -1782,20 +1784,6 @@ def handle_user_input_sync(model, config, prompt):
                                 )
                             )
 
-            # Отображаем офферы в интерфейсе - оставляем офферы с отдельным выводом
-            if "offers_data" in response and response["offers_data"] and offers_text:
-                st.subheader("Генерация офферов")
-                offers_data = response["offers_data"]
-                try:
-                    offers_system_prompt = offers_data.get("system_prompt", "")
-                    if offers_system_prompt:
-                        # Офферы уже включены в основной ответ, не показываем дублированно
-                        pass
-                    else:
-                        st.warning("Не удалось сгенерировать офферы для вашего запроса.")
-                except Exception as e:
-                    st.error("Произошла ошибка при генерации офферов.")
-            
             # Сохраняем дополнительную информацию для истории сообщений
             st.session_state["messages"].append(
                 {

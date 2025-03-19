@@ -70,13 +70,8 @@ def apply_configuration():
         "system_prompt_aviasales": st.session_state["system_prompt_aviasales"],
         "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
+        "offers_enabled": st.session_state["offers_enabled"],
     }
-
-    if (
-        st.session_state["selected_system"] == "File"
-        and st.session_state.get("uploaded_file") is not None
-    ):
-        config["Uploaded_file"] = st.session_state["uploaded_file"]
 
     st.session_state["config"] = config
     st.session_state["config_applied"] = True
@@ -138,6 +133,7 @@ def main():
         "system_prompt_aviasales": config_yaml["system_prompt_aviasales"],
         "system_prompt_airport": config_yaml["system_prompt_airport"],
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
+        "offers_enabled": False,  # По умолчанию офферы отключены
     }
 
     initialize_session_state(defaults)
@@ -148,6 +144,14 @@ def main():
     from digital_assistant_first import offergen
     with st.sidebar:
         mode = st.radio("Выберите режим:", ("Чат", "Поиск авиабилетов"))
+        
+        new_offers_enabled = st.toggle("Включить офферы", value=st.session_state["offers_enabled"])
+        if new_offers_enabled != st.session_state["offers_enabled"]:
+            st.session_state["offers_enabled"] = new_offers_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["offers_enabled"] = new_offers_enabled
+
         if st.session_state.get("telegram_enabled", False):
             async def initialize_data():
                 await update_telegram_messages()

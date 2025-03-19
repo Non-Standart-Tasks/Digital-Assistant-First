@@ -103,6 +103,18 @@ def chat_interface(config):
         st.rerun()
 
 
+def handle_toggle(key, label, default_value=False):
+    """Handle toggle state changes and update config."""
+    current_value = st.session_state.get(key, default_value)
+    new_value = st.toggle(label, value=current_value)
+    
+    if new_value != current_value:
+        st.session_state[key] = new_value
+        if st.session_state.get("config") is not None:
+            st.session_state["config"][key] = new_value
+    
+    return new_value
+
 
 def main():
     """Основная функция для запуска приложения Streamlit."""
@@ -134,6 +146,7 @@ def main():
         "system_prompt_airport": config_yaml["system_prompt_airport"],
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
         "offers_enabled": False,  # По умолчанию офферы отключены
+        "maps_2gis_enabled": False,
     }
 
     initialize_session_state(defaults)
@@ -145,13 +158,20 @@ def main():
     with st.sidebar:
         mode = st.radio("Выберите режим:", ("Чат", "Поиск авиабилетов"))
         
-        new_offers_enabled = st.toggle("Включить офферы", value=st.session_state["offers_enabled"])
+        new_offers_enabled = handle_toggle("offers_enabled", "Включить офферы")
         if new_offers_enabled != st.session_state["offers_enabled"]:
             st.session_state["offers_enabled"] = new_offers_enabled
             # Обновить конфигурацию при изменении toggle
             if st.session_state.get("config") is not None:
                 st.session_state["config"]["offers_enabled"] = new_offers_enabled
 
+        maps_2gis_enabled = handle_toggle("maps_2gis_enabled", "Включить поиск по 2GIS")
+        if maps_2gis_enabled != st.session_state["maps_2gis_enabled"]:
+            st.session_state["maps_2gis_enabled"] = maps_2gis_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["maps_2gis_enabled"] = maps_2gis_enabled
+        
         if st.session_state.get("telegram_enabled", False):
             async def initialize_data():
                 await update_telegram_messages()

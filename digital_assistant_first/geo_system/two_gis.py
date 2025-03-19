@@ -40,7 +40,7 @@ async def fetch_2gis_data(query, config):
         # Формируем запрос к 2GIS API с явным указанием города
         base_url = "https://catalog.api.2gis.com/3.0/items"
         params = {
-            "q": f"{query} {city}",  # Добавляем город к запросу
+            "q": query,  # Только поисковый запрос без добавления города
             "key": api_key,
             "fields": "items.point,items.full_address,items.name,items.reviews,items.contact_groups,items.address,items.address_name,items.address_comment,items.building_name,items.schedule,items.cuisine",
             "city": city  # Явно указываем город

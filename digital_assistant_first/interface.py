@@ -660,19 +660,23 @@ def handle_user_input_sync(model, config, prompt):
             if "aviasales_link" in response and response["aviasales_link"] and response["aviasales_link"].strip():
                 aviasales_text = f"\n\n### Данные из Авиасейлс \n **Ссылка** - {response['aviasales_link']}"
             
-            # Если категория запроса - рестораны или ивенты, получаем данные для 2GIS
+            # Если категория запроса - рестораны или ивенты И включен поиск по 2GIS, получаем данные 2GIS
             table_data = []
+            pydeck_data = []
             path_points = []
             route_info = None
-            if response.get("request_category") in ["рестораны", "ивенты"]:
+            
+            # Проверяем, включен ли поиск по 2GIS
+            maps_2gis_enabled = config.get("maps_2gis_enabled", False)
+            
+            if maps_2gis_enabled and response.get("request_category") in ["рестораны", "ивенты"]:
                 # Создаем новый синхронный event loop для 2GIS запроса
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
                 
                 try:
-                    # Добавляем аннотацию @st.cache_data(ttl=60) выше функции fetch_2gis_data в другом файле
-                    # или форсируем новый запрос здесь:
-                    st.session_state["2gis_cache_key"] = f"{prompt}_{time.time()}"  # Уникальный ключ
+                    # Форсируем новый запрос через уникальный ключ
+                    st.session_state["2gis_cache_key"] = f"{prompt}_{time.time()}"
                     table_data, pydeck_data = loop.run_until_complete(fetch_2gis_data(prompt, config))
                     
                     # Проверяем и сохраняем новые данные
@@ -733,8 +737,8 @@ def handle_user_input_sync(model, config, prompt):
                 finally:
                     loop.close()
             
-            # Если категория запроса - маршруты, получаем данные для построения маршрута
-            elif response.get("request_category") == "маршруты":
+            # Если категория запроса - маршруты И включен поиск по 2GIS, получаем данные для построения маршрута
+            elif maps_2gis_enabled and response.get("request_category") == "маршруты":
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
                 
@@ -771,7 +775,12 @@ def handle_user_input_sync(model, config, prompt):
                         answer_text += route_text
                 finally:
                     loop.close()
-            
+            else:
+                # Если 2GIS отключен или категория не подходящая, сбрасываем флаги отображения карты
+                st.session_state["show_map"] = False
+                st.session_state["map_type"] = None
+                st.session_state["last_pydeck_data"] = []
+
             # Обрабатываем офферы, если они есть
             if config.get("offers_enabled", False):
                 offers_data = response["offers_data"]
@@ -794,14 +803,13 @@ def handle_user_input_sync(model, config, prompt):
                         else:
                             offers_text = str(offers_response)
                         
-                        
                     else:
                         st.warning("Не удалось сгенерировать офферы для вашего запроса.")
                 
                 except Exception as e:
                     logger.error(f"Error generating offers: {str(e)}", exc_info=True)
                     st.error("Произошла ошибка при генерации офферов.")
-            
+
             # Собираем полный ответ для стриминга - основной ответ + места + авиасейлс
             full_response_text = answer_text + places_text + aviasales_text + offers_text
             
@@ -835,131 +843,130 @@ def handle_user_input_sync(model, config, prompt):
             response_text = full_response_text
             
             # КАРТА - выводим В САМОМ КОНЦЕ функции, после всего остального
-            if response.get("request_category") in ["рестораны", "ивенты", "маршруты"]:
-                if st.session_state.get("show_map", False):
-                    map_type = st.session_state.get("map_type", "points")
-                    
-                    if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
-                        # Отображение точек на карте (рестораны, ивенты)
-                        pydeck_data = st.session_state["last_pydeck_data"]
-                        if len(pydeck_data) > 0:
-                            with st.container():
-                                st.markdown("## ")
-                                st.subheader("🗺️ Интерактивная карта 2GIS")
-                                st.markdown("---")
-                                
-                                df_pydeck = pd.DataFrame(pydeck_data)
-                                st.pydeck_chart(
-                                    pdk.Deck(
-                                        map_style=None,
-                                        initial_view_state=pdk.ViewState(
-                                            latitude=df_pydeck["lat"].mean(),
-                                            longitude=df_pydeck["lon"].mean(),
-                                            zoom=13,
-                                        ),
-                                        layers=[
-                                            pdk.Layer(
-                                                "ScatterplotLayer",
-                                                data=df_pydeck,
-                                                get_position="[lon, lat]",
-                                                get_radius=30,
-                                                radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
-                                                radiusMaxPixels=100,  # Максимальный размер при приближении
-                                                radiusScale=0.8,  # Масштабный коэффициент
-                                                get_fill_color=[255, 0, 0],
-                                                pickable=True,
-                                            )
-                                        ],
-                                        tooltip={
-                                            "html": "<b>{name}</b>",
-                                            "style": {"color": "white"},
-                                        },
-                                    )
-                                )
-                    
-                    elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
-                        # Отображение маршрута на карте
+            if maps_2gis_enabled and st.session_state.get("show_map", False):
+                map_type = st.session_state.get("map_type", "points")
+                
+                if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
+                    # Отображение точек на карте (рестораны, ивенты)
+                    pydeck_data = st.session_state["last_pydeck_data"]
+                    if len(pydeck_data) > 0:
                         with st.container():
                             st.markdown("## ")
-                            st.subheader("🗺️ Построенный маршрут")
+                            st.subheader("🗺️ Интерактивная карта 2GIS")
                             st.markdown("---")
                             
-                            # Подготовка данных для PathLayer
-                            path_points = st.session_state["path_points"]
-                            route_points = st.session_state["route_points"]
-                            
-                            # Создаем DataFrame для точек маршрута
-                            df_route_points = pd.DataFrame(route_points)
-                            
-                            # Подготавливаем данные для линии маршрута
-                            path_data = [{
-                                "path": [[p["lon"], p["lat"]] for p in path_points],
-                                "name": "Маршрут"
-                            }]
-                            
-                            # Рассчитываем центр маршрута
-                            center_lat = df_route_points["lat"].mean()
-                            center_lon = df_route_points["lon"].mean()
-                            
-                            # Для зума посчитаем максимальное расстояние между точками
-                            max_lat = df_route_points["lat"].max()
-                            min_lat = df_route_points["lat"].min()
-                            max_lon = df_route_points["lon"].max()
-                            min_lon = df_route_points["lon"].min()
-                            
-                            # Определим зум на основе расстояния
-                            lat_diff = max_lat - min_lat
-                            lon_diff = max_lon - min_lon
-                            zoom_level = 10
-                            if lat_diff > 0.1 or lon_diff > 0.1:
-                                zoom_level = 9
-                            if lat_diff > 0.2 or lon_diff > 0.2:
-                                zoom_level = 8
-                            if lat_diff > 0.5 or lon_diff > 0.5:
-                                zoom_level = 7
-                            
-                            # Создаем слои для карты
-                            layers = [
-                                # Линия маршрута
-                                pdk.Layer(
-                                    "PathLayer",
-                                    data=path_data,
-                                    get_path="path",
-                                    get_width=5,
-                                    get_color=[0, 0, 255],
-                                    width_min_pixels=3,
-                                    pickable=True,
-                                ),
-                                # Точки маршрута
-                                pdk.Layer(
-                                    "ScatterplotLayer",
-                                    data=df_route_points,
-                                    get_position="[lon, lat]",
-                                    get_radius=50,
-                                    radiusMinPixels=8,
-                                    radiusMaxPixels=100,
-                                    radiusScale=1,
-                                    get_fill_color=["is_start ? 0 : 255", "is_start ? 200 : 0", "is_start ? 0 : 0", 200],
-                                    pickable=True,
-                                )
-                            ]
-                            
-                            # Отображаем карту
+                            df_pydeck = pd.DataFrame(pydeck_data)
                             st.pydeck_chart(
                                 pdk.Deck(
                                     map_style=None,
                                     initial_view_state=pdk.ViewState(
-                                        latitude=center_lat,
-                                        longitude=center_lon,
-                                        zoom=zoom_level,
+                                        latitude=df_pydeck["lat"].mean(),
+                                        longitude=df_pydeck["lon"].mean(),
+                                        zoom=13,
                                     ),
-                                    layers=layers,
+                                    layers=[
+                                        pdk.Layer(
+                                            "ScatterplotLayer",
+                                            data=df_pydeck,
+                                            get_position="[lon, lat]",
+                                            get_radius=30,
+                                            radiusMinPixels=6,  # Минимальный размер точки в пикселях (видна при отдалении)
+                                            radiusMaxPixels=100,  # Максимальный размер при приближении
+                                            radiusScale=0.8,  # Масштабный коэффициент
+                                            get_fill_color=[255, 0, 0],
+                                            pickable=True,
+                                        )
+                                    ],
                                     tooltip={
                                         "html": "<b>{name}</b>",
                                         "style": {"color": "white"},
                                     },
                                 )
                             )
+                
+                elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
+                    # Отображение маршрута на карте
+                    with st.container():
+                        st.markdown("## ")
+                        st.subheader("🗺️ Построенный маршрут")
+                        st.markdown("---")
+                        
+                        # Подготовка данных для PathLayer
+                        path_points = st.session_state["path_points"]
+                        route_points = st.session_state["route_points"]
+                        
+                        # Создаем DataFrame для точек маршрута
+                        df_route_points = pd.DataFrame(route_points)
+                        
+                        # Подготавливаем данные для линии маршрута
+                        path_data = [{
+                            "path": [[p["lon"], p["lat"]] for p in path_points],
+                            "name": "Маршрут"
+                        }]
+                        
+                        # Рассчитываем центр маршрута
+                        center_lat = df_route_points["lat"].mean()
+                        center_lon = df_route_points["lon"].mean()
+                        
+                        # Для зума посчитаем максимальное расстояние между точками
+                        max_lat = df_route_points["lat"].max()
+                        min_lat = df_route_points["lat"].min()
+                        max_lon = df_route_points["lon"].max()
+                        min_lon = df_route_points["lon"].min()
+                        
+                        # Определим зум на основе расстояния
+                        lat_diff = max_lat - min_lat
+                        lon_diff = max_lon - min_lon
+                        zoom_level = 10
+                        if lat_diff > 0.1 or lon_diff > 0.1:
+                            zoom_level = 9
+                        if lat_diff > 0.2 or lon_diff > 0.2:
+                            zoom_level = 8
+                        if lat_diff > 0.5 or lon_diff > 0.5:
+                            zoom_level = 7
+                        
+                        # Создаем слои для карты
+                        layers = [
+                            # Линия маршрута
+                            pdk.Layer(
+                                "PathLayer",
+                                data=path_data,
+                                get_path="path",
+                                get_width=5,
+                                get_color=[0, 0, 255],
+                                width_min_pixels=3,
+                                pickable=True,
+                            ),
+                            # Точки маршрута
+                            pdk.Layer(
+                                "ScatterplotLayer",
+                                data=df_route_points,
+                                get_position="[lon, lat]",
+                                get_radius=50,
+                                radiusMinPixels=8,
+                                radiusMaxPixels=100,
+                                radiusScale=1,
+                                get_fill_color=["is_start ? 0 : 255", "is_start ? 200 : 0", "is_start ? 0 : 0", 200],
+                                pickable=True,
+                            )
+                        ]
+                        
+                        # Отображаем карту
+                        st.pydeck_chart(
+                            pdk.Deck(
+                                map_style=None,
+                                initial_view_state=pdk.ViewState(
+                                    latitude=center_lat,
+                                    longitude=center_lon,
+                                    zoom=zoom_level,
+                                ),
+                                layers=layers,
+                                tooltip={
+                                    "html": "<b>{name}</b>",
+                                    "style": {"color": "white"},
+                                },
+                            )
+                        )
 
             # Сохраняем дополнительную информацию для истории сообщений
             st.session_state["messages"].append(

@@ -150,3 +150,58 @@ def test_chat_interface(initialized_app):
     
     logger.info("Тест успешно пройден: ассистент ответил и данные сохранены в БД")
 
+@skip_if_no_api_key
+def test_2gis_data_display(initialized_app):
+    """
+    Тестирует отображение данных 2GIS API:
+    1. Отправляет запрос о ресторанах в Москве
+    2. Ждет ответа ассистента
+    3. Проверяет наличие блока с данными 2GIS API в ответе
+    """
+    at = initialized_app
+    
+    # 1. Проверяем наличие чат-инпута
+    logger.info("Проверка наличия чат-инпута")
+    assert len(at.chat_input) > 0, "Чат-инпут не найден"
+    
+    # 2. Отправляем запрос о ресторанах
+    TEST_MESSAGE = "Лучшие рестораны в Москве"
+    logger.info(f"Отправка запроса о ресторанах: {TEST_MESSAGE}")
+    
+    # Отправляем сообщение в чат
+    result = at.chat_input[0].set_value(TEST_MESSAGE).run(timeout=TIMEOUT)
+    
+    # 3. Ожидаем ответа ассистента
+    logger.info("Ожидание ответа ассистента с данными 2GIS")
+    start_time = time.time()
+    found_2gis_data = False
+    
+    while time.time() - start_time < TIMEOUT:
+        # Обновляем страницу для получения новых данных
+        result = result.run()
+        
+        # Проверяем наличие subheader с данными 2GIS
+        for element in result.subheader:
+            if "📍 Данные о найденных местах 2GIS API" in element.value:
+                logger.info("Найден блок с данными 2GIS API")
+                found_2gis_data = True
+                break
+                
+        if found_2gis_data:
+            break
+            
+        # Проверяем текст в markdown элементах (альтернативный способ отображения)
+        for element in result.markdown:
+            if "📍 Данные о найденных местах 2GIS API" in element.value:
+                logger.info("Найден блок с данными 2GIS API в markdown")
+                found_2gis_data = True
+                break
+                
+        if found_2gis_data:
+            break
+        
+        time.sleep(3)
+    
+    assert found_2gis_data, "Блок с данными 2GIS API не найден в ответе"
+    logger.info("Тест успешно пройден: данные 2GIS API отображаются в ответе")
+

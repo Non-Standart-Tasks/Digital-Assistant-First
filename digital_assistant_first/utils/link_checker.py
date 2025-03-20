@@ -1,6 +1,6 @@
 from pydantic_ai import Agent, RunContext
 from pydantic import BaseModel, Field
-from typing import List
+from typing import List, Tuple
 import httpx
 from dotenv import load_dotenv
 import socket
@@ -9,8 +9,8 @@ from urllib.parse import urlparse
 import warnings
 import concurrent.futures
 import asyncio
+import time
 
-# logfire.configure()
 
 load_dotenv()
 
@@ -21,7 +21,9 @@ class LinkStatus(BaseModel):
 
 
 class LinkStatusList(BaseModel):
-    links: List[LinkStatus] = Field(description="The list of links to check")
+    links: List[LinkStatus] = Field(
+        description="The list of links to check with statuses"
+    )
 
 
 link_checker = Agent(
@@ -55,28 +57,33 @@ corrector = Agent(
 )
 
 
+@link_checker.tool
+async def check_link_list(ctx: RunContext, links: List[str]) -> List[LinkStatus]:
+    """
+    Check the status of a list of links.
+    """
+    results = check_links(links)
+    return [LinkStatus(link=link, status=status) for link, status in results.items()]
+
+
 @corrector.tool
 async def get_invalid_links(ctx: RunContext[LinkStatusList]) -> List[str]:
+    print(ctx.deps)
     return [link.link for link in ctx.deps.links if not link.status]
 
 
-# @link_checker.tool_plain
-# async def check_link_list(list_of_links: List[str]) -> LinkStatusList:
-#     """
-#     Check the validity of links extracted from text
-#     """
-#     status = []
-#     async with httpx.AsyncClient() as client:
-#         for link in list_of_links:
-#             try:
-#                 response = await client.get(link)
-#                 status.append(LinkStatus(link=link, status=response.status_code == 200))
-#             except httpx.RequestError:
-#                 status.append(LinkStatus(link=link, status=False))
-#     return LinkStatusList(links=status)
+async def async_get_check(url: str, headers: dict) -> bool:
+    try:
+        async with httpx.AsyncClient(verify=False) as client:
+            response = await client.get(
+                url, headers=headers, follow_redirects=True, timeout=2.0
+            )
+            return response.status_code == 200
+    except httpx.RequestError:
+        return False
 
 
-def check_website_availability(url):
+def check_website_availability(url: str) -> Tuple[bool, str]:
     parsed_url = urlparse(url)
     if not parsed_url.scheme:
         url = "http://" + url
@@ -123,7 +130,16 @@ def check_website_availability(url):
     except Exception:
         pass
 
+    # Async GET request with httpx
+    try:
+        is_available = asyncio.run(async_get_check(url, headers))
+        if is_available:
+            return True, url
+    except Exception:
+        pass
+
     return False, url
+
 
 def check_links(links_list, max_workers=5):
     results = {}
@@ -143,20 +159,7 @@ def check_links(links_list, max_workers=5):
     return results
 
 
-@link_checker.tool_plain
-async def check_link_list(list_of_links: List[str]) -> LinkStatusList:
-    """
-    Check the validity of links extracted from text
-    """
-    results = check_links(list_of_links)
-
-    status = []
-    for url, link_status in results.items():
-        status.append(LinkStatus(link=url, status=link_status))
-
-    return LinkStatusList(links=status)
-
-#################### Tests ####################
+#################### Test ####################
 
 # links_list = [
 #     "https://www.aviasales.ru/search/MOW2003LON23031",
@@ -243,8 +246,9 @@ async def check_link_list(list_of_links: List[str]) -> LinkStatusList:
 #     "https://marketingim.ru/",
 # ]
 
+
 # async def main():
-#     text = "Here are some useful resourses: https://www.google.com, https://www.youtube.com, https://europcar.ru/, https://www.aviasales.ru/, https://yandex.ru/maps/org/yozh_ustritsa/52393193425/"
+#     text = "Here are some useful resourses: https://beluga-rest.ru, https://www.google.com, https://www.youtube.com, https://europcar.ru/, https://www.aviasales.ru/, https://yandex.ru/maps/org/yozh_ustritsa/52393193425/"
 #     result = await link_checker.run(text)
 #     print(result.data)
 #     corrected_text = await corrector.run(text, deps=result.data)
@@ -252,4 +256,11 @@ async def check_link_list(list_of_links: List[str]) -> LinkStatusList:
 
 
 # if __name__ == "__main__":
-#     asyncio.run(main())
+# asyncio.run(main())
+
+# start = time.time()
+# result = check_links(links_list)
+# end = time.time()
+# for url, status in result.items():
+#     print(url, status)
+# print(end - start)

@@ -208,7 +208,6 @@ class VectorDBService:
         def process_table_row(row: Dict[str, Any], path: List[str]) -> None:
             row_content_lines = []
             for col_key, col_val in row.items():
-
                 if isinstance(col_val, list):
                     items = [str(item).strip() for item in col_val if str(item).strip()]
                     if items:
@@ -238,7 +237,6 @@ class VectorDBService:
             current_path = path[:] + ([key] if key else [])
 
             if isinstance(value, dict):
-
                 for k, v in value.items():
                     if not v:
                         continue

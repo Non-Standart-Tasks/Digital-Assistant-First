@@ -16,13 +16,14 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+
 class SerpApiClient:
     """Асинхронный клиент для работы с SerpAPI."""
-    
+
     def __init__(self, api_key):
         self.api_key = api_key
         self.base_url = "https://serpapi.com/search"
-        
+
     async def search(self, params):
         """Выполняет асинхронный запрос к SerpAPI."""
         async with aiohttp.ClientSession() as session:
@@ -33,6 +34,7 @@ class SerpApiClient:
                     error_text = await response.text()
                     logger.error(f"SerpAPI error: {response.status} - {error_text}")
                     raise Exception(f"SerpAPI request failed: {response.status}")
+
 
 def search_map(q, coordinates, serpapi_key):
     try:
@@ -109,7 +111,9 @@ async def search_shopping(q, serpapi_key):
             source = result.get("source", "No source")
             link = result.get("link", "")
 
-            formatted_result = f"Название: {title}\nЦена: {price}\nМагазин: {source}\nСсылка: {link}\n"
+            formatted_result = (
+                f"Название: {title}\nЦена: {price}\nМагазин: {source}\nСсылка: {link}\n"
+            )
             formatted_results.append(formatted_result)
 
         return "\n".join(formatted_results)

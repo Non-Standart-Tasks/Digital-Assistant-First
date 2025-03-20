@@ -2,9 +2,23 @@ from typing import Dict, List, Optional, Union, Tuple
 import requests
 import json
 import yaml
-from digital_assistant_first.offergen import Offer, offers_db, db_service, rag_n_examples, city_filter
-from digital_assistant_first.offergen.agent import offer_matching_agent, PromptValidation, RagDeps
-from digital_assistant_first.offergen.vector_db import VectorDBService, Context, SearchResponse
+from digital_assistant_first.offergen import (
+    Offer,
+    offers_db,
+    db_service,
+    rag_n_examples,
+    city_filter,
+)
+from digital_assistant_first.offergen.agent import (
+    offer_matching_agent,
+    PromptValidation,
+    RagDeps,
+)
+from digital_assistant_first.offergen.vector_db import (
+    VectorDBService,
+    Context,
+    SearchResponse,
+)
 from digital_assistant_first.utils.logging import setup_logging
 from digital_assistant_first.utils.paths import ROOT_DIR as root_dir
 import dotenv
@@ -16,15 +30,20 @@ from digital_assistant_first.offergen.city import city, CITY_MAP
 logger = setup_logging(logging_path=str(root_dir / "logs" / "digital_assistant.log"))
 dotenv.load_dotenv()
 
+
 def unify_city_to_russian(raw_city: str) -> str:
     city_lower = raw_city.lower().strip()
     return CITY_MAP.get(city_lower, city_lower)
+
 
 def get_coords_for_city(city_en: str) -> str:
     default_coords = "37.630866,55.752256"
     return city.get(city_en, default_coords)
 
-def check_offer_in_city(offer_or_tuple: Union[Offer, Tuple[Offer, float]], user_city_input: str) -> bool:
+
+def check_offer_in_city(
+    offer_or_tuple: Union[Offer, Tuple[Offer, float]], user_city_input: str
+) -> bool:
     # 1) Извлекаем объект Offer, если это кортеж
     if isinstance(offer_or_tuple, tuple):
         offer = offer_or_tuple[0]
@@ -73,12 +92,18 @@ def check_offer_in_city(offer_or_tuple: Union[Offer, Tuple[Offer, float]], user_
 
     return False
 
+
 def load_rag_examples(
-    offers_db: Dict[int, Offer], query: str, db_service: VectorDBService, n_examples: int=20, city: Optional[str] = None, city_fil: bool = False
+    offers_db: Dict[int, Offer],
+    query: str,
+    db_service: VectorDBService,
+    n_examples: int = 20,
+    city: Optional[str] = None,
+    city_fil: bool = False,
 ) -> tuple[list[Offer], list[float], list[int]]:
     """Load and filter RAG examples relevant to the query with optional city filtering"""
 
-    docs_and_scores = db_service.search(query, k= n_examples)
+    docs_and_scores = db_service.search(query, k=n_examples)
     rag_data = SearchResponse(
         documents=[
             Context(content=doc.page_content, metadata=doc.metadata)
@@ -104,14 +129,14 @@ def load_rag_examples(
 def get_system_prompt_for_offers(
     validation_result: PromptValidation, prompt: str
 ) -> str:
-    '''
+    """
     if not validation_result.is_valid:
         raise ValueError(
             f"Unable to generate system prompt for prompt: {prompt}. "
             f"Reason: {validation_result.reason}. "
             "Please ensure the request meets validation requirements."
         )
-    '''
+    """
 
     # Use the city parameter if is_city is true
     city = validation_result.city if validation_result.is_city else None
@@ -120,7 +145,12 @@ def get_system_prompt_for_offers(
         f"Loading RAG examples for prompt: {validation_result.modified_prompt_for_rag_search}"
     )
     offers, scores, offer_ids = load_rag_examples(
-        offers_db, validation_result.modified_prompt_for_rag_search, db_service, city=city, n_examples=rag_n_examples, city_fil = city_filter
+        offers_db,
+        validation_result.modified_prompt_for_rag_search,
+        db_service,
+        city=city,
+        n_examples=rag_n_examples,
+        city_fil=city_filter,
     )
     logger.info(
         f"RAG examples loaded for prompt: {validation_result.modified_prompt_for_rag_search}"
@@ -142,20 +172,37 @@ def get_system_prompt_for_offers(
     result = offer_matching_agent.run_sync(enhanced_prompt, deps=deps)
     logger.info(f"Offer matching agent result: {result.data}")
 
-    if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
+    if (
+        result
+        and result.data.matches
+        and len(
+            set(match.offer_id for match in result.data.matches).intersection(
+                offers_db.keys()
+            )
+        )
+        > 0
+    ):
         information_about_relevant_offers = ""
         for match in result.data.matches:
             if match.offer_id not in offers_db.keys():
-                logger.warning(f"Offer ID {match.offer_id} not found in offers database")
+                logger.warning(
+                    f"Offer ID {match.offer_id} not found in offers database"
+                )
                 continue
             offer = offers_db[match.offer_id]
             information_about_relevant_offers += f"Offer ID: {match.offer_id}\n"
             information_about_relevant_offers += f"Offer name: {offer.name}\n"
             information_about_relevant_offers += f"Offer category: {offer.category}\n"
-            information_about_relevant_offers += f"Offer short description: {offer.short_description}\n"
-            information_about_relevant_offers += f"Offer full description: {offer.full_description}\n"
+            information_about_relevant_offers += (
+                f"Offer short description: {offer.short_description}\n"
+            )
+            information_about_relevant_offers += (
+                f"Offer full description: {offer.full_description}\n"
+            )
             information_about_relevant_offers += f"Offer URL: {offer.offer_url}\n"
-            information_about_relevant_offers += f"Offer match reason: {match.match_reason}\n"
+            information_about_relevant_offers += (
+                f"Offer match reason: {match.match_reason}\n"
+            )
             information_about_relevant_offers += "---\n"
         logger.info("System prompt for offers generated.")
         return f"""

@@ -156,8 +156,7 @@ def main():
     # импортируем модуль offergen в момент запуска приложения
     from digital_assistant_first import offergen
     with st.sidebar:
-        mode = st.radio("Выберите режим:", ("Чат", "Поиск авиабилетов"))
-        
+        st.markdown("### Панель управления")
         new_offers_enabled = handle_toggle("offers_enabled", "Включить офферы")
         if new_offers_enabled != st.session_state["offers_enabled"]:
             st.session_state["offers_enabled"] = new_offers_enabled
@@ -189,19 +188,8 @@ def main():
         apply_configuration()
     else:
         display_banner_and_title()
-        if mode == "Поиск авиабилетов":
-            st.session_state["config"]["mode"] = "Aviasales"
-            # Отображаем предупреждение и GIF
-            st.warning("⚠️ Внимание! Функционал поиска авиабилетов находится в разработке. Некоторые функции могут работать некорректно.")
-            
-            # Отображаем GIF (заглушка, будет заменена на реальный GIF)
-            st.image("video_vGctBnsn.gif", caption="Демонстрация работы поиска авиабилетов")
-            
-            # Запускаем интерфейс чата
-            chat_interface(st.session_state["config"])
-        else:
-            st.session_state["config"]["mode"] = "Chat"
-            chat_interface(st.session_state["config"])
+        st.session_state["config"]["mode"] = "Chat"
+        chat_interface(st.session_state["config"])
 
     
 if __name__ == "__main__":

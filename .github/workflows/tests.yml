@@ -35,11 +35,17 @@ jobs:
           echo "OPENAI_API_KEY=${{ secrets.OPENAI_KEY }}" > .env
           echo "Файл .env создан"
           
-      - name: Запуск тестов
+      - name: Запуск тестов базы данных
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
-          poetry run pytest tests/database_test.py -v  
+          poetry run pytest tests/database_test.py -v
+          
+      - name: Запуск тестов Streamlit
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
+        run: |
+          poetry run pytest tests/streamlit_test.py -v
 
       - name: Публикация результатов тестов
         if: always()

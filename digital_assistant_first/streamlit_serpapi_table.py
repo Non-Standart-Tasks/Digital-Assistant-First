@@ -8,11 +8,7 @@ st.title("Проверка статуса API-ключей")
 st.write("Это приложение позволяет просматривать и обновлять статус ваших API-ключей.")
 
 # Загрузка начального DataFrame
-<<<<<<< HEAD
-df = check_api_keys("api_keys_status.xlsx")
-=======
 df = check_api_keys('api_keys_status.csv')
->>>>>>> origin/master
 
 # Отображение текущей таблицы
 gb = GridOptionsBuilder.from_dataframe(df)

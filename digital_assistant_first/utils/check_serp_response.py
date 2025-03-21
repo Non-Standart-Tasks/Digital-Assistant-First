@@ -6,6 +6,10 @@ from time import sleep
 from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 from typing import Optional
+import logging
+
+# Настройка логирования для APScheduler - повышаем уровень до WARNING, чтобы скрыть INFO сообщения
+logging.getLogger('apscheduler').setLevel(logging.WARNING)
 
 def check_api_keys(path_to_file):
     # Read the existing data
@@ -50,7 +54,7 @@ class APIKeyManager:
         self.scheduler.add_job(
             check_api_keys,
             'interval',
-            minutes=1,
+            minutes=1,  # Возвращаем прежний интервал в 1 минуту
             id='update_api_keys_status',
             next_run_time=datetime.now(),
             args=[path_to_file]  # Run the first time immediately

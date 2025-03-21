@@ -64,17 +64,14 @@ def apply_configuration():
         "telegram_enabled": st.session_state["telegram_enabled"],
         "2gis-key": st.session_state["2gis-key"],
         "internet_search": st.session_state["internet_search"],
+        "use_openai_web_search": st.session_state.get("use_openai_web_search", False),
+        "web_search_context_size": st.session_state.get("web_search_context_size", "medium"),
         "system_prompt": st.session_state["system_prompt"],
         "system_prompt_aviasales": st.session_state["system_prompt_aviasales"],
         "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
+        "offers_enabled": st.session_state["offers_enabled"],
     }
-
-    if (
-        st.session_state["selected_system"] == "File"
-        and st.session_state.get("uploaded_file") is not None
-    ):
-        config["Uploaded_file"] = st.session_state["uploaded_file"]
 
     st.session_state["config"] = config
     st.session_state["config_applied"] = True
@@ -91,7 +88,7 @@ def display_banner_and_title():
 def chat_interface(config):
     """Отображение интерфейса чата на основе примененной конфигурации."""
     logger = logging.getLogger(__name__)
-    logger.info(f"Конфигурация загружена: {config}")
+    logger.info(f"Конфигурация загружена")
 
     template_prompt = "Я ваш Цифровой Ассистент - пожалуйста, задайте свой вопрос."
 
@@ -101,9 +98,22 @@ def chat_interface(config):
     display_chat_history()
     prompt = st.chat_input("Введите запрос здесь...")
     if prompt:
-        asyncio.run(handle_user_input(model, config, prompt))
+        # Используем полностью синхронную версию функции для обработки ввода
+        handle_user_input_sync(model, config, prompt)
         st.rerun()
 
+
+def handle_toggle(key, label, default_value=False):
+    """Handle toggle state changes and update config."""
+    current_value = st.session_state.get(key, default_value)
+    new_value = st.toggle(label, value=current_value)
+    
+    if new_value != current_value:
+        st.session_state[key] = new_value
+        if st.session_state.get("config") is not None:
+            st.session_state["config"][key] = new_value
+    
+    return new_value
 
 
 def main():
@@ -129,10 +139,14 @@ def main():
         "telegram_enabled": config_yaml["telegram_enabled"],
         "2gis-key": config_yaml["2gis-key"],
         "internet_search": config_yaml["internet_search"],
+        "use_openai_web_search": config_yaml.get("use_openai_web_search", False),
+        "web_search_context_size": config_yaml.get("web_search_context_size", "medium"),
         "system_prompt": config_yaml["system_prompt"],
         "system_prompt_aviasales": config_yaml["system_prompt_aviasales"],
         "system_prompt_airport": config_yaml["system_prompt_airport"],
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
+        "offers_enabled": False,  # По умолчанию офферы отключены
+        "maps_2gis_enabled": False,
     }
 
     initialize_session_state(defaults)
@@ -142,7 +156,21 @@ def main():
     # импортируем модуль offergen в момент запуска приложения
     from digital_assistant_first import offergen
     with st.sidebar:
-        mode = st.radio("Выберите режим:", ("Чат", "Поиск по картам 2ГИС", "Генерация офферов", "Поиск авиабилетов"))
+        st.markdown("### Панель управления")
+        new_offers_enabled = handle_toggle("offers_enabled", "Включить офферы")
+        if new_offers_enabled != st.session_state["offers_enabled"]:
+            st.session_state["offers_enabled"] = new_offers_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["offers_enabled"] = new_offers_enabled
+
+        maps_2gis_enabled = handle_toggle("maps_2gis_enabled", "Включить поиск по 2GIS")
+        if maps_2gis_enabled != st.session_state["maps_2gis_enabled"]:
+            st.session_state["maps_2gis_enabled"] = maps_2gis_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["maps_2gis_enabled"] = maps_2gis_enabled
+        
         if st.session_state.get("telegram_enabled", False):
             async def initialize_data():
                 await update_telegram_messages()
@@ -160,24 +188,8 @@ def main():
         apply_configuration()
     else:
         display_banner_and_title()
-        if mode == "Поиск по картам 2ГИС":
-            st.session_state["config"]["mode"] = "2Gis"
-            chat_interface(st.session_state["config"])
-        elif mode == "Генерация офферов":
-            st.session_state["config"]["mode"] = "Offers"
-            # Запускаем новую функцию, отвечающую за режим генерации офферов:
-            chat_interface(st.session_state["config"])
-        elif mode == "Поиск авиабилетов":
-            st.session_state["config"]["mode"] = "Aviasales"
-            # Отображаем предупреждение и GIF
-            st.warning("⚠️ Внимание! Функционал поиска авиабилетов находится в разработке. Некоторые функции могут работать некорректно.")
-            
-            # Отображаем GIF (заглушка, будет заменена на реальный GIF)
-            st.video("video_vGctBnsn.mp4")
-          
-        else:
-            st.session_state["config"]["mode"] = "Chat"
-            chat_interface(st.session_state["config"])
+        st.session_state["config"]["mode"] = "Chat"
+        chat_interface(st.session_state["config"])
 
     
 if __name__ == "__main__":

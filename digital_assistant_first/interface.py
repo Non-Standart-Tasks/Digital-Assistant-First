@@ -400,10 +400,15 @@ def model_response_generator_sync(model, config):
     def categorize_request():
         category_prompt = """
         Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
-        - рестораны (если запрос о ресторанах, кафе, еде, доставке питания и т.п.)
-        - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях и т.п.)
-        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей и т.п.)
-        - маршруты (если запрос о том, как построить маршрут, проложить путь, найти дорогу между местами и т.п.)
+        - рестораны (если запрос о ресторанах, кафе, еде в общественных местах)
+        - бары (если запрос о барах, пабах, винных барах)
+        - кальянные (если запрос о кальянных, кальян-барах)
+        - доставка_еды (если запрос о доставке еды, заказе еды на дом)
+        - банкет (если запрос о проведении банкета, юбилея, корпоратива, аренде зала для торжества)
+        - кейтеринг (если запрос о выездном обслуживании, доставке готовых блюд на мероприятие)
+        - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях)
+        - маршруты (если запрос о том, как построить маршрут, проложить путь между местами)
+        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, железнодорожных билетах)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
         
         Запрос пользователя: {user_input}
@@ -428,6 +433,27 @@ def model_response_generator_sync(model, config):
         
         return category
     
+    def optimize_search_query(query, model, config):
+        """Оптимизировать поисковый запрос с помощью модели."""
+        try:
+            # Используем модель для оптимизации запроса
+            response = model.invoke(
+                [{"role": "user", "content": f"Оптимизируй следующий поисковый запрос: {query}"}],
+                stream=False
+            )
+            
+            if hasattr(response, "content"):
+                optimized_query = response.content.strip()
+            elif hasattr(response, "message"):
+                optimized_query = response.message.content.strip()
+            else:
+                optimized_query = str(response).strip()
+            
+            return optimized_query
+        except Exception as e:
+            logger.error(f"Ошибка при оптимизации запроса: {str(e)}")
+            return query
+    
     # Получаем категорию запроса синхронно
     request_category = categorize_request()
     
@@ -449,6 +475,27 @@ def model_response_generator_sync(model, config):
     asyncio.set_event_loop(loop)
     
     try:
+        # Задачи для интернет-поиска (всегда выполняем, но используем информацию о категории)
+        if config.get("internet_search", False):
+            async def fetch_internet_data():
+                _, serpapi_key = serpapi_key_manager.get_best_api_key()
+                
+                # Добавляем информацию о категории к запросу для более точного поиска
+                enhanced_query = user_input
+                if request_category != "другое":
+                    enhanced_query = f"{user_input} {request_category}"
+                    
+                shopping = await search_shopping(enhanced_query, serpapi_key)
+                internet, links_data, _ = await search_places(enhanced_query, serpapi_key)
+                yandex_res = await yandex_search(enhanced_query, serpapi_key)
+                return shopping, internet, links_data, yandex_res
+            
+            # Запускаем асинхронную функцию через event loop
+            shopping_res, internet_res, links, yandex_res = loop.run_until_complete(fetch_internet_data())
+        else:
+            shopping_res, internet_res, links, yandex_res = "", "", [], []
+            
+            
         # Для category = поездки или офферы получим необходимые данные
         if request_category == "поездки" or request_category == "другое":
             aviasales_tool = AviasalesHandler()
@@ -499,24 +546,10 @@ def model_response_generator_sync(model, config):
     
     # Создаем информацию о категории запроса
     category_info = f"Категория запроса пользователя: {request_category}"
-    #assert False, category_info
-    # Добавляем специальные инструкции для категории "рестораны"
-    restaurant_format_instructions = ""
-    if request_category == "рестораны":
-        restaurant_format_instructions = """
-        ВАЖНО: При ответе на запрос о ресторанах используй следующий формат для представления информации о каждом ресторане:
 
-        Название: [название ресторана]
-        Адрес: [полный адрес]
-        Режим работы: [часы работы, если есть данные]
-        Тип кухни: [какая кухня представлена]
-        Средний чек: [стоимость среднего чека, если есть данные]
-        Сайт: [официальный сайт, если есть]
-        Сайт на рейтинг: [ссылка на страницу с рейтингом]
-        Ссылка на отзывы: [ссылка на отзывы]
-
-        Представляй информацию о каждом ресторане в этом формате, с разделением и ясной структурой.
-        """
+    format_instructions = config.get("FORMAT_INSTRUCTIONS", {}).get(request_category, "")
+    assert False, format_instructions
+    
     
     formatted_prompt = system_prompt_template.format(
         context=message_history,
@@ -529,7 +562,7 @@ def model_response_generator_sync(model, config):
     )
     
     # Добавляем информацию о категории и инструкции по форматированию в начало промпта
-    formatted_prompt = f"{category_info}\n\n{restaurant_format_instructions}\n\n"
+    formatted_prompt = f"{category_info}\n\n{format_instructions}\n\n{formatted_prompt}"
     
     # Получаем ответ от модели
     prompt_template = ChatPromptTemplate.from_messages(

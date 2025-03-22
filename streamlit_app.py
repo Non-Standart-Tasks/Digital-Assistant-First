@@ -71,6 +71,7 @@ def apply_configuration():
         "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
         "offers_enabled": st.session_state["offers_enabled"],
+        "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"],
     }
 
     st.session_state["config"] = config
@@ -149,6 +150,7 @@ def main():
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
         "offers_enabled": False,  # По умолчанию офферы отключены
         "maps_2gis_enabled": False,
+        "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
     }
 
     initialize_session_state(defaults)

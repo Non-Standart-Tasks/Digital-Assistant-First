@@ -476,12 +476,16 @@ def model_response_generator_sync(model, config):
     
     try:
         # Задачи для интернет-поиска (всегда выполняем, но используем информацию о категории)
+        search_query = optimize_search_query(user_input, model, config)
+
+        assert False, search_query
+        
         if config.get("internet_search", False):
             async def fetch_internet_data():
                 _, serpapi_key = serpapi_key_manager.get_best_api_key()
                 
                 # Добавляем информацию о категории к запросу для более точного поиска
-                enhanced_query = user_input
+                enhanced_query = search_query
                 if request_category != "другое":
                     enhanced_query = f"{user_input} {request_category}"
                     
@@ -548,7 +552,7 @@ def model_response_generator_sync(model, config):
     category_info = f"Категория запроса пользователя: {request_category}"
 
     format_instructions = config.get("FORMAT_INSTRUCTIONS", {}).get(request_category, "")
-    assert False, format_instructions
+
     
     
     formatted_prompt = system_prompt_template.format(

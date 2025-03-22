@@ -112,6 +112,8 @@ def handle_toggle(key, label, default_value=False):
         st.session_state[key] = new_value
         if st.session_state.get("config") is not None:
             st.session_state["config"][key] = new_value
+            # Remove page rerun to prevent the introduction message from disappearing
+            # when toggles are changed
     
     return new_value
 
@@ -158,18 +160,20 @@ def main():
     with st.sidebar:
         st.markdown("### Панель управления")
         new_offers_enabled = handle_toggle("offers_enabled", "Включить офферы")
-        if new_offers_enabled != st.session_state["offers_enabled"]:
+        if new_offers_enabled != st.session_state.get("offers_enabled", False):
             st.session_state["offers_enabled"] = new_offers_enabled
             # Обновить конфигурацию при изменении toggle
             if st.session_state.get("config") is not None:
                 st.session_state["config"]["offers_enabled"] = new_offers_enabled
+                # Don't trigger rerun here
 
         maps_2gis_enabled = handle_toggle("maps_2gis_enabled", "Включить поиск по 2GIS")
-        if maps_2gis_enabled != st.session_state["maps_2gis_enabled"]:
+        if maps_2gis_enabled != st.session_state.get("maps_2gis_enabled", False):
             st.session_state["maps_2gis_enabled"] = maps_2gis_enabled
             # Обновить конфигурацию при изменении toggle
             if st.session_state.get("config") is not None:
                 st.session_state["config"]["maps_2gis_enabled"] = maps_2gis_enabled
+                # Don't trigger rerun here
         
         if st.session_state.get("telegram_enabled", False):
             async def initialize_data():

@@ -64,8 +64,10 @@ def init_message_history(template_prompt):
     """Инициализировать историю сообщений для чата."""
     if "messages" not in st.session_state:
         st.session_state["messages"] = []
-        with st.chat_message("System"):
-            st.markdown(template_prompt)
+    
+    # Always show the system message regardless of session state
+    with st.chat_message("System"):
+        st.markdown(template_prompt)
 
 def display_chat_history():
     """Отобразить историю чата из состояния сессии (включая кнопки рейтинга для ассистента)."""

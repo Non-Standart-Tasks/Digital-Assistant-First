@@ -71,7 +71,7 @@ def apply_configuration():
         "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
         "offers_enabled": st.session_state["offers_enabled"],
-        "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"],
+        "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"]
     }
 
     st.session_state["config"] = config
@@ -150,7 +150,7 @@ def main():
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
         "offers_enabled": False,  # По умолчанию офферы отключены
         "maps_2gis_enabled": False,
-        "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
+        "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"]
     }
 
     initialize_session_state(defaults)
@@ -161,6 +161,14 @@ def main():
     from digital_assistant_first import offergen
     with st.sidebar:
         st.markdown("### Панель управления")
+        deepsearch_enabled = handle_toggle("deepsearch", "Включить DeepSearch")
+        if deepsearch_enabled != st.session_state.get("deepsearch", False):
+            st.session_state["deepsearch"] = deepsearch_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["deepsearch"] = deepsearch_enabled
+        
+        
         new_offers_enabled = handle_toggle("offers_enabled", "Включить офферы")
         if new_offers_enabled != st.session_state.get("offers_enabled", False):
             st.session_state["offers_enabled"] = new_offers_enabled

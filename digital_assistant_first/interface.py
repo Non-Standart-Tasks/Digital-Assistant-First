@@ -7,7 +7,7 @@ import streamlit as st
 import time
 import random
 from openai import OpenAI  # Добавляем прямой импорт OpenAI
-
+from digital_assistant_first.multiagent_system.models import deepsearch
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -379,7 +379,9 @@ def display_chat_history():
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])
 
-def model_response_generator_sync(model, config):
+def model_response_generator_sync(model, config, status_placeholder):
+    status_placeholder.info("🤔 Анализирую ваш запрос...")
+    time.sleep(1)
     """Сгенерировать ответ с использованием модели и ретривера синхронно."""
     user_input = st.session_state["messages"][-1]["content"]
     
@@ -430,7 +432,7 @@ def model_response_generator_sync(model, config):
         
         # Логирование определенной категории
         logger.info(f"Определена категория запроса: {category}")
-        
+
         return category
     
     def optimize_search_query(query, model, config):
@@ -456,6 +458,7 @@ def model_response_generator_sync(model, config):
     
     # Получаем категорию запроса синхронно
     request_category = categorize_request()
+    status_placeholder.info(f"📋 Определена категория: {request_category}")
     
     # Инициализируем переменные по умолчанию
     shopping_res = ""
@@ -473,19 +476,14 @@ def model_response_generator_sync(model, config):
     # В одном месте вместо распределенных вызовов
     loop = asyncio.new_event_loop()
     asyncio.set_event_loop(loop)
-    
+           
     try:
-        # Задачи для интернет-поиска (всегда выполняем, но используем информацию о категории)
-        search_query = optimize_search_query(user_input, model, config)
-
-        assert False, search_query
-        
         if config.get("internet_search", False):
             async def fetch_internet_data():
                 _, serpapi_key = serpapi_key_manager.get_best_api_key()
                 
                 # Добавляем информацию о категории к запросу для более точного поиска
-                enhanced_query = search_query
+                enhanced_query = user_input
                 if request_category != "другое":
                     enhanced_query = f"{user_input} {request_category}"
                     
@@ -541,10 +539,24 @@ def model_response_generator_sync(model, config):
             except Exception as e:
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
                 offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
+
+        if config.get("deepsearch", False):
+            deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder))
     
     finally:
         loop.close()
         
+    if config.get("deepsearch", False):
+        return {
+        "answer": deepsearch_res,
+        "aviasales_link": aviasales_url,
+        "table_data": table_data,
+        "pydeck_data": pydeck_data,
+        "request_category": request_category,
+        "offers_data": offers_data
+    }
+        
+    
     # Формируем системный промпт
     system_prompt_template = config["system_prompt"]
     
@@ -553,6 +565,7 @@ def model_response_generator_sync(model, config):
 
     format_instructions = config.get("FORMAT_INSTRUCTIONS", {}).get(request_category, "")
 
+    
     
     
     formatted_prompt = system_prompt_template.format(
@@ -637,6 +650,7 @@ def model_response_generator_sync(model, config):
 def handle_user_input_sync(model, config, prompt):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента (синхронная версия)."""
     if prompt:
+        status_placeholder = st.empty()
         # Всегда сбрасываем данные карты и таблицы перед новым запросом
         st.session_state["last_pydeck_data"] = []
         st.session_state["show_map"] = False
@@ -687,7 +701,7 @@ def handle_user_input_sync(model, config, prompt):
 
         with st.chat_message("assistant"):
             # Используем синхронную версию генератора ответов
-            response = model_response_generator_sync(model, config)
+            response = model_response_generator_sync(model, config, status_placeholder)
             
             # Основной ответ для отображения в интерфейсе
             answer_text = response["answer"]

@@ -7,8 +7,7 @@ import streamlit as st
 import time
 import random
 from openai import OpenAI  # Добавляем прямой импорт OpenAI
-from digital_assistant_first.multiagent_system.models import deepsearch
-
+from digital_assistant_first.multiagent_system.deepsearch import deepsearch
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
@@ -385,6 +384,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     """Сгенерировать ответ с использованием модели и ретривера синхронно."""
     user_input = st.session_state["messages"][-1]["content"]
     
+    
     # Подготовка message_history
     message_history = ""
     if "messages" in st.session_state and len(st.session_state["messages"]) > 1:
@@ -398,43 +398,6 @@ def model_response_generator_sync(model, config, status_placeholder):
             history_messages = history_messages[-history_size:]
         message_history = "\n".join(history_messages)
 
-    # Определение категории запроса с помощью агента - синхронная версия
-    def categorize_request():
-        category_prompt = """
-        Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
-        - рестораны (если запрос о ресторанах, кафе, еде в общественных местах)
-        - бары (если запрос о барах, пабах, винных барах)
-        - кальянные (если запрос о кальянных, кальян-барах)
-        - доставка_еды (если запрос о доставке еды, заказе еды на дом)
-        - банкет (если запрос о проведении банкета, юбилея, корпоратива, аренде зала для торжества)
-        - кейтеринг (если запрос о выездном обслуживании, доставке готовых блюд на мероприятие)
-        - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях)
-        - маршруты (если запрос о том, как построить маршрут, проложить путь между местами)
-        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, железнодорожных билетах)
-        - другое (если запрос не подходит ни под одну из перечисленных категорий)
-        
-        Запрос пользователя: {user_input}
-        """
-        
-        messages = [
-            {"role": "system", "content": category_prompt.format(user_input=user_input)}
-        ]
-        
-        # Явно указываем stream=False
-        response = model.invoke(messages, stream=False)
-        
-        if hasattr(response, "content"):
-            category = response.content.strip().lower()
-        elif hasattr(response, "message"):
-            category = response.message.content.strip().lower()
-        else:
-            category = str(response).strip().lower()
-        
-        # Логирование определенной категории
-        logger.info(f"Определена категория запроса: {category}")
-
-        return category
-    
     def optimize_search_query(query, model, config):
         """Оптимизировать поисковый запрос с помощью модели."""
         try:
@@ -457,7 +420,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             return query
     
     # Получаем категорию запроса синхронно
-    request_category = categorize_request()
+    request_category = 'бары'
     status_placeholder.info(f"📋 Определена категория: {request_category}")
     
     # Инициализируем переменные по умолчанию
@@ -541,7 +504,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                 offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
 
         if config.get("deepsearch", False):
-            deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder))
+            deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder, config))
     
     finally:
         loop.close()
@@ -564,9 +527,6 @@ def model_response_generator_sync(model, config, status_placeholder):
     category_info = f"Категория запроса пользователя: {request_category}"
 
     format_instructions = config.get("FORMAT_INSTRUCTIONS", {}).get(request_category, "")
-
-    
-    
     
     formatted_prompt = system_prompt_template.format(
         context=message_history,

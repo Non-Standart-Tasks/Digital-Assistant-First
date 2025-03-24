@@ -1,4 +1,4 @@
-from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool
+from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool, RunContextWrapper
 from pydantic import BaseModel
 from openai import AsyncOpenAI
 from langchain_community.tools import DuckDuckGoSearchResults
@@ -22,6 +22,10 @@ class AddressOfVars(BaseModel):
 class LinksOfVars(BaseModel):
     links: list[str]
 
+@function_tool
+async def fetch_format_instructions(category: str) -> str:  
+    return config["FORMAT_INSTRUCTIONS"][category]
+
 agent_internet_first_step = Agent(
     name="Assistant",
     instructions="""Ответь на вопрос пользователя, используя интернет и контекст. Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
@@ -36,7 +40,20 @@ agent_internet_first_step = Agent(
 agent_address = Agent(
     name="Assistant",
     instructions="""Проверь запрос и выведи адрес если он был в запросе. К примеру "Найти санатории в Казани" - укажи адрес "Казань". 
-    Также укажи категорию запроса - например "пивные рестораны", "кальянные", "бургеры", "санатории", "гостиницы" и т.д.""",
+    Определи категорию запроса пользователя и верни ТОЛЬКО одну из следующих категорий без дополнительных пояснений:
+        - рестораны (если запрос о ресторанах, кафе, еде в общественных местах)
+        - бары (если запрос о барах, пабах, винных барах)
+        - кальянные (если запрос о кальянных, кальян-барах)
+        - доставка_еды (если запрос о доставке еды, заказе еды на дом)
+        - банкет (если запрос о проведении банкета, юбилея, корпоратива, аренде зала для торжества)
+        - кейтеринг (если запрос о выездном обслуживании, доставке готовых блюд на мероприятие)
+        - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях)
+        - маршруты (если запрос о том, как построить маршрут, проложить путь между местами)
+        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, железнодорожных билетах)
+        - другое (если запрос не подходит ни под одну из перечисленных категорий)
+    """,
+    
+    
     model="gpt-4o-mini",
     output_type=AddressOfVars
     )
@@ -60,15 +77,7 @@ agent_get_address_of_vars = Agent(
 agent_get_links_of_vars = Agent(
     name="Assistant",
     instructions="""На основе названия заведения, сформулируй запросы по каждому пункту для поиска в интернете правильным образом, чтобы он мог покрыть следующую информацию:
-    Название:
-    Адрес:
-    Режим работы:
-    Тип кухни:
-    Средний чек:
-    Сайт:
-    Сайт на рейтинг:
-    Ссылка на отзывы:
-
+    
     Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
     """,
     model="gpt-4o-mini",
@@ -78,14 +87,9 @@ agent_get_links_of_vars = Agent(
 agent_summarization = Agent(
     name="Assistant",
     instructions="""На основе полученных данных преобразуй их в следующий формат:
-    Название:
-    Адрес:
-    Режим работы:
-    Тип кухни:
-    Средний чек:
-    Сайт:
-    Сайт на рейтинг:
-    Ссылка на отзывы:
+    
+    {bullet_points}
+
     """,
     model="gpt-4o-mini",
 
@@ -103,36 +107,3 @@ agent_critique = Agent(
     )
 
 
-async def deepsearch(user_input: str, status_placeholder):
-    internet_first_step = await Runner.run(agent_internet_first_step, user_input)
-    address_of_vars = await Runner.run(agent_address, user_input)
-    address_of_vars, category_of_vars = address_of_vars.final_output.address, address_of_vars.final_output.category
-    
-    status_placeholder.info(f"🔍 Найдены следующие варианты: {internet_first_step.final_output}")
-    time.sleep(1)
-    names_of_vars = await Runner.run(agent_get_names_of_vars, internet_first_step.final_output)
-    names_of_vars = names_of_vars.final_output.names
-    
-    names_and_links = {}
-    status_placeholder.info(f"🔍 Создаем интернет-запросы...")
-    for name in names_of_vars:
-        links_and_addresses_of_vars = await Runner.run(agent_get_links_of_vars, name)
-
-        names_and_links[name] = links_and_addresses_of_vars.final_output.links
-    
-    summarization_text = ''
-    for name, links in names_and_links.items():
-        for link in links:
-            status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-            search = DuckDuckGoSearchResults()
-            text = search.invoke(link + ' ' + address_of_vars)
-            time.sleep(2)
-        
-        summarization = await Runner.run(agent_summarization, text)
-        result_summarization = summarization.final_output
-        summarization_text += result_summarization
-
-    critique = await Runner.run(agent_critique, summarization_text, context=category_of_vars)
-    result_critique = critique.final_output
-    status_placeholder.info("✅ Предложения сформированы")
-    return result_critique

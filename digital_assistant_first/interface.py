@@ -8,6 +8,7 @@ import time
 import random
 from openai import OpenAI  # Добавляем прямой импорт OpenAI
 from digital_assistant_first.multiagent_system.deepsearch import deepsearch
+
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
 from digital_assistant_first.utils.check_serp_response import APIKeyManager

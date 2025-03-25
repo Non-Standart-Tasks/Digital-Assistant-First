@@ -9,6 +9,10 @@ from openai import AsyncOpenAI
 from langchain_community.tools import DuckDuckGoSearchResults
 import time
 from dataclasses import dataclass
+import logging
+from pathlib import Path
+import asyncio
+from functools import partial
 
 client = AsyncOpenAI(api_key="sk-13dd9563da2d435ebd38c2693dd78c6f", base_url="https://api.deepseek.com")
 
@@ -23,6 +27,7 @@ class NamesOfVars(BaseModel):
 class AddressOfVars(BaseModel):
     address: str
     category: str
+    num_of_vars: int
 
 class LinksOfVars(BaseModel):
     links: list[str]
@@ -61,6 +66,7 @@ agent_address = Agent(
         - маршруты (если запрос о том, как построить маршрут, проложить путь между местами)
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, железнодорожных билетах)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
+    Также определи количество заведений, которые нужно вывести в ответе.
     """,
     
     
@@ -231,20 +237,17 @@ agent_summarization = Agent(
 
 agent_critique = Agent(
     name="Assistant",
-    instructions="""Используй функцию fetch_user_instructions чтобы получить инуструкцию как должен выглядеть формат данных для каждого заведения. 
-    Посмотри на текст и отформатируй его в единый стиль. 
-    Соблюдай отступы и пробелы между пунктами.
-    
-    Удали все ненужные заведения из списка если это не относится к категории. 
+    instructions="""Сделай форматирование текста, выдели каждый пункт жирным, а информацию по нему не жирным. 
+    Не добавляй никаких пояснений, просто выводи текст.
     """,
     #model="gpt-4o-mini",
     model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
 
-agent_restaurants_critique = Agent(
+agent_restaurants_summarization = Agent(
     name="Assistant",
-    instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
+    instructions="""Расположи полученную информацию в единую структуру по пунктам, представленным ниже. Ничего от себя не добавляй. Никаких примечаний. 
 
     Название: 
     Адрес:
@@ -255,35 +258,31 @@ agent_restaurants_critique = Agent(
     Сайт на рейтинг: 
     Ссылка на отзывы: 
     
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
+    Учти, что в ответе может быть только ОДНО заведение.
     """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
+    #model="gpt-4o-mini"
+     model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
 
-agent_bars_format = Agent(
+agent_bars_summarization = Agent(
     name="Assistant",
-    instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
+    instructions="""Тебе на вход дана информация из разных интернет-запросов по запросу о барах которую нужно привести в единуюу структуру по пунктам, представленным ниже.
 
-    Название: 
-    Адрес:
-    Режим работы: 
-    Специализация: 
-    Средний чек: 
-    Сайт: 
-    Сайт на рейтинг: 
-    Ссылка на отзывы: 
-
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
+    Название: [вставь название бара]
+    Адрес: [вставь полный адрес]
+    Режим работы: [часы работы, если есть данные]
+    Специализация: [вставь тип бара, если указано]
+    Средний чек: [вставь стоимость среднего чека, если есть данные]
+    Сайт: [вставь официальный сайт, если есть]
+    Сайт на рейтинг: [вставь ссылку на страницу с рейтингом]
+    Ссылка на отзывы: [вставь ссылку на отзывы] 
     """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
+    #model="gpt-4o-mini"
+    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
-agent_hookah_format = Agent(
+agent_hookah_summarization = Agent(
     name="Assistant",
     instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
 
@@ -298,11 +297,11 @@ agent_hookah_format = Agent(
         
     Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
     """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
+    #model="gpt-4o-mini"
+    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
-agent_delivery_format = Agent(
+agent_delivery_summarization = Agent(
     name="Assistant",
     instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
     
@@ -318,11 +317,11 @@ agent_delivery_format = Agent(
     
     Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
     """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
+    #model="gpt-4o-mini"
+    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
-agent_banquet_format = Agent(
+agent_banquet_summarization = Agent(
     name="Assistant",
     instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
     
@@ -338,12 +337,12 @@ agent_banquet_format = Agent(
     
     Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
     """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
+    #model="gpt-4o-mini"
+    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
 
-agent_catering_format = Agent(
+agent_catering_summarization = Agent(
     name="Assistant",
     instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
     
@@ -358,68 +357,181 @@ agent_catering_format = Agent(
     
     Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
     """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
+    #model="gpt-4o-mini"
+    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
     )
 
 
 agent_dict = {
-    'рестораны': agent_restaurants_format,
-    'бары': agent_bars_format,
-    'кальянные': agent_hookah_format,
-    'доставка_еды': agent_delivery_format,
-    'банкет': agent_banquet_format,
-    'кейтеринг': agent_catering_format
+    'рестораны': [agent_restaurants_format, agent_restaurants_summarization],
+    'бары': [agent_bars_format, agent_bars_summarization],
+    'кальянные': [agent_hookah_format, agent_hookah_summarization],
+    'доставка_еды': [agent_delivery_format, agent_delivery_summarization],
+    'банкет': [agent_banquet_format, agent_banquet_summarization],
+    'кейтеринг': [agent_catering_format, agent_catering_summarization]
 }
 
+
+category_rules = {
+    'рестораны': """Адрес:
+                    Режим работы: 
+                    Тип кухни: 
+                    Средний чек: 
+                    Сайт: 
+                    Сайт на рейтинг: 
+                    Ссылка на отзывы: """
+}
+
+def setup_logging():
+    log_dir = Path("logs")
+    log_dir.mkdir(exist_ok=True)
+    
+    logger = logging.getLogger("deepsearch")
+    logger.setLevel(logging.DEBUG)
+    
+    file_handler = logging.FileHandler(log_dir / "deepsearch.log")
+    formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+    file_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    
+    return logger
+
+async def search_link(link: str, address: str, status_placeholder) -> str:
+    try:
+        status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
+        search = DuckDuckGoSearchResults()
+        text = search.invoke(link + ' ' + address)
+        await asyncio.sleep(2)  # Заменяем time.sleep на asyncio.sleep
+        return text
+    except Exception as e:
+        logger.error(f"Error during search for {link}: {str(e)}")
+        return ""
+
+async def process_establishment(name: str, links: list[str], address_of_vars: str, 
+                             category_of_vars: str, agent_dict: dict,
+                             status_placeholder, logger) -> str:
+    try:
+        global_text = f"Название заведения: {name}\n"  # Добавляем название в начало текста
+        # Поисковые запросы делаем последовательно
+        for link in links:
+            try:
+                status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
+                search = DuckDuckGoSearchResults()
+                text = search.invoke(link + ' ' + address_of_vars)
+                global_text += '\n' + text
+                time.sleep(2)
+            except Exception as e:
+                logger.error(f"Error during search for {link}: {str(e)}")
+                continue
+                
+        if global_text:
+            # Добавляем название заведения в инструкции для суммаризации
+            agent = Agent(
+                name="Assistant",
+                instructions=f"""Суммаризируй информацию ТОЛЬКО для заведения "{name}". 
+                Игнорируй любую информацию о других заведениях.
+                Используй следующий формат:
+
+                Название: {name}
+                Остальные поля возьми отсюда:
+                {category_rules[category_of_vars]}
+
+                Обязательно старайся вставлять ссылки из текста, если они есть. Свои не выдумывай.
+                """,
+                model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
+            )
+            status_placeholder.info(f"📝 Готовим информацию по предложениям...")
+            summarization = await Runner.run(agent, global_text)
+            result = summarization.final_output
+            
+            # Проверяем, что в результате есть нужное название
+            if name.lower() not in result.lower():
+                logger.warning(f"Summarization result doesn't contain establishment name: {name}")
+                return ""
+                
+            return result
+        return ""
+    except Exception as e:
+        logger.error(f"Error processing establishment {name}: {str(e)}")
+        return ""
+
+async def create_agent_and_get_links(name: str, category_rules: dict, category_of_vars: str, client: AsyncOpenAI, address_of_vars: str) -> list[str]:
+    agent_creating_links = Agent(
+        name="Assistant",
+        instructions=f"""сформулируй запросы по каждому пункту для поиска в интернете {name} правильным образом.
+
+        Вот пункты:
+        {category_rules[category_of_vars]}
+
+        И укажи {address_of_vars} в запросе чтобы более точно искать информацию.
+
+        Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
+        """,
+        model="gpt-4o-mini",
+        #model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client),
+        output_type=LinksOfVars
+    )
+    
+    result = await Runner.run(agent_creating_links, name)
+    return result.final_output.links
+
+async def agent_critique1(summarization_text: str, num_of_vars: int, client: AsyncOpenAI) -> str:
+    
+    agent_critique = Agent(
+        name="Assistant",
+        instructions="""Сделай форматирование текста, выдели каждый пункт жирным, а информацию по нему не жирным. 
+        Не добавляй никаких пояснений, просто выводи текст.
+
+        Проверь, что заведений должно быть ровно {num_of_vars} 
+        """,
+        #model="gpt-4o-mini",
+        model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
+        )
+    
+    critique = await Runner.run(agent_critique, summarization_text)
+    return critique.final_output
+
 async def deepsearch(user_input: str, status_placeholder, config):    
-    
-    #UserInstructions = UserInfo(instructions=config["FORMAT_INSTRUCTIONS"]['рестораны'])
-    #testing = await Runner.run(agent_testing, user_input, context=UserInstructions)
-    #assert False, testing
-    
+    logger = setup_logging()
     
     internet_first_step = await Runner.run(agent_internet_first_step, user_input)
-    # Получаем категорию запроса и парсим адрес (чтобы если рестораны в Казани - то Казань указывалась в адресе)
     address_of_vars = await Runner.run(agent_address, user_input)
-    address_of_vars, category_of_vars = address_of_vars.final_output.address, address_of_vars.final_output.category
+    address_of_vars, category_of_vars, num_of_vars = address_of_vars.final_output.address, address_of_vars.final_output.category, address_of_vars.final_output.num_of_vars
     
     status_placeholder.info(f"🔍 Найдены следующие варианты: {internet_first_step.final_output}")
     time.sleep(1)
 
-    # Получаем список названий заведений
     names_of_vars = await Runner.run(agent_get_names_of_vars, internet_first_step.final_output)
     names_of_vars = names_of_vars.final_output.names
-    
-    names_and_links = {}
-    status_placeholder.info(f"🔍 Создаем интернет-запросы...")
-    
-    UserInstructions = UserInfo(instructions=config["FORMAT_INSTRUCTIONS"][category_of_vars])
-    
-    for name in names_of_vars:
-        print(category_of_vars)
-        links_and_addresses_of_vars = await Runner.run(agent_dict[category_of_vars], name)
-        
-        #links_and_addresses_of_vars = await Runner.run(agent_get_links_of_vars, name, context=UserInstructions)#
-        names_and_links[name] = links_and_addresses_of_vars.final_output.links
-        #assert False, names_and_links
-    summarization_text = ''
-    for name, links in names_and_links.items():
-        for link in links:
-            status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-            search = DuckDuckGoSearchResults()
-            text = search.invoke(link + ' ' + address_of_vars)
-            time.sleep(2)
-        
-        summarization = await Runner.run(agent_summarization, text)
-        print('text', text)
-        result_summarization = summarization.final_output
-        summarization_text += result_summarization
 
-    print('sum_text', summarization_text)
-    critique = await Runner.run(agent_critique, summarization_text, context=UserInstructions)
-    result_critique = critique.final_output
-    status_placeholder.info("✅ Предложения сформированы")
-    #print('result_critique', result_critique)
-    #return summarization_text
-    return result_critique
+    # Параллельно создаем агентов и получаем ссылки
+    link_tasks = [
+        create_agent_and_get_links(name, category_rules, category_of_vars, client, address_of_vars)
+        for name in names_of_vars
+    ]
+    link_results = await asyncio.gather(*link_tasks)
+
+    
+    names_and_links = {
+        name: links 
+        for name, links in zip(names_of_vars, link_results)
+    }
+    
+    logger.debug(f"Names and links dictionary: {names_and_links}")
+    
+    # Параллельно обрабатываем заведения (только агенты работают параллельно)
+    establishment_tasks = [
+        process_establishment(
+            name, links, address_of_vars, category_of_vars, 
+            agent_dict, status_placeholder, logger
+        )
+        for name, links in names_and_links.items()
+    ]
+    
+    summarization_results = await asyncio.gather(*establishment_tasks)
+
+    summarization_text = ''.join(filter(None, summarization_results))
+    status_placeholder.info(f"📝 Проверяем корректное форматирование вывода...")
+    critique = await agent_critique1(summarization_text, num_of_vars, client)
+
+    return critique

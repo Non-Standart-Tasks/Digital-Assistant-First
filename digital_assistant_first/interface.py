@@ -541,27 +541,7 @@ def handle_user_input_sync(model, config, prompt):
             # Устанавливаем финальный текст для сохранения
             response_text = full_response_text
             
-            # КАРТА - выводим после основного текста
-            if maps_2gis_enabled and st.session_state.get("show_map", False):
-                map_type = st.session_state.get("map_type", "points")
-                
-                if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
-                    display_2gis_map(
-                        pydeck_data=st.session_state["last_pydeck_data"],
-                        map_type="points",
-                        title="🗺️ Интерактивная карта 2GIS"
-                    )
-                
-                elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
-                    display_2gis_map(
-                        pydeck_data=[],  # Empty for route type
-                        map_type="route",
-                        path_points=st.session_state["path_points"],
-                        route_points=st.session_state["route_points"],
-                        title="🗺️ Построенный маршрут"
-                    )
-
-            # Обрабатываем офферы после карты
+            # Обрабатываем офферы после основного текста
             if config.get("offers_enabled", False):
                 offers_data = response["offers_data"]
                 logger.info(f"Offers data: {offers_data}")  # Debug log
@@ -595,7 +575,7 @@ def handle_user_input_sync(model, config, prompt):
                         
                         offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data['system_prompt']))
                         offers_text = offers_response.final_output
-                        logger.info(f"Generated offers text: {offers_text}")  # Debug log
+                        logger.info(f"Generated offers text: {offers_text}")  
                         
                         # Добавляем офферы в стриминг
                         offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
@@ -621,6 +601,26 @@ def handle_user_input_sync(model, config, prompt):
                         st.error("Произошла ошибка при генерации офферов.")
                 else:
                     logger.info("No valid offers data to display")  # Debug log
+
+            # КАРТА - выводим в самом конце после всех текстовых элементов
+            if maps_2gis_enabled and st.session_state.get("show_map", False):
+                map_type = st.session_state.get("map_type", "points")
+                
+                if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
+                    display_2gis_map(
+                        pydeck_data=st.session_state["last_pydeck_data"],
+                        map_type="points",
+                        title="🗺️ Интерактивная карта 2GIS"
+                    )
+                
+                elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
+                    display_2gis_map(
+                        pydeck_data=[],  # Empty for route type
+                        map_type="route",
+                        path_points=st.session_state["path_points"],
+                        route_points=st.session_state["route_points"],
+                        title="🗺️ Построенный маршрут"
+                    )
 
             # Сохраняем дополнительную информацию для истории сообщений
             st.session_state["messages"].append(

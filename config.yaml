@@ -2,7 +2,7 @@
 internet_search: True  # Флаг для включения/отключения поиска через SERP API
 aviasales_search: False  # Флаг для включения/отключения поиска через API Aviasales 
 model: 'gpt-4o-mini'  # Модель LLM для основных запросов
-2gis-key: '4796c982-982c-4827-9e61-aeea5acb34d3'  # API ключ для сервиса 2ГИС
+2gis-key: '0a931e51-467b-4e43-a112-42e217cff910'  # API ключ для сервиса 2ГИС
 telegram_enabled: False  # Флаг для включения/отключения интеграции с Telegram
 collect_messages: 100  # Количество сообщений, сохраняемых в истории для контекста
 link_checker: False  # Флаг для включения/отключения проверки ссылок

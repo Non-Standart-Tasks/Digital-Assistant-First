@@ -71,7 +71,8 @@ def apply_configuration():
         "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
         "offers_enabled": st.session_state["offers_enabled"],
-        "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"]
+        "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"],
+        "global_prompt": st.session_state["global_prompt"]
     }
 
     st.session_state["config"] = config
@@ -150,15 +151,12 @@ def main():
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
         "offers_enabled": False,  # По умолчанию офферы отключены
         "maps_2gis_enabled": False,
-        "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"]
+        "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
+        "global_prompt": config_yaml["global_prompt"]
     }
 
     initialize_session_state(defaults)
 
-    # Инициализация векторного хранилища для генерации предложений
-    # проиводится в модуле offergen в момент импорта, поэтому
-    # импортируем модуль offergen в момент запуска приложения
-    from digital_assistant_first import offergen
     with st.sidebar:
         st.markdown("### Панель управления")
         deepsearch_enabled = handle_toggle("deepsearch", "Включить DeepSearch")
@@ -185,10 +183,12 @@ def main():
                 st.session_state["config"]["maps_2gis_enabled"] = maps_2gis_enabled
                 # Don't trigger rerun here
         
-        if st.session_state.get("telegram_enabled", False):
-            async def initialize_data():
-                await update_telegram_messages()
-            asyncio.run(initialize_data())
+        #Пока выключим телеграм функционал
+        #if st.session_state.get("telegram_enabled", False):
+        #    async def initialize_data():
+        #        await update_telegram_messages()
+        #    asyncio.run(initialize_data())
+        
         csv_data = generate_csv_from_db()
         st.download_button(
             label="Скачать БД",

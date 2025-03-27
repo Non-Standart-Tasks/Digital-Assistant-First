@@ -9,7 +9,7 @@ import random
 from openai import OpenAI  # Добавляем прямой импорт OpenAI
 from digital_assistant_first.multiagent_system.deepsearch import deepsearch
 from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool, RunContextWrapper
-
+from pydantic import BaseModel
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -42,6 +42,9 @@ from digital_assistant_first.utils.database import (
 from digital_assistant_first.geo_system.map_display import display_2gis_map
 
 from dotenv import load_dotenv
+
+class Category(BaseModel):
+    category: str
 
 load_dotenv()
 
@@ -187,7 +190,8 @@ def model_response_generator_sync(model, config, status_placeholder):
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, железнодорожных билетах)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
     """,
-    model="gpt-4o-mini")
+    model="gpt-4o-mini",
+    output_type=Category)
     
     # Инициализируем переменные по умолчанию
     # Пока эти штуки
@@ -211,7 +215,7 @@ def model_response_generator_sync(model, config, status_placeholder):
            
     try:
         request_category = Runner.run_sync(agent_address, user_input)
-        request_category = request_category.final_output
+        request_category = request_category.final_output.category
 
         status_placeholder.info(f"📋 Определена категория: {request_category}")
         
@@ -280,7 +284,55 @@ def model_response_generator_sync(model, config, status_placeholder):
 
         if config.get("deepsearch", False):
             deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder, config))
-    
+
+        else:
+            web_search_context_size = config.get("web_search_context_size", "medium")
+        
+            # Используем нативный веб-поиск OpenAI
+            logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+            
+            agent_web_seach = Agent(
+                name="Assistant",
+                instructions=f"""
+                Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
+                
+                Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
+                если явно количество не указано, то выведи 5 вариантов.
+
+                ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
+
+                """,
+                model='gpt-4o-mini',
+                tools=[WebSearchTool(search_context_size=web_search_context_size)])
+            
+            web_search_response = Runner.run_sync(agent_web_seach, user_input)
+            web_search_response = web_search_response.final_output
+            
+            print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
+            
+            # Эмулируем ответ LangChain для совместимости с остальным кодом
+            #class OpenAIResponseWrapper:
+                #def __init__(self, openai_response):
+                    #self.content = openai_response
+                    
+            #response = OpenAIResponseWrapper(web_search_response)
+
+        
+            #if hasattr(response, "content"):
+                #answer = response.content
+            #elif hasattr(response, "message"):
+                #answer = response.message.content
+            #else:
+                #answer = str(response)
+            
+            log_api_call(
+                logger=logger,
+                source=f"LLM ({config['Model']})",
+                request=user_input,
+                response=web_search_response,
+            )
+            
+            
     finally:
         loop.close()
         
@@ -295,49 +347,8 @@ def model_response_generator_sync(model, config, status_placeholder):
     }
 
     else:
-        web_search_context_size = config.get("web_search_context_size", "medium")
-        
-        # Используем нативный веб-поиск OpenAI
-        logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
-    
-        # Получаем клиент OpenAI из конфигурации
-        openai_client = config.get("openai_client", OpenAI())
-        
-        # Вызываем OpenAI API напрямую
-        openai_response = openai_client.responses.create(
-            model=config["Model"],
-            tools=[{
-                "type": "web_search_preview",
-                "search_context_size": web_search_context_size
-            }],
-            input=user_input,
-            instructions=global_prompt
-        )
-
-        # Эмулируем ответ LangChain для совместимости с остальным кодом
-        class OpenAIResponseWrapper:
-            def __init__(self, openai_response):
-                self.content = openai_response.output_text
-                
-        response = OpenAIResponseWrapper(openai_response)
-
-    
-    if hasattr(response, "content"):
-        answer = response.content
-    elif hasattr(response, "message"):
-        answer = response.message.content
-    else:
-        answer = str(response)
-    
-    log_api_call(
-        logger=logger,
-        source=f"LLM ({config['Model']})",
-        request=user_input,
-        response=answer,
-    )
-    
-    return {
-        "answer": answer,
+        return {
+        "answer": web_search_response,
         "aviasales_link": aviasales_url,
         "table_data": table_data,
         "pydeck_data": pydeck_data,

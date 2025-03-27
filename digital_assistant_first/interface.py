@@ -217,7 +217,21 @@ def model_response_generator_sync(model, config, status_placeholder):
         request_category = Runner.run_sync(agent_address, user_input)
         request_category = request_category.final_output.category
 
-        status_placeholder.info(f"📋 Определена категория: {request_category}")
+        category_emoji = {
+            "рестораны": "🍽️",
+            "бары": "🍺",
+            "кальянные": "💨",
+            "доставка_еды": "🛵",
+            "банкет": "🎉",
+            "кейтеринг": "🍱",
+            "ивенты": "🎭",
+            "маршруты": "🗺️",
+            "поездки": "✈️",
+            "другое": "📋"
+        }
+
+        emoji = category_emoji.get(request_category, "📋")
+        status_placeholder.info(f"{emoji} Определена категория: {request_category}")
         
         #Пока выключим интернет поиск
         #if config.get("internet_search", False):

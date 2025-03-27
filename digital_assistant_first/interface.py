@@ -241,6 +241,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             
             
         # Для category = поездки или офферы получим необходимые данные
+        # aviasales_flight_info мы будем заменять!!!
         if request_category == "поездки" or request_category == "другое":
             aviasales_tool = AviasalesHandler()
             tickets_need = loop.run_until_complete(aviasales_tool.aviasales_request(model, config, user_input))
@@ -261,6 +262,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                     )
         
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
+        # Код для офферов - тут гоняем РАГ
         if config.get("offers_enabled", False):
             try:
                 validation_result = loop.run_until_complete(validation_agent.run(user_input))
@@ -309,21 +311,6 @@ def model_response_generator_sync(model, config, status_placeholder):
             web_search_response = web_search_response.final_output
             
             print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
-            
-            # Эмулируем ответ LangChain для совместимости с остальным кодом
-            #class OpenAIResponseWrapper:
-                #def __init__(self, openai_response):
-                    #self.content = openai_response
-                    
-            #response = OpenAIResponseWrapper(web_search_response)
-
-        
-            #if hasattr(response, "content"):
-                #answer = response.content
-            #elif hasattr(response, "message"):
-                #answer = response.message.content
-            #else:
-                #answer = str(response)
             
             log_api_call(
                 logger=logger,
@@ -383,10 +370,10 @@ def handle_user_input_sync(model, config, prompt):
             
             pre_category = response["request_category"]
             
-            if pre_category not in ["рестораны", "ивенты", "маршруты"]:
-                print(f"DEBUG start: Сбрасываем данные карты - запрос не о ресторанах/ивентах/маршрутах")
-                st.session_state["show_map"] = False
-                st.session_state["last_pydeck_data"] = []
+            #if pre_category not in ["рестораны", "ивенты", "маршруты"]:
+                #print(f"DEBUG start: Сбрасываем данные карты - запрос не о ресторанах/ивентах/маршрутах")
+                #st.session_state["show_map"] = False
+                #st.session_state["last_pydeck_data"] = []
             
             # Для маршрутов очищаем предыдущие данные, но сохраняем флаг типа
             if pre_category == "маршруты":
@@ -415,7 +402,7 @@ def handle_user_input_sync(model, config, prompt):
             # Проверяем, включен ли поиск по 2GIS
             maps_2gis_enabled = config.get("maps_2gis_enabled", False)
             
-            if maps_2gis_enabled and response.get("request_category") in ["рестораны", "ивенты"]:
+            if maps_2gis_enabled:   
                 # Создаем новый синхронный event loop для 2GIS запроса
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
@@ -442,7 +429,7 @@ def handle_user_input_sync(model, config, prompt):
                     
                     # ПОДГОТОВКА ТЕКСТОВОЙ ИНФОРМАЦИИ О МЕСТАХ
                     if table_data:
-                        places_text += "\n\n**📍 Данные о найденных местах 2GIS API**\n\n"
+                        places_text += "\n\n### 📍 Данные о найденных местах 2GIS API\n"
                         places_text += f"Найдено мест: {len(table_data)}\n\n"
                         
                         # Формируем текстовое описание каждого места

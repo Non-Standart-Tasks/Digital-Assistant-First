@@ -373,21 +373,21 @@ agent_dict = {
 
 
 category_rules = {
-    'рестораны':    """Адрес:
+    'рестораны': """Адрес:
                     Режим работы: 
                     Тип кухни: 
                     Средний чек: 
                     Сайт: 
                     Сайт на рейтинг: 
                     Ссылка на отзывы: """,
-    'бары':         """Адрес:
+    'бары': """Адрес:
                     Режим работы: 
                     Специализация: 
                     Средний чек: 
                     Сайт: 
                     Сайт на рейтинг: 
                     Ссылка на отзывы: """,
-    'кальянные':    """Адрес:
+    'кальянные': """Адрес:
                     Режим работы: 
                     Ассортимент: 
                     Средний чек: 
@@ -395,7 +395,7 @@ category_rules = {
                     Сайт на рейтинг: 
                     Ссылка на отзывы: """,
     'доставка_еды': """Тип кухни: 
-                    Время доставки: 
+                        Время доставки: 
                     Минимальная сумма заказа: 
                     Стоимость доставки: 
                     Сайт: 
@@ -410,7 +410,9 @@ category_rules = {
                     Сайт: 
                     Контакты: 
                     Ссылка на отзывы:""",
-    'кейтеринг': """Специализация: 
+    
+    'кейтеринг': """ 
+                    Специализация: 
                     Минимальный заказ: 
                     Стоимость: 
                     Дополнительные услуги: 
@@ -453,25 +455,15 @@ async def process_establishment(name: str, links: list[str], address_of_vars: st
         global_text = f"Название заведения: {name}\n"  # Добавляем название в начало текста
         # Поисковые запросы делаем последовательно
         for link in links:
-            max_attempts = 3
-            base_delay = 1
-            
-            for attempt in range(max_attempts):
-                try:
-                    status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-                    search = DuckDuckGoSearchResults()
-                    text = search.invoke(link + ' ' + address_of_vars)
-                    global_text += '\n' + text
-                    await asyncio.sleep(2)  # Заменяем time.sleep на asyncio.sleep
-                    break  # Если успешно, выходим из цикла попыток
-                except Exception as e:
-                    logger.error(f"Error during search for {link} (attempt {attempt + 1}/{max_attempts}): {str(e)}")
-                    if attempt < max_attempts - 1:
-                        delay = min(base_delay * (2 ** attempt), 3)  # Экспоненциальная задержка с максимумом 10 секунд
-                        await asyncio.sleep(delay)
-                    else:
-                        logger.error(f"All attempts failed for link: {link}")
-                        continue
+            try:
+                status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
+                search = DuckDuckGoSearchResults()
+                text = search.invoke(link + ' ' + address_of_vars)
+                global_text += '\n' + text
+                time.sleep(3)
+            except Exception as e:
+                logger.error(f"Error during search for {link}: {str(e)}")
+                continue
                 
         if global_text:
             # Добавляем название заведения в инструкции для суммаризации

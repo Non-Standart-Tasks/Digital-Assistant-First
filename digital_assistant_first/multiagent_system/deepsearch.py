@@ -373,13 +373,52 @@ agent_dict = {
 
 
 category_rules = {
-    'рестораны': """Адрес:
+    'рестораны':    """Адрес:
                     Режим работы: 
                     Тип кухни: 
                     Средний чек: 
                     Сайт: 
                     Сайт на рейтинг: 
-                    Ссылка на отзывы: """
+                    Ссылка на отзывы: """,
+    'бары':         """Адрес:
+                    Режим работы: 
+                    Специализация: 
+                    Средний чек: 
+                    Сайт: 
+                    Сайт на рейтинг: 
+                    Ссылка на отзывы: """,
+    'кальянные':    """Адрес:
+                    Режим работы: 
+                    Ассортимент: 
+                    Средний чек: 
+                    Сайт: 
+                    Сайт на рейтинг: 
+                    Ссылка на отзывы: """,
+    'доставка_еды': """Тип кухни: 
+                    Время доставки: 
+                    Минимальная сумма заказа: 
+                    Стоимость доставки: 
+                    Сайт: 
+                    Приложение: 
+                    Телефон: 
+                    Ссылка на отзывы: """,
+    'банкет':       """Адрес:
+                    Вместимость: 
+                    Тип кухни: 
+                    Средний чек за банкет: 
+                    Аренда зала: 
+                    Сайт: 
+                    Контакты: 
+                    Ссылка на отзывы:""",
+    'кейтеринг': """Специализация: 
+                    Минимальный заказ: 
+                    Стоимость: 
+                    Дополнительные услуги: 
+                    Сайт: 
+                    Контакты: 
+                    Ссылка на отзывы: """,
+    'другое':       """Сайт:
+                    Контакты: """
 }
 
 def setup_logging():
@@ -396,7 +435,7 @@ def setup_logging():
     
     return logger
 
-async def search_link(link: str, address: str, status_placeholder) -> str:
+async def search_link(link: str, address: str, status_placeholder, logger) -> str:
     try:
         status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
         search = DuckDuckGoSearchResults()
@@ -414,15 +453,25 @@ async def process_establishment(name: str, links: list[str], address_of_vars: st
         global_text = f"Название заведения: {name}\n"  # Добавляем название в начало текста
         # Поисковые запросы делаем последовательно
         for link in links:
-            try:
-                status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-                search = DuckDuckGoSearchResults()
-                text = search.invoke(link + ' ' + address_of_vars)
-                global_text += '\n' + text
-                time.sleep(2)
-            except Exception as e:
-                logger.error(f"Error during search for {link}: {str(e)}")
-                continue
+            max_attempts = 3
+            base_delay = 1
+            
+            for attempt in range(max_attempts):
+                try:
+                    status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
+                    search = DuckDuckGoSearchResults()
+                    text = search.invoke(link + ' ' + address_of_vars)
+                    global_text += '\n' + text
+                    await asyncio.sleep(2)  # Заменяем time.sleep на asyncio.sleep
+                    break  # Если успешно, выходим из цикла попыток
+                except Exception as e:
+                    logger.error(f"Error during search for {link} (attempt {attempt + 1}/{max_attempts}): {str(e)}")
+                    if attempt < max_attempts - 1:
+                        delay = min(base_delay * (2 ** attempt), 3)  # Экспоненциальная задержка с максимумом 10 секунд
+                        await asyncio.sleep(delay)
+                    else:
+                        logger.error(f"All attempts failed for link: {link}")
+                        continue
                 
         if global_text:
             # Добавляем название заведения в инструкции для суммаризации
@@ -479,12 +528,11 @@ async def agent_critique1(summarization_text: str, num_of_vars: int, client: Asy
     
     agent_critique = Agent(
         name="Assistant",
-        instructions="""Сделай форматирование текста, выдели каждый пункт жирным, а информацию по нему не жирным. 
+        instructions=f"""Сделай форматирование текста, выдели каждый пункт жирным, а информацию по нему не жирным. 
         Не добавляй никаких пояснений, просто выводи текст.
 
         Проверь, что заведений должно быть ровно {num_of_vars} 
         """,
-        #model="gpt-4o-mini",
         model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
         )
     
@@ -499,7 +547,7 @@ async def deepsearch(user_input: str, status_placeholder, config):
     address_of_vars, category_of_vars, num_of_vars = address_of_vars.final_output.address, address_of_vars.final_output.category, address_of_vars.final_output.num_of_vars
     
     status_placeholder.info(f"🔍 Найдены следующие варианты: {internet_first_step.final_output}")
-    time.sleep(1)
+    time.sleep(2)
 
     names_of_vars = await Runner.run(agent_get_names_of_vars, internet_first_step.final_output)
     names_of_vars = names_of_vars.final_output.names
@@ -532,6 +580,6 @@ async def deepsearch(user_input: str, status_placeholder, config):
 
     summarization_text = ''.join(filter(None, summarization_results))
     status_placeholder.info(f"📝 Проверяем корректное форматирование вывода...")
-    critique = await agent_critique1(summarization_text, num_of_vars, client)
+    critique = await agent_critique1(summarization_text, num_of_vars=num_of_vars, client=client)
 
     return critique

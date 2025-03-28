@@ -244,7 +244,9 @@ async def get_system_prompt_for_offers_async(
     # Use the async run method instead of run_sync
     result = await offer_matching_agent.run(enhanced_prompt, deps=deps)
     logger.info(f"Offer matching agent result: {result.data}")
-
+    with open('digital_assistant_first/offergen/placeholder.txt', 'r+') as file:
+        placeholder_image = file.read()
+    offers_payload =[]
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
         for match in result.data.matches:
@@ -260,7 +262,23 @@ async def get_system_prompt_for_offers_async(
             information_about_relevant_offers += f"Offer URL: {offer.offer_url}\n"
             information_about_relevant_offers += f"Offer match reason: {match.match_reason}\n"
             information_about_relevant_offers += "---\n"
+            offer_json = {
+                "category": offer.category,
+                "description": f"{offer.name}\n\n{offer.full_description}",
+                "url": offer.offer_url,
+                "image": placeholder_image
+            }
+            offers_payload.append(offer_json)
         logger.info("System prompt for offers generated.")
+        diction= information_about_relevant_offers
+        logger.info(f'ПРОВЕРКА проедпологаемого JSON{offer_json}')
+        try:
+            response = requests.post("http://localhost:8001/generate_link", json=offers_payload)
+            response.raise_for_status()
+            link = response.json().get("link")
+            logger.info(f"Ссылка на Streamlit-приложение: {link}")
+        except Exception as e:
+            logger.error(f"Ошибка при отправке данных в микросервис: {e}")
         return f"""
 You are a VTB Family offers formatter. Format and evaluate these offers:
 
@@ -279,7 +297,6 @@ Write a summary that:
 - States how well the offers match the request
 - Explains any mismatches and their potential value
 - Speaks directly to the user who made the request
-
 Use this format for each offer:
 ### [OFFER TITLE]
 **Категория:** [CATEGORY]
@@ -301,6 +318,9 @@ Key requirements:
 - Pull company details from the full description
 - Keep descriptions brief and value-focused
 - Connect your response to the user's search request
+
+---
+end of the message must contains a link to the presentation '{link}'
 """
     else:
         logger.warning("No relevant offers found for the search request")

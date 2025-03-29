@@ -143,7 +143,7 @@ def display_chat_history():
                 
                 record_id = message.get("record_id")
                 if record_id:
-                    col1, col2 = st.columns(2)
+                    col1, col2, col3 = st.columns(3)
 
                     if col1.button("👍", key=f"thumbs_up_{i}"):
                         update_chat_history_rating_by_id(record_id, "+")
@@ -154,6 +154,12 @@ def display_chat_history():
                         update_chat_history_rating_by_id(record_id, "-")
                         st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
                         st.rerun()
+                    # Добавляем кнопку генерации оффера
+                    col3.link_button(
+                        "🎁 Сгенерировать оффер", 
+                        "https://google.com", 
+                        use_container_width=True
+                    )
         
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])
@@ -634,7 +640,7 @@ def handle_user_input_sync(model, config, prompt):
             st.session_state["messages"].append(
                 {
                     "role": "assistant", 
-                    "content": response_text,  # Теперь включает офферы в конце
+                    "content": full_response_text,  # Теперь включает офферы в конце
                     "question": prompt,
                     "request_category": response.get("request_category", ""),
                     "show_map": st.session_state.get("show_map", False),
@@ -652,16 +658,22 @@ def handle_user_input_sync(model, config, prompt):
             )
             
             # Добавляем оценку ответа
-            col1, col2 = st.columns(2)
+            col1, col2, col3 = st.columns(3)
             if col1.button("👍", key=f"thumbs_up_{len(st.session_state['messages'])}"):
                 st.success("Вы поставили 👍")
             if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
-                st.error("Вы поставили 👎")  
+                st.error("Вы поставили 👎")
+            # Прямое создание кнопки-ссылки
+            try:
+                col3.link_button("🎁 Сгенерировать оффер", "https://google.com", key=f"generate_offer_{len(st.session_state['messages'])}")
+            except:
+                col3.markdown("[🎁 Сгенерировать оффер](https://google.com)")
+
 
             # Сохраняем в базу данных
             record_id = insert_chat_history_return_id(
                 user_query=prompt,
-                model_response=response_text,  # Сохраняем полный текст, включая информацию о местах
+                model_response=full_response_text,  # Сохраняем полный текст, включая информацию о местах
                 mode=config["mode"],
                 rating=None
             )

@@ -11,7 +11,7 @@ web_search_context_size: "low"  # Размер контекста для веб-
 
 # Настройки генератора предложений
 offersgen:
-  model: gpt-4o-mini  # Модель LLM для генерации предложений
+  model: deepseek-chat  # Модель LLM для генерации предложений
   offers_db: content/json/offers/raw/offers.json  # Путь к базе данных с предложениями
   rag_n_examples: 40  # Количество примеров для RAG (Retrieval-Augmented Generation)
   city_filter: False  # Флаг для фильтрации предложений по городам

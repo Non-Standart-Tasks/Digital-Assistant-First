@@ -203,7 +203,7 @@ Key requirements:
         logger.warning("No relevant offers found for the search request")
         return "No relevant offers were found for the search request."
 
-async def get_system_prompt_for_offers_async(
+async def get_offers_data(
     validation_result: PromptValidation, prompt: str
 ) -> str:
     '''
@@ -261,47 +261,10 @@ async def get_system_prompt_for_offers_async(
             information_about_relevant_offers += f"Offer match reason: {match.match_reason}\n"
             information_about_relevant_offers += "---\n"
         logger.info("System prompt for offers generated.")
-        return f"""
-You are a VTB Family offers formatter. Format and evaluate these offers:
-
-{information_about_relevant_offers}
-
-The input you receive is the user's initial search request. Use it to evaluate offer relevance.
-
-Main tasks:
-1. Format search results in markdown
-2. Structure each offer clearly
-3. Match offers against the initial request
-4. Write everything in Russian
-
-Write a summary that:
-- Mentions the initial search request
-- States how well the offers match the request
-- Explains any mismatches and their potential value
-- Speaks directly to the user who made the request
-
-Use this format for each offer:
-### [OFFER TITLE]
-**Категория:** [CATEGORY]
-
-**Описание предложения:**
-[SHORT, CONCISE DESCRIPTION OF THE MAIN OFFER/DISCOUNT]
-
-**Информация о компании:**
-- Адрес: [ADDRESS IF AVAILABLE]
-- Телефон: [PHONE IF AVAILABLE]
-- Часы работы: [HOURS IF AVAILABLE]
-- Сайт: [WEBSITE IF AVAILABLE]
-
-**Ссылка на предложение:** [Подробнее на VTB Family]([OFFER URL])
-
----
-
-Key requirements:
-- Pull company details from the full description
-- Keep descriptions brief and value-focused
-- Connect your response to the user's search request
-"""
+        return information_about_relevant_offers
+    
     else:
         logger.warning("No relevant offers found for the search request")
         return "No relevant offers were found for the search request."
+    
+

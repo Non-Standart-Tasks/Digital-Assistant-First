@@ -30,7 +30,7 @@ from digital_assistant_first.telegram_system.telegram_initialization import (
 from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data, build_route_from_query
 from digital_assistant_first.offergen.agent import validation_agent
-from digital_assistant_first.offergen.utils import get_system_prompt_for_offers, get_system_prompt_for_offers_async
+from digital_assistant_first.offergen.utils import get_offers_data
 from digital_assistant_first.yndx_system.restaurant_context import fetch_yndx_context
 from digital_assistant_first.utils.link_checker import link_checker, corrector
 from digital_assistant_first.utils.database import (
@@ -40,7 +40,7 @@ from digital_assistant_first.utils.database import (
     get_chat_record_by_id
 )
 from digital_assistant_first.geo_system.map_display import display_2gis_map
-
+from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
 class Category(BaseModel):
@@ -51,6 +51,9 @@ load_dotenv()
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 #serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 init_db()
+
+client = AsyncOpenAI(api_key="sk-13dd9563da2d435ebd38c2693dd78c6f", base_url="https://api.deepseek.com")
+
 
 # Add the initialize_model function here to avoid circular import
 def initialize_model(config):
@@ -194,7 +197,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     output_type=Category)
     
     # Инициализируем переменные по умолчанию
-    # Пока эти штуки
+    # Пока эти штуки оставим.
     shopping_res = ""
     internet_res = ""
     links = ""
@@ -285,13 +288,47 @@ def model_response_generator_sync(model, config, status_placeholder):
                 if validation_result.number_of_offers_to_generate < 1:
                     validation_result.number_of_offers_to_generate = 10
                 
-                offers_system_prompt = loop.run_until_complete(
-                    get_system_prompt_for_offers_async(validation_result, user_input)
+                offers_data = loop.run_until_complete(
+                    get_offers_data(validation_result, user_input)
                 )
                 
-                if offers_system_prompt != "No relevant offers were found for the search request.":
+                agent_offers = Agent(
+                    name="Assistant",
+                    instructions="""
+                    Ты - форматировщик офферов VTB Family. Твоя задача:
+                    1. Форматировать офферы в markdown
+                    2. Структурировать каждый оффер четко и ясно
+                    3. Писать все на русском языке
+                    4. Выводить только релевантные офферы
+                    
+                    ВАЖНО: Не добавляй никаких итогов, резюме или вступлений. 
+                    Выводи ТОЛЬКО форматированные офферы.
+                    
+                    Используй формат:
+                    ### [Название оффера]
+                    **Категория:** [Категория]
+                    
+                    **Описание предложения:**
+                    [Краткое описание основной скидки/предложения]
+                    
+                    **Информация о компании:**
+                    - Адрес: [Адрес если есть]
+                    - Телефон: [Телефон если есть]
+                    - Сайт: [Сайт если есть]
+                    
+                    **Ссылка на предложение:** [Подробнее на VTB Family](URL)
+                    
+                    ---
+                    """,
+                    model=config["Model"]
+                )
+
+                offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data))
+                offers_text = offers_response.final_output
+
+                if offers_data != "No relevant offers were found for the search request.":
                     offers_data = {
-                        "system_prompt": offers_system_prompt,
+                        "offers_text": offers_text,
                         "validation_result": validation_result
                     }
             except Exception as e:
@@ -366,8 +403,7 @@ def handle_user_input_sync(model, config, prompt):
         st.session_state["show_map"] = False
         st.session_state["last_2gis_query"] = prompt  # Сохраняем текущий запрос
         
-        # Получаем предварительную категорию запроса
-        
+
         st.session_state["messages"].append({"role": "user", "content": prompt})
         with st.chat_message("user"):
             st.markdown(prompt)
@@ -533,84 +569,44 @@ def handle_user_input_sync(model, config, prompt):
             
             # Создаем плейсхолдер для потокового текста
             text_placeholder = st.empty()
+            display_text = ""  # Move this outside the function
             
-            # Имитируем печатную машинку с помощью плейсхолдера
-            display_text = ""
-            for i, char in enumerate(full_response_text):
-                display_text += char
-                
-                if i % 2 == 0 or char in ['.', '!', '?', '\n']:
-                    text_placeholder.markdown(display_text)
+            def stream_text(text_to_stream, current_display_text=""):
+                display_text = current_display_text
+                for i, char in enumerate(text_to_stream):
+                    display_text += char
                     
-                    delay = 0.01
-                    if char in ['.', '!', '?']:
-                        delay = 0.05
-                    elif char == '\n':
-                        delay = 0.03
-                    
-                    time.sleep(delay * random.uniform(0.5, 1.5))
-            
-            # Устанавливаем финальный текст для сохранения
-            response_text = full_response_text
+                    if i % 2 == 0 or char in ['.', '!', '?', '\n']:
+                        text_placeholder.markdown(display_text)
+                        
+                        delay = 0.01
+                        if char in ['.', '!', '?']:
+                            delay = 0.05
+                        elif char == '\n':
+                            delay = 0.03
+                        
+                        time.sleep(delay * random.uniform(0.5, 1.5))
+                return display_text
+
+            # Stream the initial response
+            display_text = stream_text(full_response_text)
             
             # Обрабатываем офферы после основного текста
             if config.get("offers_enabled", False):
-                offers_data = response["offers_data"]
-                logger.info(f"Offers data: {offers_data}")  # Debug log
-                
-                if offers_data and isinstance(offers_data, dict) and offers_data.get("system_prompt"):
-                    loop = asyncio.new_event_loop()
-                    asyncio.set_event_loop(loop)
-
-                    try:
-                        agent_offers = Agent(
-                            name="Assistant",
-                            instructions="""
-                            Расположи офферы по порядку.
-
-                            Пример:
-                            Ресторан ШЕРБЕТ
-                            Категория: Рестораны и доставка
-
-                            Описание предложения: Скидка 20% на все меню, напитки и барную карту в ресторане ШЕРБЕТ. Скидка не распространяется на специальные предложения и акции.
-
-                            Информация о компании:
-
-                            Адрес: Мясницкая ул., 17, стр. 1
-                            Телефон: 8 (800) 600-16-56
-                            Ссылка на предложение: Подробнее на VTB Family [вставить ссылку]
-
-                            Выводи только офферы. Никаких выводов или резюме.
-                            """,
-                            model=config["Model"]
-                        )
-                        
-                        offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data['system_prompt']))
-                        offers_text = offers_response.final_output
-                        logger.info(f"Generated offers text: {offers_text}")  
-                        
-                        # Добавляем офферы в стриминг
-                        offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
-                        for i, char in enumerate(offers_section):
-                            display_text += char
-                            
-                            if i % 2 == 0 or char in ['.', '!', '?', '\n']:
-                                text_placeholder.markdown(display_text)
-                                
-                                delay = 0.01
-                                if char in ['.', '!', '?']:
-                                    delay = 0.05
-                                elif char == '\n':
-                                    delay = 0.03
-                                
-                                time.sleep(delay * random.uniform(0.5, 1.5))
-                        
-                        # Обновляем полный текст ответа
-                        response_text += offers_section
+                try:
+                    offers_text = response["offers_data"]['offers_text']
+                    logger.info(f"Offers data: {offers_text}")  # Debug log
                     
-                    except Exception as e:
-                        logger.error(f"Error generating offers: {str(e)}", exc_info=True)
-                        st.error("Произошла ошибка при генерации офферов.")
+                    offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
+                    display_text = stream_text(offers_section, display_text)  # Pass current display_text
+                            
+                    # Обновляем полный текст ответа
+                    response_text = display_text
+                    
+                except Exception as e:
+                    logger.error(f"Error generating offers: {str(e)}", exc_info=True)
+                    st.error("Произошла ошибка при генерации офферов.")
+                
                 else:
                     logger.info("No valid offers data to display")  # Debug log
 

@@ -352,7 +352,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             
             agent_web_seach = Agent(
                 name="Assistant",
-                instructions=f"""
+                instructions="""
                 Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
                 
                 Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
@@ -604,10 +604,11 @@ def handle_user_input_sync(model, config, prompt):
                     logger.info(f"Offers data: {offers_text}")  # Debug log
                     
                     offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
+                    
                     display_text = stream_text(offers_section, display_text)  # Pass current display_text
                             
                     # Обновляем полный текст ответа
-                    response_text = display_text
+                    full_response_text = full_response_text + '\n\n' + display_text
                     
                 except Exception as e:
                     logger.error(f"Error generating offers: {str(e)}", exc_info=True)

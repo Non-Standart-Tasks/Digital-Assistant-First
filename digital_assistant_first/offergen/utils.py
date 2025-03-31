@@ -237,14 +237,15 @@ async def get_offers_data(
         rag_context += f"- Offer RAG score: {score}\n"
         rag_context += f"- Offer ID: {offer_id}\n"
         rag_context += "---\n"
-
     enhanced_prompt = f"{rag_context}\nUser request: {prompt}"
 
     deps = RagDeps(k=validation_result.number_of_offers_to_generate, offers=offers_db)
     # Use the async run method instead of run_sync
     result = await offer_matching_agent.run(enhanced_prompt, deps=deps)
     logger.info(f"Offer matching agent result: {result.data}")
-
+    with open('digital_assistant_first/offergen/placeholder.txt', 'r+') as file:
+        placeholder_image = file.read()
+    offers_payload =[]
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
         for match in result.data.matches:
@@ -260,8 +261,15 @@ async def get_offers_data(
             information_about_relevant_offers += f"Offer URL: {offer.offer_url}\n"
             information_about_relevant_offers += f"Offer match reason: {match.match_reason}\n"
             information_about_relevant_offers += "---\n"
+            offer_json = {
+                "category": offer.category,
+                "description": f"{offer.name}\n\n{offer.full_description}",
+                "url": offer.offer_url,
+                "image": placeholder_image
+            }
+            offers_payload.append(offer_json)
         logger.info("System prompt for offers generated.")
-        return information_about_relevant_offers
+        return information_about_relevant_offers, offers_payload
     
     else:
         logger.warning("No relevant offers found for the search request")

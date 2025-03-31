@@ -6,6 +6,7 @@ import pandas as pd
 import streamlit as st
 import time
 import random
+import requests
 from openai import OpenAI  # Добавляем прямой импорт OpenAI
 from digital_assistant_first.multiagent_system.deepsearch import deepsearch
 from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool, RunContextWrapper
@@ -157,7 +158,7 @@ def display_chat_history():
                     # Добавляем кнопку генерации оффера
                     col3.link_button(
                         "🎁 Сгенерировать оффер", 
-                        "https://google.com", 
+                        st.session_state["messages"][i].get("offers_link", "https://google.com"), 
                         use_container_width=True
                     )
         
@@ -294,7 +295,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                 if validation_result.number_of_offers_to_generate < 1:
                     validation_result.number_of_offers_to_generate = 10
                 
-                offers_data = loop.run_until_complete(
+                offers_data, offer_json = loop.run_until_complete(
                     get_offers_data(validation_result, user_input)
                 )
                 
@@ -331,11 +332,19 @@ def model_response_generator_sync(model, config, status_placeholder):
 
                 offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data))
                 offers_text = offers_response.final_output
-
                 if offers_data != "No relevant offers were found for the search request.":
+                    try:
+                        response = requests.post("http://localhost:8001/generate_link", json=offer_json)
+                        response.raise_for_status()
+                        link = response.json().get("link")
+                        logger.info(f"Ссылка на Streamlit-приложение: {link}")
+                    except Exception as e:
+                        logger.error(f"Ошибка при отправке данных в микросервис: {e}")
+                    #logger.info(f'проверка перед отправкой в JSON{offer_json}')
                     offers_data = {
                         "offers_text": offers_text,
-                        "validation_result": validation_result
+                        "validation_result": validation_result,
+                        "offers_link":link
                     }
             except Exception as e:
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
@@ -602,7 +611,7 @@ def handle_user_input_sync(model, config, prompt):
                 try:
                     offers_text = response["offers_data"]['offers_text']
                     logger.info(f"Offers data: {offers_text}")  # Debug log
-                    
+                    offers_link = response["offers_data"]['offers_link']
                     offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
                     display_text = stream_text(offers_section, display_text)  # Pass current display_text
                             
@@ -653,7 +662,8 @@ def handle_user_input_sync(model, config, prompt):
                     "path_points": st.session_state.get("path_points", []),
                     "route_points": st.session_state.get("route_points", []),
                     "route_info": st.session_state.get("route_info", None),
-                    "record_id": None
+                    "record_id": None,
+                    "offers_link":offers_link if 'offers_link' in locals() else None
                 }
             )
             
@@ -665,9 +675,9 @@ def handle_user_input_sync(model, config, prompt):
                 st.error("Вы поставили 👎")
             # Прямое создание кнопки-ссылки
             try:
-                col3.link_button("🎁 Сгенерировать оффер", "https://google.com", key=f"generate_offer_{len(st.session_state['messages'])}")
+                col3.link_button("🎁 Сгенерировать оффер", f"{offers_link}", key=f"generate_offer_{len(st.session_state['messages'])}")
             except:
-                col3.markdown("[🎁 Сгенерировать оффер](https://google.com)")
+                col3.markdown(f"[🎁 Сгенерировать оффер]({offers_link})")
 
 
             # Сохраняем в базу данных

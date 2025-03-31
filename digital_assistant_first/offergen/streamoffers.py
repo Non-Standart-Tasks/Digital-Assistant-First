@@ -9,28 +9,8 @@ st.set_page_config(layout="wide")
 
 API_BASE = "http://185.221.163.214:8001"  # Адрес FastAPI
 
-# -----------------------------------------------------------------------
-# Фоновое изображение
-def set_bg_image(image_file: str):
-    """Устанавливает фоновое изображение."""
-    with open(image_file, "rb") as f:
-        data = f.read()
-    encoded = base64.b64encode(data).decode()
 
-    st.markdown(
-        f"""
-        <style>
-        .stApp {{
-            background: url("data:image/png;base64,{encoded}") no-repeat center fixed;
-            background-size: cover;
-        }}
-        </style>
-        """,
-        unsafe_allow_html=True
-    )
 
-# Применяем фон
-set_bg_image("background_empty.png")
 
 # -----------------------------------------------------------------------
 # Закругление углов (опционально)
@@ -72,8 +52,10 @@ if not user_id:
 else:
     offers = fetch_offers_by_user_id(user_id)
 
+    # Инициализация состояния
     if "offers" not in st.session_state:
         st.session_state.offers = offers.copy()
+        st.session_state.edit_mode = [False] * len(offers)
 
     st.title("Предложения")
 
@@ -97,9 +79,50 @@ else:
                 # Категория
                 st.caption(offer.get("category", ""))
 
-                # Описание с поддержкой HTML/Markdown
-                description = offer.get("description", "")
-                st.markdown(description, unsafe_allow_html=True)
+                # Кнопки перемещения
+                col_move1, col_move2 = st.columns([1, 1])
+                with col_move1:
+                    if i > 0 and st.button("<-", key=f"move_up_{i}"):
+                        st.session_state.offers[i], st.session_state.offers[i - 1] = (
+                            st.session_state.offers[i - 1],
+                            st.session_state.offers[i],
+                        )
+                        st.session_state.edit_mode[i], st.session_state.edit_mode[i - 1] = (
+                            st.session_state.edit_mode[i - 1],
+                            st.session_state.edit_mode[i],
+                        )
+                        st.rerun()
+
+                with col_move2:
+                    if i < len(st.session_state.offers) - 1 and st.button("->", key=f"move_down_{i}"):
+                        st.session_state.offers[i], st.session_state.offers[i + 1] = (
+                            st.session_state.offers[i + 1],
+                            st.session_state.offers[i],
+                        )
+                        st.session_state.edit_mode[i], st.session_state.edit_mode[i + 1] = (
+                            st.session_state.edit_mode[i + 1],
+                            st.session_state.edit_mode[i],
+                        )
+                        st.rerun()
+
+                # Режим редактирования описания
+                if st.session_state.edit_mode[i]:
+                    edited_description = st.text_area(
+                        f"Описание оффера #{i+1}",
+                        value=offer.get("description", ""),
+                        height=150,
+                        key=f"description_{i}"
+                    )
+                    if st.button("Сохранить", key=f"save_{i}"):
+                        st.session_state.offers[i]["description"] = edited_description
+                        st.session_state.edit_mode[i] = False
+                        st.success("Описание обновлено")
+                        st.rerun()
+                else:
+                    st.markdown(offer.get("description", ""), unsafe_allow_html=True)
+                    if st.button("Редактировать", key=f"edit_{i}"):
+                        st.session_state.edit_mode[i] = True
+                        st.rerun()
 
                 # Ссылка
                 url = offer.get("url", "#")
@@ -113,5 +136,8 @@ else:
     # Удаление карточек
     for index in sorted(remove_indices, reverse=True):
         del st.session_state.offers[index]
+        del st.session_state.edit_mode[index]
         st.rerun()
-st.write(st.__version__)    
+
+# Покажем версию Streamlit
+st.write("Streamlit version:", st.__version__)

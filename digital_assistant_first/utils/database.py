@@ -97,9 +97,13 @@ def get_chat_record_by_id(record_id: int) -> Optional[dict]:
 
 def generate_csv_from_db() -> str:
     """
-    Возвращает всю таблицу chat_history в формате CSV (одна строка).
+    Возвращает всю таблицу chat_history в формате CSV (одна строка) в кодировке UTF-8 с BOM.
     """
     buffer = io.StringIO()
+    
+    # BOM для корректного отображения в Excel
+    buffer.write('\ufeff')
+
     writer = csv.writer(buffer, delimiter=';')
 
     with sqlite3.connect(DB_PATH) as conn:

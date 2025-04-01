@@ -173,7 +173,7 @@ class AviasalesEconomyHelper:
                         f"| {depart_date} {depart_time} "
                         f"| {arr_date} {arr_time} |\n"
                     )
-                    print(md_str)
+                    # print(md_str)
         
         return md_str
 
@@ -189,7 +189,7 @@ class AviasalesEconomyHelper:
         aviasales_json["origin"] = origin
         aviasales_json["destination"] = destination
 
-        print(aviasales_json)
+        self.logger.info(f"Сформирован запрос для Aviasales: {aviasales_json}")
         
         query_json = self.ariadne.post(aviasales_json)
         if query_json is not None:

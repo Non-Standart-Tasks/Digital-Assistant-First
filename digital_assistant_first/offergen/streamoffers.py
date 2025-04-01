@@ -3,12 +3,23 @@ import requests
 import base64
 import io
 from PIL import Image, ImageDraw
+import streamlit.components.v1 as components
+import warnings
+import sys
+import os
 
+# Фильтрация всех warnings
+warnings.filterwarnings("ignore")
+
+# Перенаправление stderr (для подавления выводов в консоль)
+sys.stderr = open(os.devnull, "w")
+
+# Настройка уровня логирования
+os.environ["STREAMLIT_LOGGING_LEVEL"] = "ERROR"
 # Устанавливаем широкую верстку
 st.set_page_config(layout="wide")
 
 API_BASE = "http://185.221.163.214:8001"  # Адрес FastAPI
-
 
 # -----------------------------------------------------------------------
 # Закругление углов (опционально)
@@ -30,7 +41,6 @@ def round_corners(img: Image.Image, corner_radius: int = 30) -> Image.Image:
 
     return rounded
 
-
 # -----------------------------------------------------------------------
 # Получаем офферы из FastAPI
 @st.cache_data
@@ -40,7 +50,6 @@ def fetch_offers_by_user_id(u_id: str):
     if response.status_code == 200:
         return response.json()
     return []
-
 
 # -----------------------------------------------------------------------
 # Чтение user_id из query params
@@ -168,3 +177,79 @@ else:
         del st.session_state.edit_mode[index]
         st.rerun()
 
+    # ---------------------------------------------------------
+    # JS-код для экспорта страницы в PDF без кнопок
+    hide_js = """
+    <script>
+    function hideElementsBeforePrint() {
+        const buttons = document.querySelectorAll('button');
+        buttons.forEach(btn => {
+            if (btn.innerText.includes("режим редактирования") || btn.innerText.includes("Скачать в PDF")) {
+                btn.style.display = 'none';
+            }
+        });
+    }
+    window.hideElementsBeforePrint = hideElementsBeforePrint;
+
+    function exportToPDF() {
+        hideElementsBeforePrint();
+        window.print();
+    }
+    </script>
+    """
+
+    st.markdown(hide_js, unsafe_allow_html=True)
+
+    # Кнопка PDF (сама исчезает при печати)
+    components.html(
+        """
+        <style>
+        @media print {
+            html, body {
+                zoom: 70%;
+                margin: 0 !important;
+                padding: 0 !important;
+            }
+            body {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+
+            #pdf-download-button {
+                display: none !important;
+            }
+        }
+        </style>
+
+        <div style="text-align: right; margin-top: 2em;">
+            <button id="pdf-download-button" onclick="exportToPDF()" style="padding: 0.5em 1em; font-size: 16px; background-color: #4CAF50; color: white; border: none; border-radius: 8px; cursor: pointer;">
+                📄 Скачать в PDF
+            </button>
+        </div>
+
+        <script>
+        function exportToPDF() {
+            // Скрыть саму кнопку перед печатью
+            const thisButton = document.getElementById("pdf-download-button");
+            if (thisButton) {
+                thisButton.style.display = "none";
+            }
+
+            // Скрыть другие кнопки вне iframe (если есть)
+            const parentButtons = parent.document.querySelectorAll('button');
+            parentButtons.forEach(btn => {
+                if (btn.innerText.includes("режим редактирования") || btn.innerText.includes("Скачать в PDF")) {
+                    btn.style.display = 'none';
+                }
+            });
+
+            // Пауза, чтобы DOM успел обновиться, и запуск печати
+            setTimeout(() => {
+                parent.window.print();
+            }, 300);
+        }
+        </script>
+        """,
+        height=150,
+        scrolling=False
+    )

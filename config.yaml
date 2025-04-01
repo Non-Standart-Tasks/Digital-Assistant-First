@@ -8,7 +8,7 @@ collect_messages: 100  # Количество сообщений, сохраня
 link_checker: False  # Флаг для включения/отключения проверки ссылок
 use_openai_web_search: False  # Использование веб-поиска от OpenAI
 web_search_context_size: "low"  # Размер контекста для веб-поиска (low/medium/high)  
-
+presentation: True
 # Настройки генератора предложений
 offersgen:
   model: deepseek-chat  # Модель LLM для генерации предложений

@@ -10,8 +10,6 @@ st.set_page_config(layout="wide")
 API_BASE = "http://185.221.163.214:8001"  # Адрес FastAPI
 
 
-
-
 # -----------------------------------------------------------------------
 # Закругление углов (опционально)
 def round_corners(img: Image.Image, corner_radius: int = 30) -> Image.Image:
@@ -32,6 +30,7 @@ def round_corners(img: Image.Image, corner_radius: int = 30) -> Image.Image:
 
     return rounded
 
+
 # -----------------------------------------------------------------------
 # Получаем офферы из FastAPI
 @st.cache_data
@@ -41,6 +40,7 @@ def fetch_offers_by_user_id(u_id: str):
     if response.status_code == 200:
         return response.json()
     return []
+
 
 # -----------------------------------------------------------------------
 # Чтение user_id из query params
@@ -57,7 +57,14 @@ else:
         st.session_state.offers = offers.copy()
         st.session_state.edit_mode = [False] * len(offers)
 
-    st.title("Предложения")
+    if "show_controls" not in st.session_state:
+        st.session_state.show_controls = True
+
+    # Кнопка включения/выключения режима редактирования
+    if st.button("🔧 Показать/Скрыть режим редактирования"):
+        st.session_state.show_controls = not st.session_state.show_controls
+
+    st.title("Предложения" + (" (режим редактирования)" if st.session_state.show_controls else ""))
 
     # Две колонки
     cols = st.columns(2)
@@ -76,39 +83,61 @@ else:
                 except Exception as e:
                     st.error(f"Ошибка загрузки изображения: {e}")
 
+                # Загрузка нового изображения
+                if st.session_state.show_controls:
+                    uploaded_file = st.file_uploader(
+                        label="Перетащите новое изображение для замены",
+                        type=["png", "jpg", "jpeg"],
+                        key=f"file_uploader_{i}"
+                    )
+
+                    if uploaded_file is not None:
+                        try:
+                            new_img = Image.open(uploaded_file)
+                            buffered = io.BytesIO()
+                            new_img.save(buffered, format="PNG")
+                            img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+
+                            st.session_state.offers[i]["image"] = img_base64
+                            st.success("Изображение обновлено!")
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"Не удалось обработать изображение: {e}")
+
                 # Категория
                 st.caption(offer.get("category", ""))
 
                 # Кнопки перемещения
-                col_move1, col_move2 = st.columns([1, 1])
-                with col_move1:
-                    if i > 0 and st.button("<-", key=f"move_up_{i}"):
-                        st.session_state.offers[i], st.session_state.offers[i - 1] = (
-                            st.session_state.offers[i - 1],
-                            st.session_state.offers[i],
-                        )
-                        st.session_state.edit_mode[i], st.session_state.edit_mode[i - 1] = (
-                            st.session_state.edit_mode[i - 1],
-                            st.session_state.edit_mode[i],
-                        )
-                        st.rerun()
+                if st.session_state.show_controls:
+                    col_move1, col_move2 = st.columns([1, 1])
+                    with col_move1:
+                        if i > 0 and st.button("<-", key=f"move_up_{i}"):
+                            st.session_state.offers[i], st.session_state.offers[i - 1] = (
+                                st.session_state.offers[i - 1],
+                                st.session_state.offers[i],
+                            )
+                            st.session_state.edit_mode[i], st.session_state.edit_mode[i - 1] = (
+                                st.session_state.edit_mode[i - 1],
+                                st.session_state.edit_mode[i],
+                            )
+                            st.rerun()
 
-                with col_move2:
-                    if i < len(st.session_state.offers) - 1 and st.button("->", key=f"move_down_{i}"):
-                        st.session_state.offers[i], st.session_state.offers[i + 1] = (
-                            st.session_state.offers[i + 1],
-                            st.session_state.offers[i],
-                        )
-                        st.session_state.edit_mode[i], st.session_state.edit_mode[i + 1] = (
-                            st.session_state.edit_mode[i + 1],
-                            st.session_state.edit_mode[i],
-                        )
-                        st.rerun()
+                    with col_move2:
+                        if i < len(st.session_state.offers) - 1 and st.button("->", key=f"move_down_{i}"):
+                            st.session_state.offers[i], st.session_state.offers[i + 1] = (
+                                st.session_state.offers[i + 1],
+                                st.session_state.offers[i],
+                            )
+                            st.session_state.edit_mode[i], st.session_state.edit_mode[i + 1] = (
+                                st.session_state.edit_mode[i + 1],
+                                st.session_state.edit_mode[i],
+                            )
+                            st.rerun()
 
-                # Режим редактирования описания
+                # Редактирование описания
                 if st.session_state.edit_mode[i]:
                     edited_description = st.text_area(
-                        f"Описание оффера #{i+1}",
+                        f"Описание оффера #{i + 1}",
                         value=offer.get("description", ""),
                         height=150,
                         key=f"description_{i}"
@@ -120,7 +149,7 @@ else:
                         st.rerun()
                 else:
                     st.markdown(offer.get("description", ""), unsafe_allow_html=True)
-                    if st.button("Редактировать", key=f"edit_{i}"):
+                    if st.session_state.show_controls and st.button("Редактировать", key=f"edit_{i}"):
                         st.session_state.edit_mode[i] = True
                         st.rerun()
 
@@ -130,7 +159,7 @@ else:
                     st.markdown(f"[Подробнее]({url})", unsafe_allow_html=True)
 
                 # Кнопка удаления
-                if st.button("Удалить", key=f"del_{i}"):
+                if st.session_state.show_controls and st.button("Удалить", key=f"del_{i}"):
                     remove_indices.append(i)
 
     # Удаление карточек
@@ -139,5 +168,3 @@ else:
         del st.session_state.edit_mode[index]
         st.rerun()
 
-# Покажем версию Streamlit
-st.write("Streamlit version:", st.__version__)

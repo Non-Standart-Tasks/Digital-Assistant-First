@@ -333,7 +333,8 @@ def model_response_generator_sync(model, config, status_placeholder):
                 offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data))
                 offers_text = offers_response.final_output
                 if offers_data != "No relevant offers were found for the search request.":
-                    if config['presentation'] == True:
+                    st.write(config)
+                    if config.get('presentation') == True:
                         try:
                             response = requests.post("http://185.221.163.214:8001/generate_link", json=offer_json)
                             response.raise_for_status()
@@ -341,7 +342,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                             logger.info(f"Ссылка на Streamlit-приложение: {link}")
                         except Exception as e:
                             logger.error(f"Ошибка при отправке данных в микросервис: {e}")
-                    else: 
+                    else:
                         link = 'https://google.com'
                     #logger.info(f'проверка перед отправкой в JSON{offer_json}')
                     offers_data = {
@@ -620,7 +621,7 @@ def handle_user_input_sync(model, config, prompt):
                             
                     # Обновляем полный текст ответа
                     response_text = display_text
-                    
+                    full_response_text = full_response_text + '\n\n' + display_text
                 except Exception as e:
                     logger.error(f"Error generating offers: {str(e)}", exc_info=True)
                     st.error("Произошла ошибка при генерации офферов.")

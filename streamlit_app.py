@@ -72,7 +72,8 @@ def apply_configuration():
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
         "offers_enabled": st.session_state["offers_enabled"],
         "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"],
-        "global_prompt": st.session_state["global_prompt"]
+        "global_prompt": st.session_state["global_prompt"],
+        "system_prompt_tickets_for_aviasales_economy_helper": st.session_state["system_prompt_tickets_for_aviasales_economy_helper"]
     }
 
     st.session_state["config"] = config
@@ -152,7 +153,8 @@ def main():
         "offers_enabled": False,  # По умолчанию офферы отключены
         "maps_2gis_enabled": False,
         "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
-        "global_prompt": config_yaml["global_prompt"]
+        "global_prompt": config_yaml["global_prompt"],
+        "system_prompt_tickets_for_aviasales_economy_helper": config_yaml["system_prompt_tickets_for_aviasales_economy_helper"]
     }
 
     initialize_session_state(defaults)

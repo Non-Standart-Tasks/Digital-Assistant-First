@@ -156,11 +156,12 @@ def display_chat_history():
                         st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
                         st.rerun()
                     # Добавляем кнопку генерации оффера
-                    col3.link_button(
-                        "🎁 Сгенерировать оффер", 
-                        st.session_state["messages"][i].get("offers_link", "https://google.com"), 
-                        use_container_width=True
-                    )
+                    if st.session_state["messages"][i].get("offers_link") != None:
+                        col3.link_button(
+                            "🎁 Сгенерировать оффер", 
+                            st.session_state["messages"][i].get("offers_link"), 
+                            use_container_width=True
+                        )
         
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])
@@ -333,7 +334,6 @@ def model_response_generator_sync(model, config, status_placeholder):
                 offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data))
                 offers_text = offers_response.final_output
                 if offers_data != "No relevant offers were found for the search request.":
-                    st.write(config)
                     if config.get('presentation') == True:
                         try:
                             response = requests.post("http://185.221.163.214:8001/generate_link", json=offer_json)
@@ -677,11 +677,16 @@ def handle_user_input_sync(model, config, prompt):
                 st.success("Вы поставили 👍")
             if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
                 st.error("Вы поставили 👎")
-            # Прямое создание кнопки-ссылки
-            try:
-                col3.link_button("🎁 Сгенерировать оффер", f"{offers_link}", key=f"generate_offer_{len(st.session_state['messages'])}")
-            except:
-                col3.markdown(f"[🎁 Сгенерировать оффер]({offers_link})")
+            
+            # Кнопка генерации оффера
+            offers_link = st.session_state["messages"][-1].get("offers_link")
+
+            if offers_link != None:
+                col3.link_button(
+                    "🎁 Сгенерировать оффер",
+                    offers_link,
+                    use_container_width=True
+                )
 
 
             # Сохраняем в базу данных

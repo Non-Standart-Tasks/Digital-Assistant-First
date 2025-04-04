@@ -1,13 +1,13 @@
 # Основные настройки сервиса
 internet_search: True  # Флаг для включения/отключения поиска через SERP API
 aviasales_search: False  # Флаг для включения/отключения поиска через API Aviasales 
-model: 'gpt-4o-mini'  # Модель LLM для основных запросов
+model: 'gpt-4o'  # Модель LLM для основных запросов
 2gis-key: '0a931e51-467b-4e43-a112-42e217cff910'  # API ключ для сервиса 2ГИС
 telegram_enabled: False  # Флаг для включения/отключения интеграции с Telegram
 collect_messages: 100  # Количество сообщений, сохраняемых в истории для контекста
 link_checker: False  # Флаг для включения/отключения проверки ссылок
 use_openai_web_search: False  # Использование веб-поиска от OpenAI
-web_search_context_size: "low"  # Размер контекста для веб-поиска (low/medium/high)  
+web_search_context_size: "high"  # Размер контекста для веб-поиска (low/medium/high)  
 
 # Настройки генератора предложений
 offersgen:

@@ -259,7 +259,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             
         # Для category = поездки или офферы получим необходимые данные
         # aviasales_flight_info мы будем заменять!!!
-        if request_category == "поездки" or request_category == "другое":
+        if request_category == "поездки":
             aviasales_tool = AviasalesHandler()
             tickets_need = loop.run_until_complete(aviasales_tool.aviasales_request(model, config, user_input))
             
@@ -355,7 +355,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                 ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
 
                 """,
-                model='gpt-4o-mini',
+                model='gpt-4o',
                 tools=[WebSearchTool(search_context_size=web_search_context_size)])
             
             web_search_response = Runner.run_sync(agent_web_seach, user_input)
@@ -601,7 +601,7 @@ def handle_user_input_sync(model, config, prompt):
                     display_text = stream_text(offers_section, display_text)  # Pass current display_text
                             
                     # Обновляем полный текст ответа
-                    response_text = display_text
+                    full_response_text = full_response_text + offers_section
                     
                 except Exception as e:
                     logger.error(f"Error generating offers: {str(e)}", exc_info=True)
@@ -634,7 +634,7 @@ def handle_user_input_sync(model, config, prompt):
             st.session_state["messages"].append(
                 {
                     "role": "assistant", 
-                    "content": response_text,  # Теперь включает офферы в конце
+                    "content": full_response_text,  # Теперь включает офферы в конце
                     "question": prompt,
                     "request_category": response.get("request_category", ""),
                     "show_map": st.session_state.get("show_map", False),
@@ -661,7 +661,7 @@ def handle_user_input_sync(model, config, prompt):
             # Сохраняем в базу данных
             record_id = insert_chat_history_return_id(
                 user_query=prompt,
-                model_response=response_text,  # Сохраняем полный текст, включая информацию о местах
+                model_response=full_response_text,  # Сохраняем полный текст, включая информацию о местах
                 mode=config["mode"],
                 rating=None
             )

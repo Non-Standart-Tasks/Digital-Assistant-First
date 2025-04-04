@@ -80,10 +80,9 @@ def apply_configuration():
     time.sleep(2)
     st.rerun()
 
-
 def display_banner_and_title():
     """Отображение баннера и заголовка."""
-    st.image("https://i.ibb.co/yPcRsgx/AMA.png", use_container_width=True, width=3000)
+    st.image("https://i.ibb.co/0V2hxrwn/2025-04-03-16-11-31.png", use_container_width=True, width=3000)
     st.title("Цифровой Помощник AMA")
 
 

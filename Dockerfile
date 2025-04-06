@@ -1,16 +1,21 @@
 # Stage 1: Build
 FROM python:3.11.11-slim AS builder
 
+ENV UV_LINK_MODE=copy
+ENV UV_CACHE_DIR=/root/.cache/uv
+VOLUME /root/.cache/uv
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     build-essential \
+    python3-pip \
+    && pip install uv \
     && rm -rf /var/lib/apt/lists/*
 
-RUN pip install "poetry==2.1.1"
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 
 WORKDIR /app
-COPY pyproject.toml poetry.lock ./
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-interaction --no-root
+COPY pyproject.toml uv.lock ./
+RUN uv sync
 
 # Stage 2: Runtime
 FROM python:3.11.11-slim
@@ -25,4 +30,4 @@ COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/pytho
 COPY --from=builder /usr/local/bin /usr/local/bin
 COPY . .
 
-CMD poetry run streamlit run streamlit_app.py --server.port $STREAMLIT_SERVER_PORT --server.address 0.0.0.0
+CMD uv run streamlit run streamlit_app.py --server.port $STREAMLIT_SERVER_PORT --server.address 0.0.0.0

@@ -3,11 +3,22 @@ from typing import Dict, List, Any, Optional
 
 from pydantic import BaseModel, Field
 from pydantic_ai import Agent
+from pydantic_ai.models.openai import OpenAIModel
+from pydantic_ai.providers.deepseek import DeepSeekProvider
+
 import logfire
 import requests
 
 
 from digital_assistant_first.offergen import Offer, offersgen_config
+
+if offersgen_config['model'] == 'deepseek-chat':
+    offersgen_config['model'] = OpenAIModel(
+        'deepseek-chat',
+        provider=DeepSeekProvider(
+            api_key="sk-13dd9563da2d435ebd38c2693dd78c6f"
+        ),
+    )
 
 # disabling logfire for now
 logfire.configure(send_to_logfire="if-token-present")

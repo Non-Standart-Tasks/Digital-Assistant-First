@@ -28,6 +28,7 @@ from digital_assistant_first.telegram_system.telegram_initialization import (
     fetch_telegram_data,
 )
 from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
+from digital_assistant_first.utils.aviasales_economy_helper import AviasalesEconomyHelper
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data, build_route_from_query
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_offers_data
@@ -143,7 +144,7 @@ def display_chat_history():
                 
                 record_id = message.get("record_id")
                 if record_id:
-                    col1, col2 = st.columns(2)
+                    col1, col2, col3 = st.columns(3)
 
                     if col1.button("👍", key=f"thumbs_up_{i}"):
                         update_chat_history_rating_by_id(record_id, "+")
@@ -154,6 +155,12 @@ def display_chat_history():
                         update_chat_history_rating_by_id(record_id, "-")
                         st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
                         st.rerun()
+                    # Добавляем кнопку генерации оффера
+                    col3.link_button(
+                        "🎁 Сгенерировать оффер", 
+                        "https://google.com", 
+                        use_container_width=True
+                    )
         
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])
@@ -191,7 +198,7 @@ def model_response_generator_sync(model, config, status_placeholder):
         - кейтеринг (если запрос о выездном обслуживании, доставке готовых блюд на мероприятие)
         - ивенты (если запрос о мероприятиях, концертах, выставках, фестивалях)
         - маршруты (если запрос о том, как построить маршрут, проложить путь между местами)
-        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, железнодорожных билетах)
+        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, перелетах, железнодорожных билетах)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
     """,
     model="gpt-4o-mini",
@@ -260,24 +267,30 @@ def model_response_generator_sync(model, config, status_placeholder):
             
         # Для category = поездки или офферы получим необходимые данные
         # aviasales_flight_info мы будем заменять!!!
+
         if request_category == "поездки":
-            aviasales_tool = AviasalesHandler()
-            tickets_need = loop.run_until_complete(aviasales_tool.aviasales_request(model, config, user_input))
+            aviasales_helper = AviasalesEconomyHelper(model, config, logger)
+            aviasales_flight_info = aviasales_helper.process_user_input(user_input, st)
+
+        # # [Old Aviasales Handler]:
+        # if request_category == "поездки" or request_category == "другое":
+        #     aviasales_tool = AviasalesHandler()
+        #     tickets_need = loop.run_until_complete(aviasales_tool.aviasales_request(model, config, user_input))
             
-            if tickets_need.get("response", "").lower() == "true":
-                aviasales_url = aviasales_tool.construct_aviasales_url(
-                    tickets_need["departure_city"],
-                    tickets_need["destination"],
-                    tickets_need["start_date"],
-                    tickets_need["end_date"],
-                    tickets_need.get("adult_passengers", 1),
-                    tickets_need.get("child_passengers", 0),
-                    tickets_need.get("travel_class", ""),
-                )
-                if config.get("aviasales_search") == "True":
-                    aviasales_flight_info = loop.run_until_complete(
-                        aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
-                    )
+        #     if tickets_need.get("response", "").lower() == "true":
+        #         aviasales_url = aviasales_tool.construct_aviasales_url(
+        #             tickets_need["departure_city"],
+        #             tickets_need["destination"],
+        #             tickets_need["start_date"],
+        #             tickets_need["end_date"],
+        #             tickets_need.get("adult_passengers", 1),
+        #             tickets_need.get("child_passengers", 0),
+        #             tickets_need.get("travel_class", ""),
+        #         )
+        #         if config.get("aviasales_search") == "True":
+        #             aviasales_flight_info = loop.run_until_complete(
+        #                 aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
+        # )
         
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
         # Код для офферов - тут гоняем РАГ
@@ -347,7 +360,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             
             agent_web_seach = Agent(
                 name="Assistant",
-                instructions=f"""
+                instructions="""
                 Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
                 
                 Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
@@ -376,9 +389,15 @@ def model_response_generator_sync(model, config, status_placeholder):
         loop.close()
         
     if config.get("deepsearch", False):
+        if request_category == "поездки" or request_category == "другое":
+            if aviasales_flight_info:
+                deepsearch_res += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
+            else:
+                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены."
+
         return {
         "answer": deepsearch_res,
-        "aviasales_link": aviasales_url,
+        # "aviasales_link": aviasales_url,
         "table_data": table_data,
         "pydeck_data": pydeck_data,
         "request_category": request_category,
@@ -386,9 +405,15 @@ def model_response_generator_sync(model, config, status_placeholder):
     }
 
     else:
+        if request_category == "поездки" or request_category == "другое":
+            if aviasales_flight_info:
+                web_search_response += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
+            else:
+                web_search_response += "\n\nАвиабилеты по данному запросу не найдены."
+
         return {
         "answer": web_search_response,
-        "aviasales_link": aviasales_url,
+        # "aviasales_link": aviasales_url,
         "table_data": table_data,
         "pydeck_data": pydeck_data,
         "request_category": request_category,
@@ -599,6 +624,7 @@ def handle_user_input_sync(model, config, prompt):
                     logger.info(f"Offers data: {offers_text}")  # Debug log
                     
                     offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
+                    
                     display_text = stream_text(offers_section, display_text)  # Pass current display_text
                             
                     # Обновляем полный текст ответа
@@ -653,11 +679,17 @@ def handle_user_input_sync(model, config, prompt):
             )
             
             # Добавляем оценку ответа
-            col1, col2 = st.columns(2)
+            col1, col2, col3 = st.columns(3)
             if col1.button("👍", key=f"thumbs_up_{len(st.session_state['messages'])}"):
                 st.success("Вы поставили 👍")
             if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
-                st.error("Вы поставили 👎")  
+                st.error("Вы поставили 👎")
+            # Прямое создание кнопки-ссылки
+            try:
+                col3.link_button("🎁 Сгенерировать оффер", "https://google.com", key=f"generate_offer_{len(st.session_state['messages'])}")
+            except:
+                col3.markdown("[🎁 Сгенерировать оффер](https://google.com)")
+
 
             # Сохраняем в базу данных
             record_id = insert_chat_history_return_id(

@@ -172,7 +172,8 @@ def model_response_generator_sync(model, config, status_placeholder):
             for msg in st.session_state["messages"]
             if msg.get("role") != "system"
         ]
-        history_size = int(config.get("history_size", 0))
+        #history_size = int(config.get("history_size", 0))
+        history_size = 2
         if history_size:
             history_messages = history_messages[-history_size:]
         message_history = "\n".join(history_messages)
@@ -358,7 +359,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                 model='gpt-4o',
                 tools=[WebSearchTool(search_context_size=web_search_context_size)])
             
-            web_search_response = Runner.run_sync(agent_web_seach, user_input)
+            web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)
             web_search_response = web_search_response.final_output
             
             print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")

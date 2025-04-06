@@ -13,8 +13,13 @@ import logging
 from pathlib import Path
 import asyncio
 from functools import partial
+from digital_assistant_first.utils.logging import setup_logging, log_api_call
+from digital_assistant_first.utils.check_serp_response import APIKeyManager
+from digital_assistant_first.internet_search import yandex_search
 
 client = AsyncOpenAI(api_key="sk-13dd9563da2d435ebd38c2693dd78c6f", base_url="https://api.deepseek.com")
+logger = setup_logging(logging_path="logs/digital_assistant.log")
+serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 
 set_tracing_disabled(disabled=True)
 
@@ -423,6 +428,12 @@ category_rules = {
                     Контакты: """
 }
 
+async def fetch_internet_data(link, address_of_vars):
+    _, serpapi_key = serpapi_key_manager.get_best_api_key()
+        
+    yandex_res = await yandex_search(link + ' ' + address_of_vars, serpapi_key)
+    return str(yandex_res)
+
 def setup_logging():
     log_dir = Path("logs")
     log_dir.mkdir(exist_ok=True)
@@ -457,8 +468,9 @@ async def process_establishment(name: str, links: list[str], address_of_vars: st
         for link in links:
             try:
                 status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-                search = DuckDuckGoSearchResults()
-                text = search.invoke(link + ' ' + address_of_vars)
+                #search = DuckDuckGoSearchResults()
+                #text = search.invoke(link + ' ' + address_of_vars)
+                text = await fetch_internet_data(link, address_of_vars)
                 global_text += '\n' + text
                 time.sleep(3)
             except Exception as e:

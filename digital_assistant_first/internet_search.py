@@ -174,8 +174,8 @@ async def yandex_search(q, serpapi_key):
             "api_key": serpapi_key,
         }
 
-        search = GoogleSearch(params)
-        results = search.get_dict()
+        client = SerpApiClient(api_key=serpapi_key)
+        results = await client.search(params)
 
         results_with_titles_and_links = [
             (item["title"], item["link"], item["snippet"], item["displayed_link"])
@@ -189,4 +189,4 @@ async def yandex_search(q, serpapi_key):
         log_api_call(
             logger=logger, source="SerpAPI Yandex", request=q, response="", error=str(e)
         )
-        raise
+        return []

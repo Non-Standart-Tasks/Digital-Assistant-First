@@ -49,6 +49,7 @@ def initialize_session_state(defaults):
 def apply_configuration():
     """Применить выбранную конфигурацию и обновить состояние сессии."""
     config = {
+        'presentation': st.session_state["presentation"],
         "Model": st.session_state["selected_model"],
         "Chain_type": st.session_state["selected_chain_type"],
         "System_type": st.session_state["selected_system"],
@@ -128,6 +129,7 @@ def main():
     config_yaml = load_config_yaml()
 
     defaults = {
+        'presentation': config_yaml["presentation"],
         "config_applied": False,
         "config": None,
         "selected_model": config_yaml["model"],

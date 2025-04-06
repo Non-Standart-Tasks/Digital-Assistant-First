@@ -7,7 +7,8 @@ telegram_enabled: False  # Флаг для включения/отключени
 collect_messages: 100  # Количество сообщений, сохраняемых в истории для контекста
 link_checker: False  # Флаг для включения/отключения проверки ссылок
 use_openai_web_search: False  # Использование веб-поиска от OpenAI
-web_search_context_size: "high"  # Размер контекста для веб-поиска (low/medium/high)  
+web_search_context_size: "high"  # Размер контекста для веб-поиска (low/medium/high) 
+presentation: True  # Флаг для включения/отключения презентации
 
 # Настройки генератора предложений
 offersgen:

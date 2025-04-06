@@ -1,0 +1,143 @@
+import streamlit as st
+import requests
+import base64
+import io
+from PIL import Image, ImageDraw
+
+# Устанавливаем широкую верстку
+st.set_page_config(layout="wide")
+
+API_BASE = "http://185.221.163.214:8001"  # Адрес FastAPI
+
+
+
+
+# -----------------------------------------------------------------------
+# Закругление углов (опционально)
+def round_corners(img: Image.Image, corner_radius: int = 30) -> Image.Image:
+    img = img.convert("RGBA")
+    width, height = img.size
+    mask = Image.new('L', (width, height), 0)
+    draw = ImageDraw.Draw(mask)
+
+    draw.rectangle([(corner_radius, 0), (width - corner_radius, height)], fill=255)
+    draw.rectangle([(0, corner_radius), (width, height - corner_radius)], fill=255)
+    draw.pieslice([(0, 0), (corner_radius * 2, corner_radius * 2)], 180, 270, fill=255)
+    draw.pieslice([(width - corner_radius * 2, 0), (width, corner_radius * 2)], 270, 360, fill=255)
+    draw.pieslice([(0, height - corner_radius * 2), (corner_radius * 2, height)], 90, 180, fill=255)
+    draw.pieslice([(width - corner_radius * 2, height - corner_radius * 2), (width, height)], 0, 90, fill=255)
+
+    rounded = Image.new('RGBA', (width, height), (0, 0, 0, 0))
+    rounded.paste(img, mask=mask)
+
+    return rounded
+
+# -----------------------------------------------------------------------
+# Получаем офферы из FastAPI
+@st.cache_data
+def fetch_offers_by_user_id(u_id: str):
+    """Получение офферов по user_id."""
+    response = requests.get(f"{API_BASE}/get_offers/{u_id}")
+    if response.status_code == 200:
+        return response.json()
+    return []
+
+# -----------------------------------------------------------------------
+# Чтение user_id из query params
+query_params = st.experimental_get_query_params()
+user_id = query_params.get("user_id", [None])[0]
+
+if not user_id:
+    st.warning("Не передан user_id в URL. Пример: ?user_id=abc-123")
+else:
+    offers = fetch_offers_by_user_id(user_id)
+
+    # Инициализация состояния
+    if "offers" not in st.session_state:
+        st.session_state.offers = offers.copy()
+        st.session_state.edit_mode = [False] * len(offers)
+
+    st.title("Предложения")
+
+    # Две колонки
+    cols = st.columns(2)
+    remove_indices = []
+
+    # Рендер карточек
+    for i, offer in enumerate(st.session_state.offers):
+        col = cols[i % 2]
+        with col:
+            with st.container():
+                # Картинка
+                try:
+                    img_data = base64.b64decode(offer["image"])
+                    img = Image.open(io.BytesIO(img_data))
+                    st.image(img, use_container_width=True)
+                except Exception as e:
+                    st.error(f"Ошибка загрузки изображения: {e}")
+
+                # Категория
+                st.caption(offer.get("category", ""))
+
+                # Кнопки перемещения
+                col_move1, col_move2 = st.columns([1, 1])
+                with col_move1:
+                    if i > 0 and st.button("<-", key=f"move_up_{i}"):
+                        st.session_state.offers[i], st.session_state.offers[i - 1] = (
+                            st.session_state.offers[i - 1],
+                            st.session_state.offers[i],
+                        )
+                        st.session_state.edit_mode[i], st.session_state.edit_mode[i - 1] = (
+                            st.session_state.edit_mode[i - 1],
+                            st.session_state.edit_mode[i],
+                        )
+                        st.rerun()
+
+                with col_move2:
+                    if i < len(st.session_state.offers) - 1 and st.button("->", key=f"move_down_{i}"):
+                        st.session_state.offers[i], st.session_state.offers[i + 1] = (
+                            st.session_state.offers[i + 1],
+                            st.session_state.offers[i],
+                        )
+                        st.session_state.edit_mode[i], st.session_state.edit_mode[i + 1] = (
+                            st.session_state.edit_mode[i + 1],
+                            st.session_state.edit_mode[i],
+                        )
+                        st.rerun()
+
+                # Режим редактирования описания
+                if st.session_state.edit_mode[i]:
+                    edited_description = st.text_area(
+                        f"Описание оффера #{i+1}",
+                        value=offer.get("description", ""),
+                        height=150,
+                        key=f"description_{i}"
+                    )
+                    if st.button("Сохранить", key=f"save_{i}"):
+                        st.session_state.offers[i]["description"] = edited_description
+                        st.session_state.edit_mode[i] = False
+                        st.success("Описание обновлено")
+                        st.rerun()
+                else:
+                    st.markdown(offer.get("description", ""), unsafe_allow_html=True)
+                    if st.button("Редактировать", key=f"edit_{i}"):
+                        st.session_state.edit_mode[i] = True
+                        st.rerun()
+
+                # Ссылка
+                url = offer.get("url", "#")
+                if url:
+                    st.markdown(f"[Подробнее]({url})", unsafe_allow_html=True)
+
+                # Кнопка удаления
+                if st.button("Удалить", key=f"del_{i}"):
+                    remove_indices.append(i)
+
+    # Удаление карточек
+    for index in sorted(remove_indices, reverse=True):
+        del st.session_state.offers[index]
+        del st.session_state.edit_mode[index]
+        st.rerun()
+
+# Покажем версию Streamlit
+st.write("Streamlit version:", st.__version__)

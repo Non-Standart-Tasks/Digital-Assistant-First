@@ -279,18 +279,23 @@ def model_response_generator_sync(model, config, status_placeholder):
         # # [Old Aviasales Handler]: 
         
         if not aviasales_url: # using as a fallback
-            aviasales_tool_for_link = AviasalesHandler()
-            tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
-            if tickets_need.get("response", "").lower() == "true":
-                aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
-                    tickets_need["departure_city"],
-                    tickets_need["destination"],
-                    tickets_need["start_date"],
-                    tickets_need["end_date"],
-                    tickets_need.get("adult_passengers", 1),
-                    tickets_need.get("child_passengers", 0),
-                    tickets_need.get("travel_class", ""),
-                ) 
+            if not aviasales_flight_info:
+                aviasales_url = ""
+            else: # basically will never go here
+                aviasales_tool_for_link = AviasalesHandler()
+                tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
+                if tickets_need.get("response", "").lower() == "true":
+                    aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
+                        tickets_need["departure_city"],
+                        tickets_need["destination"],
+                        tickets_need["start_date"],
+                        tickets_need["end_date"],
+                        tickets_need.get("adult_passengers", 1),
+                        tickets_need.get("child_passengers", 0),
+                        tickets_need.get("travel_class", ""),
+                    ) 
+                if "None" in aviasales_url:
+                    aviasales_url = ""
 
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
         # Код для офферов - тут гоняем РАГ

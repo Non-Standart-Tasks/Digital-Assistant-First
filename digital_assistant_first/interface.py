@@ -343,7 +343,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                         except Exception as e:
                             logger.error(f"Ошибка при отправке данных в микросервис: {e}")
                     else:
-                        link = 'https://google.com'
+                        link = 'https://vtbfamily.ru/auth'
                     #logger.info(f'проверка перед отправкой в JSON{offer_json}')
                     offers_data = {
                         "offers_text": offers_text,

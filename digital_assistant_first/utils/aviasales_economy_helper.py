@@ -138,6 +138,7 @@ class AviasalesEconomyHelper:
         
         try:
             res_data = ariadne_res["tickets"]
+            # self.logger.info(res_data)
             if len(res_data) > 0:
                 places_data = ariadne_res["places"]
                 if places_data:
@@ -167,7 +168,7 @@ class AviasalesEconomyHelper:
 
                             if idx == 0:
                                 md_str += (
-                                    f"| **{badge}** "
+                                    f"| {'**'+badge+'**' if badge.strip() else ''} "
                                     # f"| {k['data']['value']} "
                                     # f"| {'включен' if k['data']['with_baggage'] else 'не включен'} "
                                     # f"| {k['data']['provider']} "

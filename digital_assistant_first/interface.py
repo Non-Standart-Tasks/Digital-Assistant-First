@@ -274,24 +274,23 @@ def model_response_generator_sync(model, config, status_placeholder):
 
         if request_category == "поездки":
             aviasales_helper = AviasalesEconomyHelper(model, config, logger)
-            aviasales_flight_info, aviasales_url_base = aviasales_helper.process_user_input(user_input, st)
+            aviasales_flight_info, aviasales_url = aviasales_helper.process_user_input(user_input, st)
 
         # # [Old Aviasales Handler]: 
-        aviasales_tool_for_link = AviasalesHandler()
-        tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
         
-        if tickets_need.get("response", "").lower() == "true":
-            aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
-                tickets_need["departure_city"],
-                tickets_need["destination"],
-                tickets_need["start_date"],
-                tickets_need["end_date"],
-                tickets_need.get("adult_passengers", 1),
-                tickets_need.get("child_passengers", 0),
-                tickets_need.get("travel_class", ""),
-            )
-        if "None" in aviasales_url or not aviasales_url:
-            aviasales_url = aviasales_url_base # using as a fallback
+        if not aviasales_url: # using as a fallback
+            aviasales_tool_for_link = AviasalesHandler()
+            tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
+            if tickets_need.get("response", "").lower() == "true":
+                aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
+                    tickets_need["departure_city"],
+                    tickets_need["destination"],
+                    tickets_need["start_date"],
+                    tickets_need["end_date"],
+                    tickets_need.get("adult_passengers", 1),
+                    tickets_need.get("child_passengers", 0),
+                    tickets_need.get("travel_class", ""),
+                ) 
 
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
         # Код для офферов - тут гоняем РАГ
@@ -405,7 +404,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             if aviasales_flight_info:
                 deepsearch_res += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
             else:
-                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены."
+                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить даты."
 
         return {
         "answer": deepsearch_res,
@@ -421,7 +420,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             if aviasales_flight_info:
                 web_search_response += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
             else:
-                web_search_response += "\n\nАвиабилеты по данному запросу не найдены."
+                web_search_response += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить даты."
 
         return {
         "answer": web_search_response,

@@ -109,7 +109,6 @@ else:
 
                             st.session_state.offers[i]["image"] = img_base64
                             st.success("Изображение обновлено!")
-                            st.rerun()
                         except Exception as e:
                             st.error(f"Не удалось обработать изображение: {e}")
 

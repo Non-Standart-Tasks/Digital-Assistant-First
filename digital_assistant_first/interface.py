@@ -219,7 +219,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     aviasales_url = ""
     aviasales_flight_info = ""
 
-    global_prompt = config.get("global_prompt", "").format(context=message_history)
+    #global_prompt = config.get("global_prompt", "").format(context=message_history)
     
     # Создаем loop для асинхронных вызовов внутри синхронной функции
     # В одном месте вместо распределенных вызовов
@@ -352,7 +352,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                             logger.error(f"Ошибка при отправке данных в микросервис: {e}")
                     else:
                         link = 'https://google.com'
-                    #logger.info(f'проверка перед отправкой в JSON{offer_json}')
+                    
                     offers_data = {
                         "offers_text": offers_text,
                         "validation_result": validation_result,

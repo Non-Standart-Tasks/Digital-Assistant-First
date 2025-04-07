@@ -477,7 +477,7 @@ def handle_user_input_sync(model, config, prompt):
                 
             # Отображаем данные Aviasales, если они есть
             if "aviasales_link" in response and response["aviasales_link"] and response["aviasales_link"].strip():
-                aviasales_text = f"\n\n### Данные из Авиасейлс \n **Ссылка** - {response['aviasales_link']}"
+                aviasales_text = f"\n\n### Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}"
             
             # Если категория запроса - рестораны или ивенты И включен поиск по 2GIS, получаем данные 2GIS
             table_data = []

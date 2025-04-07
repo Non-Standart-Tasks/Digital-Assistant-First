@@ -108,7 +108,9 @@ else:
                             img_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
 
                             st.session_state.offers[i]["image"] = img_base64
+                            
                             st.success("Изображение обновлено!")
+                            st.rerun()
                         except Exception as e:
                             st.error(f"Не удалось обработать изображение: {e}")
 

@@ -274,9 +274,10 @@ def model_response_generator_sync(model, config, status_placeholder):
 
         if request_category == "поездки":
             aviasales_helper = AviasalesEconomyHelper(model, config, logger)
-            aviasales_flight_info = aviasales_helper.process_user_input(user_input, st)
+            aviasales_flight_info, aviasales_url = aviasales_helper.process_user_input(user_input, st)
 
         # # [Old Aviasales Handler]:
+        if not aviasales_url: # using as a fallback
             aviasales_tool_for_link = AviasalesHandler()
             tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
             
@@ -477,7 +478,7 @@ def handle_user_input_sync(model, config, prompt):
                 
             # Отображаем данные Aviasales, если они есть
             if "aviasales_link" in response and response["aviasales_link"] and response["aviasales_link"].strip():
-                aviasales_text = f"\n\n### Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}"
+                aviasales_text = f"\n\n#### Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}"
             
             # Если категория запроса - рестораны или ивенты И включен поиск по 2GIS, получаем данные 2GIS
             table_data = []

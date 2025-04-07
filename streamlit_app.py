@@ -3,19 +3,19 @@
 import logging
 import time
 import yaml
-import asyncio
+#import asyncio
 
 # Импорты сторонних библиотек
 import streamlit as st
 from digital_assistant_first.utils.database import init_db 
 from dotenv import load_dotenv
-from langchain_openai import ChatOpenAI
+#from langchain_openai import ChatOpenAI
 from digital_assistant_first.interface import *
-from langchain_core.documents import Document
+#from langchain_core.documents import Document
 from digital_assistant_first.utils.database import generate_csv_from_db
-from digital_assistant_first.telegram_system.telegram_data_initializer import (
-    update_telegram_messages,
-)
+#from digital_assistant_first.telegram_system.telegram_data_initializer import (
+#    update_telegram_messages,
+#)
 
 
 
@@ -129,7 +129,6 @@ def main():
     config_yaml = load_config_yaml()
 
     defaults = {
-        'presentation': config_yaml["presentation"],
         "config_applied": False,
         "config": None,
         "selected_model": config_yaml["model"],
@@ -155,7 +154,8 @@ def main():
         "maps_2gis_enabled": False,
         "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
         "global_prompt": config_yaml["global_prompt"],
-        "system_prompt_tickets_for_aviasales_economy_helper": config_yaml["system_prompt_tickets_for_aviasales_economy_helper"]
+        "system_prompt_tickets_for_aviasales_economy_helper": config_yaml["system_prompt_tickets_for_aviasales_economy_helper"],
+        "presentation": config_yaml["presentation"],
     }
 
     initialize_session_state(defaults)

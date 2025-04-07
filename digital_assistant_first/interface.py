@@ -221,7 +221,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     deepsearch_res = ""
     web_search_response = ""
 
-    global_prompt = config.get("global_prompt", "").format(context=message_history)
+    #global_prompt = config.get("global_prompt", "").format(context=message_history)
     
     # Создаем loop для асинхронных вызовов внутри синхронной функции
     # В одном месте вместо распределенных вызовов
@@ -349,7 +349,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                         except Exception as e:
                             logger.error(f"Ошибка при отправке данных в микросервис: {e}")
                     else:
-                        link = 'https://google.com'
+                        link = 'https://vtbfamily.ru/auth'
                     #logger.info(f'проверка перед отправкой в JSON{offer_json}')
                     offers_data = {
                         "offers_text": offers_text,

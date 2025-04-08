@@ -218,7 +218,6 @@ def test_aviasales_no_outp_err(initialized_app):
 
     # Включаем 4й тоггл — это "Включить поиск по авиабилетам"
     result = at.toggle[3].set_value(True).run(timeout=TIMEOUT)
-    logger.info(f"[HERE] {result.session_state}")
 
     # Проверяем, что флаг в session_state выставлен
     assert "aviasales_enabled" in result.session_state, "Флаг aviasales_enabled не активировался"
@@ -273,9 +272,13 @@ def test_2gis_data_display(initialized_app):
     TEST_MESSAGE = "Мясные рестораны на Мясницкой"
     logger.info(f"Отправка запроса о ресторанах: {TEST_MESSAGE}")
     
-    at.toggle[1].set_value(True)
+    at.toggle[2].set_value(True) # Обновленный индекс тоггла
     # Отправляем сообщение в чат
     result = at.chat_input[0].set_value(TEST_MESSAGE).run(timeout=TIMEOUT)
+
+    config = result.session_state["config"]
+    if config:
+        assert config.get("maps_2gis_enabled") is True, "Конфигурация не обновила maps_2gis_enabled"
 
     messages = result.session_state.messages
     

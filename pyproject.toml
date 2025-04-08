@@ -26,4 +26,5 @@ dependencies = [
     "streamlit-aggrid>=1.1.0,<2.0.0",
     "telethon>=1.38.1,<2.0.0",
     "twocaptcha==0.0.1",
+    "pytest (>=8.3.5,<9.0.0)",
 ]

@@ -94,6 +94,7 @@ class AviasalesEconomyHelper:
         self.prompt = config["system_prompt_tickets_for_aviasales_economy_helper"]
         self.model = model
         self.logger = logger
+        self.none_str = ""
 
     def _text2json(self, user_input: str, tries: int = 0, max_retries: int = 1) -> Dict[str, str] | None:
         try:
@@ -112,6 +113,8 @@ class AviasalesEconomyHelper:
             # есть вероятность, что 4o-mini зафейлит валидность JSON
 
     def _ariadne_res_to_md(self, ariadne_res: Dict[str, str]) -> str:
+
+        aviasales_url = ""
 
         def __extract_ru_su_translations(data):
             return {
@@ -132,60 +135,72 @@ class AviasalesEconomyHelper:
                     if l.get("iata")
                 }
             }
-
-        res_data = ariadne_res["tickets"]
-        mapping_data = __extract_ru_su_translations(ariadne_res["places"])
-        print(mapping_data)
-
-        md_str = "\n"
         
-        # Create header for a single table
-        md_str += "| Особенности | Ссылка на билет | Авиакомпания | Маршрут | Вылет | Прилет |\n"
-        md_str += "|-------------|-----------------|--------------|---------|-------|--------|\n"
-        
-        for k in res_data:
-            badge = f"{k['badge']['name']['ru']}" if k['badge'] else ""
-            
-            for l in k['data']['segments']:
-                for idx, m in enumerate(l['flight_legs']):
-                    carrier, orig, dest = m['operating_carrier'], m['origin'], m['destination']
-                    depart_date, arr_date = m['local_depart_date'], m['local_arrival_date']
-                    depart_time, arr_time = m['local_depart_time'], m['local_arrival_time']
+        try:
+            res_data = ariadne_res["tickets"]
+            # self.logger.info(res_data)
+            if len(res_data) > 0:
+                places_data = ariadne_res["places"]
+                if places_data:
+                    mapping_data = __extract_ru_su_translations(places_data)
+                else:
+                    mapping_data = {}
 
-                    carrier_name = mapping_data['airlines'].get(carrier, carrier)
-                    orig_name = mapping_data['airports'].get(orig, orig)
-                    dest_name = mapping_data['airports'].get(dest, dest)
-
-                    if idx == 0:
-                        md_str += (
-                            f"| **{badge}** "
-                            # f"| {k['data']['value']} "
-                            # f"| {'включен' if k['data']['with_baggage'] else 'не включен'} "
-                            # f"| {k['data']['provider']} "
-                            f"| [Ссылка на билет](https://www.aviasales.ru/search{k['data']['ticket_link']})"
-                        )
-                    else:
-                        md_str += "| | "
+                md_str = "\n"
+                url_set_flag = 0
+                
+                # Create header for a single table
+                md_str += "| Особенности | Ссылка на билет | Авиакомпания | Маршрут | Вылет | Прилет |\n"
+                md_str += "|-------------|-----------------|--------------|---------|-------|--------|\n"
+                
+                for k in res_data:
+                    badge = f"{k['badge']['name']['ru']}" if k['badge'] else ""
                     
-                    md_str += (
-                        f"| {carrier_name} "
-                        f"| {orig_name} -> {dest_name} "
-                        f"| {depart_date} {depart_time} "
-                        f"| {arr_date} {arr_time} |\n"
-                    )
-                    # print(md_str)
-        
-        return md_str
+                    for l in k['data']['segments']:
+                        for idx, m in enumerate(l['flight_legs']):
+                            carrier, orig, dest = m['operating_carrier'], m['origin'], m['destination']
+                            depart_date, arr_date = m['local_depart_date'], m['local_arrival_date']
+                            depart_time, arr_time = m['local_depart_time'], m['local_arrival_time']
 
-    
+                            carrier_name = mapping_data.get('airlines', {}).get(carrier, carrier)
+                            orig_name = mapping_data.get('airports', {}).get(orig, orig)
+                            dest_name = mapping_data.get('airports', {}).get(dest, dest)
+
+                            if idx == 0:
+                                md_str += (
+                                    f"| {'**'+badge+'**' if badge.strip() else ''} "
+                                    # f"| {k['data']['value']} "
+                                    # f"| {'включен' if k['data']['with_baggage'] else 'не включен'} "
+                                    # f"| {k['data']['provider']} "
+                                    f"| [Ссылка на билет](https://www.aviasales.ru/search{k['data']['ticket_link']})"
+                                )
+                                if not url_set_flag:
+                                    aviasales_url = f"https://www.aviasales.ru/search{k['data']['ticket_link'].split('?')[0]}"
+                                    url_set_flag = 1
+                            else:
+                                md_str += "| | "
+                            
+                            md_str += (
+                                f"| {carrier_name} "
+                                f"| {orig_name} -> {dest_name} "
+                                f"| {depart_date} {depart_time} "
+                                f"| {arr_date} {arr_time} |\n"
+                            )
+                            # print(md_str)
+                
+                return md_str, aviasales_url
+            return self.none_str, self.none_str
+        except Exception as e:
+            self.logger.error(f"Error converting aviasales Ariadne response to Markdown: {e}")
+            return self.none_str, self.none_str
+
     def process_user_input(self, user_input: str, st_interface) -> Dict[str, str]:
-        none_str = ""
         aviasales_json = self._text2json(user_input)
         if aviasales_json is None:
-            return none_str
+            return self.none_str, self.none_str
         origin, destination = self.iata_converter.get_iata_codes(aviasales_json)
         if origin is None or destination is None:
-            return none_str
+            return self.none_str, self.none_str
         aviasales_json["origin"] = origin
         aviasales_json["destination"] = destination
 
@@ -200,12 +215,10 @@ class AviasalesEconomyHelper:
                         time.sleep(1)
                         continue
                     break
-            # with open("ariadne_res.json", "w") as f:
-            #     json.dump(res, f)
             st_interface.success("✅ Поиск авиабилетов завершен")
-            md_str = self._ariadne_res_to_md(res["data"]["ai_flexible_calendar_results_v3"])
-            return md_str
+            md_str, aviasales_url = self._ariadne_res_to_md(res["data"]["ai_flexible_calendar_results_v3"])
+            return md_str, aviasales_url
         else:
-            return none_str
+            return self.none_str, self.none_str
 
 

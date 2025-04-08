@@ -31,6 +31,21 @@ skip_if_no_api_key = pytest.mark.skipif(
     reason="OPENAI_API_KEY не найден в переменных окружения"
 )
 
+def contains_python_error(text: str) -> bool:
+    patterns = [
+        r"Traceback \(most recent call last\):",
+        r"\bException\b",
+        r"\bError\b",
+        r"\bValueError\b",
+        r"\bTypeError\b",
+        r"\bKeyError\b",
+        r"\bRuntimeError\b",
+        r"\bat\b .+\.py:\d+",
+        r"ModuleNotFoundError",
+        r"ImportError",
+    ]
+    return any(re.search(p, text, re.IGNORECASE) for p in patterns)
+
 # Фикстура для создания экземпляра AppTest с повторными попытками
 @pytest.fixture(scope="function")
 def app_test():
@@ -86,6 +101,7 @@ def initialized_app(app_test):
 
 @skip_if_no_api_key
 def test_chat_interface(initialized_app):
+    
     """
     Тестирует основной чат-интерфейс:
     1. Отправляет сообщение
@@ -150,8 +166,97 @@ def test_chat_interface(initialized_app):
     
     logger.info("Тест успешно пройден: ассистент ответил и данные сохранены в БД")
 
+
+@skip_if_no_api_key
+def test_base_for_no_outp_err(initialized_app):
+    """
+    Тестирует отсутствие ошибок в общем поведении приложения:
+    1. Отправляет произвольный запрос
+    2. Ждет ответа ассистента
+    3. Проверяет отсутствие ошибок в интерфейсе
+    """
+    at = initialized_app
+
+    # 1. Проверяем наличие чат-инпута
+    logger.info("Проверка наличия чат-инпута")
+    assert len(at.chat_input) > 0, "Чат-инпут не найден"
+    
+    # 2. Отправляем произвольные запросы
+    TEST_MESSAGE = "Привет! Как дела?"
+    logger.info(f"Отправка произвольного запроса: {TEST_MESSAGE}")
+    result = at.chat_input[0].set_value(TEST_MESSAGE).run(timeout=TIMEOUT)
+
+    messages = result.session_state.messages
+    
+    # Ищем последнее сообщение ассистента
+    assistant_msgs = [
+        m for m in messages 
+        if m.get("role") == "assistant" and m.get("record_id") is not None
+    ]
+
+    last_assistant_msg = assistant_msgs[-1]
+    logger.info(f"Последнее сообщение ассистента: {last_assistant_msg['content']}")
+
+    assert not contains_python_error(last_assistant_msg["content"]), (
+        "Ошибка в ответе ассистента выведена в интерфейс!"
+    )
+
+@skip_if_no_api_key
+def test_aviasales_no_outp_err(initialized_app):
+    """
+    Тестирует отображение данных авиабилетов:
+    1. Отправляет некорректные и корректные запросы на поиск авиабилетов
+    2. Ждет ответа ассистента
+    3. Проверяет наличие вывода в чате без ошибок
+    """
+    at = initialized_app
+    logger.info("Проверка наличия чат-инпута")
+    assert len(at.chat_input) > 0, "Чат-инпут не найден"
+
+    # Проверяем, что есть нужное количество тогглов
+    assert len(at.toggle) >= 4, f"Ожидалось минимум 4 тоггла, найдено: {len(at.toggle)}"
+
+    # Включаем 4й тоггл — это "Включить поиск по авиабилетам"
+    result = at.toggle[3].set_value(True).run(timeout=TIMEOUT)
+    logger.info(f"[HERE] {result.session_state}")
+
+    # Проверяем, что флаг в session_state выставлен
+    assert "aviasales_enabled" in result.session_state, "Флаг aviasales_enabled не активировался"
+
+    # Проверим, что конфигурация тоже обновилась (если уже была загружена)
+    config = result.session_state["config"]
+    if config:
+        assert config.get("aviasales_enabled") is True, "Конфигурация не обновила aviasales_enabled"
+
+    # Запрос на старые даты, на станцию РФ в Антарктиде
+    TEST_MESSAGE_0 = "Мск - Беллинсгаузен авиабилеты 1 марта 2025 2 взрослых 1 ребенок туда и обратно"
+    # Произвольный корректный запрос
+    TEST_MESSAGE_1 = "Питер - Баку 3 октября после обеда 1 взрослый только туда"
+
+    for test_msg in (TEST_MESSAGE_0, TEST_MESSAGE_1):
+        logger.info(f"Отправка произвольного запроса: {test_msg}")
+        result = at.chat_input[0].set_value(test_msg).run(timeout=TIMEOUT)
+
+        messages = result.session_state.messages
+        
+        # Ищем последнее сообщение ассистента
+        assistant_msgs = [
+            m for m in messages 
+            if m.get("role") == "assistant" and m.get("record_id") is not None
+        ]
+
+        last_assistant_msg = assistant_msgs[-1]
+        logger.info(f"Последнее сообщение ассистента: {last_assistant_msg['content']}")
+
+        assert not contains_python_error(last_assistant_msg["content"]), (
+            "Ошибка в ответе ассистента выведена в интерфейс!"
+        )
+    logger.info("Тест по авиабилетам пройден, юзеру не возвращались ошибки")
+    
+# Убрал вниз, т.к. фейлится
 @skip_if_no_api_key
 def test_2gis_data_display(initialized_app):
+    
     """
     Тестирует отображение данных 2GIS API:
     1. Отправляет запрос о ресторанах в Москве

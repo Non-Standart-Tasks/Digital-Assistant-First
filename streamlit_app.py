@@ -152,6 +152,7 @@ def main():
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
         "offers_enabled": False,  # По умолчанию офферы отключены
         "maps_2gis_enabled": False,
+        "aviasales_enabled": False,
         "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
         "global_prompt": config_yaml["global_prompt"],
         "system_prompt_tickets_for_aviasales_economy_helper": config_yaml["system_prompt_tickets_for_aviasales_economy_helper"],
@@ -184,6 +185,14 @@ def main():
             # Обновить конфигурацию при изменении toggle
             if st.session_state.get("config") is not None:
                 st.session_state["config"]["maps_2gis_enabled"] = maps_2gis_enabled
+                # Don't trigger rerun here
+
+        aviasales_enabled = handle_toggle("aviasales_enabled", "Включить поиск по авиабилетам")
+        if aviasales_enabled != st.session_state.get("aviasales_enabled", False):
+            st.session_state["aviasales_enabled"] = aviasales_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["aviasales_enabled"] = aviasales_enabled
                 # Don't trigger rerun here
         
         #Пока выключим телеграм функционал

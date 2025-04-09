@@ -10,6 +10,17 @@ import json # rm this
 
 load_dotenv()
 
+months_ru = {
+    1: "января", 2: "февраля", 3: "марта", 4: "апреля",
+    5: "мая", 6: "июня", 7: "июля", 8: "августа",
+    9: "сентября", 10: "октября", 11: "ноября", 12: "декабря"
+}
+
+def format_date(date_str):
+    from datetime import datetime
+    date_obj = datetime.strptime(date_str, "%Y-%m-%d")
+    return f"{date_obj.day} {months_ru[date_obj.month]}"
+
 class AviasalesIATAConverter:
     def __init__(self):
         self.query = "https://suggest.aviasales.com/v2/places.json?locale=ru_RU&max=7&term={}&types[]=city&types[]=airport&types[]=country"
@@ -112,7 +123,27 @@ class AviasalesEconomyHelper:
             return self._text2json(user_input, tries + 1)
             # есть вероятность, что 4o-mini зафейлит валидность JSON
 
-    def _ariadne_res_to_md(self, ariadne_res: Dict[str, str]) -> str:
+    def _ariadne_res_to_md(
+        self,
+        ariadne_res: Dict[str, str],
+        new_template: bool = True,
+        adults: int = 1,
+        children: int = 0,
+        infants: int = 0,
+    ) -> str:
+        
+        def _link_corrector_for_num_passengers(
+            link: str, adults: int = 1, children: int = 0, infants: int = 0
+        ) -> str:
+            strp_link = link.split("?")
+            base_link, param_link = strp_link[:1][0][:-1], strp_link[1:][0]
+            children_corr, infants_corr = "", ""
+            if infants > 0 or children > 0:
+                children_corr = str(children)
+            if infants > 0:
+                infants_corr = str(infants)
+            res_code = f"{adults}{children_corr}{infants_corr}"
+            return f"{base_link}{res_code}?{param_link}"
 
         aviasales_url = ""
 
@@ -138,87 +169,142 @@ class AviasalesEconomyHelper:
         
         try:
             res_data = ariadne_res["tickets"]
-            # self.logger.info(res_data)
             if len(res_data) > 0:
                 places_data = ariadne_res["places"]
+                md_str = "\n"
+                url_set_flag = 0
                 if places_data:
                     mapping_data = __extract_ru_su_translations(places_data)
                 else:
                     mapping_data = {}
 
-                md_str = "\n"
-                url_set_flag = 0
-                
-                # Create header for a single table
-                md_str += "| Особенности | Ссылка на билет | Авиакомпания | Маршрут | Вылет | Прилет |\n"
-                md_str += "|-------------|-----------------|--------------|---------|-------|--------|\n"
-                
-                for k in res_data:
-                    badge = f"{k['badge']['name']['ru']}" if k['badge'] else ""
+                if new_template:
+                    # Новый лэйаут, запрошенный в беседе ЦП Трэвел
+                    # Пока без информации о цене и пр. (см. синий ромб в их шаблоне)
+                    for k in res_data:
+                        badge = f"{k['badge']['name']['ru']}" if k['badge'] else ""
+                        segment_lines = []
+                        airline_names = set()
+                        prefix_to_back = ""
+                        segm_len = len(k['data']['segments'])
+                        for c, segment in enumerate(k['data']['segments']):
+                            for c0, leg in enumerate(segment['flight_legs']):
+                                if segm_len > 1 and c0 == 0:
+                                    if c == 0:
+                                        prefix_to_back = "**Туда**"
+                                    elif c == 1:
+                                        prefix_to_back = "**Обратно**"
+                                else:
+                                    prefix_to_back = ""
+                                
+                                carrier = leg['operating_carrier']
+                                orig = leg['origin']
+                                dest = leg['destination']
+                                depart_date = leg['local_depart_date']
+                                arr_date = leg['local_arrival_date']
+                                depart_time = leg['local_depart_time']
+                                arr_time = leg['local_arrival_time']
+                                depart_date = format_date(depart_date)
+                                arr_date = format_date(arr_date)
+
+                                carrier_name = mapping_data.get('airlines', {}).get(carrier, carrier)
+                                orig_name = mapping_data.get('airports', {}).get(orig, orig)
+                                dest_name = mapping_data.get('airports', {}).get(dest, dest)
+
+                                airline_names.add(carrier_name)
+                                segment_lines.append(f"{prefix_to_back}\n\n{depart_date}, {orig_name} {orig} {depart_time} – {dest_name} {dest} {arr_time} \n\n")
+                        
+                        corr_url = _link_corrector_for_num_passengers(k['data']['ticket_link'], adults, children, infants)
+                        md_str += f"**✈️ {', '.join(airline_names)} :blue-background[*{badge}*]**\n\n"
+                        md_str += "\n".join(segment_lines) + "\n"
+                        ticket_url = f"https://www.aviasales.ru/search{corr_url}"
+                        md_str += f"🔹 [Ссылка на билет]({ticket_url})\n\n---\n\n"
+
+                        if not url_set_flag:
+                            aviasales_url = ticket_url.split("?")[0]
+                            url_set_flag = 1
+
+                else:
                     
-                    for l in k['data']['segments']:
-                        for idx, m in enumerate(l['flight_legs']):
-                            carrier, orig, dest = m['operating_carrier'], m['origin'], m['destination']
-                            depart_date, arr_date = m['local_depart_date'], m['local_arrival_date']
-                            depart_time, arr_time = m['local_depart_time'], m['local_arrival_time']
+                    # Базовый табличный лэйаут
+                    md_str += "| Особенности | Ссылка на билет | Авиакомпания | Маршрут | Вылет | Прилет |\n"
+                    md_str += "|-------------|-----------------|--------------|---------|-------|--------|\n"
+                    
+                    for k in res_data:
+                        badge = f"{k['badge']['name']['ru']}" if k['badge'] else ""
+                        
+                        for l in k['data']['segments']:
+                            for idx, m in enumerate(l['flight_legs']):
+                                carrier, orig, dest = m['operating_carrier'], m['origin'], m['destination']
+                                depart_date, arr_date = m['local_depart_date'], m['local_arrival_date']
+                                depart_time, arr_time = m['local_depart_time'], m['local_arrival_time']
 
-                            carrier_name = mapping_data.get('airlines', {}).get(carrier, carrier)
-                            orig_name = mapping_data.get('airports', {}).get(orig, orig)
-                            dest_name = mapping_data.get('airports', {}).get(dest, dest)
+                                carrier_name = mapping_data.get('airlines', {}).get(carrier, carrier)
+                                orig_name = mapping_data.get('airports', {}).get(orig, orig)
+                                dest_name = mapping_data.get('airports', {}).get(dest, dest)
 
-                            if idx == 0:
+                                if idx == 0:
+                                    md_str += (
+                                        f"| {'**'+badge+'**' if badge.strip() else ''} "
+                                        # f"| {k['data']['value']} "
+                                        # f"| {'включен' if k['data']['with_baggage'] else 'не включен'} "
+                                        # f"| {k['data']['provider']} "
+                                        f"| [Ссылка на билет](https://www.aviasales.ru/search{k['data']['ticket_link']})"
+                                    )
+                                    if not url_set_flag:
+                                        aviasales_url = f"https://www.aviasales.ru/search{k['data']['ticket_link'].split('?')[0]}"
+                                        url_set_flag = 1
+                                else:
+                                    md_str += "| | "
+                                
                                 md_str += (
-                                    f"| {'**'+badge+'**' if badge.strip() else ''} "
-                                    # f"| {k['data']['value']} "
-                                    # f"| {'включен' if k['data']['with_baggage'] else 'не включен'} "
-                                    # f"| {k['data']['provider']} "
-                                    f"| [Ссылка на билет](https://www.aviasales.ru/search{k['data']['ticket_link']})"
+                                    f"| {carrier_name} "
+                                    f"| {orig_name} -> {dest_name} "
+                                    f"| {depart_date} {depart_time} "
+                                    f"| {arr_date} {arr_time} |\n"
                                 )
-                                if not url_set_flag:
-                                    aviasales_url = f"https://www.aviasales.ru/search{k['data']['ticket_link'].split('?')[0]}"
-                                    url_set_flag = 1
-                            else:
-                                md_str += "| | "
-                            
-                            md_str += (
-                                f"| {carrier_name} "
-                                f"| {orig_name} -> {dest_name} "
-                                f"| {depart_date} {depart_time} "
-                                f"| {arr_date} {arr_time} |\n"
-                            )
-                            # print(md_str)
+                                # print(md_str)
                 
                 return md_str, aviasales_url
             return self.none_str, self.none_str
         except Exception as e:
-            self.logger.error(f"Error converting aviasales Ariadne response to Markdown: {e}")
+            self.logger.error(f"Ошибка конвертации ответа Aviasales Ariadne в Markdown: {e}")
             return self.none_str, self.none_str
 
     def process_user_input(self, user_input: str, st_interface) -> Dict[str, str]:
-        aviasales_json = self._text2json(user_input)
-        if aviasales_json is None:
-            return self.none_str, self.none_str
-        origin, destination = self.iata_converter.get_iata_codes(aviasales_json)
-        if origin is None or destination is None:
-            return self.none_str, self.none_str
-        aviasales_json["origin"] = origin
-        aviasales_json["destination"] = destination
+        try:
+            aviasales_json = self._text2json(user_input)
+            if aviasales_json is None:
+                return self.none_str, self.none_str
+            origin, destination = self.iata_converter.get_iata_codes(aviasales_json)
+            if origin is None or destination is None:
+                return self.none_str, self.none_str
+            aviasales_json["origin"] = origin
+            aviasales_json["destination"] = destination
 
-        self.logger.info(f"Сформирован запрос для Aviasales: {aviasales_json}")
-        
-        query_json = self.ariadne.post(aviasales_json)
-        if query_json is not None:
-            with st_interface.spinner("Поиск авиабилетов..."):
-                while True:
-                    res = self.ariadne.fetch(query_json)
-                    if res.get("data", {}).get("ai_flexible_calendar_results_v3", {}).get("status") == "IN_PROGRESS":
-                        time.sleep(1)
-                        continue
-                    break
-            st_interface.success("✅ Поиск авиабилетов завершен")
-            md_str, aviasales_url = self._ariadne_res_to_md(res["data"]["ai_flexible_calendar_results_v3"])
-            return md_str, aviasales_url
-        else:
+            self.logger.info(f"Сформирован запрос для Aviasales: {aviasales_json}")
+            
+            query_json = self.ariadne.post(aviasales_json)
+            if query_json is not None:
+                with st_interface.spinner("Поиск авиабилетов..."):
+                    while True:
+                        res = self.ariadne.fetch(query_json)
+                        if res.get("data", {}).get("ai_flexible_calendar_results_v3", {}).get("status") == "IN_PROGRESS":
+                            time.sleep(1)
+                            continue
+                        break
+                st_interface.success("✅ Поиск авиабилетов завершен")
+                md_str, aviasales_url = self._ariadne_res_to_md(
+                    res["data"]["ai_flexible_calendar_results_v3"],
+                    adults=aviasales_json.get("adults", 1),
+                    children=aviasales_json.get("children", 0),
+                    infants=aviasales_json.get("infants", 0),
+                )
+                return md_str, aviasales_url
+            else:
+                return self.none_str, self.none_str
+        except Exception as e:
+            self.logger.error(f"Ошибка при обработке запроса по авиабилетам: {e}")
             return self.none_str, self.none_str
 
 

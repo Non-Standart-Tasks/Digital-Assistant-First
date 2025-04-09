@@ -209,7 +209,7 @@ def model_response_generator_sync(model, config, status_placeholder):
         - аренда_транспорта_без_водителя (если запрос о аренде транспорта без водителя)
         - аренда_транспорта_с_водителем (если запрос о аренде транспорта с водителем)
         - маршруты (если запрос о том, как построить маршрут, проложить путь между местами)
-        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, перелетах из одного города в другой, железнодорожных билетах)
+        - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, перелетах, железнодорожных билетах)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
     """,
     model="gpt-4o-mini",
@@ -227,8 +227,6 @@ def model_response_generator_sync(model, config, status_placeholder):
     offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
     aviasales_url = ""
     aviasales_flight_info = ""
-    deepsearch_res = ""
-    web_search_response = ""
 
     #global_prompt = config.get("global_prompt", "").format(context=message_history)
     
@@ -294,31 +292,28 @@ def model_response_generator_sync(model, config, status_placeholder):
             
         if request_category == "поездки" and aviasales_enabled:
             aviasales_helper = AviasalesEconomyHelper(model, config, logger)
-            aviasales_flight_info, aviasales_url = aviasales_helper.process_user_input(user_input, st)
+            aviasales_flight_info = aviasales_helper.process_user_input(user_input, st)
 
-        # # [Old Aviasales Handler]: 
-        # Пока выключено из-за кривого browser-use
+        # # [Old Aviasales Handler]:
+        # if request_category == "поездки" or request_category == "другое":
+        #     aviasales_tool = AviasalesHandler()
+        #     tickets_need = loop.run_until_complete(aviasales_tool.aviasales_request(model, config, user_input))
+            
+        #     if tickets_need.get("response", "").lower() == "true":
+        #         aviasales_url = aviasales_tool.construct_aviasales_url(
+        #             tickets_need["departure_city"],
+        #             tickets_need["destination"],
+        #             tickets_need["start_date"],
+        #             tickets_need["end_date"],
+        #             tickets_need.get("adult_passengers", 1),
+        #             tickets_need.get("child_passengers", 0),
+        #             tickets_need.get("travel_class", ""),
+        #         )
+        #         if config.get("aviasales_search") == "True":
+        #             aviasales_flight_info = loop.run_until_complete(
+        #                 aviasales_tool.get_info_aviasales_url(aviasales_url=aviasales_url, user_input=user_input)
+        # )
         
-            if not aviasales_url: # Fallback
-                if not aviasales_flight_info:
-                    aviasales_url = ""
-                else:
-                    # aviasales_tool_for_link = AviasalesHandler()
-                    # tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
-                    # if tickets_need.get("response", "").lower() == "true":
-                    #     aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
-                    #         tickets_need["departure_city"],
-                    #         tickets_need["destination"],
-                    #         tickets_need["start_date"],
-                    #         tickets_need["end_date"],
-                    #         tickets_need.get("adult_passengers", 1),
-                    #         tickets_need.get("child_passengers", 0),
-                    #         tickets_need.get("travel_class", ""),
-                    #     ) 
-                    # if "None" in aviasales_url:
-                    #     aviasales_url = ""
-                    aviasales_url = ""
-
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
         # Код для офферов - тут гоняем РАГ
         if config.get("offers_enabled", False):
@@ -387,59 +382,55 @@ def model_response_generator_sync(model, config, status_placeholder):
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
                 offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
 
-        if request_category == "поездки" and aviasales_enabled:
-            logger.info("Запрос о поездках и включен поиск по авиабилетам, не обращаемся к ЛЛМ")
-            # не обращаемся к ЛЛМ, если запрос о авиабилетах и он включен
-            pass
+        if config.get("deepsearch", False):
+            deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder, config))
+
         else:
-            if config.get("deepsearch", False):
-                deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder, config))
-
-            else:
-                web_search_context_size = config.get("web_search_context_size", "medium")
+            web_search_context_size = config.get("web_search_context_size", "medium")
+        
+            # Используем нативный веб-поиск OpenAI
+            logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
             
-                # Используем нативный веб-поиск OpenAI
-                logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+            agent_web_seach = Agent(
+                name="Assistant",
+                instructions="""
+                Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
                 
-                agent_web_seach = Agent(
-                    name="Assistant",
-                    instructions="""
-                    Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
-                    
-                    Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
-                    если явно количество не указано, то выведи 5 вариантов.
+                Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
+                если явно количество не указано, то выведи 5 вариантов.
 
-                    ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
+                ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
 
-                    """,
-                    model='gpt-4o',
-                    tools=[WebSearchTool(search_context_size=web_search_context_size)])
-                
-                web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)
-                web_search_response = web_search_response.final_output
-                
-                print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
-                
-                log_api_call(
-                    logger=logger,
-                    source=f"LLM ({config['Model']})",
-                    request=user_input,
-                    response=web_search_response,
-                )
+                """,
+                model='gpt-4o',
+                tools=[WebSearchTool(search_context_size=web_search_context_size)])
+            
+            web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)
+            web_search_response = web_search_response.final_output
+            
+            print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
+            
+            log_api_call(
+                logger=logger,
+                source=f"LLM ({config['Model']})",
+                request=user_input,
+                response=web_search_response,
+            )
+            
             
     finally:
         loop.close()
         
     if config.get("deepsearch", False):
-        if request_category == "поездки" and aviasales_enabled:
+        if request_category == "поездки" or request_category == "другое":
             if aviasales_flight_info:
                 deepsearch_res += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
             else:
-                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить даты."
+                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены."
 
         return {
         "answer": deepsearch_res,
-        "aviasales_link": aviasales_url,
+        # "aviasales_link": aviasales_url,
         "table_data": table_data,
         "pydeck_data": pydeck_data,
         "request_category": request_category,
@@ -447,15 +438,15 @@ def model_response_generator_sync(model, config, status_placeholder):
     }
 
     else:
-        if request_category == "поездки" and aviasales_enabled:
+        if request_category == "поездки" or request_category == "другое":
             if aviasales_flight_info:
                 web_search_response += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
             else:
-                web_search_response += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить даты."
+                web_search_response += "\n\nАвиабилеты по данному запросу не найдены."
 
         return {
         "answer": web_search_response,
-        "aviasales_link": aviasales_url,
+        # "aviasales_link": aviasales_url,
         "table_data": table_data,
         "pydeck_data": pydeck_data,
         "request_category": request_category,
@@ -509,7 +500,7 @@ def handle_user_input_sync(model, config, prompt):
                 
             # Отображаем данные Aviasales, если они есть
             if "aviasales_link" in response and response["aviasales_link"] and response["aviasales_link"].strip():
-                aviasales_text = f"\n\n#### Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}"
+                aviasales_text = f"\n\n### Данные из Авиасейлс \n **Ссылка** - {response['aviasales_link']}"
             
             # Если категория запроса - рестораны или ивенты И включен поиск по 2GIS, получаем данные 2GIS
             table_data = []

@@ -1,0 +1,434 @@
+[
+    {
+        "offer_id": 380116,
+        "offer_url": "https://www.vtbfamily.ru/offer/380116",
+        "title": "Лента: сеть розничных магазинов до 15%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BB%D0%B5%D0%BD%D1%82%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4f9d7aff639e8e2eab5a8e9fbf09468aef41589de57d14734f17d48fc23d8471",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000380116.jpg",
+        "card_description": "Продукты и напитки Лента: сеть розничных магазинов до 15%"
+    },
+    {
+        "offer_id": 402242,
+        "offer_url": "https://www.vtbfamily.ru/offer/402242",
+        "title": "Ешь Деревенское: интернет-магазин фермерских продуктов 10%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B5%D1%88%D1%8C_%D0%B4%D0%B5%D1%80%D0%B5%D0%B2%D0%B5%D0%BD%D1%81%D0%BA%D0%BE%D0%B5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9ec879141d0426756d6b12aa61e91649831d4f90756e6be1b9b78fa6687384fc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402242.jpg",
+        "card_description": "Продукты и напитки Ешь Деревенское: интернет-магазин фермерских продуктов 10%"
+    },
+    {
+        "offer_id": 402871,
+        "offer_url": "https://www.vtbfamily.ru/offer/402871",
+        "title": "Бахетле: супермаркет домашней еды 5%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B1%D0%B0%D1%85%D0%B5%D1%82%D0%BB%D0%B5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c5f5d664f27dcc86ee3cce706d71956a0426fe790659b0d22c589707a1d50314",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402871.jpg",
+        "card_description": "Продукты и напитки Бахетле: супермаркет домашней еды 5%"
+    },
+    {
+        "offer_id": 360537,
+        "offer_url": "https://www.vtbfamily.ru/offer/360537",
+        "title": "METRO Cash & Carry: онлайн-магазин до 15%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%B5%D1%82%D1%80%D0%BE_vRnwnq5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d3a8ebfc6330b8ad43ebeeb922787d44adf367128aa32a54d4e767c51d3b120",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000360537.jpg",
+        "card_description": "Продукты и напитки METRO Cash & Carry: онлайн-магазин до 15%"
+    },
+    {
+        "offer_id": 140366,
+        "offer_url": "https://www.vtbfamily.ru/offer/140366",
+        "title": "Магнит Доставка﻿ до 25%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%B0%D0%B3%D0%BD%D0%B8%D1%82_%D0%B4%D0%BE%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0e4dfaea3884642e08f4d8529789e855b62b7f4f1e8eaa90c70224abc1b7d357",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000140366.jpg",
+        "card_description": "Продукты и напитки Магнит Доставка﻿ до 25%"
+    },
+    {
+        "offer_id": 772,
+        "offer_url": "https://www.vtbfamily.ru/offer/772",
+        "title": "Магазины Азбука Вкуса﻿ 15%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2395.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e5d46d5a9f3f69f12fdee39fa649452aeed4aa9348c2c8cba83bf6bf90abc969",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000772.jpg",
+        "card_description": "Продукты и напитки Магазины Азбука Вкуса﻿ 15%"
+    },
+    {
+        "offer_id": 438,
+        "offer_url": "https://www.vtbfamily.ru/offer/438",
+        "title": "Интернет-магазин продуктов для здорового питания ВКУСВИЛЛ",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1930.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=acdadac356711a2b5b1b2f15e0cc374ca7fbd85a84da172fb5d3c4fc98c39090",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000438.jpg",
+        "card_description": "Продукты и напитки Интернет-магазин продуктов для здорового питания ВКУСВИЛЛ"
+    },
+    {
+        "offer_id": 402229,
+        "offer_url": "https://www.vtbfamily.ru/offer/402229",
+        "title": "Винлаб: супермаркет напитков 10%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B2%D0%B8%D0%BD%D0%BB%D0%B0%D0%B1_zMewLOV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9c66cf990883e9487543171132993e54c13055156a84aa9cba843d2d5e9adbd2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402229.jpg",
+        "card_description": "Продукты и напитки Винлаб: супермаркет напитков 10%"
+    },
+    {
+        "offer_id": 240890,
+        "offer_url": "https://www.vtbfamily.ru/offer/240890",
+        "title": "Доставка «Перекрёстка»",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4383.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=749b68a20594a1091d4b9c962cc5acd952447bcb4b5f4d6113737f8e17b9a35e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000240890.jpg",
+        "card_description": "Продукты и напитки Доставка «Перекрёстка»"
+    },
+    {
+        "offer_id": 306980,
+        "offer_url": "https://www.vtbfamily.ru/offer/306980",
+        "title": "Tasty Coffee: свежий кофе с доставкой 15%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tasty_coffee_NhJTiF6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=080a05b10caac70558f150b79092372b8bfdad358c00329b0c56bdd5a1d15bfe",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000306980.jpg",
+        "card_description": "Продукты и напитки Tasty Coffee: свежий кофе с доставкой 15%"
+    },
+    {
+        "offer_id": 129784,
+        "offer_url": "https://www.vtbfamily.ru/offer/129784",
+        "title": "Доставка продуктов на дом Экомаркет.ру до 25%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Frame_69_ms7y3gB.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e625fd076f7a786b53d0b3f30329c20f4f2aa9bd86a0226786bf13c63bb99acd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129784.jpg",
+        "card_description": "Продукты и напитки Доставка продуктов на дом Экомаркет.ру до 25%"
+    },
+    {
+        "offer_id": 402239,
+        "offer_url": "https://www.vtbfamily.ru/offer/402239",
+        "title": "Купер: сервис доставки продуктов до 27%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D1%83%D0%BF%D0%B5%D1%80_XDIUaFo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9ea2491fb058cd9a286e1c2753dd6869ab2a5941ced0f898cb22f60aa610e73c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402239.jpg",
+        "card_description": "Продукты и напитки Купер: сервис доставки продуктов до 27%"
+    },
+    {
+        "offer_id": 90872,
+        "offer_url": "https://www.vtbfamily.ru/offer/90872",
+        "title": "Luding 40%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/luding__1spanSw.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4b5d5735e6ed571659f9c4eaa5630011d4fdea4096a9beca53555a4048892ca6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090872.jpg",
+        "card_description": "Продукты и напитки Luding 40%"
+    },
+    {
+        "offer_id": 402293,
+        "offer_url": "https://www.vtbfamily.ru/offer/402293",
+        "title": "Хваловские воды: доставка воды",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%85%D0%B2%D0%B0%D0%BB%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B5_%D0%B2%D0%BE%D0%B4%D1%8B.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fd8f7b637ee9d4f5a23ff29dad00436095849c7545bee868a7d750bda62da2e7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402293.jpg",
+        "card_description": "Продукты и напитки Хваловские воды: доставка воды"
+    },
+    {
+        "offer_id": 586,
+        "offer_url": "https://www.vtbfamily.ru/offer/586",
+        "title": "Свежеобжаренный кофе Tabera | Табера",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2148.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ad6731a46f3d5bf4a20c69f486d62593885b86159d88cc5d9cc34ef4b0c3b2b0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000586.jpg",
+        "card_description": "Продукты и напитки Свежеобжаренный кофе Tabera | Табера"
+    },
+    {
+        "offer_id": 402315,
+        "offer_url": "https://www.vtbfamily.ru/offer/402315",
+        "title": "ВинЛаб Бизнес:сервис корпоративных закупок напитков 15%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B2%D0%B8%D0%BD%D0%BB%D0%B0%D0%B1_%D0%B1%D0%B8%D0%B7%D0%BD%D0%B5%D1%81_2_05XG0bZ.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=102e99df8e0560628b2ccb87f541db03930abb5c449fb3d6ef5535be2639d5b6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402315.jpg",
+        "card_description": "Продукты и напитки ВинЛаб Бизнес:сервис корпоративных закупок напитков 15%"
+    },
+    {
+        "offer_id": 1480,
+        "offer_url": "https://www.vtbfamily.ru/offer/1480",
+        "title": "Онлайн-гастромаркет Secret Kitchen﻿ в Москве",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3450.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5e5c0f05af51bbf90e917e716763b8f35a8557111a958d48c514a2133357e32b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001480.jpg",
+        "card_description": "Продукты и напитки Онлайн-гастромаркет Secret Kitchen﻿ в Москве"
+    },
+    {
+        "offer_id": 354031,
+        "offer_url": "https://www.vtbfamily.ru/offer/354031",
+        "title": "Фабрика Ульянова 15%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%84%D0%B0%D0%B1%D1%80%D0%B8%D0%BA%D0%B0_%D1%83%D0%BB%D1%8C%D1%8F%D0%BD%D0%BE%D0%B2%D0%B0_qjE2Kgl.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6444ed79469ca3d4efca0e4490568a67dbc7b977c1e8720b2cde33bab7fbe423",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000354031.jpg",
+        "card_description": "Продукты и напитки Фабрика Ульянова 15%"
+    },
+    {
+        "offer_id": 103,
+        "offer_url": "https://www.vtbfamily.ru/offer/103",
+        "title": "Готовое питание с доставкой My Food",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1252.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=88e0b8018d8a077e9914d864a26c98e3eb73367235173d32a37b64c7ea9dec39",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000103.jpg",
+        "card_description": "Продукты и напитки Готовое питание с доставкой My Food"
+    },
+    {
+        "offer_id": 402177,
+        "offer_url": "https://www.vtbfamily.ru/offer/402177",
+        "title": "BeFit: сервис доставки здорового питания до 12%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/befit_trtS7nj.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161914Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1a0e8a9550645a7a4c18eeb4673902883394f279d761b47db07fa056d7ad417b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402177.jpg",
+        "card_description": "Продукты и напитки BeFit: сервис доставки здорового питания до 12%"
+    },
+    {
+        "offer_id": 402179,
+        "offer_url": "https://www.vtbfamily.ru/offer/402179",
+        "title": "Шефмаркет: сервис доставки продуктов",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A8%D0%95%D0%A4%D0%9C%D0%90%D0%A0%D0%9A%D0%95%D0%A2_%D0%B8%D1%82%D0%BE%D0%B3_qlujufO.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f7e119e72ef1b29ad2461584f2f123de411aff1c276b47a2893bd60ff23942a1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402179.jpg",
+        "card_description": "Продукты и напитки Шефмаркет: сервис доставки продуктов"
+    },
+    {
+        "offer_id": 402490,
+        "offer_url": "https://www.vtbfamily.ru/offer/402490",
+        "title": "WineStyle: магазин напитков",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/winestyle_2_vZUcTnY.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a2948c36d38dd9d1b7492f685ed905ce02c995c141dc0d4c90b093a43dd2fa38",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402490.jpg",
+        "card_description": "Продукты и напитки WineStyle: магазин напитков"
+    },
+    {
+        "offer_id": 382310,
+        "offer_url": "https://www.vtbfamily.ru/offer/382310",
+        "title": "Горкунов: икорный дом 5%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B3%D0%BE%D1%80%D0%BA%D1%83%D0%BD%D0%BE%D0%B2_%D0%B8%D0%BA%D0%BE%D1%80%D0%BD%D1%8B%D0%B9_%D0%B4%D0%BE%D0%BC.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3f9f099895b1c83c0133a609b8c86d8ace97e927cf3b02274e209c1c70201c45",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000382310.jpg",
+        "card_description": "Продукты и напитки Горкунов: икорный дом 5%"
+    },
+    {
+        "offer_id": 439,
+        "offer_url": "https://www.vtbfamily.ru/offer/439",
+        "title": "Кондитерская эксклюзивных тортов La-Tortika﻿ с доставкой по все…",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1933.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e6b4536f6a819e788b643441e3e188f73586a129a676b5046dcd98db0c99e4ac",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000439.jpg",
+        "card_description": "Продукты и напитки Кондитерская эксклюзивных тортов La-Tortika﻿ с доставкой по все…"
+    },
+    {
+        "offer_id": 1162,
+        "offer_url": "https://www.vtbfamily.ru/offer/1162",
+        "title": "Пушкинская осетровая ферма",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2942.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d3d57c4ed65485dc8760dcc9efb2cd53a5dc38d6c60e15b9cca000219bbe450",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001162.jpg",
+        "card_description": "Продукты и напитки Пушкинская осетровая ферма"
+    },
+    {
+        "offer_id": 402178,
+        "offer_url": "https://www.vtbfamily.ru/offer/402178",
+        "title": "SimplyMeal: сервис доставки готового питания до 12%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/simply_meal_UiyFKBN.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=86342c0eaeca032f4afcb28f0fec01d01dc25ae86ab7c2c6e689d91dbd00757e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402178.jpg",
+        "card_description": "Продукты и напитки SimplyMeal: сервис доставки готового питания до 12%"
+    },
+    {
+        "offer_id": 1005,
+        "offer_url": "https://www.vtbfamily.ru/offer/1005",
+        "title": "Доставка японской кухни Space Sushi",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2708.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=24130c34c670756d105129a4f3c2d891abcd9c8ce14aaae06016738ae03f3882",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001005.jpg",
+        "card_description": "Продукты и напитки Доставка японской кухни Space Sushi"
+    },
+    {
+        "offer_id": 1263,
+        "offer_url": "https://www.vtbfamily.ru/offer/1263",
+        "title": "GIOSSO﻿. Кофе в капсулах",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3085.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c51ecb4dccf846152ae9fdd0a4d30788fd2216e477293fedcf62568169ea939d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001263.jpg",
+        "card_description": "Продукты и напитки GIOSSO﻿. Кофе в капсулах"
+    },
+    {
+        "offer_id": 13896,
+        "offer_url": "https://www.vtbfamily.ru/offer/13896",
+        "title": "Доставка продуктов с рецептами на дом Elementaree",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1937.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4f5f5f7a30b91d43d71f0713f8f7fd6ed052ec957efaac2c73d776e52419321b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000013896.jpg",
+        "card_description": "Продукты и напитки Доставка продуктов с рецептами на дом Elementaree"
+    },
+    {
+        "offer_id": 287649,
+        "offer_url": "https://www.vtbfamily.ru/offer/287649",
+        "title": "Функциональные напитки Fitoguru",
+        "category": "Доставка.Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4431.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=30fb0336e2782bc89f8d490387b7bcae2e7d050c1bb9abbf6a04341f0c5dc7c0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000287649.jpg",
+        "card_description": "Доставка.Продукты и напитки Функциональные напитки Fitoguru"
+    },
+    {
+        "offer_id": 403027,
+        "offer_url": "https://www.vtbfamily.ru/offer/403027",
+        "title": "Justfood: доставка правильного питания 30%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/just_food.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e4d1eeab2c92dd033c1246fd3c339875cdf56a6a831b87a1ec6a0318f5866e9c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403027.jpg",
+        "card_description": "Продукты и напитки Justfood: доставка правильного питания 30%"
+    },
+    {
+        "offer_id": 732,
+        "offer_url": "https://www.vtbfamily.ru/offer/732",
+        "title": "Королевская Вода",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_235.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3eaa8cd471e5dfc99d9f7938bc2da9a83ed0c27b1320580882fe747fa77e60fe",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000732.jpg",
+        "card_description": "Продукты и напитки Королевская Вода"
+    },
+    {
+        "offer_id": 1646,
+        "offer_url": "https://www.vtbfamily.ru/offer/1646",
+        "title": "Рыба-14 | Северные деликатесы",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3700.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdcc2d0a261c978052163b5e191156d6dc1a931ad66fbc425cbdc325f3d9da8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001646.jpg",
+        "card_description": "Продукты и напитки Рыба-14 | Северные деликатесы"
+    },
+    {
+        "offer_id": 1737,
+        "offer_url": "https://www.vtbfamily.ru/offer/1737",
+        "title": "Вегетарианская доставка Veglifefood﻿",
+        "category": "Доставка.Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_563.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=62fa553a89a2b4995b76d476a35123d8047b279afb930ef0d905ee1955e60ee1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001737.jpg",
+        "card_description": "Доставка.Продукты и напитки Вегетарианская доставка Veglifefood﻿"
+    },
+    {
+        "offer_id": 402597,
+        "offer_url": "https://www.vtbfamily.ru/offer/402597",
+        "title": "Russian Dynasty Caviar: магазин икры и морепродуктов 7%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Russian_Dynasty_Caviar_%D0%98%D0%A2%D0%9E%D0%93.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52d6ffb995cbe76736d3620785c8571ff7915b33ce33ac0ac1347e24529afb8b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402597.jpg",
+        "card_description": "Продукты и напитки Russian Dynasty Caviar: магазин икры и морепродуктов 7%"
+    },
+    {
+        "offer_id": 239,
+        "offer_url": "https://www.vtbfamily.ru/offer/239",
+        "title": "Доставка здорового правильного питания YamDiet",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1566.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=03f420cbe81a90d1eaf362dec0b8ee185ca101ecbd15b9baebdb613e5941f309",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000239.jpg",
+        "card_description": "Продукты и напитки Доставка здорового правильного питания YamDiet"
+    },
+    {
+        "offer_id": 1514,
+        "offer_url": "https://www.vtbfamily.ru/offer/1514",
+        "title": "Виноторговая компания AST",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_351.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8d33d4125daf1c7b6665fde7eaea107d8a674427ebc88edffa47a35cb13c20c5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001514.jpg",
+        "card_description": "Продукты и напитки Виноторговая компания AST"
+    },
+    {
+        "offer_id": 1874,
+        "offer_url": "https://www.vtbfamily.ru/offer/1874",
+        "title": "Авторские заготовки и соусы БАНЧ.﻿",
+        "category": "Доставка.Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_910.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=67c3c47af61869b3d7f1e18632c3b660e64ffe5cc45d258d27589da5d6613ba8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001874.jpg",
+        "card_description": "Доставка.Продукты и напитки Авторские заготовки и соусы БАНЧ.﻿"
+    },
+    {
+        "offer_id": 58051,
+        "offer_url": "https://www.vtbfamily.ru/offer/58051",
+        "title": "Интернет-магазин ART of TEA",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3104.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0da66fdc97c99c02b9778eb253c936f0d4fea7c20418f5d2da5ce059c705b060",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000058051.jpg",
+        "card_description": "Продукты и напитки Интернет-магазин ART of TEA"
+    },
+    {
+        "offer_id": 332354,
+        "offer_url": "https://www.vtbfamily.ru/offer/332354",
+        "title": "Luce Coffee Espresso. Кофе в капсулах, молотый, в зернах",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4517.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161917Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cb55da38f1568d4e360823b981cac53da83de69db8356065344cc0efa9c11a25",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000332354.jpg",
+        "card_description": "Продукты и напитки Luce Coffee Espresso. Кофе в капсулах, молотый, в зернах"
+    },
+    {
+        "offer_id": 405424,
+        "offer_url": "https://www.vtbfamily.ru/offer/405424",
+        "title": "Italioni: интернет-магазин премиальных продуктов до 11%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/itallioni.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c8190ded093ff1b29c000b10c2a942507bc2b8032e6afa87f04a0e13c944139e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405424.jpg",
+        "card_description": "Продукты и напитки Italioni: интернет-магазин премиальных продуктов до 11%"
+    },
+    {
+        "offer_id": 508,
+        "offer_url": "https://www.vtbfamily.ru/offer/508",
+        "title": "AMERICANO CAKE",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2039.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3e0081b3108a02b1dae3cd9a44fe897653ca8e4d8a6bbd96b562ddaafd0435ee",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000508.jpg",
+        "card_description": "Продукты и напитки AMERICANO CAKE"
+    },
+    {
+        "offer_id": 617,
+        "offer_url": "https://www.vtbfamily.ru/offer/617",
+        "title": "Лавка Ремесла﻿",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2191.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8d2543f874be0d8aa9c426c29e9145ba93b1922f3e16f6a5bc9e158ba6374d8e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000617.jpg",
+        "card_description": "Продукты и напитки Лавка Ремесла﻿"
+    },
+    {
+        "offer_id": 1355,
+        "offer_url": "https://www.vtbfamily.ru/offer/1355",
+        "title": "Konti – Интернет-магазин кондитерских изделий",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3269.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=609087a0bedadfddacd3e72bba8e7078efc246504a7fbd2ad66c6c5546858552",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001355.jpg",
+        "card_description": "Продукты и напитки Konti – Интернет-магазин кондитерских изделий"
+    },
+    {
+        "offer_id": 1603,
+        "offer_url": "https://www.vtbfamily.ru/offer/1603",
+        "title": "Сервис доставки закусок и событийного кейтеринга Preparty",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3646.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ac52ec6c0ae7b34ff1d879a3c7ca35321ee7f557b27964c7aec63836da037945",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001603.jpg",
+        "card_description": "Продукты и напитки Сервис доставки закусок и событийного кейтеринга Preparty"
+    },
+    {
+        "offer_id": 1912,
+        "offer_url": "https://www.vtbfamily.ru/offer/1912",
+        "title": "Доставка наборов продуктов с рецептами Ужин Дома﻿",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_982.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=92582fb9628ef178b558e49622eb6afc69554df1c1f64db8bab42d360399199f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001912.jpg",
+        "card_description": "Продукты и напитки Доставка наборов продуктов с рецептами Ужин Дома﻿"
+    },
+    {
+        "offer_id": 52691,
+        "offer_url": "https://www.vtbfamily.ru/offer/52691",
+        "title": "SimpleWine 25%",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/simple__C4H3erR.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eb5e1066330746bb0ea56f61b35888fb7aa953514030261a8009987432b71339",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052691.jpg",
+        "card_description": "Продукты и напитки SimpleWine 25%"
+    },
+    {
+        "offer_id": 420625,
+        "offer_url": "https://www.vtbfamily.ru/offer/420625",
+        "title": "ПростоЕда: доставка готовой еды",
+        "category": "Продукты и напитки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D1%80%D0%BE%D1%81%D1%82%D0%BE_%D0%B5%D0%B4%D0%B0.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161931Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f891ac469604ec878821b8d289c3198e907702e5d8eaef71c8b7ccf3e5cf8b4e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000420625.jpg",
+        "card_description": "Продукты и напитки ПростоЕда: доставка готовой еды"
+    }
+]

@@ -1,0 +1,362 @@
+[
+    {
+        "offer_id": 311234,
+        "offer_url": "https://www.vtbfamily.ru/offer/311234",
+        "title": "Каршеринг Ситидрайв",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%B8%D1%82%D0%B8%D0%B4%D1%80%D0%B0%D0%B9%D0%B2_1_tjjdXUK.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c5d8c643e27433e12e4e5509ee2d984de30a28927d03caf30995df4af3388f3d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000311234.jpg",
+        "card_description": "Транспорт Каршеринг Ситидрайв"
+    },
+    {
+        "offer_id": 402288,
+        "offer_url": "https://www.vtbfamily.ru/offer/402288",
+        "title": "Каршеринг BelkaCar",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/1896%D1%85740_uDizvBM.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f0622d660f75b671608c48d4394baa6c34d53f7bf0e0f5eb1556cbcdd099f66c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402288.jpg",
+        "card_description": "Транспорт Каршеринг BelkaCar"
+    },
+    {
+        "offer_id": 830,
+        "offer_url": "https://www.vtbfamily.ru/offer/830",
+        "title": "Автодор — Платные Дороги",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2485.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f4bafd61309f7e40b4aa75354dbb5ca701fa53b3245777dc87ec120f35b76b11",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000830.jpg",
+        "card_description": "Транспорт Автодор — Платные Дороги"
+    },
+    {
+        "offer_id": 264572,
+        "offer_url": "https://www.vtbfamily.ru/offer/264572",
+        "title": "Сервис по заказу такси SwiftDrive 15%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_26-12-2024_163434_94nxgJT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ea29ac481b41ebaf07f48ed1754f024a1d4673d18f50e564ab4f55f35ab6d54",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000264572.jpg",
+        "card_description": "Транспорт Сервис по заказу такси SwiftDrive 15%"
+    },
+    {
+        "offer_id": 1909,
+        "offer_url": "https://www.vtbfamily.ru/offer/1909",
+        "title": "Сеть умных моек Портал",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_978.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a604f16e71153ba8ad321d897a817aa73eeb1ef39dc4fc61a14da9ef567fa6d9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001909.jpg",
+        "card_description": "Транспорт Сеть умных моек Портал"
+    },
+    {
+        "offer_id": 1455,
+        "offer_url": "https://www.vtbfamily.ru/offer/1455",
+        "title": "Заказ персонального трансфера i'way",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3413.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e32b11e6ced5f1107b6e80ad8e831925a3e53d62946948af6e9e47254b33818e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001455.jpg",
+        "card_description": "Транспорт Заказ персонального трансфера i'way"
+    },
+    {
+        "offer_id": 402801,
+        "offer_url": "https://www.vtbfamily.ru/offer/402801",
+        "title": "Колеса Даром: магазин шин, дисков и автотоваров 7%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%BE%D0%BB%D0%B5%D1%81%D0%B0_%D0%B4%D0%B0%D1%80%D0%BE%D0%BC.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a8261803648279b9d3f6273dac62016fe3b5318c5e388089409d4170b06ba206",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402801.jpg",
+        "card_description": "Транспорт Колеса Даром: магазин шин, дисков и автотоваров 7%"
+    },
+    {
+        "offer_id": 54439,
+        "offer_url": "https://www.vtbfamily.ru/offer/54439",
+        "title": "Интернет-магазин «ЛУКОЙЛ смазочные материалы»",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3827.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d65c2c720bffa22347845dc3268857ce61cb77e4eba4ce7e0dae2d50064e611",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054439.jpg",
+        "card_description": "Транспорт Интернет-магазин «ЛУКОЙЛ смазочные материалы»"
+    },
+    {
+        "offer_id": 90790,
+        "offer_url": "https://www.vtbfamily.ru/offer/90790",
+        "title": "Gettransfer 10%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/gettransfer_pMJKozo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6879ca599ca4fa4be2967d0ff5954f36467cc2beceee3e6c80870b6bd86bb39e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090790.jpg",
+        "card_description": "Транспорт Gettransfer 10%"
+    },
+    {
+        "offer_id": 54712,
+        "offer_url": "https://www.vtbfamily.ru/offer/54712",
+        "title": "Мой автопрокат: сервис аренды автомобилей до 12%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%BE%D0%B9_%D0%B0%D0%B2%D1%82%D0%BE%D0%BF%D1%80%D0%BE%D0%BA%D0%B0%D1%82_yO3xoqp.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45a83ecfa09b49accc57b363449a8dd8d8c145f1e3fa854ccf8f5dcceb9fe5f5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054712.jpg",
+        "card_description": "Транспорт Мой автопрокат: сервис аренды автомобилей до 12%"
+    },
+    {
+        "offer_id": 342,
+        "offer_url": "https://www.vtbfamily.ru/offer/342",
+        "title": "Электро-велосипеды Велобайк",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1771.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=30ee0b43405b4c83b2305501c08c29b69eb5be38c8c756c67248cf0ec0eceaa8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000342.jpg",
+        "card_description": "Транспорт Электро-велосипеды Велобайк"
+    },
+    {
+        "offer_id": 339013,
+        "offer_url": "https://www.vtbfamily.ru/offer/339013",
+        "title": "Грузовичкоф",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B3%D1%80%D1%83%D0%B7%D0%BE%D0%B2%D0%B8%D1%87%D0%BA%D0%BE%D1%84__gRVQ1xH.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=82c7d95fdf0e96edce0ca81cbb89e51d980de5078504aebfe871f4c937ff6cdd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000339013.jpg",
+        "card_description": "Транспорт Грузовичкоф"
+    },
+    {
+        "offer_id": 402408,
+        "offer_url": "https://www.vtbfamily.ru/offer/402408",
+        "title": "Ситидрайв Рент: аренда автомобилей 10%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%B8%D1%82%D0%B8%D0%B4%D1%80%D0%B0%D0%B9%D0%B2_%D1%80%D0%B5%D0%BD%D1%82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=17d0315cfe11b23200c721210e35ff9535c8af8b53b3fed67521206a76969399",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402408.jpg",
+        "card_description": "Транспорт Ситидрайв Рент: аренда автомобилей 10%"
+    },
+    {
+        "offer_id": 1624,
+        "offer_url": "https://www.vtbfamily.ru/offer/1624",
+        "title": "Аренда автомобилей Автопилот",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3671.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b20a4319cb36d0b127b9680b5c380b252f281cccf6c5c894e3a6f578cc4f5b3f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001624.jpg",
+        "card_description": "Транспорт Аренда автомобилей Автопилот"
+    },
+    {
+        "offer_id": 94648,
+        "offer_url": "https://www.vtbfamily.ru/offer/94648",
+        "title": "Сеть шиномонтажей SM24",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3883.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=07a888ff8260d66b98908eb18f90ea79fccdc0e4d96983cb82d0c4137771942b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000094648.jpg",
+        "card_description": "Транспорт Сеть шиномонтажей SM24"
+    },
+    {
+        "offer_id": 201,
+        "offer_url": "https://www.vtbfamily.ru/offer/201",
+        "title": "Сеть автосервисов На Колесах.ру",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_150.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=132ff7e9f7e367c8b6dbe61daab3b198032279cdc1b5416ad73d84f875973baf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000201.jpg",
+        "card_description": "Транспорт Сеть автосервисов На Колесах.ру"
+    },
+    {
+        "offer_id": 402085,
+        "offer_url": "https://www.vtbfamily.ru/offer/402085",
+        "title": "Park&Fly: сеть парковок в аэропортах 10%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/parkfly_Xn9GOMV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9f6b32ec4955cad4bb6505516b0aba9db96e3a8884a6c61af1bc8ad9a4a7f031",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402085.jpg",
+        "card_description": "Транспорт Park&Fly: сеть парковок в аэропортах 10%"
+    },
+    {
+        "offer_id": 402162,
+        "offer_url": "https://www.vtbfamily.ru/offer/402162",
+        "title": "Rentcars: аренда авто 10%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/rentcars_OttvvVy.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2b2b5feb2dce6ca3864e60cccd85ba252153d3c89bf9168cf9c32d0f9dbc38ee",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402162.jpg",
+        "card_description": "Транспорт Rentcars: аренда авто 10%"
+    },
+    {
+        "offer_id": 229860,
+        "offer_url": "https://www.vtbfamily.ru/offer/229860",
+        "title": "Автозапчасти ROSSKO",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4366.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=357cda2535af9693f85d327ec154fe0fe54f5e0c6b40d1dc0a5fc35329007c9e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000229860.jpg",
+        "card_description": "Транспорт Автозапчасти ROSSKO"
+    },
+    {
+        "offer_id": 304643,
+        "offer_url": "https://www.vtbfamily.ru/offer/304643",
+        "title": "Специальное предложение на автомобили JAECOO в Авангард Моторс",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4468.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163609Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a1361b988ad6d7595dde72215f757d91878a523f3bbfd703d7491e4ee1b589b2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000304643.jpg",
+        "card_description": "Транспорт Специальное предложение на автомобили JAECOO в Авангард Моторс"
+    },
+    {
+        "offer_id": 112871,
+        "offer_url": "https://www.vtbfamily.ru/offer/112871",
+        "title": "FRANK AUTO",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3849.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ffdf97f5c0773144fb22063358b8560ef325fe1c61758a3992c350f1cf52de7b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000112871.jpg",
+        "card_description": "Транспорт FRANK AUTO"
+    },
+    {
+        "offer_id": 245308,
+        "offer_url": "https://www.vtbfamily.ru/offer/245308",
+        "title": "Эксклюзивное предложение на Voyah в РОЛЬФ",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4391.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ed4438b2d67650dfe2ab3b4821b1e4de0b70d6b422c7ba3876fb2bf1564f0396",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000245308.jpg",
+        "card_description": "Транспорт Эксклюзивное предложение на Voyah в РОЛЬФ"
+    },
+    {
+        "offer_id": 405467,
+        "offer_url": "https://www.vtbfamily.ru/offer/405467",
+        "title": "MVA Group: магазин автоэлектроники и автозвука 5%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/mva.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c32122235905bc0fba984f3ae4bb17e5238205e956c0e232b6a21b3a076d511d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405467.jpg",
+        "card_description": "Транспорт MVA Group: магазин автоэлектроники и автозвука 5%"
+    },
+    {
+        "offer_id": 65,
+        "offer_url": "https://www.vtbfamily.ru/offer/65",
+        "title": "Долгосрочная аренда авто в сервисе TheMashina",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1150.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1450142c44089ecef9e126865b7132f155d79ec6914039928ed470155bba68b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000065.jpg",
+        "card_description": "Транспорт Долгосрочная аренда авто в сервисе TheMashina"
+    },
+    {
+        "offer_id": 668,
+        "offer_url": "https://www.vtbfamily.ru/offer/668",
+        "title": "Ремонт литых дисков Доктор Диск",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2253.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=389fc571a1ef833e693625d618c8d5b7e973d06a4ce23668e7197d2402c3af84",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000668.jpg",
+        "card_description": "Транспорт Ремонт литых дисков Доктор Диск"
+    },
+    {
+        "offer_id": 1660,
+        "offer_url": "https://www.vtbfamily.ru/offer/1660",
+        "title": "Сервис аренды авто без водителя GetRentacar.com",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_393.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0a397c994277e97cc40a1628880818a1bfe15181385f86820375d33a2e66df83",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001660.jpg",
+        "card_description": "Транспорт Сервис аренды авто без водителя GetRentacar.com"
+    },
+    {
+        "offer_id": 123199,
+        "offer_url": "https://www.vtbfamily.ru/offer/123199",
+        "title": "HAVAL PRO в БорисХоф",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3950.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ca4a1f40413a109b38a630ff836bbc35e1e6b000bb7d84aefd1193736dab940",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000123199.jpg",
+        "card_description": "Транспорт HAVAL PRO в БорисХоф"
+    },
+    {
+        "offer_id": 214731,
+        "offer_url": "https://www.vtbfamily.ru/offer/214731",
+        "title": "LocalRent",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B0%D1%80%D0%B5%D0%BD%D0%B4%D0%B0_%D0%B0%D0%B2%D1%82%D0%BE__kdhTFZG.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b3cbe57044d69493866d8092f84c3944bada62befa6d270ee41cdd7e65e34f89",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000214731.jpg",
+        "card_description": "Транспорт LocalRent"
+    },
+    {
+        "offer_id": 315283,
+        "offer_url": "https://www.vtbfamily.ru/offer/315283",
+        "title": "Максимальные скидки на автомобили Jetta в РОЛЬФ",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4492.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=833652051d95ab24db8a06608e9e51896977272eab4deb18201da214e24587fc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000315283.jpg",
+        "card_description": "Транспорт Максимальные скидки на автомобили Jetta в РОЛЬФ"
+    },
+    {
+        "offer_id": 1871,
+        "offer_url": "https://www.vtbfamily.ru/offer/1871",
+        "title": "MOTOBAZA.RU",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_904.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9478ea78c900d54c8bc6357f46dbbaf90ccb60869ba313b2783bac4a2871744b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001871.jpg",
+        "card_description": "Транспорт MOTOBAZA.RU"
+    },
+    {
+        "offer_id": 94631,
+        "offer_url": "https://www.vtbfamily.ru/offer/94631",
+        "title": "ПроАвто. Автошкола Александра Гусева",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3851.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=15a0f3652a17d370e14505d659724006a30f11f46ca7a2b47791e4b33a7a3f85",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000094631.jpg",
+        "card_description": "Транспорт ПроАвто. Автошкола Александра Гусева"
+    },
+    {
+        "offer_id": 123197,
+        "offer_url": "https://www.vtbfamily.ru/offer/123197",
+        "title": "HAVAL CITY в БорисХоф",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3949.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ea610f6bc29e1163336e9979cc9b83901b4ab724903ad61c7f9b9607bf5a10e6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000123197.jpg",
+        "card_description": "Транспорт HAVAL CITY в БорисХоф"
+    },
+    {
+        "offer_id": 131616,
+        "offer_url": "https://www.vtbfamily.ru/offer/131616",
+        "title": "Сервис по перевозке и эвакуации AVTO•SOS﻿",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4082.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8520012c4b908edb689f9d9958349184339b211b62efbee8635c1f99e7374a3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131616.jpg",
+        "card_description": "Транспорт Сервис по перевозке и эвакуации AVTO•SOS﻿"
+    },
+    {
+        "offer_id": 245307,
+        "offer_url": "https://www.vtbfamily.ru/offer/245307",
+        "title": "Эксклюзивное предложение на EVOLUTE в РОЛЬФ",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4390.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=405f5251f40beedf94d31dea4491a5c62ac865f0028bc627f465877b2dce1743",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000245307.jpg",
+        "card_description": "Транспорт Эксклюзивное предложение на EVOLUTE в РОЛЬФ"
+    },
+    {
+        "offer_id": 281344,
+        "offer_url": "https://www.vtbfamily.ru/offer/281344",
+        "title": "Эксклюзивная скидка на KIA в РОЛЬФ СПБ",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4440.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=05140fe6d7a06d3f40df652bf4f8f4c1c6de705917c68dfad9c2ba5a48d05e2b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000281344.jpg",
+        "card_description": "Транспорт Эксклюзивная скидка на KIA в РОЛЬФ СПБ"
+    },
+    {
+        "offer_id": 304642,
+        "offer_url": "https://www.vtbfamily.ru/offer/304642",
+        "title": "Специальное предложение на автомобили OMODA в Авангард Моторс",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4467.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f4a1ae260c3057b4ce82d9dc0ef74e62f6dfdac34416cb93bd6b898f53b52f63",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000304642.jpg",
+        "card_description": "Транспорт Специальное предложение на автомобили OMODA в Авангард Моторс"
+    },
+    {
+        "offer_id": 402205,
+        "offer_url": "https://www.vtbfamily.ru/offer/402205",
+        "title": "FIT SERVICE: сеть автосервисов",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/fit_diAT5tK.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9d22483691d6be2a62a3ff0f4854b6f36be420ba7482633a401b1bb8ee8dd716",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402205.jpg",
+        "card_description": "Транспорт FIT SERVICE: сеть автосервисов"
+    },
+    {
+        "offer_id": 402244,
+        "offer_url": "https://www.vtbfamily.ru/offer/402244",
+        "title": "Авто Аудио Центр: автодетейлинг и тюнинг центр до 20%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B0%D0%B2%D1%82%D0%BE_%D0%B0%D1%83%D0%B4%D0%B8%D0%BE_%D1%86%D0%B5%D0%BD%D1%82%D1%80_ZbE1S20.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aefd56d90316f885f3ddf5b71fa342f80981df78d72cdeec231977a28c5b5866",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402244.jpg",
+        "card_description": "Транспорт Авто Аудио Центр: автодетейлинг и тюнинг центр до 20%"
+    },
+    {
+        "offer_id": 403030,
+        "offer_url": "https://www.vtbfamily.ru/offer/403030",
+        "title": "FIT SERVICE: шиномонтаж по фиксированной цене",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Fitservice.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9a08bef96ceded6b7718456bdd9ebc86eb8a422f2aedf34d71548889f37bcac3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403030.jpg",
+        "card_description": "Транспорт FIT SERVICE: шиномонтаж по фиксированной цене"
+    },
+    {
+        "offer_id": 405286,
+        "offer_url": "https://www.vtbfamily.ru/offer/405286",
+        "title": "Автосалон АвтоГЕРМЕС 1%",
+        "category": "Транспорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B0%D0%B2%D1%82%D0%BE%D0%B3%D0%B5%D1%80%D0%BC%D0%B5%D1%81_%D0%BA%D0%BE%D0%BF%D0%B8%D1%8F_3_1.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163611Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ed7663fe4940bf8619348b7d280e63c642c9674b9419fc6a2ccf20d2a97999ed",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405286.jpg",
+        "card_description": "Транспорт Автосалон АвтоГЕРМЕС 1%"
+    }
+]

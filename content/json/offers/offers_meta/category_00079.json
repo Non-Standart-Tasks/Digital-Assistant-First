@@ -1,0 +1,200 @@
+[
+    {
+        "offer_id": 129774,
+        "offer_url": "https://www.vtbfamily.ru/offer/129774",
+        "title": "Фарфор, хрусталь и подарки в магазинах Дом Фарфора",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%84%D0%B0%D1%80%D1%84%D0%BE%D1%80_%D0%B8%D1%82%D0%BE%D0%B3_yzlBwXo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=13d209f20eaef0baf3863db775acdaebeb16c9d5a2639f5661365587d4ef7970",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129774.jpg",
+        "card_description": "Цветы и подарки Фарфор, хрусталь и подарки в магазинах Дом Фарфора"
+    },
+    {
+        "offer_id": 52681,
+        "offer_url": "https://www.vtbfamily.ru/offer/52681",
+        "title": "Цветы и подарки от Flowwow 15%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/flowwow_2_G1iYWkz.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9f8909602e71b432fa0cfcfc03ec366a932d2e278f8200133c6d3b3ec7f66891",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052681.jpg",
+        "card_description": "Цветы и подарки Цветы и подарки от Flowwow 15%"
+    },
+    {
+        "offer_id": 170112,
+        "offer_url": "https://www.vtbfamily.ru/offer/170112",
+        "title": "Candle me 25%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/candle_me_3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2c0da318e946fb8b24dbf385d0cc2cbfa2043a098a74399b27fc34aa8b97cb1b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000170112.jpg",
+        "card_description": "Цветы и подарки Candle me 25%"
+    },
+    {
+        "offer_id": 87,
+        "offer_url": "https://www.vtbfamily.ru/offer/87",
+        "title": "Cuva — подарочные сертификаты на отдых в загородных отелях России",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1197.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e6ae4d1e3644b3e8bf458eedb24cd514a019db68a2426d2bb9665aa49b42e5dd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000087.jpg",
+        "card_description": "Цветы и подарки Cuva — подарочные сертификаты на отдых в загородных отелях России"
+    },
+    {
+        "offer_id": 1032,
+        "offer_url": "https://www.vtbfamily.ru/offer/1032",
+        "title": "Служба доставки цветов и подарков Flowers-Sib",
+        "category": "Цветы",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2742.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d03e20f0b5f32ad624275aeaec705fc0b52d493b5e3474c29338929b134e675a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001032.jpg",
+        "card_description": "Цветы Служба доставки цветов и подарков Flowers-Sib"
+    },
+    {
+        "offer_id": 1651,
+        "offer_url": "https://www.vtbfamily.ru/offer/1651",
+        "title": "Маркетплейс цветов Flawery.ru",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3709.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=881d5f69752e4a7cdd53560c2589cb352d42ade3bfa51fe5d5e69599d610e9c5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001651.jpg",
+        "card_description": "Цветы и подарки Маркетплейс цветов Flawery.ru"
+    },
+    {
+        "offer_id": 402596,
+        "offer_url": "https://www.vtbfamily.ru/offer/402596",
+        "title": "Presentstar: магазин подарочных сертификатов 12%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/present_star.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37c05d7e8e2059ef3d1e98d5615ebdfbd49143f2c25476f52b5318dcccd222a0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402596.jpg",
+        "card_description": "Цветы и подарки Presentstar: магазин подарочных сертификатов 12%"
+    },
+    {
+        "offer_id": 140368,
+        "offer_url": "https://www.vtbfamily.ru/offer/140368",
+        "title": "Галереи Stargift 5%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/stargift_9ISilWS.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a4ced55dfe4f1932e6e9389b70c7ecfb5db689ec0e6257931a7211f3c95c50e5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000140368.jpg",
+        "card_description": "Цветы и подарки Галереи Stargift 5%"
+    },
+    {
+        "offer_id": 90870,
+        "offer_url": "https://www.vtbfamily.ru/offer/90870",
+        "title": "AMF — международная сеть доставки цветов 10%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_qRsdCmW_gQhXBEu.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7d9f71fc4548573f357fd15a7692750fcc300f950def2e81d02664155c867bab",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090870.jpg",
+        "card_description": "Цветы и подарки AMF — международная сеть доставки цветов 10%"
+    },
+    {
+        "offer_id": 52683,
+        "offer_url": "https://www.vtbfamily.ru/offer/52683",
+        "title": "ROOTS flowers 15%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/roots_2owa781.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=15dac6357c748be47e83362345ecba8341cfd291836a9c338c8fed3456a638e3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052683.jpg",
+        "card_description": "Цветы и подарки ROOTS flowers 15%"
+    },
+    {
+        "offer_id": 131648,
+        "offer_url": "https://www.vtbfamily.ru/offer/131648",
+        "title": "Цветы и подарки от Цветов.ру",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4137.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eab5cfa059746412e559318a7f71d9cf40dc1142391962eae7f73da33e6aa60b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131648.jpg",
+        "card_description": "Цветы и подарки Цветы и подарки от Цветов.ру"
+    },
+    {
+        "offer_id": 52701,
+        "offer_url": "https://www.vtbfamily.ru/offer/52701",
+        "title": "Фея Розы 15%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%84%D0%B5%D1%8F_%D1%80%D0%BE%D0%B7%D1%8B_1_1BpeGbT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=af256fe4787c30f34f8c343a5e9ed82adc594397177a0644034de5a5717e6f10",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052701.jpg",
+        "card_description": "Цветы и подарки Фея Розы 15%"
+    },
+    {
+        "offer_id": 608,
+        "offer_url": "https://www.vtbfamily.ru/offer/608",
+        "title": "Цветочная лаборатория BLUSH by Yasya﻿",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2181.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=56766688d32983190a059c650fc12884d2758128b4875ad417b63503712f359c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000608.jpg",
+        "card_description": "Цветы и подарки Цветочная лаборатория BLUSH by Yasya﻿"
+    },
+    {
+        "offer_id": 1361,
+        "offer_url": "https://www.vtbfamily.ru/offer/1361",
+        "title": "Подарочные сертификаты на впечатления Xpresent",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3281.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8fe944ea203d2fc86eb968cb3d395675f71716b83dcfe0cc2a5fe2c39e5f27a1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001361.jpg",
+        "card_description": "Цветы и подарки Подарочные сертификаты на впечатления Xpresent"
+    },
+    {
+        "offer_id": 1825,
+        "offer_url": "https://www.vtbfamily.ru/offer/1825",
+        "title": "Сеть цветочных салонов Ирис﻿",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_792.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=18109cac732fed40b445c83ccc1aa5d4354776e100f349c209a801db15a3a42c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001825.jpg",
+        "card_description": "Цветы и подарки Сеть цветочных салонов Ирис﻿"
+    },
+    {
+        "offer_id": 212262,
+        "offer_url": "https://www.vtbfamily.ru/offer/212262",
+        "title": "Ювелирные салоны Carat и Vello D’Oro",
+        "category": "Подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4340.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4fb7b6296466f865f27a05c4c8d454c15fde163178f140218f64339e37639174",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000212262.jpg",
+        "card_description": "Подарки Ювелирные салоны Carat и Vello D’Oro"
+    },
+    {
+        "offer_id": 302523,
+        "offer_url": "https://www.vtbfamily.ru/offer/302523",
+        "title": "Цветы и подарки от Flowwow. Беларусь",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4483.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=53a24e4e36c0c51f28bff46200dc83ec2b536d2df244253bd40be30acc44386b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000302523.jpg",
+        "card_description": "Цветы и подарки Цветы и подарки от Flowwow. Беларусь"
+    },
+    {
+        "offer_id": 405524,
+        "offer_url": "https://www.vtbfamily.ru/offer/405524",
+        "title": "My Hygge Box: интернет-магазин подарков 12%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/my_hygge_box_.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=96552b92bd8a9df83045d42c979f0c659cf11d28d1b3acdcd3946b0c26df84fc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405524.jpg",
+        "card_description": "Цветы и подарки My Hygge Box: интернет-магазин подарков 12%"
+    },
+    {
+        "offer_id": 234282,
+        "offer_url": "https://www.vtbfamily.ru/offer/234282",
+        "title": "Цветы и подарки от Flowwow Казахстан",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4379.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=39ea3d6cc32146d4281e0b5b13e507f0687f02a940e84de5adce1ccb317e67e5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000234282.jpg",
+        "card_description": "Цветы и подарки Цветы и подарки от Flowwow Казахстан"
+    },
+    {
+        "offer_id": 1184,
+        "offer_url": "https://www.vtbfamily.ru/offer/1184",
+        "title": "Студия цветов и декора Rose Room",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2973.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162849Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=93649cadf3b450e439510c23686e08e5ec821673aee8ca7bd541fd58d85d41f6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001184.jpg",
+        "card_description": "Цветы и подарки Студия цветов и декора Rose Room"
+    },
+    {
+        "offer_id": 1350,
+        "offer_url": "https://www.vtbfamily.ru/offer/1350",
+        "title": "Студия флористики Букетист",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3263.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162852Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ddec0f76857d459e1bdec11cd660654849a9b6bc42374a561b82fc40b6685a44",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001350.jpg",
+        "card_description": "Цветы и подарки Студия флористики Букетист"
+    },
+    {
+        "offer_id": 238918,
+        "offer_url": "https://www.vtbfamily.ru/offer/238918",
+        "title": "Цветочная галерея Турандот 10%",
+        "category": "Цветы и подарки",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%82%D1%83%D1%80%D0%B0%D0%BD%D0%B4%D0%BE%D1%82_%D1%86%D0%B2%D0%B5%D1%82%D1%8B_7E6hvgr.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162852Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1d968e497ab78f1fbf18ed562d227f156d591ae13c5b90e34d0a3fd5a6be5081",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000238918.jpg",
+        "card_description": "Цветы и подарки Цветочная галерея Турандот 10%"
+    }
+]

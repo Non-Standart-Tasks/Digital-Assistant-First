@@ -1,0 +1,1388 @@
+[
+    {
+        "offer_id": 402409,
+        "offer_url": "https://www.vtbfamily.ru/offer/402409",
+        "title": "PROSTO eSIM: электронная сим-карта для путешествий без границ",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%91%D0%B0%D0%BD%D0%B5%D1%80_1.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b6c8b9dbd9b108f31b1eb4beb49a510802d6b530011cf335ab8710955d40c7a8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402409.jpg",
+        "card_description": "Путешествия PROSTO eSIM: электронная сим-карта для путешествий без границ"
+    },
+    {
+        "offer_id": 1152,
+        "offer_url": "https://www.vtbfamily.ru/offer/1152",
+        "title": "Онлайн-сервис по организации путешествий OneTwoTrip",
+        "category": "Услуги.путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/one_two_trip.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=99e9b25f535cf9143b253aed288c16c94e3a8ff00db1f3bd7ac3124a7f8c2215",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001152.jpg",
+        "card_description": "Услуги.путешествия Онлайн-сервис по организации путешествий OneTwoTrip"
+    },
+    {
+        "offer_id": 1451,
+        "offer_url": "https://www.vtbfamily.ru/offer/1451",
+        "title": "Сочи парк Отель",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3405.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5d141eff9fe3dd174b8368b3582d9918b15d103d09e37060f451bcbb09e6a8de",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001451.jpg",
+        "card_description": "Путешествия Сочи парк Отель"
+    },
+    {
+        "offer_id": 1252,
+        "offer_url": "https://www.vtbfamily.ru/offer/1252",
+        "title": "Отели Курорта Красная Поляна",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3068.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fe1c96086267afac7b0f7436e667f232da824354899031530cb03a7caeba870e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001252.jpg",
+        "card_description": "Путешествия Отели Курорта Красная Поляна"
+    },
+    {
+        "offer_id": 243,
+        "offer_url": "https://www.vtbfamily.ru/offer/243",
+        "title": "Radisson Hotel, Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1579.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b3d4fe90c44d5c11411909ae47b0ff8f0dc56d553fbead36986ef35d0716f991",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000243.jpg",
+        "card_description": "Путешествия Radisson Hotel, Rosa Khutor"
+    },
+    {
+        "offer_id": 52680,
+        "offer_url": "https://www.vtbfamily.ru/offer/52680",
+        "title": "Речные круизы от компании ВодоходЪ﻿ 8%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B2%D0%BE%D0%B4%D0%BE%D1%85%D0%BE%D0%B4%D1%8A_9QjsRwy.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6adf2d291e172dfb58fad1f67a89471fd1ec699ff1e27212a90345c5f7423b3d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052680.jpg",
+        "card_description": "Путешествия Речные круизы от компании ВодоходЪ﻿ 8%"
+    },
+    {
+        "offer_id": 245,
+        "offer_url": "https://www.vtbfamily.ru/offer/245",
+        "title": "Park Inn by Radisson Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1580.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1c95ac040f3e7b9c6ed7011c2eaa2da7e37292a6102dd8a6bf1b27b2d088c3a9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000245.jpg",
+        "card_description": "Путешествия Park Inn by Radisson Rosa Khutor"
+    },
+    {
+        "offer_id": 391,
+        "offer_url": "https://www.vtbfamily.ru/offer/391",
+        "title": "Radisson Blu Belorusskaya Hotel, Moscow",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1847.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=724ec0706f48e4f36a1a89e7eb04173982383d672d54b2258c0f6dc35f54ae26",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000391.jpg",
+        "card_description": "Путешествия Radisson Blu Belorusskaya Hotel, Moscow"
+    },
+    {
+        "offer_id": 843,
+        "offer_url": "https://www.vtbfamily.ru/offer/843",
+        "title": "Туроператор Coral Travel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_250.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a004f3bccb1b48304a4a2e2b28f0280757edae866626bde80a4688c2bca68198",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000843.jpg",
+        "card_description": "Путешествия Туроператор Coral Travel"
+    },
+    {
+        "offer_id": 1888,
+        "offer_url": "https://www.vtbfamily.ru/offer/1888",
+        "title": "Поиск и покупка туров и бронирование отелей от Level.Travel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_938.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=831c076aa81ed34bc8f2e4532c267ad7888f4a060d481dff540a01bec236def5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001888.jpg",
+        "card_description": "Путешествия Поиск и покупка туров и бронирование отелей от Level.Travel"
+    },
+    {
+        "offer_id": 446,
+        "offer_url": "https://www.vtbfamily.ru/offer/446",
+        "title": "Radisson Blu Olympiyskiy Hotel, Moscow",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1949.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=63540597abb7620db0d55e13566d39063f02cebb39bea686d3dce4a41f197a27",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000446.jpg",
+        "card_description": "Путешествия Radisson Blu Olympiyskiy Hotel, Moscow"
+    },
+    {
+        "offer_id": 54715,
+        "offer_url": "https://www.vtbfamily.ru/offer/54715",
+        "title": "Отель Метрополь до 20%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2024-09-25_123242.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7fef996cfb0153663d312d4501262cdebdad4495cdf95823c989e9aea4838669",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054715.jpg",
+        "card_description": "Путешествия Отель Метрополь до 20%"
+    },
+    {
+        "offer_id": 1455,
+        "offer_url": "https://www.vtbfamily.ru/offer/1455",
+        "title": "Заказ персонального трансфера i'way",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3413.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f4f38419c465adc28fb7479a4873b465df5b406bcebbbbcebff3496d9dc740fc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001455.jpg",
+        "card_description": "Путешествия Заказ персонального трансфера i'way"
+    },
+    {
+        "offer_id": 350,
+        "offer_url": "https://www.vtbfamily.ru/offer/350",
+        "title": "Санаторий Долина Нарзанов в Кисловодске",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1782.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a76a3af996da190f0d43e3ab87693751ed613b93a37b184096f31fda089b2c06",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000350.jpg",
+        "card_description": "Путешествия Санаторий Долина Нарзанов в Кисловодске"
+    },
+    {
+        "offer_id": 1069,
+        "offer_url": "https://www.vtbfamily.ru/offer/1069",
+        "title": "Отелло - сервис поиска и бронирования отелей и апартаментов",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2799.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2973fcfa21afac9bfdfec270ddf2fb21a2bfc2d621ad2503eadc1ea73d179db9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001069.jpg",
+        "card_description": "Путешествия Отелло - сервис поиска и бронирования отелей и апартаментов"
+    },
+    {
+        "offer_id": 865,
+        "offer_url": "https://www.vtbfamily.ru/offer/865",
+        "title": "Cosmos Selection St. Petersburg Nevsky Royal Hotel﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2522.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e6044f70c7c1a3bb51b4ffd3ddebef6e94a3bcf70fa4456ab2467ae98efa1212",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000865.jpg",
+        "card_description": "Путешествия Cosmos Selection St. Petersburg Nevsky Royal Hotel﻿"
+    },
+    {
+        "offer_id": 199338,
+        "offer_url": "https://www.vtbfamily.ru/offer/199338",
+        "title": "Tripster — экскурсии и туры до 5%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tripster_0n7bS4Z.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0eab1278ab085c625781ba32bd14a18e11ce1318e0e53628cb5d8f5557f8a039",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000199338.jpg",
+        "card_description": "Путешествия Tripster — экскурсии и туры до 5%"
+    },
+    {
+        "offer_id": 1836,
+        "offer_url": "https://www.vtbfamily.ru/offer/1836",
+        "title": "Сеть отелей Sirius Hotels",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_833.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1c771789313bbb8438573abc3d27b45ab6a215fcd9b34bc7cbbb00ed78743ed6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001836.jpg",
+        "card_description": "Путешествия Сеть отелей Sirius Hotels"
+    },
+    {
+        "offer_id": 1307,
+        "offer_url": "https://www.vtbfamily.ru/offer/1307",
+        "title": "Anywayanyday - Онлайн-сервис для покупки авиабилетов и отелей по в…",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3176.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=38c4b7b40f4f97ad5f342afef0c5267268ef7bb8f83c9a9cb8b05fd31229bf7b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001307.jpg",
+        "card_description": "Путешествия Anywayanyday - Онлайн-сервис для покупки авиабилетов и отелей по в…"
+    },
+    {
+        "offer_id": 469,
+        "offer_url": "https://www.vtbfamily.ru/offer/469",
+        "title": "Radisson Blu Hotel, Kaliningrad",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1983.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162224Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=96751234dcb38e2c46de181e5982af5fe33bfb16b55bbcfea89ef396b4a26184",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000469.jpg",
+        "card_description": "Путешествия Radisson Blu Hotel, Kaliningrad"
+    },
+    {
+        "offer_id": 1609,
+        "offer_url": "https://www.vtbfamily.ru/offer/1609",
+        "title": "Ski Inn SPA 4* Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3655.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=580dda2ce7db8edc655fc90e722af0b5f05538574794e77e73d60d8e2b66c60d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001609.jpg",
+        "card_description": "Путешествия Ski Inn SPA 4* Rosa Khutor"
+    },
+    {
+        "offer_id": 1116,
+        "offer_url": "https://www.vtbfamily.ru/offer/1116",
+        "title": "Отель DoubleTree Moscow Arbat",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2878.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=afcd1ea20b2a54bc445b2a652e63d4390ee4de7d9a4f73c25b51817d408e6977",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001116.jpg",
+        "card_description": "Путешествия Отель DoubleTree Moscow Arbat"
+    },
+    {
+        "offer_id": 338821,
+        "offer_url": "https://www.vtbfamily.ru/offer/338821",
+        "title": "Radisson Blu Leninsky Prospect Hotel, Moscow",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4541.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=341b33b60a926d6b62755a4e672ff46924a756babcc9d002059716298187237e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000338821.jpg",
+        "card_description": "Путешествия Radisson Blu Leninsky Prospect Hotel, Moscow"
+    },
+    {
+        "offer_id": 867,
+        "offer_url": "https://www.vtbfamily.ru/offer/867",
+        "title": "Cosmos St. Petersburg Pribaltiyskaya Hotel﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2524.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=829f8bd357a2bf8a0a2cebab1124d81ad160cfa60b196e1d531ef4708f48b3cc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000867.jpg",
+        "card_description": "Путешествия Cosmos St. Petersburg Pribaltiyskaya Hotel﻿"
+    },
+    {
+        "offer_id": 266752,
+        "offer_url": "https://www.vtbfamily.ru/offer/266752",
+        "title": "Cosmos Selection Moscow Sheremetyevo Airport Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4426.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=87487daed314b126c2bea6bbe568d482afcdefdd3aa8b497e611e0fa08dabbd5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000266752.jpg",
+        "card_description": "Путешествия Cosmos Selection Moscow Sheremetyevo Airport Hotel"
+    },
+    {
+        "offer_id": 853,
+        "offer_url": "https://www.vtbfamily.ru/offer/853",
+        "title": "Туроператор Sunmar",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_251.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=26b4aeedaab6ab3800c3d8152ca1c95178c81fcf496fe15d26efeb3d7f1b25c3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000853.jpg",
+        "card_description": "Путешествия Туроператор Sunmar"
+    },
+    {
+        "offer_id": 854,
+        "offer_url": "https://www.vtbfamily.ru/offer/854",
+        "title": "Cosmos Murmansk Hotel﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2510.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=26526237480cf7c1d9f76f0912f210ecf649c4e502441ffaf5163712f1a249b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000854.jpg",
+        "card_description": "Путешествия Cosmos Murmansk Hotel﻿"
+    },
+    {
+        "offer_id": 275632,
+        "offer_url": "https://www.vtbfamily.ru/offer/275632",
+        "title": "Ela Excellence Resort Belek",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4438.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a1a6d047389d466a3c3f9bb9f84ffea1c6e77fcc292bf38e116d0b4354cc4cce",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000275632.jpg",
+        "card_description": "Путешествия Ela Excellence Resort Belek"
+    },
+    {
+        "offer_id": 344,
+        "offer_url": "https://www.vtbfamily.ru/offer/344",
+        "title": "Санаторий ЧЕРНОМОРЬЕ﻿ 5*",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1776.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b24f4364b36fae765b471aa5bd25368c36f1162b81bd91d5a4bd66c5923d894e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000344.jpg",
+        "card_description": "Путешествия Санаторий ЧЕРНОМОРЬЕ﻿ 5*"
+    },
+    {
+        "offer_id": 1364,
+        "offer_url": "https://www.vtbfamily.ru/offer/1364",
+        "title": "Курортный поселок Garnet Holiday",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3285.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1c24113f7b6895d4150800da1abc8c56f27ff70825c14912c15b5d3d2d75252b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001364.jpg",
+        "card_description": "Путешествия Курортный поселок Garnet Holiday"
+    },
+    {
+        "offer_id": 402317,
+        "offer_url": "https://www.vtbfamily.ru/offer/402317",
+        "title": "Radisson Resort, Zavidovo на курорте Завидово до 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-21_23.25.25_bXT9O1g.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6c6ea0ffd084879f0338900c33f64bb46d140ec9d573049f8606767b91a2e8cb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402317.jpg",
+        "card_description": "Путешествия Radisson Resort, Zavidovo на курорте Завидово до 15%"
+    },
+    {
+        "offer_id": 87,
+        "offer_url": "https://www.vtbfamily.ru/offer/87",
+        "title": "Cuva — подарочные сертификаты на отдых в загородных отелях России",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1197.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=472d23c37c094d57e313f3b81f0fb63f555acab5762bfa0502d887d8fde0e2ec",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000087.jpg",
+        "card_description": "Путешествия Cuva — подарочные сертификаты на отдых в загородных отелях России"
+    },
+    {
+        "offer_id": 385,
+        "offer_url": "https://www.vtbfamily.ru/offer/385",
+        "title": "Туроператор Интурист",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1834.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fbd30fda2ff999c559f63b6c76db2561089f1885ce321a4e4875baba83470cac",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000385.jpg",
+        "card_description": "Путешествия Туроператор Интурист"
+    },
+    {
+        "offer_id": 405,
+        "offer_url": "https://www.vtbfamily.ru/offer/405",
+        "title": "Radisson Sonya Hotel St. Petersburg на Чайковского",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1872.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37254ae56c9c6c309bd9faa4706bdae86fcc4587a6f2c3943d3c2487e830f837",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000405.jpg",
+        "card_description": "Путешествия Radisson Sonya Hotel St. Petersburg на Чайковского"
+    },
+    {
+        "offer_id": 649,
+        "offer_url": "https://www.vtbfamily.ru/offer/649",
+        "title": "GEOMETRIKA. Lounge hotel. Горный Алтай (Манжерок)",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2230.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ec166509eb77458a050da211269942ad839e89b87457a26af786087dc9b59cdc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000649.jpg",
+        "card_description": "Путешествия GEOMETRIKA. Lounge hotel. Горный Алтай (Манжерок)"
+    },
+    {
+        "offer_id": 131642,
+        "offer_url": "https://www.vtbfamily.ru/offer/131642",
+        "title": "Отель Green Flow Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4125.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6338e5c987de821587883c35b435014368555a70ca12f845facb4289fc90f21e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131642.jpg",
+        "card_description": "Путешествия Отель Green Flow Rosa Khutor"
+    },
+    {
+        "offer_id": 52697,
+        "offer_url": "https://www.vtbfamily.ru/offer/52697",
+        "title": "Отель St. Regis Москва Никольская",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2024-09-24_153039_qLyypn3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa4ce58c6309a436b386db8cf635436d141d9e7cd62b53ef75856cdbc594b526",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052697.jpg",
+        "card_description": "Путешествия Отель St. Regis Москва Никольская"
+    },
+    {
+        "offer_id": 230102,
+        "offer_url": "https://www.vtbfamily.ru/offer/230102",
+        "title": "Дизайн-отель СтандАрт 20%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%81%D1%82%D0%B0%D0%BD%D0%B4%D0%B0%D1%80%D1%82_qsVLP3y.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d0916dc76282ef2a385048bc0d6fc3353c84ebe78c70536f5491a884b4475269",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000230102.jpg",
+        "card_description": "Путешествия Дизайн-отель СтандАрт 20%"
+    },
+    {
+        "offer_id": 138,
+        "offer_url": "https://www.vtbfamily.ru/offer/138",
+        "title": "Арт-отель Sофит",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1349.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d58f3c14a743ff6f1656982b674d602cb68f7b4c1b4c92adbbb8877eeb0ffc96",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000138.jpg",
+        "card_description": "Путешествия Арт-отель Sофит"
+    },
+    {
+        "offer_id": 52713,
+        "offer_url": "https://www.vtbfamily.ru/offer/52713",
+        "title": "Комплекс отдыха Завидово 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2024-09-24_183344.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162227Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ce0b0c4c04b06e3770bef5c5a1fdb727ed65bb25df9911c08ef737d4038432f8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052713.jpg",
+        "card_description": "Путешествия Комплекс отдыха Завидово 15%"
+    },
+    {
+        "offer_id": 263543,
+        "offer_url": "https://www.vtbfamily.ru/offer/263543",
+        "title": "Cosmos Novosibirsk Hotel﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3130.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dcdca3e9a595f08ca75b6a9e1853a5589a4e6c955ecb5bfb24f46504a4986f37",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000263543.jpg",
+        "card_description": "Путешествия Cosmos Novosibirsk Hotel﻿"
+    },
+    {
+        "offer_id": 479,
+        "offer_url": "https://www.vtbfamily.ru/offer/479",
+        "title": "Novotel Sheremetyevo Airport, Moscow",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1998.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e8f0af459ae269576408587a9940f0102ca29606c7298d2eb29e3182a186f0be",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000479.jpg",
+        "card_description": "Путешествия Novotel Sheremetyevo Airport, Moscow"
+    },
+    {
+        "offer_id": 254147,
+        "offer_url": "https://www.vtbfamily.ru/offer/254147",
+        "title": "Туроператор FUN&SUN",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4404.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0cb605042e89680a600fb1619a2b4ddb08bfebcacdde1754187f8568c8862bda",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000254147.jpg",
+        "card_description": "Путешествия Туроператор FUN&SUN"
+    },
+    {
+        "offer_id": 866,
+        "offer_url": "https://www.vtbfamily.ru/offer/866",
+        "title": "Cosmos St. Petersburg Nevsky Hotel﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2523.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c65388a179813c595f19f45ca661a19e976e5e9bd3131284ba77be5dc6263b54",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000866.jpg",
+        "card_description": "Путешествия Cosmos St. Petersburg Nevsky Hotel﻿"
+    },
+    {
+        "offer_id": 1140,
+        "offer_url": "https://www.vtbfamily.ru/offer/1140",
+        "title": "ТВИЛ отели и квартиры",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2915.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c5640eca5aef017e53e6e47a365ef83267ee2d7c0a7880aa5dc3ab28d81d3793",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001140.jpg",
+        "card_description": "Путешествия ТВИЛ отели и квартиры"
+    },
+    {
+        "offer_id": 23526,
+        "offer_url": "https://www.vtbfamily.ru/offer/23526",
+        "title": "Санаторий Мыс Видный﻿ в Сочи",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1784.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d0075a8feb62b058dc02ad72593ad043eff898c6da4455718d46f5ae3abd026e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000023526.jpg",
+        "card_description": "Путешествия Санаторий Мыс Видный﻿ в Сочи"
+    },
+    {
+        "offer_id": 1607,
+        "offer_url": "https://www.vtbfamily.ru/offer/1607",
+        "title": "Golden Tulip 4* Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3653.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=20fffdfd16e305d7c491de56ec27bd20114b3a6e358083bfccd6e366552be678",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001607.jpg",
+        "card_description": "Путешествия Golden Tulip 4* Rosa Khutor"
+    },
+    {
+        "offer_id": 96,
+        "offer_url": "https://www.vtbfamily.ru/offer/96",
+        "title": "IBIS Москва Динамо 3*",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1227.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9a466555065fcc17d4b9532bb9d052d5246d60dfc4346e309759ccd26feaf489",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000096.jpg",
+        "card_description": "Путешествия IBIS Москва Динамо 3*"
+    },
+    {
+        "offer_id": 254,
+        "offer_url": "https://www.vtbfamily.ru/offer/254",
+        "title": "Life Balance hotel Rosa Springs 5*",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1594.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0ebca580d25c1e8bda24c80a54e9943c8de400d609432cbda42e4f0e79670be4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000254.jpg",
+        "card_description": "Путешествия Life Balance hotel Rosa Springs 5*"
+    },
+    {
+        "offer_id": 664,
+        "offer_url": "https://www.vtbfamily.ru/offer/664",
+        "title": "Отель «Невский 74» 4*",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2247.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=83d5ff0bb341504ad54779d85786d37bfffb76a3e93bb1aaf2bf365576fa3caa",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000664.jpg",
+        "card_description": "Путешествия Отель «Невский 74» 4*"
+    },
+    {
+        "offer_id": 68546,
+        "offer_url": "https://www.vtbfamily.ru/offer/68546",
+        "title": "Сеть отелей Яхонты",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_465.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8f69ba48e8fb39358459284322d9cd0d74c08bdab694923ef3e37e3e3884fcb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000068546.jpg",
+        "card_description": "Путешествия Сеть отелей Яхонты"
+    },
+    {
+        "offer_id": 90783,
+        "offer_url": "https://www.vtbfamily.ru/offer/90783",
+        "title": "Парк отель Horseka Resort 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_3425852a6bc91fad2f3d66e31c15509e_676289ab441ed_HR47FxR.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d11aeaad91ecc175ec2474eb1cb56aba48b514f8fb5c6d9b973ddde843815a30",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090783.jpg",
+        "card_description": "Путешествия Парк отель Horseka Resort 15%"
+    },
+    {
+        "offer_id": 338815,
+        "offer_url": "https://www.vtbfamily.ru/offer/338815",
+        "title": "GetSki: Горнолыжное оборудование на курортах по всей стране",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4531.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=486aa6264c348a600c57299c05ca044c477fb8755e0f7b5b6e7fc5351af18670",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000338815.jpg",
+        "card_description": "Путешествия GetSki: Горнолыжное оборудование на курортах по всей стране"
+    },
+    {
+        "offer_id": 227,
+        "offer_url": "https://www.vtbfamily.ru/offer/227",
+        "title": "Бутик-отель The Rooms﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1547.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbb2432ec4b82231366089951c582e7ac160491da729eac5852465401b712519",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000227.jpg",
+        "card_description": "Путешествия Бутик-отель The Rooms﻿"
+    },
+    {
+        "offer_id": 352,
+        "offer_url": "https://www.vtbfamily.ru/offer/352",
+        "title": "Санаторий ОКТЯБРЬСКИЙ﻿ в Сочи",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1785.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7b56b198fba9de7868babc02ff48689716b82c22ccc319a7a4b1fa66ab632547",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000352.jpg",
+        "card_description": "Путешествия Санаторий ОКТЯБРЬСКИЙ﻿ в Сочи"
+    },
+    {
+        "offer_id": 1248,
+        "offer_url": "https://www.vtbfamily.ru/offer/1248",
+        "title": "Гранд - туры и экскурсии на Камчатку",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3063.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=685c073b7e9ee0ec2b7ffa2396fdbc6d78267a972739342c48069fdecb966a2e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001248.jpg",
+        "card_description": "Путешествия Гранд - туры и экскурсии на Камчатку"
+    },
+    {
+        "offer_id": 1605,
+        "offer_url": "https://www.vtbfamily.ru/offer/1605",
+        "title": "Эрбелия 4* Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3651.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1a9f0f7de1fee0afb987f335b5960ac00a35cb3085e73432cc98bd9775f69757",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001605.jpg",
+        "card_description": "Путешествия Эрбелия 4* Rosa Khutor"
+    },
+    {
+        "offer_id": 227666,
+        "offer_url": "https://www.vtbfamily.ru/offer/227666",
+        "title": "Маркетплейс авторских туров Youtravel.me",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4364.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d4382be8fa68027529e0866d0c0a171315faec03af9a39b1571d1d2defae1df6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000227666.jpg",
+        "card_description": "Путешествия Маркетплейс авторских туров Youtravel.me"
+    },
+    {
+        "offer_id": 1215,
+        "offer_url": "https://www.vtbfamily.ru/offer/1215",
+        "title": "Cosmos Volgograd Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3016.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4dc4d2fbdf44e137a5323d89183cd7aac51a5c186062f7cb976542179b82b0a3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001215.jpg",
+        "card_description": "Путешествия Cosmos Volgograd Hotel"
+    },
+    {
+        "offer_id": 1259,
+        "offer_url": "https://www.vtbfamily.ru/offer/1259",
+        "title": "Парк-отель Воздвиженское",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_308.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162242Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=82e637a2e797bb481147680cd6043326379944cafbb552175d08e7ce326652bb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001259.jpg",
+        "card_description": "Путешествия Парк-отель Воздвиженское"
+    },
+    {
+        "offer_id": 1805,
+        "offer_url": "https://www.vtbfamily.ru/offer/1805",
+        "title": "Welna Eco SPA Resort﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_711.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d1f329bd0a50caeadf58ab5c80c2cb911612640b0f8cc8134b8943d3ae9b98bd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001805.jpg",
+        "card_description": "Путешествия Welna Eco SPA Resort﻿"
+    },
+    {
+        "offer_id": 210295,
+        "offer_url": "https://www.vtbfamily.ru/offer/210295",
+        "title": "Отель Кунашир резорт и СПА 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/snapedit_1733990151648.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=50045db3ce8aa8e9c87b70078be9c7c5efa6a8800b5f1d2e158dd851f9c8c9fd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000210295.jpg",
+        "card_description": "Путешествия Отель Кунашир резорт и СПА 15%"
+    },
+    {
+        "offer_id": 214484,
+        "offer_url": "https://www.vtbfamily.ru/offer/214484",
+        "title": "Апарт-отель Ramada",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4345.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=097e8520f6039a8ac92d6aaf143ccde620975808187955d079b43607b9cd7252",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000214484.jpg",
+        "card_description": "Путешествия Апарт-отель Ramada"
+    },
+    {
+        "offer_id": 226,
+        "offer_url": "https://www.vtbfamily.ru/offer/226",
+        "title": "Отель Мандарин﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1546.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7c8c7b5ca39d91421cb05f9653763b37da8e9badabdaae343c0211715baa1315",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000226.jpg",
+        "card_description": "Путешествия Отель Мандарин﻿"
+    },
+    {
+        "offer_id": 868,
+        "offer_url": "https://www.vtbfamily.ru/offer/868",
+        "title": "Cosmos St. Petersburg Pulkovskaya Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2525.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=599d92f432ea166320e8bbf3125ae3ab73d952899429d838f46b4745d48d241d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000868.jpg",
+        "card_description": "Путешествия Cosmos St. Petersburg Pulkovskaya Hotel"
+    },
+    {
+        "offer_id": 1272,
+        "offer_url": "https://www.vtbfamily.ru/offer/1272",
+        "title": "Cosmos Kazan Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3095.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2261d33215476519cd8341b7acffec0ccaabc56cb7056a775b2c155f617bf8ee",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001272.jpg",
+        "card_description": "Путешествия Cosmos Kazan Hotel"
+    },
+    {
+        "offer_id": 1621,
+        "offer_url": "https://www.vtbfamily.ru/offer/1621",
+        "title": "Семейство отелей Familinn",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3667.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=11cb30a3bf70f970cb9424affa7edf0730dfe9a086508b7382b6cbe016b292d9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001621.jpg",
+        "card_description": "Путешествия Семейство отелей Familinn"
+    },
+    {
+        "offer_id": 32674,
+        "offer_url": "https://www.vtbfamily.ru/offer/32674",
+        "title": "Круизы компаний MSC Cruises и Explora Journeys",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3780.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d8923e1db7035b554393100a9906c06f2f945d77ce6d964a10ef1c6ab97f491",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000032674.jpg",
+        "card_description": "Путешествия Круизы компаний MSC Cruises и Explora Journeys"
+    },
+    {
+        "offer_id": 94649,
+        "offer_url": "https://www.vtbfamily.ru/offer/94649",
+        "title": "Апарт-отель Intermark Residence",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3886.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7a474572db350412658459a5ac0dddc94a647468d3a74394df09a63c245fadff",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000094649.jpg",
+        "card_description": "Путешествия Апарт-отель Intermark Residence"
+    },
+    {
+        "offer_id": 455,
+        "offer_url": "https://www.vtbfamily.ru/offer/455",
+        "title": "Туроператор TEZ TOUR",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_196.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cae60e4c33b75990fdba1b4e87a5cfcc7ae96610bb48c5bacf9245802300e74d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000455.jpg",
+        "card_description": "Путешествия Туроператор TEZ TOUR"
+    },
+    {
+        "offer_id": 524,
+        "offer_url": "https://www.vtbfamily.ru/offer/524",
+        "title": "Парк-отель Бухта Коприно",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2059.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5d767d30895b4eceb98f00ab3ae5104d9c586b8744769a1bc857486ff0579311",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000524.jpg",
+        "card_description": "Путешествия Парк-отель Бухта Коприно"
+    },
+    {
+        "offer_id": 869,
+        "offer_url": "https://www.vtbfamily.ru/offer/869",
+        "title": "Cosmos St. Petersburg Pulkovo Airport Hotel﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2526.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4600583f14504e501f99aa40888703e213e9f760c0e51dcdd14c23a25c967de2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000869.jpg",
+        "card_description": "Путешествия Cosmos St. Petersburg Pulkovo Airport Hotel﻿"
+    },
+    {
+        "offer_id": 1216,
+        "offer_url": "https://www.vtbfamily.ru/offer/1216",
+        "title": "Cosmos Smart Voronezh Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3017.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0f4264629f57340f70441c4f4f750dcb5b833573f0ca50874e17613e8693368b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001216.jpg",
+        "card_description": "Путешествия Cosmos Smart Voronezh Hotel"
+    },
+    {
+        "offer_id": 1911,
+        "offer_url": "https://www.vtbfamily.ru/offer/1911",
+        "title": "Сеть гостиниц на Невском NevskyHotelsGroup",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_980.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ef9f6e33307ea7c1658b9422ddb54232c25579c9be7bb9c0b89a824e4909fa47",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001911.jpg",
+        "card_description": "Путешествия Сеть гостиниц на Невском NevskyHotelsGroup"
+    },
+    {
+        "offer_id": 54436,
+        "offer_url": "https://www.vtbfamily.ru/offer/54436",
+        "title": "Аренда загородных домов от HUSE﻿ в МО с сервисом 5* отелей",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3816.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a1e3f9d168e83ced21199a00412fc43c127dfdad3c52476a30099111ea97dee2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054436.jpg",
+        "card_description": "Путешествия Аренда загородных домов от HUSE﻿ в МО с сервисом 5* отелей"
+    },
+    {
+        "offer_id": 402318,
+        "offer_url": "https://www.vtbfamily.ru/offer/402318",
+        "title": "Radisson Residences, Zavidovo на курорте Завидово до 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-21_23.33.49.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e661cad0875684cf7894e68b25b35bb6f8a7a36980242e87d95fc0baeaef2138",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402318.jpg",
+        "card_description": "Путешествия Radisson Residences, Zavidovo на курорте Завидово до 15%"
+    },
+    {
+        "offer_id": 351,
+        "offer_url": "https://www.vtbfamily.ru/offer/351",
+        "title": "Санаторий Янтарь﻿ в Светлогорске",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1783.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=43cbeb75cac897a81f4782523c5de66ddb0c2087ce1d6416a5bc49c8d5f839dc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000351.jpg",
+        "card_description": "Путешествия Санаторий Янтарь﻿ в Светлогорске"
+    },
+    {
+        "offer_id": 354,
+        "offer_url": "https://www.vtbfamily.ru/offer/354",
+        "title": "Санаторий БУРАН﻿ в Московской области",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1790.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4de08c84ffe977961f283a9e0ce88849095f976a01399e3c73e9bdd4b974acab",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000354.jpg",
+        "card_description": "Путешествия Санаторий БУРАН﻿ в Московской области"
+    },
+    {
+        "offer_id": 1667,
+        "offer_url": "https://www.vtbfamily.ru/offer/1667",
+        "title": "Zvenigorod Park Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_408.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=01e396547cd0204209faf2f5d90c65c8fe2544a9d08ac5ff439b0f179a9d56f0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001667.jpg",
+        "card_description": "Путешествия Zvenigorod Park Hotel"
+    },
+    {
+        "offer_id": 52705,
+        "offer_url": "https://www.vtbfamily.ru/offer/52705",
+        "title": "Загородный клуб Moscow Country Club 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2024-09-24_160348_ow7vr2H.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162243Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3a24169bdbe8e09e48d06bce74bbcc7c653a29419da507bd0cc1318796eeedc8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052705.jpg",
+        "card_description": "Путешествия Загородный клуб Moscow Country Club 15%"
+    },
+    {
+        "offer_id": 165595,
+        "offer_url": "https://www.vtbfamily.ru/offer/165595",
+        "title": "Radisson Blu Yerevan",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4263.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=119f71288c6ebfd5af4b5b84bf50d68c9a4dd802747d561f116e2fd638c7b269",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000165595.jpg",
+        "card_description": "Путешествия Radisson Blu Yerevan"
+    },
+    {
+        "offer_id": 170113,
+        "offer_url": "https://www.vtbfamily.ru/offer/170113",
+        "title": "Сервис хранения багажа Qeepl до 20%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/qeepl_934_eFKIYpV.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b3c800c4babd326799498e745d4452fa28bbb7fdb5588eb952c876ce813d784c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000170113.jpg",
+        "card_description": "Путешествия Сервис хранения багажа Qeepl до 20%"
+    },
+    {
+        "offer_id": 210299,
+        "offer_url": "https://www.vtbfamily.ru/offer/210299",
+        "title": "Экскурсии Guide GO",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/guide_to_go_gTMYhM9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=01bd61817c629269bf633a6e8b37b4ff378571b2426d38a644986691aae1c1b6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000210299.jpg",
+        "card_description": "Путешествия Экскурсии Guide GO"
+    },
+    {
+        "offer_id": 402085,
+        "offer_url": "https://www.vtbfamily.ru/offer/402085",
+        "title": "Park&Fly: сеть парковок в аэропортах 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/parkfly_Xn9GOMV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=08afc2a54a203c08c37761add0e37e6850ba64acd5c2b3dcab9e0bbbb96d1019",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402085.jpg",
+        "card_description": "Путешествия Park&Fly: сеть парковок в аэропортах 10%"
+    },
+    {
+        "offer_id": 405315,
+        "offer_url": "https://www.vtbfamily.ru/offer/405315",
+        "title": "Отель Moscow Marriott Imperial Plaza 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/mariott_moscow_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=132a84e8be5dc45f1a3b96d660acfd061a532ba7d8b2b32f165282c93e4d0250",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405315.jpg",
+        "card_description": "Путешествия Отель Moscow Marriott Imperial Plaza 10%"
+    },
+    {
+        "offer_id": 567,
+        "offer_url": "https://www.vtbfamily.ru/offer/567",
+        "title": "Парк-отель SunriseVillage",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2121.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c1a20c262dcbee6559816e52f6f43cf86d466061df01ef517dbe84368bec2d0d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000567.jpg",
+        "card_description": "Путешествия Парк-отель SunriseVillage"
+    },
+    {
+        "offer_id": 817,
+        "offer_url": "https://www.vtbfamily.ru/offer/817",
+        "title": "Санаторий Арника",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2465.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5f5ef2674ae6d35494760becfe3d774796a72dfe3a95a9dc0b7a07a0c484a581",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000817.jpg",
+        "card_description": "Путешествия Санаторий Арника"
+    },
+    {
+        "offer_id": 1608,
+        "offer_url": "https://www.vtbfamily.ru/offer/1608",
+        "title": "Tulip Inn 3* Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3654.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=29e199a8b25e897b34ff7200d1888f3095b0cb6317dbecc5549a7c6e66a04924",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001608.jpg",
+        "card_description": "Путешествия Tulip Inn 3* Rosa Khutor"
+    },
+    {
+        "offer_id": 1610,
+        "offer_url": "https://www.vtbfamily.ru/offer/1610",
+        "title": "Azimut Парк отель Фристайл 3* Rosa Khutor",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3656.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eb6c50a5f68615d8f5e076c7f5df564142a85c5221c55ca3203b9e3204df2598",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001610.jpg",
+        "card_description": "Путешествия Azimut Парк отель Фристайл 3* Rosa Khutor"
+    },
+    {
+        "offer_id": 1728,
+        "offer_url": "https://www.vtbfamily.ru/offer/1728",
+        "title": "Event-отель Konakovo River Club﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_532.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2348980a1c4321377a8487c590967788b9a206265181ee069ba42dd129bf1d3d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001728.jpg",
+        "card_description": "Путешествия Event-отель Konakovo River Club﻿"
+    },
+    {
+        "offer_id": 9334,
+        "offer_url": "https://www.vtbfamily.ru/offer/9334",
+        "title": "Курортная клиника Здравница Лаго-Наки 4* (Республика Адыгея)",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3718.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7b8c1fd974ec5019fc7314188746cab1f1de25584f7dcee2dd747a6cf6fc168a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000009334.jpg",
+        "card_description": "Путешествия Курортная клиника Здравница Лаго-Наки 4* (Республика Адыгея)"
+    },
+    {
+        "offer_id": 60483,
+        "offer_url": "https://www.vtbfamily.ru/offer/60483",
+        "title": "Медикал&СПА Резорт «Альфа Радон»",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3808.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ddf3fdd598f9b5360ab649606daddb38229ea8465b328164d62b6736a4fbe8c3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000060483.jpg",
+        "card_description": "Путешествия Медикал&СПА Резорт «Альфа Радон»"
+    },
+    {
+        "offer_id": 90821,
+        "offer_url": "https://www.vtbfamily.ru/offer/90821",
+        "title": "Китовый Берег Арктик-отель 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_bbebca455bc63fcc466e3a1c4148b9d4_676283a1d8dfb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=064b964fb50e711b221bd772f7d3de1195a9367a57b1fd330fb4ea829c274c79",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090821.jpg",
+        "card_description": "Путешествия Китовый Берег Арктик-отель 10%"
+    },
+    {
+        "offer_id": 161312,
+        "offer_url": "https://www.vtbfamily.ru/offer/161312",
+        "title": "Апарт-отель Рыжая гора в п. Архыз",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4254.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a7b9e29670b9b1406958eee31a1931e94d957338ebd52d3bcb753e251befa591",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000161312.jpg",
+        "card_description": "Путешествия Апарт-отель Рыжая гора в п. Архыз"
+    },
+    {
+        "offer_id": 356199,
+        "offer_url": "https://www.vtbfamily.ru/offer/356199",
+        "title": "Отель SK Royal Москва",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/sk_royal_msc_tFrZL0m.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8850bb2c3d93ffa0ef16aae06d3f291af740610f31cf83b4d32ed20a48189161",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000356199.jpg",
+        "card_description": "Путешествия Отель SK Royal Москва"
+    },
+    {
+        "offer_id": 402208,
+        "offer_url": "https://www.vtbfamily.ru/offer/402208",
+        "title": "Scandi-House: аренда коттеджей 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/scandi_zKFLCxP.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=93e4f6638bdc2273b289ec9f1d85263f149efdb4db542ea77d371fbf53f91a2b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402208.jpg",
+        "card_description": "Путешествия Scandi-House: аренда коттеджей 10%"
+    },
+    {
+        "offer_id": 346,
+        "offer_url": "https://www.vtbfamily.ru/offer/346",
+        "title": "Санаторий Зеленый Гай﻿ в Туапсе",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1778.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4f3870366d28b3a8ef2983228f3d740da631088caab29ce550335676fb407077",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000346.jpg",
+        "card_description": "Путешествия Санаторий Зеленый Гай﻿ в Туапсе"
+    },
+    {
+        "offer_id": 348,
+        "offer_url": "https://www.vtbfamily.ru/offer/348",
+        "title": "Санаторий Аквамарин﻿ в Анапе",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1780.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4adf2b9491f90db256da97c5ebe982ca7a010f943bca030160fe5ddf0ea623d3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000348.jpg",
+        "card_description": "Путешествия Санаторий Аквамарин﻿ в Анапе"
+    },
+    {
+        "offer_id": 358,
+        "offer_url": "https://www.vtbfamily.ru/offer/358",
+        "title": "Cанаторий Долина Нарзанов в Железноводске",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1794.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a7655ff51faff292d13c7a5d360d2e4206cdfd8b649a0b73eea06fcb0e864632",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000358.jpg",
+        "card_description": "Путешествия Cанаторий Долина Нарзанов в Железноводске"
+    },
+    {
+        "offer_id": 359,
+        "offer_url": "https://www.vtbfamily.ru/offer/359",
+        "title": "Санаторий Радон﻿ в Лисках",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1795.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162258Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e44e6c38b4e5408d4f2de706c7c464ad177001b0825b4e8e3c720031697bf376",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000359.jpg",
+        "card_description": "Путешествия Санаторий Радон﻿ в Лисках"
+    },
+    {
+        "offer_id": 361,
+        "offer_url": "https://www.vtbfamily.ru/offer/361",
+        "title": "Санаторий Транссиб﻿ в Белокурихе",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1797.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=732b851610be2c10bc9e745e8d5bffdd5be52e7f0cff79340f2c6936975258dd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000361.jpg",
+        "card_description": "Путешествия Санаторий Транссиб﻿ в Белокурихе"
+    },
+    {
+        "offer_id": 670,
+        "offer_url": "https://www.vtbfamily.ru/offer/670",
+        "title": "Гостиничный комплекс Золото Алтая",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2255.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=57c5f43f87813bacb0524677153d0902913e5fafdd97b76d5c95cd638103d461",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000670.jpg",
+        "card_description": "Путешествия Гостиничный комплекс Золото Алтая"
+    },
+    {
+        "offer_id": 1265,
+        "offer_url": "https://www.vtbfamily.ru/offer/1265",
+        "title": "Сервис онлайн-бронирования отелей Крыма Week Week",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3088.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=49552e0494c3de6990c76dc1ac7a52c36dbfc48cab253971369d32659750ef16",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001265.jpg",
+        "card_description": "Путешествия Сервис онлайн-бронирования отелей Крыма Week Week"
+    },
+    {
+        "offer_id": 32673,
+        "offer_url": "https://www.vtbfamily.ru/offer/32673",
+        "title": "Туры Pac Group",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3779.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=241970c9f86884212a56607fd59057dd2f798efd071b5fe0ef7f777b15f7d1b7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000032673.jpg",
+        "card_description": "Путешествия Туры Pac Group"
+    },
+    {
+        "offer_id": 60494,
+        "offer_url": "https://www.vtbfamily.ru/offer/60494",
+        "title": "Загородный Парк-Отель Басовское",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3824.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7f33a43df1a187c9e9e9f554ce30a67df176b4f8ef7dd0f2b71e841b0a5473d9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000060494.jpg",
+        "card_description": "Путешествия Загородный Парк-Отель Басовское"
+    },
+    {
+        "offer_id": 90789,
+        "offer_url": "https://www.vtbfamily.ru/offer/90789",
+        "title": "Vasta Expeditions 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/vasta_Dj7WDs7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3af2b5318085b920bf6f02b340f89e00947887ad10f6b01713eeca02343a71b9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090789.jpg",
+        "card_description": "Путешествия Vasta Expeditions 10%"
+    },
+    {
+        "offer_id": 129785,
+        "offer_url": "https://www.vtbfamily.ru/offer/129785",
+        "title": "Edutravel 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/edutravel__BByJoDP.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d7309d0d6f1310c1d55f6ee5f24f3d3601f158b850cca51beb49e53bcb3ed309",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129785.jpg",
+        "card_description": "Путешествия Edutravel 10%"
+    },
+    {
+        "offer_id": 402767,
+        "offer_url": "https://www.vtbfamily.ru/offer/402767",
+        "title": "Лепота: загородный эко-отель 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BB%D0%B5%D0%BF%D0%BE%D1%82%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=88163e076b0c2595abc0a8bbd8448ebaa4fea19441ec5fdc4e214a380ca85160",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402767.jpg",
+        "card_description": "Путешествия Лепота: загородный эко-отель 10%"
+    },
+    {
+        "offer_id": 405235,
+        "offer_url": "https://www.vtbfamily.ru/offer/405235",
+        "title": "Отель Intourist Hotel Kolomenskoe 24%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%98%D0%BD%D1%82%D1%83%D1%80%D0%B8%D1%81%D1%82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2155ab3dc59f664f4fadec093c0971d4ca631508213d38bbc521eeaa6523c224",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405235.jpg",
+        "card_description": "Путешествия Отель Intourist Hotel Kolomenskoe 24%"
+    },
+    {
+        "offer_id": 171,
+        "offer_url": "https://www.vtbfamily.ru/offer/171",
+        "title": "Отель Sheraton Skypoint Luxe 5*",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1450.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5ff3b1260c257b8c2b404d9ec8b2c4073f8e202917f3f110eb4126ab3849cae5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000171.jpg",
+        "card_description": "Путешествия Отель Sheraton Skypoint Luxe 5*"
+    },
+    {
+        "offer_id": 229,
+        "offer_url": "https://www.vtbfamily.ru/offer/229",
+        "title": "Мини-отель Crocus﻿s Тушино",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1549.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5fd84693efa4cae497abce1a8ac6098c9ff1c822d264491fb4eaa0605c114245",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000229.jpg",
+        "card_description": "Путешествия Мини-отель Crocus﻿s Тушино"
+    },
+    {
+        "offer_id": 353,
+        "offer_url": "https://www.vtbfamily.ru/offer/353",
+        "title": "Санаторий ИВУШКА﻿ в Сочи",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1789.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8b921be29f59c7be73182ccb2f6eff6b3f15250406257576b3d674328cb6a09e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000353.jpg",
+        "card_description": "Путешествия Санаторий ИВУШКА﻿ в Сочи"
+    },
+    {
+        "offer_id": 355,
+        "offer_url": "https://www.vtbfamily.ru/offer/355",
+        "title": "Санаторий Волжские дали в Саратове",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1791.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ad1e5cc027281fb8afa118fd33290c2978806ff6941e6f5f97ceae46a55d3f78",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000355.jpg",
+        "card_description": "Путешествия Санаторий Волжские дали в Саратове"
+    },
+    {
+        "offer_id": 360,
+        "offer_url": "https://www.vtbfamily.ru/offer/360",
+        "title": "Санаторий Жемчужина Зауралья﻿ в Шадринске",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1796.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a8631d121d80adf8abbc0f5554b98515fa7fce175e9b3ca740d9f616170dd4cc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000360.jpg",
+        "card_description": "Путешествия Санаторий Жемчужина Зауралья﻿ в Шадринске"
+    },
+    {
+        "offer_id": 1271,
+        "offer_url": "https://www.vtbfamily.ru/offer/1271",
+        "title": "Cosmos Astrakhan Hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3094.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a9b05b1d34a3c0b750a4df119ed0d90eb27290e4256932936937e5ca0872da89",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001271.jpg",
+        "card_description": "Путешествия Cosmos Astrakhan Hotel"
+    },
+    {
+        "offer_id": 1283,
+        "offer_url": "https://www.vtbfamily.ru/offer/1283",
+        "title": "Русские Сезоны Село Вятское",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3116.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e10f88b82035695abe1b2ace067b30f21a6a5e4d159456ad4ca6f0ca8e53761c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001283.jpg",
+        "card_description": "Путешествия Русские Сезоны Село Вятское"
+    },
+    {
+        "offer_id": 1356,
+        "offer_url": "https://www.vtbfamily.ru/offer/1356",
+        "title": "Загородный клуб ЛЕС﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3275.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ef2010a2878fef3e27472b8d620bcb5975c14bd33c65f113125d62f1657dbfe2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001356.jpg",
+        "card_description": "Путешествия Загородный клуб ЛЕС﻿"
+    },
+    {
+        "offer_id": 1615,
+        "offer_url": "https://www.vtbfamily.ru/offer/1615",
+        "title": "Усадьба охотника",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3660.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e3696b471bbe05a1e21d9dc9356e36a1d322beb7f53e503082ea3243061d77e1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001615.jpg",
+        "card_description": "Путешествия Усадьба охотника"
+    },
+    {
+        "offer_id": 1655,
+        "offer_url": "https://www.vtbfamily.ru/offer/1655",
+        "title": "FreshWind SPA hotel",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_385.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bfbf6fbec09bf4d1aeabe76517ca521db33d33e8029fc8638f075f1873eed0fd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001655.jpg",
+        "card_description": "Путешествия FreshWind SPA hotel"
+    },
+    {
+        "offer_id": 1679,
+        "offer_url": "https://www.vtbfamily.ru/offer/1679",
+        "title": "Country Resort SKOKOVO PARK",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_431.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162300Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7e3e6ee01d3dacc61f0aee9afa1a237e8362583951c7ac9c638faee158f95222",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001679.jpg",
+        "card_description": "Путешествия Country Resort SKOKOVO PARK"
+    },
+    {
+        "offer_id": 1850,
+        "offer_url": "https://www.vtbfamily.ru/offer/1850",
+        "title": "M'Istra'L Hotel & SPA",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_863.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6342744b3bc0a8da53668c6ac4dcdc8b178784cccc7823b3e465c578ba956bcf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001850.jpg",
+        "card_description": "Путешествия M'Istra'L Hotel & SPA"
+    },
+    {
+        "offer_id": 131637,
+        "offer_url": "https://www.vtbfamily.ru/offer/131637",
+        "title": "Детский языковой лагерь от Nordic School",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4119.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f239198c682e145f8289c33d3910baa9e093e5189d81d89a0744e9a1025e13a1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131637.jpg",
+        "card_description": "Путешествия Детский языковой лагерь от Nordic School"
+    },
+    {
+        "offer_id": 165594,
+        "offer_url": "https://www.vtbfamily.ru/offer/165594",
+        "title": "Эко-отель Lambi Park. Карелия",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4262.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=32c8c5f35b8c138c7c7cdb8907ec48e0c33397ad31ec1f85e7e463dd9a1316b2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000165594.jpg",
+        "card_description": "Путешествия Эко-отель Lambi Park. Карелия"
+    },
+    {
+        "offer_id": 232301,
+        "offer_url": "https://www.vtbfamily.ru/offer/232301",
+        "title": "Целеево Гольф и Поло Клуб 20%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%86%D0%B5%D0%BB%D0%B5%D0%B5%D0%B2%D0%BE_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2309b6875a1d45b6045d52c137447c5140db245edd7bc02ef512827f62c0539e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000232301.jpg",
+        "card_description": "Путешествия Целеево Гольф и Поло Клуб 20%"
+    },
+    {
+        "offer_id": 402558,
+        "offer_url": "https://www.vtbfamily.ru/offer/402558",
+        "title": "Zavidovo SPA Village на курорте Завидово 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-03_11-57-23.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b60248602529f857d110629867fb1250b305a6ec80cde477836b3c5507a4233c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402558.jpg",
+        "card_description": "Путешествия Zavidovo SPA Village на курорте Завидово 10%"
+    },
+    {
+        "offer_id": 402804,
+        "offer_url": "https://www.vtbfamily.ru/offer/402804",
+        "title": "Курорт Ерино 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B5%D1%80%D0%B8%D0%BD%D0%BE.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=92d1d1c3a3a1064fa6c033424668742acc8be7f06411e60c5c24faaf1e0e71f5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402804.jpg",
+        "card_description": "Путешествия Курорт Ерино 10%"
+    },
+    {
+        "offer_id": 403059,
+        "offer_url": "https://www.vtbfamily.ru/offer/403059",
+        "title": "Парусная Академия: Онего — путешествие на парусной яхте 11%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%B0%D1%80%D1%83%D1%81%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BA%D0%B0%D0%B4%D0%BC%D0%B8%D1%8F_%D0%BE%D0%BD%D0%B5%D0%B3%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a89055107479151011dd765e2a88abba8298ce944000545202d9d4257c569807",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403059.jpg",
+        "card_description": "Путешествия Парусная Академия: Онего — путешествие на парусной яхте 11%"
+    },
+    {
+        "offer_id": 403060,
+        "offer_url": "https://www.vtbfamily.ru/offer/403060",
+        "title": "Парусная Академия: путешествие на парусной яхте в Турцию, Хорватию, …",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%B0%D1%80%D1%83%D1%81%D0%BD%D0%B0%D1%8F_%D0%B0%D0%BA%D0%B0%D0%B4%D0%BC%D0%B8%D1%8F_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=27cd22b3ee4d9b94229cb033b216dacf4eb8615819319c09b6a07181e9350fdb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403060.jpg",
+        "card_description": "Путешествия Парусная Академия: путешествие на парусной яхте в Турцию, Хорватию, …"
+    },
+    {
+        "offer_id": 403084,
+        "offer_url": "https://www.vtbfamily.ru/offer/403084",
+        "title": "tmatic.travel: сервис аудиогидов 50%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tmatictravel_15_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4f83370738bb77d0a021d78abd6494e5210609b1a65f7a91f07aa89189b8b762",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403084.jpg",
+        "card_description": "Путешествия tmatic.travel: сервис аудиогидов 50%"
+    },
+    {
+        "offer_id": 420626,
+        "offer_url": "https://www.vtbfamily.ru/offer/420626",
+        "title": "Wish Home Eco-Loudge Yahroma 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/wish_home_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8e71e60eb3a25cec3d36df66e537ac0e69768d0abfdd5c390fca12d4cb18d525",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000420626.jpg",
+        "card_description": "Путешествия Wish Home Eco-Loudge Yahroma 15%"
+    },
+    {
+        "offer_id": 420629,
+        "offer_url": "https://www.vtbfamily.ru/offer/420629",
+        "title": "Wish Home Дубовая Роща 15%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/wish_home_%D0%BC%D0%B0%D1%80%D1%8C%D0%B8%D0%BD%D0%B0_%D1%80%D0%BE%D1%89%D0%B0.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f08f820125a676ac780400cec3151b3e075f4f42c9089b25e95aa1bedd905f4b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000420629.jpg",
+        "card_description": "Путешествия Wish Home Дубовая Роща 15%"
+    },
+    {
+        "offer_id": 214,
+        "offer_url": "https://www.vtbfamily.ru/offer/214",
+        "title": "Организатор детского и семейного отдыха МОСГОРТУР",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1520.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2c6b0755b18de3beb880094394c2be2c5f7cec93b568eda8f3fc833ae313484c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000214.jpg",
+        "card_description": "Путешествия Организатор детского и семейного отдыха МОСГОРТУР"
+    },
+    {
+        "offer_id": 345,
+        "offer_url": "https://www.vtbfamily.ru/offer/345",
+        "title": "Санаторий Солнечный﻿ в Геленджике",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1777.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b4e231cd3bd8c02b17213e1d3daae23cb0ff547a2bd3e3376de35cc2f345a458",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000345.jpg",
+        "card_description": "Путешествия Санаторий Солнечный﻿ в Геленджике"
+    },
+    {
+        "offer_id": 349,
+        "offer_url": "https://www.vtbfamily.ru/offer/349",
+        "title": "Cанаторий Долина Нарзанов в Ессентуках﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1781.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=88954aff44ab5b7e5db75ce9573e8980ab22483ada1d3e03d30f372265894a09",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000349.jpg",
+        "card_description": "Путешествия Cанаторий Долина Нарзанов в Ессентуках﻿"
+    },
+    {
+        "offer_id": 356,
+        "offer_url": "https://www.vtbfamily.ru/offer/356",
+        "title": "Санаторий Сосновый бор﻿ в Кировской области",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1792.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9966f8086e280e02243adf7e2188621604115ca25f972a2b7d5ed91459821bf3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000356.jpg",
+        "card_description": "Путешествия Санаторий Сосновый бор﻿ в Кировской области"
+    },
+    {
+        "offer_id": 357,
+        "offer_url": "https://www.vtbfamily.ru/offer/357",
+        "title": "Cанаторий Долина Нарзанов в Нальчике",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1793.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5783dfe4e216f530d4a237132b25f193bfd0a03b773150d1a170c605bacd49d0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000357.jpg",
+        "card_description": "Путешествия Cанаторий Долина Нарзанов в Нальчике"
+    },
+    {
+        "offer_id": 445,
+        "offer_url": "https://www.vtbfamily.ru/offer/445",
+        "title": "Экотуризм и сельский туризм Своё За городом",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1947.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b92d89b2ee94513cbd567c0296c5dfab237573e225facb6e4d47ac3f2fe1d69c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000445.jpg",
+        "card_description": "Путешествия Экотуризм и сельский туризм Своё За городом"
+    },
+    {
+        "offer_id": 708,
+        "offer_url": "https://www.vtbfamily.ru/offer/708",
+        "title": "Парк-отель Петрухино-клуб﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2313.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2349409d3683ce1530f5644036d11e6079efe222933ac638b98874ce680cbdb0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000708.jpg",
+        "card_description": "Путешествия Парк-отель Петрухино-клуб﻿"
+    },
+    {
+        "offer_id": 997,
+        "offer_url": "https://www.vtbfamily.ru/offer/997",
+        "title": "Терра Экспедиция",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2692.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=223a09a0e107eed696dce109621e4ccdf2a61998105336de37548c439c9372b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000997.jpg",
+        "card_description": "Путешествия Терра Экспедиция"
+    },
+    {
+        "offer_id": 1149,
+        "offer_url": "https://www.vtbfamily.ru/offer/1149",
+        "title": "Парк-отель SUN VILLAGE Arkhyz",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2924.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162315Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dd681f8dae19b42a3d44c3c3dec9db15d827d97c2925642462e6f7adcff0e785",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001149.jpg",
+        "card_description": "Путешествия Парк-отель SUN VILLAGE Arkhyz"
+    },
+    {
+        "offer_id": 1150,
+        "offer_url": "https://www.vtbfamily.ru/offer/1150",
+        "title": "Натуралист﻿. Бронирование глэмпингов и эко-отелей",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2926.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dcd82aef646009f2baf83b848873d4fcf93cfe1a24e9e3e3f768a5b3f6e9385d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001150.jpg",
+        "card_description": "Путешествия Натуралист﻿. Бронирование глэмпингов и эко-отелей"
+    },
+    {
+        "offer_id": 1267,
+        "offer_url": "https://www.vtbfamily.ru/offer/1267",
+        "title": "Загородный клуб Аврора СПА",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_309.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8a03c830b5cf374bfba5e9c1993243006bfcfa7b654132e02dbed224e95184ac",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001267.jpg",
+        "card_description": "Путешествия Загородный клуб Аврора СПА"
+    },
+    {
+        "offer_id": 1293,
+        "offer_url": "https://www.vtbfamily.ru/offer/1293",
+        "title": "Коттеджный поселок Литл Токио в Казани",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3136.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3a89b193c251c04e82d3606e0eb9b5adf993ddef1b9565582eaf413c7e1db731",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001293.jpg",
+        "card_description": "Путешествия Коттеджный поселок Литл Токио в Казани"
+    },
+    {
+        "offer_id": 1359,
+        "offer_url": "https://www.vtbfamily.ru/offer/1359",
+        "title": "Курорт Марьин Остров﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3278.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ecf272d34144f659a27d7308f9549fa3f68eae68d55fbbf2f8005608ac817d1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001359.jpg",
+        "card_description": "Путешествия Курорт Марьин Остров﻿"
+    },
+    {
+        "offer_id": 1377,
+        "offer_url": "https://www.vtbfamily.ru/offer/1377",
+        "title": "Резиденция «Чехов #APi»﻿",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3303.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b4ad7c0e7983ec335774b9bfc9bf75897cf69cef0f6b9c1cf396a651ad3e50ee",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001377.jpg",
+        "card_description": "Путешествия Резиденция «Чехов #APi»﻿"
+    },
+    {
+        "offer_id": 1390,
+        "offer_url": "https://www.vtbfamily.ru/offer/1390",
+        "title": "Эко-отель Велес",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_332.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=19aeb5b3c041bb0f749247d17277a42f827da1567ee19cddf6bed17c60836dc6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001390.jpg",
+        "card_description": "Путешествия Эко-отель Велес"
+    },
+    {
+        "offer_id": 1636,
+        "offer_url": "https://www.vtbfamily.ru/offer/1636",
+        "title": "Загородный отель ARTHURS SPA HOTEL by Mercure",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_369.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0dac075d455b05a2959091c5c8a53aa86945a06b2e5eac935ad58fb8bd6122d5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001636.jpg",
+        "card_description": "Путешествия Загородный отель ARTHURS SPA HOTEL by Mercure"
+    },
+    {
+        "offer_id": 1663,
+        "offer_url": "https://www.vtbfamily.ru/offer/1663",
+        "title": "Аренда коттеджей Покровские Ворота",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_398.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=74dd15f752dad811496d3ea88861a97b13c3b0d3ef715c14fffb232eec864c9f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001663.jpg",
+        "card_description": "Путешествия Аренда коттеджей Покровские Ворота"
+    },
+    {
+        "offer_id": 52698,
+        "offer_url": "https://www.vtbfamily.ru/offer/52698",
+        "title": "Swan Hellenic до 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2024-09-27_113249_z9TetpZ.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f970c82a1ebf141e928d7ea14c94d2293af3363a2649f2baf879489c0a915f82",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052698.jpg",
+        "card_description": "Путешествия Swan Hellenic до 10%"
+    },
+    {
+        "offer_id": 131617,
+        "offer_url": "https://www.vtbfamily.ru/offer/131617",
+        "title": "Диал-тур, семейные, детские туры",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4085.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8305c2c5d51589391378f3f60575e39a8b835fd32709c54f394f4f1273dab98",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131617.jpg",
+        "card_description": "Путешествия Диал-тур, семейные, детские туры"
+    },
+    {
+        "offer_id": 212505,
+        "offer_url": "https://www.vtbfamily.ru/offer/212505",
+        "title": "Экскурсии и гиды Sputnik 8",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/thumb-10000x400-Sputnik8_RjAOj3b.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=458b120f2d4f8c7af1e85e5cbeb5ca6f4a3e5866bb8eb652a20e93feecfac373",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000212505.jpg",
+        "card_description": "Путешествия Экскурсии и гиды Sputnik 8"
+    },
+    {
+        "offer_id": 258791,
+        "offer_url": "https://www.vtbfamily.ru/offer/258791",
+        "title": "VIP-залы, бизнес-залы и fast track до 20%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3946_kbmAWse_kHnPaNJ.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4173b31143ca04f74034180ba3855da5f97638a1f27e19a50bfa60dc6fd7f63d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000258791.jpg",
+        "card_description": "Путешествия VIP-залы, бизнес-залы и fast track до 20%"
+    },
+    {
+        "offer_id": 402595,
+        "offer_url": "https://www.vtbfamily.ru/offer/402595",
+        "title": "Бутик-отель Клубный дом Завидово 10%",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-03_10-45-40.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0df1cbc80090e5fff344ac98010cac04469d471377f8a72911d4ed4e059f668b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402595.jpg",
+        "card_description": "Путешествия Бутик-отель Клубный дом Завидово 10%"
+    },
+    {
+        "offer_id": 402951,
+        "offer_url": "https://www.vtbfamily.ru/offer/402951",
+        "title": "Курорт Завидово",
+        "category": "Путешествия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-12_17-52-36.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162317Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fe90879530ad91ce76c7d8a72fae3fc3d8810aefe3876115087605b45fb9a872",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402951.jpg",
+        "card_description": "Путешествия Курорт Завидово"
+    }
+]

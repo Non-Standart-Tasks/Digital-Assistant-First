@@ -28,7 +28,7 @@ from digital_assistant_first.telegram_system.telegram_data_initializer import (
 from digital_assistant_first.telegram_system.telegram_initialization import (
     fetch_telegram_data,
 )
-from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
+# from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
 from digital_assistant_first.utils.aviasales_economy_helper import AviasalesEconomyHelper
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data, build_route_from_query
 from digital_assistant_first.offergen.agent import validation_agent
@@ -290,29 +290,33 @@ def model_response_generator_sync(model, config, status_placeholder):
         # Для category = поездки или офферы получим необходимые данные
         # aviasales_flight_info мы будем заменять!!!
 
-        if request_category == "поездки":
+        aviasales_enabled = config.get("aviasales_enabled", False)
+            
+        if request_category == "поездки" and aviasales_enabled:
             aviasales_helper = AviasalesEconomyHelper(model, config, logger)
             aviasales_flight_info, aviasales_url = aviasales_helper.process_user_input(user_input, st)
 
         # # [Old Aviasales Handler]: 
+        # Пока выключено из-за кривого browser-use
         
-        if not aviasales_url: # using as a fallback
-            if not aviasales_flight_info:
-                aviasales_url = ""
-            else: # basically will never go here
-                aviasales_tool_for_link = AviasalesHandler()
-                tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
-                if tickets_need.get("response", "").lower() == "true":
-                    aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
-                        tickets_need["departure_city"],
-                        tickets_need["destination"],
-                        tickets_need["start_date"],
-                        tickets_need["end_date"],
-                        tickets_need.get("adult_passengers", 1),
-                        tickets_need.get("child_passengers", 0),
-                        tickets_need.get("travel_class", ""),
-                    ) 
-                if "None" in aviasales_url:
+            if not aviasales_url: # Fallback
+                if not aviasales_flight_info:
+                    aviasales_url = ""
+                else:
+                    # aviasales_tool_for_link = AviasalesHandler()
+                    # tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
+                    # if tickets_need.get("response", "").lower() == "true":
+                    #     aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
+                    #         tickets_need["departure_city"],
+                    #         tickets_need["destination"],
+                    #         tickets_need["start_date"],
+                    #         tickets_need["end_date"],
+                    #         tickets_need.get("adult_passengers", 1),
+                    #         tickets_need.get("child_passengers", 0),
+                    #         tickets_need.get("travel_class", ""),
+                    #     ) 
+                    # if "None" in aviasales_url:
+                    #     aviasales_url = ""
                     aviasales_url = ""
 
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
@@ -383,7 +387,11 @@ def model_response_generator_sync(model, config, status_placeholder):
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
                 offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
 
-        if request_category != "поездки": # не обращаемся к ЛЛМ, если запрос о авиабилетах
+        if request_category == "поездки" and aviasales_enabled:
+            logger.info("Запрос о поездках и включен поиск по авиабилетам, не обращаемся к ЛЛМ")
+            # не обращаемся к ЛЛМ, если запрос о авиабилетах и он включен
+            pass
+        else:
             if config.get("deepsearch", False):
                 deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder, config))
 
@@ -423,7 +431,7 @@ def model_response_generator_sync(model, config, status_placeholder):
         loop.close()
         
     if config.get("deepsearch", False):
-        if request_category == "поездки":
+        if request_category == "поездки" and aviasales_enabled:
             if aviasales_flight_info:
                 deepsearch_res += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
             else:
@@ -439,7 +447,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     }
 
     else:
-        if request_category == "поездки":
+        if request_category == "поездки" and aviasales_enabled:
             if aviasales_flight_info:
                 web_search_response += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
             else:

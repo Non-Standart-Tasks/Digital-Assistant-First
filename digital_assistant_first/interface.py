@@ -365,7 +365,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             
             agent_web_seach = Agent(
                 name="Assistant",
-                instructions=f"""
+                instructions="""
                 Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
                 
                 Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
@@ -613,9 +613,15 @@ def handle_user_input_sync(model, config, prompt):
             # Обрабатываем офферы после основного текста
             if config.get("offers_enabled", False):
                 try:
-                    offers_data = response.get("offers_data", {})
-                    offers_text = offers_data.get('offers_text', '')
-                    offers_link = offers_data.get('offers_link', '')
+                    offers_text = response["offers_data"]['offers_text']
+                    logger.info(f"Offers data: {offers_text}")  # Debug log
+                    offers_link = response["offers_data"]['offers_link']
+                    offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
+                    
+                    display_text = stream_text(offers_section, display_text)  # Pass current display_text
+                            
+                    # Обновляем полный текст ответа
+                    full_response_text = full_response_text + '\n\n' + display_text
                     
                     if offers_text:  # Только если есть текст офферов
                         logger.info(f"Offers data: {offers_text}")  # Debug log

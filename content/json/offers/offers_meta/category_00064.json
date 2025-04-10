@@ -1,0 +1,974 @@
+[
+    {
+        "offer_id": 402381,
+        "offer_url": "https://www.vtbfamily.ru/offer/402381",
+        "title": "ФК Динамо-Москва 30%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-06_12-17-31_IMejxEh.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cc6e01cf0ab91f742d394518e934ef90d9776ea52b4ef05b50ecabd52335dfa0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402381.jpg",
+        "card_description": "Досуг и мероприятия ФК Динамо-Москва 30%"
+    },
+    {
+        "offer_id": 364899,
+        "offer_url": "https://www.vtbfamily.ru/offer/364899",
+        "title": "Онлайн-кинотеатр Иви",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B8%D0%B2%D0%B8_24DA73k.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0d999b9c08965712c86290c82174d015085cb6143f6a90fc7d4193575fcb901e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000364899.jpg",
+        "card_description": "Досуг и мероприятия Онлайн-кинотеатр Иви"
+    },
+    {
+        "offer_id": 100957,
+        "offer_url": "https://www.vtbfamily.ru/offer/100957",
+        "title": "Сервис электронных и аудиокниг Литрес 25%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BB%D0%B8%D1%82%D1%80%D0%B5%D1%81_rZjUMT4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ac2ae2827e8a95c5e54aedb7ebef741fdb6dbfa790d820e83cc824753393fb48",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000100957.jpg",
+        "card_description": "Досуг и мероприятия Сервис электронных и аудиокниг Литрес 25%"
+    },
+    {
+        "offer_id": 245539,
+        "offer_url": "https://www.vtbfamily.ru/offer/245539",
+        "title": "Онлайн-кинотеатр PREMIER",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D1%80%D0%B5%D0%BC%D1%8C%D0%B5%D1%80__kobQu7Y.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=278db5c8c9bb724cc40c065e203dacf01a3ad7abcf4c579b9146854c19e48906",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000245539.jpg",
+        "card_description": "Досуг и мероприятия Онлайн-кинотеатр PREMIER"
+    },
+    {
+        "offer_id": 129749,
+        "offer_url": "https://www.vtbfamily.ru/offer/129749",
+        "title": "Онлайн-кинотеатр Wink",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/wink_qqmyknF.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=74d1ed446b69cbd41fcad445f1afda12ab3aa79ea1e141abfa0fbc1b57835bee",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129749.jpg",
+        "card_description": "Досуг и мероприятия Онлайн-кинотеатр Wink"
+    },
+    {
+        "offer_id": 125593,
+        "offer_url": "https://www.vtbfamily.ru/offer/125593",
+        "title": "ПРЕМЬЕРА: Мюзикл Последняя сказка 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BD%D1%8F%D1%8F_%D1%81%D0%BA%D0%B0%D0%B7%D0%BA%D0%B0_2_E964MdY.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=051483635d3a4f4756ce7e81aeed77859915d73eec71519c02ab68aadea40f0c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125593.jpg",
+        "card_description": "Досуг и мероприятия ПРЕМЬЕРА: Мюзикл Последняя сказка 15%"
+    },
+    {
+        "offer_id": 402719,
+        "offer_url": "https://www.vtbfamily.ru/offer/402719",
+        "title": "Афиша.ру 50%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B0%D1%84%D0%B8%D1%88%D0%B0_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%BB%D0%B5%D0%B3%D0%B8%D1%8F.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=44b555f523737332e45d845978c7c095cc0095c263879151895947626750ad55",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402719.jpg",
+        "card_description": "Досуг и мероприятия Афиша.ру 50%"
+    },
+    {
+        "offer_id": 404,
+        "offer_url": "https://www.vtbfamily.ru/offer/404",
+        "title": "Онлайн-кинотеатр AMEDIATEKA / АМЕДИАТЕКА",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1871.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d97f0cb6f04768c3fc84669acd5c78530462def82789dde3f64f2606948d4d69",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000404.jpg",
+        "card_description": "Досуг и мероприятия Онлайн-кинотеатр AMEDIATEKA / АМЕДИАТЕКА"
+    },
+    {
+        "offer_id": 339017,
+        "offer_url": "https://www.vtbfamily.ru/offer/339017",
+        "title": "Онлайн-кинотеатр FLEX",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/flex_F10rZhp.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=119cc99b246bad53ff732e6fa8c7ea89353ebad8eb9f52d41cd51d4f1c1ceb2c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000339017.jpg",
+        "card_description": "Досуг и мероприятия Онлайн-кинотеатр FLEX"
+    },
+    {
+        "offer_id": 129754,
+        "offer_url": "https://www.vtbfamily.ru/offer/129754",
+        "title": "Интеллектуально-развлекательные игры Квиз, плиз!",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/934_370_9EvQp6I_Kzz0Bdf.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b47fb7b4ff5208ae7fd93d2af0b6bb376f8e2aa51dba83307aaa31f768689fc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129754.jpg",
+        "card_description": "Досуг и мероприятия Интеллектуально-развлекательные игры Квиз, плиз!"
+    },
+    {
+        "offer_id": 163691,
+        "offer_url": "https://www.vtbfamily.ru/offer/163691",
+        "title": "Сеть квестов Клаустрофобия 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%BB%D0%B0%D1%83%D1%81%D1%82%D1%80%D0%B0%D1%84%D0%BE%D0%B1%D0%B8%D1%8F_MAfR7Lf.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ee7be3f5a0fd9c165ff558ad59e76dd970287aa3b7cf913ca3f241053cd5032",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000163691.jpg",
+        "card_description": "Досуг и мероприятия Сеть квестов Клаустрофобия 15%"
+    },
+    {
+        "offer_id": 300592,
+        "offer_url": "https://www.vtbfamily.ru/offer/300592",
+        "title": "Москвариум 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%BE%D1%81%D0%B0%D0%BA%D0%B2%D0%B0%D1%80%D0%B8%D1%83%D0%BC_6cBWGlu.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=875436882cd0dcb8ef8912aaa734d1db19440187a8c380f10ed09309ed50d7cd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000300592.jpg",
+        "card_description": "Досуг и мероприятия Москвариум 10%"
+    },
+    {
+        "offer_id": 119072,
+        "offer_url": "https://www.vtbfamily.ru/offer/119072",
+        "title": "Театр на Таганке",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3937.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2a253907901a81b341706a8bb401865741f1e3efa459946f98ce7de025241ba3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000119072.jpg",
+        "card_description": "Досуг и мероприятия Театр на Таганке"
+    },
+    {
+        "offer_id": 125569,
+        "offer_url": "https://www.vtbfamily.ru/offer/125569",
+        "title": "Мир квестов 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%81_%D0%BB%D0%BE%D0%B3%D0%BE_TZFLRbd_jFHWQQQ.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=51c6b83182afd282f789e17e2cacd6256ee6c8c6eaf029ea06937b0853d5f119",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125569.jpg",
+        "card_description": "Досуг и мероприятия Мир квестов 10%"
+    },
+    {
+        "offer_id": 129769,
+        "offer_url": "https://www.vtbfamily.ru/offer/129769",
+        "title": "Смотровая площадка Panorama360 скидка 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/panorama360_0TWcnP6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8d9e4c9e1621d1937584061c59db3edf4e117b6875b9711034af31e6be4f954a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129769.jpg",
+        "card_description": "Досуг и мероприятия Смотровая площадка Panorama360 скидка 15%"
+    },
+    {
+        "offer_id": 125580,
+        "offer_url": "https://www.vtbfamily.ru/offer/125580",
+        "title": "Московский театр мюзикла 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%9C%D0%A2%D0%9C_934_Bi7FsmQ.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37bf20fd87292a5dbdeab0119999f2884028957a253b54846f11c7d376f9127e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125580.jpg",
+        "card_description": "Досуг и мероприятия Московский театр мюзикла 15%"
+    },
+    {
+        "offer_id": 302720,
+        "offer_url": "https://www.vtbfamily.ru/offer/302720",
+        "title": "Колесо обозрения Солнце Москвы 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%81%D0%BE%D0%BB%D0%BD%D1%86%D0%B5_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D1%8B_3_2PhZMZz.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e492c119423be474ce84970fed4c6dd7b651a4a72ffe4e864a36240730f893fa",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000302720.jpg",
+        "card_description": "Досуг и мероприятия Колесо обозрения Солнце Москвы 10%"
+    },
+    {
+        "offer_id": 402087,
+        "offer_url": "https://www.vtbfamily.ru/offer/402087",
+        "title": "Столото: лотерейный супермаркет",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%81%D1%82%D0%BE%D0%BB%D0%BE%D1%82%D0%BE_MkB00iL.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fee25d9639e826fbd2bca80109bcfb3128296950a5ca70a7441ced5b587ae658",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402087.jpg",
+        "card_description": "Досуг и мероприятия Столото: лотерейный супермаркет"
+    },
+    {
+        "offer_id": 7482,
+        "offer_url": "https://www.vtbfamily.ru/offer/7482",
+        "title": "Московский Международный Дом Музыки",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_515.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=20d80cb5226f672e9de2c3a7e1ba8eb2ad813ff8b033683bcf3ca6058038b068",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000007482.jpg",
+        "card_description": "Досуг и мероприятия Московский Международный Дом Музыки"
+    },
+    {
+        "offer_id": 351872,
+        "offer_url": "https://www.vtbfamily.ru/offer/351872",
+        "title": "ПРЕМЬЕРА! Полюбить океан в Москвариуме 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%BE%D0%BB%D1%8E%D0%B1%D0%B8%D1%82%D1%8C_%D0%BE%D0%BA%D0%B5%D0%B0%D0%BD_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0%D1%80%D0%B8%D1%83%D0%BC_2_IEGGK17.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162412Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4f157ff3798f946f56a43f9fc47e0912a5e1b26e0a0b83d51aedef7b6133e691",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000351872.jpg",
+        "card_description": "Досуг и мероприятия ПРЕМЬЕРА! Полюбить океан в Москвариуме 10%"
+    },
+    {
+        "offer_id": 402035,
+        "offer_url": "https://www.vtbfamily.ru/offer/402035",
+        "title": "Мультимедийное шоу «BTS MIKROKOSMOS» в театре «ОДЕОН» (Малая сцена) 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/BTS.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8bb3183f2f49bc516cd1f5c169963c5f687ebde087c5bfb0af4fdd86af1155dd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402035.jpg",
+        "card_description": "Досуг и мероприятия Мультимедийное шоу «BTS MIKROKOSMOS» в театре «ОДЕОН» (Малая сцена) 10%"
+    },
+    {
+        "offer_id": 402060,
+        "offer_url": "https://www.vtbfamily.ru/offer/402060",
+        "title": "Гастромюзикл «Москва слезам не верит» в театре «ОДЕОН» 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bc221aa7b96368d23b2da2eeab4239b670d09453983187d84fdeb1a1986def92",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402060.jpg",
+        "card_description": "Досуг и мероприятия Гастромюзикл «Москва слезам не верит» в театре «ОДЕОН» 10%"
+    },
+    {
+        "offer_id": 402722,
+        "offer_url": "https://www.vtbfamily.ru/offer/402722",
+        "title": "Онлайн-кинотеатр СТС",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/c%D1%82%D1%81.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9f9ccadf6b1eecb0fd4fa4e78dba68124ae41ac79fa1e861ff4c46217c446c45",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402722.jpg",
+        "card_description": "Досуг и мероприятия Онлайн-кинотеатр СТС"
+    },
+    {
+        "offer_id": 111,
+        "offer_url": "https://www.vtbfamily.ru/offer/111",
+        "title": "Шоу и спектакли театрального агентства Арт-Партнер",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1274.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=86ed6a29b787f8b91f033bd1667a12cc9463f1fb30d52bb960a1b392e34d6c70",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000111.jpg",
+        "card_description": "Досуг и мероприятия Шоу и спектакли театрального агентства Арт-Партнер"
+    },
+    {
+        "offer_id": 1327,
+        "offer_url": "https://www.vtbfamily.ru/offer/1327",
+        "title": "Kozlov Club",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_322.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=be5af80ab65bbc8209eaaec43803912877b5d8b07743c93cd90c1b05f5e88e18",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001327.jpg",
+        "card_description": "Досуг и мероприятия Kozlov Club"
+    },
+    {
+        "offer_id": 1767,
+        "offer_url": "https://www.vtbfamily.ru/offer/1767",
+        "title": "Театр Сатирикон",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_62.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=665c94132db6f1becc2434addf0c005c7eb9c869975eaaaf894350cfbb1709a8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001767.jpg",
+        "card_description": "Досуг и мероприятия Театр Сатирикон"
+    },
+    {
+        "offer_id": 402034,
+        "offer_url": "https://www.vtbfamily.ru/offer/402034",
+        "title": "Мультимедийное шоу «Миры Ханса Циммера» в театре «ОДЕОН» (Малая сц…",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A5%D0%B0%D0%BD%D1%81.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d594cec58de63ead9529615a5fa20ce427227ffb15dac333f58dc84016c8e943",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402034.jpg",
+        "card_description": "Досуг и мероприятия Мультимедийное шоу «Миры Ханса Циммера» в театре «ОДЕОН» (Малая сц…"
+    },
+    {
+        "offer_id": 402487,
+        "offer_url": "https://www.vtbfamily.ru/offer/402487",
+        "title": "Союзмультпарк: мультимедийный центр 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%9E%D0%AE%D0%97%D0%9C%D0%A3%D0%9B%D0%AC%D0%A2%D0%9F%D0%90%D0%A0%D0%9A.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ad1f916afe589dd2934093d75a6d9cce6ceda729edd0fca3d45180b58954ce29",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402487.jpg",
+        "card_description": "Досуг и мероприятия Союзмультпарк: мультимедийный центр 15%"
+    },
+    {
+        "offer_id": 402962,
+        "offer_url": "https://www.vtbfamily.ru/offer/402962",
+        "title": "Музей Дом сказок Жили-были 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B6%D0%B8%D0%BB%D0%B8-%D0%B1%D1%8B%D0%BB%D0%B8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5cd13cc5481381683e452e5fb941568ee9b15e0a3d7eabfe2eb6719250089b19",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402962.jpg",
+        "card_description": "Досуг и мероприятия Музей Дом сказок Жили-были 10%"
+    },
+    {
+        "offer_id": 405523,
+        "offer_url": "https://www.vtbfamily.ru/offer/405523",
+        "title": "My Hygge Place: творческие мастер-классы 12%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/my_hygge_box.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3e8ffd19610957c82f1c07566284a030bad3e9fefb97f2d7f1ad15e253cf3db1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405523.jpg",
+        "card_description": "Досуг и мероприятия My Hygge Place: творческие мастер-классы 12%"
+    },
+    {
+        "offer_id": 135,
+        "offer_url": "https://www.vtbfamily.ru/offer/135",
+        "title": "Спектакли Фонда Сергея Безрукова﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1340.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e4cc40cea8822ad09d802c4a6e13d8035f641ca2acba5532a5032731e9ce8b24",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000135.jpg",
+        "card_description": "Досуг и мероприятия Спектакли Фонда Сергея Безрукова﻿"
+    },
+    {
+        "offer_id": 92626,
+        "offer_url": "https://www.vtbfamily.ru/offer/92626",
+        "title": "Театр «На Набережной»",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3876.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=676cc4ddc5c51ae442c7eb507d6ad748142a4e8d81fe8f8d9a26555b034bf588",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000092626.jpg",
+        "card_description": "Досуг и мероприятия Театр «На Набережной»"
+    },
+    {
+        "offer_id": 125596,
+        "offer_url": "https://www.vtbfamily.ru/offer/125596",
+        "title": "Мюзикл День влюблённых 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B4%D0%B5%D0%BD%D1%8C_%D0%B2%D0%BB%D1%8E%D0%B1%D0%BB%D0%B5%D0%BD%D0%BD%D1%8B%D1%85__SDMOgpu.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a7da48dfddb719a75f17c8526874d0bda568272c44b1cf9b08f7bcce9d14354c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125596.jpg",
+        "card_description": "Досуг и мероприятия Мюзикл День влюблённых 15%"
+    },
+    {
+        "offer_id": 170111,
+        "offer_url": "https://www.vtbfamily.ru/offer/170111",
+        "title": "Квест.Инфо 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D0%BD%D1%84%D0%BE.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e0c8668b9a20ac9cd17927f0fee87bd22609bdbc22c1361c16e54415f7636e6a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000170111.jpg",
+        "card_description": "Досуг и мероприятия Квест.Инфо 10%"
+    },
+    {
+        "offer_id": 405206,
+        "offer_url": "https://www.vtbfamily.ru/offer/405206",
+        "title": "Вкусотеррия: кулинарная студия до 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/1.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=81ec9d6744da43a6b8b02ddcd51f862ba10a8d6d89daa1be182dce7fdf62e1a4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405206.jpg",
+        "card_description": "Досуг и мероприятия Вкусотеррия: кулинарная студия до 15%"
+    },
+    {
+        "offer_id": 6,
+        "offer_url": "https://www.vtbfamily.ru/offer/6",
+        "title": "Сеть арен виртуальной реальности WARPOINT",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1017.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a683867eaf155e0090a616cd3667a34dc27a9298d108ad0a57b13167be897264",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000006.jpg",
+        "card_description": "Досуг и мероприятия Сеть арен виртуальной реальности WARPOINT"
+    },
+    {
+        "offer_id": 29,
+        "offer_url": "https://www.vtbfamily.ru/offer/29",
+        "title": "Аэродинамическая труба I can fly",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1077.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=39372cd66b8ce4990fdc4e2fff8f79070e3a9aef0dcecd1787fd85fd1bb4b923",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000029.jpg",
+        "card_description": "Досуг и мероприятия Аэродинамическая труба I can fly"
+    },
+    {
+        "offer_id": 1520,
+        "offer_url": "https://www.vtbfamily.ru/offer/1520",
+        "title": "Концерты живой музыки Феномен культуры",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3520.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bd59f50fa7a5877fd11a7df42ea286cd492b416538f4b4f81d51c616301dfac4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001520.jpg",
+        "card_description": "Досуг и мероприятия Концерты живой музыки Феномен культуры"
+    },
+    {
+        "offer_id": 125594,
+        "offer_url": "https://www.vtbfamily.ru/offer/125594",
+        "title": "Мюзикл МАММА МИМО! или Мюзикл пошёл не так 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/MM_934x370_VTB_1_Fcf8jrp.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=08b14e53e27beed2519cf8e1a4718c50d9bfa440f4c1fa487249e6b07b6cd1a1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125594.jpg",
+        "card_description": "Досуг и мероприятия Мюзикл МАММА МИМО! или Мюзикл пошёл не так 15%"
+    },
+    {
+        "offer_id": 402058,
+        "offer_url": "https://www.vtbfamily.ru/offer/402058",
+        "title": "Smotreshka.TV",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%81%D0%BC%D0%BE%D1%82%D1%80%D0%B5%D1%88%D0%BA%D0%B0_5tc5Van.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162414Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=521418675d6d96e388719153feae7a075df0f3638220eccd6108b73601d0ab20",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402058.jpg",
+        "card_description": "Досуг и мероприятия Smotreshka.TV"
+    },
+    {
+        "offer_id": 402463,
+        "offer_url": "https://www.vtbfamily.ru/offer/402463",
+        "title": "Bad Gallery: онлайн-галерея современного искусства",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bad_gallery.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f8beddb26171a609d27cc1be15cb769246940c970050bdd771426d88113ef3ca",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402463.jpg",
+        "card_description": "Досуг и мероприятия Bad Gallery: онлайн-галерея современного искусства"
+    },
+    {
+        "offer_id": 402488,
+        "offer_url": "https://www.vtbfamily.ru/offer/402488",
+        "title": "МУЛЬТ: детский онлайн-кинотеатр",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D1%83%D0%BB%D1%8C%D1%82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=209133957036fe4783c141bc1dad64c31765f645f87ca5b78fc54a8159c34330",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402488.jpg",
+        "card_description": "Досуг и мероприятия МУЛЬТ: детский онлайн-кинотеатр"
+    },
+    {
+        "offer_id": 402799,
+        "offer_url": "https://www.vtbfamily.ru/offer/402799",
+        "title": "Dream Aero: авиатренажёрные центры для всех 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Dreamaero.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=da9f8f33f92e91c36ca78769bbc0ff3a45aa41735aedf80e5fbc0ec179ca5624",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402799.jpg",
+        "card_description": "Досуг и мероприятия Dream Aero: авиатренажёрные центры для всех 15%"
+    },
+    {
+        "offer_id": 402821,
+        "offer_url": "https://www.vtbfamily.ru/offer/402821",
+        "title": "Музей оптических иллюзий 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%BE%D0%BF%D1%82%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D1%85_%D0%B8%D0%BB%D0%BB%D1%8E%D0%B7%D0%B8%D0%B9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1d089929558ad0d1a055b27447ae39823b07254f41fb3e3ac17051938e99b639",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402821.jpg",
+        "card_description": "Досуг и мероприятия Музей оптических иллюзий 10%"
+    },
+    {
+        "offer_id": 402845,
+        "offer_url": "https://www.vtbfamily.ru/offer/402845",
+        "title": "Побег из Джунглей 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%BE%D0%B1%D0%B5%D0%B3_%D0%B8%D0%B7_%D0%B4%D0%B6%D1%83%D0%BD%D0%B3%D0%BB%D0%B5%D0%B9_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=082615e5f276ff5e4f67519abea079699822d358a190e2ca43c15082b346a178",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402845.jpg",
+        "card_description": "Досуг и мероприятия Побег из Джунглей 15%"
+    },
+    {
+        "offer_id": 402963,
+        "offer_url": "https://www.vtbfamily.ru/offer/402963",
+        "title": "Музей Буратино-Пиноккио 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B1%D1%83%D1%80%D0%B0%D1%82%D0%B8%D0%BD%D0%BE_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f683c2c531e0e64a55d83c53668cd837c50336aefda8f9aab1950ac513c6affe",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402963.jpg",
+        "card_description": "Досуг и мероприятия Музей Буратино-Пиноккио 10%"
+    },
+    {
+        "offer_id": 402969,
+        "offer_url": "https://www.vtbfamily.ru/offer/402969",
+        "title": "Brick Star: Музей лего 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/brick_star_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cd5d8ca99d546e26927f4bc2dfc1ba136554bd571d5689de0bf1131a0ef867d4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402969.jpg",
+        "card_description": "Досуг и мероприятия Brick Star: Музей лего 15%"
+    },
+    {
+        "offer_id": 403031,
+        "offer_url": "https://www.vtbfamily.ru/offer/403031",
+        "title": "YarO: гончарная мастерская 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Yaro.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f76bb4050e5190fc9f361c3c6e7953e1add824f342ba514f86f2e86083f9006c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403031.jpg",
+        "card_description": "Досуг и мероприятия YarO: гончарная мастерская 15%"
+    },
+    {
+        "offer_id": 418456,
+        "offer_url": "https://www.vtbfamily.ru/offer/418456",
+        "title": "RUSSIAN DRIFT SERIES 5%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/RDS_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7ddf7e7b9678b781ce91f0b28937d55376f7163735da16cb4512e3c9768ae0f3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000418456.jpg",
+        "card_description": "Досуг и мероприятия RUSSIAN DRIFT SERIES 5%"
+    },
+    {
+        "offer_id": 28,
+        "offer_url": "https://www.vtbfamily.ru/offer/28",
+        "title": "Сеть комнат ярости ЛОМАЙ МЕНЯ ПОЛНОСТЬЮ",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1076.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e44881e51741114ecef5ae78f7c108483b08c4aca430f8485ae8a1e37ea6eaab",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000028.jpg",
+        "card_description": "Досуг и мероприятия Сеть комнат ярости ЛОМАЙ МЕНЯ ПОЛНОСТЬЮ"
+    },
+    {
+        "offer_id": 94,
+        "offer_url": "https://www.vtbfamily.ru/offer/94",
+        "title": "Радио Arzamas",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_122.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9fc15e77b9de20afa5813bdaac04c163d8124f7b029f50be923e3d98a873b171",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000094.jpg",
+        "card_description": "Досуг и мероприятия Радио Arzamas"
+    },
+    {
+        "offer_id": 805,
+        "offer_url": "https://www.vtbfamily.ru/offer/805",
+        "title": "Прогулки на мото-сноуборде от Wow Board﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2444.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=420ca963877d23540123535dedfbd8f9e0ecb429132ffb8d6e510deff94d858f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000805.jpg",
+        "card_description": "Досуг и мероприятия Прогулки на мото-сноуборде от Wow Board﻿"
+    },
+    {
+        "offer_id": 1061,
+        "offer_url": "https://www.vtbfamily.ru/offer/1061",
+        "title": "Московский драматический театр Модерн",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2780.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7d8a29b868c527891cc7b9d9b518ad1bd6dae68ab39de27b03c8d22482057a05",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001061.jpg",
+        "card_description": "Досуг и мероприятия Московский драматический театр Модерн"
+    },
+    {
+        "offer_id": 1275,
+        "offer_url": "https://www.vtbfamily.ru/offer/1275",
+        "title": "Интерактивные концерты классической музыки для детей и взрослых",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3099.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4573c93bc4b3ac83c6ccbe788e63c20a8434bfa143592e93e5af676c13858459",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001275.jpg",
+        "card_description": "Досуг и мероприятия Интерактивные концерты классической музыки для детей и взрослых"
+    },
+    {
+        "offer_id": 1340,
+        "offer_url": "https://www.vtbfamily.ru/offer/1340",
+        "title": "La'Театр",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3251.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3732d404927c47bcb9980848e40aedbb7e3c5189b5efbf0cebf6bc97145d1236",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001340.jpg",
+        "card_description": "Досуг и мероприятия La'Театр"
+    },
+    {
+        "offer_id": 1380,
+        "offer_url": "https://www.vtbfamily.ru/offer/1380",
+        "title": "Школа плавания Swimserafim﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3309.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ac16899b5d385d85542c418975f573dab0c3ce4594983c2c179ce77b00ef3fa6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001380.jpg",
+        "card_description": "Досуг и мероприятия Школа плавания Swimserafim﻿"
+    },
+    {
+        "offer_id": 1701,
+        "offer_url": "https://www.vtbfamily.ru/offer/1701",
+        "title": "Мастер классы от кулинарной академии Goodman",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_466.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8c97e37606722ff18ad4ad8578c88074ad3086320c878dc51f0c5a222ba8ecaa",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001701.jpg",
+        "card_description": "Досуг и мероприятия Мастер классы от кулинарной академии Goodman"
+    },
+    {
+        "offer_id": 1711,
+        "offer_url": "https://www.vtbfamily.ru/offer/1711",
+        "title": "Компьютерный клуб Black Star Gaming﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_483.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=97677a5f44acd827a8f7f3c77b81ba6f9322d80ebdfe922ec79a4cd93a03aa19",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001711.jpg",
+        "card_description": "Досуг и мероприятия Компьютерный клуб Black Star Gaming﻿"
+    },
+    {
+        "offer_id": 1751,
+        "offer_url": "https://www.vtbfamily.ru/offer/1751",
+        "title": "Иммерсивное шоу Театра МОРФЕУС﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_592.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2e02a2f82a2ed2359f5773b543a3f6e1fc84033ccb280f017fc90ec5da71fbad",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001751.jpg",
+        "card_description": "Досуг и мероприятия Иммерсивное шоу Театра МОРФЕУС﻿"
+    },
+    {
+        "offer_id": 119097,
+        "offer_url": "https://www.vtbfamily.ru/offer/119097",
+        "title": "Шахматная школа CHESSFIRST",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3998.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162429Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ffe7f09dd34a07a68eea6fcdeca87924e99a7d6b07a5055b779aa46d86883a2d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000119097.jpg",
+        "card_description": "Досуг и мероприятия Шахматная школа CHESSFIRST"
+    },
+    {
+        "offer_id": 125592,
+        "offer_url": "https://www.vtbfamily.ru/offer/125592",
+        "title": "Музыкальная комедия Элементарно, Хадсон! Дело о собаке Б. 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/EH_934x370_VTB_NbXXus9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=70821678ea00fc8dea03816386cb47798687c906e1672ee1dd6062107c1d2061",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125592.jpg",
+        "card_description": "Досуг и мероприятия Музыкальная комедия Элементарно, Хадсон! Дело о собаке Б. 15%"
+    },
+    {
+        "offer_id": 125595,
+        "offer_url": "https://www.vtbfamily.ru/offer/125595",
+        "title": "Мюзикл Первое свидание 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/FD_934x370_VTB_upWeDrx.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=80dca0bc0df9400048c2d1a64ba0ad93b37aa3e11cbcf8e7190e67fa106a4602",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125595.jpg",
+        "card_description": "Досуг и мероприятия Мюзикл Первое свидание 15%"
+    },
+    {
+        "offer_id": 402059,
+        "offer_url": "https://www.vtbfamily.ru/offer/402059",
+        "title": "Детский спектакль «КРЫС И ЛИС» в театре «ОДЕОН» 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%9A%D1%80%D1%8B%D1%81_%D0%B8_%D0%BB%D0%B8%D1%81.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3685fadd0a3be22dbca5bbdcaf44aadd668677aff687a48a4aa134865f5911b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402059.jpg",
+        "card_description": "Досуг и мероприятия Детский спектакль «КРЫС И ЛИС» в театре «ОДЕОН» 10%"
+    },
+    {
+        "offer_id": 402700,
+        "offer_url": "https://www.vtbfamily.ru/offer/402700",
+        "title": "Необычный музей В Тишине 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B2_%D1%82%D0%B8%D1%88%D0%B8%D0%BD%D0%B5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3f5e932c0091a0f32e57b513390e5cdd5e3fe6ed9cbb6387a273035b39316ffb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402700.jpg",
+        "card_description": "Досуг и мероприятия Необычный музей В Тишине 10%"
+    },
+    {
+        "offer_id": 402715,
+        "offer_url": "https://www.vtbfamily.ru/offer/402715",
+        "title": "Музей мозга 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D1%83%D0%B7%D0%B5%D0%B9_%D0%BC%D0%BE%D0%B7%D0%B3%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7058cf5294a234c8de6b1aa1a0aa231c2c2da66452349257b38d461c3c53d515",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402715.jpg",
+        "card_description": "Досуг и мероприятия Музей мозга 10%"
+    },
+    {
+        "offer_id": 402721,
+        "offer_url": "https://www.vtbfamily.ru/offer/402721",
+        "title": "Мультимедийное пространство Большая Страна 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%91%D0%9E%D0%9B%D0%AC%D0%A8%D0%90%D0%AF_%D0%A1%D0%A2%D0%A0%D0%90%D0%9D%D0%90_2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3cfdfd3066a70212b2b1aa2abaa2e0249027fdc8b90e10c61d28f99cbbfde652",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402721.jpg",
+        "card_description": "Досуг и мероприятия Мультимедийное пространство Большая Страна 15%"
+    },
+    {
+        "offer_id": 402822,
+        "offer_url": "https://www.vtbfamily.ru/offer/402822",
+        "title": "Музей LoveBox 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/love_box.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4b50b80f8a80b37409e2f91d28c9678cd4b5917a2d67db41266d406a6b2ecd20",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402822.jpg",
+        "card_description": "Досуг и мероприятия Музей LoveBox 15%"
+    },
+    {
+        "offer_id": 402823,
+        "offer_url": "https://www.vtbfamily.ru/offer/402823",
+        "title": "Дом Великана 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B4%D0%BE%D0%BC_%D0%B2%D0%B5%D0%BB%D0%B8%D0%BA%D0%B0%D0%BD%D0%B0_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d18414811f60357ba91ceea1e5bb3c992b1f52eb376139663c95c9dcc2a53d9c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402823.jpg",
+        "card_description": "Досуг и мероприятия Дом Великана 15%"
+    },
+    {
+        "offer_id": 402824,
+        "offer_url": "https://www.vtbfamily.ru/offer/402824",
+        "title": "Лабиринт Алиса в Зазеркалье 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B0%D0%BB%D0%B8%D1%81%D0%B0_%D0%B2_%D0%B7%D0%B0%D0%B7%D0%B5%D1%80%D0%BA%D0%B0%D0%BB%D1%8C%D0%B5_new.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=47aff26c6a6cf81af546809e4fe489fc2a96612995aa49cd6815b5915a501493",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402824.jpg",
+        "card_description": "Досуг и мероприятия Лабиринт Алиса в Зазеркалье 15%"
+    },
+    {
+        "offer_id": 403083,
+        "offer_url": "https://www.vtbfamily.ru/offer/403083",
+        "title": "Пряничное дело: интерактивный пряничный музей 15%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D1%80%D1%8F%D0%BD%D0%B8%D1%87%D0%BD%D0%BE%D0%B5_%D0%B4%D0%B5%D0%BB%D0%BE_12.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d976e169dec572dfb338d6abcf39d55c8687aed7be8ee371e7065af97c21f2bd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403083.jpg",
+        "card_description": "Досуг и мероприятия Пряничное дело: интерактивный пряничный музей 15%"
+    },
+    {
+        "offer_id": 403084,
+        "offer_url": "https://www.vtbfamily.ru/offer/403084",
+        "title": "tmatic.travel: сервис аудиогидов 50%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tmatictravel_15_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=627dcf09e9281cc0dfeeadc6d271d981755f7d1bd8ce3a18e4cc753fabdaed92",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403084.jpg",
+        "card_description": "Досуг и мероприятия tmatic.travel: сервис аудиогидов 50%"
+    },
+    {
+        "offer_id": 403112,
+        "offer_url": "https://www.vtbfamily.ru/offer/403112",
+        "title": "CavaCava: школа сомелье 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/3.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=affb3cffdad9c363e72a5910e9ba8635d9b623d5c75a960fbbf4599fac1dfaab",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403112.jpg",
+        "card_description": "Досуг и мероприятия CavaCava: школа сомелье 10%"
+    },
+    {
+        "offer_id": 405282,
+        "offer_url": "https://www.vtbfamily.ru/offer/405282",
+        "title": "EventyOn: организация и проведение праздников до 25%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/eventyon.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b97440e48d82d63490e02b3c08d2f4f4a75091b18683ec7e58c6b36deac02409",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405282.jpg",
+        "card_description": "Досуг и мероприятия EventyOn: организация и проведение праздников до 25%"
+    },
+    {
+        "offer_id": 405313,
+        "offer_url": "https://www.vtbfamily.ru/offer/405313",
+        "title": "Музей Темноты: пространство осознания через сенсорный опыт 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%82%D0%B5%D0%BC%D0%BD%D0%BE%D1%82%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=21544c951ab5815b20d584e632c1bd8a03a25fdbd64240617c9bba2f3f19b25b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405313.jpg",
+        "card_description": "Досуг и мероприятия Музей Темноты: пространство осознания через сенсорный опыт 10%"
+    },
+    {
+        "offer_id": 405421,
+        "offer_url": "https://www.vtbfamily.ru/offer/405421",
+        "title": "GOGREEN GOLF SERVICES: частные гольф-мероприятия 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/gogreen_golf_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=067b8b87220ca549c6f9d2b61c2075f10039bf66f3c9e945f42ee179a8a39816",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405421.jpg",
+        "card_description": "Досуг и мероприятия GOGREEN GOLF SERVICES: частные гольф-мероприятия 10%"
+    },
+    {
+        "offer_id": 407681,
+        "offer_url": "https://www.vtbfamily.ru/offer/407681",
+        "title": "Робостанция: интерактивная выставка роботов до 20%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%80%D0%BE%D0%B1%D0%BE%D1%81%D1%82%D0%B0%D0%BD%D1%86%D0%B8%D1%8F.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b0ae80ac1d5f988273252fe4a99eb1bac53c27fe538ac98fd6202ef69cfb8e20",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000407681.jpg",
+        "card_description": "Досуг и мероприятия Робостанция: интерактивная выставка роботов до 20%"
+    },
+    {
+        "offer_id": 416289,
+        "offer_url": "https://www.vtbfamily.ru/offer/416289",
+        "title": "Московский государственный театр Ленком Марка Захарова 1…",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BB%D0%B5%D0%BD%D0%BA%D0%BE%D0%BC.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d8e242c2e3609fa3e3c325bf00c1a5bddb01dc35812ed8e8a7e7b42f735724d6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000416289.jpg",
+        "card_description": "Досуг и мероприятия Московский государственный театр Ленком Марка Захарова 1…"
+    },
+    {
+        "offer_id": 416290,
+        "offer_url": "https://www.vtbfamily.ru/offer/416290",
+        "title": "Театр на Юго-Западе 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%82%D0%B5%D0%B0%D1%82%D1%80_%D0%BD%D0%B0_%D1%8E%D0%B3%D0%BE_%D0%B7%D0%B0%D0%BF%D0%B0%D0%B4%D0%B5.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abbda500434e861cef179ca1044b49574c63c4d3b15608f80af069a07a4f6ae5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000416290.jpg",
+        "card_description": "Досуг и мероприятия Театр на Юго-Западе 10%"
+    },
+    {
+        "offer_id": 114,
+        "offer_url": "https://www.vtbfamily.ru/offer/114",
+        "title": "Лекторий СИТИ КЛАСС",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_128.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=886d42de608adb90eeca61304f9bae6729df1e9e945b781813c2dd58855fbb7c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000114.jpg",
+        "card_description": "Досуг и мероприятия Лекторий СИТИ КЛАСС"
+    },
+    {
+        "offer_id": 208,
+        "offer_url": "https://www.vtbfamily.ru/offer/208",
+        "title": "Зеркальный Лабиринт",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1510.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162431Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=65d82082281a40c1652cc928cf7a430783c1a041526e2f51c1356622b22a3fa4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000208.jpg",
+        "card_description": "Досуг и мероприятия Зеркальный Лабиринт"
+    },
+    {
+        "offer_id": 248,
+        "offer_url": "https://www.vtbfamily.ru/offer/248",
+        "title": "Городские каникулы от Towncamp.ru﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1587.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b2c628e70956af03a6934385c2d85bb4990006a20d3acaea152284976acc3c1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000248.jpg",
+        "card_description": "Досуг и мероприятия Городские каникулы от Towncamp.ru﻿"
+    },
+    {
+        "offer_id": 616,
+        "offer_url": "https://www.vtbfamily.ru/offer/616",
+        "title": "Катание на аэролодке Вьюга",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2190.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c071d800c981a706d83f9218340b373d42a5ffa024f7a2ef5954dc99378c55ef",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000616.jpg",
+        "card_description": "Досуг и мероприятия Катание на аэролодке Вьюга"
+    },
+    {
+        "offer_id": 639,
+        "offer_url": "https://www.vtbfamily.ru/offer/639",
+        "title": "Концертное агентство Grand Musica",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2217.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cc772ad7aaaad8e18eb8be67c084db90f7c3ee44fa9dfea3efd186f4a48ca508",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000639.jpg",
+        "card_description": "Досуг и мероприятия Концертное агентство Grand Musica"
+    },
+    {
+        "offer_id": 1068,
+        "offer_url": "https://www.vtbfamily.ru/offer/1068",
+        "title": "Театр Дениса Матросова",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2798.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b725445036ac9ec6ef71354732efc430e2a0cf80f06abc428358a6d08cc7f285",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001068.jpg",
+        "card_description": "Досуг и мероприятия Театр Дениса Матросова"
+    },
+    {
+        "offer_id": 1158,
+        "offer_url": "https://www.vtbfamily.ru/offer/1158",
+        "title": "Galaxy VR",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2938.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=169a98342a8af31677f20479e278e32fa2090e01336e2242a47800af9a9a9619",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001158.jpg",
+        "card_description": "Досуг и мероприятия Galaxy VR"
+    },
+    {
+        "offer_id": 1191,
+        "offer_url": "https://www.vtbfamily.ru/offer/1191",
+        "title": "Концерты органной музыки Луки Гаделии",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2984.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=06ccc42c83f822ba812c48d10e0b41c456dd28115b6878bbe05ceb76f8cba6fe",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001191.jpg",
+        "card_description": "Досуг и мероприятия Концерты органной музыки Луки Гаделии"
+    },
+    {
+        "offer_id": 1277,
+        "offer_url": "https://www.vtbfamily.ru/offer/1277",
+        "title": "Культ крыш - мероприятие на высоте",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3101.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d1be357d917a9b0526247c904503dc7f65257c972eba54c6c9af4e23d0489f15",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001277.jpg",
+        "card_description": "Досуг и мероприятия Культ крыш - мероприятие на высоте"
+    },
+    {
+        "offer_id": 1420,
+        "offer_url": "https://www.vtbfamily.ru/offer/1420",
+        "title": "Тамара Карсавина. Жар-птица на века от «Андрис Лиепа продакшн»",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3359.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0289a1c9acbd0e3f9f69e4d82fe6040b7e5a16df04f6f39b2c8ccc586a89ed9d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001420.jpg",
+        "card_description": "Досуг и мероприятия Тамара Карсавина. Жар-птица на века от «Андрис Лиепа продакшн»"
+    },
+    {
+        "offer_id": 1459,
+        "offer_url": "https://www.vtbfamily.ru/offer/1459",
+        "title": "Продюсерский центр Театромания﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3417.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c1d9a924adad40b157314f95b9f7ac8414c22278584c5392c97291284c33dbcd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001459.jpg",
+        "card_description": "Досуг и мероприятия Продюсерский центр Театромания﻿"
+    },
+    {
+        "offer_id": 1591,
+        "offer_url": "https://www.vtbfamily.ru/offer/1591",
+        "title": "Развлекательный центр Министерство Магии﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3629.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=346ba03a3937a66ad995815819148fd7a5fa4c5409f3120d945254d88c2fa8ca",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001591.jpg",
+        "card_description": "Досуг и мероприятия Развлекательный центр Министерство Магии﻿"
+    },
+    {
+        "offer_id": 1625,
+        "offer_url": "https://www.vtbfamily.ru/offer/1625",
+        "title": "Стрелковый клуб Target Point﻿",
+        "category": "Спортивные мероприятия и концерты",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3672.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e19b1a4f132a3d4fcbf5dba5efad40d947fb9a6c06af406ccd18d4e11d0064cb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001625.jpg",
+        "card_description": "Спортивные мероприятия и концерты Стрелковый клуб Target Point﻿"
+    },
+    {
+        "offer_id": 1664,
+        "offer_url": "https://www.vtbfamily.ru/offer/1664",
+        "title": "Квесты ATMOquest",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_400.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8120c520fc84b03119480434ed8a953891a245e9b9a8c1c251938b744a2a30ed",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001664.jpg",
+        "card_description": "Досуг и мероприятия Квесты ATMOquest"
+    },
+    {
+        "offer_id": 1694,
+        "offer_url": "https://www.vtbfamily.ru/offer/1694",
+        "title": "Вейксерф и вейкборд в клубе Wave Hunters",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_452.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=adae24e4539c4fbf486e5e3449d40f44b33cbb761d7a4d0522cdaab6042e4cdd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001694.jpg",
+        "card_description": "Досуг и мероприятия Вейксерф и вейкборд в клубе Wave Hunters"
+    },
+    {
+        "offer_id": 1721,
+        "offer_url": "https://www.vtbfamily.ru/offer/1721",
+        "title": "Мастер-классы и вечеринки в EventyOn",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_513.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c2223b9624c6786f0e6dd8951c7775eed521f16477bd5ea17b1bdb3ddc0921a6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001721.jpg",
+        "card_description": "Досуг и мероприятия Мастер-классы и вечеринки в EventyOn"
+    },
+    {
+        "offer_id": 1873,
+        "offer_url": "https://www.vtbfamily.ru/offer/1873",
+        "title": "Авиатренажёрный центр Sim Dream﻿",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_909.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbdc031d0dd63002f39780ba285c2124b1414f622d3e03adc60f82da19fb285e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001873.jpg",
+        "card_description": "Досуг и мероприятия Авиатренажёрный центр Sim Dream﻿"
+    },
+    {
+        "offer_id": 68472,
+        "offer_url": "https://www.vtbfamily.ru/offer/68472",
+        "title": "Детский развлекательный центр «Набеги﻿»",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3803.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=35d5e9382e6109797dbd6eef459f3075f82552a0a164ac452e6b20aad24d035f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000068472.jpg",
+        "card_description": "Досуг и мероприятия Детский развлекательный центр «Набеги﻿»"
+    },
+    {
+        "offer_id": 100691,
+        "offer_url": "https://www.vtbfamily.ru/offer/100691",
+        "title": "Гончарные мастер-классы Anna Ceramica",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3882.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=897f85d6155f6cfc9908ac2981a71d58d685b4ddb8fcc733041e1e1bacb1ea53",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000100691.jpg",
+        "card_description": "Досуг и мероприятия Гончарные мастер-классы Anna Ceramica"
+    },
+    {
+        "offer_id": 119106,
+        "offer_url": "https://www.vtbfamily.ru/offer/119106",
+        "title": "Детский онлайн-центр УмЛаб",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4011.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e20b19501706037ecc44ca16ec88771294c732267ca1c191cab0636066bf9a1b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000119106.jpg",
+        "card_description": "Досуг и мероприятия Детский онлайн-центр УмЛаб"
+    },
+    {
+        "offer_id": 131607,
+        "offer_url": "https://www.vtbfamily.ru/offer/131607",
+        "title": "Спектакли от Артпарад",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4068.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7c32c88f4486d8108a88eb8b294c7a1d11302ef63bbb4548dab3af35da8e39d0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131607.jpg",
+        "card_description": "Досуг и мероприятия Спектакли от Артпарад"
+    },
+    {
+        "offer_id": 157041,
+        "offer_url": "https://www.vtbfamily.ru/offer/157041",
+        "title": "Event-пространство Секрет",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4199.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162445Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=642f85dfcecec568c54bd339fb3b08da626a11ae337fbb910f85f7a5ab11134e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000157041.jpg",
+        "card_description": "Досуг и мероприятия Event-пространство Секрет"
+    },
+    {
+        "offer_id": 174228,
+        "offer_url": "https://www.vtbfamily.ru/offer/174228",
+        "title": "Иммерсивный парк «Визардия. Страна Волшебников»",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4266.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0fdf784aaea14730909bc19a44f7e2245881a1765f2eb8e3bdefaaa6c13c89eb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000174228.jpg",
+        "card_description": "Досуг и мероприятия Иммерсивный парк «Визардия. Страна Волшебников»"
+    },
+    {
+        "offer_id": 177245,
+        "offer_url": "https://www.vtbfamily.ru/offer/177245",
+        "title": "Агентство праздников Детский Экспресс",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4299.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f1cf5b9738752ef229486f6d60073b5436a1b06fbd02295c92df503266e95c1d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000177245.jpg",
+        "card_description": "Досуг и мероприятия Агентство праздников Детский Экспресс"
+    },
+    {
+        "offer_id": 186015,
+        "offer_url": "https://www.vtbfamily.ru/offer/186015",
+        "title": "Школа вокала Дом голоса",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4311.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4ea00e2f30d398033f3f43868c42624a01fa08b84b7cf4320971208c63c6d9fc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000186015.jpg",
+        "card_description": "Досуг и мероприятия Школа вокала Дом голоса"
+    },
+    {
+        "offer_id": 186018,
+        "offer_url": "https://www.vtbfamily.ru/offer/186018",
+        "title": "Сообщество Книгология",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4317.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=04ae7f56e45b435e09edbc4bf9561631efdd7ebe01f7762fb596021688b9b281",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000186018.jpg",
+        "card_description": "Досуг и мероприятия Сообщество Книгология"
+    },
+    {
+        "offer_id": 201290,
+        "offer_url": "https://www.vtbfamily.ru/offer/201290",
+        "title": "Продюсерский центр ЮНЫЙ АРТИСТ",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4333.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3c2e1a82e119d556ff5dc06703171806c888aec0be384cea5f88f81603f15065",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000201290.jpg",
+        "card_description": "Досуг и мероприятия Продюсерский центр ЮНЫЙ АРТИСТ"
+    },
+    {
+        "offer_id": 212267,
+        "offer_url": "https://www.vtbfamily.ru/offer/212267",
+        "title": "Международный Российский Культурно-просветительский фестив…",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4350.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8c498172a30db34f1252eb237286e1964dcf644dc4d9659933d933654e255d7b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000212267.jpg",
+        "card_description": "Досуг и мероприятия Международный Российский Культурно-просветительский фестив…"
+    },
+    {
+        "offer_id": 285555,
+        "offer_url": "https://www.vtbfamily.ru/offer/285555",
+        "title": "Независимый театр Вахтанговский Практикум",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4451.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=467928815da38b8f46575039cf6cec2ef7be668a8b0bc36523dfe36dbd20bd7d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000285555.jpg",
+        "card_description": "Досуг и мероприятия Независимый театр Вахтанговский Практикум"
+    },
+    {
+        "offer_id": 402816,
+        "offer_url": "https://www.vtbfamily.ru/offer/402816",
+        "title": "Гольф-клуб Завидово 10%",
+        "category": "Досуг и мероприятия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-10_13-40-45.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162447Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=af6bf5e2ea8eafc02799eee44a408a0b04cb79fc3dd965497eb851980821f45b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402816.jpg",
+        "card_description": "Досуг и мероприятия Гольф-клуб Завидово 10%"
+    }
+]

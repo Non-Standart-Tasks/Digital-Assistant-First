@@ -243,8 +243,6 @@ async def get_offers_data(
     # Use the async run method instead of run_sync
     result = await offer_matching_agent.run(enhanced_prompt, deps=deps)
     logger.info(f"Offer matching agent result: {result.data}")
-    with open('digital_assistant_first/offergen/placeholder.txt', 'r+') as file:
-        placeholder_image = file.read()
     offers_payload =[]
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
@@ -265,7 +263,7 @@ async def get_offers_data(
                 "category": offer.category,
                 "description": f"{offer.name}\n\n{offer.full_description}",
                 "url": offer.offer_url,
-                "image": placeholder_image
+                "image": offer.image_path
             }
             offers_payload.append(offer_json)
         logger.info("System prompt for offers generated.")

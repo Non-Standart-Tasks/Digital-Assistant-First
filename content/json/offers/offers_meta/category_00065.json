@@ -1,0 +1,146 @@
+[
+    {
+        "offer_id": 402033,
+        "offer_url": "https://www.vtbfamily.ru/offer/402033",
+        "title": "Яндекс Маркет",
+        "category": "Дом, сад и ремонт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82_%D0%B8%D1%82%D0%BE%D0%B3_ZQenBoT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bb811bae77e4055bc008a87ceb6da40895ca54f479026136e3dfc908cfb28a6c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402033.jpg",
+        "card_description": "Дом, сад и ремонт Яндекс Маркет"
+    },
+    {
+        "offer_id": 129771,
+        "offer_url": "https://www.vtbfamily.ru/offer/129771",
+        "title": "Четыре Лапы﻿ до 20%",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/4_%D0%BB%D0%B0%D0%BF%D1%8B_s3zwp45.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5b34a82308f9359bd9b7854cbeadce1b48e17a00993d28543789e93d7690bc0e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129771.jpg",
+        "card_description": "Животные Четыре Лапы﻿ до 20%"
+    },
+    {
+        "offer_id": 1425,
+        "offer_url": "https://www.vtbfamily.ru/offer/1425",
+        "title": "ЗооОптТорг.РФ",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3364.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=17fbef44209f483417bd0aca738b33be0044ccb54a27991693a32c95d08fd0cd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001425.jpg",
+        "card_description": "Животные ЗооОптТорг.РФ"
+    },
+    {
+        "offer_id": 256355,
+        "offer_url": "https://www.vtbfamily.ru/offer/256355",
+        "title": "КО MNE - лежанки для животных",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4415.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5205a254d809d4bfb70dbbcb212b0e71b6a2aa71965fe9102b882179ffd92c92",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000256355.jpg",
+        "card_description": "Животные КО MNE - лежанки для животных"
+    },
+    {
+        "offer_id": 131903,
+        "offer_url": "https://www.vtbfamily.ru/offer/131903",
+        "title": "Консультации ветеринара онлайн Vetsy",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/vetsy_GXkmQlH.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bbb3549b1d351f35e4799f71fe9ab332390cd94149e5a31b378f9d9f5119acd5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131903.jpg",
+        "card_description": "Животные Консультации ветеринара онлайн Vetsy"
+    },
+    {
+        "offer_id": 74751,
+        "offer_url": "https://www.vtbfamily.ru/offer/74751",
+        "title": "Груминг-салон Businka 7%",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/businka__c7jO4jQ.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4c6819505c8448cf647b8afa889c0382c1859d9c77fc6727c0dad1755694d4b5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000074751.jpg",
+        "card_description": "Животные Груминг-салон Businka 7%"
+    },
+    {
+        "offer_id": 906,
+        "offer_url": "https://www.vtbfamily.ru/offer/906",
+        "title": "Интернет-зоомагазин Любимчик﻿",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2580.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=91e17e95e122a820db4085d5fed5ff4364d01ee0af7ecde4818e8a4f0a1598b7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000906.jpg",
+        "card_description": "Животные Интернет-зоомагазин Любимчик﻿"
+    },
+    {
+        "offer_id": 1211,
+        "offer_url": "https://www.vtbfamily.ru/offer/1211",
+        "title": "SAMIZOO.ru - интернет-зоомагазин для требовательных владельц…",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3010.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=782add0a6aad679dd82ee93449e8616e7340882aacfc3283512d3ab0d36b473a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001211.jpg",
+        "card_description": "Животные SAMIZOO.ru - интернет-зоомагазин для требовательных владельц…"
+    },
+    {
+        "offer_id": 402065,
+        "offer_url": "https://www.vtbfamily.ru/offer/402065",
+        "title": "Monogroom: груминг-салон до 17%",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/monogroom_W9p9gkk.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=10024efd0d90408e276e4a06081f6325faf0d0e8b12f10c186121ff44fb928dd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402065.jpg",
+        "card_description": "Животные Monogroom: груминг-салон до 17%"
+    },
+    {
+        "offer_id": 1717,
+        "offer_url": "https://www.vtbfamily.ru/offer/1717",
+        "title": "Сервис Гульдог и Мурчалкин",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_50.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c2ec137e562b1990cc7d9d90193bb3dff0ef7eac0b096c4eab2815c0e6c20478",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001717.jpg",
+        "card_description": "Животные Сервис Гульдог и Мурчалкин"
+    },
+    {
+        "offer_id": 38825,
+        "offer_url": "https://www.vtbfamily.ru/offer/38825",
+        "title": "Круглосуточная ветеринарная онлайн-помощь КотЗдоров 25%",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%BE%D1%82_%D0%B7%D0%B4%D0%BE%D1%80%D0%BE%D0%B2_CjQkwq2.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f17c3a8ad1cb9b927dee03a9f8b2de83c362d65f48d2b3d339bc5f4658f58596",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000038825.jpg",
+        "card_description": "Животные Круглосуточная ветеринарная онлайн-помощь КотЗдоров 25%"
+    },
+    {
+        "offer_id": 349526,
+        "offer_url": "https://www.vtbfamily.ru/offer/349526",
+        "title": "Зоосалон Grow Груминг",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4542.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3c9fdd2eda88682faea10136cc70d0bf2abe26848374e70f1f0d2b7ddef576c5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000349526.jpg",
+        "card_description": "Животные Зоосалон Grow Груминг"
+    },
+    {
+        "offer_id": 630,
+        "offer_url": "https://www.vtbfamily.ru/offer/630",
+        "title": "Магазин живых тропических бабочек Флай-Флай",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2207.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aeeab211c5c679d6a07d0d60351ef6ee235e459fc533dd806602b7a8b2c6e560",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000630.jpg",
+        "card_description": "Животные Магазин живых тропических бабочек Флай-Флай"
+    },
+    {
+        "offer_id": 917,
+        "offer_url": "https://www.vtbfamily.ru/offer/917",
+        "title": "Гуляй Виляй — Выгул и передержка собак",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2595.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=64e880dd8206e94ccb4bfdebb85d4e9361b5d479c1dc8372bf4985d4dbc1c5d2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000917.jpg",
+        "card_description": "Животные Гуляй Виляй — Выгул и передержка собак"
+    },
+    {
+        "offer_id": 38824,
+        "offer_url": "https://www.vtbfamily.ru/offer/38824",
+        "title": "Зоовет 15%",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%BE%D0%BE%D0%B2%D0%B5%D1%82_eo9ISXH_2cKnZL8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=22b156c01d8491cbf28ff3f6ba38f7f1b14b8ff8d74516ad5e09dafaef57272b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000038824.jpg",
+        "card_description": "Животные Зоовет 15%"
+    },
+    {
+        "offer_id": 214467,
+        "offer_url": "https://www.vtbfamily.ru/offer/214467",
+        "title": "Ветеринарные клиники Vet Union",
+        "category": "Животные",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4319.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163452Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bda96b962a3ccdc2bf3c79b51e3956a4b991f1c1beee341cdc2e27d859351d4c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000214467.jpg",
+        "card_description": "Животные Ветеринарные клиники Vet Union"
+    }
+]

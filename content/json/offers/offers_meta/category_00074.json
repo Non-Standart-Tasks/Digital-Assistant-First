@@ -1,0 +1,1460 @@
+[
+    {
+        "offer_id": 264755,
+        "offer_url": "https://www.vtbfamily.ru/offer/264755",
+        "title": "Тануки: сеть ресторанов до 20%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%82%D0%B0%D0%BD%D1%83%D0%BA%D0%B8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4bd1a2cd8d129fa56a6715740508db35ec97b7d78738d311e991c034af115023",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000264755.jpg",
+        "card_description": "Рестораны Тануки: сеть ресторанов до 20%"
+    },
+    {
+        "offer_id": 82,
+        "offer_url": "https://www.vtbfamily.ru/offer/82",
+        "title": "VASILCHUKI",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1179.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ca12758c2fd9c4dad866a4ccfb05488cdfce429303a86c2e5312d51d7e260672",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000082.jpg",
+        "card_description": "Рестораны VASILCHUKI"
+    },
+    {
+        "offer_id": 259,
+        "offer_url": "https://www.vtbfamily.ru/offer/259",
+        "title": "Рестораны Мясо&Рыба",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_16.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5275b07dba504a5e6915e9fca0ca6f5d89c581740abf3ba3190c08e6ccb8df28",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000259.jpg",
+        "card_description": "Рестораны Рестораны Мясо&Рыба"
+    },
+    {
+        "offer_id": 1060,
+        "offer_url": "https://www.vtbfamily.ru/offer/1060",
+        "title": "Сеть ресторанов Чайхона №1 Тимура Ланского",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_278.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d4e08b27e2b4f9a2aa57ff83770f52efd338f41a5a872fdd43df4a9dfdd76c9f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001060.jpg",
+        "card_description": "Рестораны Сеть ресторанов Чайхона №1 Тимура Ланского"
+    },
+    {
+        "offer_id": 184,
+        "offer_url": "https://www.vtbfamily.ru/offer/184",
+        "title": "Рестораны итальянской кухни il FORNO",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1475.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8ad4992527233da2849a3930cf0fc3ba5f369ca52414c20209ab7e0a86fcd2f0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000184.jpg",
+        "card_description": "Рестораны Рестораны итальянской кухни il FORNO"
+    },
+    {
+        "offer_id": 1841,
+        "offer_url": "https://www.vtbfamily.ru/offer/1841",
+        "title": "Сеть ресторанов Steak it easy﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_840.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45a33623df990bad830a3679f535fe584a663ad696584dee81773f9bddb4a0d1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001841.jpg",
+        "card_description": "Рестораны Сеть ресторанов Steak it easy﻿"
+    },
+    {
+        "offer_id": 1750,
+        "offer_url": "https://www.vtbfamily.ru/offer/1750",
+        "title": "Видовой ресторан русской кухни RUSKI﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_591.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b6f0efadfc9ca2b2c3e44df24bbd2009b645f8a6b8a51007ed8d5b25bfdbd897",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001750.jpg",
+        "card_description": "Рестораны Видовой ресторан русской кухни RUSKI﻿"
+    },
+    {
+        "offer_id": 121,
+        "offer_url": "https://www.vtbfamily.ru/offer/121",
+        "title": "Итальянские рестораны Bocconcino﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1294.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b93e92b884b0a21c08a200173dec8865787bc070e42d7d9edc9f2aed52be003",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000121.jpg",
+        "card_description": "Рестораны Итальянские рестораны Bocconcino﻿"
+    },
+    {
+        "offer_id": 52696,
+        "offer_url": "https://www.vtbfamily.ru/offer/52696",
+        "title": "TIMELESS: сеть премиальных лаунж-баров",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/timeless_sBuDIOF.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=80e053b0c59eefe09c152dd8d5d318fbf86b1ce89fa53ea070c7cdaf88d16f4f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052696.jpg",
+        "card_description": "Рестораны TIMELESS: сеть премиальных лаунж-баров"
+    },
+    {
+        "offer_id": 112922,
+        "offer_url": "https://www.vtbfamily.ru/offer/112922",
+        "title": "Vasilchuki Chaihona № 1﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3956.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fd5191a7ee4b802abf1f61f2fe15263d2853cc448a6ec0eda3f61f7bed9ced35",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000112922.jpg",
+        "card_description": "Рестораны Vasilchuki Chaihona № 1﻿"
+    },
+    {
+        "offer_id": 1204,
+        "offer_url": "https://www.vtbfamily.ru/offer/1204",
+        "title": "Пивные рестораны Brasserie Lambic",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_300.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8a6367d4ff2a7c104a9e2cbc3633bd3cd7ff3800ffa1b8ab1f32b31c02c5cca5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001204.jpg",
+        "card_description": "Рестораны Пивные рестораны Brasserie Lambic"
+    },
+    {
+        "offer_id": 1830,
+        "offer_url": "https://www.vtbfamily.ru/offer/1830",
+        "title": "Стейк-хаусы Goodman",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f379f712c3795dfef33bf5aa61efe4f5b04116b0fc0f4ea96a8679c76ebd6e92",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001830.jpg",
+        "card_description": "Рестораны Стейк-хаусы Goodman"
+    },
+    {
+        "offer_id": 429,
+        "offer_url": "https://www.vtbfamily.ru/offer/429",
+        "title": "Рестораны BRO&N",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1909.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ace99aee3660bf8da3457b895d41d5bb4b5330cb9b11482aa44a94392c831590",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000429.jpg",
+        "card_description": "Рестораны Рестораны BRO&N"
+    },
+    {
+        "offer_id": 18,
+        "offer_url": "https://www.vtbfamily.ru/offer/18",
+        "title": "Самый высокий ресторан и клуб в мире Birds",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1050.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fb53139d7a8b4e9ab853e7a7bf8f26104810b17cccb7442d31c6c89299a42a97",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000018.jpg",
+        "card_description": "Рестораны Самый высокий ресторан и клуб в мире Birds"
+    },
+    {
+        "offer_id": 978,
+        "offer_url": "https://www.vtbfamily.ru/offer/978",
+        "title": "Сеть стейк-хаусов Chef",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2666.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9fe6ff99b803b58a5af5bc2588bd1fe507ce15bdf22180f09042db31ef35d975",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000978.jpg",
+        "card_description": "Рестораны Сеть стейк-хаусов Chef"
+    },
+    {
+        "offer_id": 957,
+        "offer_url": "https://www.vtbfamily.ru/offer/957",
+        "title": "YURA﻿. Видовой ресторан в самом сердце Москвы",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2642.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=630ac6830a337c3f5ea885538f6954a28125ea8f00fc66e83022d4f8ef61ad7c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000957.jpg",
+        "card_description": "Рестораны YURA﻿. Видовой ресторан в самом сердце Москвы"
+    },
+    {
+        "offer_id": 337,
+        "offer_url": "https://www.vtbfamily.ru/offer/337",
+        "title": "Wine & Crab. Ресторан, бар и винный бутик",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1764.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=760fc0913cc43b2351db296dcf677a4d0d49148e32e674b731e43741e89291c8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000337.jpg",
+        "card_description": "Рестораны Wine & Crab. Ресторан, бар и винный бутик"
+    },
+    {
+        "offer_id": 1919,
+        "offer_url": "https://www.vtbfamily.ru/offer/1919",
+        "title": "Ресторан Л.Е.С.",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_993.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=81d39b9f3046f70756f6b91be278ad66ac53432e7e037b45966b20d6a486b07d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001919.jpg",
+        "card_description": "Рестораны Ресторан Л.Е.С."
+    },
+    {
+        "offer_id": 1653,
+        "offer_url": "https://www.vtbfamily.ru/offer/1653",
+        "title": "Рестораны грузинской кухни Ткемали",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_381.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=932b7a24121c443bf81f16bc942849e6f8497b59963743cdb987ed875c2c7c0f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001653.jpg",
+        "card_description": "Рестораны Рестораны грузинской кухни Ткемали"
+    },
+    {
+        "offer_id": 497,
+        "offer_url": "https://www.vtbfamily.ru/offer/497",
+        "title": "Японские рестораны Coba (Коба)",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2022.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161725Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9da9c4287cc8c240f308b668a9c067522c0c344a46cb546f96ec25fc3eff8de9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000497.jpg",
+        "card_description": "Рестораны Японские рестораны Coba (Коба)"
+    },
+    {
+        "offer_id": 1777,
+        "offer_url": "https://www.vtbfamily.ru/offer/1777",
+        "title": "Ресторан \"Рыбный базар\" и гастробар \"Клешни и ракушки\"",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_65.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ced053bb76279185adc39b936532be0f5861edd833dddbae477987ab6e6948e9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001777.jpg",
+        "card_description": "Рестораны Ресторан \"Рыбный базар\" и гастробар \"Клешни и ракушки\""
+    },
+    {
+        "offer_id": 402295,
+        "offer_url": "https://www.vtbfamily.ru/offer/402295",
+        "title": "Гамбринус: сеть ресторанов до 22%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B3%D0%B0%D0%BC%D0%B1%D1%80%D0%B8%D1%83%D1%81.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=49a5ca1803f070e251b194b5717bf279b492fee2d02e73e5bc9db48207267dc5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402295.jpg",
+        "card_description": "Рестораны Гамбринус: сеть ресторанов до 22%"
+    },
+    {
+        "offer_id": 1658,
+        "offer_url": "https://www.vtbfamily.ru/offer/1658",
+        "title": "Ресторан Capito Pizza & Wine",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_389.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=04e286652d62f924cceeecdaaf5eecc2d53ec5dc4c3d380d0d8dc54c4747305a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001658.jpg",
+        "card_description": "Рестораны Ресторан Capito Pizza & Wine"
+    },
+    {
+        "offer_id": 336938,
+        "offer_url": "https://www.vtbfamily.ru/offer/336938",
+        "title": "Сеть ресторанов TGI FRIDAYS™",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1191.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fd865c051945cefaba1bd4be7db2d839fbd16f6047c199f17d2a954ffb3eb510",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000336938.jpg",
+        "card_description": "Рестораны Сеть ресторанов TGI FRIDAYS™"
+    },
+    {
+        "offer_id": 704,
+        "offer_url": "https://www.vtbfamily.ru/offer/704",
+        "title": "Ресторан Sapiens",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2309.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d7e7fa7fb199b0325e01da2237b1af0af8d3d532976880cbd3f1109279aca89",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000704.jpg",
+        "card_description": "Рестораны Ресторан Sapiens"
+    },
+    {
+        "offer_id": 9,
+        "offer_url": "https://www.vtbfamily.ru/offer/9",
+        "title": "Ресторан неоклассической кухни Дом №8",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1021.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dbf45dbb4c61983a9c8d234a68371039a1db9eb32d3653730796923b099a3ba4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000009.jpg",
+        "card_description": "Рестораны Ресторан неоклассической кухни Дом №8"
+    },
+    {
+        "offer_id": 172032,
+        "offer_url": "https://www.vtbfamily.ru/offer/172032",
+        "title": "Ресторан Айна﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4249.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6c9b3591428e6ade0c8b0c200d2bc54972e4ce864506f3b74cbab5f91c8dabc4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000172032.jpg",
+        "card_description": "Рестораны Ресторан Айна﻿"
+    },
+    {
+        "offer_id": 19,
+        "offer_url": "https://www.vtbfamily.ru/offer/19",
+        "title": "MADY RESTAURANT & TERRACE",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1056.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=13fa1f12a35abc74a66f3395f63da013ebf142becd4cfe5439a3893b71f74dc0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000019.jpg",
+        "card_description": "Рестораны MADY RESTAURANT & TERRACE"
+    },
+    {
+        "offer_id": 140,
+        "offer_url": "https://www.vtbfamily.ru/offer/140",
+        "title": "Black Star Burger﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1352.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2fdea957ea536fea0b9f8e47adba0017b4c28cedd37d9748decdb5d43e1c824a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000140.jpg",
+        "card_description": "Рестораны Black Star Burger﻿"
+    },
+    {
+        "offer_id": 1748,
+        "offer_url": "https://www.vtbfamily.ru/offer/1748",
+        "title": "Ресторан русской кухни Uhvat﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_584.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c4f41a62aa5dcc2465deacb062b3333ee5e0a5961cb73c5d29f0a00746a52624",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001748.jpg",
+        "card_description": "Рестораны Ресторан русской кухни Uhvat﻿"
+    },
+    {
+        "offer_id": 407,
+        "offer_url": "https://www.vtbfamily.ru/offer/407",
+        "title": "Ресторан Sempre",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1874.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c44e3a2c65e09bf50c79c0970ba264c6d65b90deee4e76eb20efa67fa412cf7a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000407.jpg",
+        "card_description": "Рестораны Ресторан Sempre"
+    },
+    {
+        "offer_id": 1755,
+        "offer_url": "https://www.vtbfamily.ru/offer/1755",
+        "title": "Ресторан китайской кухни Китайские новости",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_599.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c70f2d508d753794fcda8901a3ffe4d9c81e45a49e12e4c2230d77aabcfe7244",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001755.jpg",
+        "card_description": "Рестораны Ресторан китайской кухни Китайские новости"
+    },
+    {
+        "offer_id": 183,
+        "offer_url": "https://www.vtbfamily.ru/offer/183",
+        "title": "Ресторан-пиццерия Trattoria Fornetto",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1474.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=690f0f2ff1d93545ed1165644505c0e2d87b15f4a464d86837c28c3897e49c21",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000183.jpg",
+        "card_description": "Рестораны Ресторан-пиццерия Trattoria Fornetto"
+    },
+    {
+        "offer_id": 484,
+        "offer_url": "https://www.vtbfamily.ru/offer/484",
+        "title": "Ресторан Harvey&Monica﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2003.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=226fe417f69ad06864af28f42e72bc114eeea0a98ad17fbf24d042feeee9f443",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000484.jpg",
+        "card_description": "Рестораны Ресторан Harvey&Monica﻿"
+    },
+    {
+        "offer_id": 891,
+        "offer_url": "https://www.vtbfamily.ru/offer/891",
+        "title": "Ресторан Bistrot",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2558.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ba1297d9cb9484796385e015cc1cece094a74fa57457abaf581d729087570efe",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000891.jpg",
+        "card_description": "Рестораны Ресторан Bistrot"
+    },
+    {
+        "offer_id": 1295,
+        "offer_url": "https://www.vtbfamily.ru/offer/1295",
+        "title": "Ирландский паб Lion's Head",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_314.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b15119430d654bc3ecf2870bcff20fd352b093e5db2d6685f4f588994dc40132",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001295.jpg",
+        "card_description": "Рестораны Ирландский паб Lion's Head"
+    },
+    {
+        "offer_id": 294014,
+        "offer_url": "https://www.vtbfamily.ru/offer/294014",
+        "title": "MODUS RESTAURANT",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4465.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3789e83474287dfd120b872ae10f06886747c80e0e93ba05272b1b0f72ab7daa",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000294014.jpg",
+        "card_description": "Рестораны MODUS RESTAURANT"
+    },
+    {
+        "offer_id": 180,
+        "offer_url": "https://www.vtbfamily.ru/offer/180",
+        "title": "Ресторан «Есть хинкали & пить вино»",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_147.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ca83bfd41f9f702a0d63357a2b49146f2f309fdcb97ea812dfcafb53f0d730a0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000180.jpg",
+        "card_description": "Рестораны Ресторан «Есть хинкали & пить вино»"
+    },
+    {
+        "offer_id": 659,
+        "offer_url": "https://www.vtbfamily.ru/offer/659",
+        "title": "Ресторан японской кухни Kyomei﻿ | Киомей",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2241.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fbe89932b475e176f6a912ec8814aa05b4b216b739ed9a148a0df29d6e08ea8d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000659.jpg",
+        "card_description": "Рестораны Ресторан японской кухни Kyomei﻿ | Киомей"
+    },
+    {
+        "offer_id": 1374,
+        "offer_url": "https://www.vtbfamily.ru/offer/1374",
+        "title": "Сеть ресторанов ТАПЧАН",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_330.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161728Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cb501e361f69f7757258a3014ce908e81e04f23b5be060d915e46a2c8d8dba77",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001374.jpg",
+        "card_description": "Рестораны Сеть ресторанов ТАПЧАН"
+    },
+    {
+        "offer_id": 1497,
+        "offer_url": "https://www.vtbfamily.ru/offer/1497",
+        "title": "1870 Abrau-Durso Усачёвский",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3479.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8ba77aec526ba493a00a73f3eca2b73b213291153d6f7020d01ef96567726c0e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001497.jpg",
+        "card_description": "Рестораны 1870 Abrau-Durso Усачёвский"
+    },
+    {
+        "offer_id": 135899,
+        "offer_url": "https://www.vtbfamily.ru/offer/135899",
+        "title": "Ресторан Sangre Fresca",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4190.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a7966f8bfac1dc867a598abb6e48b021f203daa8b16d8c88f9932f6a531d76fd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000135899.jpg",
+        "card_description": "Рестораны Ресторан Sangre Fresca"
+    },
+    {
+        "offer_id": 161314,
+        "offer_url": "https://www.vtbfamily.ru/offer/161314",
+        "title": "Ресторан авторской кухни Grand Cru",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4258.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=98b54849a583ca6c88d4a92d11b89f3d47344174e8217e9fc3f16d6aa7a09d3d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000161314.jpg",
+        "card_description": "Рестораны Ресторан авторской кухни Grand Cru"
+    },
+    {
+        "offer_id": 402294,
+        "offer_url": "https://www.vtbfamily.ru/offer/402294",
+        "title": "Black Angus: стейк хаусы до 30%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/black_angus_aYkbZ62.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7851e96d2747e7762e155e0beccdaecd37f9c5d810d3c1546d3de9e4eb0508c6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402294.jpg",
+        "card_description": "Рестораны Black Angus: стейк хаусы до 30%"
+    },
+    {
+        "offer_id": 1003,
+        "offer_url": "https://www.vtbfamily.ru/offer/1003",
+        "title": "Hedonist﻿. Авторская грузинская кухня",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2703.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=367f81f6c4ff7d8802385b19c5c2d1b7b5cae4da4264760d2769fd7b3615e6b0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001003.jpg",
+        "card_description": "Рестораны Hedonist﻿. Авторская грузинская кухня"
+    },
+    {
+        "offer_id": 112926,
+        "offer_url": "https://www.vtbfamily.ru/offer/112926",
+        "title": "Ресторан Larionov и сеть гриль-баров Larionov Grill & Bar",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3963.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ca1547fad37588c91e93fe3fc67c1db50961c128f7bb50d254cfa63c2bf0b954",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000112926.jpg",
+        "card_description": "Рестораны Ресторан Larionov и сеть гриль-баров Larionov Grill & Bar"
+    },
+    {
+        "offer_id": 405429,
+        "offer_url": "https://www.vtbfamily.ru/offer/405429",
+        "title": "Vasilchuki Chaihona №1: лаунж-ресторан 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/vasilchuki_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e16c283cf5fdf624956c9349afae0f1540848495bc1bbb10ba44b45e8146e4da",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405429.jpg",
+        "card_description": "Рестораны Vasilchuki Chaihona №1: лаунж-ресторан 10%"
+    },
+    {
+        "offer_id": 1195,
+        "offer_url": "https://www.vtbfamily.ru/offer/1195",
+        "title": "Мексиканские рестораны tacobar",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_299.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f247a1e644ba2b1dc38eb78de8dfca044f7c0c46098f43967b2f7a2435bf7661",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001195.jpg",
+        "card_description": "Рестораны Мексиканские рестораны tacobar"
+    },
+    {
+        "offer_id": 1785,
+        "offer_url": "https://www.vtbfamily.ru/offer/1785",
+        "title": "Ресторан LEVANTINE",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_67.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37d20eb39fff96d2e3904506d41b553a5a4f81cfe9aa60d7409f109b404c49d7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001785.jpg",
+        "card_description": "Рестораны Ресторан LEVANTINE"
+    },
+    {
+        "offer_id": 20,
+        "offer_url": "https://www.vtbfamily.ru/offer/20",
+        "title": "Бельгийский паб Bruxelles﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1057.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cd11b8b69e01dcebcf669219453e414b3bf8517c674e043430b9d2299125b4b6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000020.jpg",
+        "card_description": "Рестораны Бельгийский паб Bruxelles﻿"
+    },
+    {
+        "offer_id": 64,
+        "offer_url": "https://www.vtbfamily.ru/offer/64",
+        "title": "Ресторан ONLY WINE",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1148.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0f059a07290f27919e8e4243ed9db958d5cdacd536d8fec325f6ae1959b0256d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000064.jpg",
+        "card_description": "Рестораны Ресторан ONLY WINE"
+    },
+    {
+        "offer_id": 496,
+        "offer_url": "https://www.vtbfamily.ru/offer/496",
+        "title": "Ресторан Cape (Кейп) на Патриарших прудах",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2021.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cabb2ef231b4fecc61fb9f78934408f4d23dbdb7f438f7139a9ce8be181cb728",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000496.jpg",
+        "card_description": "Рестораны Ресторан Cape (Кейп) на Патриарших прудах"
+    },
+    {
+        "offer_id": 172031,
+        "offer_url": "https://www.vtbfamily.ru/offer/172031",
+        "title": "Ресторан Зойка",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4248.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6e689a3cb42db656c0fec4bedd591f78e93e2cac14792514d8e8887d71d031c8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000172031.jpg",
+        "card_description": "Рестораны Ресторан Зойка"
+    },
+    {
+        "offer_id": 358181,
+        "offer_url": "https://www.vtbfamily.ru/offer/358181",
+        "title": "Сеть ресторанов Практика",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4561.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=012e35254776859402c1c5cc0a55ff78ad55b7de99f3a4c0545efc3270a6ad7d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000358181.jpg",
+        "card_description": "Рестораны Сеть ресторанов Практика"
+    },
+    {
+        "offer_id": 364705,
+        "offer_url": "https://www.vtbfamily.ru/offer/364705",
+        "title": "Рыбный ресторан Селёдочная",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4569.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3e5efba743b1e32496d7eda2fe0fc0f3dcdaa96a7ac8a1f7378eb0a0a32d7621",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000364705.jpg",
+        "card_description": "Рестораны Рыбный ресторан Селёдочная"
+    },
+    {
+        "offer_id": 182,
+        "offer_url": "https://www.vtbfamily.ru/offer/182",
+        "title": "Ресторан Лимончино﻿ с домашней итальянской кухней",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1473.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=135825f0cc9dd5011d02cbd973aeafea2120762ce4df5538728093ba76805112",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000182.jpg",
+        "card_description": "Рестораны Ресторан Лимончино﻿ с домашней итальянской кухней"
+    },
+    {
+        "offer_id": 1789,
+        "offer_url": "https://www.vtbfamily.ru/offer/1789",
+        "title": "Ресторан TOUCH Chef's place&bar﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_673.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=240bb4746a9c2a06b0e3b1756bf3037d156a4f98846ce3bd6bcc0c14618169f5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001789.jpg",
+        "card_description": "Рестораны Ресторан TOUCH Chef's place&bar﻿"
+    },
+    {
+        "offer_id": 172033,
+        "offer_url": "https://www.vtbfamily.ru/offer/172033",
+        "title": "Ресторан Lúwo﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4250.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5697411477b6267fddd2f2c7ad4fc3fcc187b98486504e33382a3b3d814853fd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000172033.jpg",
+        "card_description": "Рестораны Ресторан Lúwo﻿"
+    },
+    {
+        "offer_id": 95,
+        "offer_url": "https://www.vtbfamily.ru/offer/95",
+        "title": "Рыбный ресторан Дикий улов в ЖК ЗилАрт",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1225.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9527dd8bb98872e3fc4d0e6f9c4c5e87bbf9e94b8c2d0225ae13a5942c4f0d08",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000095.jpg",
+        "card_description": "Рестораны Рыбный ресторан Дикий улов в ЖК ЗилАрт"
+    },
+    {
+        "offer_id": 127,
+        "offer_url": "https://www.vtbfamily.ru/offer/127",
+        "title": "Ресторан Генацвале VIP",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_131.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161742Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c0bece9f106044a20ef07fbad2cfce3b041fcf76ff269e3ea0c0295bf7ac295a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000127.jpg",
+        "card_description": "Рестораны Ресторан Генацвале VIP"
+    },
+    {
+        "offer_id": 181,
+        "offer_url": "https://www.vtbfamily.ru/offer/181",
+        "title": "Ресторан итальянской кухни Grande Osteria",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1470.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a34c274a6cf48816ef88a7e58d30320a78bf1ebbd7fbed55c376cdc149ebf1f1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000181.jpg",
+        "card_description": "Рестораны Ресторан итальянской кухни Grande Osteria"
+    },
+    {
+        "offer_id": 408,
+        "offer_url": "https://www.vtbfamily.ru/offer/408",
+        "title": "Доставка и самовывоз от Black star burger",
+        "category": "Доставка",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1875.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=488c46a90f1af7a7f0d6f05ef8ec14d3f50fc9275219a8ff969d849da676425e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000408.jpg",
+        "card_description": "Доставка Доставка и самовывоз от Black star burger"
+    },
+    {
+        "offer_id": 1328,
+        "offer_url": "https://www.vtbfamily.ru/offer/1328",
+        "title": "Ресторан Lumicino",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3220.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d039dcbd1796e67569f909d00706bf85728287cf09696669bb39746cb2e20a12",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001328.jpg",
+        "card_description": "Рестораны Ресторан Lumicino"
+    },
+    {
+        "offer_id": 1351,
+        "offer_url": "https://www.vtbfamily.ru/offer/1351",
+        "title": "Ресторан Historia",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3264.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e6e0947ee3dcc4dfa737b915a27c46f06fa63732f8eb79f957a79574c58c1efb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001351.jpg",
+        "card_description": "Рестораны Ресторан Historia"
+    },
+    {
+        "offer_id": 1617,
+        "offer_url": "https://www.vtbfamily.ru/offer/1617",
+        "title": "Премиальная доставка роллов PASIBA SUSHI",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3662.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7337e2827a2ffadf500dcd6a60570aa6ce6724b986183fdc34d1d0d804b23643",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001617.jpg",
+        "card_description": "Рестораны Премиальная доставка роллов PASIBA SUSHI"
+    },
+    {
+        "offer_id": 1818,
+        "offer_url": "https://www.vtbfamily.ru/offer/1818",
+        "title": "Ресторан МОРЕ на Патриках",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_746.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e076b8e114c6d456b4b14b325e23ba13646cf0cb32f7fc96099bb8432f65a3a9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001818.jpg",
+        "card_description": "Рестораны Ресторан МОРЕ на Патриках"
+    },
+    {
+        "offer_id": 169,
+        "offer_url": "https://www.vtbfamily.ru/offer/169",
+        "title": "Грузинский ресторан Цыцыла",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1448.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=171762fa4f8c9b499c7b31be4306e8dd8bf73a18a8e87b7dae7b69ed12d0a7e8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000169.jpg",
+        "card_description": "Рестораны Грузинский ресторан Цыцыла"
+    },
+    {
+        "offer_id": 261,
+        "offer_url": "https://www.vtbfamily.ru/offer/261",
+        "title": "Ресторан Sabor de la Vida",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1607.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=32e9e1386df9d4177bc588fac85958c11c29f2105c5005c1e979cb75481e4c43",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000261.jpg",
+        "card_description": "Рестораны Ресторан Sabor de la Vida"
+    },
+    {
+        "offer_id": 396,
+        "offer_url": "https://www.vtbfamily.ru/offer/396",
+        "title": "The Nappe bistro",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1861.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2c0d78627a95244f04834a683fbf2e8eef7fc1f0c5fd7b381b012df2162f4c86",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000396.jpg",
+        "card_description": "Рестораны The Nappe bistro"
+    },
+    {
+        "offer_id": 902,
+        "offer_url": "https://www.vtbfamily.ru/offer/902",
+        "title": "Рестораны сети Everest",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2572.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d67c6ef4abec0111a03b5ca71d85e5cc7837df495ab988168b9f0d68d86f8318",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000902.jpg",
+        "card_description": "Рестораны Рестораны сети Everest"
+    },
+    {
+        "offer_id": 551,
+        "offer_url": "https://www.vtbfamily.ru/offer/551",
+        "title": "Кейтеринг под мероприятие от MoscowFood",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_209.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9e013ae415e2bee3a1db849584aa07ac1a94efe0d7b9117cf56ab041cda5bdd2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000551.jpg",
+        "card_description": "Рестораны Кейтеринг под мероприятие от MoscowFood"
+    },
+    {
+        "offer_id": 32672,
+        "offer_url": "https://www.vtbfamily.ru/offer/32672",
+        "title": "Гастробар Brix на Патриарших прудах",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3773.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6fd4fad6cea0a10b34c9dac5c2e2423d85f306da5120603cf3255fb15337e868",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000032672.jpg",
+        "card_description": "Рестораны Гастробар Brix на Патриарших прудах"
+    },
+    {
+        "offer_id": 615,
+        "offer_url": "https://www.vtbfamily.ru/offer/615",
+        "title": "Ресторан Beer Pairing",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2189.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a98a65c1a1e3f828558bb6559eb33c4de7d7ddb2014a816c8918f41e594eb6a9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000615.jpg",
+        "card_description": "Рестораны Ресторан Beer Pairing"
+    },
+    {
+        "offer_id": 1055,
+        "offer_url": "https://www.vtbfamily.ru/offer/1055",
+        "title": "Гранд-лобби & бар Шаляпин﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2775.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=47fbe84f4d90ce9cc203c779d4d036baafcbb7cd5ebf93ca36f337415bcd9f44",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001055.jpg",
+        "card_description": "Рестораны Гранд-лобби & бар Шаляпин﻿"
+    },
+    {
+        "offer_id": 1538,
+        "offer_url": "https://www.vtbfamily.ru/offer/1538",
+        "title": "Ресторан Гермес",
+        "category": "Доставка.рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3541.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8269f30ab355731cb4a64be6f0c9bfa4fa43cda229dce855c808a8d5a253378c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001538.jpg",
+        "card_description": "Доставка.рестораны Ресторан Гермес"
+    },
+    {
+        "offer_id": 1907,
+        "offer_url": "https://www.vtbfamily.ru/offer/1907",
+        "title": "Ресторан SVOY вино&стейки",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_976.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f73f632c2af30450f761e081fd551e1c642e407c748b7df912aa51c071ed9a42",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001907.jpg",
+        "card_description": "Рестораны Ресторан SVOY вино&стейки"
+    },
+    {
+        "offer_id": 104752,
+        "offer_url": "https://www.vtbfamily.ru/offer/104752",
+        "title": "Brunchy Brunch",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3909.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fbfb91c17cae756fb857ecc45338d874e7f3a75d57dbd5a18c93c4ce75b9e12d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000104752.jpg",
+        "card_description": "Рестораны Brunchy Brunch"
+    },
+    {
+        "offer_id": 106805,
+        "offer_url": "https://www.vtbfamily.ru/offer/106805",
+        "title": "Ресторан Цыпочка",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3955.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7e287360f554106205302e39807df51e03e32abea9a206875602f0ccddc4e5d6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000106805.jpg",
+        "card_description": "Рестораны Ресторан Цыпочка"
+    },
+    {
+        "offer_id": 127310,
+        "offer_url": "https://www.vtbfamily.ru/offer/127310",
+        "title": "Парк-ресторан Берег",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3839.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=739f2daf8552f6fb14771f6e83f0c13c3918d71ee85cc19d300e2e4e3dd01979",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000127310.jpg",
+        "card_description": "Рестораны Парк-ресторан Берег"
+    },
+    {
+        "offer_id": 27,
+        "offer_url": "https://www.vtbfamily.ru/offer/27",
+        "title": "Семейный ресторан армянской кухни Gayane’s﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1075.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161744Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eae0c21682709d268005aaf455a0e07a0a9a4de70ee96ed1a8ee323e9d6f2c7c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000027.jpg",
+        "card_description": "Рестораны Семейный ресторан армянской кухни Gayane’s﻿"
+    },
+    {
+        "offer_id": 78,
+        "offer_url": "https://www.vtbfamily.ru/offer/78",
+        "title": "Redwood lounge bar",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1174.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=209b68675ad1714d2d2012375c11a880da987ee05eb5372ce6e4fb81ad0dc514",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000078.jpg",
+        "card_description": "Рестораны Redwood lounge bar"
+    },
+    {
+        "offer_id": 80,
+        "offer_url": "https://www.vtbfamily.ru/offer/80",
+        "title": "Ресторан и бар авторской кухни Kano",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1177.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=10d0feed804692ff2c85fc601bc2e91440cbfe10ae207a1f82b60dfdec5dbe3f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000080.jpg",
+        "card_description": "Рестораны Ресторан и бар авторской кухни Kano"
+    },
+    {
+        "offer_id": 100,
+        "offer_url": "https://www.vtbfamily.ru/offer/100",
+        "title": "Ресторан корейской кухни Новая Азия﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1246.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a474c1410f7badaa24032935e445f6fff9f0c937d9e91c066118ad7001a8d7ef",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000100.jpg",
+        "card_description": "Рестораны Ресторан корейской кухни Новая Азия﻿"
+    },
+    {
+        "offer_id": 196,
+        "offer_url": "https://www.vtbfamily.ru/offer/196",
+        "title": "Бар ROOM#5",
+        "category": "Заведения",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1492.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=83c17bd1219fe9be82bee6aeb09a68a1651be048534bfa9b9b6e441c5372fd95",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000196.jpg",
+        "card_description": "Заведения Бар ROOM#5"
+    },
+    {
+        "offer_id": 266,
+        "offer_url": "https://www.vtbfamily.ru/offer/266",
+        "title": "Ресторан Хорошее место﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1621.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0c1ae49cf97243191c7513777e8f26007754a4b310d2222fc592f39b4289411c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000266.jpg",
+        "card_description": "Рестораны Ресторан Хорошее место﻿"
+    },
+    {
+        "offer_id": 267,
+        "offer_url": "https://www.vtbfamily.ru/offer/267",
+        "title": "Дилос Порто кейтеринг",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1623.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c3241f0a5917670295e32cf7790b5d11bf9cd16cb17766347208e3e361ce44d9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000267.jpg",
+        "card_description": "Рестораны Дилос Порто кейтеринг"
+    },
+    {
+        "offer_id": 280,
+        "offer_url": "https://www.vtbfamily.ru/offer/280",
+        "title": "Ресторан Brooms на Ленинском",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_165.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8dc45b1cfa62e4da4c84a3021f6da1d7f683db3421b5a4c48da9fd1cf0f7bd9d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000280.jpg",
+        "card_description": "Рестораны Ресторан Brooms на Ленинском"
+    },
+    {
+        "offer_id": 448,
+        "offer_url": "https://www.vtbfamily.ru/offer/448",
+        "title": "Итальянский ресторан DOLCE FAR NIENTE﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1950.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2d4868cb7fdd0a12234440e332eafc6bbe5e8f8f88e90cf0823c90c196221fc7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000448.jpg",
+        "card_description": "Рестораны Итальянский ресторан DOLCE FAR NIENTE﻿"
+    },
+    {
+        "offer_id": 451,
+        "offer_url": "https://www.vtbfamily.ru/offer/451",
+        "title": "Ресторан-бар GREY",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1953.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8ca53c9249bbf2a534a407b4cd09eebf05165875089db33714728f21e3333d94",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000451.jpg",
+        "card_description": "Рестораны Ресторан-бар GREY"
+    },
+    {
+        "offer_id": 680,
+        "offer_url": "https://www.vtbfamily.ru/offer/680",
+        "title": "Ресторан Кочевники. Вино и Огонь﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_227.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d436776a860c359cc21aaa7411c73e661b87b08428c6c37798526413fea81520",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000680.jpg",
+        "card_description": "Рестораны Ресторан Кочевники. Вино и Огонь﻿"
+    },
+    {
+        "offer_id": 981,
+        "offer_url": "https://www.vtbfamily.ru/offer/981",
+        "title": "Ресторан Moriarty Bar&Kitchen﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2669.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d96f66f38fd89485cd911ef6b7f4c03fd33fb167e820bbd8cf2a35028a490811",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000981.jpg",
+        "card_description": "Рестораны Ресторан Moriarty Bar&Kitchen﻿"
+    },
+    {
+        "offer_id": 1067,
+        "offer_url": "https://www.vtbfamily.ru/offer/1067",
+        "title": "Винный бар SINGLE",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_279.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fff56f6b3d062132d02173f793e0258371911344777555b238f93557a06ac2b1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001067.jpg",
+        "card_description": "Рестораны Винный бар SINGLE"
+    },
+    {
+        "offer_id": 1188,
+        "offer_url": "https://www.vtbfamily.ru/offer/1188",
+        "title": "DANTE Kitchen + Bar",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_298.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7efe469c9c86bb10aa273e61c76cf3ab26fd8b9af31c1c469503bdd7584e1a24",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001188.jpg",
+        "card_description": "Рестораны DANTE Kitchen + Bar"
+    },
+    {
+        "offer_id": 1629,
+        "offer_url": "https://www.vtbfamily.ru/offer/1629",
+        "title": "Рестобар LOUIS casual food&bar﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3676.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b7b92ad22972621c31cda9645e2097071a6a8b34fd6e0cb61940f3787663218b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001629.jpg",
+        "card_description": "Рестораны Рестобар LOUIS casual food&bar﻿"
+    },
+    {
+        "offer_id": 1760,
+        "offer_url": "https://www.vtbfamily.ru/offer/1760",
+        "title": "Ресторан Узоры﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_604.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45bf486c7450839063f051af9081df1f574e58abff28fdfb80abe6fc684fc27f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001760.jpg",
+        "card_description": "Рестораны Ресторан Узоры﻿"
+    },
+    {
+        "offer_id": 1890,
+        "offer_url": "https://www.vtbfamily.ru/offer/1890",
+        "title": "Ресторан испанской и латино-американской кухни El Idilio﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_940.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2101798985e44ed1044a504bf62eae5ab9b3bf3ab1800587eccafe1b2588772b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001890.jpg",
+        "card_description": "Рестораны Ресторан испанской и латино-американской кухни El Idilio﻿"
+    },
+    {
+        "offer_id": 1918,
+        "offer_url": "https://www.vtbfamily.ru/offer/1918",
+        "title": "Ресторан Spaten Haus Grand",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_990.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b62f4153a0fcdac51ff0236d2bd30b55a369592a77daf2171a3af4107e721321",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001918.jpg",
+        "card_description": "Рестораны Ресторан Spaten Haus Grand"
+    },
+    {
+        "offer_id": 106803,
+        "offer_url": "https://www.vtbfamily.ru/offer/106803",
+        "title": "Ресторан и бар Нить",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3951.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c23ce44cb31058c5c9ee1aca28b97811b5ac26edf13c7f6f8f28c41303d440cf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000106803.jpg",
+        "card_description": "Рестораны Ресторан и бар Нить"
+    },
+    {
+        "offer_id": 154925,
+        "offer_url": "https://www.vtbfamily.ru/offer/154925",
+        "title": "Ресторан Lenny﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4219.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1e58760ced419e57057b480da3c14840c843f7cbbc86c7078a5862e1b98dcf4e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000154925.jpg",
+        "card_description": "Рестораны Ресторан Lenny﻿"
+    },
+    {
+        "offer_id": 51,
+        "offer_url": "https://www.vtbfamily.ru/offer/51",
+        "title": "Wino bar﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1126.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161759Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ac22b6cf887709a46eb727090bcb8a77886445668c584963989dd9cc1b6da182",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000051.jpg",
+        "card_description": "Рестораны Wino bar﻿"
+    },
+    {
+        "offer_id": 108,
+        "offer_url": "https://www.vtbfamily.ru/offer/108",
+        "title": "Ресторан-бар Атмосфера﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1262.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2ef7e07a9a8a784b006a0c3d9bbdf8f4ddb80637cacaf5def2c9b374b5d54bdf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000108.jpg",
+        "card_description": "Рестораны Ресторан-бар Атмосфера﻿"
+    },
+    {
+        "offer_id": 421,
+        "offer_url": "https://www.vtbfamily.ru/offer/421",
+        "title": "Тайская кухня Yoda Place﻿ в ТРК Европолис Ростокино",
+        "category": "Заведения",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1896.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b70de898b2a8089a758e982384859732df8d76f54888eb5643f1d904959a39db",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000421.jpg",
+        "card_description": "Заведения Тайская кухня Yoda Place﻿ в ТРК Европолис Ростокино"
+    },
+    {
+        "offer_id": 660,
+        "offer_url": "https://www.vtbfamily.ru/offer/660",
+        "title": "Muchachos Wine & Tapas",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2242.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1fc6ae92e5cf8266c3dfa3b4965f47b1ccdfaeeeced9aa2dfa27e2b6e14b5c75",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000660.jpg",
+        "card_description": "Рестораны Muchachos Wine & Tapas"
+    },
+    {
+        "offer_id": 1181,
+        "offer_url": "https://www.vtbfamily.ru/offer/1181",
+        "title": "Норвежские вафли Vaffel﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2967.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=41307e369f35ecf117766852ba9dda85d7b1be26b196b639bb548c8bfe8e8539",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001181.jpg",
+        "card_description": "Рестораны Норвежские вафли Vaffel﻿"
+    },
+    {
+        "offer_id": 1411,
+        "offer_url": "https://www.vtbfamily.ru/offer/1411",
+        "title": "Connolly Station Pub",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_335.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=efa63ff635399fe63f4c8f9d5b10303c2eeeba36e63076e43ec64a7cfcbd9b5c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001411.jpg",
+        "card_description": "Рестораны Connolly Station Pub"
+    },
+    {
+        "offer_id": 1562,
+        "offer_url": "https://www.vtbfamily.ru/offer/1562",
+        "title": "Ресторан на Крымском Валу Антарес﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3582.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=daa4db79cb29339e0868cbe822e1180374e37cc4de50fd97cd32bdf20fb4c183",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001562.jpg",
+        "card_description": "Рестораны Ресторан на Крымском Валу Антарес﻿"
+    },
+    {
+        "offer_id": 52711,
+        "offer_url": "https://www.vtbfamily.ru/offer/52711",
+        "title": "Ресторан Бочка 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B1%D0%BE%D1%87%D0%BA%D0%B0_2gt5tRp.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e70e3bb51e15a94d850cd94074e582c7f0daf2a87ab3deac1137c7174cd4e76a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052711.jpg",
+        "card_description": "Рестораны Ресторан Бочка 10%"
+    },
+    {
+        "offer_id": 52712,
+        "offer_url": "https://www.vtbfamily.ru/offer/52712",
+        "title": "Ресторан Казбек 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%B0%D0%B7%D0%B1%D0%B5%D0%BA_C4xC6r3.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=518943e4c6a3ac661a840450e2b18d712a183ebdd8674ce02d3bc050c9416c2f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052712.jpg",
+        "card_description": "Рестораны Ресторан Казбек 10%"
+    },
+    {
+        "offer_id": 52715,
+        "offer_url": "https://www.vtbfamily.ru/offer/52715",
+        "title": "Кафе Пушкинъ 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D1%83%D1%88%D0%BA%D0%B8%D0%BD%D1%8A_EBkq3BP.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=29f9cd46c9874942488a6971cdeaa612b709b1f56041c29301a71cfd17f7a666",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052715.jpg",
+        "card_description": "Рестораны Кафе Пушкинъ 10%"
+    },
+    {
+        "offer_id": 52716,
+        "offer_url": "https://www.vtbfamily.ru/offer/52716",
+        "title": "Кафе Пушкинъ у фонтана 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D1%83%D1%88%D0%BA%D0%B8%D0%BD_%D1%83_%D1%84%D0%BE%D0%BD%D1%82%D0%B0%D0%BD%D0%B0_CSFiYkn.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b9ad509e46bd514ebee98b2ee1e1a79597d0560ea1950f54fa0d2f5c1e4c2d47",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052716.jpg",
+        "card_description": "Рестораны Кафе Пушкинъ у фонтана 10%"
+    },
+    {
+        "offer_id": 52717,
+        "offer_url": "https://www.vtbfamily.ru/offer/52717",
+        "title": "Кондитерская Кафе Пушкинъ 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D1%83_qQofwCb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b99739e769ccf433af126421441ee5a2c7c2122405e90f760de8f4fe8dc7c6e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052717.jpg",
+        "card_description": "Рестораны Кондитерская Кафе Пушкинъ 10%"
+    },
+    {
+        "offer_id": 54710,
+        "offer_url": "https://www.vtbfamily.ru/offer/54710",
+        "title": "Ресторан Матрёшка 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%B0%D1%82%D1%80%D0%B5%D1%88%D0%BA%D0%B0_ponBqVN.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=40c8571ca6fc8f260c39741e2a6d1820add0bef14d520328f1b9622773959613",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054710.jpg",
+        "card_description": "Рестораны Ресторан Матрёшка 10%"
+    },
+    {
+        "offer_id": 54711,
+        "offer_url": "https://www.vtbfamily.ru/offer/54711",
+        "title": "Ресторан Турандот 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%82%D1%83%D1%80%D0%B0%D0%BD%D0%B4%D0%BE%D1%82_Jclnju1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8dc35aca0930775fc2a2160b666ef0aa26896703379c4e449cad437b57e734b4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054711.jpg",
+        "card_description": "Рестораны Ресторан Турандот 10%"
+    },
+    {
+        "offer_id": 54713,
+        "offer_url": "https://www.vtbfamily.ru/offer/54713",
+        "title": "Ресторан Шануар 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%88%D0%B0%D0%BD%D1%83%D0%B0%D1%80_E9rGqso.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7f5e7cef1633780ad420a4c6879bc361059198dea89eb0514e2b7487a3e955e2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054713.jpg",
+        "card_description": "Рестораны Ресторан Шануар 10%"
+    },
+    {
+        "offer_id": 54716,
+        "offer_url": "https://www.vtbfamily.ru/offer/54716",
+        "title": "Ресторан Шинок 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%88%D0%B8%D0%BD%D0%BE%D0%BA_2_auAc8vt.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3057c63d644e1116dd03c268c4a853982a39270f3efe2b269a7a9a6f49e8bd8e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054716.jpg",
+        "card_description": "Рестораны Ресторан Шинок 10%"
+    },
+    {
+        "offer_id": 54746,
+        "offer_url": "https://www.vtbfamily.ru/offer/54746",
+        "title": "Ресторан Lou Lou Москва 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BB%D1%83%D0%BB%D1%83_rXGLM1P_KPb5A4n.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fbc1b7fefbcb7956480e5a4c90e03bd33938c5dea60da45948d6734f2d3fb17b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054746.jpg",
+        "card_description": "Рестораны Ресторан Lou Lou Москва 10%"
+    },
+    {
+        "offer_id": 54750,
+        "offer_url": "https://www.vtbfamily.ru/offer/54750",
+        "title": "Ресторан Пафос 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%B0%D1%84%D0%BE%D1%81_ko7nlhK.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9e01972ffd0bc75fd071e813f18e67af5d0be6b5e9dc051cd56956f466b5f9bf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054750.jpg",
+        "card_description": "Рестораны Ресторан Пафос 10%"
+    },
+    {
+        "offer_id": 54751,
+        "offer_url": "https://www.vtbfamily.ru/offer/54751",
+        "title": "Ресторан Хорошая Девочка Москва 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%85%D0%BE%D1%80%D0%BE%D1%88%D0%B0%D1%8F_%D0%B4%D0%B5%D0%B2%D0%BE%D1%87%D0%BA%D0%B0__1FEH8Tk.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a311b5e58b835a09305111e3bf5fc3c3759a2af9e94981060f77cdaf45ba6ed9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054751.jpg",
+        "card_description": "Рестораны Ресторан Хорошая Девочка Москва 10%"
+    },
+    {
+        "offer_id": 54753,
+        "offer_url": "https://www.vtbfamily.ru/offer/54753",
+        "title": "Ресторан Юг22 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8E%D0%B322_7CCTQ1T.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=26c20aa3304d8c82f7eb3963c561aa6e715e3b95ea3e0a26632b5ba52cd1cd64",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054753.jpg",
+        "card_description": "Рестораны Ресторан Юг22 10%"
+    },
+    {
+        "offer_id": 90815,
+        "offer_url": "https://www.vtbfamily.ru/offer/90815",
+        "title": "Ресторан Saviv 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Saviv_NUxXELD.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161801Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3a7e86ddf87509dc6ff15d0409668cb990b1475594109f2b74a65e714a750906",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090815.jpg",
+        "card_description": "Рестораны Ресторан Saviv 10%"
+    },
+    {
+        "offer_id": 90863,
+        "offer_url": "https://www.vtbfamily.ru/offer/90863",
+        "title": "Бар Krombacher Beer Kitchen 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Krombacher_BeerKitchen_a5VNQBd.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2b0851cb762ac3be3f8db69a888c9795a3933114ff34719ada45b1f4d23f4cb7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090863.jpg",
+        "card_description": "Рестораны Бар Krombacher Beer Kitchen 15%"
+    },
+    {
+        "offer_id": 90864,
+        "offer_url": "https://www.vtbfamily.ru/offer/90864",
+        "title": "[KU:] Рамен Изакая Бар 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/ku_B1qhwkr.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f9b2b99f2552afc194da0865bc2843e2832fc04d4f183b34a650053c3add245f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090864.jpg",
+        "card_description": "Рестораны [KU:] Рамен Изакая Бар 15%"
+    },
+    {
+        "offer_id": 90868,
+        "offer_url": "https://www.vtbfamily.ru/offer/90868",
+        "title": "Ресторан СибирьСибирь 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%8C%D0%A1%D0%B8%D0%B1%D0%B8%D1%80%D1%8C_AhNnZZX.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=277a132e6d00c41c8569b915606ba58b41b723d2c5770d3451fd0c61f4daa207",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090868.jpg",
+        "card_description": "Рестораны Ресторан СибирьСибирь 15%"
+    },
+    {
+        "offer_id": 90875,
+        "offer_url": "https://www.vtbfamily.ru/offer/90875",
+        "title": "Рыба Мечты 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8B%D0%B1%D0%B0_%D0%BC%D0%B5%D1%87%D1%82%D1%8B_4w7thjV.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=33ace75e0cfd829cc3bdb55aec251024eaeeb4ebe7de26c82ebe7118edca3436",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090875.jpg",
+        "card_description": "Рестораны Рыба Мечты 10%"
+    },
+    {
+        "offer_id": 134022,
+        "offer_url": "https://www.vtbfamily.ru/offer/134022",
+        "title": "Ресторан Bluefin Sushi Oysters 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/XXXLu.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fb89624ba6a28b7a8dfa766613e9714a9742fd92314f3a6e7771a019b1bd5000",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000134022.jpg",
+        "card_description": "Рестораны Ресторан Bluefin Sushi Oysters 15%"
+    },
+    {
+        "offer_id": 134024,
+        "offer_url": "https://www.vtbfamily.ru/offer/134024",
+        "title": "Караоке клуб City Voice",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/XXXL%D1%8C%D0%BA%D0%B5%D0%B5%D0%B5_1_81aVuYa.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8c905ba27f3e66ada9ef3146d61ec0184215f2e8ddaddd311a111d71f1d4d970",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000134024.jpg",
+        "card_description": "Рестораны Караоке клуб City Voice"
+    },
+    {
+        "offer_id": 134026,
+        "offer_url": "https://www.vtbfamily.ru/offer/134026",
+        "title": "Ресторан Eshak 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%97%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_934_GGR3BV5_O7RBCcm.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=edfbea84d7a0949f67478d22a72d04308cea39aff6f13ddc2b7a53451b14c214",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000134026.jpg",
+        "card_description": "Рестораны Ресторан Eshak 10%"
+    },
+    {
+        "offer_id": 136145,
+        "offer_url": "https://www.vtbfamily.ru/offer/136145",
+        "title": "Ресторан Meat_Coin 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/XXXLmeat_coinbbb_1_G9owWKW.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=36cae8da59642fab30119c5632b95904d0f972f2f7a7bd4b65b4759a222e7e01",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000136145.jpg",
+        "card_description": "Рестораны Ресторан Meat_Coin 15%"
+    },
+    {
+        "offer_id": 140365,
+        "offer_url": "https://www.vtbfamily.ru/offer/140365",
+        "title": "Ресторан MOMO до 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%BE%D0%BC%D0%BE%D0%B3%D0%B3%D0%B3_1_Y5PDthc.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0dab33b3d98d4e9ca0b7438feeb6b1bd8a39cfac545f4c9ddb8eaa4d027b2573",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000140365.jpg",
+        "card_description": "Рестораны Ресторан MOMO до 15%"
+    },
+    {
+        "offer_id": 157055,
+        "offer_url": "https://www.vtbfamily.ru/offer/157055",
+        "title": "Ресторан ШЕРБЕТ﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4229.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d05db4c1bdc82bd0c71a481416ba341c5dac4eaf67e661f6f577af67b3b6a5a0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000157055.jpg",
+        "card_description": "Рестораны Ресторан ШЕРБЕТ﻿"
+    },
+    {
+        "offer_id": 172034,
+        "offer_url": "https://www.vtbfamily.ru/offer/172034",
+        "title": "Бар Инта﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4251.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=728f66d07a3f9bcc051a9e944ec10ff6c8d1335d4efe873655658e633d1edc3c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000172034.jpg",
+        "card_description": "Рестораны Бар Инта﻿"
+    },
+    {
+        "offer_id": 175259,
+        "offer_url": "https://www.vtbfamily.ru/offer/175259",
+        "title": "Итальянский ресторан Artie",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_935.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=34069e6423bd80f16121798fa7644bfec309e800bf4d4e734857f18d07a8317f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000175259.jpg",
+        "card_description": "Рестораны Итальянский ресторан Artie"
+    },
+    {
+        "offer_id": 184067,
+        "offer_url": "https://www.vtbfamily.ru/offer/184067",
+        "title": "Self Edge Japanese: ресторан японской кухни",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_06-12-2024_142127_1_TjiCHc7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fec0e113ff80b96b5a443d57b615695c666e261330c40ef4888a40620db927a5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000184067.jpg",
+        "card_description": "Рестораны Self Edge Japanese: ресторан японской кухни"
+    },
+    {
+        "offer_id": 184068,
+        "offer_url": "https://www.vtbfamily.ru/offer/184068",
+        "title": "Ресторан Smoke BBQ 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_06-12-2024_150204_y1L1Kd0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d89e6c73ca2c30b2fae9d57ea22c2d2f45eb3f4f6b1e7d5cecd9719b25411cba",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000184068.jpg",
+        "card_description": "Рестораны Ресторан Smoke BBQ 15%"
+    },
+    {
+        "offer_id": 214491,
+        "offer_url": "https://www.vtbfamily.ru/offer/214491",
+        "title": "Итальянский ресторан Tin﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4359.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d6bc8d873e17a156ed465382520b1279250f6be2e9f7855284093f8e9ef9876",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000214491.jpg",
+        "card_description": "Рестораны Итальянский ресторан Tin﻿"
+    },
+    {
+        "offer_id": 225704,
+        "offer_url": "https://www.vtbfamily.ru/offer/225704",
+        "title": "Ресторан Amy",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/IMG_5873_6ykJ4Z9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f0a291d638fcbce5d730568916180bef06e38b024ada5d4a0754f6d87c19579f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000225704.jpg",
+        "card_description": "Рестораны Ресторан Amy"
+    },
+    {
+        "offer_id": 227894,
+        "offer_url": "https://www.vtbfamily.ru/offer/227894",
+        "title": "Ресторан Cutfish",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_a03703593b14e3606ca961053ada5569_67602eeb5e6ed_xK3VHbe.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=90b28d860a8e00e2b9c46e70afe2a394c1374c4c01e48c258d7e492ffcd7bd6c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000227894.jpg",
+        "card_description": "Рестораны Ресторан Cutfish"
+    },
+    {
+        "offer_id": 230093,
+        "offer_url": "https://www.vtbfamily.ru/offer/230093",
+        "title": "Ресторан Remy Kitchen Bakery",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2024-12-28_11-48-56_io3nNC4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=92af196827e3ff4f47671a033cf90d2fc02161a4b9e190bc7669a856a3b16c7b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000230093.jpg",
+        "card_description": "Рестораны Ресторан Remy Kitchen Bakery"
+    },
+    {
+        "offer_id": 230094,
+        "offer_url": "https://www.vtbfamily.ru/offer/230094",
+        "title": "Ресторан Muse",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82_17-12-2024_124813_XJhNRSj.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bfce7af615ddc22fd309d12084ec17b489f7dbd6b831b50309d23af1a10f6abb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000230094.jpg",
+        "card_description": "Рестораны Ресторан Muse"
+    },
+    {
+        "offer_id": 230095,
+        "offer_url": "https://www.vtbfamily.ru/offer/230095",
+        "title": "Ресторан Brera",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_a4380a605aec50d239a89347bc65dd51_67614b9658524_tq6hnLF.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161815Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8f88ccdd42a6ba47637b1dc7f9ccef7fa1984a151f6529362a9b88fb4e95449d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000230095.jpg",
+        "card_description": "Рестораны Ресторан Brera"
+    },
+    {
+        "offer_id": 230096,
+        "offer_url": "https://www.vtbfamily.ru/offer/230096",
+        "title": "Ресторан Pino",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_1aacbc690a353195d0e997d17ea30a8a_67614d31f0331_1_HebpCDV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b455d8ba106b1657bbc7be05414c7dedf3a28eed49bbbf18b909959bbaf3c1d2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000230096.jpg",
+        "card_description": "Рестораны Ресторан Pino"
+    },
+    {
+        "offer_id": 243331,
+        "offer_url": "https://www.vtbfamily.ru/offer/243331",
+        "title": "Ресторан Stay 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%80%D0%B5%D1%81%D1%82%D0%BE%D1%80%D0%B0%D0%BD_stay_kJ6VdO8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=888ac348e1b8f3c4cc2566c7eb4470fe5d32d553a63329d05b7e7ba1f723eadf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000243331.jpg",
+        "card_description": "Рестораны Ресторан Stay 10%"
+    },
+    {
+        "offer_id": 262356,
+        "offer_url": "https://www.vtbfamily.ru/offer/262356",
+        "title": "Ресторан Savoy до 20%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_2c4122920c8cd1e20d6a3d15b21c0e26_676d2a511d785_8vYOrO6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0c30b85921e2215336d51949d88a35c97855658573588df4e340689ceb28ec05",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000262356.jpg",
+        "card_description": "Рестораны Ресторан Savoy до 20%"
+    },
+    {
+        "offer_id": 332555,
+        "offer_url": "https://www.vtbfamily.ru/offer/332555",
+        "title": "Ресторан Kilim до 20%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/kilim_Wl9VrW7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=64f4dc239d80b5505350e916c0db399e58438d5a6be395208097e9a78c1d8ff6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000332555.jpg",
+        "card_description": "Рестораны Ресторан Kilim до 20%"
+    },
+    {
+        "offer_id": 362725,
+        "offer_url": "https://www.vtbfamily.ru/offer/362725",
+        "title": "Ресторан Bardot 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bardot_dyvluWX.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=017d0a6feb85ee27f20159f460eda44a5948cc4ab198ae3c047a75614b5b5f04",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000362725.jpg",
+        "card_description": "Рестораны Ресторан Bardot 10%"
+    },
+    {
+        "offer_id": 402130,
+        "offer_url": "https://www.vtbfamily.ru/offer/402130",
+        "title": "Кафе Южное 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8E%D0%B6%D0%BD%D0%BE%D0%B5_vZdKoa4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f7edbbab27d7add86b46d1e3c1cab141ec2dadd2b968479a5b7703b17a167310",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402130.jpg",
+        "card_description": "Рестораны Кафе Южное 10%"
+    },
+    {
+        "offer_id": 402327,
+        "offer_url": "https://www.vtbfamily.ru/offer/402327",
+        "title": "Ресторан Regent 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-23_12.31.55.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=58b3fe9471afb81f14e1dec344cdb97bc43792dac036260616d2258a5739953b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402327.jpg",
+        "card_description": "Рестораны Ресторан Regent 10%"
+    },
+    {
+        "offer_id": 402523,
+        "offer_url": "https://www.vtbfamily.ru/offer/402523",
+        "title": "Ресторан Correas 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/correras.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8d9e08efbd33307e2a6ea388be754d347fd4373e7ea6be5e22c7b7edfe85119a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402523.jpg",
+        "card_description": "Рестораны Ресторан Correas 10%"
+    },
+    {
+        "offer_id": 402750,
+        "offer_url": "https://www.vtbfamily.ru/offer/402750",
+        "title": "Ресторан Олива 5%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BE%D0%BB%D0%B8%D0%B2%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3aa7d64c823be8d14d69bb22739da3d5db050de52db563a044b8bf78f0156bbf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402750.jpg",
+        "card_description": "Рестораны Ресторан Олива 5%"
+    },
+    {
+        "offer_id": 402813,
+        "offer_url": "https://www.vtbfamily.ru/offer/402813",
+        "title": "Ресторан El Pimpi 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-10_12-01-33.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c87f3419fb1698130507edb221dc33a2b229be511185c7eb1bb237ed617f5d72",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402813.jpg",
+        "card_description": "Рестораны Ресторан El Pimpi 10%"
+    },
+    {
+        "offer_id": 402814,
+        "offer_url": "https://www.vtbfamily.ru/offer/402814",
+        "title": "Ресторан Мясная карта 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-10_11-54-23.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e54bbcf0256c991264968cef13afca59bdb89f76d305024c349ebacbcc4526a6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402814.jpg",
+        "card_description": "Рестораны Ресторан Мясная карта 15%"
+    },
+    {
+        "offer_id": 402817,
+        "offer_url": "https://www.vtbfamily.ru/offer/402817",
+        "title": "Ресторан Tsarevna 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-10_13-47-01.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b78c6ac8d68a32314ac62b49d2cb1c47061e36fe207e8513a2d6611b103d753b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402817.jpg",
+        "card_description": "Рестораны Ресторан Tsarevna 10%"
+    },
+    {
+        "offer_id": 402819,
+        "offer_url": "https://www.vtbfamily.ru/offer/402819",
+        "title": "Ресторан The Riverbank 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-10_16-47-55.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7c4b30c52eecaed179a3af49af9f638c2b713539b92929dccdb82f4d37447ac6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402819.jpg",
+        "card_description": "Рестораны Ресторан The Riverbank 10%"
+    },
+    {
+        "offer_id": 402820,
+        "offer_url": "https://www.vtbfamily.ru/offer/402820",
+        "title": "Гриль-ресторан Жар 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-10_16-47-17.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e1eadb1e6f9626e97613fe5a899f381040763591aebc5d74dfefdc03b19b2ffd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402820.jpg",
+        "card_description": "Рестораны Гриль-ресторан Жар 10%"
+    },
+    {
+        "offer_id": 402846,
+        "offer_url": "https://www.vtbfamily.ru/offer/402846",
+        "title": "Ресторан Soma 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/soma.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cde772d3ac78690c87d88c836368ec2eaa84b916548cd3cc48692213c354198d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402846.jpg",
+        "card_description": "Рестораны Ресторан Soma 10%"
+    },
+    {
+        "offer_id": 405381,
+        "offer_url": "https://www.vtbfamily.ru/offer/405381",
+        "title": "Ресторан Picco 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/picco_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9318e04f3551af2603d1c9a215b249f9e83396ab03da68e8dab49b8987ef07f8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405381.jpg",
+        "card_description": "Рестораны Ресторан Picco 10%"
+    },
+    {
+        "offer_id": 405471,
+        "offer_url": "https://www.vtbfamily.ru/offer/405471",
+        "title": "Ресторан Demi 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/demi.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fa2caa867622cc614db0b379d3ff084e16fab05cfe243a55005df5ba95509afb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405471.jpg",
+        "card_description": "Рестораны Ресторан Demi 10%"
+    },
+    {
+        "offer_id": 405529,
+        "offer_url": "https://www.vtbfamily.ru/offer/405529",
+        "title": "Ресторан Золотой Снитч до 15%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9_%D1%81%D0%BD%D0%B8%D1%82%D1%87.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9cb94bcfb1e1be5c8594e68dbd2d930360025eef6d16018a0fce412bdc9c8234",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405529.jpg",
+        "card_description": "Рестораны Ресторан Золотой Снитч до 15%"
+    },
+    {
+        "offer_id": 405561,
+        "offer_url": "https://www.vtbfamily.ru/offer/405561",
+        "title": "Ресторан Lark Cafe",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/lark_cafe.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9851f5c46de2dece53d667e16fcf5e55bd593eee7fe40b798781327bc6a962ef",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405561.jpg",
+        "card_description": "Рестораны Ресторан Lark Cafe"
+    },
+    {
+        "offer_id": 414102,
+        "offer_url": "https://www.vtbfamily.ru/offer/414102",
+        "title": "Ресторан BambooBar 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bambobar_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161817Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5601a1639cc870d6852214d5a26e4c47b496082497739c7ee2d7afbc7a2004cc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000414102.jpg",
+        "card_description": "Рестораны Ресторан BambooBar 10%"
+    },
+    {
+        "offer_id": 414157,
+        "offer_url": "https://www.vtbfamily.ru/offer/414157",
+        "title": "Ресторан Ivanka 10%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Ivanka_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161831Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5da3e0e9a78c5731add984488c0e65bbfb97be0c1277dfdcec48317bb414a8b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000414157.jpg",
+        "card_description": "Рестораны Ресторан Ivanka 10%"
+    },
+    {
+        "offer_id": 416288,
+        "offer_url": "https://www.vtbfamily.ru/offer/416288",
+        "title": "Кафе Александр 13%",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%B0%D1%84%D0%B5_%D0%B0%D0%BB%D0%B5%D0%BA%D1%81%D0%B0%D0%BD%D0%B4%D1%80.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161831Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e0b17df2bf4689f9d48288b37a8081a8fe1bec452a3d51f4326ae7d2f223bccf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000416288.jpg",
+        "card_description": "Рестораны Кафе Александр 13%"
+    }
+]

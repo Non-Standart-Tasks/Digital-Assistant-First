@@ -1,0 +1,107 @@
+
+\documentclass[a4paper]{article}
+
+\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[polish,russian]{babel}
+\usepackage[defaultsans]{opensans}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{eso-pic}  % For adding the PDF background
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\pagenumbering{gobble}
+
+\DeclareRobustCommand\ebseries{\fontseries{eb}\selectfont}
+\DeclareRobustCommand\sbseries{\fontseries{sb}\selectfont}
+\DeclareRobustCommand\ltseries{\fontseries{l}\selectfont}
+\DeclareRobustCommand\clseries{\fontseries{cl}\selectfont}
+
+\DeclareTextFontCommand{\texteb}{\ebseries}
+\DeclareTextFontCommand{\textsb}{\sbseries}
+\DeclareTextFontCommand{\textlt}{\ltseries}
+\DeclareTextFontCommand{\textcl}{\clseries}
+
+\geometry{top=2cm, bottom=0.7cm, left=0.7cm, right=0.7cm}
+
+\definecolor{lightgray}{RGB}{222,217,211}
+\definecolor{border}{RGB}{241,241,240}
+\definecolor{darkgray}{RGB}{77,76,76}
+\definecolor{headingcol}{RGB}{172,150,134}
+
+\newcommand\BackgroundPic{
+    \AddToShipoutPicture*{
+        \AtPageLowerLeft{
+            \includegraphics[width=\paperwidth,height=\paperheight]{background_empty.pdf}
+        }
+    }
+}
+
+\newcommand{\CustomCard}[4]{%
+    \begin{tcolorbox}[
+        enhanced,
+        fuzzy shadow = {0mm}{0pt}{-1pt}{-1pt}{black!60!white},
+        width=\linewidth,
+        height=0.225\paperheight,
+        colframe=border!90,
+        colback=white,
+        boxrule=0pt,
+        arc=4mm,
+        left=.5em, right=.5em, top=.1em, bottom=.1em,
+    ]
+        \sffamily
+        \hspace{-.4em}\includegraphics[width=1.033\textwidth]{#1}
+        
+        {\vspace{0.1cm}\color{gray} \footnotesize {#2}}
+        \vspace{0.2cm}
+
+        \parbox[c][1.3\baselineskip][t]{\linewidth}{%
+          \sbseries \color{darkgray} #3
+        }
+        
+        \begin{flushright}
+            \begin{tcolorbox}[
+                colframe=darkgray,
+                colback=darkgray,
+                coltext=white,
+                arc=1mm,
+                width=2cm,
+                height=0.55cm,
+                left=0pt,
+                right=0pt,
+                top=0pt,
+                bottom=0pt,
+                halign=center
+            ]
+                \footnotesize \href{#4}{Подробнее}
+            \end{tcolorbox}
+        \end{flushright}
+    \end{tcolorbox}
+    \vspace{0.9cm}
+}
+
+\newcommand{\insertheading}[1]{
+    \begin{center}
+    \sffamily
+    \ltseries
+    \color{headingcol}
+    \Huge
+    #1
+    \end{center}
+    \vspace{1.5cm}
+}
+
+\begin{document}
+\BackgroundPic
+\insertheading{Предложения}
+
+\begin{minipage}[t]{0.465\textwidth}
+\CustomCard{image_0.jpg}{Новинки}{Описание первого предложения с интересными деталями}{https://example.com/offer1}
+\CustomCard{image_2.jpg}{Специальные предложения}{Описание третьего предложения с выгодными условиями}{https://example.com/offer3}
+\end{minipage}%
+\hspace{0.43cm}
+\begin{minipage}[t]{0.465\textwidth}
+\CustomCard{image_1.jpg}{Акции}{Описание второго предложения со специальными условиями}{https://example.com/offer2}
+\end{minipage}\end{document}

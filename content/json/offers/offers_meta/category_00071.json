@@ -1,0 +1,650 @@
+[
+    {
+        "offer_id": 111135,
+        "offer_url": "https://www.vtbfamily.ru/offer/111135",
+        "title": "Брендовая одежда и товары USmall 25%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/US_WFX7xwD.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a23892712c3203b022fddbabea8e008504270ba163a55e0b1be56ec89069f8e9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000111135.jpg",
+        "card_description": "Одежда, обувь и аксессуары Брендовая одежда и товары USmall 25%"
+    },
+    {
+        "offer_id": 1910,
+        "offer_url": "https://www.vtbfamily.ru/offer/1910",
+        "title": "Интернет-магазин Lamoda",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_98.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=78f98d13002ee5e083803a7d218c94cfc2983ac70bc0b8e80b0322d81fe96ee1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001910.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-магазин Lamoda"
+    },
+    {
+        "offer_id": 66745,
+        "offer_url": "https://www.vtbfamily.ru/offer/66745",
+        "title": "Сеть магазинов обуви, сумок и аксессуаров Rendez-Vous",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%80%D0%B0%D0%BD%D0%B4%D0%B5%D0%B2%D1%83.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bb225800287afeb293e878b1432d3585396aea92c68583198d4ffdb27620aa15",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000066745.jpg",
+        "card_description": "Одежда, обувь и аксессуары Сеть магазинов обуви, сумок и аксессуаров Rendez-Vous"
+    },
+    {
+        "offer_id": 402033,
+        "offer_url": "https://www.vtbfamily.ru/offer/402033",
+        "title": "Яндекс Маркет",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82_%D0%B8%D1%82%D0%BE%D0%B3_ZQenBoT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a9c5a59849b5313255a691c07cf591c1c18c752b622b6334c0ad09115ba68394",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402033.jpg",
+        "card_description": "Одежда, обувь и аксессуары Яндекс Маркет"
+    },
+    {
+        "offer_id": 1153,
+        "offer_url": "https://www.vtbfamily.ru/offer/1153",
+        "title": "Спортмастер",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2930.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cb7afe6d1b3a7957138eced3035390ea51830d44b09c9d7f403e718cb1b3e59b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001153.jpg",
+        "card_description": "Одежда, обувь и аксессуары Спортмастер"
+    },
+    {
+        "offer_id": 125566,
+        "offer_url": "https://www.vtbfamily.ru/offer/125566",
+        "title": "Интернет-бутик VIPAVENUE",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/VIP3_BNSbJF3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=41107652633d0b973941d538732161fcf32442e729dd957e7876e3c71ac6c2d6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125566.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-бутик VIPAVENUE"
+    },
+    {
+        "offer_id": 402312,
+        "offer_url": "https://www.vtbfamily.ru/offer/402312",
+        "title": "Desport: магазин спортивных товаров 20%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/VTB_1_zfM7Z90.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8fe1a5965f3868d137f44d1a3c14901f6140ac85655753b554dbf0ba859cdaa6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402312.jpg",
+        "card_description": "Одежда, обувь и аксессуары Desport: магазин спортивных товаров 20%"
+    },
+    {
+        "offer_id": 131644,
+        "offer_url": "https://www.vtbfamily.ru/offer/131644",
+        "title": "KANZLER - премиальная одежда, обувь и аксессуары",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4129.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cadab552d2bd414d57d892ae70d945b2c5ba7fe3d1fff2f0cb43186d459075f0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131644.jpg",
+        "card_description": "Одежда, обувь и аксессуары KANZLER - премиальная одежда, обувь и аксессуары"
+    },
+    {
+        "offer_id": 801,
+        "offer_url": "https://www.vtbfamily.ru/offer/801",
+        "title": "COLIN'S",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2439.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=78dd9f8b26a76efb34394f8dd88110f420e4bee2dfdbf6e2b2e24d7413340385",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000801.jpg",
+        "card_description": "Одежда, обувь и аксессуары COLIN'S"
+    },
+    {
+        "offer_id": 1135,
+        "offer_url": "https://www.vtbfamily.ru/offer/1135",
+        "title": "Интернет-магазин Gloria Jeans",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2906.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7e2e5a4d5e2f560d99c5a5cf3edaecc77ed57414991e58a7cdd4701c1eabef67",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001135.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-магазин Gloria Jeans"
+    },
+    {
+        "offer_id": 349529,
+        "offer_url": "https://www.vtbfamily.ru/offer/349529",
+        "title": "Caterina Leman — сеть салонов женской одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4548.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c1fd98a8ff3c5ef74fe147045c468220cfbdf50be0b5f41385984e32915ad0b2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000349529.jpg",
+        "card_description": "Одежда, обувь и аксессуары Caterina Leman — сеть салонов женской одежды"
+    },
+    {
+        "offer_id": 384499,
+        "offer_url": "https://www.vtbfamily.ru/offer/384499",
+        "title": "FINN FLARE 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/finn_flare_cyUO8ln.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=38814da511854beedc61fd9eba0cdec7f0aa1f73e4de6f303455b2e716df1573",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000384499.jpg",
+        "card_description": "Одежда, обувь и аксессуары FINN FLARE 10%"
+    },
+    {
+        "offer_id": 956,
+        "offer_url": "https://www.vtbfamily.ru/offer/956",
+        "title": "Сеть аутлетов OFFPRICE﻿",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2641.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=05d7f249521aac9c40a3f6e265b4c672d8e77616746c22486b2546351a2d1532",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000956.jpg",
+        "card_description": "Одежда, обувь и аксессуары Сеть аутлетов OFFPRICE﻿"
+    },
+    {
+        "offer_id": 125574,
+        "offer_url": "https://www.vtbfamily.ru/offer/125574",
+        "title": "Интернет-магазин наручных часов и ювелирных изделий Sibti…",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Sibtime_3_ZtU9aO0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=939b4f424ae0311631f6b341ea4120182d0b3a1a5c571c1ecaf9a1e571161254",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125574.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-магазин наручных часов и ювелирных изделий Sibti…"
+    },
+    {
+        "offer_id": 1684,
+        "offer_url": "https://www.vtbfamily.ru/offer/1684",
+        "title": "Женская и мужская обувь Respect",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_439.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=73d7c121d4535b3130a566e4caa7253d32d772615f56da83165650a7e92f3d58",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001684.jpg",
+        "card_description": "Одежда, обувь и аксессуары Женская и мужская обувь Respect"
+    },
+    {
+        "offer_id": 104605,
+        "offer_url": "https://www.vtbfamily.ru/offer/104605",
+        "title": "Tom Tailor",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3689.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=265944041887e6bc68c287539ed30506325d7aaa8aeb56514ea2ad50c02611c6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000104605.jpg",
+        "card_description": "Одежда, обувь и аксессуары Tom Tailor"
+    },
+    {
+        "offer_id": 402699,
+        "offer_url": "https://www.vtbfamily.ru/offer/402699",
+        "title": "Zarina: бренд женской и мужской одежды до 20%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/zarina.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eed99b0e169fbb5894778c5bd5fc5f513eac081fb4d392f21f7f946812a9bcc4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402699.jpg",
+        "card_description": "Одежда, обувь и аксессуары Zarina: бренд женской и мужской одежды до 20%"
+    },
+    {
+        "offer_id": 360544,
+        "offer_url": "https://www.vtbfamily.ru/offer/360544",
+        "title": "Золотая Стрекоза: сеть женского белья",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B5%D0%BA%D0%BE%D0%B7%D0%B0_2_Mew7sfN.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ada44590bd011adc1f233a31c85c3e4d566dc7c66bb77b30e41de12fe2c549a1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000360544.jpg",
+        "card_description": "Одежда, обувь и аксессуары Золотая Стрекоза: сеть женского белья"
+    },
+    {
+        "offer_id": 437,
+        "offer_url": "https://www.vtbfamily.ru/offer/437",
+        "title": "Интернет-магазин 2MOOD",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1927.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4141ef3df3803424a3b5d34c1507249dc0fdc4b526449b654b94e4283c95bbde",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000437.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-магазин 2MOOD"
+    },
+    {
+        "offer_id": 1280,
+        "offer_url": "https://www.vtbfamily.ru/offer/1280",
+        "title": "Розничные салоны и интернет-магазин MASCOTTE",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3108.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162124Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=067a3d3746ecdf03b30ebb1e985516d1c72cfbd1312371b357e30377c2af959f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001280.jpg",
+        "card_description": "Одежда, обувь и аксессуары Розничные салоны и интернет-магазин MASCOTTE"
+    },
+    {
+        "offer_id": 245543,
+        "offer_url": "https://www.vtbfamily.ru/offer/245543",
+        "title": "Интернет-магазин полезных аксессуаров для путешествий Рутмарк 35%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/routemark_RosRNty.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8bd3da46c9c7594f50ebda8e58f97e7ae03610c50b752ea05c8c86661ee8706",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000245543.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-магазин полезных аксессуаров для путешествий Рутмарк 35%"
+    },
+    {
+        "offer_id": 402251,
+        "offer_url": "https://www.vtbfamily.ru/offer/402251",
+        "title": "Serginnetti: интернет-магазин женской одежды 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/serginnetti__9LfAWBU.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ce3964df40df9bd967c542f4e96e58bc1dbd885ad925df7848b9850d1282357c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402251.jpg",
+        "card_description": "Одежда, обувь и аксессуары Serginnetti: интернет-магазин женской одежды 15%"
+    },
+    {
+        "offer_id": 402557,
+        "offer_url": "https://www.vtbfamily.ru/offer/402557",
+        "title": "GLVR: бренд женской одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/glvr.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=34f1ac34e38bf64945283d6687605298bd578d9d3d73415dfcfa0338a168e2aa",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402557.jpg",
+        "card_description": "Одежда, обувь и аксессуары GLVR: бренд женской одежды"
+    },
+    {
+        "offer_id": 1743,
+        "offer_url": "https://www.vtbfamily.ru/offer/1743",
+        "title": "Интернет-магазин кожаных изделий Piquadro",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_578.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c2d7c8ed3e274a3d38fe72ce098cb81750cde52be42c109f174b558b61dbf6f8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001743.jpg",
+        "card_description": "Одежда, обувь и аксессуары Интернет-магазин кожаных изделий Piquadro"
+    },
+    {
+        "offer_id": 360540,
+        "offer_url": "https://www.vtbfamily.ru/offer/360540",
+        "title": "Эстель Адони: сеть женского белья",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8D%D1%81%D1%82%D1%8D%D0%BB%D1%8C_%D0%B0%D0%B4%D0%BE%D0%BD%D0%B8_%D0%BF%D1%80%D0%B8%D0%B2%D0%B8%D0%BB%D0%B5%D0%B3%D0%B8%D1%8F__94SCpne.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ee442a3062e80d857cc0799611a71e653b272e71f5adb4d45c43047faa0a0cc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000360540.jpg",
+        "card_description": "Одежда, обувь и аксессуары Эстель Адони: сеть женского белья"
+    },
+    {
+        "offer_id": 402972,
+        "offer_url": "https://www.vtbfamily.ru/offer/402972",
+        "title": "IRNBY: бренд женской спортивной одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/irnby.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6d9889b91cfbf52bf08388f1fe4c710a7f263965570a6edd514c566f31945501",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402972.jpg",
+        "card_description": "Одежда, обувь и аксессуары IRNBY: бренд женской спортивной одежды"
+    },
+    {
+        "offer_id": 405559,
+        "offer_url": "https://www.vtbfamily.ru/offer/405559",
+        "title": "SuperStep: магазин обуви 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/super_step.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f46326668e70e5877d227e9d827e95910a0c67fe819d9d77db688b6d3a666776",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405559.jpg",
+        "card_description": "Одежда, обувь и аксессуары SuperStep: магазин обуви 10%"
+    },
+    {
+        "offer_id": 963,
+        "offer_url": "https://www.vtbfamily.ru/offer/963",
+        "title": "LABBRA﻿. Розничные магазины и интернет-магазин аксессуаров",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2649.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1d959706024d956e2bd669598b7d44bc7bd6e0b8c87ee1443e05b39eeff48093",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000963.jpg",
+        "card_description": "Одежда, обувь и аксессуары LABBRA﻿. Розничные магазины и интернет-магазин аксессуаров"
+    },
+    {
+        "offer_id": 1822,
+        "offer_url": "https://www.vtbfamily.ru/offer/1822",
+        "title": "Туристический и горнолыжный магазин Спорт-Марафон",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_783.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a5852c314db654f98e8aebb457c6c23ba1f03e0ce1cfac73cecc13dafce374be",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001822.jpg",
+        "card_description": "Одежда, обувь и аксессуары Туристический и горнолыжный магазин Спорт-Марафон"
+    },
+    {
+        "offer_id": 402247,
+        "offer_url": "https://www.vtbfamily.ru/offer/402247",
+        "title": "Baluck: магазин оверсайз одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/baluck_mYwQwoe.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=79449b37196172888beab8a1d2b93c4e3dc4cc4f1de9e7dbc2ec15ee60922e3d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402247.jpg",
+        "card_description": "Одежда, обувь и аксессуары Baluck: магазин оверсайз одежды"
+    },
+    {
+        "offer_id": 405410,
+        "offer_url": "https://www.vtbfamily.ru/offer/405410",
+        "title": "Street Beat: сеть мультибрендовых магазинов обуви 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/street_beat_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=565513c7d2807922a09b6c04d21c14b85a98de685e9b66acaf9f7eaeb512da0d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405410.jpg",
+        "card_description": "Одежда, обувь и аксессуары Street Beat: сеть мультибрендовых магазинов обуви 15%"
+    },
+    {
+        "offer_id": 962,
+        "offer_url": "https://www.vtbfamily.ru/offer/962",
+        "title": "ELEGANZZA. Розничные магазины и интернет-магазин одежды и аксессу…",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2648.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a844c80b3a1777ea320c5ecff77f41a839444b43682c0ba79052a2b6413e958b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000962.jpg",
+        "card_description": "Одежда, обувь и аксессуары ELEGANZZA. Розничные магазины и интернет-магазин одежды и аксессу…"
+    },
+    {
+        "offer_id": 140368,
+        "offer_url": "https://www.vtbfamily.ru/offer/140368",
+        "title": "Галереи Stargift 5%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/stargift_9ISilWS.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b37dd5c371187513eafb602595e33991aa9b54f7e7dbe23232d06e42ca5927b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000140368.jpg",
+        "card_description": "Одежда, обувь и аксессуары Галереи Stargift 5%"
+    },
+    {
+        "offer_id": 402032,
+        "offer_url": "https://www.vtbfamily.ru/offer/402032",
+        "title": "Премиальный бренд женской одежды и аксессуаров Elena Miro 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-13_13-18-41.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bb7b40a9f54259c23cbfed9ac5c637038d10faca2a1165fb0889ad003b9ca159",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402032.jpg",
+        "card_description": "Одежда, обувь и аксессуары Премиальный бренд женской одежды и аксессуаров Elena Miro 15%"
+    },
+    {
+        "offer_id": 403023,
+        "offer_url": "https://www.vtbfamily.ru/offer/403023",
+        "title": "Tezido: магазин одежды для мужчин 23%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tezido.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b432fffea24107032f3c942219654316024d6ba122d9f5e55b574e92d4a0dfa8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403023.jpg",
+        "card_description": "Одежда, обувь и аксессуары Tezido: магазин одежды для мужчин 23%"
+    },
+    {
+        "offer_id": 405365,
+        "offer_url": "https://www.vtbfamily.ru/offer/405365",
+        "title": "Tamaris: немецкий бренд женской обуви 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tamaris.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5e8173bc0aa30632b7b76fdc11cefe998598fe82f8dc8ca6a490f01e990a8667",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405365.jpg",
+        "card_description": "Одежда, обувь и аксессуары Tamaris: немецкий бренд женской обуви 15%"
+    },
+    {
+        "offer_id": 131646,
+        "offer_url": "https://www.vtbfamily.ru/offer/131646",
+        "title": "Химчистка обуви Два Брата﻿",
+        "category": "Обувь",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4133.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bd7ecab48e79bd548db69a2243db091b512ffeff88c3d1355baaac321ccd1255",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131646.jpg",
+        "card_description": "Обувь Химчистка обуви Два Брата﻿"
+    },
+    {
+        "offer_id": 402090,
+        "offer_url": "https://www.vtbfamily.ru/offer/402090",
+        "title": "SARTO REALE: премиальный бренд мужской одежды 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-14_14-05-49.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=771598e9ac70bc0821810aa65bd61534769ee5a2b549680dd610b0c972fac2e5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402090.jpg",
+        "card_description": "Одежда, обувь и аксессуары SARTO REALE: премиальный бренд мужской одежды 15%"
+    },
+    {
+        "offer_id": 521,
+        "offer_url": "https://www.vtbfamily.ru/offer/521",
+        "title": "Официальный интернет-магазин Mustang",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2056.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=00ced5282e19e8637765908c569f8cc542a89324c95a6f49e194d541c236f9a5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000521.jpg",
+        "card_description": "Одежда, обувь и аксессуары Официальный интернет-магазин Mustang"
+    },
+    {
+        "offer_id": 52687,
+        "offer_url": "https://www.vtbfamily.ru/offer/52687",
+        "title": "REFRAME: бутик итальянских брендов одежды и аксессуаров до 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-25_18-32-42.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162126Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c3d84b11ab45606781a027c31725143ebc26c55971ad4dab56184e7691263948",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052687.jpg",
+        "card_description": "Одежда, обувь и аксессуары REFRAME: бутик итальянских брендов одежды и аксессуаров до 15%"
+    },
+    {
+        "offer_id": 402772,
+        "offer_url": "https://www.vtbfamily.ru/offer/402772",
+        "title": "TESORINI: бренд сумок и аксессуаров 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tesorini.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fea610cd1a2a5d32896d9d6728a7acc192000e88d2ee6c2deffb5f18113eb741",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402772.jpg",
+        "card_description": "Одежда, обувь и аксессуары TESORINI: бренд сумок и аксессуаров 15%"
+    },
+    {
+        "offer_id": 402869,
+        "offer_url": "https://www.vtbfamily.ru/offer/402869",
+        "title": "MT FASHION: бренд женской одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/MT_fashion_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9ffb73f38e0a7b9591e3f97577aa6cd4c7bbfbd5850e01687cd03d596e37073c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402869.jpg",
+        "card_description": "Одежда, обувь и аксессуары MT FASHION: бренд женской одежды"
+    },
+    {
+        "offer_id": 845,
+        "offer_url": "https://www.vtbfamily.ru/offer/845",
+        "title": "Магазины обуви MONRO | МОНРО",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2502.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ac9a37d025c8502dfb2642d065b56276f6c16a71ab6130d36df03fef0b8715b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000845.jpg",
+        "card_description": "Одежда, обувь и аксессуары Магазины обуви MONRO | МОНРО"
+    },
+    {
+        "offer_id": 1070,
+        "offer_url": "https://www.vtbfamily.ru/offer/1070",
+        "title": "Oнлайн-бутик бьюти-брендов Authentica.love",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_280.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eae725e2a50d95e1b66da92b3bacae20fdf6da28aab63a54bf14c2afde970077",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001070.jpg",
+        "card_description": "Одежда, обувь и аксессуары Oнлайн-бутик бьюти-брендов Authentica.love"
+    },
+    {
+        "offer_id": 402030,
+        "offer_url": "https://www.vtbfamily.ru/offer/402030",
+        "title": "Бренд элегантного мужского стиля St. James 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-13_13-18-39_I5570P1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=adeddb67b80281638d6acf881382f2a362ebfb0c5cd3be49d9844323c6f47831",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402030.jpg",
+        "card_description": "Одежда, обувь и аксессуары Бренд элегантного мужского стиля St. James 15%"
+    },
+    {
+        "offer_id": 402310,
+        "offer_url": "https://www.vtbfamily.ru/offer/402310",
+        "title": "Jumkey: бренд спортивной одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/jumkey_6HkkWCv.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=41cd9559445d76de2ddc0a01522445ccbfa570c43ef549142c13a5693b3028fb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402310.jpg",
+        "card_description": "Одежда, обувь и аксессуары Jumkey: бренд спортивной одежды"
+    },
+    {
+        "offer_id": 402379,
+        "offer_url": "https://www.vtbfamily.ru/offer/402379",
+        "title": "Golden-Line: интернет-бутик одежды 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/golden_line_AvI9xBo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=891ee5a8c794cc4d313a96118d35b8b7d8cc13b5f8b760f4a786ef6fdae071fd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402379.jpg",
+        "card_description": "Одежда, обувь и аксессуары Golden-Line: интернет-бутик одежды 10%"
+    },
+    {
+        "offer_id": 402604,
+        "offer_url": "https://www.vtbfamily.ru/offer/402604",
+        "title": "Black Star Wear: street-wear бренд 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/black_star_wear_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e29c47e6e97a332af0d75b6f596883ffd5dc7aee458017c330a2339fd2ac753a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402604.jpg",
+        "card_description": "Одежда, обувь и аксессуары Black Star Wear: street-wear бренд 15%"
+    },
+    {
+        "offer_id": 405333,
+        "offer_url": "https://www.vtbfamily.ru/offer/405333",
+        "title": "Элемент: интернет-магазин кроссовок до 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8D%D0%BB%D0%B5%D0%BC%D0%B5%D0%BD%D1%82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e2ddbf8c1ea6358850a225b8b5975768dba5d938ba90eadacd82148cd9ceaeb4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405333.jpg",
+        "card_description": "Одежда, обувь и аксессуары Элемент: интернет-магазин кроссовок до 10%"
+    },
+    {
+        "offer_id": 216,
+        "offer_url": "https://www.vtbfamily.ru/offer/216",
+        "title": "Магазин женской одежды Ksenia Knyazeva",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1522.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8dca5d6068a858d8ed2dd3307e17392e70480346421a969b48344e6286941ec3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000216.jpg",
+        "card_description": "Одежда, обувь и аксессуары Магазин женской одежды Ksenia Knyazeva"
+    },
+    {
+        "offer_id": 142240,
+        "offer_url": "https://www.vtbfamily.ru/offer/142240",
+        "title": "Shnurok — сервис по доставке оригинальных кроссовок",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4198.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ed3e167dd878adc98a59da2256c5ded2ce768f1c2a12f5d1a53ca0450697bc98",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000142240.jpg",
+        "card_description": "Одежда, обувь и аксессуары Shnurok — сервис по доставке оригинальных кроссовок"
+    },
+    {
+        "offer_id": 171950,
+        "offer_url": "https://www.vtbfamily.ru/offer/171950",
+        "title": "Магазины OUTLETIUM",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4131.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=85b3b0a25e573eb90eb6ab8e2564c18de5bfffd9fd0c39a2daa1c589b5a79b21",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000171950.jpg",
+        "card_description": "Одежда, обувь и аксессуары Магазины OUTLETIUM"
+    },
+    {
+        "offer_id": 402498,
+        "offer_url": "https://www.vtbfamily.ru/offer/402498",
+        "title": "TAMI GEE: премиальный бренд женской одежды 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Tami_gee.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c1bbc2474f4b4a5d59bb5e37e0c898abb6b0d434177cadba119276a9a3722f7d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402498.jpg",
+        "card_description": "Одежда, обувь и аксессуары TAMI GEE: премиальный бренд женской одежды 10%"
+    },
+    {
+        "offer_id": 405366,
+        "offer_url": "https://www.vtbfamily.ru/offer/405366",
+        "title": "LEOMAX: онлайн-магазин 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/leomax_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=62d1ed6a71ee60b26b762d4971991243de9d15aca177507d1998827e6c625d0b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405366.jpg",
+        "card_description": "Одежда, обувь и аксессуары LEOMAX: онлайн-магазин 15%"
+    },
+    {
+        "offer_id": 405472,
+        "offer_url": "https://www.vtbfamily.ru/offer/405472",
+        "title": "Fashion Rebels: магазин женской одежды",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/fashion_rebels_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f13aea956fbe923930bed809b5fb335ec327e3d7e69a70e566d36d1971fbad17",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405472.jpg",
+        "card_description": "Одежда, обувь и аксессуары Fashion Rebels: магазин женской одежды"
+    },
+    {
+        "offer_id": 416292,
+        "offer_url": "https://www.vtbfamily.ru/offer/416292",
+        "title": "TWINSET: люксовый бренд женской одежды 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/twinset_spb_11zon_1.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e2d5ddf55cc6b119c59feb089c51f4b74c7e06a1a573a9c13e0074dff583d937",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000416292.jpg",
+        "card_description": "Одежда, обувь и аксессуары TWINSET: люксовый бренд женской одежды 15%"
+    },
+    {
+        "offer_id": 282,
+        "offer_url": "https://www.vtbfamily.ru/offer/282",
+        "title": "MOVE - сеть мультибрендовых магазинов в стиле casual&…",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1655.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5e349d2a113fcf28c12de17df5bf2f03abf41cb4f42964988deeb4f74bc29fac",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000282.jpg",
+        "card_description": "Одежда, обувь и аксессуары MOVE - сеть мультибрендовых магазинов в стиле casual&…"
+    },
+    {
+        "offer_id": 356204,
+        "offer_url": "https://www.vtbfamily.ru/offer/356204",
+        "title": "ZNWR: концептуальный премиум-бренд",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/znwr_US66mzA.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d9c220196b665b4315654c3560bbf953d489b7757af956e5adbc9d76f46edfdd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000356204.jpg",
+        "card_description": "Одежда, обувь и аксессуары ZNWR: концептуальный премиум-бренд"
+    },
+    {
+        "offer_id": 402697,
+        "offer_url": "https://www.vtbfamily.ru/offer/402697",
+        "title": "LEFARO: фабрика обуви 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/lefaro.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7da8836e639012b5187f80a22c304c36f219cadc619dd980bd9ff9dcb061c5a6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402697.jpg",
+        "card_description": "Одежда, обувь и аксессуары LEFARO: фабрика обуви 10%"
+    },
+    {
+        "offer_id": 405506,
+        "offer_url": "https://www.vtbfamily.ru/offer/405506",
+        "title": "ÉMILIE MUSÉE: бутик нижнего белья 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/emelie_musee.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162141Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=113b11fb498318bc114a270af511b95eb750324fc92566d3738f1fbc0e56d979",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405506.jpg",
+        "card_description": "Одежда, обувь и аксессуары ÉMILIE MUSÉE: бутик нижнего белья 15%"
+    },
+    {
+        "offer_id": 405520,
+        "offer_url": "https://www.vtbfamily.ru/offer/405520",
+        "title": "Sovereign: ателье и шоурум до 20%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/sovereign.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=acdd768f2c9fdc727712225a6d39494b9fadb1aa88b4a6f7e6549bce79df6f00",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405520.jpg",
+        "card_description": "Одежда, обувь и аксессуары Sovereign: ателье и шоурум до 20%"
+    },
+    {
+        "offer_id": 416294,
+        "offer_url": "https://www.vtbfamily.ru/offer/416294",
+        "title": "Riani: немецкий бренд женской одежды 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/riani_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2b6d5f0274f55b161d82d7505e89870a37f387280797beb712608a686e67cbd5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000416294.jpg",
+        "card_description": "Одежда, обувь и аксессуары Riani: немецкий бренд женской одежды 15%"
+    },
+    {
+        "offer_id": 416296,
+        "offer_url": "https://www.vtbfamily.ru/offer/416296",
+        "title": "Marc Cain: премиальный бренд женской одежды 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/marc_cain_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fc67d355295e383168470c6d7fed7cd2bfe9f7658f4b08a78e57974c91724641",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000416296.jpg",
+        "card_description": "Одежда, обувь и аксессуары Marc Cain: премиальный бренд женской одежды 15%"
+    },
+    {
+        "offer_id": 420628,
+        "offer_url": "https://www.vtbfamily.ru/offer/420628",
+        "title": "Malina Bonita: интернет-магазин женской одежды 7%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/malina_bonita_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c41d8a8ab7ce9cf76edc06508524a18304591eabe447db4f66ceeffa822cb77a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000420628.jpg",
+        "card_description": "Одежда, обувь и аксессуары Malina Bonita: интернет-магазин женской одежды 7%"
+    },
+    {
+        "offer_id": 1426,
+        "offer_url": "https://www.vtbfamily.ru/offer/1426",
+        "title": "Стилист-Имиджмейкер для женщин и мужчин Татьяна Веденская",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3368.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=78d3436bbc2e93ec24aaf813f23950d002f1c0665b99d0788ee803fddba140a2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001426.jpg",
+        "card_description": "Одежда, обувь и аксессуары Стилист-Имиджмейкер для женщин и мужчин Татьяна Веденская"
+    },
+    {
+        "offer_id": 90874,
+        "offer_url": "https://www.vtbfamily.ru/offer/90874",
+        "title": "Сеть салонов мужских костюмов PROVOKATOR 20%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%81_%D0%BB%D0%BE%D0%B3%D0%BE_W7UkpKJ_QUqWpL8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bc761509d7af9233f84dfcff6bf343163bff2e1b798b13ade20b43a6ea873c08",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000090874.jpg",
+        "card_description": "Одежда, обувь и аксессуары Сеть салонов мужских костюмов PROVOKATOR 20%"
+    },
+    {
+        "offer_id": 111136,
+        "offer_url": "https://www.vtbfamily.ru/offer/111136",
+        "title": "Еврооптика на Кутузовском 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_%D1%81_%D0%BB%D0%BE%D0%B3%D0%BE_LenUaPN_xdKbhyb.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=453b1056febfbe7623427657daaa71193ba1afc0a1577862e43f55d4bb1f9839",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000111136.jpg",
+        "card_description": "Одежда, обувь и аксессуары Еврооптика на Кутузовском 15%"
+    },
+    {
+        "offer_id": 174478,
+        "offer_url": "https://www.vtbfamily.ru/offer/174478",
+        "title": "Бутик BRITZO до 12%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/britzo_vega_W4mqImF.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8b738e6edfb2c975ed601cc74d1439cbd56911dfd1a1233534900064fabe8a98",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000174478.jpg",
+        "card_description": "Одежда, обувь и аксессуары Бутик BRITZO до 12%"
+    },
+    {
+        "offer_id": 402108,
+        "offer_url": "https://www.vtbfamily.ru/offer/402108",
+        "title": "ZOLETTO: бутик-ателье",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B7%D0%B0%D1%81%D1%82%D0%B0%D0%B2%D0%BA%D0%B0_EMhSTch_kiBeE8U.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=050aea67c1f858b14c61350936eaf26f1edd07610a719cc941bfa9e3c4512a03",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402108.jpg",
+        "card_description": "Одежда, обувь и аксессуары ZOLETTO: бутик-ателье"
+    },
+    {
+        "offer_id": 402431,
+        "offer_url": "https://www.vtbfamily.ru/offer/402431",
+        "title": "Matt Paker: пошив обуви на заказ",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/matt_parker.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2601cbbbbcf566120ce08e0fe73fca91698e9b01eeccfdf3b918510dc29114fd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402431.jpg",
+        "card_description": "Одежда, обувь и аксессуары Matt Paker: пошив обуви на заказ"
+    },
+    {
+        "offer_id": 402727,
+        "offer_url": "https://www.vtbfamily.ru/offer/402727",
+        "title": "AC&co: бренд мужской одежды обуви и аксессуаров 10%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/acco.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=237a46cd210880bda50f376ab3f99b79e95d4e2f180ca4b3df7bb200296ef940",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402727.jpg",
+        "card_description": "Одежда, обувь и аксессуары AC&co: бренд мужской одежды обуви и аксессуаров 10%"
+    },
+    {
+        "offer_id": 405519,
+        "offer_url": "https://www.vtbfamily.ru/offer/405519",
+        "title": "Дом Моды Gala Khachaturova до 15%",
+        "category": "Одежда, обувь и аксессуары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%94%D0%BE%D0%BC_%D0%9C%D0%BE%D0%B4%D1%8B_Gala_Khachaturova_.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162143Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6c081ed9a70ed18e39ceb6379047ff8aa42f62effaacf7e18f309fd638a1edd2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405519.jpg",
+        "card_description": "Одежда, обувь и аксессуары Дом Моды Gala Khachaturova до 15%"
+    }
+]

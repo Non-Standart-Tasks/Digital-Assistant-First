@@ -1,0 +1,1136 @@
+[
+    {
+        "offer_id": 402775,
+        "offer_url": "https://www.vtbfamily.ru/offer/402775",
+        "title": "ROSTIC'S 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/rostics_8.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=db52792fbe74b17a3bdc1c1da065bbdbee09909bf81c8685b81b7d9518cf4ccd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402775.jpg",
+        "card_description": "Кафе и бары ROSTIC'S 20%"
+    },
+    {
+        "offer_id": 129756,
+        "offer_url": "https://www.vtbfamily.ru/offer/129756",
+        "title": "Yami Yami сервис доставки 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/yumi_yumi_p9b5ZzA.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7db1c715b5714863777be34483783ce2a7da453fb0fa1db35f13f505733bc300",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129756.jpg",
+        "card_description": "Кафе и бары Yami Yami сервис доставки 10%"
+    },
+    {
+        "offer_id": 134023,
+        "offer_url": "https://www.vtbfamily.ru/offer/134023",
+        "title": "Много Лосося﻿: суши пицца роллы 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%BB%D0%BE%D1%81%D0%BE%D1%81%D1%8F_myon44B.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aa175222e4386db6846dd74cc57416000f8567114e110f3817d813464ab6390c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000134023.jpg",
+        "card_description": "Кафе и бары Много Лосося﻿: суши пицца роллы 10%"
+    },
+    {
+        "offer_id": 129770,
+        "offer_url": "https://www.vtbfamily.ru/offer/129770",
+        "title": "Сеть пиццерий Додо Пицца до 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/dodo_CIurau1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c97e0f2adcfd26a4dfd6f24c9994b35caaaff91f44addc825d77f3a359cdc5fb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129770.jpg",
+        "card_description": "Кафе и бары Сеть пиццерий Додо Пицца до 20%"
+    },
+    {
+        "offer_id": 129784,
+        "offer_url": "https://www.vtbfamily.ru/offer/129784",
+        "title": "Доставка продуктов на дом Экомаркет.ру до 25%",
+        "category": "Магазины",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Frame_69_ms7y3gB.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=33b12d4d93ff4852a7623bb9ff8b56d7c19eb848f4296904427dfb678964310e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129784.jpg",
+        "card_description": "Магазины Доставка продуктов на дом Экомаркет.ру до 25%"
+    },
+    {
+        "offer_id": 1834,
+        "offer_url": "https://www.vtbfamily.ru/offer/1834",
+        "title": "Рестораны Колбасофф",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_83.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e3fcba17d66e3fb5cfaa1cd1fd68bf4e845ccd8e94b94be9e00f2b97d6ff33b9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001834.jpg",
+        "card_description": "Кафе и бары Рестораны Колбасофф"
+    },
+    {
+        "offer_id": 1553,
+        "offer_url": "https://www.vtbfamily.ru/offer/1553",
+        "title": "Рестораны итальянской кухни Марчеллис",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_357.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ff365d5927713781827c51f1df90475a649f786e1ed2a4cf303cbfe23d6bb298",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001553.jpg",
+        "card_description": "Кафе и бары Рестораны итальянской кухни Марчеллис"
+    },
+    {
+        "offer_id": 234510,
+        "offer_url": "https://www.vtbfamily.ru/offer/234510",
+        "title": "Семейные кафе & кондитерские АндерСон до 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%90%D0%BD%D0%B4%D0%B5%D1%80%D1%81%D0%BE%D0%BD_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0555267c57bcc7e82dc3779cdfc8cdf93474cd850e702181e625532ad7d67191",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000234510.jpg",
+        "card_description": "Кафе и бары Семейные кафе & кондитерские АндерСон до 10%"
+    },
+    {
+        "offer_id": 364707,
+        "offer_url": "https://www.vtbfamily.ru/offer/364707",
+        "title": "Ташир Пицца",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4572.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=93dcf5d5d876fb2cfa0ce1556b158bb3cdb7b55a697b47878dfb7fff3d0d5a75",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000364707.jpg",
+        "card_description": "Кафе и бары Ташир Пицца"
+    },
+    {
+        "offer_id": 336935,
+        "offer_url": "https://www.vtbfamily.ru/offer/336935",
+        "title": "Сеть итальянских ресторанов IL Патио",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1188.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f8103aa67b239b3956c5e15db8c5ee3991fc9fb1f987db3056d68efdbc3272c8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000336935.jpg",
+        "card_description": "Кафе и бары Сеть итальянских ресторанов IL Патио"
+    },
+    {
+        "offer_id": 205909,
+        "offer_url": "https://www.vtbfamily.ru/offer/205909",
+        "title": "MYBOX: Сеть ресторанов японской и паназиатской кухни до 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/MY_BOX_ifHKIdX.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7f8aab0e59095f8a66f1e0499d4dcc1ec2bba9a4688770b535ca98a5feb8d50f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000205909.jpg",
+        "card_description": "Кафе и бары MYBOX: Сеть ресторанов японской и паназиатской кухни до 20%"
+    },
+    {
+        "offer_id": 317603,
+        "offer_url": "https://www.vtbfamily.ru/offer/317603",
+        "title": "UP SUSHI: сеть ресторанов японской кухни 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/upsushi_rzMqICV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fc422678721009e04cf820229fb3d4cedf7c9fdec687abac0dbe185f7435e623",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000317603.jpg",
+        "card_description": "Кафе и бары UP SUSHI: сеть ресторанов японской кухни 20%"
+    },
+    {
+        "offer_id": 264758,
+        "offer_url": "https://www.vtbfamily.ru/offer/264758",
+        "title": "Каспийка: сеть ресторанов до 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%B0%D1%81%D0%BF%D0%B8%D0%B9%D0%BA%D0%B0.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c428157c966118048e20e58c8f5657640e467cf3a4c74ee6944c8b837cb368fb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000264758.jpg",
+        "card_description": "Кафе и бары Каспийка: сеть ресторанов до 20%"
+    },
+    {
+        "offer_id": 1777,
+        "offer_url": "https://www.vtbfamily.ru/offer/1777",
+        "title": "Ресторан \"Рыбный базар\" и гастробар \"Клешни и ракушки\"",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_65.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=40011a35baadf35fb1d11ef6489bc26e0e33ed74fdbc1f7b86ef3257b0e03071",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001777.jpg",
+        "card_description": "Рестораны Ресторан \"Рыбный базар\" и гастробар \"Клешни и ракушки\""
+    },
+    {
+        "offer_id": 402467,
+        "offer_url": "https://www.vtbfamily.ru/offer/402467",
+        "title": "Стейк&Бургер Мираторг 15%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%B8%D1%80%D0%B0%D1%82%D0%BE%D1%80%D0%B3.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52e7b34dcbf7a105e22ce7586abbc3a8845baab1319e40d3144d52402d7713e8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402467.jpg",
+        "card_description": "Кафе и бары Стейк&Бургер Мираторг 15%"
+    },
+    {
+        "offer_id": 140,
+        "offer_url": "https://www.vtbfamily.ru/offer/140",
+        "title": "Black Star Burger﻿",
+        "category": "Доставка.рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1352.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=addcdd9d59dc04ac9ad0253eb10fcddee076fe2d2b323f1f3f09daf79b824942",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000140.jpg",
+        "card_description": "Доставка.рестораны Black Star Burger﻿"
+    },
+    {
+        "offer_id": 336864,
+        "offer_url": "https://www.vtbfamily.ru/offer/336864",
+        "title": "PizzaSushiWok",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Pizza_sushi_wok_DuTGUOI.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bac14092330883971984c66d53372b9145f400e688ed0ff5929e6f52414b5b3f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000336864.jpg",
+        "card_description": "Кафе и бары PizzaSushiWok"
+    },
+    {
+        "offer_id": 1755,
+        "offer_url": "https://www.vtbfamily.ru/offer/1755",
+        "title": "Ресторан китайской кухни Китайские новости",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_599.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8455b6c89c7fda28da54d093278b9824d21f74a5aa1eda71806f0468a5f4f5f1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001755.jpg",
+        "card_description": "Рестораны Ресторан китайской кухни Китайские новости"
+    },
+    {
+        "offer_id": 264757,
+        "offer_url": "https://www.vtbfamily.ru/offer/264757",
+        "title": "Ёрш: сеть ресторанов до 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B5%D1%80%D1%88.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=01a1c427fa686e68dd52ba0c65bd150b4322e163e0c7648d4ce76c68ecdc3618",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000264757.jpg",
+        "card_description": "Кафе и бары Ёрш: сеть ресторанов до 20%"
+    },
+    {
+        "offer_id": 74,
+        "offer_url": "https://www.vtbfamily.ru/offer/74",
+        "title": "Ресторан Gorilla by Баста",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1168.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161956Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e7d2c693ab8723486e78c0e8d9bba72f242736902e23ebe1b5090adbba49bede",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000074.jpg",
+        "card_description": "Кафе и бары Ресторан Gorilla by Баста"
+    },
+    {
+        "offer_id": 1139,
+        "offer_url": "https://www.vtbfamily.ru/offer/1139",
+        "title": "DOMИNO PIZZA﻿ | Домино Пицца",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2913.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e589634e4677718544fcdcaeb4e0cecb4232c7dc90b83171e69dcefb1af037e4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001139.jpg",
+        "card_description": "Кафе и бары DOMИNO PIZZA﻿ | Домино Пицца"
+    },
+    {
+        "offer_id": 173,
+        "offer_url": "https://www.vtbfamily.ru/offer/173",
+        "title": "Вкусная еда или кейтеринг от CaterMe﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1453.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=43adcd521d6c34dccc8f6adb814a13c14ee441295f8dcdecfd23335550af8e83",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000173.jpg",
+        "card_description": "Кафе и бары Вкусная еда или кейтеринг от CaterMe﻿"
+    },
+    {
+        "offer_id": 1004,
+        "offer_url": "https://www.vtbfamily.ru/offer/1004",
+        "title": "Сеть бургер-баров Burger Heroes",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2706.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=83f32dc4b28e06e0659a6df42339344aa6c431209460da8d35462fba7539543f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001004.jpg",
+        "card_description": "Кафе и бары Сеть бургер-баров Burger Heroes"
+    },
+    {
+        "offer_id": 184063,
+        "offer_url": "https://www.vtbfamily.ru/offer/184063",
+        "title": "Yami Yami: Ролл лосось моцарелла в подарок",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/yami_yami_2_E27XeEO.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d312f7fa98af51a6c5c8af892ad456d5d5d43a5e1529165cf41d2c9e4fb4f324",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000184063.jpg",
+        "card_description": "Кафе и бары Yami Yami: Ролл лосось моцарелла в подарок"
+    },
+    {
+        "offer_id": 1516,
+        "offer_url": "https://www.vtbfamily.ru/offer/1516",
+        "title": "Hookah Place",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3512.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=79741e5fc2c2bf6967fdca25129574454918290fa198d1e70ef6fb5b7cc666f0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001516.jpg",
+        "card_description": "Кафе и бары Hookah Place"
+    },
+    {
+        "offer_id": 1303,
+        "offer_url": "https://www.vtbfamily.ru/offer/1303",
+        "title": "Ирландский паб The Tipsy Pub",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_316.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8a990033207f6b45af48cd8ed860ab1715f32e4070048da1b7b728d434f293ef",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001303.jpg",
+        "card_description": "Кафе и бары Ирландский паб The Tipsy Pub"
+    },
+    {
+        "offer_id": 1323,
+        "offer_url": "https://www.vtbfamily.ru/offer/1323",
+        "title": "Ирландский паб O'Donoghue's pub",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_321.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8a4f66f1ddb696c198fa142810c89af4399155e0c4f3dd49c5b9a4c29e1bab91",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001323.jpg",
+        "card_description": "Кафе и бары Ирландский паб O'Donoghue's pub"
+    },
+    {
+        "offer_id": 364704,
+        "offer_url": "https://www.vtbfamily.ru/offer/364704",
+        "title": "Кафе Одесса-Мама",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4568.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3397561fce0c34f29e3df97b9c9128f21332909bc47a612c9334954c4af9dfc2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000364704.jpg",
+        "card_description": "Кафе и бары Кафе Одесса-Мама"
+    },
+    {
+        "offer_id": 151,
+        "offer_url": "https://www.vtbfamily.ru/offer/151",
+        "title": "Toyosu SUSHI",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1397.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1b1389eb4b051dd43e431fc0c7eb2580f921d4d24ff36610098f756bb34c3831",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000151.jpg",
+        "card_description": "Кафе и бары Toyosu SUSHI"
+    },
+    {
+        "offer_id": 408,
+        "offer_url": "https://www.vtbfamily.ru/offer/408",
+        "title": "Доставка и самовывоз от Black star burger",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1875.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fc597f6849e9feb8fd42d48e2b608b9acf006c250797f3701cd6c82ee0e371c9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000408.jpg",
+        "card_description": "Кафе и бары Доставка и самовывоз от Black star burger"
+    },
+    {
+        "offer_id": 264759,
+        "offer_url": "https://www.vtbfamily.ru/offer/264759",
+        "title": "TVOЯ Pizza до 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/43786206_BANNERS_FOR_VTB_tvoyapizza_KljCLl5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c0ce1abcc7e7644113d0991636afd5db149010f0005bbb69506d34e8cf43f2ec",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000264759.jpg",
+        "card_description": "Кафе и бары TVOЯ Pizza до 20%"
+    },
+    {
+        "offer_id": 332359,
+        "offer_url": "https://www.vtbfamily.ru/offer/332359",
+        "title": "Кафе PIMS",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4522.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fe39feeaa83669bd8010aa59705d32c3e595e769c80e71c00787a37a806a4300",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000332359.jpg",
+        "card_description": "Кафе и бары Кафе PIMS"
+    },
+    {
+        "offer_id": 194,
+        "offer_url": "https://www.vtbfamily.ru/offer/194",
+        "title": "Бар Do Not Disturb﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1490.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f75cd5983d9012c15b5445c1901ef41f1c85b33e163a6604304964718819ebf0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000194.jpg",
+        "card_description": "Кафе и бары Бар Do Not Disturb﻿"
+    },
+    {
+        "offer_id": 1314,
+        "offer_url": "https://www.vtbfamily.ru/offer/1314",
+        "title": "Ирландский паб Abbey Players Pub",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_319.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6054be1710ed6296f09f483a92bcd2a1c7776d5a9372550c6f80f72b41fb1a7a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001314.jpg",
+        "card_description": "Кафе и бары Ирландский паб Abbey Players Pub"
+    },
+    {
+        "offer_id": 1915,
+        "offer_url": "https://www.vtbfamily.ru/offer/1915",
+        "title": "Десерты от Yopells",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_988.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=807da586fda7a389395006d4e34985a7243c9fed6142deaf5ab2b01622d0cb45",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001915.jpg",
+        "card_description": "Кафе и бары Десерты от Yopells"
+    },
+    {
+        "offer_id": 336936,
+        "offer_url": "https://www.vtbfamily.ru/offer/336936",
+        "title": "Сеть ресторанов азиатской кухни Шикари",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1189.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7e1d4038202cb8aa5d9f65b6bf726d6c3365462a7ac3f8675051915cb58eb91a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000336936.jpg",
+        "card_description": "Кафе и бары Сеть ресторанов азиатской кухни Шикари"
+    },
+    {
+        "offer_id": 405363,
+        "offer_url": "https://www.vtbfamily.ru/offer/405363",
+        "title": "Pizza Hut",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/pizza_hut_11zon_1.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e71eb8d86b6b5b1d75fe9f1dd1e16be2cf800994aa009c0e50afa98d0458c73b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405363.jpg",
+        "card_description": "Кафе и бары Pizza Hut"
+    },
+    {
+        "offer_id": 405427,
+        "offer_url": "https://www.vtbfamily.ru/offer/405427",
+        "title": "VIP SMOKING LOUNGE: лаундж зоны 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/vip_smoking_lounge.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b07b37c15beb9e551c3413bb5706d7d3c0c3f58919923dd43b9b5feba411ba55",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405427.jpg",
+        "card_description": "Кафе и бары VIP SMOKING LOUNGE: лаундж зоны 10%"
+    },
+    {
+        "offer_id": 405431,
+        "offer_url": "https://www.vtbfamily.ru/offer/405431",
+        "title": "Irish PUB 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/irish_bar_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=60d9d807c0d54ebf813f8e15c9a12d39c72bbc7bfd45ac77ae20ef885b343017",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405431.jpg",
+        "card_description": "Кафе и бары Irish PUB 10%"
+    },
+    {
+        "offer_id": 63,
+        "offer_url": "https://www.vtbfamily.ru/offer/63",
+        "title": "Ресторан Openside Friends Kitchen & bar",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1147.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T161959Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8e80ffc73692beec5b1a206016ba30f3ff3bd4fc659939623251d7b9f2d65282",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000063.jpg",
+        "card_description": "Кафе и бары Ресторан Openside Friends Kitchen & bar"
+    },
+    {
+        "offer_id": 507,
+        "offer_url": "https://www.vtbfamily.ru/offer/507",
+        "title": "Сеть кафе AMERICANO Coffee",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2038.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d2f80d8e15ac0f842944133e8ea0ddb3f28cbf2d8a8e0f795624285a5fae0b7b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000507.jpg",
+        "card_description": "Кафе и бары Сеть кафе AMERICANO Coffee"
+    },
+    {
+        "offer_id": 551,
+        "offer_url": "https://www.vtbfamily.ru/offer/551",
+        "title": "Кейтеринг под мероприятие от MoscowFood",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_209.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d8d0148a2df0af2e7f1623574a860cdd55c7a497d6c62fdc557729b7c90af58b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000551.jpg",
+        "card_description": "Кафе и бары Кейтеринг под мероприятие от MoscowFood"
+    },
+    {
+        "offer_id": 633,
+        "offer_url": "https://www.vtbfamily.ru/offer/633",
+        "title": "Сеть винных баров Винный Базар",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_221.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ab6bf0a0344f9155dd6e0e3968c1415f2ea852a720e6c9f434f1a3bfba51bc99",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000633.jpg",
+        "card_description": "Кафе и бары Сеть винных баров Винный Базар"
+    },
+    {
+        "offer_id": 656,
+        "offer_url": "https://www.vtbfamily.ru/offer/656",
+        "title": "Бразильская закусочная Lars Vegans",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2238.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=60b597aafa3036a08adb7b1a718aa66e946be9c51ece24045bc34da478f39810",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000656.jpg",
+        "card_description": "Кафе и бары Бразильская закусочная Lars Vegans"
+    },
+    {
+        "offer_id": 1005,
+        "offer_url": "https://www.vtbfamily.ru/offer/1005",
+        "title": "Доставка японской кухни Space Sushi",
+        "category": "Доставка",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2708.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d7ac068990e5c8bb7988fdc397b0e7fa6a08c5a9f5c1486a901debe47879f81",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001005.jpg",
+        "card_description": "Доставка Доставка японской кухни Space Sushi"
+    },
+    {
+        "offer_id": 1436,
+        "offer_url": "https://www.vtbfamily.ru/offer/1436",
+        "title": "Beer Happens﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3385.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e54e2d39528c139eb2faef1f96e97922695d45dab60828a61efc7204c5f2b711",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001436.jpg",
+        "card_description": "Кафе и бары Beer Happens﻿"
+    },
+    {
+        "offer_id": 1891,
+        "offer_url": "https://www.vtbfamily.ru/offer/1891",
+        "title": "Винный Бар Игристый",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_941.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4264837632229e826157c7708a4472f06fe4ee20dd123e82ed527714c789854f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001891.jpg",
+        "card_description": "Кафе и бары Винный Бар Игристый"
+    },
+    {
+        "offer_id": 28746,
+        "offer_url": "https://www.vtbfamily.ru/offer/28746",
+        "title": "Место Теста, Omeleete, Next Door Bar на фуд-холле Kitchen Garden",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3739.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3acd09856c52e5c6892d2edfa7ec20f1d73e9705bedee7e8d7019c2c9cc4d297",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000028746.jpg",
+        "card_description": "Кафе и бары Место Теста, Omeleete, Next Door Bar на фуд-холле Kitchen Garden"
+    },
+    {
+        "offer_id": 28747,
+        "offer_url": "https://www.vtbfamily.ru/offer/28747",
+        "title": "Лаунж бар Tangiers Lounge﻿ на проспекте Андропова",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3740.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a648052211e07bae4904d73efd7576aae93f31489d5db54e1ae146dcb5c87df6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000028747.jpg",
+        "card_description": "Кафе и бары Лаунж бар Tangiers Lounge﻿ на проспекте Андропова"
+    },
+    {
+        "offer_id": 40,
+        "offer_url": "https://www.vtbfamily.ru/offer/40",
+        "title": "Ресторан-бар МТ music bar",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1102.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fc14c523ebacc8651f085bf9db1e771b9ce01c0885a669bfeb06bccb8ce62041",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000040.jpg",
+        "card_description": "Кафе и бары Ресторан-бар МТ music bar"
+    },
+    {
+        "offer_id": 75,
+        "offer_url": "https://www.vtbfamily.ru/offer/75",
+        "title": "NOVA LOUNGE",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1169.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5e0e927c3a8e7a7c51e5dec466f07e9b4c3268f430eac47ded636b19fa49a968",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000075.jpg",
+        "card_description": "Кафе и бары NOVA LOUNGE"
+    },
+    {
+        "offer_id": 99,
+        "offer_url": "https://www.vtbfamily.ru/offer/99",
+        "title": "Ресторан грузинской кухни Ели Сацебели﻿ в ЖК ЗилАрт",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1245.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0852dd2903dc284738fba908f3ed28b221fcda2e0ce0d39a0af66bd35f63dd71",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000099.jpg",
+        "card_description": "Кафе и бары Ресторан грузинской кухни Ели Сацебели﻿ в ЖК ЗилАрт"
+    },
+    {
+        "offer_id": 104,
+        "offer_url": "https://www.vtbfamily.ru/offer/104",
+        "title": "Сеть пиццерий Frankie Pizza﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1258.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=46c0c9849a0c916834f9e732013862f9545ef631ce7ece750c95eedd885af045",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000104.jpg",
+        "card_description": "Кафе и бары Сеть пиццерий Frankie Pizza﻿"
+    },
+    {
+        "offer_id": 197,
+        "offer_url": "https://www.vtbfamily.ru/offer/197",
+        "title": "Тайский бар Neon Monkey",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1493.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=753db6be5de9baa4a72a5957f4a94039ef3aa7e78b7fa6a679103d27a724b0b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000197.jpg",
+        "card_description": "Кафе и бары Тайский бар Neon Monkey"
+    },
+    {
+        "offer_id": 459,
+        "offer_url": "https://www.vtbfamily.ru/offer/459",
+        "title": "Грузинский ресторан Дэди﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1964.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=337fee5a392d53507c84ed58162e4bbad65c8fdc565267035e398fdf12b57cf0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000459.jpg",
+        "card_description": "Кафе и бары Грузинский ресторан Дэди﻿"
+    },
+    {
+        "offer_id": 759,
+        "offer_url": "https://www.vtbfamily.ru/offer/759",
+        "title": "Prscco бар и ресторан",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_238.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0e37e0d0450ab77ef8b31fa2c73dc8d4fa4ecfc2f1ff56510d6fe6c56d45b149",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000759.jpg",
+        "card_description": "Кафе и бары Prscco бар и ресторан"
+    },
+    {
+        "offer_id": 1055,
+        "offer_url": "https://www.vtbfamily.ru/offer/1055",
+        "title": "Гранд-лобби & бар Шаляпин﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2775.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f56b473918f1b99cb3c294634e121e08ed4e6058025d339ec1e192b318904c12",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001055.jpg",
+        "card_description": "Рестораны Гранд-лобби & бар Шаляпин﻿"
+    },
+    {
+        "offer_id": 1246,
+        "offer_url": "https://www.vtbfamily.ru/offer/1246",
+        "title": "Рюмочные Я не такая от Сидр групп",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3059.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d904fe1cdaa526fdd37adb55be987d468fba3311d5e5d6c0338c67f83214bbbd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001246.jpg",
+        "card_description": "Кафе и бары Рюмочные Я не такая от Сидр групп"
+    },
+    {
+        "offer_id": 1333,
+        "offer_url": "https://www.vtbfamily.ru/offer/1333",
+        "title": "Ирландский паб Drunken Duck Pub",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_324.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2aabbcf973d452211d15e7c3808b1f8d000ab12fd1f7efd4a639ea03c3ffc135",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001333.jpg",
+        "card_description": "Кафе и бары Ирландский паб Drunken Duck Pub"
+    },
+    {
+        "offer_id": 1517,
+        "offer_url": "https://www.vtbfamily.ru/offer/1517",
+        "title": "Мята Platinum BOTANICA",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3513.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162013Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3f67bca3915fd2816d2457a338766fd51f88f3ae6f38ec04960bb17db47cf9b6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001517.jpg",
+        "card_description": "Кафе и бары Мята Platinum BOTANICA"
+    },
+    {
+        "offer_id": 92602,
+        "offer_url": "https://www.vtbfamily.ru/offer/92602",
+        "title": "Сеть кафе Cream Soda﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3831.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=63d55199534d89c20ae0479278879374849a7a4b86bedcd41278e29e584f8ddb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000092602.jpg",
+        "card_description": "Кафе и бары Сеть кафе Cream Soda﻿"
+    },
+    {
+        "offer_id": 100682,
+        "offer_url": "https://www.vtbfamily.ru/offer/100682",
+        "title": "Ресторан Besty﻿",
+        "category": "Доставка",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3872.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0fe8fad39e0cd7c258cba4ed88b128e137c58c6315a052f5e9dd0b0ff3ed94b0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000100682.jpg",
+        "card_description": "Доставка Ресторан Besty﻿"
+    },
+    {
+        "offer_id": 127414,
+        "offer_url": "https://www.vtbfamily.ru/offer/127414",
+        "title": "NAOMI bistro",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4048.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2942ebc112c97ea5e5a70d768d1b134f390269a81f411cf9932be87e21a8a7f3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000127414.jpg",
+        "card_description": "Кафе и бары NAOMI bistro"
+    },
+    {
+        "offer_id": 58,
+        "offer_url": "https://www.vtbfamily.ru/offer/58",
+        "title": "Пиццерия Maestrello﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1137.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fa4b22e810f425f4b7fa7d15415bb16a4080ff01d60c32d89c217c982f2e511c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000058.jpg",
+        "card_description": "Кафе и бары Пиццерия Maestrello﻿"
+    },
+    {
+        "offer_id": 149,
+        "offer_url": "https://www.vtbfamily.ru/offer/149",
+        "title": "Кафе БОТАНИКА﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1393.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a276175b61866020ba6b21d23eee9248033c1d19db97d224bb9e4c2652fd14be",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000149.jpg",
+        "card_description": "Кафе и бары Кафе БОТАНИКА﻿"
+    },
+    {
+        "offer_id": 196,
+        "offer_url": "https://www.vtbfamily.ru/offer/196",
+        "title": "Бар ROOM#5",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1492.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a3c634ebdbaaa25bad58eb06d3474c00d5b7f81c6a3ef2c1b00c859f2218fe07",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000196.jpg",
+        "card_description": "Кафе и бары Бар ROOM#5"
+    },
+    {
+        "offer_id": 198,
+        "offer_url": "https://www.vtbfamily.ru/offer/198",
+        "title": "Бар и крыша Ботанист",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1494.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5ec0ebf8f005d94e50aced09c5d86f8570ef94324111bf31c14e8961ce958a86",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000198.jpg",
+        "card_description": "Кафе и бары Бар и крыша Ботанист"
+    },
+    {
+        "offer_id": 240,
+        "offer_url": "https://www.vtbfamily.ru/offer/240",
+        "title": "Кофейня YCP﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1569.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37cb2ef9861bdc9e9cd957a1d3c8e9c544f63bd3ba2d723c705281cee257f344",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000240.jpg",
+        "card_description": "Кафе и бары Кофейня YCP﻿"
+    },
+    {
+        "offer_id": 974,
+        "offer_url": "https://www.vtbfamily.ru/offer/974",
+        "title": "Bijou Bar﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2662.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5a6fb1d5e3616830c9d844b06e30676c7ba240a861768f90a49dc55b4b87e2c0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000974.jpg",
+        "card_description": "Кафе и бары Bijou Bar﻿"
+    },
+    {
+        "offer_id": 990,
+        "offer_url": "https://www.vtbfamily.ru/offer/990",
+        "title": "Лан Ма﻿. Китайская лапшичная на Покровке",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2683.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=69b8f4b07fd8d44da4e8c989bcb615ee8b2a3836886d41e560b8db35a43c0eb0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000990.jpg",
+        "card_description": "Кафе и бары Лан Ма﻿. Китайская лапшичная на Покровке"
+    },
+    {
+        "offer_id": 1288,
+        "offer_url": "https://www.vtbfamily.ru/offer/1288",
+        "title": "Ирландский паб BIG JIM'S PUB",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_313.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a0a8872431a5e69f6fe99adde215be544fd9135fce83cd75ae14713fc6716a2b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001288.jpg",
+        "card_description": "Кафе и бары Ирландский паб BIG JIM'S PUB"
+    },
+    {
+        "offer_id": 1298,
+        "offer_url": "https://www.vtbfamily.ru/offer/1298",
+        "title": "Паб TAP & BARREL PUB",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_315.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0129af4e61902fc7178570ee7f2cc818b16575f6aebe445340581ace407789f7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001298.jpg",
+        "card_description": "Кафе и бары Паб TAP & BARREL PUB"
+    },
+    {
+        "offer_id": 1319,
+        "offer_url": "https://www.vtbfamily.ru/offer/1319",
+        "title": "Британский паб Punch & Judy Pub",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_320.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=457f803ab5f5ce7966a6644acbcbed99e86644ec60bd2e09ecf96a071f5cf495",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001319.jpg",
+        "card_description": "Кафе и бары Британский паб Punch & Judy Pub"
+    },
+    {
+        "offer_id": 1444,
+        "offer_url": "https://www.vtbfamily.ru/offer/1444",
+        "title": "Бар Правда?﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3397.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ac9fb1f866ffb624c5e3ce5ac7f9a2f8dad9f45836e37cef86dcfcc36efbc469",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001444.jpg",
+        "card_description": "Кафе и бары Бар Правда?﻿"
+    },
+    {
+        "offer_id": 1533,
+        "offer_url": "https://www.vtbfamily.ru/offer/1533",
+        "title": "Азиатское бистро PAPAYA",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3537.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=85e46c9a526b7eae4d50c7aa7aa18a30db39566c532e05f784af5d0cd9c54fab",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001533.jpg",
+        "card_description": "Кафе и бары Азиатское бистро PAPAYA"
+    },
+    {
+        "offer_id": 1629,
+        "offer_url": "https://www.vtbfamily.ru/offer/1629",
+        "title": "Рестобар LOUIS casual food&bar﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3676.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b057ad0f79ee1d73e06937ce4c397e593eb51b7ac063c7a47347b22c84fc9afc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001629.jpg",
+        "card_description": "Рестораны Рестобар LOUIS casual food&bar﻿"
+    },
+    {
+        "offer_id": 1829,
+        "offer_url": "https://www.vtbfamily.ru/offer/1829",
+        "title": "Кейтеринг и обеды от CATERY﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_800.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4adef958ff4f3a3880393b1924117e334a0a72f5d2e6705765c2cd43e9f273b3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001829.jpg",
+        "card_description": "Кафе и бары Кейтеринг и обеды от CATERY﻿"
+    },
+    {
+        "offer_id": 1885,
+        "offer_url": "https://www.vtbfamily.ru/offer/1885",
+        "title": "Аутентическая греческая таверна Порто Миконос",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_934.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=94c30473001eb4b91eedfb125f8de04db959274fa7f147ddf94accd9c3857c84",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001885.jpg",
+        "card_description": "Кафе и бары Аутентическая греческая таверна Порто Миконос"
+    },
+    {
+        "offer_id": 1890,
+        "offer_url": "https://www.vtbfamily.ru/offer/1890",
+        "title": "Ресторан испанской и латино-американской кухни El Idilio﻿",
+        "category": "Доставка",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_940.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e1a44469a9880e684cc18442f98868746b3bebcd864e6cd852c6c585736029c2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001890.jpg",
+        "card_description": "Доставка Ресторан испанской и латино-американской кухни El Idilio﻿"
+    },
+    {
+        "offer_id": 80438,
+        "offer_url": "https://www.vtbfamily.ru/offer/80438",
+        "title": "Сеть кафе Cafe by Point﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3778.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162015Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=06f38086adffb4a6ca3774e585f16b351957835c6eb3974ea9a66a0fcf3c8343",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000080438.jpg",
+        "card_description": "Кафе и бары Сеть кафе Cafe by Point﻿"
+    },
+    {
+        "offer_id": 106803,
+        "offer_url": "https://www.vtbfamily.ru/offer/106803",
+        "title": "Ресторан и бар Нить",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3951.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ebb429f1c504c093e3e4ff24929ef4f05df9135f6455642ed6187d3aa6db1c42",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000106803.jpg",
+        "card_description": "Рестораны Ресторан и бар Нить"
+    },
+    {
+        "offer_id": 125276,
+        "offer_url": "https://www.vtbfamily.ru/offer/125276",
+        "title": "Сеть ресторанов Алло! Пицца",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3972.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d39a3a00f4502bbe399d116cd9639abdf09cac9b15a127b4640f0c6e74ce6460",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125276.jpg",
+        "card_description": "Кафе и бары Сеть ресторанов Алло! Пицца"
+    },
+    {
+        "offer_id": 127409,
+        "offer_url": "https://www.vtbfamily.ru/offer/127409",
+        "title": "Bla Bla Bar",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4028.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ff73dc5065a32b943462724c4cea3a02bc8e58152d17ea780f0ca09bf98e7a09",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000127409.jpg",
+        "card_description": "Кафе и бары Bla Bla Bar"
+    },
+    {
+        "offer_id": 131640,
+        "offer_url": "https://www.vtbfamily.ru/offer/131640",
+        "title": "Ресторан Bella Vita﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4122.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a04dab00e80e14a47e7bfd8228421f8175dacdee7b986e1fa3c09536cf532173",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131640.jpg",
+        "card_description": "Кафе и бары Ресторан Bella Vita﻿"
+    },
+    {
+        "offer_id": 131655,
+        "offer_url": "https://www.vtbfamily.ru/offer/131655",
+        "title": "Лаунж-бар HOOKAH / by POINT﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4162.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=31e38a5e1f37895d81f909e9810ebea2a743f9ccbe7a85dbf4ebc5b5984cb986",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131655.jpg",
+        "card_description": "Кафе и бары Лаунж-бар HOOKAH / by POINT﻿"
+    },
+    {
+        "offer_id": 165601,
+        "offer_url": "https://www.vtbfamily.ru/offer/165601",
+        "title": "Закусочная Шмак",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4276.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6da291659e44a29800191d57990ff216a561d8b1d3b2ede7666af548d37372ba",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000165601.jpg",
+        "card_description": "Кафе и бары Закусочная Шмак"
+    },
+    {
+        "offer_id": 226118,
+        "offer_url": "https://www.vtbfamily.ru/offer/226118",
+        "title": "Паназиатская и японская кухня Менза﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1946.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ec59ac2788a23324d41d431c08d69bf9a6b7ba23e7dfa8d01f554852a8608fbf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000226118.jpg",
+        "card_description": "Кафе и бары Паназиатская и японская кухня Менза﻿"
+    },
+    {
+        "offer_id": 336937,
+        "offer_url": "https://www.vtbfamily.ru/offer/336937",
+        "title": "Сеть ресторанов японской кухни Планета Суши",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1190.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=618dab8342887b48c6976a8bdf3ebbd814fe866e4f93d90e45e03593bccd1e1d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000336937.jpg",
+        "card_description": "Кафе и бары Сеть ресторанов японской кухни Планета Суши"
+    },
+    {
+        "offer_id": 402437,
+        "offer_url": "https://www.vtbfamily.ru/offer/402437",
+        "title": "Correas: услуги кейтеринга до 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%B5%D0%B9%D1%82%D0%B5%D1%80%D0%B8%D0%BD%D0%B3_correras.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=175cd6c3c02303526bf1a4d496295442aad66b18b79580bc9ef5e03dfa94f76f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402437.jpg",
+        "card_description": "Кафе и бары Correas: услуги кейтеринга до 10%"
+    },
+    {
+        "offer_id": 405474,
+        "offer_url": "https://www.vtbfamily.ru/offer/405474",
+        "title": "Cohiba Atmosphere: концептуальный сигарный лаунж",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Cosiba.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8aa4c6d888131fef3ed030f4fdf89a560bba8cab816d2cd43a4136cc2ee84c1c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405474.jpg",
+        "card_description": "Кафе и бары Cohiba Atmosphere: концептуальный сигарный лаунж"
+    },
+    {
+        "offer_id": 41,
+        "offer_url": "https://www.vtbfamily.ru/offer/41",
+        "title": "Гриль-бар Волки & Ёлки﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1103.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3d34bcefffe01bc615f65610641373bf689d851cd1a6297e58169cb5aa65db71",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000041.jpg",
+        "card_description": "Кафе и бары Гриль-бар Волки & Ёлки﻿"
+    },
+    {
+        "offer_id": 192,
+        "offer_url": "https://www.vtbfamily.ru/offer/192",
+        "title": "Бар Моя пьяная бабушка летит в Сингарпур﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1489.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=43611547692809f9dea6b20c4aa96dd8ed9df89c53185582970067fc0e9b883c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000192.jpg",
+        "card_description": "Кафе и бары Бар Моя пьяная бабушка летит в Сингарпур﻿"
+    },
+    {
+        "offer_id": 195,
+        "offer_url": "https://www.vtbfamily.ru/offer/195",
+        "title": "SHELTER BAR KOT ШРЁДIНГЕРА",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1491.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=91c63d3ba7b3c696e903909d8b0d57514da3e1ef48023ef5877adcd9e7886286",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000195.jpg",
+        "card_description": "Кафе и бары SHELTER BAR KOT ШРЁДIНГЕРА"
+    },
+    {
+        "offer_id": 219,
+        "offer_url": "https://www.vtbfamily.ru/offer/219",
+        "title": "Сеть ресторанов Corner Cafe&Kitchen",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1529.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aad631e42adbba6a535d32ab919330849422ae547642ae3fa9bec268b77f100b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000219.jpg",
+        "card_description": "Кафе и бары Сеть ресторанов Corner Cafe&Kitchen"
+    },
+    {
+        "offer_id": 269,
+        "offer_url": "https://www.vtbfamily.ru/offer/269",
+        "title": "Chō Asia Bistro",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1626.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6fa113a2df3aa10b48e8941360cc6900f478d8e4f62d2b7e7267e1610b2767c6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000269.jpg",
+        "card_description": "Кафе и бары Chō Asia Bistro"
+    },
+    {
+        "offer_id": 421,
+        "offer_url": "https://www.vtbfamily.ru/offer/421",
+        "title": "Тайская кухня Yoda Place﻿ в ТРК Европолис Ростокино",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1896.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e0b93659c30df914e9505bb7f4bcf36b316b79be21e17dd8879c12210f13492c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000421.jpg",
+        "card_description": "Кафе и бары Тайская кухня Yoda Place﻿ в ТРК Европолис Ростокино"
+    },
+    {
+        "offer_id": 449,
+        "offer_url": "https://www.vtbfamily.ru/offer/449",
+        "title": "Borrachitos restaurant&bar﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1951.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=977a0f22470db8c31489750f57cb8e7fdfa4dd7f5b8f74ff08876d579fdc4fcb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000449.jpg",
+        "card_description": "Кафе и бары Borrachitos restaurant&bar﻿"
+    },
+    {
+        "offer_id": 506,
+        "offer_url": "https://www.vtbfamily.ru/offer/506",
+        "title": "TABLE ONE Wine & Coffee﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2037.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=433a918bf3320b39f2c9801933a956daaf34bf411020a2cee58ed1836db50dae",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000506.jpg",
+        "card_description": "Кафе и бары TABLE ONE Wine & Coffee﻿"
+    },
+    {
+        "offer_id": 897,
+        "offer_url": "https://www.vtbfamily.ru/offer/897",
+        "title": "Выездной бар Event Hooligans﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2566.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a98517f425fc6bc67da8d1cc15f40bde6d68828a04c9e6a1855db184bd006883",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000897.jpg",
+        "card_description": "Кафе и бары Выездной бар Event Hooligans﻿"
+    },
+    {
+        "offer_id": 1118,
+        "offer_url": "https://www.vtbfamily.ru/offer/1118",
+        "title": "Ирландский паб O'CONNELL'S PUB",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_288.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162030Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6fb49b7fb8209694e5580dad02705ff31b90fcc0b928838a20e24699b87206af",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001118.jpg",
+        "card_description": "Кафе и бары Ирландский паб O'CONNELL'S PUB"
+    },
+    {
+        "offer_id": 1142,
+        "offer_url": "https://www.vtbfamily.ru/offer/1142",
+        "title": "Бар KOSMOХОМЯК﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2918.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ea055b194b576848dda0ad6bbd1bbd2494225e31790b5735fa3e1c1fee149da6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001142.jpg",
+        "card_description": "Кафе и бары Бар KOSMOХОМЯК﻿"
+    },
+    {
+        "offer_id": 1147,
+        "offer_url": "https://www.vtbfamily.ru/offer/1147",
+        "title": "Таро-кафе Tell Me",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2922.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4b9e92b08a1ad2c7b707083f9e14ace8362b44dce9402d44d1674384f6083ab2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001147.jpg",
+        "card_description": "Кафе и бары Таро-кафе Tell Me"
+    },
+    {
+        "offer_id": 1442,
+        "offer_url": "https://www.vtbfamily.ru/offer/1442",
+        "title": "Р4 Pasta&Bar﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3394.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ebdbd033368c25647544a3764a6aa3be2321aa90138180924fcf4fd186cace2e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001442.jpg",
+        "card_description": "Кафе и бары Р4 Pasta&Bar﻿"
+    },
+    {
+        "offer_id": 1603,
+        "offer_url": "https://www.vtbfamily.ru/offer/1603",
+        "title": "Сервис доставки закусок и событийного кейтеринга Preparty",
+        "category": "Доставка",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3646.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a9d4e8951d4ec5efa9e09811cd91cb0d367e8c47aeab6ada63893f80cb588dc6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001603.jpg",
+        "card_description": "Доставка Сервис доставки закусок и событийного кейтеринга Preparty"
+    },
+    {
+        "offer_id": 1788,
+        "offer_url": "https://www.vtbfamily.ru/offer/1788",
+        "title": "Ресторан Asiatique Kitchen x Bar",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_672.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3de168f947d1934dd3f92469599c81080c515b5ba49921f502ebb965ba355e2e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001788.jpg",
+        "card_description": "Кафе и бары Ресторан Asiatique Kitchen x Bar"
+    },
+    {
+        "offer_id": 1804,
+        "offer_url": "https://www.vtbfamily.ru/offer/1804",
+        "title": "Кнорозов бар",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_707.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=105046f2a0d69b2af74be9f13508d29b2737491bedca63103df8a2957653e28d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001804.jpg",
+        "card_description": "Кафе и бары Кнорозов бар"
+    },
+    {
+        "offer_id": 1848,
+        "offer_url": "https://www.vtbfamily.ru/offer/1848",
+        "title": "Ресторан Green park Sokolniki﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_854.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3bcaea94530ab7a340b599f272b845407749805210bcc4c66b4af1205eab8e2b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001848.jpg",
+        "card_description": "Кафе и бары Ресторан Green park Sokolniki﻿"
+    },
+    {
+        "offer_id": 1886,
+        "offer_url": "https://www.vtbfamily.ru/offer/1886",
+        "title": "Гастропаб ГАРАЖАНЕ",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_936.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b931e866d2278c6333e27d12ad0afd7177281d59c0389ebbae31f4f32adf7a01",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001886.jpg",
+        "card_description": "Кафе и бары Гастропаб ГАРАЖАНЕ"
+    },
+    {
+        "offer_id": 17044,
+        "offer_url": "https://www.vtbfamily.ru/offer/17044",
+        "title": "Brooms на Алексеевской﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3706.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6a3895b45599ef0b59605f44c83f68fe124f82ea1d77f43e98280e13b00c619c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000017044.jpg",
+        "card_description": "Кафе и бары Brooms на Алексеевской﻿"
+    },
+    {
+        "offer_id": 80437,
+        "offer_url": "https://www.vtbfamily.ru/offer/80437",
+        "title": "Сеть кофеен Coffee by Point﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3777.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=47b31b86a67947a23b5d0766e9853e7c1e907369761508cfe4e4873eb4e8cd24",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000080437.jpg",
+        "card_description": "Кафе и бары Сеть кофеен Coffee by Point﻿"
+    },
+    {
+        "offer_id": 104763,
+        "offer_url": "https://www.vtbfamily.ru/offer/104763",
+        "title": "Доставка вкусной квадратной пиццы с большим количеством нач…",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3942.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52b086f26f8f41add30ae788c794803643e93295569ccd33296eb0cb3b323585",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000104763.jpg",
+        "card_description": "Кафе и бары Доставка вкусной квадратной пиццы с большим количеством нач…"
+    },
+    {
+        "offer_id": 112923,
+        "offer_url": "https://www.vtbfamily.ru/offer/112923",
+        "title": "Pivnaya Apteka﻿",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3957.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=68e0aeb061f53a1272dcb50e86ecb2d79a7c682449b74ab52ffa63b3287236e7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000112923.jpg",
+        "card_description": "Кафе и бары Pivnaya Apteka﻿"
+    },
+    {
+        "offer_id": 119103,
+        "offer_url": "https://www.vtbfamily.ru/offer/119103",
+        "title": "Гастробар Baraşka",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4008.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6e31a9533aee1f61ee18378bc771ff1fb3dd77d610895e5e078478383ca3a826",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000119103.jpg",
+        "card_description": "Кафе и бары Гастробар Baraşka"
+    },
+    {
+        "offer_id": 131639,
+        "offer_url": "https://www.vtbfamily.ru/offer/131639",
+        "title": "Ресторан греческой кухни Всё Есть",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4121.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3b16cbabf37800b8e943ae0bf50298ff3c11406cf95a478e37b59a5565781e95",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131639.jpg",
+        "card_description": "Кафе и бары Ресторан греческой кухни Всё Есть"
+    },
+    {
+        "offer_id": 203158,
+        "offer_url": "https://www.vtbfamily.ru/offer/203158",
+        "title": "Трендовый кейтеринг Black Star Пати",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3802.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=07b6c9f36a264d4686c903e0568778700cf3b1933caa55d156c23cdd44b238b9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000203158.jpg",
+        "card_description": "Кафе и бары Трендовый кейтеринг Black Star Пати"
+    },
+    {
+        "offer_id": 214491,
+        "offer_url": "https://www.vtbfamily.ru/offer/214491",
+        "title": "Итальянский ресторан Tin﻿",
+        "category": "Рестораны",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4359.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b95371448649370eea51a79b254b6143396d07354b13e1dc92ab817a648a17e9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000214491.jpg",
+        "card_description": "Рестораны Итальянский ресторан Tin﻿"
+    },
+    {
+        "offer_id": 362521,
+        "offer_url": "https://www.vtbfamily.ru/offer/362521",
+        "title": "Кофейня «Лалибела кофе»﻿ в ТЦ «Авиапарк»",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4560.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=285abe8e95b218d6d72dd874cc45d0ac9449958b10d22dff48ceeaf347d4ec7c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000362521.jpg",
+        "card_description": "Кафе и бары Кофейня «Лалибела кофе»﻿ в ТЦ «Авиапарк»"
+    },
+    {
+        "offer_id": 364706,
+        "offer_url": "https://www.vtbfamily.ru/offer/364706",
+        "title": "Кафе Хачапури",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4570.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=462565546dad6a8d6c271bb97ee536e03e83ba28bbadcfa4ba823a0eaf291c84",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000364706.jpg",
+        "card_description": "Кафе и бары Кафе Хачапури"
+    },
+    {
+        "offer_id": 402029,
+        "offer_url": "https://www.vtbfamily.ru/offer/402029",
+        "title": "Ресторан Малиновка 15%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D0%B0%D0%BB%D0%B8%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0_l9mrXHw.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f42fc914dd9e9c2a9701c986afd4144b0d46205ac798491550f84b04c6dacfbf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402029.jpg",
+        "card_description": "Кафе и бары Ресторан Малиновка 15%"
+    },
+    {
+        "offer_id": 402328,
+        "offer_url": "https://www.vtbfamily.ru/offer/402328",
+        "title": "DRY&WET: коктейльный бар 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-23_12.32.01.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162032Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1d9041255f19e8b7a559dd6922be927af6e440eeea15c573628eefe500a71f7e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402328.jpg",
+        "card_description": "Кафе и бары DRY&WET: коктейльный бар 10%"
+    },
+    {
+        "offer_id": 402668,
+        "offer_url": "https://www.vtbfamily.ru/offer/402668",
+        "title": "Кафе Флокс 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%84%D0%BB%D0%BE%D0%BA%D1%81.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162046Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0113874f68f25cd51f2876899fac3d64c09dff70b55178ea0446c488dc70d48f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402668.jpg",
+        "card_description": "Кафе и бары Кафе Флокс 10%"
+    },
+    {
+        "offer_id": 402780,
+        "offer_url": "https://www.vtbfamily.ru/offer/402780",
+        "title": "Macadamia Cafe до 15%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/macadamia.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162046Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bf457d9993842492f0587e854410e32617bfa78b3a2d25eb42f8dfc9ccc311db",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402780.jpg",
+        "card_description": "Кафе и бары Macadamia Cafe до 15%"
+    },
+    {
+        "offer_id": 403111,
+        "offer_url": "https://www.vtbfamily.ru/offer/403111",
+        "title": "Кафе chef-express 5%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/chef_express_5_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162046Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c668983b78e9bfa891dc18dbb6bb0ad2fbbfdd4d5789c1694ac2fbbcc1aa7221",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403111.jpg",
+        "card_description": "Кафе и бары Кафе chef-express 5%"
+    },
+    {
+        "offer_id": 405556,
+        "offer_url": "https://www.vtbfamily.ru/offer/405556",
+        "title": "Кафе MO 10%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/mo_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162047Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4525d77f7638284dcd0b69d440b2b8e1bcdf2a62f0e96e5d1b5efa81a96851d3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405556.jpg",
+        "card_description": "Кафе и бары Кафе MO 10%"
+    },
+    {
+        "offer_id": 407674,
+        "offer_url": "https://www.vtbfamily.ru/offer/407674",
+        "title": "Кафе-пекарня Жаворонок",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B6%D0%B0%D0%B2%D0%BE%D1%80%D0%BE%D0%BD%D0%BE%D0%BA.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162047Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=29476db9d01ec341d74496c4aa14f1080af26618929069bd4a9ca78e9806d7a0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000407674.jpg",
+        "card_description": "Кафе и бары Кафе-пекарня Жаворонок"
+    },
+    {
+        "offer_id": 414111,
+        "offer_url": "https://www.vtbfamily.ru/offer/414111",
+        "title": "Ресторан Fatto a mano 20%",
+        "category": "Кафе и бары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/fatto_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162047Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ece18f6fe997193dd2a1abfc0f464dc9c3f3f957e12e1969842f39ca01dddccb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000414111.jpg",
+        "card_description": "Кафе и бары Ресторан Fatto a mano 20%"
+    }
+]

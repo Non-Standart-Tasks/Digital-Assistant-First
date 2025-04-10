@@ -156,11 +156,12 @@ def display_chat_history():
                         st.session_state["last_rating_action"] = f"Поставили дизлайк для записи ID={record_id}"
                         st.rerun()
                     # Добавляем кнопку генерации оффера
-                    col3.link_button(
-                        "🎁 Сгенерировать оффер", 
-                        st.session_state["messages"][i].get("offers_link", "https://google.com"), 
-                        use_container_width=True
-                    )
+                    if st.session_state["messages"][i].get("offers_link") != None:
+                        col3.link_button(
+                            "🎁 Сгенерировать оффер", 
+                            st.session_state["messages"][i].get("offers_link"), 
+                            use_container_width=True
+                        )
         
     if "last_rating_action" in st.session_state:
         st.info(st.session_state["last_rating_action"])
@@ -333,13 +334,16 @@ def model_response_generator_sync(model, config, status_placeholder):
                 offers_response = loop.run_until_complete(Runner.run(agent_offers, offers_data))
                 offers_text = offers_response.final_output
                 if offers_data != "No relevant offers were found for the search request.":
-                    try:
-                        response = requests.post("http://localhost:8001/generate_link", json=offer_json)
-                        response.raise_for_status()
-                        link = response.json().get("link")
-                        logger.info(f"Ссылка на Streamlit-приложение: {link}")
-                    except Exception as e:
-                        logger.error(f"Ошибка при отправке данных в микросервис: {e}")
+                    if config.get('presentation') == True:
+                        try:
+                            response = requests.post("http://185.221.163.214:8001/generate_link", json=offer_json)
+                            response.raise_for_status()
+                            link = response.json().get("link")
+                            logger.info(f"Ссылка на Streamlit-приложение: {link}")
+                        except Exception as e:
+                            logger.error(f"Ошибка при отправке данных в микросервис: {e}")
+                    else:
+                        link = 'https://vtbfamily.ru/auth'
                     #logger.info(f'проверка перед отправкой в JSON{offer_json}')
                     offers_data = {
                         "offers_text": offers_text,
@@ -619,6 +623,14 @@ def handle_user_input_sync(model, config, prompt):
                     # Обновляем полный текст ответа
                     full_response_text = full_response_text + '\n\n' + display_text
                     
+                    if offers_text:  # Только если есть текст офферов
+                        logger.info(f"Offers data: {offers_text}")  # Debug log
+                        offers_section = f"\n\n### 🎁 Специальные предложения VTB Family\n{offers_text}"
+                        display_text = stream_text(offers_section, display_text)  # Pass current display_text
+                                
+                        # Обновляем полный текст ответа
+                        response_text = display_text
+                        full_response_text = full_response_text + '\n\n' + display_text
                 except Exception as e:
                     logger.error(f"Error generating offers: {str(e)}", exc_info=True)
                     st.error("Произошла ошибка при генерации офферов.")
@@ -674,11 +686,16 @@ def handle_user_input_sync(model, config, prompt):
                 st.success("Вы поставили 👍")
             if col2.button("👎", key=f"thumbs_down_{len(st.session_state['messages'])}"):
                 st.error("Вы поставили 👎")
-            # Прямое создание кнопки-ссылки
-            try:
-                col3.link_button("🎁 Сгенерировать оффер", f"{offers_link}", key=f"generate_offer_{len(st.session_state['messages'])}")
-            except:
-                col3.markdown(f"[🎁 Сгенерировать оффер]({offers_link})")
+            
+            # Кнопка генерации оффера
+            offers_link = st.session_state["messages"][-1].get("offers_link")
+
+            if offers_link != None:
+                col3.link_button(
+                    "🎁 Сгенерировать оффер",
+                    offers_link,
+                    use_container_width=True
+                )
 
 
             # Сохраняем в базу данных

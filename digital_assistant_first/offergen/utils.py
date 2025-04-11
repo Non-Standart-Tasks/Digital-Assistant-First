@@ -144,10 +144,12 @@ def get_system_prompt_for_offers(
 
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
+        seen_offer_ids = set()  # Множество для отслеживания уже обработанных ID
         for match in result.data.matches:
-            if match.offer_id not in offers_db.keys():
-                logger.warning(f"Offer ID {match.offer_id} not found in offers database")
+            if match.offer_id not in offers_db.keys() or match.offer_id in seen_offer_ids:
+                logger.warning(f"Offer ID {match.offer_id} not found in offers database or already processed")
                 continue
+            seen_offer_ids.add(match.offer_id)  # Добавляем ID в множество обработанных
             offer = offers_db[match.offer_id]
             information_about_relevant_offers += f"Offer ID: {match.offer_id}\n"
             information_about_relevant_offers += f"Offer name: {offer.name}\n"
@@ -246,10 +248,12 @@ async def get_offers_data(
     offers_payload =[]
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
+        seen_offer_ids = set()  # Множество для отслеживания уже обработанных ID
         for match in result.data.matches:
-            if match.offer_id not in offers_db.keys():
-                logger.warning(f"Offer ID {match.offer_id} not found in offers database")
+            if match.offer_id not in offers_db.keys() or match.offer_id in seen_offer_ids:
+                logger.warning(f"Offer ID {match.offer_id} not found in offers database or already processed")
                 continue
+            seen_offer_ids.add(match.offer_id)  # Добавляем ID в множество обработанных
             offer = offers_db[match.offer_id]
             information_about_relevant_offers += f"Offer ID: {match.offer_id}\n"
             information_about_relevant_offers += f"Offer name: {offer.name}\n"

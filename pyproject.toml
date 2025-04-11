@@ -21,6 +21,7 @@ dependencies = [
     "pydantic>=2.10.6,<3.0.0",
     "pydantic-ai[logfire]>=0.0.51",
     "pymupdf>=1.25.2,<2.0.0",
+    "pytest>=8.3.5",
     "python-dotenv>=1.0.1,<2.0.0",
     "selenium==4.29.0",
     "streamlit>=1.41.1,<2.0.0",

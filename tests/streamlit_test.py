@@ -204,12 +204,7 @@ def test_base_for_no_outp_err(initialized_app):
 """
 @skip_if_no_api_key
 def test_aviasales_no_outp_err(initialized_app):
-    """
-    Тестирует отображение данных авиабилетов:
-    1. Отправляет некорректные и корректные запросы на поиск авиабилетов
-    2. Ждет ответа ассистента
-    3. Проверяет наличие вывода в чате без ошибок
-    """
+
     at = initialized_app
     logger.info("Проверка наличия чат-инпута")
     assert len(at.chat_input) > 0, "Чат-инпут не найден"

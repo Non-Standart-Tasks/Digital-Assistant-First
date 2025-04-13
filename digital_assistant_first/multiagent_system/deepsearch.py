@@ -1,24 +1,26 @@
 from agents import Runner
-from langchain_community.tools import DuckDuckGoSearchResults
 import time
 from digital_assistant_first.multiagent_system.models import *
 from dataclasses import dataclass
 from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool, RunContextWrapper
 from pydantic import BaseModel
 from openai import AsyncOpenAI
-from langchain_community.tools import DuckDuckGoSearchResults
 import time
 from dataclasses import dataclass
 import logging
 from pathlib import Path
 import asyncio
-from functools import partial
-from digital_assistant_first.utils.logging import setup_logging, log_api_call
+from digital_assistant_first.utils.logging import setup_logging
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
 from digital_assistant_first.internet_search import yandex_search
 import requests
 import json 
-client = AsyncOpenAI(api_key="sk-13dd9563da2d435ebd38c2693dd78c6f", base_url="https://api.deepseek.com")
+from streamlit_app import load_config_yaml
+config = load_config_yaml()
+serper_api_key = config['serper_api_key']
+deepseek_api_key = config['deepseek_api_key']
+
+client = AsyncOpenAI(api_key=deepseek_api_key, base_url="https://api.deepseek.com")
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
 
@@ -104,280 +106,6 @@ agent_get_address_of_vars = Agent(
     model="gpt-4o-mini",
     output_type=AddressOfVars
     )
-
-agent_restaurants_format = Agent(
-    name="Assistant",
-    instructions="""сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-
-    Название: 
-    Адрес:
-    Режим работы: 
-    Тип кухни: 
-    Средний чек: 
-    Сайт: 
-    Сайт на рейтинг: 
-    Ссылка на отзывы: 
-    
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
-    )
-
-
-agent_bars_format = Agent(
-    name="Assistant",
-    instructions="""сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-
-    Название: 
-    Адрес:
-    Режим работы: 
-    Специализация: 
-    Средний чек: 
-    Сайт: 
-    Сайт на рейтинг: 
-    Ссылка на отзывы: 
-
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
-    )
-
-agent_hookah_format = Agent(
-    name="Assistant",
-    instructions="""сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-
-    Название: 
-    Адрес:
-    Режим работы: 
-    Ассортимент: 
-    Средний чек: 
-    Сайт: 
-    Сайт на рейтинг: 
-    Ссылка на отзывы: 
-        
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
-    )
-
-agent_delivery_format = Agent(
-    name="Assistant",
-    instructions="""сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-    
-    Название: 
-    Тип кухни: 
-    Время доставки: 
-    Минимальная сумма заказа: 
-    Стоимость доставки: 
-    Сайт: 
-    Приложение: 
-    Телефон: 
-    Ссылка на отзывы: 
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
-    )
-
-agent_banquet_format = Agent(
-    name="Assistant",
-    instructions="""сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-    
-    Название: 
-    Адрес:
-    Вместимость: 
-    Тип кухни: 
-    Средний чек за банкет: 
-    Аренда зала: 
-    Сайт: 
-    Контакты: 
-    Ссылка на отзывы: 
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
-    )
-
-
-agent_catering_format = Agent(
-    name="Assistant",
-    instructions="""сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-    
-    Название: 
-    Специализация: 
-    Минимальный заказ: 
-    Стоимость: 
-    Дополнительные услуги: 
-    Сайт: 
-    Контакты: 
-    Ссылка на отзывы: 
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    model="gpt-4o-mini",
-    output_type=LinksOfVars
-    )
-
-
-agent_get_links_of_vars = Agent(
-    name="Assistant",
-    instructions="""Используя fetch_user_instructions, сформулируй запросы по каждому пункту для поиска в интернете правильным образом.
-
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    tools=[fetch_user_instructions],
-    model="gpt-4o",
-    output_type=LinksOfVars,
-    )
-
-agent_summarization = Agent(
-    name="Assistant",
-    instructions="""Используй функцию fetch_user_instructions чтобы получить инуструкцию как должен выглядеть формат данных для каждого заведения. 
-    Посмотри на текст и отформатируй его в единый стиль. 
-    Соблюдай отступы и пробелы между пунктами.
-    
-    Удали все ненужные заведения из списка если это не относится к категории. 
-    """,
-    #model="gpt-4o-mini",
-
-    model=OpenAIChatCompletionsModel(model='deepseek-reasoner', openai_client=client)
-    )
-
-agent_critique = Agent(
-    name="Assistant",
-    instructions="""Сделай форматирование текста, выдели каждый пункт жирным, а информацию по нему не жирным. 
-    Не добавляй никаких пояснений, просто выводи текст.
-    """,
-    #model="gpt-4o-mini",
-    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-
-agent_restaurants_summarization = Agent(
-    name="Assistant",
-    instructions="""Расположи полученную информацию в единую структуру по пунктам, представленным ниже. Ничего от себя не добавляй. Никаких примечаний. 
-
-    Название: 
-    Адрес:
-    Режим работы: 
-    Тип кухни: 
-    Средний чек: 
-    Сайт: 
-    Сайт на рейтинг: 
-    Ссылка на отзывы: 
-    
-    Учти, что в ответе может быть только ОДНО заведение.
-    """,
-    #model="gpt-4o-mini"
-     model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-
-agent_bars_summarization = Agent(
-    name="Assistant",
-    instructions="""Тебе на вход дана информация из разных интернет-запросов по запросу о барах которую нужно привести в единуюу структуру по пунктам, представленным ниже.
-
-    Название: [вставь название бара]
-    Адрес: [вставь полный адрес]
-    Режим работы: [часы работы, если есть данные]
-    Специализация: [вставь тип бара, если указано]
-    Средний чек: [вставь стоимость среднего чека, если есть данные]
-    Сайт: [вставь официальный сайт, если есть]
-    Сайт на рейтинг: [вставь ссылку на страницу с рейтингом]
-    Ссылка на отзывы: [вставь ссылку на отзывы] 
-    """,
-    #model="gpt-4o-mini"
-    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-agent_hookah_summarization = Agent(
-    name="Assistant",
-    instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
-
-    Название: 
-    Адрес:
-    Режим работы: 
-    Ассортимент: 
-    Средний чек: 
-    Сайт: 
-    Сайт на рейтинг: 
-    Ссылка на отзывы: 
-        
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    #model="gpt-4o-mini"
-    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-agent_delivery_summarization = Agent(
-    name="Assistant",
-    instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
-    
-    Название: 
-    Тип кухни: 
-    Время доставки: 
-    Минимальная сумма заказа: 
-    Стоимость доставки: 
-    Сайт: 
-    Приложение: 
-    Телефон: 
-    Ссылка на отзывы: 
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    #model="gpt-4o-mini"
-    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-agent_banquet_summarization = Agent(
-    name="Assistant",
-    instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
-    
-    Название: 
-    Адрес:
-    Вместимость: 
-    Тип кухни: 
-    Средний чек за банкет: 
-    Аренда зала: 
-    Сайт: 
-    Контакты: 
-    Ссылка на отзывы: 
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    #model="gpt-4o-mini"
-    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-
-agent_catering_summarization = Agent(
-    name="Assistant",
-    instructions="""Посмотри на текст и отформатируй его в единый стиль. Проверь, что все пункты представлены следующим образом: Не удаляй информацию и не коверкай ее, просто сделай правильный формат если он не такой.
-    
-    Название: 
-    Специализация: 
-    Минимальный заказ: 
-    Стоимость: 
-    Дополнительные услуги: 
-    Сайт: 
-    Контакты: 
-    Ссылка на отзывы: 
-    
-    Только не как ссылку уже готовую, а как запрос для поиска в интернете. Например 'Санаторий MAYRVEDA Минеральные воды адрес', 'Санаторий MAYRVEDA Минеральные воды режим работы' и т.д." 
-    """,
-    #model="gpt-4o-mini"
-    model=OpenAIChatCompletionsModel(model='deepseek-chat', openai_client=client)
-    )
-
-
-
 
 
 category_rules = {
@@ -608,7 +336,7 @@ async def fetch_internet_data(link, address_of_vars):
     yandex_res = await yandex_search(link + ' ' + address_of_vars, serpapi_key)
     return str(yandex_res)
 
-async def fetch_serpep_data(link, address_of_vars):
+async def fetch_serpep_data(link, address_of_vars, api_key):
     url = "https://google.serper.dev/search"
 
     payload = json.dumps({
@@ -618,7 +346,7 @@ async def fetch_serpep_data(link, address_of_vars):
     "num": 10
     })
     headers = {
-    'X-API-KEY': 'cbba6829ece2aa88c6bc1dc84e3ebf67678f25d7',
+    'X-API-KEY': api_key,
     'Content-Type': 'application/json'
     }
 
@@ -650,10 +378,7 @@ async def process_establishment(name: str, links: list[str], address_of_vars: st
         for link in links:
             try:
                 status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-                #search = DuckDuckGoSearchResults()
-                #text = search.invoke(link + ' ' + address_of_vars)
-                #text = await fetch_internet_data(link, address_of_vars)
-                text = await fetch_serpep_data(link, address_of_vars)
+                text = await fetch_serpep_data(link, address_of_vars, serper_api_key)
                 global_text += '\n' + text
                 time.sleep(3)
             except Exception as e:

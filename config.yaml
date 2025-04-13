@@ -9,6 +9,8 @@ link_checker: False  # Флаг для включения/отключения �
 use_openai_web_search: False  # Использование веб-поиска от OpenAI
 web_search_context_size: "high"  # Размер контекста для веб-поиска (low/medium/high) 
 presentation: True  # Флаг для включения/отключения презентации
+serper_api_key: 'cbba6829ece2aa88c6bc1dc84e3ebf67678f25d7'
+deepseek_api_key: 'sk-13dd9563da2d435ebd38c2693dd78c6f'
 
 # Настройки генератора предложений
 offersgen:

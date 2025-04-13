@@ -31,10 +31,6 @@ jobs:
         run: |
           echo "OPENAI_API_KEY=${{ secrets.OPENAI_KEY }}" > .env
           echo "Файл .env создан"
-
-      - name: Установка Docker
-        run: |
-          uv run pytest tests/docker_test.py -v
           
       - name: Запуск тестов базы данных
         env:
@@ -47,6 +43,10 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_KEY }}
         run: |
           uv run pytest tests/streamlit_test.py -v
+
+      - name: Установка Docker
+        run: |
+          uv run pytest tests/docker_test.py -v
 
       - name: Публикация результатов тестов
         if: always()

@@ -201,6 +201,86 @@ def test_base_for_no_outp_err(initialized_app):
         "Ошибка в ответе ассистента выведена в интерфейс!"
     )
 
+@skip_if_no_api_key
+def test_offers_display(initialized_app):
+    """
+    Тестирует отображение предложений:
+    1. Отправляет запрос о предложениях
+    2. Ждет ответа ассистента
+    3. Проверяет наличие блока с предложениями в ответе
+    """
+
+    at = initialized_app
+    logger.info("Проверка наличия чат-инпута")
+    assert len(at.chat_input) > 0, "Чат-инпут не найден"
+
+    result = at.toggle[1].set_value(True).run(timeout=TIMEOUT)
+
+    TEST_MESSAGE_0 = "Магазины Лента"
+
+    result = at.chat_input[0].set_value(TEST_MESSAGE_0).run(timeout=TIMEOUT)
+
+    messages = result.session_state.messages
+    
+    # Ищем последнее сообщение ассистента
+    assistant_msgs = [
+        m for m in messages 
+        if m.get("role") == "assistant" and m.get("record_id") is not None
+    ]   
+
+    last_assistant_msg = assistant_msgs[-1]
+    logger.info(f"Последнее сообщение ассистента: {last_assistant_msg['content']}")
+
+    assert "🎁 Специальные предложения VTB Family" in last_assistant_msg['content'], ("Блок с предложениями по офферам не найден в ответе", last_assistant_msg['content'])
+
+    logger.info("Тест успешно пройден: предложения по офферам отображаются в ответе")
+
+
+# Убрал вниз, т.к. фейлится
+@skip_if_no_api_key
+def test_2gis_data_display(initialized_app):
+    
+    """
+    Тестирует отображение данных 2GIS API:
+    1. Отправляет запрос о ресторанах в Москве
+    2. Ждет ответа ассистента
+    3. Проверяет наличие блока с данными 2GIS API в ответе
+    """
+    at = initialized_app
+    
+    # 1. Проверяем наличие чат-инпута
+    logger.info("Проверка наличия чат-инпута")
+    assert len(at.chat_input) > 0, "Чат-инпут не найден"
+    
+    # 2. Отправляем запрос о ресторанах
+    TEST_MESSAGE = "Мясные рестораны на Мясницкой"
+    logger.info(f"Отправка запроса о ресторанах: {TEST_MESSAGE}")
+    
+    at.toggle[2].set_value(True) # Обновленный индекс тоггла
+    # Отправляем сообщение в чат
+    result = at.chat_input[0].set_value(TEST_MESSAGE).run(timeout=TIMEOUT)
+
+    config = result.session_state["config"]
+    if config:
+        assert config.get("maps_2gis_enabled") is True, "Конфигурация не обновила maps_2gis_enabled"
+
+    messages = result.session_state.messages
+    
+    # Ищем последнее сообщение ассистента
+    assistant_msgs = [
+                m for m in messages 
+                if m.get("role") == "assistant" and m.get("record_id") is not None
+        ]
+
+    last_assistant_msg = assistant_msgs[-1]
+    logger.info(f"Последнее сообщение ассистента: {last_assistant_msg['content']}")
+
+    assert "📍 Данные о найденных местах 2GIS API" in last_assistant_msg['content'], ("Блок с данными 2GIS API не найден в ответе", last_assistant_msg['content'])
+
+    logger.info("Тест успешно пройден: данные 2GIS API отображаются в ответе")
+
+
+
 """
 @skip_if_no_api_key
 def test_aviasales_no_outp_err(initialized_app):
@@ -249,46 +329,3 @@ def test_aviasales_no_outp_err(initialized_app):
     logger.info("Тест по авиабилетам пройден, юзеру не возвращались ошибки")
     
 """
-
-# Убрал вниз, т.к. фейлится
-@skip_if_no_api_key
-def test_2gis_data_display(initialized_app):
-    
-    """
-    Тестирует отображение данных 2GIS API:
-    1. Отправляет запрос о ресторанах в Москве
-    2. Ждет ответа ассистента
-    3. Проверяет наличие блока с данными 2GIS API в ответе
-    """
-    at = initialized_app
-    
-    # 1. Проверяем наличие чат-инпута
-    logger.info("Проверка наличия чат-инпута")
-    assert len(at.chat_input) > 0, "Чат-инпут не найден"
-    
-    # 2. Отправляем запрос о ресторанах
-    TEST_MESSAGE = "Мясные рестораны на Мясницкой"
-    logger.info(f"Отправка запроса о ресторанах: {TEST_MESSAGE}")
-    
-    at.toggle[2].set_value(True) # Обновленный индекс тоггла
-    # Отправляем сообщение в чат
-    result = at.chat_input[0].set_value(TEST_MESSAGE).run(timeout=TIMEOUT)
-
-    config = result.session_state["config"]
-    if config:
-        assert config.get("maps_2gis_enabled") is True, "Конфигурация не обновила maps_2gis_enabled"
-
-    messages = result.session_state.messages
-    
-    # Ищем последнее сообщение ассистента
-    assistant_msgs = [
-                m for m in messages 
-                if m.get("role") == "assistant" and m.get("record_id") is not None
-        ]
-
-    last_assistant_msg = assistant_msgs[-1]
-    logger.info(f"Последнее сообщение ассистента: {last_assistant_msg['content']}")
-
-    assert "📍 Данные о найденных местах 2GIS API" in last_assistant_msg['content'], ("Блок с данными 2GIS API не найден в ответе", last_assistant_msg['content'])
-
-    logger.info("Тест успешно пройден: данные 2GIS API отображаются в ответе")

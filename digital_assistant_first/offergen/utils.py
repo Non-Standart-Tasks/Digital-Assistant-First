@@ -87,10 +87,15 @@ def load_rag_examples(
         scores=[score for _, score in docs_and_scores],
     )
     offers, scores, offer_ids = list(), list(), list()
+    seen_names = set()  # Множество для отслеживания уже обработанных названий
     for i, doc in enumerate(rag_data.documents):
         offer_id = int(doc.metadata["offer_url"].split("/")[-1])
         if offer_id in offers_db.keys() and offer_id not in offer_ids:
             offer = offers_db[offer_id]
+            # Проверяем уникальность по названию
+            if offer.name in seen_names:
+                continue
+            seen_names.add(offer.name)
             if city_fil:
                 if city:
                     if not check_offer_in_city(offer, city):
@@ -145,12 +150,18 @@ def get_system_prompt_for_offers(
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
         seen_offer_ids = set()  # Множество для отслеживания уже обработанных ID
+        seen_offer_names = set()  # Множество для отслеживания уже обработанных названий
         for match in result.data.matches:
-            if match.offer_id not in offers_db.keys() or match.offer_id in seen_offer_ids:
-                logger.warning(f"Offer ID {match.offer_id} not found in offers database or already processed")
+            if match.offer_id not in offers_db.keys():
+                logger.warning(f"Offer ID {match.offer_id} not found in offers database")
+                continue
+            offer = offers_db[match.offer_id]
+            # Проверяем и ID, и название оффера
+            if match.offer_id in seen_offer_ids or offer.name in seen_offer_names:
+                logger.warning(f"Offer ID {match.offer_id} or name '{offer.name}' already processed")
                 continue
             seen_offer_ids.add(match.offer_id)  # Добавляем ID в множество обработанных
-            offer = offers_db[match.offer_id]
+            seen_offer_names.add(offer.name)  # Добавляем название в множество обработанных
             information_about_relevant_offers += f"Offer ID: {match.offer_id}\n"
             information_about_relevant_offers += f"Offer name: {offer.name}\n"
             information_about_relevant_offers += f"Offer category: {offer.category}\n"
@@ -242,19 +253,27 @@ async def get_offers_data(
     enhanced_prompt = f"{rag_context}\nUser request: {prompt}"
 
     deps = RagDeps(k=validation_result.number_of_offers_to_generate, offers=offers_db)
-    # Use the async run method instead of run_sync
     result = await offer_matching_agent.run(enhanced_prompt, deps=deps)
     logger.info(f"Offer matching agent result: {result.data}")
-    offers_payload =[]
+    offers_payload = []
+    seen_offers = set()  # Единое множество для отслеживания уже обработанных офферов
+    
     if result and result.data.matches and len(set(match.offer_id for match in result.data.matches).intersection(offers_db.keys())) > 0:
         information_about_relevant_offers = ""
-        seen_offer_ids = set()  # Множество для отслеживания уже обработанных ID
+        
         for match in result.data.matches:
-            if match.offer_id not in offers_db.keys() or match.offer_id in seen_offer_ids:
-                logger.warning(f"Offer ID {match.offer_id} not found in offers database or already processed")
+            if match.offer_id not in offers_db.keys():
                 continue
-            seen_offer_ids.add(match.offer_id)  # Добавляем ID в множество обработанных
+                
             offer = offers_db[match.offer_id]
+            offer_key = f"{offer.name}_{match.offer_id}"  # Уникальный ключ для оффера
+            
+            if offer_key in seen_offers:  # Проверяем, не обрабатывали ли мы уже этот оффер
+                continue
+                
+            seen_offers.add(offer_key)  # Добавляем в множество обработанных
+            
+            # Добавляем информацию об оффере
             information_about_relevant_offers += f"Offer ID: {match.offer_id}\n"
             information_about_relevant_offers += f"Offer name: {offer.name}\n"
             information_about_relevant_offers += f"Offer category: {offer.category}\n"
@@ -263,6 +282,7 @@ async def get_offers_data(
             information_about_relevant_offers += f"Offer URL: {offer.offer_url}\n"
             information_about_relevant_offers += f"Offer match reason: {match.match_reason}\n"
             information_about_relevant_offers += "---\n"
+            
             offer_json = {
                 "category": offer.category,
                 "description": f"{offer.name}\n\n{offer.full_description}",
@@ -270,7 +290,7 @@ async def get_offers_data(
                 "image": offer.image_path
             }
             offers_payload.append(offer_json)
-        logger.info("System prompt for offers generated.")
+            
         return information_about_relevant_offers, offers_payload
     
     else:

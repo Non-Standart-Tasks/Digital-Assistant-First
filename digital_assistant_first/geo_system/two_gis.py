@@ -3,7 +3,76 @@ import requests
 import aiohttp
 import json
 import os
+from langchain_openai import ChatOpenAI
+import math
+import asyncio
+from datetime import datetime
+catalog_base_url = "https://catalog.api.2gis.com/3.0/items"
+routing_base_url = "https://routing.api.2gis.com/routing/7.0.0/global"
+headers={"Content-Type": "application/json"}
 
+# Мониторинг использования API
+api_usage_lock = asyncio.Lock()
+
+async def update_api_usage_json(api_key, file_path):
+    """
+    Updates the JSON file tracking API usage for a given API key.
+    
+    Args:
+        api_key (str): The API key to update usage for
+    """
+    rel_file_path = "/root/PRODUCTION/monitoring/2gis_data/" + file_path
+    async with api_usage_lock:
+        try:
+            curr_json = {}
+
+            try:
+                with open(rel_file_path, "r", encoding="utf-8") as f:
+                    curr_json = json.load(f)
+            except (FileNotFoundError, json.JSONDecodeError):
+                curr_json = {}
+
+            if api_key in curr_json:
+                curr_json[api_key]["usage_count"] += 1
+                curr_json[api_key]["ts_list"].append(datetime.now().isoformat())
+            else:
+                curr_json[api_key] = {"usage_count": 1, "ts_added": datetime.now().isoformat(), "ts_list": [datetime.now().isoformat()]}
+
+            with open(rel_file_path, "w", encoding="utf-8") as f:
+                json.dump(curr_json, f, ensure_ascii=False, indent=2)
+
+            logger.info(curr_json)
+        except Exception as e:
+            logger.error(f"Ошибка при синхронизации данных из файла {rel_file_path}: {e}")
+
+async def call_api_and_monitor_catalog(session, api_key, params):
+    async with session.get(catalog_base_url, params=params) as response:
+        if response.status == 200:
+            try:
+                data = await response.json()
+                await update_api_usage_json(api_key, "2gis_catalog_api_usage.json")
+                return response.status, data
+            except Exception as e:
+                logger.error(f"Ошибка при получении данных из 2GIS API (catalog method): {e}")
+                return response.status, None
+        else:
+            return response.status, None
+
+async def call_api_and_monitor_routing(session, api_key, request_body):
+    base_url = routing_base_url + "?key=" + api_key
+    async with session.post(base_url, json=request_body, headers=headers) as response:
+        if response.status == 200:
+            try:
+                data = await response.json()
+                await update_api_usage_json(api_key, "2gis_routing_api_usage.json")
+                return response.status, data
+            except Exception as e:
+                logger.error(f"Ошибка при получении данных из 2GIS API (routing method): {e}")
+                return response.status, None
+        else:
+            return response.status, None
+        
+# Конец мониторинга использования API
 
 async def fetch_2gis_data(query, config):
     """
@@ -28,7 +97,6 @@ async def fetch_2gis_data(query, config):
     ]
     
     # Используем модель для определения города
-    from langchain_openai import ChatOpenAI
     city_model = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
     city_response = city_model.invoke(messages)
     city = city_response.content.strip()
@@ -38,7 +106,6 @@ async def fetch_2gis_data(query, config):
     
     try:
         # Формируем запрос к 2GIS API с явным указанием города
-        base_url = "https://catalog.api.2gis.com/3.0/items"
         params = {
             "q": query,  # Только поисковый запрос без добавления города
             "key": api_key,
@@ -50,127 +117,126 @@ async def fetch_2gis_data(query, config):
         logger.info(f"Параметры запроса к 2GIS: {params}")
         
         async with aiohttp.ClientSession() as session:
-            async with session.get(base_url, params=params) as response:
-                if response.status == 200:
-                    data = await response.json()
-                    results = data.get("result", {}).get("items", [])
-                    
-                    if not results:
-                        logger.warning(f"2GIS не вернул результатов для запроса: {query} в городе {city}")
-                        return [], []
-                    
-                    # Логируем количество полученных результатов
-                    logger.info(f"Получено {len(results)} результатов из 2GIS")
-                    
-                    # Добавляем детальное логирование структуры первого результата для отладки
-                    if results:
-                        logger.info(f"Структура первого результата: {json.dumps(results[0], ensure_ascii=False, indent=2)}")
-                    
-                    table_data = []
-                    pydeck_data = []
-                    
-                    for item in results:
-                        # Имя и адрес
-                        name = item.get("name", "Без названия")
-                        
-                        # Улучшенное извлечение адреса - проверяем несколько полей
-                        address = item.get("full_address", None)
-                        if not address:
-                            address = item.get("address_name", None)
-                        if not address:
-                            address = item.get("address", None)
-                        if not address and "address_comment" in item:
-                            address = item.get("address_comment")
-                        if not address:
-                            # Проверяем вложенные поля address
-                            address_data = item.get("address", {})
-                            if isinstance(address_data, dict):
-                                address = address_data.get("text", "Адрес не указан")
-                            
-                        if not address:
-                            address = "Адрес не указан"
-                        
-                        # Логируем данные адреса для каждого места
-                        logger.info(f"Место: {name}, извлеченный адрес: {address}")
-                        
-                        # Геолокация
-                        point = item.get("point", {})
-                        lat = point.get("lat")
-                        lon = point.get("lon")
-                        
-                        # Если нет координат, пропускаем
-                        if not lat or not lon:
-                            continue
-                        
-                        # Рейтинг и отзывы
-                        reviews_data = item.get("reviews", {})
-                        rating = reviews_data.get("general", {}).get("rating", 0)
-                        reviews_count = reviews_data.get("general", {}).get("count", 0)
-                        
-                        # Извлечение типа кухни, если это ресторан
-                        cuisine = "Не указано"
-                        cuisine_data = item.get("cuisine", [])
-                        if cuisine_data and len(cuisine_data) > 0:
-                            cuisine_list = [c.get("name", "") for c in cuisine_data if c.get("name")]
-                            cuisine = ", ".join(cuisine_list) if cuisine_list else "Не указано"
-                        
-                        # Извлечение графика работы
-                        schedule_text = "Не указано"
-                        schedule_data = item.get("schedule", {})
-                        if schedule_data:
-                            try:
-                                if "work_time" in schedule_data:
-                                    work_time = schedule_data.get("work_time", {})
-                                    today_text = work_time.get("today", {}).get("text", "")
-                                    schedule_text = today_text if today_text else "Не указано"
-                                    
-                                    # Если нет информации о сегодняшнем дне, проверяем общее расписание
-                                    if not schedule_text or schedule_text == "Не указано":
-                                        general_text = schedule_data.get("general", {}).get("text", "")
-                                        schedule_text = general_text if general_text else "Не указано"
-                            except Exception as e:
-                                logger.error(f"Ошибка извлечения расписания: {str(e)}")
-                                schedule_text = "Не указано"
-                        
-                        # Контактная информация
-                        phone = ""
-                        contact_groups = item.get("contact_groups", [])
-                        for group in contact_groups:
-                            if group.get("name") == "phone":
-                                contacts = group.get("contacts", [])
-                                if contacts:
-                                    phone = contacts[0].get("value", "")
-                        
-                        # Добавляем данные для таблицы
-                        table_entry = {
-                            "name": name,
-                            "address": address,
-                            "rating": rating,
-                            "reviews": reviews_count,
-                            "phone": phone,
-                            "lat": lat,
-                            "lon": lon,
-                            "cuisine": cuisine,
-                            "schedule": schedule_text
-                        }
-                        table_data.append(table_entry)
-                        
-                        # Добавляем данные для карты
-                        pydeck_entry = {
-                            "name": name,
-                            "lat": lat,
-                            "lon": lon
-                        }
-                        pydeck_data.append(pydeck_entry)
-                    
-                    # Логируем данные о первом месте для отладки
-                    if pydeck_data:
-                        logger.info(f"Первая точка: {pydeck_data[0]['name']} - lat: {pydeck_data[0]['lat']}, lon: {pydeck_data[0]['lon']}")
-                    
-                    return table_data, pydeck_data
-                else:
-                    logger.error(f"Ошибка API 2GIS: {response.status}")
+            status_code, data = await call_api_and_monitor_catalog(session, api_key, params)
+            if status_code == 200:  
+                results = data.get("result", {}).get("items", [])
+                
+                if not results:
+                    logger.warning(f"2GIS не вернул результатов для запроса: {query} в городе {city}")
                     return [], []
+                
+                # Логируем количество полученных результатов
+                logger.info(f"Получено {len(results)} результатов из 2GIS")
+                
+                # Добавляем детальное логирование структуры первого результата для отладки
+                if results:
+                    logger.info(f"Структура первого результата: {json.dumps(results[0], ensure_ascii=False, indent=2)}")
+                
+                table_data = []
+                pydeck_data = []
+                
+                for item in results:
+                    # Имя и адрес
+                    name = item.get("name", "Без названия")
+                    
+                    # Улучшенное извлечение адреса - проверяем несколько полей
+                    address = item.get("full_address", None)
+                    if not address:
+                        address = item.get("address_name", None)
+                    if not address:
+                        address = item.get("address", None)
+                    if not address and "address_comment" in item:
+                        address = item.get("address_comment")
+                    if not address:
+                        # Проверяем вложенные поля address
+                        address_data = item.get("address", {})
+                        if isinstance(address_data, dict):
+                            address = address_data.get("text", "Адрес не указан")
+                        
+                    if not address:
+                        address = "Адрес не указан"
+                    
+                    # Логируем данные адреса для каждого места
+                    logger.info(f"Место: {name}, извлеченный адрес: {address}")
+                    
+                    # Геолокация
+                    point = item.get("point", {})
+                    lat = point.get("lat")
+                    lon = point.get("lon")
+                    
+                    # Если нет координат, пропускаем
+                    if not lat or not lon:
+                        continue
+                    
+                    # Рейтинг и отзывы
+                    reviews_data = item.get("reviews", {})
+                    rating = reviews_data.get("general", {}).get("rating", 0)
+                    reviews_count = reviews_data.get("general", {}).get("count", 0)
+                    
+                    # Извлечение типа кухни, если это ресторан
+                    cuisine = "Не указано"
+                    cuisine_data = item.get("cuisine", [])
+                    if cuisine_data and len(cuisine_data) > 0:
+                        cuisine_list = [c.get("name", "") for c in cuisine_data if c.get("name")]
+                        cuisine = ", ".join(cuisine_list) if cuisine_list else "Не указано"
+                    
+                    # Извлечение графика работы
+                    schedule_text = "Не указано"
+                    schedule_data = item.get("schedule", {})
+                    if schedule_data:
+                        try:
+                            if "work_time" in schedule_data:
+                                work_time = schedule_data.get("work_time", {})
+                                today_text = work_time.get("today", {}).get("text", "")
+                                schedule_text = today_text if today_text else "Не указано"
+                                
+                                # Если нет информации о сегодняшнем дне, проверяем общее расписание
+                                if not schedule_text or schedule_text == "Не указано":
+                                    general_text = schedule_data.get("general", {}).get("text", "")
+                                    schedule_text = general_text if general_text else "Не указано"
+                        except Exception as e:
+                            logger.error(f"Ошибка извлечения расписания: {str(e)}")
+                            schedule_text = "Не указано"
+                    
+                    # Контактная информация
+                    phone = ""
+                    contact_groups = item.get("contact_groups", [])
+                    for group in contact_groups:
+                        if group.get("name") == "phone":
+                            contacts = group.get("contacts", [])
+                            if contacts:
+                                phone = contacts[0].get("value", "")
+                    
+                    # Добавляем данные для таблицы
+                    table_entry = {
+                        "name": name,
+                        "address": address,
+                        "rating": rating,
+                        "reviews": reviews_count,
+                        "phone": phone,
+                        "lat": lat,
+                        "lon": lon,
+                        "cuisine": cuisine,
+                        "schedule": schedule_text
+                    }
+                    table_data.append(table_entry)
+                    
+                    # Добавляем данные для карты
+                    pydeck_entry = {
+                        "name": name,
+                        "lat": lat,
+                        "lon": lon
+                    }
+                    pydeck_data.append(pydeck_entry)
+                
+                # Логируем данные о первом месте для отладки
+                if pydeck_data:
+                    logger.info(f"Первая точка: {pydeck_data[0]['name']} - lat: {pydeck_data[0]['lat']}, lon: {pydeck_data[0]['lon']}")
+                
+                return table_data, pydeck_data
+            else:
+                logger.error(f"Ошибка API 2GIS: {status_code}")
+                return [], []
     except Exception as e:
         logger.error(f"Ошибка при обработке данных 2GIS: {str(e)}")
         return [], []
@@ -195,7 +261,6 @@ async def build_route_2gis(start_point, end_point, config):
     
     try:
         # Проверяем расстояние между точками
-        import math
         def calculate_distance(lat1, lon1, lat2, lon2):
             R = 6371  # радиус Земли в км
             dLat = math.radians(lat2 - lat1)
@@ -253,7 +318,6 @@ async def build_route_2gis(start_point, end_point, config):
             return route_info, path_points, route_details
         
         # Формируем запрос к Routing API 2GIS
-        base_url = "https://routing.api.2gis.com/routing/7.0.0/global"
         
         # Собираем тело запроса
         request_body = {
@@ -280,163 +344,108 @@ async def build_route_2gis(start_point, end_point, config):
         
         async with aiohttp.ClientSession() as session:
             # Отправляем POST-запрос с телом
-            async with session.post(
-                f"{base_url}?key={api_key}", 
-                json=request_body,
-                headers={"Content-Type": "application/json"}
-            ) as response:
-                if response.status == 200:
-                    data = await response.json()
+            status_code, data = await call_api_and_monitor_routing(session, api_key, request_body)
+            if status_code == 200:
+                # Добавляем подробное логирование ответа API
+                logger.info(f"Полный ответ API 2GIS Routing: {json.dumps(data, ensure_ascii=False, indent=2)}")
+
+                # Проверяем структуру ответа 
+                if not isinstance(data, dict):
+                    logger.error(f"Неожиданный формат данных ответа: {type(data)}")
+                    return None, [], {}
+                
+                # Сохраняем ответ API в JSON файл для анализа
+                json_file_path = os.path.join(os.path.dirname(__file__), "2gis_route_response.json")
+                try:
+                    with open(json_file_path, 'w', encoding='utf-8') as f:
+                        json.dump(data, f, ensure_ascii=False, indent=2)
+                    logger.info(f"Ответ API 2GIS сохранен в файл: {json_file_path}")
+                except Exception as e:
+                    logger.error(f"Ошибка при сохранении ответа API в файл: {str(e)}")
+                
+                
+                # Анализируем структуру результата
+                result = data.get("result", None)
+                routes = []
+                
+                if isinstance(result, list):
+                    # Если result - список, то это уже список маршрутов
+                    routes = result
+                    logger.info(f"API вернул список маршрутов напрямую, найдено {len(routes)} маршрутов")
                     
-                    # Добавляем подробное логирование ответа API
-                    logger.info(f"Полный ответ API 2GIS Routing: {json.dumps(data, ensure_ascii=False, indent=2)}")
+                    # Логируем структуру первого маршрута
+                    if routes and len(routes) > 0:
+                        logger.info(f"Ключи первого маршрута: {list(routes[0].keys())}")
+                elif isinstance(result, dict) and "routes" in result:
+                    # Если result - словарь с ключом routes, то routes внутри
+                    routes = result.get("routes", [])
+                    logger.info(f"API вернул словарь с маршрутами, найдено {len(routes)} маршрутов")
+                else:
+                    logger.error(f"Неожиданная структура ответа API: {data}")
+                    return None, [], {}
                     
-                    # Сохраняем ответ API в JSON файл для анализа
-                    json_file_path = os.path.join(os.path.dirname(__file__), "2gis_route_response.json")
-                    try:
-                        with open(json_file_path, 'w', encoding='utf-8') as f:
-                            json.dump(data, f, ensure_ascii=False, indent=2)
-                        logger.info(f"Ответ API 2GIS сохранен в файл: {json_file_path}")
-                    except Exception as e:
-                        logger.error(f"Ошибка при сохранении ответа API в файл: {str(e)}")
+                if not routes:
+                    logger.warning("2GIS Routing API не вернул маршрутов")
+                    return None, [], {}
+                
+                # Берем первый предложенный маршрут
+                route = routes[0]
+                
+                # Проверяем, является ли route словарем
+                if not isinstance(route, dict):
+                    logger.error(f"Неожиданный формат данных маршрута: {type(route)}")
+                    return None, [], {}
+                
+                # Извлекаем путевые точки и дополнительную информацию о сегментах
+                path_points = []
+                segments = []
+                street_names = []
+                
+                # Извлекаем названия улиц
+                if 'names' in route:
+                    street_names = route.get('names', [])
+                    logger.info(f"Извлечено {len(street_names)} названий улиц: {street_names}")
+                
+                # Создаем структуру для хранения инструкций по навигации
+                steps = []
+                
+                # Проверяем наличие маневров для инструкций
+                if 'maneuvers' in route:
+                    maneuvers = route.get('maneuvers', [])
+                    logger.info(f"Найдено {len(maneuvers)} маневров в маршруте")
                     
-                    # Проверяем структуру ответа 
-                    if not isinstance(data, dict):
-                        logger.error(f"Неожиданный формат данных ответа: {type(data)}")
-                        return None, [], {}
-                    
-                    # Анализируем структуру результата
-                    result = data.get("result", None)
-                    routes = []
-                    
-                    if isinstance(result, list):
-                        # Если result - список, то это уже список маршрутов
-                        routes = result
-                        logger.info(f"API вернул список маршрутов напрямую, найдено {len(routes)} маршрутов")
-                        
-                        # Логируем структуру первого маршрута
-                        if routes and len(routes) > 0:
-                            logger.info(f"Ключи первого маршрута: {list(routes[0].keys())}")
-                    elif isinstance(result, dict) and "routes" in result:
-                        # Если result - словарь с ключом routes, то routes внутри
-                        routes = result.get("routes", [])
-                        logger.info(f"API вернул словарь с маршрутами, найдено {len(routes)} маршрутов")
-                    else:
-                        logger.error(f"Неожиданная структура ответа API: {data}")
-                        return None, [], {}
-                        
-                    if not routes:
-                        logger.warning("2GIS Routing API не вернул маршрутов")
-                        return None, [], {}
-                    
-                    # Берем первый предложенный маршрут
-                    route = routes[0]
-                    
-                    # Проверяем, является ли route словарем
-                    if not isinstance(route, dict):
-                        logger.error(f"Неожиданный формат данных маршрута: {type(route)}")
-                        return None, [], {}
-                    
-                    # Извлекаем путевые точки и дополнительную информацию о сегментах
-                    path_points = []
-                    segments = []
-                    street_names = []
-                    
-                    # Извлекаем названия улиц
-                    if 'names' in route:
-                        street_names = route.get('names', [])
-                        logger.info(f"Извлечено {len(street_names)} названий улиц: {street_names}")
-                    
-                    # Создаем структуру для хранения инструкций по навигации
-                    steps = []
-                    
-                    # Проверяем наличие маневров для инструкций
-                    if 'maneuvers' in route:
-                        maneuvers = route.get('maneuvers', [])
-                        logger.info(f"Найдено {len(maneuvers)} маневров в маршруте")
-                        
-                        for i, maneuver in enumerate(maneuvers):
-                            if isinstance(maneuver, dict):
-                                instruction = maneuver.get('text', '')
-                                distance = maneuver.get('distance', {}).get('value', 0) if isinstance(maneuver.get('distance'), dict) else maneuver.get('distance', 0)
-                                duration = maneuver.get('duration', {}).get('value', 0) if isinstance(maneuver.get('duration'), dict) else maneuver.get('duration', 0)
-                                
-                                # Определяем название улицы для данного маневра
-                                street_name = ""
-                                if 'street_name' in maneuver:
-                                    street_name = maneuver.get('street_name', '')
-                                elif i < len(street_names):
-                                    street_name = street_names[i]
-                                
-                                step = {
-                                    "instruction": instruction,
-                                    "distance": distance,
-                                    "duration": duration,
-                                    "street_name": street_name
-                                }
-                                steps.append(step)
-                                
-                                # Извлекаем точки пути для этого маневра
-                                if 'outcoming_path' in maneuver:
-                                    outcoming_path = maneuver.get('outcoming_path', {})
-                                    if isinstance(outcoming_path, dict) and 'geometry' in outcoming_path:
-                                        geometry_items = outcoming_path.get('geometry', [])
-                                        
-                                        for geo_item in geometry_items:
-                                            if isinstance(geo_item, dict):
-                                                # Извлекаем атрибуты сегмента
-                                                color = geo_item.get('color', 'normal')  # fast, normal, slow
-                                                style = geo_item.get('style', 'normal')  # normal, tunnel, bridge
-                                                length = geo_item.get('length', 0)
-                                                
-                                                segment = {
-                                                    "color": color,
-                                                    "style": style,
-                                                    "length": length
-                                                }
-                                                segments.append(segment)
-                                                
-                                                # Парсим точки из LINESTRING
-                                                if 'selection' in geo_item:
-                                                    selection = geo_item.get('selection', '')
-                                                    if selection.startswith('LINESTRING('):
-                                                        coord_str = selection[11:-1]  # Удаляем LINESTRING( и )
-                                                        coords = coord_str.split(', ')
-                                                        for coord in coords:
-                                                            lon, lat = map(float, coord.split())
-                                                            path_points.append({
-                                                                "lon": lon,
-                                                                "lat": lat,
-                                                                "color": color,
-                                                                "style": style
-                                                            })
-                    
-                    # Если нет маневров, проверяем наличие геометрии маршрута напрямую
-                    elif 'geometry' in route:
-                        geometry = route.get('geometry', {})
-                        if isinstance(geometry, dict) and 'coordinates' in geometry:
-                            for path in geometry['coordinates']:
-                                path_points.append({
-                                    "lon": path[0],
-                                    "lat": path[1],
-                                    "color": "normal",
-                                    "style": "normal"
-                                })
-                    
-                    # Если не нашли ни маневров с геометрией, ни прямой геометрии,
-                    # проверяем старый формат с maneuvers, но без маневров как шагов
-                    elif 'maneuvers' in route:
-                        maneuvers = route.get('maneuvers', [])
-                        for maneuver in maneuvers:
-                            if isinstance(maneuver, dict) and 'outcoming_path' in maneuver:
+                    for i, maneuver in enumerate(maneuvers):
+                        if isinstance(maneuver, dict):
+                            instruction = maneuver.get('text', '')
+                            distance = maneuver.get('distance', {}).get('value', 0) if isinstance(maneuver.get('distance'), dict) else maneuver.get('distance', 0)
+                            duration = maneuver.get('duration', {}).get('value', 0) if isinstance(maneuver.get('duration'), dict) else maneuver.get('duration', 0)
+                            
+                            # Определяем название улицы для данного маневра
+                            street_name = ""
+                            if 'street_name' in maneuver:
+                                street_name = maneuver.get('street_name', '')
+                            elif i < len(street_names):
+                                street_name = street_names[i]
+                            
+                            step = {
+                                "instruction": instruction,
+                                "distance": distance,
+                                "duration": duration,
+                                "street_name": street_name
+                            }
+                            steps.append(step)
+                            
+                            # Извлекаем точки пути для этого маневра
+                            if 'outcoming_path' in maneuver:
                                 outcoming_path = maneuver.get('outcoming_path', {})
                                 if isinstance(outcoming_path, dict) and 'geometry' in outcoming_path:
                                     geometry_items = outcoming_path.get('geometry', [])
+                                    
                                     for geo_item in geometry_items:
                                         if isinstance(geo_item, dict):
                                             # Извлекаем атрибуты сегмента
-                                            color = geo_item.get('color', 'normal')
-                                            style = geo_item.get('style', 'normal')
+                                            color = geo_item.get('color', 'normal')  # fast, normal, slow
+                                            style = geo_item.get('style', 'normal')  # normal, tunnel, bridge
                                             length = geo_item.get('length', 0)
                                             
                                             segment = {
@@ -446,11 +455,10 @@ async def build_route_2gis(start_point, end_point, config):
                                             }
                                             segments.append(segment)
                                             
-                                            # Парсим строку LINESTRING из selection
+                                            # Парсим точки из LINESTRING
                                             if 'selection' in geo_item:
                                                 selection = geo_item.get('selection', '')
                                                 if selection.startswith('LINESTRING('):
-                                                    # Извлекаем координаты из строки LINESTRING(...)
                                                     coord_str = selection[11:-1]  # Удаляем LINESTRING( и )
                                                     coords = coord_str.split(', ')
                                                     for coord in coords:
@@ -461,88 +469,138 @@ async def build_route_2gis(start_point, end_point, config):
                                                             "color": color,
                                                             "style": style
                                                         })
-                    
-                    # Логируем количество извлеченных точек маршрута
-                    logger.info(f"Извлечено {len(path_points)} точек для маршрута")
-                    logger.info(f"Извлечено {len(segments)} сегментов маршрута")
-                    
-                    if not path_points:
-                        logger.warning("Не удалось извлечь точки маршрута из ответа API")
-                        # Создаем искусственную прямую линию между точками
-                        path_points = [
-                            {"lon": start_point["lon"], "lat": start_point["lat"], "color": "normal", "style": "normal"},
-                            {"lon": end_point["lon"], "lat": end_point["lat"], "color": "normal", "style": "normal"}
-                        ]
-                    
-                    # Извлекаем информацию о маршруте
-                    # Проверяем различные возможные поля для получения дистанции и времени
-                    distance = 0
-                    duration = 0
-                    
-                    if 'total_distance' in route:
-                        total_distance = route.get('total_distance', {})
-                        if isinstance(total_distance, dict) and 'value' in total_distance:
-                            distance = total_distance.get('value', 0)
-                        else:
-                            distance = total_distance
-                    elif 'distance' in route:
-                        distance = route.get('distance', 0)
-                            
-                    if 'total_duration' in route:
-                        total_duration = route.get('total_duration', {})
-                        if isinstance(total_duration, dict) and 'value' in total_duration:
-                            duration = total_duration.get('value', 0)
-                        else:
-                            duration = total_duration
-                    elif 'duration' in route:
-                        duration = route.get('duration', 0)
-                    
-                    # Если не смогли извлечь инструкции из маневров, создаем упрощенные
-                    if not steps and segments:
-                        current_distance = 0
-                        current_segment_index = 0
+                
+                # Если нет маневров, проверяем наличие геометрии маршрута напрямую
+                elif 'geometry' in route:
+                    geometry = route.get('geometry', {})
+                    if isinstance(geometry, dict) and 'coordinates' in geometry:
+                        for path in geometry['coordinates']:
+                            path_points.append({
+                                "lon": path[0],
+                                "lat": path[1],
+                                "color": "normal",
+                                "style": "normal"
+                            })
+                
+                # Если не нашли ни маневров с геометрией, ни прямой геометрии,
+                # проверяем старый формат с maneuvers, но без маневров как шагов
+                elif 'maneuvers' in route:
+                    maneuvers = route.get('maneuvers', [])
+                    for maneuver in maneuvers:
+                        if isinstance(maneuver, dict) and 'outcoming_path' in maneuver:
+                            outcoming_path = maneuver.get('outcoming_path', {})
+                            if isinstance(outcoming_path, dict) and 'geometry' in outcoming_path:
+                                geometry_items = outcoming_path.get('geometry', [])
+                                for geo_item in geometry_items:
+                                    if isinstance(geo_item, dict):
+                                        # Извлекаем атрибуты сегмента
+                                        color = geo_item.get('color', 'normal')
+                                        style = geo_item.get('style', 'normal')
+                                        length = geo_item.get('length', 0)
+                                        
+                                        segment = {
+                                            "color": color,
+                                            "style": style,
+                                            "length": length
+                                        }
+                                        segments.append(segment)
+                                        
+                                        # Парсим строку LINESTRING из selection
+                                        if 'selection' in geo_item:
+                                            selection = geo_item.get('selection', '')
+                                            if selection.startswith('LINESTRING('):
+                                                # Извлекаем координаты из строки LINESTRING(...)
+                                                coord_str = selection[11:-1]  # Удаляем LINESTRING( и )
+                                                coords = coord_str.split(', ')
+                                                for coord in coords:
+                                                    lon, lat = map(float, coord.split())
+                                                    path_points.append({
+                                                        "lon": lon,
+                                                        "lat": lat,
+                                                        "color": color,
+                                                        "style": style
+                                                    })
+                
+                # Логируем количество извлеченных точек маршрута
+                logger.info(f"Извлечено {len(path_points)} точек для маршрута")
+                logger.info(f"Извлечено {len(segments)} сегментов маршрута")
+                
+                if not path_points:
+                    logger.warning("Не удалось извлечь точки маршрута из ответа API")
+                    # Создаем искусственную прямую линию между точками
+                    path_points = [
+                        {"lon": start_point["lon"], "lat": start_point["lat"], "color": "normal", "style": "normal"},
+                        {"lon": end_point["lon"], "lat": end_point["lat"], "color": "normal", "style": "normal"}
+                    ]
+                
+                # Извлекаем информацию о маршруте
+                # Проверяем различные возможные поля для получения дистанции и времени
+                distance = 0
+                duration = 0
+                
+                if 'total_distance' in route:
+                    total_distance = route.get('total_distance', {})
+                    if isinstance(total_distance, dict) and 'value' in total_distance:
+                        distance = total_distance.get('value', 0)
+                    else:
+                        distance = total_distance
+                elif 'distance' in route:
+                    distance = route.get('distance', 0)
                         
-                        for segment in segments:
-                            length = segment.get('length', 0)
-                            current_distance += length
+                if 'total_duration' in route:
+                    total_duration = route.get('total_duration', {})
+                    if isinstance(total_duration, dict) and 'value' in total_duration:
+                        duration = total_duration.get('value', 0)
+                    else:
+                        duration = total_duration
+                elif 'duration' in route:
+                    duration = route.get('duration', 0)
+                
+                # Если не смогли извлечь инструкции из маневров, создаем упрощенные
+                if not steps and segments:
+                    current_distance = 0
+                    current_segment_index = 0
+                    
+                    for segment in segments:
+                        length = segment.get('length', 0)
+                        current_distance += length
+                        
+                        # Каждые 500 метров или при смене типа сегмента создаем инструкцию
+                        if current_distance >= 500 or current_segment_index + 1 == len(segments):
+                            street_name = street_names[0] if street_names else "Неизвестная улица"
                             
-                            # Каждые 500 метров или при смене типа сегмента создаем инструкцию
-                            if current_distance >= 500 or current_segment_index + 1 == len(segments):
-                                street_name = street_names[0] if street_names else "Неизвестная улица"
-                                
-                                step = {
-                                    "instruction": f"Продолжайте движение по {street_name}",
-                                    "distance": current_distance,
-                                    "duration": int(current_distance / 10),  # приблизительно
-                                    "street_name": street_name
-                                }
-                                steps.append(step)
-                                current_distance = 0
-                            
-                            current_segment_index += 1
-                    
-                    route_info = {
-                        "distance": distance,  # в метрах
-                        "duration": duration,  # в секундах
-                        "has_traffic": route.get("has_traffic", False),
-                        "points_count": len(path_points)
-                    }
-                    
-                    route_details = {
-                        "steps": steps,
-                        "street_names": street_names,
-                        "segments": segments
-                    }
-                    
-                    logger.info(f"Построен маршрут: {route_info['distance']} м, {route_info['duration']} сек, {len(path_points)} точек")
-                    logger.info(f"Добавлено {len(steps)} шагов навигации")
-                    
-                    return route_info, path_points, route_details
-                else:
-                    # Логируем текст ошибки
-                    error_text = await response.text()
-                    logger.error(f"Ошибка Routing API 2GIS: статус {response.status}, ответ: {error_text}")
-                    return None, [], {}
+                            step = {
+                                "instruction": f"Продолжайте движение по {street_name}",
+                                "distance": current_distance,
+                                "duration": int(current_distance / 10),  # приблизительно
+                                "street_name": street_name
+                            }
+                            steps.append(step)
+                            current_distance = 0
+                        
+                        current_segment_index += 1
+                
+                route_info = {
+                    "distance": distance,  # в метрах
+                    "duration": duration,  # в секундах
+                    "has_traffic": route.get("has_traffic", False),
+                    "points_count": len(path_points)
+                }
+                
+                route_details = {
+                    "steps": steps,
+                    "street_names": street_names,
+                    "segments": segments
+                }
+                
+                logger.info(f"Построен маршрут: {route_info['distance']} м, {route_info['duration']} сек, {len(path_points)} точек")
+                logger.info(f"Добавлено {len(steps)} шагов навигации")
+                
+                return route_info, path_points, route_details
+            else:
+                # Логируем текст ошибки
+                logger.error(f"Ошибка Routing API 2GIS: статус {status_code}, ответ: {data}")
+                return None, [], {}
     except Exception as e:
         logger.error(f"Ошибка при запросе маршрута 2GIS: {str(e)}")
         # Добавляем стек вызовов для детального отслеживания ошибки

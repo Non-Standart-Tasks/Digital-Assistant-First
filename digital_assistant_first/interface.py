@@ -421,6 +421,13 @@ def model_response_generator_sync(model, config, status_placeholder):
 def handle_user_input_sync(model, config, prompt):
     """Обработать пользовательский ввод и сгенерировать ответ ассистента (синхронная версия)."""
     if prompt:
+        # Сбрасываем ключи сессии, связанные с офферами, при каждом новом запросе
+        if config.get("offers_enabled", False):
+            # Очищаем ключи, которые могут вызывать конфликты
+            for key in list(st.session_state.keys()):
+                if key.startswith("offer_") or key == "offers_link":
+                    st.session_state.pop(key, None)
+        
         status_placeholder = st.empty()
         # Всегда сбрасываем данные карты и таблицы перед новым запросом
         st.session_state["last_pydeck_data"] = []

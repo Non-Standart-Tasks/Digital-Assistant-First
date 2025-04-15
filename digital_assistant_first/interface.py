@@ -380,6 +380,11 @@ def model_response_generator_sync(model, config, status_placeholder):
             web_search_response = Runner.run_sync(agent_web_seach, user_input)
             web_search_response = web_search_response.final_output
             
+            # ЗДЕСЬ добавим проверку неопределенности в ответе
+            # Проверяем неопределенность только если включен режим офферов
+            if config.get("offers_enabled", False):
+                web_search_response = check_uncertainty_in_response(web_search_response, True)
+            
             print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
             
             log_api_call(
@@ -699,3 +704,38 @@ def handle_user_input_sync(model, config, prompt):
 
             # Обновляем record_id в сообщении
             st.session_state["messages"][-1]["record_id"] = record_id
+
+
+
+def check_uncertainty_in_response(response_text, offers_enabled=False):
+    """
+    Проверяет ответ на фразы неопределенности и возвращает замену,
+    если режим офферов включен.
+    """
+    if not offers_enabled:
+        return response_text
+        
+    uncertainty_phrases = [
+        "я не знаю",
+        "я не могу предоставить",
+        "у меня нет информации",
+        "мне нужны уточнения", 
+        "я не уверен",
+        "недостаточно данных",
+        "не могу дать точный ответ",
+        "я не располагаю",
+        "затрудняюсь ответить",
+        "уточните",
+        "Если вы имели в виду что-то конкретное",
+        "пожалуйста, уточните",
+        "В зависимости от контекста",
+        "имели в виду",
+        "предоставлю более подробную информацию"
+    ]
+    
+    if any(phrase in response_text.lower() for phrase in uncertainty_phrases):
+        return "Ищу запрос в базе vtbfamily..."
+    
+    return response_text
+
+

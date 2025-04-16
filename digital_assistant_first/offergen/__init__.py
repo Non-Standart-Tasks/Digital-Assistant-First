@@ -3,7 +3,7 @@ from functools import lru_cache
 from typing import Optional
 import yaml
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, validator
 
 from digital_assistant_first.utils.paths import ROOT_DIR as root_dir
 from digital_assistant_first.utils.logging import setup_logging
@@ -28,11 +28,19 @@ class Offer(BaseModel):
 
     category: str
     name: str
-    image_url: str
-    image_path: str
-    offer_url: str
-    short_description: str
-    full_description: str
+    url: Optional[str] = None
+    description: Optional[str] = None
+    image_url: Optional[str] = None
+    image_path: Optional[str] = None
+    offer_url: Optional[str] = None
+    short_description: Optional[str] = None
+    full_description: Optional[str] = None
+
+    @validator('full_description')
+    def check_descriptions(cls, v, values):
+        if not v and not values.get('short_description'):
+            raise ValueError('At least one of short_description or full_description must be provided')
+        return v
 
 
 with open(root_dir / offersgen_config["offers_db"], "r", encoding="utf-8") as f:

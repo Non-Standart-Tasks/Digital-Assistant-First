@@ -17,7 +17,7 @@ async def generate_link(request: Request):
         "category": "...",
         "description": "...",
         "url": "...",
-        "image": "..."  # base64
+        "image": "..."  
       }, ...
     ]
     """

@@ -1,0 +1,1046 @@
+[
+    {
+        "offer_id": 402033,
+        "offer_url": "https://www.vtbfamily.ru/offer/402033",
+        "title": "Яндекс Маркет",
+        "category": "Дом, сад и ремонт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_%D0%BC%D0%B0%D1%80%D0%BA%D0%B5%D1%82_%D0%B8%D1%82%D0%BE%D0%B3_ZQenBoT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=41034f1880df3449fd497b2f07e04b220c0b72fc7ea84d1bd8d5c3db3c2a233f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402033.jpg",
+        "card_description": "Дом, сад и ремонт Яндекс Маркет"
+    },
+    {
+        "offer_id": 1153,
+        "offer_url": "https://www.vtbfamily.ru/offer/1153",
+        "title": "Спортмастер",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2930.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5f30fc70582a50fff1a36b800e97cdbf50c444aef6ccb66b7c122a776fd65b74",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001153.jpg",
+        "card_description": "Спорт Спортмастер"
+    },
+    {
+        "offer_id": 36,
+        "offer_url": "https://www.vtbfamily.ru/offer/36",
+        "title": "Спортивные товары от КАНТ",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D0%B0%D0%BD%D1%82.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5bf739bd974bf4db6414bf7c0a5437387ef7b1eb2257a7e5d2a942327b08b054",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000036.jpg",
+        "card_description": "Спорт Спортивные товары от КАНТ"
+    },
+    {
+        "offer_id": 402312,
+        "offer_url": "https://www.vtbfamily.ru/offer/402312",
+        "title": "Desport: магазин спортивных товаров 20%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/VTB_1_zfM7Z90.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9d926ec8e515d5ea7f5a8de7bae65708b41ab4029069e469b2b4dff32c40f639",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402312.jpg",
+        "card_description": "Спорт Desport: магазин спортивных товаров 20%"
+    },
+    {
+        "offer_id": 354034,
+        "offer_url": "https://www.vtbfamily.ru/offer/354034",
+        "title": "DDX Fitness",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/ddx_fitness_3_0gnw96C.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=42b216ed4e487927a0c7599b974dc686c8842d5aa31a4eb9c90532bfe12e0fcf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000354034.jpg",
+        "card_description": "Спорт DDX Fitness"
+    },
+    {
+        "offer_id": 114983,
+        "offer_url": "https://www.vtbfamily.ru/offer/114983",
+        "title": "FITMOST﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3982.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b6e15c6f7503c7a9010898f946597ec83dcddbcce99755216918b9caa640ab1f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000114983.jpg",
+        "card_description": "Спорт FITMOST﻿"
+    },
+    {
+        "offer_id": 403,
+        "offer_url": "https://www.vtbfamily.ru/offer/403",
+        "title": "Сеть фитнес-клубов Bright fit",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1870.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8977ab390a23f7839de866b461f617cbfcca90668dc4a8b70354c3558211b9e2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000403.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов Bright fit"
+    },
+    {
+        "offer_id": 402023,
+        "offer_url": "https://www.vtbfamily.ru/offer/402023",
+        "title": "Spirit.Fitness: сеть фитнес клубов до 50%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/spirit_fitness__ECof8CO.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8cf9d545b92c848876e53fc73b9924e3c33633e7f986e2c6d72d3fa3b5427e95",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402023.jpg",
+        "card_description": "Спорт Spirit.Fitness: сеть фитнес клубов до 50%"
+    },
+    {
+        "offer_id": 313354,
+        "offer_url": "https://www.vtbfamily.ru/offer/313354",
+        "title": "Top1Hockey: онлайн-магазин хоккейной экипировки",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/tophockey_YtPGshV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=aba939f101f13c8189b902f52975105028d8ecb64482ff5de337e7167b437573",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000313354.jpg",
+        "card_description": "Спорт Top1Hockey: онлайн-магазин хоккейной экипировки"
+    },
+    {
+        "offer_id": 1124,
+        "offer_url": "https://www.vtbfamily.ru/offer/1124",
+        "title": "Сеть фитнес-клубов Crocus Fitness",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_289.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f816e274add3c08ca16352f6f40014203b32ad2760ab831c84bdff7f0e5ef5f3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001124.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов Crocus Fitness"
+    },
+    {
+        "offer_id": 402972,
+        "offer_url": "https://www.vtbfamily.ru/offer/402972",
+        "title": "IRNBY: бренд женской спортивной одежды",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/irnby.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=df83893649e838d6a226955a7792324c7a060b5dd8ce6ea0cf5d6b08d4dde792",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402972.jpg",
+        "card_description": "Спорт IRNBY: бренд женской спортивной одежды"
+    },
+    {
+        "offer_id": 1375,
+        "offer_url": "https://www.vtbfamily.ru/offer/1375",
+        "title": "Видео тренировки для дома FitStars",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3300.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8c5dab89741a35f2149589d3ea02bcc10411cc63316324379053fd50f0b6661e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001375.jpg",
+        "card_description": "Спорт Видео тренировки для дома FitStars"
+    },
+    {
+        "offer_id": 168,
+        "offer_url": "https://www.vtbfamily.ru/offer/168",
+        "title": "Интернет-магазин спортивного питания КультЛаб",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1447.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8482511a885fcbd39aad5421aafb95de74f85aacad97db486bc43d7554e31d23",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000168.jpg",
+        "card_description": "Спорт Интернет-магазин спортивного питания КультЛаб"
+    },
+    {
+        "offer_id": 230,
+        "offer_url": "https://www.vtbfamily.ru/offer/230",
+        "title": "Школа тенниса CoolTennis",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_155.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=91675eaab4ca03c75fcd47be24724fdc3ba4b078abef18836699521565318c93",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000230.jpg",
+        "card_description": "Спорт Школа тенниса CoolTennis"
+    },
+    {
+        "offer_id": 1666,
+        "offer_url": "https://www.vtbfamily.ru/offer/1666",
+        "title": "Эффективные интервальные тренировки Reboot",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_402.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=796f755d98b71865d0e2ea84b4425b73b350f5d87b180ea2ef90cb69f893de28",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001666.jpg",
+        "card_description": "Спорт Эффективные интервальные тренировки Reboot"
+    },
+    {
+        "offer_id": 1309,
+        "offer_url": "https://www.vtbfamily.ru/offer/1309",
+        "title": "Интернет-магазин товаров для йоги RamaYoga",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3180.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=852825f11d1e48908c0a3c7016e85f4df99f7e02eae6348fd376cc9c4709fb13",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001309.jpg",
+        "card_description": "Спорт Интернет-магазин товаров для йоги RamaYoga"
+    },
+    {
+        "offer_id": 1889,
+        "offer_url": "https://www.vtbfamily.ru/offer/1889",
+        "title": "Картинг Black Star Karting﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_939.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=df8dfc27219f1f923cb3cb5ca9271db20647723dac7572bf7536403264e3523c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001889.jpg",
+        "card_description": "Спорт Картинг Black Star Karting﻿"
+    },
+    {
+        "offer_id": 797,
+        "offer_url": "https://www.vtbfamily.ru/offer/797",
+        "title": "Сеть студий эффективных тренировок Fit-n-Go",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2434.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=682e63a44fcfdbf3073c93d10bd25d26285fff666073b178eb4f3da489db12d0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000797.jpg",
+        "card_description": "Спорт Сеть студий эффективных тренировок Fit-n-Go"
+    },
+    {
+        "offer_id": 1682,
+        "offer_url": "https://www.vtbfamily.ru/offer/1682",
+        "title": "Сеть студий растяжки TS FITNESS",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_436.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=317b019b77d64bbc94d3a2c5fc56c2488fc80cb48a2d10ab9086f2eebfb25f9e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001682.jpg",
+        "card_description": "Спорт Сеть студий растяжки TS FITNESS"
+    },
+    {
+        "offer_id": 76,
+        "offer_url": "https://www.vtbfamily.ru/offer/76",
+        "title": "Фитнес-клуб Gold's Gym Dinamo﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1170.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162913Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=90e45b7c24c6f206a144064142887f78af5e910519ac37389841a77072e13c3a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000076.jpg",
+        "card_description": "Спорт Фитнес-клуб Gold's Gym Dinamo﻿"
+    },
+    {
+        "offer_id": 238,
+        "offer_url": "https://www.vtbfamily.ru/offer/238",
+        "title": "Фитнес-клуб 5 Элемент в Москва СИТИ",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1565.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6310c8e892ca8bdbd2ed7c1159744e3d92caa6275aae537699bc08da54d3413f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000238.jpg",
+        "card_description": "Спорт Фитнес-клуб 5 Элемент в Москва СИТИ"
+    },
+    {
+        "offer_id": 687,
+        "offer_url": "https://www.vtbfamily.ru/offer/687",
+        "title": "Теннисная школа Чемпион",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2285.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=135d82cac4156410f8a692ebc033b82309e906b0631714d141418b4832d3d84c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000687.jpg",
+        "card_description": "Спорт Теннисная школа Чемпион"
+    },
+    {
+        "offer_id": 1778,
+        "offer_url": "https://www.vtbfamily.ru/offer/1778",
+        "title": "Интернет-магазин спортивного питания 5lb",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_650.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c2ebb9d90c453278f2ec4ffcb88272f509de22065a21619b1b0cbb380223cee7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001778.jpg",
+        "card_description": "Спорт Интернет-магазин спортивного питания 5lb"
+    },
+    {
+        "offer_id": 1905,
+        "offer_url": "https://www.vtbfamily.ru/offer/1905",
+        "title": "Фитнесшеринг от GOGYM",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_973.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e61990babc01aacbf1acf15a70959cd98f1401e7423517998dcf8c34cb8c561d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001905.jpg",
+        "card_description": "Спорт Фитнесшеринг от GOGYM"
+    },
+    {
+        "offer_id": 17060,
+        "offer_url": "https://www.vtbfamily.ru/offer/17060",
+        "title": "Lonato Karting",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3734.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6d2016cc160e1e4d2b5dfa6ef5caf7944d6dde924034a5a22d5c4e54fb93e04a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000017060.jpg",
+        "card_description": "Спорт Lonato Karting"
+    },
+    {
+        "offer_id": 403002,
+        "offer_url": "https://www.vtbfamily.ru/offer/403002",
+        "title": "Yoga Space: сеть студий йоги 15%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/yoga_space.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2229647f7a8341198eb05d05c70781f25c6cf7dea389f59354137fbabd1d094c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403002.jpg",
+        "card_description": "Спорт Yoga Space: сеть студий йоги 15%"
+    },
+    {
+        "offer_id": 407676,
+        "offer_url": "https://www.vtbfamily.ru/offer/407676",
+        "title": "Fonarik4you: интернет-магазин светодиодных фонарей 10%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/fonarik4you.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bc1c24845b73e433fbef645ff00a1d5c240bbed0f39e1b2b2327ee7bdfe862f1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000407676.jpg",
+        "card_description": "Спорт Fonarik4you: интернет-магазин светодиодных фонарей 10%"
+    },
+    {
+        "offer_id": 14,
+        "offer_url": "https://www.vtbfamily.ru/offer/14",
+        "title": "Душевная студия танцев DADADANCE﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1037.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=98f41c32c0df7a30763d2a24935f2b4d7b9efc6d32a1a59cb488bdfbb2fd1766",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000014.jpg",
+        "card_description": "Спорт Душевная студия танцев DADADANCE﻿"
+    },
+    {
+        "offer_id": 220,
+        "offer_url": "https://www.vtbfamily.ru/offer/220",
+        "title": "Танцевальные клубы GallaDance",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_153.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5ceade25a3bbe7b6cc89b3ab4ec7b019a1ef4b96f127e0c094126477011b5580",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000220.jpg",
+        "card_description": "Спорт Танцевальные клубы GallaDance"
+    },
+    {
+        "offer_id": 986,
+        "offer_url": "https://www.vtbfamily.ru/offer/986",
+        "title": "Центр Спорта и здоровья Savoy Wellness Чистые пруды",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2677.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a5ef7261c3d102645dde7535574f990a85033b57862b4379bc750ba6bc113610",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000986.jpg",
+        "card_description": "Спорт Центр Спорта и здоровья Savoy Wellness Чистые пруды"
+    },
+    {
+        "offer_id": 131622,
+        "offer_url": "https://www.vtbfamily.ru/offer/131622",
+        "title": "Фитнес-клуб ReСтарт",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4090.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=082632676a2f1fc49e95dfd2ca81e494d4e097ae3f384894cb04379dd800b635",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131622.jpg",
+        "card_description": "Спорт Фитнес-клуб ReСтарт"
+    },
+    {
+        "offer_id": 405473,
+        "offer_url": "https://www.vtbfamily.ru/offer/405473",
+        "title": "ProstoShpagat: студия персональной растяжки 10%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/prostoshpagat.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8a99bfc05d917828d929c4eafec9fc053c2f0a62ddcc141b4ada860f78adba0c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405473.jpg",
+        "card_description": "Спорт ProstoShpagat: студия персональной растяжки 10%"
+    },
+    {
+        "offer_id": 308,
+        "offer_url": "https://www.vtbfamily.ru/offer/308",
+        "title": "Студия фитнес-бокса GO Boxing",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1700.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=abc14398745806b9c806e114d23169436ebdd97e35032b01c1e60ca6c7dd2533",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000308.jpg",
+        "card_description": "Спорт Студия фитнес-бокса GO Boxing"
+    },
+    {
+        "offer_id": 338,
+        "offer_url": "https://www.vtbfamily.ru/offer/338",
+        "title": "The Corner Boxing Gym",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1765.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0c92b62ff9d2d47819849cd75a8d0eeec2be613d10c05116fb68a37f46e73ec0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000338.jpg",
+        "card_description": "Спорт The Corner Boxing Gym"
+    },
+    {
+        "offer_id": 559,
+        "offer_url": "https://www.vtbfamily.ru/offer/559",
+        "title": "Студия танцев и растяжки для взрослых и детей NEMERIA﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2099.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=87615c44af37fdfdb57ea731f5a2fb0f69b0c30717b5eab620221a6f1b30b836",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000559.jpg",
+        "card_description": "Спорт Студия танцев и растяжки для взрослых и детей NEMERIA﻿"
+    },
+    {
+        "offer_id": 684,
+        "offer_url": "https://www.vtbfamily.ru/offer/684",
+        "title": "Сеть фитнес-клубов GrandFitness",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2276.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=32438e0503467f1e8ee4bf2391574814114257873b1fc3731928125ebebe5a69",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000684.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов GrandFitness"
+    },
+    {
+        "offer_id": 837,
+        "offer_url": "https://www.vtbfamily.ru/offer/837",
+        "title": "Школа тенниса Юлии Лаптевой",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2492.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ee8a53dfb827e98415ba3fdd871d47fe5fdafce67b8d161f4af683ec6f3f13d9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000837.jpg",
+        "card_description": "Спорт Школа тенниса Юлии Лаптевой"
+    },
+    {
+        "offer_id": 1183,
+        "offer_url": "https://www.vtbfamily.ru/offer/1183",
+        "title": "Теннисный клуб Теннис-Арт",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2972.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7779694ec5bf4bf3bf45fe3163c7b785dbc0ed356826dfedac5a748ffd068bad",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001183.jpg",
+        "card_description": "Спорт Теннисный клуб Теннис-Арт"
+    },
+    {
+        "offer_id": 1209,
+        "offer_url": "https://www.vtbfamily.ru/offer/1209",
+        "title": "Онлайн занятия для женщин с Батыром Минхановым",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3007.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9de3ba5b99f9935cceecbf220bc239c36a268e60aad157d636773dff55716a1b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001209.jpg",
+        "card_description": "Спорт Онлайн занятия для женщин с Батыром Минхановым"
+    },
+    {
+        "offer_id": 1427,
+        "offer_url": "https://www.vtbfamily.ru/offer/1427",
+        "title": "Школа плавания Swim rocket",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_337.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162916Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2850300c1bb855ae38b6c2ec6e4ffafe44990336d90ebc50731eb8a7b0a936bd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001427.jpg",
+        "card_description": "Спорт Школа плавания Swim rocket"
+    },
+    {
+        "offer_id": 1486,
+        "offer_url": "https://www.vtbfamily.ru/offer/1486",
+        "title": "Вейк-клуб Loaded spot",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3460.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=96100dba7477ae52054323e1925e0c41a2906dc0ee6659e0070f70fc3e941ee9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001486.jpg",
+        "card_description": "Спорт Вейк-клуб Loaded spot"
+    },
+    {
+        "offer_id": 1650,
+        "offer_url": "https://www.vtbfamily.ru/offer/1650",
+        "title": "Хоккейный клуб Витязь",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3708.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7cd6a7ba594408aebbfb467df374ca1711c4d90c0e280a90722ff5bc8fdbb80f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001650.jpg",
+        "card_description": "Спорт Хоккейный клуб Витязь"
+    },
+    {
+        "offer_id": 1654,
+        "offer_url": "https://www.vtbfamily.ru/offer/1654",
+        "title": "Фитнес велотренировки в Rock the Cycle",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_383.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=058f0f71f4ebd35e2351214946cd2b76b385520fb4822f725fb03546922adfae",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001654.jpg",
+        "card_description": "Спорт Фитнес велотренировки в Rock the Cycle"
+    },
+    {
+        "offer_id": 1732,
+        "offer_url": "https://www.vtbfamily.ru/offer/1732",
+        "title": "Сеть фитнес клубов WeGym﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_549.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=084f35dedbbe5496418cbee754132df72cf4f616d0011a2e1f8fbda78df52e1a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001732.jpg",
+        "card_description": "Спорт Сеть фитнес клубов WeGym﻿"
+    },
+    {
+        "offer_id": 56494,
+        "offer_url": "https://www.vtbfamily.ru/offer/56494",
+        "title": "Фитнес-клуб ЛЮБИФИТНЕС",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3822.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=35a89802c3f7de7ddda6f2d70bc3930c36d736e415ee49163b8dab16ba476f6e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000056494.jpg",
+        "card_description": "Спорт Фитнес-клуб ЛЮБИФИТНЕС"
+    },
+    {
+        "offer_id": 131626,
+        "offer_url": "https://www.vtbfamily.ru/offer/131626",
+        "title": "Ретрит-центр МА-МА",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4097.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f5fb77bc2262c4ebe58f0762a5edbda763a50b93780a1831c18df2d68b4bea84",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131626.jpg",
+        "card_description": "Спорт Ретрит-центр МА-МА"
+    },
+    {
+        "offer_id": 323786,
+        "offer_url": "https://www.vtbfamily.ru/offer/323786",
+        "title": "Мультиформатное пространство для фитнеса 143STUDIO",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4498.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e53714f8163a1e7a94bc82f740045ec17ecf780a55349459451ad00b9d238683",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000323786.jpg",
+        "card_description": "Спорт Мультиформатное пространство для фитнеса 143STUDIO"
+    },
+    {
+        "offer_id": 356206,
+        "offer_url": "https://www.vtbfamily.ru/offer/356206",
+        "title": "High Level Club до 15%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/high_level_a2pBRR9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=635051af7fe233d2994d208d39374e22982afe62ef8380fd31e6d96d93d7407a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000356206.jpg",
+        "card_description": "Спорт High Level Club до 15%"
+    },
+    {
+        "offer_id": 403021,
+        "offer_url": "https://www.vtbfamily.ru/offer/403021",
+        "title": "PRIME Snowboards: магазин сноубордов и экипировки 30%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/prime_2_13_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a4d6e2b22c6eae49f73479558d996e97a4a30b33fa3a89cfc0063ec95e3f9412",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403021.jpg",
+        "card_description": "Спорт PRIME Snowboards: магазин сноубордов и экипировки 30%"
+    },
+    {
+        "offer_id": 403022,
+        "offer_url": "https://www.vtbfamily.ru/offer/403022",
+        "title": "TERRO SNOW: магазин спортивной экипировки 30%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/terro_2_14_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=fc3e29d4d8925e5abd4eedafcf6ea27973d25c1ab90ecbe4a1a0a3895eda2220",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000403022.jpg",
+        "card_description": "Спорт TERRO SNOW: магазин спортивной экипировки 30%"
+    },
+    {
+        "offer_id": 17,
+        "offer_url": "https://www.vtbfamily.ru/offer/17",
+        "title": "SUP серфинг от компании WOW-SUP",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1048.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=caaabc0715ab156ca50dfe7a5aaea310d838cb7a1641b3cd605ada81bac8ac01",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000017.jpg",
+        "card_description": "Спорт SUP серфинг от компании WOW-SUP"
+    },
+    {
+        "offer_id": 26,
+        "offer_url": "https://www.vtbfamily.ru/offer/26",
+        "title": "Боулдер-скалодром LimeStone﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1074.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b357d8e971b8cd70cf3803dd140a65d548627e972196021d39982d3eaac4c628",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000026.jpg",
+        "card_description": "Спорт Боулдер-скалодром LimeStone﻿"
+    },
+    {
+        "offer_id": 72,
+        "offer_url": "https://www.vtbfamily.ru/offer/72",
+        "title": "Фитнес-клуб VILLA FIT﻿ Видное",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1164.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1d3adf1f578eff5d654d9e75e55747ec0560e347f37ad08b76d740ecc935d137",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000072.jpg",
+        "card_description": "Спорт Фитнес-клуб VILLA FIT﻿ Видное"
+    },
+    {
+        "offer_id": 73,
+        "offer_url": "https://www.vtbfamily.ru/offer/73",
+        "title": "Семейный фитнес в Москве и Подольске",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1166.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8604124dd3044bfa82ef71de2e6f86c5a3468d12c0849b142946bde51bc4f739",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000073.jpg",
+        "card_description": "Спорт Семейный фитнес в Москве и Подольске"
+    },
+    {
+        "offer_id": 79,
+        "offer_url": "https://www.vtbfamily.ru/offer/79",
+        "title": "Фитнес-центр КУБ﻿ (Видное)",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1176.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1ee085d5bae8e958eaf80d7d63cf75bc6c40f36ef9402bed2115f38b85c894dc",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000079.jpg",
+        "card_description": "Спорт Фитнес-центр КУБ﻿ (Видное)"
+    },
+    {
+        "offer_id": 89,
+        "offer_url": "https://www.vtbfamily.ru/offer/89",
+        "title": "Сквош-клуб BelKa | Белка",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1210.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d58865d15d824433e4d9f04924153699b26c346aac00853f5cc7bbc6ae146f44",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000089.jpg",
+        "card_description": "Спорт Сквош-клуб BelKa | Белка"
+    },
+    {
+        "offer_id": 107,
+        "offer_url": "https://www.vtbfamily.ru/offer/107",
+        "title": "Сеть студий растяжки, йоги и фитнеса L.A.B SPACE",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1260.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1057dee3f7acf21a3f07885713226856cb9990465cd9a93c86e1c7a43fa70641",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000107.jpg",
+        "card_description": "Спорт Сеть студий растяжки, йоги и фитнеса L.A.B SPACE"
+    },
+    {
+        "offer_id": 199,
+        "offer_url": "https://www.vtbfamily.ru/offer/199",
+        "title": "Премиальная студия ГОРЯЧЕЙ ЙОГИ UBU",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1497.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3bd7923c005eaf2b63325e7536acb95daf5aaeec2a7e56e4e087665bf0cdc2f7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000199.jpg",
+        "card_description": "Спорт Премиальная студия ГОРЯЧЕЙ ЙОГИ UBU"
+    },
+    {
+        "offer_id": 204,
+        "offer_url": "https://www.vtbfamily.ru/offer/204",
+        "title": "Скайпойнт Дельта 4* и Скайпойнт Гамма 3* ﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1502.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ab3114cfbb12701782b7578bb5f369dbbe9111c0f43416b1d6e1d99e4098d18b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000204.jpg",
+        "card_description": "Спорт Скайпойнт Дельта 4* и Скайпойнт Гамма 3* ﻿"
+    },
+    {
+        "offer_id": 475,
+        "offer_url": "https://www.vtbfamily.ru/offer/475",
+        "title": "Школа верховой езды Гармония",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1994.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162930Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=70a1f6698971d6a294614402e61ca8d6f75d61295f4d916dd3d7c888126ff1f7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000475.jpg",
+        "card_description": "Спорт Школа верховой езды Гармония"
+    },
+    {
+        "offer_id": 490,
+        "offer_url": "https://www.vtbfamily.ru/offer/490",
+        "title": "Дайвинг в Москве Moscow Diving",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2012.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5addfa639804caeaebe5a6a2a315f893e808ac9e8ba293e9779665aa726f6f99",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000490.jpg",
+        "card_description": "Спорт Дайвинг в Москве Moscow Diving"
+    },
+    {
+        "offer_id": 512,
+        "offer_url": "https://www.vtbfamily.ru/offer/512",
+        "title": "Студия йоги и коворкинга HAND",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2043.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cb46b328a67b3cb9fbe965e115235701f0d9c6ec3afe7ea490f6cb6649ccc7b9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000512.jpg",
+        "card_description": "Спорт Студия йоги и коворкинга HAND"
+    },
+    {
+        "offer_id": 595,
+        "offer_url": "https://www.vtbfamily.ru/offer/595",
+        "title": "Студия йоги Yogaodi",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2160.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=cec48b9e34554a99aa1075dbcfb812479ed72a3e4cff57049086809c948d88bb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000595.jpg",
+        "card_description": "Спорт Студия йоги Yogaodi"
+    },
+    {
+        "offer_id": 665,
+        "offer_url": "https://www.vtbfamily.ru/offer/665",
+        "title": "Боксерский клуб в Москва-Сити BROTHERS BOXING CLUB",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2248.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=049b4973fae1186a5814cc8ab5f9d8e8aaa81d3b90276400c69b66ba9c812479",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000665.jpg",
+        "card_description": "Спорт Боксерский клуб в Москва-Сити BROTHERS BOXING CLUB"
+    },
+    {
+        "offer_id": 679,
+        "offer_url": "https://www.vtbfamily.ru/offer/679",
+        "title": "Фитнес-Клуб MYGYM в COMCITY",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2267.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=704e1ffc0a7dbf45f9393296cacea10ba4c56bbd7d48621da9e6074f241221e0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000679.jpg",
+        "card_description": "Спорт Фитнес-Клуб MYGYM в COMCITY"
+    },
+    {
+        "offer_id": 770,
+        "offer_url": "https://www.vtbfamily.ru/offer/770",
+        "title": "Клуб ракеточных видов спорта SPACE",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2393.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=032fba9825ff557c88905ff2ce4926fa6363b63e44202f5a28d44330cc1d48f5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000770.jpg",
+        "card_description": "Спорт Клуб ракеточных видов спорта SPACE"
+    },
+    {
+        "offer_id": 886,
+        "offer_url": "https://www.vtbfamily.ru/offer/886",
+        "title": "Фитнес-клубы Escalada﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2548.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ee498a6991beab9ac4515eb85a912459f7431ebdd31695b8e99bc1e815dffde6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000886.jpg",
+        "card_description": "Спорт Фитнес-клубы Escalada﻿"
+    },
+    {
+        "offer_id": 939,
+        "offer_url": "https://www.vtbfamily.ru/offer/939",
+        "title": "Savoy Wellness Итальянский квартал",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2625.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6f2c7432cf7de426d60ec417ffa6478dd7f4cc8ca9b835829ef6440cf29523ba",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000939.jpg",
+        "card_description": "Спорт Savoy Wellness Итальянский квартал"
+    },
+    {
+        "offer_id": 948,
+        "offer_url": "https://www.vtbfamily.ru/offer/948",
+        "title": "Бойцовский клуб BandaBox",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2634.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c35e45c508aa031bc44703dbc6ddba19b5d1e97028faac71573a860e7c4d6505",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000948.jpg",
+        "card_description": "Спорт Бойцовский клуб BandaBox"
+    },
+    {
+        "offer_id": 1012,
+        "offer_url": "https://www.vtbfamily.ru/offer/1012",
+        "title": "Центр художественной гимнастики Наследие",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2718.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=707995043c4b4f1aa4c95188056b5e4cafd3178204953840b71d7facf2a0b970",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001012.jpg",
+        "card_description": "Спорт Центр художественной гимнастики Наследие"
+    },
+    {
+        "offer_id": 1049,
+        "offer_url": "https://www.vtbfamily.ru/offer/1049",
+        "title": "Школа фридайвинга Глубина",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2768.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5abcb9e1518c67cb1f86a015cf550d1abae01605d83d96d58753e8a4242b6ff6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001049.jpg",
+        "card_description": "Спорт Школа фридайвинга Глубина"
+    },
+    {
+        "offer_id": 1098,
+        "offer_url": "https://www.vtbfamily.ru/offer/1098",
+        "title": "Студия эффективной растяжки НА ШПАГАТЕ",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_285.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=101a0dcf1835910d2ef0e19a5294a06ebdb76e4b1524aad785233fb3b70865c0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001098.jpg",
+        "card_description": "Спорт Студия эффективной растяжки НА ШПАГАТЕ"
+    },
+    {
+        "offer_id": 1110,
+        "offer_url": "https://www.vtbfamily.ru/offer/1110",
+        "title": "Студия растяжки и фитнеса Fresh Stretching",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_287.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4056601153d5274a414230b5528765ae39ce645ee48ab90a3511efd9ac47fbd3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001110.jpg",
+        "card_description": "Спорт Студия растяжки и фитнеса Fresh Stretching"
+    },
+    {
+        "offer_id": 1155,
+        "offer_url": "https://www.vtbfamily.ru/offer/1155",
+        "title": "Студия персональной растяжки Stretching Space",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2934.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8fe109c89ea5cccc2924dee3b60515e664a02c03b1e4166b204da9fab7e4c77f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001155.jpg",
+        "card_description": "Спорт Студия персональной растяжки Stretching Space"
+    },
+    {
+        "offer_id": 1189,
+        "offer_url": "https://www.vtbfamily.ru/offer/1189",
+        "title": "Балетная студия En Pointe",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2980.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e049b330fac229dfea8c4fef4af3a1c39f7f48a4d985beb1c610f730679e7cb2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001189.jpg",
+        "card_description": "Спорт Балетная студия En Pointe"
+    },
+    {
+        "offer_id": 1212,
+        "offer_url": "https://www.vtbfamily.ru/offer/1212",
+        "title": "Центр обучения дайвингу Альфа-Центр",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3012.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0003baa0f272d91949b7e443b72df07549f07bd057b4245042603d8c6be7b229",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001212.jpg",
+        "card_description": "Спорт Центр обучения дайвингу Альфа-Центр"
+    },
+    {
+        "offer_id": 1221,
+        "offer_url": "https://www.vtbfamily.ru/offer/1221",
+        "title": "Сеть студий пилатеса Виктории Калашниковой",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3023.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bfadd9c47895122e24fa5b043325e8ad1c59174557a12f79b1314d40f3a64b3d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001221.jpg",
+        "card_description": "Спорт Сеть студий пилатеса Виктории Калашниковой"
+    },
+    {
+        "offer_id": 1256,
+        "offer_url": "https://www.vtbfamily.ru/offer/1256",
+        "title": "Сеть фитнес-клубов FITNATION﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3073.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=012803e1aae59c8c5a591df047ace92ca29f81c88edc926d75b738f113d5f180",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001256.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов FITNATION﻿"
+    },
+    {
+        "offer_id": 1289,
+        "offer_url": "https://www.vtbfamily.ru/offer/1289",
+        "title": "Школа танцев Дмитрия Жаркова и Ольги Куликовой",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3131.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=61070526908ea3eb51625a672f31f28cde527e35c251b0534e6b33f216b46cf7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001289.jpg",
+        "card_description": "Спорт Школа танцев Дмитрия Жаркова и Ольги Куликовой"
+    },
+    {
+        "offer_id": 1305,
+        "offer_url": "https://www.vtbfamily.ru/offer/1305",
+        "title": "Surf Spot - SUP-boarding",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3166.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162932Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e7c20c40019a0d794d766f6ebe3ba6ba2ea4dabef673c9a4fcf2ca47e696604a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001305.jpg",
+        "card_description": "Спорт Surf Spot - SUP-boarding"
+    },
+    {
+        "offer_id": 1435,
+        "offer_url": "https://www.vtbfamily.ru/offer/1435",
+        "title": "Сеть студий коррекции тела BODYLOVE",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3383.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e5e2d0a0dee9651202bb2e50c068f61f9999125c7e147b81b51289c2df092526",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001435.jpg",
+        "card_description": "Спорт Сеть студий коррекции тела BODYLOVE"
+    },
+    {
+        "offer_id": 1469,
+        "offer_url": "https://www.vtbfamily.ru/offer/1469",
+        "title": "TMPL Fitness Смоленский пассаж",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3433.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=ae2fa7adf1118fe4f61684e65926e75e9796abcf78ff2f1709cea41e29007bda",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001469.jpg",
+        "card_description": "Спорт TMPL Fitness Смоленский пассаж"
+    },
+    {
+        "offer_id": 1479,
+        "offer_url": "https://www.vtbfamily.ru/offer/1479",
+        "title": "Студия растяжки и балета LI'SA",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3449.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6254a3417025ff208dac533ee87727982eea05b4df7397f6b14531b863d985ad",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001479.jpg",
+        "card_description": "Спорт Студия растяжки и балета LI'SA"
+    },
+    {
+        "offer_id": 1535,
+        "offer_url": "https://www.vtbfamily.ru/offer/1535",
+        "title": "Diamond Pole",
+        "category": "Спорттовары",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3539.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f8aa7e7c7ff87fdb235cf2230c967f8a7c7cba1a2281ab5e2532109b930ae7bb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001535.jpg",
+        "card_description": "Спорттовары Diamond Pole"
+    },
+    {
+        "offer_id": 1567,
+        "offer_url": "https://www.vtbfamily.ru/offer/1567",
+        "title": "Сеть фитнес-клубов Фитнес Практика",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_359.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5d3a8275d1a5ba3b9e69aa4d96f2e20d246ada518bc305b3052af921a9f8d30b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001567.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов Фитнес Практика"
+    },
+    {
+        "offer_id": 1625,
+        "offer_url": "https://www.vtbfamily.ru/offer/1625",
+        "title": "Стрелковый клуб Target Point﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3672.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=38027154e879830f1fb74cec54de5d2af4437d403ff12a15b56f899e06334f00",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001625.jpg",
+        "card_description": "Спорт Стрелковый клуб Target Point﻿"
+    },
+    {
+        "offer_id": 1668,
+        "offer_url": "https://www.vtbfamily.ru/offer/1668",
+        "title": "Азартная игра в сквош-клубе Спортивные линии",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_409.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bfdc693dc6486ecfbb2beeb356590d483be411894e4f8f2e60d4bfa04035f61e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001668.jpg",
+        "card_description": "Спорт Азартная игра в сквош-клубе Спортивные линии"
+    },
+    {
+        "offer_id": 1694,
+        "offer_url": "https://www.vtbfamily.ru/offer/1694",
+        "title": "Вейксерф и вейкборд в клубе Wave Hunters",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_452.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dcec62324e8a875e27c8e50a7fb6548482f69a8982b4ead9f78ad48265f90e76",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001694.jpg",
+        "card_description": "Спорт Вейксерф и вейкборд в клубе Wave Hunters"
+    },
+    {
+        "offer_id": 1707,
+        "offer_url": "https://www.vtbfamily.ru/offer/1707",
+        "title": "Сеть сайкл-студий VELOBEAT﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_477.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9fc4afa9fb0a244782ad0f946ca8cb14f7d4de9df2baaf3c9fec5757ea6eac41",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001707.jpg",
+        "card_description": "Спорт Сеть сайкл-студий VELOBEAT﻿"
+    },
+    {
+        "offer_id": 1724,
+        "offer_url": "https://www.vtbfamily.ru/offer/1724",
+        "title": "Сквош-клубы City Squash",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_519.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=59582af3d612aebb331bbcbf8b72d53ddeca9d28848d2662fd00b05d8fef60fe",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001724.jpg",
+        "card_description": "Спорт Сквош-клубы City Squash"
+    },
+    {
+        "offer_id": 1780,
+        "offer_url": "https://www.vtbfamily.ru/offer/1780",
+        "title": "Сеть EMS-студий JustFit",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_659.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=99fb0120d23add9e6a2c90dea8f1f6023ccbc680d4fd366aa3da1da16a9b40c0",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001780.jpg",
+        "card_description": "Спорт Сеть EMS-студий JustFit"
+    },
+    {
+        "offer_id": 1858,
+        "offer_url": "https://www.vtbfamily.ru/offer/1858",
+        "title": "Скалодром, Вейкборд, фитнес от SPORTSTATION",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_878.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=37250b4396ca796b238ae7666a432b1206375831106fa4a0f23acd203fd7ce11",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001858.jpg",
+        "card_description": "Спорт Скалодром, Вейкборд, фитнес от SPORTSTATION"
+    },
+    {
+        "offer_id": 1871,
+        "offer_url": "https://www.vtbfamily.ru/offer/1871",
+        "title": "MOTOBAZA.RU",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_904.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=28bea79f3e914b0e432aa3f385c191858a71abb7991d8192cfe3fd85e8422658",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001871.jpg",
+        "card_description": "Спорт MOTOBAZA.RU"
+    },
+    {
+        "offer_id": 1882,
+        "offer_url": "https://www.vtbfamily.ru/offer/1882",
+        "title": "Международная сеть фитнес-клубов Brooklyn Fitboxing ﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_928.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=07034a1b3aa6a6e39f3b3ba76a5af428d2aab84193cd141fab09266d549d5f52",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001882.jpg",
+        "card_description": "Спорт Международная сеть фитнес-клубов Brooklyn Fitboxing ﻿"
+    },
+    {
+        "offer_id": 1906,
+        "offer_url": "https://www.vtbfamily.ru/offer/1906",
+        "title": "Школа тенниса 10is",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_974.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c9eac8aab81a0a1d0d0e2c36111435c4f6376e94a0868617882b5d29e795c733",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001906.jpg",
+        "card_description": "Спорт Школа тенниса 10is"
+    },
+    {
+        "offer_id": 3575,
+        "offer_url": "https://www.vtbfamily.ru/offer/3575",
+        "title": "Фитнес-студия EMS тренировок Stroytelo",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3720.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=955e548b82bdb93f2319dc3d5bc593e4c3bd5b539d5e7608b3e7fac859a50fa9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000003575.jpg",
+        "card_description": "Спорт Фитнес-студия EMS тренировок Stroytelo"
+    },
+    {
+        "offer_id": 52679,
+        "offer_url": "https://www.vtbfamily.ru/offer/52679",
+        "title": "Сеть фитнес-клубов XFIT",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/XFIT_aKeLcSB_OScrMbd.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=86ebf74ea762cf091d3655a363bc358429b0000b36d6fc89544a9f8b24164636",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000052679.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов XFIT"
+    },
+    {
+        "offer_id": 56495,
+        "offer_url": "https://www.vtbfamily.ru/offer/56495",
+        "title": "Фитнес-клуб I LOVE FITNESS﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3823.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e2376eadd2cfead0db8b2dee36b771626d5dde2fe6515331f6eceb7bacb3b742",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000056495.jpg",
+        "card_description": "Спорт Фитнес-клуб I LOVE FITNESS﻿"
+    },
+    {
+        "offer_id": 76488,
+        "offer_url": "https://www.vtbfamily.ru/offer/76488",
+        "title": "Боксёрский клуб SHADOW",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3861.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d380a9a9be6f2c241bf54fa162183724cae4b58e21d0dedbe95cab7c9f952e70",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000076488.jpg",
+        "card_description": "Спорт Боксёрский клуб SHADOW"
+    },
+    {
+        "offer_id": 80402,
+        "offer_url": "https://www.vtbfamily.ru/offer/80402",
+        "title": "Камерный фитнес-бутик",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3726.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162947Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=64ca90bdeb326ba2be1105f730fb2abff205abd500e2cbe5e06c5e1da07dea00",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000080402.jpg",
+        "card_description": "Спорт Камерный фитнес-бутик"
+    },
+    {
+        "offer_id": 117043,
+        "offer_url": "https://www.vtbfamily.ru/offer/117043",
+        "title": "Футбольная Академия Витязь",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4007.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7c514220377fb6d1185509b5fbc670e65d44a5fb02d110f0fd158c093ced85ac",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000117043.jpg",
+        "card_description": "Спорт Футбольная Академия Витязь"
+    },
+    {
+        "offer_id": 119109,
+        "offer_url": "https://www.vtbfamily.ru/offer/119109",
+        "title": "Фитнес-клуб 50 GIM",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4018.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e359b26224ffee535d5cf108eb24dfce0b2d497eb607866558ce53a4b6407630",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000119109.jpg",
+        "card_description": "Спорт Фитнес-клуб 50 GIM"
+    },
+    {
+        "offer_id": 129789,
+        "offer_url": "https://www.vtbfamily.ru/offer/129789",
+        "title": "Сеть фитнес-клубов Fitness House",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B1%D0%B0%D1%81%D1%81%D0%B5%D0%B9%D0%BD23_770ZQwo.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a61be8320239083ed554a467c6d632d434618d5327b1d5fcb5b9157482d0a652",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129789.jpg",
+        "card_description": "Спорт Сеть фитнес-клубов Fitness House"
+    },
+    {
+        "offer_id": 131627,
+        "offer_url": "https://www.vtbfamily.ru/offer/131627",
+        "title": "Школа союза инструкторов горных лыж и сноуборда SNOWPRO",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4104.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5381df977f2bf0ebba63f1e171894bc2f5a5bbf898f3305e8258ffe6dcae581b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131627.jpg",
+        "card_description": "Спорт Школа союза инструкторов горных лыж и сноуборда SNOWPRO"
+    },
+    {
+        "offer_id": 131641,
+        "offer_url": "https://www.vtbfamily.ru/offer/131641",
+        "title": "Теннисный клуб Corporate Tennis League",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4124.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d2e619dd89f298bdc65fc6f869ea6d9b399338169c4db37b9691d4c4e2fb9f97",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131641.jpg",
+        "card_description": "Спорт Теннисный клуб Corporate Tennis League"
+    },
+    {
+        "offer_id": 131650,
+        "offer_url": "https://www.vtbfamily.ru/offer/131650",
+        "title": "Сеть EMS-студий FILFIT﻿",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4140.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f4f0af7a566a52cbe52d48dd2361c8061c4092b87f835d2c7fa17c93eebbfd28",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131650.jpg",
+        "card_description": "Спорт Сеть EMS-студий FILFIT﻿"
+    },
+    {
+        "offer_id": 131654,
+        "offer_url": "https://www.vtbfamily.ru/offer/131654",
+        "title": "Фитнес-клуб Wellness Park",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4161.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c0a4d506d66c280bb9d4f839dc40ee6eb918bfe4b7c0f4a1d24b39a2f17e544a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131654.jpg",
+        "card_description": "Спорт Фитнес-клуб Wellness Park"
+    },
+    {
+        "offer_id": 142243,
+        "offer_url": "https://www.vtbfamily.ru/offer/142243",
+        "title": "Фитнес-клуб ПРЕМЬЕР",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4208.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c4feb818ce13a264711a352296ba4b977ba2f816494f3eb266dbc1443c52e06f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000142243.jpg",
+        "card_description": "Спорт Фитнес-клуб ПРЕМЬЕР"
+    },
+    {
+        "offer_id": 165597,
+        "offer_url": "https://www.vtbfamily.ru/offer/165597",
+        "title": "Студии PILATES CLASS",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4267.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=dbf625aa99c496c556eb3f16d488c6f2f1fc877fb4eee200bd1520af69bdc0b7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000165597.jpg",
+        "card_description": "Спорт Студии PILATES CLASS"
+    },
+    {
+        "offer_id": 227896,
+        "offer_url": "https://www.vtbfamily.ru/offer/227896",
+        "title": "Encore Fitness",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/hd_d8310398594407bd2c1f47ee507d006c_67603a8957d3e_1_w3XFMqN.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a5aef1bccbb0bb7a533353b9f832ef6fbafa3148960d35595faa8b0571795691",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000227896.jpg",
+        "card_description": "Спорт Encore Fitness"
+    },
+    {
+        "offer_id": 254149,
+        "offer_url": "https://www.vtbfamily.ru/offer/254149",
+        "title": "Женская фитнес-студия RefilSpace",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4409.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0a9c9af4c76e3d80ae7217c4c8054262d040555c0d2dbe713f8b38eb9702e331",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000254149.jpg",
+        "card_description": "Спорт Женская фитнес-студия RefilSpace"
+    },
+    {
+        "offer_id": 258568,
+        "offer_url": "https://www.vtbfamily.ru/offer/258568",
+        "title": "Фитнес-клуб ECO Fitness",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4418.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9332f630942ad942778808a08a702537107f1a54c537914e73b11444f36c9acd",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000258568.jpg",
+        "card_description": "Спорт Фитнес-клуб ECO Fitness"
+    },
+    {
+        "offer_id": 281351,
+        "offer_url": "https://www.vtbfamily.ru/offer/281351",
+        "title": "Студия растяжки и хореографии Гравитация",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4448.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=24d14492738c52e409cb69118c5599d1842b720a810803e333a52cc68b0c1264",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000281351.jpg",
+        "card_description": "Спорт Студия растяжки и хореографии Гравитация"
+    },
+    {
+        "offer_id": 317406,
+        "offer_url": "https://www.vtbfamily.ru/offer/317406",
+        "title": "Cтудия фитнеса и растяжки Space Vibe",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4489.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2e034bc179e51b0a571355ddb10e8f1f91f833b4a6335c787a5a3f7050fe177e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000317406.jpg",
+        "card_description": "Спорт Cтудия фитнеса и растяжки Space Vibe"
+    },
+    {
+        "offer_id": 402064,
+        "offer_url": "https://www.vtbfamily.ru/offer/402064",
+        "title": "Iron Fitness: сеть фитнес клубов 10%",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/iron_fitness_dDxVLit.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4d11747bd2da564bbbfc467c27a91cf5a86ae0909612b0d12a1904a70849785a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402064.jpg",
+        "card_description": "Спорт Iron Fitness: сеть фитнес клубов 10%"
+    },
+    {
+        "offer_id": 402605,
+        "offer_url": "https://www.vtbfamily.ru/offer/402605",
+        "title": "World Class: сеть фитнес-клуб",
+        "category": "Спорт",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-03-04_18-40-49.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T162949Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7c49ee6a741c62ca09f42425d30162add1b065c02bcecf2f32b5924c0e123e75",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402605.jpg",
+        "card_description": "Спорт World Class: сеть фитнес-клуб"
+    }
+]

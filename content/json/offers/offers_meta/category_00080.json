@@ -1,0 +1,110 @@
+[
+    {
+        "offer_id": 402520,
+        "offer_url": "https://www.vtbfamily.ru/offer/402520",
+        "title": "585* ЗОЛОТОЙ: ювелирный магазин",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/585_%D0%B7%D0%BE%D0%BB%D0%BE%D1%82%D0%BE%D0%B9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8c4678d3d27ffaa129359eb3806d0b555ea7674d21f3d967664cb9ef481b0382",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402520.jpg",
+        "card_description": "Часы и ювелирные изделия 585* ЗОЛОТОЙ: ювелирный магазин"
+    },
+    {
+        "offer_id": 125566,
+        "offer_url": "https://www.vtbfamily.ru/offer/125566",
+        "title": "Интернет-бутик VIPAVENUE",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/VIP3_BNSbJF3.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2c17a172c1aef4e2b603d1c143a2864cce2632d835e96a2046bfa5248e970864",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125566.jpg",
+        "card_description": "Часы и ювелирные изделия Интернет-бутик VIPAVENUE"
+    },
+    {
+        "offer_id": 332551,
+        "offer_url": "https://www.vtbfamily.ru/offer/332551",
+        "title": "SOKOLOV ювелирные украшения",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/sokolov_0NpyPXf.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5b0738dfdc7dec159851a7d7681d220a036b1b64b34f0b0915ebd0b792929b78",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000332551.jpg",
+        "card_description": "Часы и ювелирные изделия SOKOLOV ювелирные украшения"
+    },
+    {
+        "offer_id": 742,
+        "offer_url": "https://www.vtbfamily.ru/offer/742",
+        "title": "Интернет-магазин AllTime",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_236.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b73fe017db2b2d7696c48893596078a9f0aa5c2b85dd857ac095ff2d8f0a4689",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000742.jpg",
+        "card_description": "Часы и ювелирные изделия Интернет-магазин AllTime"
+    },
+    {
+        "offer_id": 264761,
+        "offer_url": "https://www.vtbfamily.ru/offer/264761",
+        "title": "Ювелирный дом CLUEV",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/cluev.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d5fa2288ea8952f8da4729b381591a15be2f206e2ac0a462266b0b0aed801ab5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000264761.jpg",
+        "card_description": "Часы и ювелирные изделия Ювелирный дом CLUEV"
+    },
+    {
+        "offer_id": 405367,
+        "offer_url": "https://www.vtbfamily.ru/offer/405367",
+        "title": "ЭПЛ Даймонд: ювелирный магазин 3%",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%AD%D0%9F%D0%9B.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=5afeb851d3ba9188e6fe47f4c8a3fd5458883b5c6ef5df3290a9b4f97fadacc3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405367.jpg",
+        "card_description": "Часы и ювелирные изделия ЭПЛ Даймонд: ювелирный магазин 3%"
+    },
+    {
+        "offer_id": 1565,
+        "offer_url": "https://www.vtbfamily.ru/offer/1565",
+        "title": "Интернет-магазин UVI",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3588.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d23bc5fe4eda6d7ae1ccdfa1f4fc75fe7fef766c2552fcd51a6620757d789b42",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001565.jpg",
+        "card_description": "Часы и ювелирные изделия Интернет-магазин UVI"
+    },
+    {
+        "offer_id": 212262,
+        "offer_url": "https://www.vtbfamily.ru/offer/212262",
+        "title": "Ювелирные салоны Carat и Vello D’Oro",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4340.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=daa8634c6359d306f73f77e09611ea748230f910e4a7cd9a6d6fc9ad6a416329",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000212262.jpg",
+        "card_description": "Часы и ювелирные изделия Ювелирные салоны Carat и Vello D’Oro"
+    },
+    {
+        "offer_id": 861,
+        "offer_url": "https://www.vtbfamily.ru/offer/861",
+        "title": "Ювелирная сеть SENAT",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2517.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=35d3990724b438b360f504d11c94e6a771b266d4f3678eeb714e01fee010aeaa",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000861.jpg",
+        "card_description": "Часы и ювелирные изделия Ювелирная сеть SENAT"
+    },
+    {
+        "offer_id": 580,
+        "offer_url": "https://www.vtbfamily.ru/offer/580",
+        "title": "Ювелирный лофт go_LD",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2141.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a5801273597c6421673706a2641914550980b0a17eb6cc200411c6c3114af8b7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000580.jpg",
+        "card_description": "Часы и ювелирные изделия Ювелирный лофт go_LD"
+    },
+    {
+        "offer_id": 125565,
+        "offer_url": "https://www.vtbfamily.ru/offer/125565",
+        "title": "SHIPHRA",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Shiphra_9lZ8GL8.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9ae33b96b4d042783ede973779b427c2b42d8c44318b018c2cfc7ded80292591",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000125565.jpg",
+        "card_description": "Часы и ювелирные изделия SHIPHRA"
+    },
+    {
+        "offer_id": 174481,
+        "offer_url": "https://www.vtbfamily.ru/offer/174481",
+        "title": "Украшения Baraka 10%",
+        "category": "Часы и ювелирные изделия",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/Baraka_%D0%9D%D0%BE%D0%B2%D0%B8%D0%BD%D1%81%D0%BA%D0%B8%D0%B9_hixO4zG.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163514Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6025ce4d48360a1d6feb1ab7075fa14c3cfcce28dd57d5b69778468bedc3c916",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000174481.jpg",
+        "card_description": "Часы и ювелирные изделия Украшения Baraka 10%"
+    }
+]

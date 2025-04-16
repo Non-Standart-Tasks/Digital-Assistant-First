@@ -1,0 +1,470 @@
+[
+    {
+        "offer_id": 354032,
+        "offer_url": "https://www.vtbfamily.ru/offer/354032",
+        "title": "Карты зарубежных банков",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2025-02-04_17-52-32_TrEY1Ku.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=0640703a5b37a242194c0d863271a46ab65d4d6d2a95b62dae1d0165a534e374",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000354032.jpg",
+        "card_description": "Услуги Карты зарубежных банков"
+    },
+    {
+        "offer_id": 405555,
+        "offer_url": "https://www.vtbfamily.ru/offer/405555",
+        "title": "4b.ru: профессиональная химчистка 25%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/4b_%D1%85%D0%B8%D0%BC%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=054b6d48cb68a030b7281d0f08a6dad98fda68201856900a4fc6f5481523fc2e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405555.jpg",
+        "card_description": "Услуги 4b.ru: профессиональная химчистка 25%"
+    },
+    {
+        "offer_id": 184066,
+        "offer_url": "https://www.vtbfamily.ru/offer/184066",
+        "title": "ВСК Страхование до 30%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%92%D1%81%D0%BA_%D1%81%D1%82%D1%80%D0%B0%D1%85%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5_.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6388fe34e5ba93f8982943e55d69d4ce7317c8d098a252e18f42658062539beb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000184066.jpg",
+        "card_description": "Услуги ВСК Страхование до 30%"
+    },
+    {
+        "offer_id": 162,
+        "offer_url": "https://www.vtbfamily.ru/offer/162",
+        "title": "Сервис по поиску и заказу товаров для красоты и здоровья apteka.ru",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1417.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=45e2b1df7cd67676ff0527673ddbac21f20c75e7390c5043d8df83fafa347a54",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000162.jpg",
+        "card_description": "Услуги Сервис по поиску и заказу товаров для красоты и здоровья apteka.ru"
+    },
+    {
+        "offer_id": 161291,
+        "offer_url": "https://www.vtbfamily.ru/offer/161291",
+        "title": "СОГАЗ Страхование",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%81%D0%BE%D0%B3%D0%B0%D0%B7.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=351fef5f0536d899ce9693d6c4ff1fd6065f8ef3cad91872ceb48d73555fd860",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000161291.jpg",
+        "card_description": "Услуги СОГАЗ Страхование"
+    },
+    {
+        "offer_id": 225702,
+        "offer_url": "https://www.vtbfamily.ru/offer/225702",
+        "title": "Дистанционный выпуск зарубежных банковских карт от GlobalBankAccount…",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/global_banka_ff_11zon.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=184e694a63aa2006a7b8cf9976fa39c45e21441375661b2d0263d62d7906e2f3",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000225702.jpg",
+        "card_description": "Услуги Дистанционный выпуск зарубежных банковских карт от GlobalBankAccount…"
+    },
+    {
+        "offer_id": 117298,
+        "offer_url": "https://www.vtbfamily.ru/offer/117298",
+        "title": "Химчистка с доставкой и уборка квартир от Airo до 50%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/airo_%D0%BF%D1%83%D1%85%D0%BE%D0%B2%D0%B8%D0%BA__YDF6KJT.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=892188f407ade83736b65cd6596f05ca0dce163376388efd26af0e4a5103b75a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000117298.jpg",
+        "card_description": "Услуги Химчистка с доставкой и уборка квартир от Airo до 50%"
+    },
+    {
+        "offer_id": 60,
+        "offer_url": "https://www.vtbfamily.ru/offer/60",
+        "title": "«Ренессанс страхование»",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1144.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=65b10100316b87c8924b182502d5684d8ac4c9fff73ac11cf29e75d47a2de27f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000060.jpg",
+        "card_description": "Услуги «Ренессанс страхование»"
+    },
+    {
+        "offer_id": 587,
+        "offer_url": "https://www.vtbfamily.ru/offer/587",
+        "title": "Сервис НДФЛка",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2149.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f5480757325520341810b39c702c58ff7eefadecb920412f1e8226396c1a7554",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000587.jpg",
+        "card_description": "Услуги Сервис НДФЛка"
+    },
+    {
+        "offer_id": 252164,
+        "offer_url": "https://www.vtbfamily.ru/offer/252164",
+        "title": "Абсолют страхование до 30%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%9F%D1%80%D0%BE%D0%B4%D1%83%D0%BA%D1%82%D1%8B-947%D1%85370_r3G4lJ1.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=8ec9d7df352fb69ec39240cf9c8525b594aa0c1c3f4d369024a38994ff7a21a4",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000252164.jpg",
+        "card_description": "Услуги Абсолют страхование до 30%"
+    },
+    {
+        "offer_id": 98937,
+        "offer_url": "https://www.vtbfamily.ru/offer/98937",
+        "title": "Сеть химчисток Nikko 20%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/nikko_Mgi2yCH.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=921cda20d9cd20930721072a8a7cf163af195ce52eddbf3198d9bd4e3ecf988d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000098937.jpg",
+        "card_description": "Услуги Сеть химчисток Nikko 20%"
+    },
+    {
+        "offer_id": 1571,
+        "offer_url": "https://www.vtbfamily.ru/offer/1571",
+        "title": "Доставка от Dostavista",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3593.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6b061d32fcbaaf076af3924294262f44a91b553492393ab2daef2ec3e49bacbb",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001571.jpg",
+        "card_description": "Услуги Доставка от Dostavista"
+    },
+    {
+        "offer_id": 174476,
+        "offer_url": "https://www.vtbfamily.ru/offer/174476",
+        "title": "Mafin Страхование КАСКО",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/mafin_8A7kTv4.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a77622d8140e6cfe78569b753055febe6cebfcf8fdaf9f8cd46abe918d1ee78c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000174476.jpg",
+        "card_description": "Услуги Mafin Страхование КАСКО"
+    },
+    {
+        "offer_id": 131903,
+        "offer_url": "https://www.vtbfamily.ru/offer/131903",
+        "title": "Консультации ветеринара онлайн Vetsy",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/vetsy_GXkmQlH.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f7b3959e08bca9b21c4d980b9e3eecf7666596fa3b56889d1b464682d5ec039c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131903.jpg",
+        "card_description": "Услуги Консультации ветеринара онлайн Vetsy"
+    },
+    {
+        "offer_id": 870,
+        "offer_url": "https://www.vtbfamily.ru/offer/870",
+        "title": "Сервис цифровой печати netPrint | Нетпринт",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2527.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=72eb600a3b4f4e095ef7335590cad93bb41ae5ee6afaf68545d44b653fb50ac1",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000870.jpg",
+        "card_description": "Услуги Сервис цифровой печати netPrint | Нетпринт"
+    },
+    {
+        "offer_id": 1224,
+        "offer_url": "https://www.vtbfamily.ru/offer/1224",
+        "title": "Химчистка обуви SneaknFresh",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3030.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f21fe8449c9c4fa8cb4831c44fbb39c289a33727173487a7567099a1018d15bf",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001224.jpg",
+        "card_description": "Услуги Химчистка обуви SneaknFresh"
+    },
+    {
+        "offer_id": 131646,
+        "offer_url": "https://www.vtbfamily.ru/offer/131646",
+        "title": "Химчистка обуви Два Брата﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4133.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=73ff799f2635ba44531715702a11544a1af90516299da12098bf07c1c17578e2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000131646.jpg",
+        "card_description": "Услуги Химчистка обуви Два Брата﻿"
+    },
+    {
+        "offer_id": 155171,
+        "offer_url": "https://www.vtbfamily.ru/offer/155171",
+        "title": "Химчистка и реставрация брендовых обуви и сумок в PENA 20%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BF%D0%B5%D0%BD%D0%B0_9Eo7Ppp.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=846837492791a19167f02ad1b0ae3d1957cc9d7b966eab740f80e7c48b47608c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000155171.jpg",
+        "card_description": "Услуги Химчистка и реставрация брендовых обуви и сумок в PENA 20%"
+    },
+    {
+        "offer_id": 840,
+        "offer_url": "https://www.vtbfamily.ru/offer/840",
+        "title": "Служба доставки Boxberry﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2497.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=52e0d9d15bab62ce27a5e6ffbc4d86d706d09293a237f50a21186e09da875924",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000840.jpg",
+        "card_description": "Услуги Служба доставки Boxberry﻿"
+    },
+    {
+        "offer_id": 32674,
+        "offer_url": "https://www.vtbfamily.ru/offer/32674",
+        "title": "Круизы компаний MSC Cruises и Explora Journeys",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3780.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163646Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9b6617244f92ba8dd24d0620d80c362ea96c1ce914f5dedd452968219168fee9",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000032674.jpg",
+        "card_description": "Услуги Круизы компаний MSC Cruises и Explora Journeys"
+    },
+    {
+        "offer_id": 292086,
+        "offer_url": "https://www.vtbfamily.ru/offer/292086",
+        "title": "Яндекс 360",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8F%D0%BD%D0%B4%D0%B5%D0%BA%D1%81_360_fQbo46N.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1b91648b45a7c25c0750c3c6635bac1f5464c005bb7b52a9171d470a52b5ffe5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000292086.jpg",
+        "card_description": "Услуги Яндекс 360"
+    },
+    {
+        "offer_id": 1529,
+        "offer_url": "https://www.vtbfamily.ru/offer/1529",
+        "title": "Сервис Наша Няня﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3530.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c5f68c1da721122c4fc9afbae5cec3fd35c695adf344191018bc41a5c4030548",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001529.jpg",
+        "card_description": "Услуги Сервис Наша Няня﻿"
+    },
+    {
+        "offer_id": 129766,
+        "offer_url": "https://www.vtbfamily.ru/offer/129766",
+        "title": "Сервис бытовых услуг Full Service 15%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/fullservice__jd8GGC5.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=66f00ab74adcd277f2a4d1e6f3a507e89e2dee8b51e4c597463ba8c4a5ff8a4a",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000129766.jpg",
+        "card_description": "Услуги Сервис бытовых услуг Full Service 15%"
+    },
+    {
+        "offer_id": 201286,
+        "offer_url": "https://www.vtbfamily.ru/offer/201286",
+        "title": "НаПоправку — онлайн-консультации с врачами",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4323.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=59f04f1e963e92ab6bf9bd9f0b0a674749272a3c523f8b518e9887555b3d8ed5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000201286.jpg",
+        "card_description": "Услуги НаПоправку — онлайн-консультации с врачами"
+    },
+    {
+        "offer_id": 210299,
+        "offer_url": "https://www.vtbfamily.ru/offer/210299",
+        "title": "Экскурсии Guide GO",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/guide_to_go_gTMYhM9.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=196634c3895c5ac1fc2c44e380a6f739c17972a529927d2619e11a64e573510c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000210299.jpg",
+        "card_description": "Услуги Экскурсии Guide GO"
+    },
+    {
+        "offer_id": 402085,
+        "offer_url": "https://www.vtbfamily.ru/offer/402085",
+        "title": "Park&Fly: сеть парковок в аэропортах 10%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/parkfly_Xn9GOMV.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=993e6fc85742c56a318fa5f49c3b0d3f2a4fa14c20c6dc5deba1323ccf6cc68c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402085.jpg",
+        "card_description": "Услуги Park&Fly: сеть парковок в аэропортах 10%"
+    },
+    {
+        "offer_id": 402774,
+        "offer_url": "https://www.vtbfamily.ru/offer/402774",
+        "title": "Гольфстрим: установка охранных систем безопасности",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B3%D0%BE%D0%BB%D1%8C%D1%84%D1%81%D1%82%D1%80%D0%B8%D0%BC.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a5758d05a77e2b871f9f4ea811e4bd6c82148583414b376fdafd3729390899c7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000402774.jpg",
+        "card_description": "Услуги Гольфстрим: установка охранных систем безопасности"
+    },
+    {
+        "offer_id": 407705,
+        "offer_url": "https://www.vtbfamily.ru/offer/407705",
+        "title": "Мультифото: сервис онлайн фотопечати 25%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BC%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%84%D0%BE%D1%82%D0%BE.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=6ce6f239ad50dd2b2393af7566dc6b3578dd258d54e6b6c84d68198e89ced9a2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000407705.jpg",
+        "card_description": "Услуги Мультифото: сервис онлайн фотопечати 25%"
+    },
+    {
+        "offer_id": 1029,
+        "offer_url": "https://www.vtbfamily.ru/offer/1029",
+        "title": "Консалтинговая компания Б1 Лайт",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2738.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=91afc257574cfb73bb9e4c46ca892095ea549941c1bf006af5ed86e54b7f397c",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001029.jpg",
+        "card_description": "Услуги Консалтинговая компания Б1 Лайт"
+    },
+    {
+        "offer_id": 1560,
+        "offer_url": "https://www.vtbfamily.ru/offer/1560",
+        "title": "Подписка Mail Space",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3580.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=2eb97c84c4323d922a43420f3566d7fff076d6d099a8229317f48855614c6034",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001560.jpg",
+        "card_description": "Услуги Подписка Mail Space"
+    },
+    {
+        "offer_id": 819,
+        "offer_url": "https://www.vtbfamily.ru/offer/819",
+        "title": "ВТБ Мобайл – оператор связи от Банка ВТБ",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2467.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=44bdf0f6aedc1f02a19beae8f5e71c16f30a940d80795ba973c87076a1aa30e6",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000819.jpg",
+        "card_description": "Услуги ВТБ Мобайл – оператор связи от Банка ВТБ"
+    },
+    {
+        "offer_id": 1717,
+        "offer_url": "https://www.vtbfamily.ru/offer/1717",
+        "title": "Сервис Гульдог и Мурчалкин",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_50.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=06b6964fba6da903af41962393356674991bea5caa87665f6aa45e5329c951c5",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001717.jpg",
+        "card_description": "Услуги Сервис Гульдог и Мурчалкин"
+    },
+    {
+        "offer_id": 1803,
+        "offer_url": "https://www.vtbfamily.ru/offer/1803",
+        "title": "Сервис по обслуживанию техники Apple Fixed.one﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_705.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=d1c24009b4e9edb314032c9e69eaf544b2766890982496399573b8dd76cdcd5e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001803.jpg",
+        "card_description": "Услуги Сервис по обслуживанию техники Apple Fixed.one﻿"
+    },
+    {
+        "offer_id": 405526,
+        "offer_url": "https://www.vtbfamily.ru/offer/405526",
+        "title": "МТС Юрент: шеринг электросамокатов и велосипедов до 50%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%8E%D1%80%D0%B5%D0%BD%D1%82.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=73264c63b961e76487e2714328aa4be6e931ff87620be7be67e8e043ab4a6a17",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000405526.jpg",
+        "card_description": "Услуги МТС Юрент: шеринг электросамокатов и велосипедов до 50%"
+    },
+    {
+        "offer_id": 420661,
+        "offer_url": "https://www.vtbfamily.ru/offer/420661",
+        "title": "Кьюби: сервис бережного хранения и переездов 11%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%BA%D1%8C%D1%8E%D0%B1%D0%B8_1.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=c47d2ba11e5b3d9040ac33a1d9f89fdd81c6a18d259b67b7197e60d5b09d1113",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000420661.jpg",
+        "card_description": "Услуги Кьюби: сервис бережного хранения и переездов 11%"
+    },
+    {
+        "offer_id": 389,
+        "offer_url": "https://www.vtbfamily.ru/offer/389",
+        "title": "Сервис цифровой печати ФотоПочта",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_1843.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=3420150db579a40b789b376c19679f8d1682d819a18605b3933ed8c49102397e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000389.jpg",
+        "card_description": "Услуги Сервис цифровой печати ФотоПочта"
+    },
+    {
+        "offer_id": 114981,
+        "offer_url": "https://www.vtbfamily.ru/offer/114981",
+        "title": "ФОТОСФЕРА",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3979.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=b8a8a39799e15a0730d803f12a539ecacaae11c845da2335e277ecaeb500721e",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000114981.jpg",
+        "card_description": "Услуги ФОТОСФЕРА"
+    },
+    {
+        "offer_id": 418461,
+        "offer_url": "https://www.vtbfamily.ru/offer/418461",
+        "title": "Коллегия адвокатов города Москвы «Вытнов, Атаев и партнеры» 15%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D0%B0%D0%B4%D0%B2%D0%BE%D0%BA%D0%B0%D1%82%D1%8B_%D0%BC%D0%BE%D1%81%D0%BA%D0%B2%D1%8B.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=12219f242c2f9cf138ee6d19f8bc23928ae55ddc0d7c583080bc13abf463041b",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000418461.jpg",
+        "card_description": "Услуги Коллегия адвокатов города Москвы «Вытнов, Атаев и партнеры» 15%"
+    },
+    {
+        "offer_id": 941,
+        "offer_url": "https://www.vtbfamily.ru/offer/941",
+        "title": "Организация свиданий в Москва-Сити от Romantic Room",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2627.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=e718815348311b423bf091bd1aa0a794a491d164d708e7a16096947ee7daec92",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000941.jpg",
+        "card_description": "Услуги Организация свиданий в Москва-Сити от Romantic Room"
+    },
+    {
+        "offer_id": 970,
+        "offer_url": "https://www.vtbfamily.ru/offer/970",
+        "title": "Сервис по подбору образов от стилистов COLLAB x OFFPRICE",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_2656.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163649Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=9030420912c2abe8991e6ec5c9bfef0e7909fecf72d571cedb02fec8d2c5fd62",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000000970.jpg",
+        "card_description": "Услуги Сервис по подбору образов от стилистов COLLAB x OFFPRICE"
+    },
+    {
+        "offer_id": 1391,
+        "offer_url": "https://www.vtbfamily.ru/offer/1391",
+        "title": "Бюро деловых переводов Amaranthe Translations﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3321.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=590fcd14e9c5245350b80b4ee0bf62fc4d93517507c468bd1b3f921316fe5f35",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001391.jpg",
+        "card_description": "Услуги Бюро деловых переводов Amaranthe Translations﻿"
+    },
+    {
+        "offer_id": 1500,
+        "offer_url": "https://www.vtbfamily.ru/offer/1500",
+        "title": "Шаржи от Картинавдоме.ру﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3482.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=bc4e2a21c57c48f14d458b8cbafe4e321a96e49c6543930630779d282411992f",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001500.jpg",
+        "card_description": "Услуги Шаржи от Картинавдоме.ру﻿"
+    },
+    {
+        "offer_id": 1579,
+        "offer_url": "https://www.vtbfamily.ru/offer/1579",
+        "title": "Сервис удобной аренды у дома Складно",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3603.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=f4a490853da2327844b1ddb241b97ecf9078269bbb5e56c433924ee590e662f7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001579.jpg",
+        "card_description": "Услуги Сервис удобной аренды у дома Складно"
+    },
+    {
+        "offer_id": 1817,
+        "offer_url": "https://www.vtbfamily.ru/offer/1817",
+        "title": "Сервис по подбору гардероба Get Outfit",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_745.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=eb40a420c380f45686629a227eb911803676a1a11cd663746793e5299e19b3ad",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000001817.jpg",
+        "card_description": "Услуги Сервис по подбору гардероба Get Outfit"
+    },
+    {
+        "offer_id": 46461,
+        "offer_url": "https://www.vtbfamily.ru/offer/46461",
+        "title": "Химчистка Чистая вещь﻿",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3810.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4a414bafb462dc2cb71d37f8593df209c11aa3cb4fd967655d9cf1655039e513",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000046461.jpg",
+        "card_description": "Услуги Химчистка Чистая вещь﻿"
+    },
+    {
+        "offer_id": 54727,
+        "offer_url": "https://www.vtbfamily.ru/offer/54727",
+        "title": "Кадровое агентство Green Apple 10%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/photo_2022-04-15_16-22-38_PY7D1gR.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=1c61f86a15a29011e4aafd10e0cc9cad63827c2bec4ca767b554b8b5ced668c2",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000054727.jpg",
+        "card_description": "Услуги Кадровое агентство Green Apple 10%"
+    },
+    {
+        "offer_id": 68501,
+        "offer_url": "https://www.vtbfamily.ru/offer/68501",
+        "title": "Химчистка обуви SneaknFresh на ул. 800-летия Москвы",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_3854.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=da0d7499eb9ee28854a6d07699ef8b8e0d015df3a59d5c0f30402d1c74ff0603",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000068501.jpg",
+        "card_description": "Услуги Химчистка обуви SneaknFresh на ул. 800-летия Москвы"
+    },
+    {
+        "offer_id": 214467,
+        "offer_url": "https://www.vtbfamily.ru/offer/214467",
+        "title": "Ветеринарные клиники Vet Union",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4319.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=4998db8a2c966a6bb2b390784820c6325dbe2be689177c0697407c643a2d1a0d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000214467.jpg",
+        "card_description": "Услуги Ветеринарные клиники Vet Union"
+    },
+    {
+        "offer_id": 275831,
+        "offer_url": "https://www.vtbfamily.ru/offer/275831",
+        "title": "Fresh Shoes до 15%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/fresh_shoes-01_dDV0cQM.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=273c4f104638fc142cab6a940c77d2640097a7fca73ad8d307e0d07b379f5de8",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000275831.jpg",
+        "card_description": "Услуги Fresh Shoes до 15%"
+    },
+    {
+        "offer_id": 281345,
+        "offer_url": "https://www.vtbfamily.ru/offer/281345",
+        "title": "Академия красоты Эколь",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4441.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=498a96bd6956c20b522c1f725495f088da9256c4a87ad8d502438dc11e8c674d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000281345.jpg",
+        "card_description": "Услуги Академия красоты Эколь"
+    },
+    {
+        "offer_id": 338818,
+        "offer_url": "https://www.vtbfamily.ru/offer/338818",
+        "title": "PRO32 — поставщик эффективных IT решений",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/bestbenefits_4535.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=a3eed1012a1f709d61be18de9320ee16c17c3e1a544823498ba45083166ebd4d",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000338818.jpg",
+        "card_description": "Услуги PRO32 — поставщик эффективных IT решений"
+    },
+    {
+        "offer_id": 420663,
+        "offer_url": "https://www.vtbfamily.ru/offer/420663",
+        "title": "Согласие: страховая компания до 20%",
+        "category": "Услуги",
+        "image_url": "https://storage.yandexcloud.net/vtb-media/offer/source_image/%D1%81%D0%BE%D0%B3%D0%BB%D0%B0%D1%81%D0%B8%D0%B5.webp?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=YCAJELedAmznPT42jIpPLToXg%2F20250404%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250404T163704Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=26acf05b78eaf85a8e8cde7bb69f7679d970d5fe32f6221abcf9c2f4d6b01bd7",
+        "image_path": "/home/anton/repos/vtb-family/data/2025-04-04_19-16-30/images/000420663.jpg",
+        "card_description": "Услуги Согласие: страховая компания до 20%"
+    }
+]

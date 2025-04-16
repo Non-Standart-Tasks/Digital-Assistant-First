@@ -11,6 +11,7 @@ from openai import OpenAI  # Добавляем прямой импорт OpenAI
 from digital_assistant_first.multiagent_system.deepsearch import deepsearch
 from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool, RunContextWrapper
 from pydantic import BaseModel
+import os
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -64,7 +65,7 @@ def initialize_model(config):
     langchain_model = ChatOpenAI(model=config["Model"], stream=False)
     
     # Инициализируем прямой клиент OpenAI для возможности использования web_search_preview
-    openai_client = OpenAI()
+    openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
     
     # Сохраняем клиент в конфигурации
     config["openai_client"] = openai_client
@@ -417,7 +418,7 @@ def model_response_generator_sync(model, config, status_placeholder):
             
             print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
                 
-                log_api_call(
+            log_api_call(
                     logger=logger,
                     source=f"LLM ({config['Model']})",
                     request=user_input,

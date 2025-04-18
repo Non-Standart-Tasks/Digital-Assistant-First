@@ -1,0 +1,75 @@
+
+\documentclass[a4paper]{article}
+
+% Минимальный набор пакетов для XeLaTeX с поддержкой кириллицы
+\usepackage{fontspec}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+% Базовые шрифты с поддержкой кириллицы
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+
+\geometry{top=2cm, bottom=0.7cm, left=0.7cm, right=0.7cm}
+
+\definecolor{darkgray}{RGB}{77,76,76}
+\definecolor{headingcol}{RGB}{172,150,134}
+
+\newcommand\BackgroundPic{
+    \AddToShipoutPicture*{
+        \AtPageLowerLeft{
+            \includegraphics[width=\paperwidth,height=\paperheight]{background_empty.pdf}
+        }
+    }
+}
+
+\newcommand{\offercard}[4]{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colframe=white,
+        colback=white,
+        boxrule=0.5pt,
+        arc=5mm,
+        left=5pt, right=5pt, top=5pt, bottom=5pt,
+    ]
+        \sffamily
+        \includegraphics[width=\textwidth]{#1}
+        
+        \vspace{0.2cm}{\footnotesize\textcolor{gray}{#2}}
+        \vspace{0.2cm}
+        
+        \textbf{#3}
+        
+        \vspace{0.2cm}
+        \hfill\href{#4}{\textcolor{darkgray}{\footnotesize Подробнее}}
+    \end{tcolorbox}
+    \vspace{0.5cm}
+}
+
+\newcommand{\insertheading}[1]{
+    \begin{center}
+    \sffamily
+    \color{headingcol}
+    \Huge
+    #1
+    \end{center}
+    \vspace{1cm}
+}
+
+\begin{document}
+\BackgroundPic
+\insertheading{Предложения}
+
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_0.jpg}{Одежда, обувь и аксессуары}{Еврооптика на Кутузовском 15\%  — 15\% скидка Как воспользоваться предложением:предъявите карту ВТБ MIR Supreme до оплаты Предложение доступно по адресу: Москва, Кутузовский пр-т, д. 5/3 «Еврооптика на Кутузовском», расположенная в самом центре Москвы, предлагает своим клиентам уникальные коллекции от лучших европейских дизайнеров. «Еврооптика на Кутузовском» предлагает клиентам следующий сервис:— диагностика зрения практикующими врачами-офтальмологами, наличиемедицинской лицензии;— подбор опра...}{https://www.vtbfamily.ru/offer/111136}
+\offercard{image_2.jpg}{Красота}{пример}{https://www.vtbfamily.ru/offer/265}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_1.jpg}{Здоровье}{Сеть офтальмологических клиник «Точная Оптика»  ● Специальная стоимость в сети офтальмологических клиник «Точная Оптика» • Скидка 10\% на мягкие контактные линзы плановой замены (Cooper Vision, Acuvue и др.) • Скидка 20\% на оправу при заказе очков (очковые линзы любой сложности, широкий ассортимент оправ и брендов) • Скидка 10\% на солнцезащитные очки • Скидка 10\% на индивидуальные ортокератологические линзы • Скидка 5\% на индивидуальные линзы Esencia для остановки прогрессирования детской близ...}{https://www.vtbfamily.ru/offer/495}
+\end{minipage}\end{document}

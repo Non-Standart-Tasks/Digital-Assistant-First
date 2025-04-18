@@ -1,0 +1,73 @@
+
+\documentclass[a4paper]{article}
+
+% Минимальный набор пакетов для XeLaTeX с поддержкой кириллицы
+\usepackage{fontspec}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+% Базовые шрифты с поддержкой кириллицы
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+
+\geometry{top=2cm, bottom=0.7cm, left=0.7cm, right=0.7cm}
+
+\definecolor{darkgray}{RGB}{77,76,76}
+\definecolor{headingcol}{RGB}{172,150,134}
+
+\newcommand\BackgroundPic{
+    \AddToShipoutPicture*{
+        \AtPageLowerLeft{
+            \includegraphics[width=\paperwidth,height=\paperheight]{background_empty.pdf}
+        }
+    }
+}
+
+\newcommand{\offercard}[4]{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colframe=white,
+        colback=white,
+        boxrule=0.5pt,
+        arc=5mm,
+        left=5pt, right=5pt, top=5pt, bottom=5pt,
+    ]
+        \sffamily
+        \includegraphics[width=\textwidth]{#1}
+        
+        \vspace{0.2cm}{\footnotesize\textcolor{gray}{#2}}
+        \vspace{0.2cm}
+        
+        \textbf{#3}
+        
+        \vspace{0.2cm}
+        \hfill\href{#4}{\textcolor{darkgray}{\footnotesize Подробнее}}
+    \end{tcolorbox}
+    \vspace{0.5cm}
+}
+
+\newcommand{\insertheading}[1]{
+    \begin{center}
+    \sffamily
+    \color{headingcol}
+    \Huge
+    #1
+    \end{center}
+    \vspace{1cm}
+}
+
+\begin{document}
+\BackgroundPic
+\insertheading{Предложения}
+
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_0.jpg}{Хобби и увлечения}{Хобби-гипермаркет Леонардо до 15\%  — 15\% скидка на первый заказ в интернет-магазине от 3000 рублей— 10\% скидка на последующие заказы в интернет-магазине от 2500 рублей Как воспользоваться предложением:введите промокод на сайте в корзине перед оплатой Предложение доступно по всей России Хобби-гипермаркет «Леонардо» – это не просто магазин, это пространство для творчества и самовыражения, где каждый может найти вдохновение и воплотить свои самые смелые идеи в жизнь. В мире, где творчество стано...}{https://www.vtbfamily.ru/offer/174587}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\end{minipage}\end{document}

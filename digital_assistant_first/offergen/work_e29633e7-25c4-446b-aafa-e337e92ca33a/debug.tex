@@ -1,0 +1,75 @@
+
+\documentclass[a4paper]{article}
+
+% Минимальный набор пакетов для XeLaTeX с поддержкой кириллицы
+\usepackage{fontspec}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+% Базовые шрифты с поддержкой кириллицы
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+
+\geometry{top=2cm, bottom=0.7cm, left=0.7cm, right=0.7cm}
+
+\definecolor{darkgray}{RGB}{77,76,76}
+\definecolor{headingcol}{RGB}{172,150,134}
+
+\newcommand\BackgroundPic{
+    \AddToShipoutPicture*{
+        \AtPageLowerLeft{
+            \includegraphics[width=\paperwidth,height=\paperheight]{background_empty.pdf}
+        }
+    }
+}
+
+\newcommand{\offercard}[4]{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colframe=white,
+        colback=white,
+        boxrule=0.5pt,
+        arc=5mm,
+        left=5pt, right=5pt, top=5pt, bottom=5pt,
+    ]
+        \sffamily
+        \includegraphics[width=\textwidth]{#1}
+        
+        \vspace{0.2cm}{\footnotesize\textcolor{gray}{#2}}
+        \vspace{0.2cm}
+        
+        \textbf{#3}
+        
+        \vspace{0.2cm}
+        \hfill\href{#4}{\textcolor{darkgray}{\footnotesize Подробнее}}
+    \end{tcolorbox}
+    \vspace{0.5cm}
+}
+
+\newcommand{\insertheading}[1]{
+    \begin{center}
+    \sffamily
+    \color{headingcol}
+    \Huge
+    #1
+    \end{center}
+    \vspace{1cm}
+}
+
+\begin{document}
+\BackgroundPic
+\insertheading{Предложения}
+
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_0.jpg}{Рестораны}{[KU:] Рамен Изакая Бар 15\%  — до 15\% скидка Как воспользоваться предложением: предъявите карту ВТБ MIR Supreme до запроса чека/оплаты Предложение доступно в г. Москва: — Грузинская Б ул., д.69— Пресненская набережная, 10 c2— Смоленская ул., 8— Лесная ул., 20с3 Рестораны KU в Москве предлагают формат, сочетающий элементы лапшичной и изакая, или гастробара. В Японии такие заведения популярны среди посетителей после рабочего дня. Открытая кухня занимает центральное место, а интерьер выполнен в м...}{https://www.vtbfamily.ru/offer/90864}
+\offercard{image_2.jpg}{Кафе и бары}{Бар Моя пьяная бабушка летит в Сингарпур  ● Скидка 20\% на все меню, напитки и барную карту в баре Моя пьяная бабушка летит в Сингарпур ● Скидка не действует на спецпредложения, акции и не суммируется с другими скидками ● Скидка не действует на секретную комнату Дракона ● Предъявляйте купон BestBenefits X VTBFamily на экране мобильного устройства или в распечатанном виде перед заказом ● При возникновении вопросов по применению скидки со стороны партнёра обращайтесь по телефону: +7 (495) 795-77...}{https://www.vtbfamily.ru/offer/192}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_1.jpg}{Рестораны}{Японские рестораны Coba (Коба)  ● Скидка 20\% на все меню и барную карту в японских ресторанах Coba (Коба) или на доставку: • Сообщайте о наличии скидки BestBenefits X VTBFamily перед заказом • Скидка действует в ресторанах на Новой площади, 10 и на Малой Дмитровке, 3. • Для получения скидки на доставку, введите код купона в поле для промокода при оформлении доставки на сайте ● Скидка действует на один счет и принимается в электронном и распечатанном видах ● При использовании купона баллы прог...}{https://www.vtbfamily.ru/offer/497}
+\end{minipage}\end{document}

@@ -212,7 +212,7 @@ def model_response_generator_sync(model, config, status_placeholder):
         - поездки (если запрос о поездках на машинах, такси, аренде автомобилей, авиабилетах, перелетах из одного города в другой, железнодорожных билетах)
         - другое (если запрос не подходит ни под одну из перечисленных категорий)
     """,
-    model="gpt-4o-mini",
+    model="gpt-4o",
     output_type=Category)
     
     # Инициализируем переменные по умолчанию
@@ -404,7 +404,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                     ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
 
                     """,
-                    model='gpt-4o',
+                    model='gpt-4o-mini',
                     tools=[WebSearchTool(search_context_size=web_search_context_size)])
                 
                 web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)

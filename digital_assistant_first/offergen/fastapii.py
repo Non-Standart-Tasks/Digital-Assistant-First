@@ -31,7 +31,7 @@ async def generate_link(request: Request):
 
     # Формируем ссылку на наше Streamlit-приложение
     # Допустим, оно будет крутиться на http://localhost:8501/
-    link = f"http://185.221.163.214:8002/?user_id={user_id}"
+    link = f"https://offer.vtb.msut.me/?user_id={user_id}"
 
     return {"link": link}
 

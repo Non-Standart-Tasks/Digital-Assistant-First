@@ -1,0 +1,74 @@
+
+\documentclass[a4paper]{article}
+
+% Минимальный набор пакетов для XeLaTeX с поддержкой кириллицы
+\usepackage{fontspec}
+\usepackage[russian]{babel}
+\usepackage{graphicx}
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usepackage{hyperref}
+\usepackage{multicol}
+
+% Базовые шрифты с поддержкой кириллицы
+\setmainfont{Liberation Serif}
+\setsansfont{Liberation Sans}
+
+\geometry{top=2cm, bottom=0.7cm, left=0.7cm, right=0.7cm}
+
+\definecolor{darkgray}{RGB}{77,76,76}
+\definecolor{headingcol}{RGB}{172,150,134}
+
+\newcommand\BackgroundPic{
+    \AddToShipoutPicture*{
+        \AtPageLowerLeft{
+            \includegraphics[width=\paperwidth,height=\paperheight]{background_empty.pdf}
+        }
+    }
+}
+
+\newcommand{\offercard}[4]{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colframe=white,
+        colback=white,
+        boxrule=0.5pt,
+        arc=5mm,
+        left=5pt, right=5pt, top=5pt, bottom=5pt,
+    ]
+        \sffamily
+        \includegraphics[width=\textwidth]{#1}
+        
+        \vspace{0.2cm}{\footnotesize\textcolor{gray}{#2}}
+        \vspace{0.2cm}
+        
+        \textbf{#3}
+        
+        \vspace{0.2cm}
+        \hfill\href{#4}{\textcolor{darkgray}{\footnotesize Подробнее}}
+    \end{tcolorbox}
+    \vspace{0.5cm}
+}
+
+\newcommand{\insertheading}[1]{
+    \begin{center}
+    \sffamily
+    \color{headingcol}
+    \Huge
+    #1
+    \end{center}
+    \vspace{1cm}
+}
+
+\begin{document}
+\BackgroundPic
+\insertheading{Предложения}
+
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_0.jpg}{Рестораны}{Японские рестораны Coba (Коба)  ● Скидка 20\% на все меню и барную карту в японских ресторанах Coba (Коба) или на доставку: • Сообщайте о наличии скидки BestBenefits X VTBFamily перед заказом • Скидка действует в ресторанах на Новой площади, 10 и на Малой Дмитровке, 3. • Для получения скидки на доставку, введите код купона в поле для промокода при оформлении доставки на сайте ● Скидка действует на один счет и принимается в электронном и распечатанном видах ● При использовании купона баллы прог...}{https://www.vtbfamily.ru/offer/497}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\textwidth}
+\offercard{image_1.jpg}{Кафе и бары}{UP SUSHI: сеть ресторанов японской кухни 20\%  Как воспользоваться предложением: введите промокод на сайте или в приложении при оформлении заказа перед оплатой, или назовите его на кассе в ресторане UP SUSHI — это сеть из 22 ресторанов японской и европейской кухни в 11 городах России. Главное правило ресторана — вкус выше всего!Здесь создают не просто еду, а моменты удовольствия. Быстрая доставка позволяет наслаждаться свежими суши и роллами, аппетитной пиццей и горячими блюдами без лишнего ож...}{https://www.vtbfamily.ru/offer/317603}
+\end{minipage}\end{document}

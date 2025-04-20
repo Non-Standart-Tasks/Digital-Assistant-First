@@ -170,10 +170,10 @@ class TravelPayoutsHelper:
             aviasales_json = basic_future.result()
             aviasales_json_preferences = preferences_future.result()
         if aviasales_json is None:
-            return self.none_str, self.none_str
+            return None
         origin, destination = self.iata_converter.get_iata_codes(aviasales_json)
         if origin is None or destination is None:
-            return self.none_str, self.none_str
+            return None
         # Проверка даты вылета - она должна быть не раньше текущей даты
         
         curr_date, curr_yr = datetime.now().strftime("%Y-%m-%d"), datetime.now().year
@@ -321,33 +321,31 @@ class TravelPayoutsHelper:
         return "https://www.aviasales.ru/search/" + base_url
     
     def launch_pipeline(self, user_query: str) -> str:
-        # try:
+        try:
             with self.st_interface.spinner("Поиск билетов..."):
                 aviasales_json = self._create_dict(user_query)
-                if aviasales_json == self.none_str:
-                    return self.none_str
+                if aviasales_json is None:
+                    return self.none_str, self.none_str
                 request_string = self._create_request_string(aviasales_json)
                 request_hash = self._dict_to_md5_hash(request_string)
                 search_response = self._post_search(aviasales_json, request_hash)
-                print()
-                print(search_response["search_id"])
-                print()
                 search_json = self._fetch_search(search_response["search_id"])
-                with open("digital_assistant_first/aviasales_system/search_json_received.json", "w") as f:
-                    json.dump(search_json, f)
-                with open("digital_assistant_first/aviasales_system/aviasales_json_sent.json", "w") as f:
-                    json.dump(aviasales_json, f)
+                # with open("digital_assistant_first/aviasales_system/search_json_received.json", "w") as f:
+                #     json.dump(search_json, f)
+                # with open("digital_assistant_first/aviasales_system/aviasales_json_sent.json", "w") as f:
+                #     json.dump(aviasales_json, f)
+                # for debug !
             self.st_interface.success("✅ Поиск авиабилетов завершен! Формируем рекомендации...")
-            recommendation_engine = AviasalesRecommendationEngine(self.logger, search_json, aviasales_json)
+            recommendation_engine = AviasalesRecommendationEngine(self.logger, search_json, aviasales_json, search_response["search_id"])
             md_res = recommendation_engine._launch_pipeline()
             return md_res, self._get_general_link(aviasales_json)
         
-        # except NothingFoundTravelPayouts as e:
-        #     self.logger.error(f"Ничего не найдено в Aviasales после нескольких попыток: {e}")
-        #     return self.none_str, self.none_str
-        # except Exception as e:
-        #     self.logger.error(f"Ошибка в launch_pipeline: {e}")
-        #     return self.none_str, self.none_str
+        except NothingFoundTravelPayouts as e:
+            self.logger.error(f"Ничего не найдено в Aviasales после нескольких попыток: {e}")
+            return self.none_str, self.none_str
+        except Exception as e:
+            self.logger.error(f"Ошибка в launch_pipeline: {e}")
+            return self.none_str, self.none_str
 
     # {            
 # "host": "ama.vtb.msut.me",

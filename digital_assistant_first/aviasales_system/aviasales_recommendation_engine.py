@@ -145,9 +145,10 @@ airports_mapping = airports_mapping[["name", "city_code"]].copy()
 airlines_mapping = airlines_mapping[["name", "is_lowcost"]].copy()
 
 class AviasalesRecommendationEngine:
-    def __init__(self, logger, search_json_received, aviasales_json_sent):
+    def __init__(self, logger, search_json_received, aviasales_json_sent, search_id):
         self.search_json_received = search_json_received
         self.aviasales_json_sent = aviasales_json_sent
+        self.search_id = search_id
         self.logger = logger
         self.proposals_df_full = None
         self.viable_proposals = None
@@ -307,6 +308,9 @@ class AviasalesRecommendationEngine:
             viable_proposals_other if viable_proposals_other.shape[0] > 0 else None,
         )
 
+    def _form_dynamic_link(self, url_num):
+        return "https://ama.vtb.msut.me/get_link_aviasales?search_id=" + self.search_id + "&url_num=" + str(url_num)
+
     def _format_recommendations(self) -> str:
 
         def _basic_fmt(df, label):
@@ -314,7 +318,7 @@ class AviasalesRecommendationEngine:
                 return "\n\n"
             template_res_all = f"### :blue-background[{label}:]\n\n---\n\n"
             for idx, smpl in df.iterrows():
-                # try:
+                try:
                     template_res = ""
 
                     url_ = smpl.url
@@ -387,10 +391,10 @@ class AviasalesRecommendationEngine:
 
                     if smpl.tariff_back:
                         template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
-                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[{url_}]"
+                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[Забронировать]({self._form_dynamic_link(url_)})"
                     else:
                         template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
-                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_to, 'get_str')} \n\n[{url_}]"
+                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_to, 'get_str')} \n\n[Забронировать]({self._form_dynamic_link(url_)})"
 
                     ### (additional options)
                     options_list = ["has_handbags", "has_baggage", "has_exchange", "has_return"]
@@ -429,12 +433,12 @@ class AviasalesRecommendationEngine:
                                     if len(v) > 0:
                                         price_i = other_variants.loc[k, "price"]
                                         url_i = other_variants.loc[k, "url"]
-                                        template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} \n\n[{url_i}]"
+                                        template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} \n\n[Забронировать]({self._form_dynamic_link(url_i)})"
 
                     template_res_all += template_res + "\n\n---\n\n"
-                # except Exception as e:
-                #     self.logger.error(f"Ошибка в _basic_fmt: {e}")
-                #     continue
+                except Exception as e:
+                    self.logger.error(f"Ошибка в _basic_fmt: {e}")
+                    continue
 
             return template_res_all
         

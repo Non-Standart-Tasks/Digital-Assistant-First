@@ -372,52 +372,52 @@ def model_response_generator_sync(model, config, status_placeholder):
                 logger.error(f"Error in offers processing: {str(e)}", exc_info=True)
                 offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
 
-        if request_category != "поездки": # не обращаемся к ЛЛМ, если запрос о авиабилетах
-            if config.get("deepsearch", False):
-                deepsearch_res = loop.run_until_complete(deepsearch(user_input, status_placeholder, config))
-
-            else:
-                web_search_context_size = config.get("web_search_context_size", "medium")
+        if request_category == "поездки" and aviasales_enabled:
+            logger.info("Запрос о поездках и включен поиск по авиабилетам, не обращаемся к ЛЛМ")
+            # не обращаемся к ЛЛМ, если запрос о авиабилетах и он включен
+            pass
+        else:
+            web_search_context_size = config.get("web_search_context_size", "medium")
+        
+            # Используем нативный веб-поиск OpenAI
+            logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
             
-                # Используем нативный веб-поиск OpenAI
-                logger.info(f"Используем нативный веб-поиск OpenAI для запроса: {user_input}")
+            agent_web_seach = Agent(
+                name="Assistant",
+                instructions="""
+                Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
                 
-                agent_web_seach = Agent(
-                    name="Assistant",
-                    instructions="""
-                    Ответь на вопрос пользователя, в зависимости от категории запроса: используя интернет и контекст. 
-                    
-                    Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
-                    если явно количество не указано, то выведи 5 вариантов.
+                Если запрос связан с выводом каких-либо мест, то выведи столько вариантов, сколько попросил пользовательл
+                если явно количество не указано, то выведи 5 вариантов.
 
-                    ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
+                ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
 
-                    """,
-                    model='gpt-4o-mini',
-                    tools=[WebSearchTool(search_context_size=web_search_context_size)])
-                
-                web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)
-                web_search_response = web_search_response.final_output
-                
-                # ЗДЕСЬ добавим проверку неопределенности в ответе
-            # Проверяем неопределенность только если включен режим офферов
-            if config.get("offers_enabled", False):
-                web_search_response = check_uncertainty_in_response(web_search_response, True)
+                """,
+                model='gpt-4o-mini',
+                tools=[WebSearchTool(search_context_size=web_search_context_size)])
             
-            print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
-                
-            log_api_call(
-                    logger=logger,
-                    source=f"LLM ({config['Model']})",
-                    request=user_input,
-                    response=web_search_response,
-                )
+            web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)
+            web_search_response = web_search_response.final_output
+            
+            # ЗДЕСЬ добавим проверку неопределенности в ответе
+        # Проверяем неопределенность только если включен режим офферов
+        if config.get("offers_enabled", False):
+            web_search_response = check_uncertainty_in_response(web_search_response, True)
+        
+        print(f"DEBUG: Ответ от веб-поиска: {web_search_response}")
+            
+        log_api_call(
+                logger=logger,
+                source=f"LLM ({config['Model']})",
+                request=user_input,
+                response=web_search_response,
+            )
             
     finally:
         loop.close()
         
     if config.get("deepsearch", False):
-        if request_category == "поездки":
+        if request_category == "поездки" and aviasales_enabled:
             if aviasales_flight_info:
                 deepsearch_res += "\n### Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
             else:
@@ -433,7 +433,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     }
 
     else:
-        if request_category == "поездки":
+        if request_category == "поездки" and aviasales_enabled:
             if aviasales_flight_info:
                 web_search_response += "\n### Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
             else:

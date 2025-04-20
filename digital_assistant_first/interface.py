@@ -11,6 +11,7 @@ from digital_assistant_first.multiagent_system.deepsearch import deepsearch
 from agents import Agent, function_tool, Runner, set_tracing_disabled, OpenAIChatCompletionsModel, WebSearchTool, RunContextWrapper
 from pydantic import BaseModel
 import os
+from concurrent.futures import ThreadPoolExecutor
 
 # Импорты сторонних библиотек
 from langchain_core.prompts import ChatPromptTemplate
@@ -28,8 +29,9 @@ from digital_assistant_first.telegram_system.telegram_data_initializer import (
 from digital_assistant_first.telegram_system.telegram_initialization import (
     fetch_telegram_data,
 )
-from digital_assistant_first.utils.aviasales_parser import AviasalesHandler
-from digital_assistant_first.utils.aviasales_economy_helper import AviasalesEconomyHelper
+
+# from digital_assistant_first.aviasales_system.aviasales_economy_helper import AviasalesEconomyHelper # deprecated
+from digital_assistant_first.aviasales_system.aviasales_travelpayouts_helper import TravelPayoutsHelper
 from digital_assistant_first.geo_system.two_gis import fetch_2gis_data, build_route_from_query
 from digital_assistant_first.offergen.agent import validation_agent
 from digital_assistant_first.offergen.utils import get_offers_data
@@ -227,6 +229,7 @@ def model_response_generator_sync(model, config, status_placeholder):
     offers_data = {}  # Инициализируем как пустой словарь вместо пустого списка
     aviasales_url = ""
     aviasales_flight_info = ""
+    aviasales_flight_info_legacy = ""
     deepsearch_res = ""
     web_search_response = ""
 
@@ -290,30 +293,15 @@ def model_response_generator_sync(model, config, status_placeholder):
         # Для category = поездки или офферы получим необходимые данные
         # aviasales_flight_info мы будем заменять!!!
 
-        if request_category == "поездки":
-            aviasales_helper = AviasalesEconomyHelper(model, config, logger)
-            aviasales_flight_info, aviasales_url = aviasales_helper.process_user_input(user_input, st)
-
-        # # [Old Aviasales Handler]: 
+        aviasales_enabled = config.get("aviasales_enabled", False)
+        if request_category == "поездки" and aviasales_enabled:
+            
+            aviasales_travelpayouts_helper = TravelPayoutsHelper(logger, model, config, st)
+            aviasales_flight_info, aviasales_url = aviasales_travelpayouts_helper.launch_pipeline(user_input)
         
         if not aviasales_url: # using as a fallback
-            if not aviasales_flight_info:
+            if not aviasales_flight_info_legacy:
                 aviasales_url = ""
-            else: # basically will never go here
-                aviasales_tool_for_link = AviasalesHandler()
-                tickets_need = loop.run_until_complete(aviasales_tool_for_link.aviasales_request(model, config, user_input))
-                if tickets_need.get("response", "").lower() == "true":
-                    aviasales_url = aviasales_tool_for_link.construct_aviasales_url(
-                        tickets_need["departure_city"],
-                        tickets_need["destination"],
-                        tickets_need["start_date"],
-                        tickets_need["end_date"],
-                        tickets_need.get("adult_passengers", 1),
-                        tickets_need.get("child_passengers", 0),
-                        tickets_need.get("travel_class", ""),
-                    ) 
-                if "None" in aviasales_url:
-                    aviasales_url = ""
 
         # Для офферов - при включенном toggle обрабатываем независимо от категории запроса
         # Код для офферов - тут гоняем РАГ
@@ -431,9 +419,9 @@ def model_response_generator_sync(model, config, status_placeholder):
     if config.get("deepsearch", False):
         if request_category == "поездки":
             if aviasales_flight_info:
-                deepsearch_res += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
+                deepsearch_res += "\n### Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
             else:
-                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить даты."
+                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить условия поиска."
 
         return {
         "answer": deepsearch_res,
@@ -447,9 +435,9 @@ def model_response_generator_sync(model, config, status_placeholder):
     else:
         if request_category == "поездки":
             if aviasales_flight_info:
-                web_search_response += "\n### Авиабилеты по данному запросу:\n" + aviasales_flight_info
+                web_search_response += "\n### Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
             else:
-                web_search_response += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить даты."
+                web_search_response += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить условия поиска."
 
         return {
         "answer": web_search_response,

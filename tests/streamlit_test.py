@@ -280,8 +280,6 @@ def test_2gis_data_display(initialized_app):
     logger.info("Тест успешно пройден: данные 2GIS API отображаются в ответе")
 
 
-
-"""
 @skip_if_no_api_key
 def test_aviasales_no_outp_err(initialized_app):
 
@@ -327,5 +325,3 @@ def test_aviasales_no_outp_err(initialized_app):
             "Ошибка в ответе ассистента выведена в интерфейс!"
         )
     logger.info("Тест по авиабилетам пройден, юзеру не возвращались ошибки")
-    
-"""

@@ -68,13 +68,13 @@ def apply_configuration():
         "use_openai_web_search": st.session_state.get("use_openai_web_search", False),
         "web_search_context_size": st.session_state.get("web_search_context_size", "medium"),
         "system_prompt": st.session_state["system_prompt"],
-        "system_prompt_aviasales": st.session_state["system_prompt_aviasales"],
         "system_prompt_airport": st.session_state["system_prompt_airport"],
         "system_prompt_tickets": st.session_state["system_prompt_tickets"],
         "offers_enabled": st.session_state["offers_enabled"],
         "FORMAT_INSTRUCTIONS": st.session_state["FORMAT_INSTRUCTIONS"],
         "global_prompt": st.session_state["global_prompt"],
-        "system_prompt_tickets_for_aviasales_economy_helper": st.session_state["system_prompt_tickets_for_aviasales_economy_helper"]
+        "system_prompt_tickets_for_aviasales_helper": st.session_state["system_prompt_tickets_for_aviasales_helper"],
+        "system_prompt_preferences_for_aviasales_helper": st.session_state["system_prompt_preferences_for_aviasales_helper"]
     }
 
     st.session_state["config"] = config
@@ -147,14 +147,15 @@ def main():
         "use_openai_web_search": config_yaml.get("use_openai_web_search", False),
         "web_search_context_size": config_yaml.get("web_search_context_size", "medium"),
         "system_prompt": config_yaml["system_prompt"],
-        "system_prompt_aviasales": config_yaml["system_prompt_aviasales"],
         "system_prompt_airport": config_yaml["system_prompt_airport"],
         "system_prompt_tickets": config_yaml["system_prompt_tickets"],
         "offers_enabled": False,  # По умолчанию офферы отключены
         "maps_2gis_enabled": False,
+        "aviasales_enabled": False,
         "FORMAT_INSTRUCTIONS": config_yaml["FORMAT_INSTRUCTIONS"],
         "global_prompt": config_yaml["global_prompt"],
-        "system_prompt_tickets_for_aviasales_economy_helper": config_yaml["system_prompt_tickets_for_aviasales_economy_helper"],
+        "system_prompt_tickets_for_aviasales_helper": config_yaml["system_prompt_tickets_for_aviasales_helper"],
+        "system_prompt_preferences_for_aviasales_helper": config_yaml["system_prompt_preferences_for_aviasales_helper"],
         "presentation": config_yaml["presentation"],
     }
 
@@ -184,6 +185,14 @@ def main():
             # Обновить конфигурацию при изменении toggle
             if st.session_state.get("config") is not None:
                 st.session_state["config"]["maps_2gis_enabled"] = maps_2gis_enabled
+                # Don't trigger rerun here
+
+        aviasales_enabled = handle_toggle("aviasales_enabled", "Включить поиск по авиабилетам :blue-background[2.0]")
+        if aviasales_enabled != st.session_state.get("aviasales_enabled", False):
+            st.session_state["aviasales_enabled"] = aviasales_enabled
+            # Обновить конфигурацию при изменении toggle
+            if st.session_state.get("config") is not None:
+                st.session_state["config"]["aviasales_enabled"] = aviasales_enabled
                 # Don't trigger rerun here
         
         #Пока выключим телеграм функционал

@@ -202,13 +202,13 @@ class AviasalesRecommendationEngine:
         proposals_df_full["has_baggage"] = proposals_df_full.viable_baggage.apply(lambda x: x != "")
 
         proposals_df_full["flight_to"] = proposals_df_full.segment.apply(lambda x: x[0])
-        proposals_df_full["flight_back"] = proposals_df_full.segment.apply(lambda x: x[1] if len(x) > 1 else None)
+        proposals_df_full["flight_back"] = proposals_df_full.segment.apply(lambda x: x[1] if len(x) > 1 else {})
 
-        proposals_df_full["duration_to"] = proposals_df_full.segment_durations.apply(lambda x: x[0])
-        proposals_df_full["duration_back"] = proposals_df_full.segment_durations.apply(lambda x: x[1] if x else None)
+        # proposals_df_full["duration_to"] = proposals_df_full.segment_durations.apply(lambda x: x[0])
+        # proposals_df_full["duration_back"] = proposals_df_full.segment_durations.apply(lambda x: x[1] if len(x) > 1 else None)
 
         proposals_df_full["tariff_to"] = proposals_df_full.flight_additional_tariff_infos.apply(lambda x: x[0])
-        proposals_df_full["tariff_back"] = proposals_df_full.flight_additional_tariff_infos.apply(lambda x: x[1] if x else None)
+        proposals_df_full["tariff_back"] = proposals_df_full.flight_additional_tariff_infos.apply(lambda x: x[1] if len(x) > 1 else None)
 
         proposals_df_full["rounded_price_5k"] = proposals_df_full["price"].apply(lambda x: round_price_k(x, 10_000)) # chngd from 5k
 
@@ -223,7 +223,7 @@ class AviasalesRecommendationEngine:
         # proposals_df_full["rounded_price_10k"] = proposals_df_full["price"].apply(lambda x: round_price_k(x, 10_000))
 
         proposals_df_full["flight_to_time"] = proposals_df_full.flight_to.apply(lambda x: int(x["flight"][0]["departure_time"].split(":")[0]))
-        proposals_df_full["flight_back_time"] = proposals_df_full.flight_back.apply(lambda x: int(x["flight"][0]["departure_time"].split(":")[0]))
+        proposals_df_full["flight_back_time"] = proposals_df_full.flight_back.apply(lambda x: int(x["flight"][0]["departure_time"].split(":")[0]) if x else 0)
         return proposals_df_full
 
     def _apply_filters(self):
@@ -314,7 +314,7 @@ class AviasalesRecommendationEngine:
                 return "\n\n"
             template_res_all = f"### :blue-background[{label}:]\n\n---\n\n"
             for idx, smpl in df.iterrows():
-                try:
+                # try:
                     template_res = ""
 
                     url_ = smpl.url
@@ -329,8 +329,11 @@ class AviasalesRecommendationEngine:
                     class_ = "Эконом, " if class_ == "Y" else ("Бизнес, " if class_ == "C" else "")
 
                     # TO ---
-
-                    all_carriers = [airlines_mapping.loc[i["operating_carrier"]]["name"] for i in flight_info_to + flight_info_back]
+                    if flight_info_back:
+                        all_carriers = [airlines_mapping.loc[i["operating_carrier"]]["name"] for i in flight_info_to + flight_info_back]
+                    else:
+                        all_carriers = [airlines_mapping.loc[i["operating_carrier"]]["name"] for i in flight_info_to]
+                    
                     all_carriers = sorted(set(all_carriers), key=lambda x: all_carriers.index(x))
                     template_res += "#### " + ", ".join(all_carriers) + "\n\n"
 
@@ -364,6 +367,9 @@ class AviasalesRecommendationEngine:
                             airport_to, airport_from = flight_i["departure"], flight_i["arrival"]
                             airport_to_naming, airport_from_naming = airports_mapping.loc[airport_to]["name"], airports_mapping.loc[airport_from]["name"]
                             template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {flight_i['departure_time']} {airport_from_naming} {airport_from} {flight_i['arrival_time']}\n\n"
+                        
+                        if not flight_info_back:
+                            break
 
                     pass_string = ""
                     for k, v in self.aviasales_json_sent.items():
@@ -379,8 +385,12 @@ class AviasalesRecommendationEngine:
                     handbag_string = f"ручная кладь {smpl.viable_handbags.replace('1PC', '')}кг" if smpl.viable_handbags else "без ручной клади"
                     baggage_string = f"багаж {smpl.viable_baggage.replace('1PC', '')}кг" if smpl.viable_baggage else "без багажа"
 
-                    template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
-                                    f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[{url_}]"
+                    if smpl.tariff_back:
+                        template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
+                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[{url_}]"
+                    else:
+                        template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
+                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_to, 'get_str')} \n\n[{url_}]"
 
                     ### (additional options)
                     options_list = ["has_handbags", "has_baggage", "has_exchange", "has_return"]
@@ -422,9 +432,9 @@ class AviasalesRecommendationEngine:
                                         template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} \n\n[{url_i}]"
 
                     template_res_all += template_res + "\n\n---\n\n"
-                except Exception as e:
-                    self.logger.error(f"Ошибка в _basic_fmt: {e}")
-                    continue
+                # except Exception as e:
+                #     self.logger.error(f"Ошибка в _basic_fmt: {e}")
+                #     continue
 
             return template_res_all
         

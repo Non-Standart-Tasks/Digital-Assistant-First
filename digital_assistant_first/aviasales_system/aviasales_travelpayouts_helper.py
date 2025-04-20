@@ -299,9 +299,29 @@ class TravelPayoutsHelper:
         # if not list(chain(*[i.get("proposals", []) for i in res])):
         #     print("no offers found!!!")
         # return response.json()
+
+    def _get_general_link(self, aviasales_json: Dict[str, str]) -> str:
+        # MOW0705TNR14053
+        iata_origin = aviasales_json["origin"].upper()
+        iata_destination = aviasales_json["destination"].upper()
+        to_arr = aviasales_json["to"].split("-")
+        back_arr = aviasales_json["back"].split("-") if aviasales_json["back"] else None
+        adults, children, infants = aviasales_json["adults"], aviasales_json["children"], aviasales_json["infants"]
+
+        if back_arr:
+            base_url = f"{iata_origin}{to_arr[2]}{to_arr[1]}{iata_destination}{back_arr[2]}{back_arr[1]}{adults}"
+        else:
+            base_url = f"{iata_origin}{to_arr[2]}{to_arr[1]}{iata_destination}{adults}"
+
+        if infants > 0:
+            base_url += f"{children}{infants}"
+        elif children > 0:
+            base_url += f"{children}"
+
+        return "https://www.aviasales.ru/search/" + base_url
     
     def launch_pipeline(self, user_query: str) -> str:
-        try:
+        # try:
             with self.st_interface.spinner("Поиск билетов..."):
                 aviasales_json = self._create_dict(user_query)
                 if aviasales_json == self.none_str:
@@ -320,13 +340,14 @@ class TravelPayoutsHelper:
             self.st_interface.success("✅ Поиск авиабилетов завершен! Формируем рекомендации...")
             recommendation_engine = AviasalesRecommendationEngine(self.logger, search_json, aviasales_json)
             md_res = recommendation_engine._launch_pipeline()
-            return md_res, "https://www.aviasales.ru/search" # mock url
-        except NothingFoundTravelPayouts as e:
-            self.logger.error(f"Ничего не найдено в Aviasales после нескольких попыток: {e}")
-            return self.none_str, self.none_str
-        except Exception as e:
-            self.logger.error(f"Ошибка в launch_pipeline: {e}")
-            return self.none_str, self.none_str
+            return md_res, self._get_general_link(aviasales_json)
+        
+        # except NothingFoundTravelPayouts as e:
+        #     self.logger.error(f"Ничего не найдено в Aviasales после нескольких попыток: {e}")
+        #     return self.none_str, self.none_str
+        # except Exception as e:
+        #     self.logger.error(f"Ошибка в launch_pipeline: {e}")
+        #     return self.none_str, self.none_str
 
     # {            
 # "host": "ama.vtb.msut.me",

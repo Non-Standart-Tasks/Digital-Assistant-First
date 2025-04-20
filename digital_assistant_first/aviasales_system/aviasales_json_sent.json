@@ -1,1 +1,1 @@
-{"origin": "MOW", "destination": "MAD", "adults": 3, "children": 0, "infants": 0, "handbag": true, "baggage": false, "to": "2025-05-07", "back": "2025-05-14", "travel_class": "Y", "airlines": [], "blacklist_airlines": [], "max_stops": 1, "to_hour_range": "18-24", "from_hour_range": "6-12"}
+{"origin": "MOW", "destination": "MAD", "adults": 1, "children": 0, "infants": 1, "handbag": true, "baggage": false, "to": "2025-05-07", "back": false, "travel_class": "Y", "airlines": [], "blacklist_airlines": [], "max_stops": 1, "to_hour_range": "18-24", "from_hour_range": ""}

@@ -7,6 +7,7 @@ from datetime import datetime
 import re
 from functools import reduce
 from operator import mul
+import numpy as np
 
 ru_months = {
     1: 'января', 2: 'февраля', 3: 'марта', 4: 'апреля', 
@@ -236,6 +237,10 @@ class AviasalesRecommendationEngine:
 
         handbag_required = self.aviasales_json_sent.get("handbag", False)
         baggage_required = self.aviasales_json_sent.get("baggage", False)
+
+        max_stops = self.aviasales_json_sent.get("max_stops", -1)
+        if max_stops == -1:
+            max_stops = np.inf
         
         preferred_airlines = set(self.aviasales_json_sent.get("airlines", []))
         blacklist_airlines = set(self.aviasales_json_sent.get("blacklist_airlines", []))
@@ -252,10 +257,15 @@ class AviasalesRecommendationEngine:
             self.proposals_df_full["has_preferred_airlines"] = True
 
         viable_proposals = self.proposals_df_full[
-            (self.proposals_df_full.flight_to_time >= min_hr_to) & (self.proposals_df_full.flight_to_time <= max_hr_to) &
-            (self.proposals_df_full.flight_back_time >= min_hr_back) & (self.proposals_df_full.flight_back_time <= max_hr_back) &
-            (self.proposals_df_full.has_handbags == handbag_required) & (self.proposals_df_full.has_baggage == baggage_required) &
-            (~self.proposals_df_full.has_blacklisted_airlines) & (self.proposals_df_full.has_preferred_airlines)
+            (self.proposals_df_full.flight_to_time >= min_hr_to)
+            & (self.proposals_df_full.flight_to_time <= max_hr_to)
+            & (self.proposals_df_full.flight_back_time >= min_hr_back)
+            & (self.proposals_df_full.flight_back_time <= max_hr_back)
+            & (self.proposals_df_full.has_handbags == handbag_required)
+            & (self.proposals_df_full.has_baggage == baggage_required)
+            & (self.proposals_df_full.max_stops <= max_stops)
+            & (~self.proposals_df_full.has_blacklisted_airlines)
+            & (self.proposals_df_full.has_preferred_airlines)
         ].copy()
         return viable_proposals
         
@@ -304,113 +314,117 @@ class AviasalesRecommendationEngine:
                 return "\n\n"
             template_res_all = f"### :blue-background[{label}:]\n\n---\n\n"
             for idx, smpl in df.iterrows():
-                template_res = ""
+                try:
+                    template_res = ""
 
-                url_ = smpl.url
+                    url_ = smpl.url
 
-                flight_info_to = smpl.flight_to["flight"]
-                transfers_info_to = smpl.flight_to.get("transfers", None)
+                    flight_info_to = smpl.flight_to["flight"]
+                    transfers_info_to = smpl.flight_to.get("transfers", None)
 
-                flight_info_back = smpl.flight_back.get("flight", None)
-                transfers_info_back = smpl.flight_back.get("transfers", None)
+                    flight_info_back = smpl.flight_back.get("flight", None)
+                    transfers_info_back = smpl.flight_back.get("transfers", None)
 
-                class_ = flight_info_to[0]["trip_class"]
-                class_ = "Эконом, " if class_ == "Y" else ("Бизнес, " if class_ == "C" else "")
+                    class_ = flight_info_to[0]["trip_class"]
+                    class_ = "Эконом, " if class_ == "Y" else ("Бизнес, " if class_ == "C" else "")
 
-                # TO ---
+                    # TO ---
 
-                all_carriers = [airlines_mapping.loc[i["operating_carrier"]]["name"] for i in flight_info_to + flight_info_back]
-                all_carriers = sorted(set(all_carriers), key=lambda x: all_carriers.index(x))
-                template_res += "#### " + ", ".join(all_carriers) + "\n\n"
+                    all_carriers = [airlines_mapping.loc[i["operating_carrier"]]["name"] for i in flight_info_to + flight_info_back]
+                    all_carriers = sorted(set(all_carriers), key=lambda x: all_carriers.index(x))
+                    template_res += "#### " + ", ".join(all_carriers) + "\n\n"
 
-                for c, (flight_info, transfers_info) in enumerate(zip(
-                    [flight_info_to, flight_info_back],
-                    [transfers_info_to, transfers_info_back]
-                )):
-                    if c == 0 and flight_info_back:
-                        template_res += "**Туда -** "
-                    if c == 1 and flight_info_back:
-                        template_res += "**Обратно -** "
+                    for c, (flight_info, transfers_info) in enumerate(zip(
+                        [flight_info_to, flight_info_back],
+                        [transfers_info_to, transfers_info_back]
+                    )):
+                        if c == 0 and flight_info_back:
+                            template_res += "**Туда -** "
+                        if c == 1 and flight_info_back:
+                            template_res += "**Обратно -** "
 
-                    stops_all = []
-                    stops_all_info = []
+                        stops_all = []
+                        stops_all_info = []
 
-                    if transfers_info:
-                        for transfer_i in transfers_info:
-                            stops_all.append(transfer_i["at"])
-                            stops_all_info.append(transfer_i["duration_seconds"])
+                        if transfers_info:
+                            for transfer_i in transfers_info:
+                                stops_all.append(transfer_i["at"])
+                                stops_all_info.append(transfer_i["duration_seconds"])
 
-                    if len(stops_all) == 1:
-                        template_res += f"Пересадка в городе {', '.join(cities_mapping.loc[airports_mapping.loc[stops_all]['city_code']]['name'])}:\n\n"
-                    elif len(stops_all) > 1:
-                        template_res += f"Пересадки в городах {', '.join(cities_mapping.loc[airports_mapping.loc[stops_all]['city_code']]['name'])}:\n\n"
-                    else:
-                        template_res += "Прямой:\n\n"
+                        if len(stops_all) == 1:
+                            template_res += f"Пересадка в городе {', '.join(cities_mapping.loc[airports_mapping.loc[stops_all]['city_code']]['name'])}:\n\n"
+                        elif len(stops_all) > 1:
+                            template_res += f"Пересадки в городах {', '.join(cities_mapping.loc[airports_mapping.loc[stops_all]['city_code']]['name'])}:\n\n"
+                        else:
+                            template_res += "Прямой:\n\n"
 
-                    for c, flight_i in enumerate(flight_info):
-                        if c > 0:
-                            template_res += f"Пересадка {format_seconds(stops_all_info[c-1])}\n\n"
-                        airport_to, airport_from = flight_i["departure"], flight_i["arrival"]
-                        airport_to_naming, airport_from_naming = airports_mapping.loc[airport_to]["name"], airports_mapping.loc[airport_from]["name"]
-                        template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {flight_i['departure_time']} {airport_from_naming} {airport_from} {flight_i['arrival_time']}\n\n"
+                        for c, flight_i in enumerate(flight_info):
+                            if c > 0:
+                                template_res += f"Пересадка {format_seconds(stops_all_info[c-1])}\n\n"
+                            airport_to, airport_from = flight_i["departure"], flight_i["arrival"]
+                            airport_to_naming, airport_from_naming = airports_mapping.loc[airport_to]["name"], airports_mapping.loc[airport_from]["name"]
+                            template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {flight_i['departure_time']} {airport_from_naming} {airport_from} {flight_i['arrival_time']}\n\n"
 
-                pass_string = ""
-                for k, v in self.aviasales_json_sent.items():
-                    if k == "adults":
-                        pass_string += format_passengers(v, "adults") + ", "
-                    elif k == "children":
-                        if v > 0:
-                            pass_string += format_passengers(v, "children") + ", "
-                    elif k == "infants":
-                        if v > 0:
-                            pass_string += format_passengers(v, "infants")
-                        
-                handbag_string = f"ручная кладь {smpl.viable_handbags.replace('1PC', '')}кг" if smpl.viable_handbags else "без ручной клади"
-                baggage_string = f"багаж {smpl.viable_baggage.replace('1PC', '')}кг" if smpl.viable_baggage else "без багажа"
+                    pass_string = ""
+                    for k, v in self.aviasales_json_sent.items():
+                        if k == "adults":
+                            pass_string += format_passengers(v, "adults") + ", "
+                        elif k == "children":
+                            if v > 0:
+                                pass_string += format_passengers(v, "children") + ", "
+                        elif k == "infants":
+                            if v > 0:
+                                pass_string += format_passengers(v, "infants")
+                            
+                    handbag_string = f"ручная кладь {smpl.viable_handbags.replace('1PC', '')}кг" if smpl.viable_handbags else "без ручной клади"
+                    baggage_string = f"багаж {smpl.viable_baggage.replace('1PC', '')}кг" if smpl.viable_baggage else "без багажа"
 
-                template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
-                                f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[{url_}]"
+                    template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
+                                    f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[{url_}]"
 
-                ### (additional options)
-                options_list = ["has_handbags", "has_baggage", "has_exchange", "has_return"]
+                    ### (additional options)
+                    options_list = ["has_handbags", "has_baggage", "has_exchange", "has_return"]
 
-                other_variants = (
-                    self.proposals_df_full[self.proposals_df_full.idx == smpl.idx]
-                    .sort_values("price")
-                    .drop_duplicates(subset=options_list, keep="first")
-                ).iloc[:2]
-                possible_improvements = []
+                    other_variants = (
+                        self.proposals_df_full[self.proposals_df_full.idx == smpl.idx]
+                        .sort_values("price")
+                        .drop_duplicates(subset=options_list, keep="first")
+                    ).iloc[:2]
+                    possible_improvements = []
 
-                improvements_mapping = {
-                    "has_handbags": "с ручной кладью",
-                    "has_baggage": "с багажом",
-                    "has_exchange": "с обменом",
-                    "has_return": "с возвратом"
-                }
+                    improvements_mapping = {
+                        "has_handbags": "с ручной кладью",
+                        "has_baggage": "с багажом",
+                        "has_exchange": "с обменом",
+                        "has_return": "с возвратом"
+                    }
 
-                for i in options_list:
-                    if not smpl[i]:
-                        possible_improvements.append(i)
+                    for i in options_list:
+                        if not smpl[i]:
+                            possible_improvements.append(i)
 
-                if other_variants.shape[0] > 1:
-                    other_improvements = []
-                    for idx, row in other_variants.iterrows():
-                        row_improvements_i = {idx: []}
-                        for i in possible_improvements:
-                            if row[i]:
-                                row_improvements_i[idx].append(i)
-                        if len(row_improvements_i[idx]):
-                            other_improvements.append(row_improvements_i)
-                    if len(other_improvements) > 0:
-                        template_res += "\n\nВозможные улучшения:"
-                        for row_improvements_i in other_improvements:
-                            for k, v in row_improvements_i.items():
-                                if len(v) > 0:
-                                    price_i = other_variants.loc[k, "price"]
-                                    url_i = other_variants.loc[k, "url"]
-                                    template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} \n\n[{url_i}]"
+                    if other_variants.shape[0] > 1:
+                        other_improvements = []
+                        for idx, row in other_variants.iterrows():
+                            row_improvements_i = {idx: []}
+                            for i in possible_improvements:
+                                if row[i]:
+                                    row_improvements_i[idx].append(i)
+                            if len(row_improvements_i[idx]):
+                                other_improvements.append(row_improvements_i)
+                        if len(other_improvements) > 0:
+                            template_res += "\n\nВозможные улучшения:"
+                            for row_improvements_i in other_improvements:
+                                for k, v in row_improvements_i.items():
+                                    if len(v) > 0:
+                                        price_i = other_variants.loc[k, "price"]
+                                        url_i = other_variants.loc[k, "url"]
+                                        template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} \n\n[{url_i}]"
 
-                template_res_all += template_res + "\n\n---\n\n"
+                    template_res_all += template_res + "\n\n---\n\n"
+                except Exception as e:
+                    self.logger.error(f"Ошибка в _basic_fmt: {e}")
+                    continue
 
             return template_res_all
         

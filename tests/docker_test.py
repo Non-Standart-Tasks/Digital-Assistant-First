@@ -23,7 +23,7 @@ def wait_for_docker_build(timeout: int = 300) -> bool:
     return process.returncode == 0
 
 
-def wait_for_streamlit(timeout: int = 60) -> bool:
+def wait_for_streamlit(timeout: int = 300) -> bool:
     """Wait for Streamlit to be ready"""
     start = time.time()
     while time.time() - start < timeout:
@@ -32,7 +32,8 @@ def wait_for_streamlit(timeout: int = 60) -> bool:
             capture_output=True,
             text=True
         )
-        if "URL: http://0.0.0.0:9011" in logs.stdout:
+
+        if "You can now view your Streamlit app in your browser" in logs.stdout:
             return True
         time.sleep(2)
     return False

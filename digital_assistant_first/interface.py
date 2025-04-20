@@ -2,7 +2,6 @@
 import logging
 import json
 import asyncio
-import pandas as pd
 import streamlit as st
 import time
 import random
@@ -372,6 +371,7 @@ def model_response_generator_sync(model, config, status_placeholder):
                             logger.info(f"Ссылка на Streamlit-приложение: {link}")
                         except Exception as e:
                             logger.error(f"Ошибка при отправке данных в микросервис: {e}")
+                            link = 'https://vtbfamily.ru/auth'
                     else:
                         link = 'https://vtbfamily.ru/auth'
                     #logger.info(f'проверка перед отправкой в JSON{offer_json}')

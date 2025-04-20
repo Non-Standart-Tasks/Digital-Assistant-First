@@ -41,7 +41,7 @@ from digital_assistant_first.utils.database import (
     update_chat_history_rating_by_id, 
     get_chat_record_by_id
 )
-from digital_assistant_first.geo_system.map_display import display_2gis_map
+from digital_assistant_first.geo_system.map_display import display_map
 from openai import AsyncOpenAI
 from dotenv import load_dotenv
 
@@ -97,7 +97,7 @@ def display_chat_history():
                 st.markdown(message["content"])
             
             if message["role"] == "assistant":
-                is_map_needed = message.get("request_category") in ["рестораны", "ивенты", "маршруты"] or message.get("show_map", False)
+                is_map_needed = message.get("show_map", False)
                 
                 if is_map_needed:
                     map_type = message.get("map_type", "points")
@@ -115,7 +115,7 @@ def display_chat_history():
                             pydeck_data = st.session_state.get("last_pydeck_data", [])
                             
                         if pydeck_data and len(pydeck_data) > 0:
-                            display_2gis_map(
+                            display_map(
                                 pydeck_data=pydeck_data,
                                 map_type="points",
                                 title="🗺️ Интерактивная карта"
@@ -135,7 +135,7 @@ def display_chat_history():
                                 message["route_points"] = route_points
                         
                         if path_points and route_points and len(path_points) > 0 and len(route_points) > 0:
-                            display_2gis_map(
+                            display_map(
                                 pydeck_data=[],  # Empty for route type
                                 map_type="route",
                                 path_points=path_points,
@@ -405,8 +405,8 @@ def model_response_generator_sync(model, config, status_placeholder):
                     ОБЯЗАТЕЛЬНО СТАРАЙСЯ ВЫВОДИТЬ ССЫЛКИ И ТОЛЬКО РАБОЧИЕ ССЫЛКИ.
 
                     """,
-                    model='gpt-4o-mini',
-                    tools=[WebSearchTool(search_context_size=web_search_context_size)])
+                    model='gpt-4o-mini',)
+                    #tools=[WebSearchTool(search_context_size=web_search_context_size)])
                 
                 web_search_response = Runner.run_sync(agent_web_seach, user_input + "\n\n" + 'История старых сообщений: ' + message_history)
                 web_search_response = web_search_response.final_output
@@ -516,7 +516,7 @@ def handle_user_input_sync(model, config, prompt):
             if "aviasales_link" in response and response["aviasales_link"] and response["aviasales_link"].strip():
                 aviasales_text = f"\n\n#### Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}"
             
-            # Если категория запроса - рестораны или ивенты И включен поиск по 2GIS, получаем данные 2GIS
+            # Если включен поиск по 2GIS, получаем данные 2GIS для всех типов запросов
             table_data = []
             pydeck_data = []
             path_points = []
@@ -525,8 +525,47 @@ def handle_user_input_sync(model, config, prompt):
             # Проверяем, включен ли поиск по 2GIS
             maps_2gis_enabled = config.get("maps_2gis_enabled", False)
             
-            if maps_2gis_enabled:   
-                # Создаем новый синхронный event loop для 2GIS запроса
+            if maps_2gis_enabled and pre_category == "маршруты":
+                # Для маршрутов используем специальную функцию построения маршрута
+                loop = asyncio.new_event_loop()
+                asyncio.set_event_loop(loop)
+                
+                try:
+                    # Запускаем построение маршрута
+                    from digital_assistant_first.geo_system.two_gis import build_route_from_query
+                    print(f"DEBUG: Запрос маршрута для: {prompt}")
+                    route_info, path_points, points_data, route_details = loop.run_until_complete(build_route_from_query(prompt, config))
+                    
+                    # Добавляем отладочную информацию
+                    print(f"DEBUG: Результаты запроса маршрута:")
+                    print(f"DEBUG: route_info: {route_info}")
+                    print(f"DEBUG: points count: {len(path_points) if path_points else 0}")
+                    
+                    # Если маршрут построен успешно
+                    if route_info and path_points and len(path_points) > 0:
+                        # Сохраняем данные о маршруте для отображения
+                        st.session_state["route_info"] = route_info
+                        st.session_state["path_points"] = path_points
+                        st.session_state["route_points"] = points_data
+                        st.session_state["route_details"] = route_details
+                        st.session_state["map_type"] = "route"
+                        st.session_state["show_map"] = True
+                        
+                        # Добавляем информацию о маршруте в текст ответа
+                        route_text = f"\n\n🚗 **Маршрут построен!**\n" \
+                                    f"Расстояние: {route_info['distance']/1000:.1f} км\n" \
+                                    f"Примерное время в пути: {route_info['duration']//60} мин\n"
+                        
+                        # Добавляем навигационные инструкции, если они есть
+                        if route_details and "instructions_text" in route_details and route_details["instructions_text"]:
+                            route_text += "\n**Навигационные инструкции:**\n" + "\n".join(route_details["instructions_text"])
+                        
+                        answer_text += route_text
+                finally:
+                    loop.close()
+            
+            elif maps_2gis_enabled:
+                # Для всех остальных запросов получаем точки на карте
                 loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(loop)
                 
@@ -555,37 +594,63 @@ def handle_user_input_sync(model, config, prompt):
                         places_text += "\n\n### 📍 Данные о найденных местах 2GIS API\n"
                         places_text += f"Найдено мест: {len(table_data)}\n\n"
                         
+                        # Отладочная информация в логи, но не в вывод пользователю
+                        if table_data and len(table_data) > 0:
+                            logger.info(f"Данные первого места: {table_data[0]}")
+                        
                         # Формируем текстовое описание каждого места
                         for i, place in enumerate(table_data):
                             # Определяем основные данные
                             name = place.get("name", "Без названия")
                             address = place.get("address", "Адрес не указан")
-                            rating = place.get("rating", "Нет данных")
-                            reviews = place.get("reviews", "Нет данных")
+                            rating = place.get("rating", None)
+                            reviews = place.get("reviews", None)
                             phone = place.get("phone", "")
                             cuisine = place.get("cuisine", "Не указано")
                             schedule = place.get("schedule", "Не указано")
                             
-                            # Строим форматированное описание с базовой информацией на одной строке
-                            place_text = f"{i+1}. {name} Адрес: {address}"
+                            # Строим форматированное описание с базовой информацией
+                            place_text = f"**{i+1}. {name}**\n"
+                            place_text += f"**Адрес:** {address}\n"
                             
+                            # Проверяем и выводим рейтинг
                             if rating and rating != 0:
-                                place_text += f" Рейтинг: {rating}"
+                                # Конвертируем рейтинг в число
+                                try:
+                                    rating_value = float(rating)
+                                    # Округляем до ближайшего 0.5 для более точного отображения звезд
+                                    rating_rounded = round(rating_value * 2) / 2
+                                    full_stars = int(rating_rounded)
+                                    half_star = (rating_rounded - full_stars) >= 0.5
+                                    empty_stars = 5 - full_stars - (1 if half_star else 0)
+                                    
+                                    stars = '★' * full_stars
+                                    if half_star:
+                                        stars += '½'
+                                    stars += '☆' * empty_stars
+                                    
+                                    place_text += f"**Рейтинг:** {stars} ({rating_value})"
+                                except (ValueError, TypeError):
+                                    # Если рейтинг не удалось конвертировать, просто выводим значение
+                                    place_text += f"**Рейтинг:** {rating}"
                             
+                            # Проверяем и выводим количество отзывов
                             if reviews and reviews != 0:
-                                place_text += f" | Отзывов: {reviews}"
+                                place_text += f" | **Отзывов:** {reviews}\n"
+                            else:
+                                place_text += "\n"
                                 
-                            # Добавляем дополнительные данные на новых строках
+                            # Добавляем дополнительные данные
                             if phone:
-                                place_text += f"\n   📞 Телефон: {phone}"
+                                place_text += f"📞 **Телефон:** {phone}\n"
                                 
                             if cuisine and cuisine != "Не указано":
-                                place_text += f"\n   🍽️ Кухня: {cuisine}"
+                                place_text += f"🍽️ **Кухня:** {cuisine}\n"
                                 
                             if schedule and schedule != "Не указано":
-                                place_text += f"\n   🕒 Режим работы: {schedule}"
+                                place_text += f"🕒 **Режим работы:** {schedule}\n"
                             
-                            place_text += "\n\n"
+                            place_text += "\n"
                             places_text += place_text
                     else:
                         places_text += "\n\n*Ничего не найдено в 2GIS.*\n"
@@ -688,14 +753,14 @@ def handle_user_input_sync(model, config, prompt):
                 map_type = st.session_state.get("map_type", "points")
                 
                 if map_type == "points" and st.session_state.get("last_pydeck_data", []) and len(st.session_state["last_pydeck_data"]) > 0:
-                    display_2gis_map(
+                    display_map(
                         pydeck_data=st.session_state["last_pydeck_data"],
                         map_type="points",
                         title="🗺️ Интерактивная карта 2GIS"
                     )
                 
                 elif map_type == "route" and st.session_state.get("path_points", []) and st.session_state.get("route_points", []):
-                    display_2gis_map(
+                    display_map(
                         pydeck_data=[],  # Empty for route type
                         map_type="route",
                         path_points=st.session_state["path_points"],

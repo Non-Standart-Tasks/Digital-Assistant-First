@@ -170,8 +170,29 @@ async def fetch_2gis_data(query, config):
                     
                     # Рейтинг и отзывы
                     reviews_data = item.get("reviews", {})
-                    rating = reviews_data.get("general", {}).get("rating", 0)
-                    reviews_count = reviews_data.get("general", {}).get("count", 0)
+                    # Подробно логируем структуру поля reviews
+                    logger.info(f"Reviews data for place {name}: {json.dumps(reviews_data, ensure_ascii=False)}")
+                    
+                    rating = 0
+                    reviews_count = 0
+                    
+                    if reviews_data and isinstance(reviews_data, dict):
+                        # Пытаемся извлечь данные из разных возможных структур
+                        if "general" in reviews_data and isinstance(reviews_data["general"], dict):
+                            general = reviews_data["general"]
+                            rating = general.get("rating", 0)
+                            reviews_count = general.get("count", 0)
+                            logger.info(f"Extracted rating={rating}, reviews_count={reviews_count} from general")
+                        elif "rating" in reviews_data:
+                            rating = reviews_data.get("rating", 0)
+                            reviews_count = reviews_data.get("count", 0)
+                            logger.info(f"Extracted rating={rating}, reviews_count={reviews_count} directly from reviews")
+                    
+                    # Проверяем, что рейтинг корректного типа и конвертируем если нужно
+                    if isinstance(rating, str) and rating.replace('.', '', 1).isdigit():
+                        rating = float(rating)
+                    
+                    logger.info(f"Final rating for {name}: {rating} (type: {type(rating).__name__})")
                     
                     # Извлечение типа кухни, если это ресторан
                     cuisine = "Не указано"
@@ -225,7 +246,13 @@ async def fetch_2gis_data(query, config):
                     pydeck_entry = {
                         "name": name,
                         "lat": lat,
-                        "lon": lon
+                        "lon": lon,
+                        "rating": rating,
+                        "reviews": reviews_count,
+                        "address": address,
+                        "phone": phone,
+                        "cuisine": cuisine,
+                        "schedule": schedule_text
                     }
                     pydeck_data.append(pydeck_entry)
                 
@@ -849,21 +876,27 @@ async def build_route_from_query(query, config):
         logger.error(f"Не удалось построить маршрут между точками")
         return None, [], [], {}
     
-    # Формируем данные о точках для отображения
+    # Создаем стартовую и конечную точку с метаданными
     points_data = [
         {
             "name": f"Начало: {start_point['name']}",
-            "lat": start_point["lat"],
-            "lon": start_point["lon"],
+            "address": start_point.get("address", start_query),
+            "lat": float(start_point["lat"]),
+            "lon": float(start_point["lon"]),
             "is_start": True,
-            "address": start_point.get("address", "Адрес не указан")
+            "rating": start_point.get("rating", None),
+            "reviews": start_point.get("reviews", None),
+            "phone": start_point.get("phone", None)
         },
         {
             "name": f"Конец: {end_point['name']}",
-            "lat": end_point["lat"],
-            "lon": end_point["lon"],
-            "is_end": True,
-            "address": end_point.get("address", "Адрес не указан")
+            "address": end_point.get("address", end_query),
+            "lat": float(end_point["lat"]),
+            "lon": float(end_point["lon"]),
+            "is_start": False,
+            "rating": end_point.get("rating", None),
+            "reviews": end_point.get("reviews", None),
+            "phone": end_point.get("phone", None)
         }
     ]
     

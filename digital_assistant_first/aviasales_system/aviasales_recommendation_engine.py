@@ -370,7 +370,12 @@ class AviasalesRecommendationEngine:
                                 template_res += f"Пересадка {format_seconds(stops_all_info[c-1])}\n\n"
                             airport_to, airport_from = flight_i["departure"], flight_i["arrival"]
                             airport_to_naming, airport_from_naming = airports_mapping.loc[airport_to]["name"], airports_mapping.loc[airport_from]["name"]
-                            template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {flight_i['departure_time']} {airport_from_naming} {airport_from} {flight_i['arrival_time']}\n\n"
+                            dep_time, arr_time = flight_i['departure_time'], flight_i['arrival_time']
+                            dep_time_hr, arr_time_hr = int(dep_time[:2]), int(arr_time[:2])
+                            if arr_time_hr < dep_time_hr:
+                                template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {dep_time} {airport_from_naming} {airport_from} {arr_time} +1 день\n\n"
+                            else:
+                                template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {dep_time} {airport_from_naming} {airport_from} {arr_time}\n\n"
                         
                         if not flight_info_back:
                             break

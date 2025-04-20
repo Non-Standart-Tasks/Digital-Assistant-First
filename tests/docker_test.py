@@ -32,7 +32,7 @@ def wait_for_streamlit(timeout: int = 60) -> bool:
             capture_output=True,
             text=True
         )
-        if "URL: http://0.0.0.0:9778" in logs.stdout:
+        if "URL: http://0.0.0.0:9011" in logs.stdout:
             return True
         time.sleep(2)
     return False

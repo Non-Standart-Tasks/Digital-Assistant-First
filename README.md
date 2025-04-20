@@ -1,7 +1,7 @@
 <p align="center">
       <img src='https://i.postimg.cc/kG36d61k/temp-Image-K2l1l-B.avif' alt="Логотип проекта" width="400">
 </p>
-https://github.com/Non-Standart-Tasks/Digital-Assistant-First
+
 <p align="center">
    <img src="https://img.shields.io/badge/Python-3.11.11-brightgree" alt="Версия Python">
    <img src="https://img.shields.io/badge/version-v1.3.1-blue" alt="Версия проекта">

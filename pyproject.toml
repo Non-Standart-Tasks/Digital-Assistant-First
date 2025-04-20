@@ -28,4 +28,6 @@ dependencies = [
     "streamlit-aggrid>=1.1.0,<2.0.0",
     "telethon>=1.38.1,<2.0.0",
     "twocaptcha==0.0.1",
+    "joblib (>=1.4.2,<2.0.0)",
+    "scikit-learn (>=1.6.1,<2.0.0)",
 ]

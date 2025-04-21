@@ -291,13 +291,22 @@ class AviasalesRecommendationEngine:
 
         viable_proposals_other = self.proposals_df_full[~self.proposals_df_full.idx.isin(indices_already_displayed)].copy()
 
-        viable_proposals_other_cheapest = viable_proposals_other.loc[
-            viable_proposals_other.groupby("idx")["price"].idxmin()
-        ].reset_index(drop=True).sort_values("total_duration").iloc[:1]
+        # 1. Самое дешевое по каждой группе
+        cheapest_idxs = viable_proposals_other.groupby("idx")["price"].idxmin()
+        viable_cheapest = viable_proposals_other.loc[cheapest_idxs]
 
-        viable_proposals_other_fastest = viable_proposals_other.loc[
-            viable_proposals_other.groupby("idx")["total_duration"].idxmin()
-        ].reset_index(drop=True).sort_values("price").iloc[:1]
+        # 2. Из самых дешевых выбираем тот, который быстрее всего
+        viable_proposals_other_cheapest = viable_cheapest.sort_values("total_duration").head(1)
+
+        # 3. Самое быстрое по каждой группе
+        fastest_idxs = viable_proposals_other.groupby("idx")["total_duration"].idxmin()
+        viable_fastest = viable_proposals_other.loc[fastest_idxs]
+
+        # 4. Удаляем уже выбранное предложение, если оно попало в fastest
+        viable_fastest = viable_fastest[~viable_fastest.index.isin(viable_proposals_other_cheapest.index)]
+
+        # 5. Выбираем самое дешевое из быстрых
+        viable_proposals_other_fastest = viable_fastest.sort_values("price").head(1)
         
         viable_proposals_other = pd.concat([viable_proposals_other_cheapest, viable_proposals_other_fastest], axis=0)
 

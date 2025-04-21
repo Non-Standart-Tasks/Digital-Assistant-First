@@ -490,8 +490,8 @@ class AviasalesRecommendationEngine:
         self.viable_proposals = self._apply_filters()
         self.fastest_optimal, self.cheapest_optimal, self.cheapest, self.viable_proposals_other = self._form_recommendations()
         template_res_all = self._format_recommendations()
-        with open("digital_assistant_first/aviasales_system/template_res_all.md", "w") as f:
-            f.write(template_res_all)
+        # with open("digital_assistant_first/aviasales_system/template_res_all.md", "w") as f:
+        #     f.write(template_res_all)
         return template_res_all
 
 

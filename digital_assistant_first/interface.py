@@ -419,9 +419,9 @@ def model_response_generator_sync(model, config, status_placeholder):
     if config.get("deepsearch", False):
         if request_category == "поездки" and aviasales_enabled:
             if aviasales_flight_info:
-                deepsearch_res += "\n### Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
+                deepsearch_res += "\n### ✈️ Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
             else:
-                deepsearch_res += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить условия поиска."
+                deepsearch_res += "\n\n✈️ Авиабилеты по данному запросу не найдены. Попробуйте изменить условия поиска или повторите запрос."
 
         return {
         "answer": deepsearch_res,
@@ -435,9 +435,9 @@ def model_response_generator_sync(model, config, status_placeholder):
     else:
         if request_category == "поездки" and aviasales_enabled:
             if aviasales_flight_info:
-                web_search_response += "\n### Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
+                web_search_response += "\n### ✈️ Авиабилеты по данному запросу:\n\n---\n\n" + aviasales_flight_info
             else:
-                web_search_response += "\n\nАвиабилеты по данному запросу не найдены. Попробуйте изменить условия поиска."
+                web_search_response += "\n\n✈️ Авиабилеты по данному запросу не найдены. Попробуйте изменить условия поиска или повторите запрос."
 
         return {
         "answer": web_search_response,
@@ -502,7 +502,7 @@ def handle_user_input_sync(model, config, prompt):
                 
             # Отображаем данные Aviasales, если они есть
             if "aviasales_link" in response and response["aviasales_link"] and response["aviasales_link"].strip():
-                aviasales_text = f"\n\n#### Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}"
+                aviasales_text = f"\n\n### ✈️ Общая ссылка на авиабилеты по данному запросу: \n **Ссылка** - {response['aviasales_link']}\n\n---"
             
             # Если категория запроса - рестораны или ивенты И включен поиск по 2GIS, получаем данные 2GIS
             table_data = []
@@ -625,8 +625,8 @@ def handle_user_input_sync(model, config, prompt):
                 st.session_state["map_type"] = None
                 st.session_state["last_pydeck_data"] = []
 
-            # Собираем полный ответ для стриминга - основной ответ + места + авиасейлс
-            full_response_text = answer_text + places_text + aviasales_text
+            # Собираем полный ответ для стриминга - общая ссылка авиасейлс + основной ответ + места
+            full_response_text = aviasales_text + answer_text + places_text
             
             # Создаем плейсхолдер для потокового текста
             text_placeholder = st.empty()
@@ -648,9 +648,27 @@ def handle_user_input_sync(model, config, prompt):
                         
                         time.sleep(delay * random.uniform(0.5, 1.5))
                 return display_text
+            
+            def stream_text_fast(text_to_stream, current_display_text=""):
+                display_text = current_display_text
+                for i, char in enumerate(text_to_stream.split()):
+                    display_text += char
+                    
+                    if i % 2 == 0 or char in ['.', '!', '?', '\n']:
+                        text_placeholder.markdown(display_text)
+                        
+                        delay = 0.01
+                        
+                        time.sleep(delay * random.uniform(0.5, 1.5))
+                return display_text
 
             # Stream the initial response
-            display_text = stream_text(full_response_text)
+            if config.get("aviasales_enabled", False):
+                display_text = full_response_text
+                text_placeholder.markdown(display_text)
+            else:
+                display_text = stream_text(full_response_text)
+
             
             # Обрабатываем офферы после основного текста
             if config.get("offers_enabled", False):

@@ -284,12 +284,18 @@ class TravelPayoutsHelper:
                 time.sleep(20)
             else:
                 time.sleep(3)
-            response = requests.get(FETCH_URL + search_id, headers=FETCH_HEADERS)
-            if response.status_code == 200:
-                res = response.json()
-                if list(chain(*[i.get("proposals", []) for i in res])):
-                    return res
-                print(f"continue fetching... tries={tries}")
+            try:
+                response = requests.get(FETCH_URL + search_id, headers=FETCH_HEADERS, timeout=(5, 10))
+                if response.status_code == 200:
+                    res = response.json()
+                    if list(chain(*[i.get("proposals", []) for i in res])):
+                        # with open("digital_assistant_first/aviasales_system/23apr_aviasales_search_json_received.json", "w") as f:
+                        #     json.dump(res, f)
+                        return res
+                    self.logger.info(f"continue fetching... tries={tries}")
+            except Exception as e:
+                self.logger.error(f"error fetching... tries={tries}")
+
             tries += 1
         # return None
         raise NothingFoundTravelPayouts()

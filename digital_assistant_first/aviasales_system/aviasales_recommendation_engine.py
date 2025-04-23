@@ -166,6 +166,7 @@ class AviasalesRecommendationEngine:
                 for i in list(list(x.values())[0].values())
             ]
         )
+        proposals_df["partner_id"] = proposals_df.xterms.apply(lambda x: list(x.keys())[0])
         proposals_df.drop(
             columns=[
                 "terms",
@@ -223,8 +224,32 @@ class AviasalesRecommendationEngine:
         proposals_df_full["has_exchange"] = proposals_df_full.has_exchange.apply(lambda x: x[0])
         # proposals_df_full["rounded_price_10k"] = proposals_df_full["price"].apply(lambda x: round_price_k(x, 10_000))
 
+        proposals_df_full["airlines_list_to"] = proposals_df_full.flight_to.apply(lambda x: tuple([i["operating_carrier"] for i in x["flight"]]))
+        proposals_df_full["airlines_list_back"] = proposals_df_full.flight_back.apply(lambda x: tuple([i["operating_carrier"] for i in x["flight"]]) if x else tuple())
+
+        proposals_df_full["flight_to_time_raw"] = proposals_df_full.flight_to.apply(lambda x: x["flight"][0]["departure_time"])
+        proposals_df_full["flight_back_time_raw"] = proposals_df_full.flight_back.apply(lambda x: x["flight"][0]["departure_time"] if x else 0)
+        
         proposals_df_full["flight_to_time"] = proposals_df_full.flight_to.apply(lambda x: int(x["flight"][0]["departure_time"].split(":")[0]))
         proposals_df_full["flight_back_time"] = proposals_df_full.flight_back.apply(lambda x: int(x["flight"][0]["departure_time"].split(":")[0]) if x else 0)
+
+        proposals_df_full["segment_durations"] = proposals_df_full.segment_durations.apply(tuple)
+
+        proposals_df_full["idx_new"] = proposals_df_full.groupby(
+            [
+                "total_duration",
+                "max_stops",
+                "max_stop_duration",
+                "segment_durations",
+                "airlines_list_to",
+                "airlines_list_back",
+                "flight_to_time_raw",
+                "flight_back_time_raw",
+            ]
+        ).ngroup()
+
+        proposals_df_full.sort_values(["has_exchange", "has_return", "has_handbags", "has_baggage"], ascending=False, inplace=True)
+        proposals_df_full = proposals_df_full.drop_duplicates(subset=["idx_new", "price"]).reset_index(drop=True).copy()
         return proposals_df_full
 
     def _apply_filters(self):
@@ -268,45 +293,95 @@ class AviasalesRecommendationEngine:
             & (~self.proposals_df_full.has_blacklisted_airlines)
             & (self.proposals_df_full.has_preferred_airlines)
         ].copy()
+
+        viable_proposals.to_csv("digital_assistant_first/aviasales_system/viable_proposals.csv", index=False)
         return viable_proposals
         
     def _form_recommendations(self) -> str:
         indices_already_displayed = []
 
-        min_time_values = self.viable_proposals["total_duration"].nsmallest(2).unique()
-        fastest_optimal = self.viable_proposals[self.viable_proposals["total_duration"].isin(min_time_values)].sort_values("price").iloc[:2]
-        self.viable_proposals.drop(fastest_optimal.index, inplace=True)
-        indices_already_displayed.extend(fastest_optimal.idx.to_list())
+        ##############
 
-        self.viable_proposals = self.viable_proposals[~self.viable_proposals.idx.isin(indices_already_displayed)].copy()
-        min_price = self.viable_proposals["rounded_price_5k"].min()
-        cheapest_optimal = self.viable_proposals[self.viable_proposals["rounded_price_5k"] == min_price].sort_values("total_duration").iloc[:2]
-        self.viable_proposals.drop(cheapest_optimal.index, inplace=True)
-        indices_already_displayed.extend(cheapest_optimal.idx.to_list())
+        smallest_durations_by_group = self.viable_proposals.groupby("idx_new")[
+            "total_duration"
+        ].min()
+        smallest_durations = smallest_durations_by_group.nsmallest(2).values
+        min_price_indices = (
+            self.viable_proposals[
+                self.viable_proposals.total_duration.isin(smallest_durations)
+            ]
+            .groupby("idx_new")["price"]
+            .idxmin()
+        )
+        fastest_optimal = self.viable_proposals.loc[min_price_indices].sort_values("price").iloc[:5]
+        indices_already_displayed.extend(fastest_optimal.idx_new.to_list())
 
-        self.viable_proposals = self.viable_proposals[~self.viable_proposals.idx.isin(indices_already_displayed)].copy()
-        cheapest = self.viable_proposals.sort_values("price").iloc[:2]
-        self.viable_proposals.drop(cheapest.index, inplace=True)
-        indices_already_displayed.extend(cheapest.idx.to_list())
+        print(indices_already_displayed, end="\n\n")
 
-        viable_proposals_other = self.proposals_df_full[~self.proposals_df_full.idx.isin(indices_already_displayed)].copy()
+        ##############
+
+        viable_proposals_no_dupl = self.viable_proposals[~self.viable_proposals.idx_new.isin(indices_already_displayed)].copy()
+        small_prices_by_group = (
+            viable_proposals_no_dupl
+            .groupby("idx_new")["rounded_price_5k"]
+            .min()
+        )
+        small_prices = small_prices_by_group.nsmallest(2).values
+        low_price_indices = (
+            viable_proposals_no_dupl[
+                viable_proposals_no_dupl.rounded_price_5k.isin(small_prices)
+            ]
+            .groupby("idx_new")["total_duration"]
+            .idxmin()
+        )
+        cheapest_optimal = viable_proposals_no_dupl.loc[low_price_indices].sort_values("total_duration").iloc[:5]
+        indices_already_displayed.extend(cheapest_optimal.idx_new.to_list())
+
+        print(indices_already_displayed, end="\n\n")
+
+        ##############
+
+        viable_proposals_no_dupl = self.viable_proposals[~self.viable_proposals.idx_new.isin(indices_already_displayed)].copy()
+        smallest_prices_by_group = (
+            viable_proposals_no_dupl
+            .groupby("idx_new")["rounded_price_5k"]
+            .min()
+        )
+        smallest_prices = smallest_prices_by_group.nsmallest(2).values
+        min_price_indices = (
+            viable_proposals_no_dupl[
+                viable_proposals_no_dupl.rounded_price_5k.isin(smallest_prices)
+            ]
+            .groupby("idx_new")["total_duration"]
+            .idxmin()
+        )
+        cheapest = viable_proposals_no_dupl.loc[min_price_indices].sort_values("price").iloc[:5]
+        indices_already_displayed.extend(cheapest.idx_new.to_list())
+
+        print(indices_already_displayed, end="\n\n")
+
+        ##############
+
+        # Предложения ниже вне фильтров (доп рекомендации)!
+
+        viable_proposals_other = self.proposals_df_full[~self.proposals_df_full.idx_new.isin(indices_already_displayed)].copy()
 
         # 1. Самое дешевое по каждой группе
-        cheapest_idxs = viable_proposals_other.groupby("idx")["price"].idxmin()
+        cheapest_idxs = viable_proposals_other.groupby("idx_new")["price"].idxmin()
         viable_cheapest = viable_proposals_other.loc[cheapest_idxs]
 
         # 2. Из самых дешевых выбираем тот, который быстрее всего
-        viable_proposals_other_cheapest = viable_cheapest.sort_values("total_duration").head(1)
+        viable_proposals_other_cheapest = viable_cheapest.sort_values("total_duration").head(2)
 
         # 3. Самое быстрое по каждой группе
-        fastest_idxs = viable_proposals_other.groupby("idx")["total_duration"].idxmin()
+        fastest_idxs = viable_proposals_other.groupby("idx_new")["total_duration"].idxmin()
         viable_fastest = viable_proposals_other.loc[fastest_idxs]
 
         # 4. Удаляем уже выбранное предложение, если оно попало в fastest
-        viable_fastest = viable_fastest[~viable_fastest.index.isin(viable_proposals_other_cheapest.index)]
+        viable_fastest = viable_fastest[~viable_fastest.idx_new.isin(viable_proposals_other_cheapest.idx_new)]
 
         # 5. Выбираем самое дешевое из быстрых
-        viable_proposals_other_fastest = viable_fastest.sort_values("price").head(1)
+        viable_proposals_other_fastest = viable_fastest.sort_values("price").head(2)
         
         viable_proposals_other = pd.concat([viable_proposals_other_cheapest, viable_proposals_other_fastest], axis=0)
 
@@ -322,15 +397,35 @@ class AviasalesRecommendationEngine:
 
     def _format_recommendations(self) -> str:
 
-        def _basic_fmt(df, label):
+        def _sub_fmt(row, pass_string, class_, is_one_twotrip=False):
+            handbag_string = f"ручная кладь {row.viable_handbags.replace('1PC', '')}кг" if row.viable_handbags else "без ручной клади"
+            baggage_string = f"багаж {row.viable_baggage.replace('1PC', '')}кг" if row.viable_baggage else "без багажа"
+
+            if row.tariff_back:
+                exch_return = summarize_exchange_return(row.tariff_to, row.tariff_back, 'get_str')
+            else:
+                exch_return = summarize_exchange_return(row.tariff_to, row.tariff_to, 'get_str')
+            
+            if is_one_twotrip:
+                res_string = f"\n\n**Цена на OneTwoTrip:** \n\n🔹 {row.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
+                    f"/ {class_}{exch_return} \n\n**[Забронировать на OneTwoTrip]"\
+                    f"({self._form_dynamic_link(row.url)})**"
+            else:
+                res_string = f"🔹 {row.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
+                    f"/ {class_}{exch_return}"
+
+            return res_string
+
+        def _basic_fmt(df, label, no_filters=False):
             if not isinstance(df, pd.DataFrame):
                 return "\n\n"
-            template_res_all = f"### :blue-background[{label}:]\n\n---\n\n"
+            if no_filters:
+                template_res_all = f"### :blue-background[{label}:]\n\n #### Ниже представлены билеты с более гибкими параметрами поиска.\n\n---\n\n"
+            else:
+                template_res_all = f"### :blue-background[{label}:]\n\n---\n\n"
             for idx, smpl in df.iterrows():
                 try:
                     template_res = ""
-
-                    url_ = smpl.url
 
                     flight_info_to = smpl.flight_to["flight"]
                     transfers_info_to = smpl.flight_to.get("transfers", None)
@@ -382,9 +477,9 @@ class AviasalesRecommendationEngine:
                             dep_time, arr_time = flight_i['departure_time'], flight_i['arrival_time']
                             dep_time_hr, arr_time_hr = int(dep_time[:2]), int(arr_time[:2])
                             if arr_time_hr < dep_time_hr:
-                                template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {dep_time} {airport_from_naming} {airport_from} {arr_time} +1 день\n\n"
+                                template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} {dep_time} - {airport_from_naming} {airport_from} {arr_time} +1 день\n\n"
                             else:
-                                template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} - {dep_time} {airport_from_naming} {airport_from} {arr_time}\n\n"
+                                template_res += f"{format_date_russian(flight_i['departure_date'])}, {airport_to_naming} {airport_to} {dep_time} - {airport_from_naming} {airport_from} {arr_time}\n\n"
                         
                         if not flight_info_back:
                             break
@@ -400,24 +495,23 @@ class AviasalesRecommendationEngine:
                             if v > 0:
                                 pass_string += format_passengers(v, "infants")
                             
-                    handbag_string = f"ручная кладь {smpl.viable_handbags.replace('1PC', '')}кг" if smpl.viable_handbags else "без ручной клади"
-                    baggage_string = f"багаж {smpl.viable_baggage.replace('1PC', '')}кг" if smpl.viable_baggage else "без багажа"
 
-                    if smpl.tariff_back:
-                        template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
-                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_back, 'get_str')} \n\n[Забронировать]({self._form_dynamic_link(url_)})"
+                    if smpl.partner_id == "20":
+                        template_res += _sub_fmt(smpl, pass_string, class_, is_one_twotrip=True)
                     else:
-                        template_res += f"🔹 {smpl.price} руб. / за {pass_string.strip().strip(',')}, {handbag_string}, {baggage_string} "\
-                                        f"/ {class_}{summarize_exchange_return(smpl.tariff_to, smpl.tariff_to, 'get_str')} \n\n[Забронировать]({self._form_dynamic_link(url_)})"
+                        template_res += _sub_fmt(smpl, pass_string, class_, is_one_twotrip=False)
+                        smpl_onetwotrip = self.viable_proposals[(self.viable_proposals.idx_new == smpl.idx_new) & (self.viable_proposals.partner_id == "20")].sort_values("price")
+                        if smpl_onetwotrip.shape[0] > 0:
+                            template_res += _sub_fmt(smpl_onetwotrip.iloc[0], pass_string, class_, is_one_twotrip=True)
 
                     ### (additional options)
                     options_list = ["has_handbags", "has_baggage", "has_exchange", "has_return"]
 
                     other_variants = (
-                        self.proposals_df_full[self.proposals_df_full.idx == smpl.idx]
+                        self.proposals_df_full[self.proposals_df_full.idx_new == smpl.idx_new]
                         .sort_values("price")
                         .drop_duplicates(subset=options_list, keep="first")
-                    ).iloc[:2]
+                    ).iloc[:5]
                     possible_improvements = []
 
                     improvements_mapping = {
@@ -447,7 +541,10 @@ class AviasalesRecommendationEngine:
                                     if len(v) > 0:
                                         price_i = other_variants.loc[k, "price"]
                                         url_i = other_variants.loc[k, "url"]
-                                        template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} \n\n[Забронировать]({self._form_dynamic_link(url_i)})"
+                                        if other_variants.loc[k, "partner_id"] == "20":
+                                            template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])} - **[Забронировать на OneTwoTrip]({self._form_dynamic_link(url_i)})**"
+                                        else:
+                                            template_res += f"\n\n🔹 {price_i} руб. {', '.join([improvements_mapping[i] for i in v])}"
 
                     template_res_all += template_res + "\n\n---\n\n"
                 except Exception as e:
@@ -472,7 +569,7 @@ class AviasalesRecommendationEngine:
             fmt_cheapest = ""
 
         if isinstance(self.viable_proposals_other, pd.DataFrame):
-            fmt_viable_proposals_other = _basic_fmt(self.viable_proposals_other, "Оптимальные варианты с другими опциями")
+            fmt_viable_proposals_other = _basic_fmt(self.viable_proposals_other, "Возможно, вам подойдут", no_filters=True)
         else:
             fmt_viable_proposals_other = ""
 

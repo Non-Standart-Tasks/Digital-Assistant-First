@@ -247,6 +247,7 @@ class AviasalesRecommendationEngine:
                 "flight_back_time_raw",
             ]
         ).ngroup()
+        proposals_df_full["idx_uniq"] = np.arange(len(proposals_df_full))
 
         proposals_df_full.sort_values(["has_exchange", "has_return", "has_handbags", "has_baggage"], ascending=False, inplace=True)
         proposals_df_full = proposals_df_full.drop_duplicates(subset=["idx_new", "price"]).reset_index(drop=True).copy()
@@ -316,7 +317,6 @@ class AviasalesRecommendationEngine:
         fastest_optimal = self.viable_proposals.loc[min_price_indices].sort_values("price").iloc[:5]
         indices_already_displayed.extend(fastest_optimal.idx_new.to_list())
 
-        print(indices_already_displayed, end="\n\n")
 
         ##############
 
@@ -337,7 +337,6 @@ class AviasalesRecommendationEngine:
         cheapest_optimal = viable_proposals_no_dupl.loc[low_price_indices].sort_values("total_duration").iloc[:5]
         indices_already_displayed.extend(cheapest_optimal.idx_new.to_list())
 
-        print(indices_already_displayed, end="\n\n")
 
         ##############
 
@@ -357,8 +356,6 @@ class AviasalesRecommendationEngine:
         )
         cheapest = viable_proposals_no_dupl.loc[min_price_indices].sort_values("price").iloc[:5]
         indices_already_displayed.extend(cheapest.idx_new.to_list())
-
-        print(indices_already_displayed, end="\n\n")
 
         ##############
 
@@ -495,6 +492,7 @@ class AviasalesRecommendationEngine:
                             if v > 0:
                                 pass_string += format_passengers(v, "infants")
                             
+                    idx_uniq_blacklist = [smpl.idx_uniq]
 
                     if smpl.partner_id == "20":
                         template_res += _sub_fmt(smpl, pass_string, class_, is_one_twotrip=True)
@@ -503,12 +501,18 @@ class AviasalesRecommendationEngine:
                         smpl_onetwotrip = self.viable_proposals[(self.viable_proposals.idx_new == smpl.idx_new) & (self.viable_proposals.partner_id == "20")].sort_values("price")
                         if smpl_onetwotrip.shape[0] > 0:
                             template_res += _sub_fmt(smpl_onetwotrip.iloc[0], pass_string, class_, is_one_twotrip=True)
+                            idx_uniq_blacklist.append(smpl_onetwotrip.iloc[0].idx_uniq)
+
+                    # print(idx_uniq_blacklist, end="\n\n")
 
                     ### (additional options)
                     options_list = ["has_handbags", "has_baggage", "has_exchange", "has_return"]
 
                     other_variants = (
-                        self.proposals_df_full[self.proposals_df_full.idx_new == smpl.idx_new]
+                        self.proposals_df_full[
+                            (self.proposals_df_full.idx_new == smpl.idx_new)
+                            & (~self.proposals_df_full.idx_uniq.isin(idx_uniq_blacklist))
+                        ]
                         .sort_values("price")
                         .drop_duplicates(subset=options_list, keep="first")
                     ).iloc[:5]

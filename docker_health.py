@@ -17,15 +17,15 @@ def is_port_listening(port: int) -> bool:
 def restart_docker():
     """
     Выполняет последовательный запуск команд для перезапуска docker-compose:
-      1. docker compose -p digital-assistant-first-aviasales-new down
-      2. docker compose -p digital-assistant-first-aviasales-new up -d
+      1. docker compose -p digital-assistant-first-aviasales-new-latest down
+      2. docker compose -p digital-assistant-first-aviasales-new-latest up -d
       3. docker system prune -a --volumes -f
     Все команды выполняются в каталоге проекта.
     """
-    project_dir = "/root/TESTING/Digital-Assistant-First-New-Aviasales"
+    project_dir = "/root/PRODUCTION/Digital-Assistant-First-New-Aviasales-Latest"
     commands = [
-        "docker compose -p digital-assistant-first-aviasales-new down",
-        "docker compose -p digital-assistant-first-aviasales-new up -d",
+        "docker compose -p digital-assistant-first-aviasales-new-latest down",
+        "docker compose -p digital-assistant-first-aviasales-new-latest up -d",
         "docker system prune -a --volumes -f"
     ]
     

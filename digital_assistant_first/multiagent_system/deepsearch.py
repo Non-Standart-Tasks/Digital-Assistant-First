@@ -23,7 +23,7 @@ deepseek_api_key = config['deepseek_api_key']
 client = AsyncOpenAI(api_key=deepseek_api_key, base_url="https://api.deepseek.com")
 logger = setup_logging(logging_path="logs/digital_assistant.log")
 # serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
-serper_api_key_selector = SerperAPIKeySelector()
+serper_api_key_selector = SerperAPIKeySelector(logger)
 
 set_tracing_disabled(disabled=True)
 

@@ -10,7 +10,8 @@ api_keys = [
 # both are new (reg. 28 apr 2025)
 
 class SerperAPIKeySelector:
-    def __init__(self):
+    def __init__(self, logger):
+        self.logger = logger
         if "serper_api_keys_status.json" not in os.listdir():
             self.keys_dict = {
                 "api_keys": {
@@ -42,8 +43,10 @@ class SerperAPIKeySelector:
     def track_key(self, response, api_key_used):
         if response.status_code == 200:
             self.decrement_key(api_key_used)
+        else:
+            self.logger.error(f"Non-200 response from Serper API: {response.status_code} (api_key: {api_key_used}) ")
         return None
     
-selc = SerperAPIKeySelector()
-print(selc.get_best_key())
+# selc = SerperAPIKeySelector()
+# print(selc.get_best_key())
 

@@ -381,7 +381,6 @@ async def process_establishment(name: str, links: list[str], address_of_vars: st
             try:
                 status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
                 api_key_chosen = serper_api_key_selector.get_best_key()
-                print(f"API key chosen: {api_key_chosen}")
                 text = await fetch_serper_data(link, address_of_vars, api_key_chosen)
                 global_text += '\n' + text
                 time.sleep(3)

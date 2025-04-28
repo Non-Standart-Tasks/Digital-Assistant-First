@@ -13,16 +13,17 @@ import asyncio
 from digital_assistant_first.utils.logging import setup_logging
 from digital_assistant_first.utils.check_serp_response import APIKeyManager
 from digital_assistant_first.internet_search import yandex_search
+from digital_assistant_first.utils.serperapi_apikey_selection import SerperAPIKeySelector
 import requests
 import json 
 from streamlit_app import load_config_yaml
 config = load_config_yaml()
-serper_api_key = config['serper_api_key']
 deepseek_api_key = config['deepseek_api_key']
 
 client = AsyncOpenAI(api_key=deepseek_api_key, base_url="https://api.deepseek.com")
 logger = setup_logging(logging_path="logs/digital_assistant.log")
-serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
+# serpapi_key_manager = APIKeyManager(path_to_file="api_keys_status.csv")
+serper_api_key_selector = SerperAPIKeySelector()
 
 set_tracing_disabled(disabled=True)
 
@@ -330,13 +331,13 @@ category_rules = {
     """
 }
 
-async def fetch_internet_data(link, address_of_vars):
-    _, serpapi_key = serpapi_key_manager.get_best_api_key()
+# async def fetch_internet_data(link, address_of_vars):
+#     _, serpapi_key = serpapi_key_manager.get_best_api_key()
         
-    yandex_res = await yandex_search(link + ' ' + address_of_vars, serpapi_key)
-    return str(yandex_res)
+#     yandex_res = await yandex_search(link + ' ' + address_of_vars, serpapi_key)
+#     return str(yandex_res)
 
-async def fetch_serpep_data(link, address_of_vars, api_key):
+async def fetch_serper_data(link, address_of_vars, api_key):
     url = "https://google.serper.dev/search"
 
     payload = json.dumps({
@@ -351,6 +352,7 @@ async def fetch_serpep_data(link, address_of_vars, api_key):
     }
 
     response = requests.request("POST", url, headers=headers, data=payload)
+    serper_api_key_selector.track_key(response, api_key)
 
     return str(response.text)
 
@@ -378,7 +380,9 @@ async def process_establishment(name: str, links: list[str], address_of_vars: st
         for link in links:
             try:
                 status_placeholder.info(f"🔍 Поиск в интернете по запросу: {link}...")
-                text = await fetch_serpep_data(link, address_of_vars, serper_api_key)
+                api_key_chosen = serper_api_key_selector.get_best_key()
+                print(f"API key chosen: {api_key_chosen}")
+                text = await fetch_serper_data(link, address_of_vars, api_key_chosen)
                 global_text += '\n' + text
                 time.sleep(3)
             except Exception as e:

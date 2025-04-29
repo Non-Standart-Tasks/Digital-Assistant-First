@@ -2,9 +2,9 @@ services:
   web:
     build: .
     ports:
-      - "9011:9011" # travel-assistant (7.04) - change to 9777!
+      - "9017:9017" # travel-assistant (7.04) - change to 9777!
     environment:
-      - STREAMLIT_SERVER_PORT=9011
+      - STREAMLIT_SERVER_PORT=9017
       - STREAMLIT_SERVER_ADDRESS=0.0.0.0
       - STREAMLIT_SERVER_HEADLESS=true
       - STREAMLIT_SERVER_ENABLE_CORS=true
